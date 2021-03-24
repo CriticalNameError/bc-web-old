@@ -1,0 +1,5 @@
+export const primary = "#714f9b"
+export const primary_t50 = "rgba(113, 79, 155, 0.5)"
+export const primary_t10 = "rgba(113, 79, 155, 0.1)"
+export const primary_t60 = "rgba(113, 79, 155, 0.6)"
+export const primary_t80 = "rgba(113, 79, 155, 0.8)"

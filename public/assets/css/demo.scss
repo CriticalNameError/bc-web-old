@@ -1,0 +1,541 @@
+/*!
+=========================================================
+* Now UI Dashboard React - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/master/LICENSE.md)
+* Coded by Creative Tim
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*/
+
+@import '../scss/now-ui-dashboard/variables';
+
+@media only screen and (max-width: 991px) {
+    .search_mobile{
+        visibility: visible !important;
+    }
+    .search_desktop{
+        visibility: hidden !important;
+        display: none !important;
+        margin: 0;
+        padding: 0;
+    }
+    .heading{
+        font-size: 2em;
+        
+    }
+
+  
+
+    .wrapper{overflow-x: hidden !important;}
+
+    .navbar-brand {
+        width: 80px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .move-down{
+        display: none !important;
+    }
+
+ 
+
+}
+
+
+@media only screen and (min-width: 1170px){
+.vertical-timeline-element {
+    margin: 25px 0 !important;
+}
+
+.img-blog{
+    max-height: 200px;
+}
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+
+    .img-blog{
+        max-height: 200px;
+    }
+  
+
+    .react-search-box-dropdown-list-item{
+        font-size: 0.65rem;
+        color: black;
+        height: 60px!important;
+    }
+    .sc-bwzfXH{
+        visibility: hidden;
+        height: 0px;
+        -webkit-transition: height 0.4s ease-in-out !important;
+          transition: height 0.4s ease-in-out !important;
+    }
+  
+    .sc-htpNat:hover>.sc-bwzfXH{
+      visibility: visible;
+      height: 300px;
+     
+    overflow-y: scroll !important;
+     width: 240px;
+      
+    }
+
+    .leaflet-popup-close-button {
+        display: inline !important; 
+     }
+
+    .zNoeh{
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+  
+  
+    .jwfbbd:focus>.sc-bwzfXH{
+        visibility: visible;
+        height: 100%;
+    }
+
+    .winesearch_wrapper{
+        visibility: visible!important;
+    }
+    .search-icon_mobile{
+        visibility: visible !important;
+    }
+
+    .search-icon_desktop{
+        visibility: hidden !important;
+        height: 0px !important;
+        width: 0px !important;
+        display: none;
+    }
+
+    .mobile_search_wrapper:hover .winesearch_wrapper{
+        width: 170px!important;
+    }
+    
+
+    .mobile_search_wrapper:hover .jwfbbd{
+        width: 170px !important;
+        border: .5px solid rgba(189, 189, 189, 0.2) !important;
+    background-color: rgba(222, 222, 222, 0.1) !important;
+    color: white !important;
+    }
+
+    .winesearch_wrapper{
+        width: 0px;
+        -webkit-transition: width 0.4s ease-in-out !important;
+        transition: width 0.4s ease-in-out !important;
+    }
+
+    .jwfbbd{
+        width: 0px;
+        background: none!important;
+        border: none !important;
+        color: none !important;
+
+        -webkit-transition: width 0.4s ease-in-out, background .4s, color .3s !important;
+        transition: width 0.4s ease-in-out, background .4s, color .3s !important;
+    }
+   
+    
+
+  }
+
+  @media only screen and (min-width: 800px) {
+    .jwfbbd{
+        width: 200px !important;
+        -webkit-transition: width 0.4s ease-in-out !important;
+        transition: width 0.4s ease-in-out !important;
+    }
+    /* .jwfbbd:focus-within>.sc-bwzfXH{
+        display: inline;
+    } */
+
+    
+
+    .search_mobile{
+        visibility: hidden;
+    }
+
+    /* .orderlist_link_icon_desktop{
+        visibility: visible;
+    } */
+    
+    .react-search-box-dropdown-list-item{
+        color: black;
+        overflow: hidden !important;
+        display: none;
+        
+    }
+    
+    .sc-htpNat:hover>.jwfbbd{
+        
+    }
+
+    .zNoeh{
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .sc-htpNat{
+        -webkit-transition: width 0.4s ease-in-out !important;
+        transition: width 0.4s ease-in-out !important;
+        overflow: hidden !important;
+    }
+
+    
+    .sc-htpNat:hover>.sc-bwzfXH{
+        
+        visibility: visible !important;
+        width: 500px !important;
+        height: 500px !important;
+        overflow-y: auto!important;
+    }
+    
+    .jwfbbd:focus>.sc-bwzfXH{
+        width: 500px !important;
+        visibility: visible !important;
+        
+    }
+
+    .sc-htpNat:hover>.jwfbbd{
+       
+        width: 500px !important;
+    }
+
+   
+
+    .jwfbbd:hover{
+        width: 500px !important;
+    }
+    
+    .sc-bwzfXH{
+        -webkit-transition: width 0.4s ease-in-out !important;
+        transition: width 0.4s ease-in-out !important;
+        width: 0px !important;
+        height: 0px !important;
+        visibility: hidden;
+    }
+    
+  }
+
+.nav-link{
+    border-radius: 25px !important;
+}
+
+#root{
+    background-color: #ebecf1!important;
+}
+
+.wrapper{background-color: #ebecf1!important;}
+
+.round-icon{
+    border-radius: 50%;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+
+.card{
+    border-radius:7px !important;
+}
+
+.winesearch_wrapper{
+    visibility: hidden;
+    z-Index: 1;
+}
+
+.search-icon_mobile{
+    visibility: hidden;
+}
+  
+  .jwfbbd{
+    border-radius: 20px !important;
+    border: .5px solid rgba(189, 189, 189, 0.2);
+    background-color: rgba(222, 222, 222, 0.1);
+    color: white !important;
+  }
+
+.tim-row{
+    margin-bottom: 20px;
+}
+
+.tim-white-buttons {
+    background-color: #777777;
+}
+.typography-line{
+    padding-left: 25%;
+    margin-bottom: 35px;
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.typography-line span{
+    bottom: 10px;
+    color: #c0c1c2;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    left: 0;
+    position: absolute;
+    width: 260px;
+    text-transform: none;
+}
+.tim-row{
+    padding-top: 60px;
+}
+.tim-row h3{
+    margin-top: 0;
+}
+
+.offline-doc .page-header{
+  display: flex;
+  align-items: center;
+}
+
+.offline-doc .footer{
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  bottom: 0;
+  color: #fff;
+  z-index: 1;
+}
+.sidebar .nav > li.active-pro{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+.sidebar .nav > li.active-pro a{
+    background: rgba(255, 255, 255, 0.14);
+    opacity: 1;
+    color: #FFFFFF;
+}
+
+.wine_overview_row:hover {
+    background: rgb(245, 245, 245);
+}
+
+.wine_overview_card_header {
+    font-size: 0.7em;
+    font-weight: bold;
+    
+}
+
+.country-select__control{
+    border-radius: 30px !important;
+    
+}
+
+.country-select__single-value{
+    color: grey!important;
+}
+
+.custom-input .form-control {
+    appearance: none;
+    margin: 0 7px 0 0;
+    color: grey;
+}
+
+.navbar-brand {
+    width: 140px;
+}
+
+.has-success>input {
+    color: rgb(64, 155, 56) !important;
+}
+.has-success>.input-group-text {
+    color: rgb(64, 155, 56) !important;
+}
+
+.custom-card{
+    /* background-color: rgba(100, 32, 38, 0.8); */
+    /*background: linear-gradient(rgba(36, 36, 36, 1), rgba(36, 36, 36, 0.8));*/
+    /* border: 1px solid rgb(85, 27, 27); */
+    /* box-shadow: 0px 0px 8px 1px rgb(97, 97, 97);
+    border-radius: 10px; */
+    background: none;
+    box-shadow: 0 0 0 0;
+    
+}
+
+.btn-green {
+    background:rgb(24, 151, 24)
+}
+.btn-green:hover {
+    background:rgb(85, 212, 85)
+}
+
+
+
+.bg-valid>.input-group-prepend>.input-group-text {
+    background: rgb(166, 218, 155) !important;
+}
+.bg-valid>.form-control {
+    background: rgb(166, 218, 155) !important;
+}
+
+.login-register-form {
+    overflow-y: auto;
+}
+
+.map_tooltip{
+    color: rgb(128, 0, 111);
+    border-radius: 20px;
+    font-size: 0.9em;
+    background-color: rgba(253, 253, 253, 0.87)
+}
+
+
+.leaflet-popup-close-button {
+    display: none; 
+ }
+
+.map_tooltip:hover{
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: 10;
+    background-color: white;
+}
+
+/* .sc-htpNat:focus>ul{
+   max-height: 400px !important;
+   overflow: hidden;
+} */
+
+/* .sc-bwzfXH{
+    display: none;
+} */
+
+.search-icon{
+    max-height: 40px;
+    font-size: 20px;
+    padding: 9px;
+    
+}
+
+.wrapper {
+    overflow: visible;
+    
+}
+
+.navbar-toggler-bar {
+    background-color: #888 !important;
+}
+
+.top-right-toggler{
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+}
+
+.vertical-timeline::before {
+    background: rgb(255, 255, 255) !important;
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
+    width: 2px !important;
+    height: 80% !important;
+}
+
+.vertical-timeline-item-title {
+    color: rgb(0, 0, 0) !important;
+    font-weight: normal;
+    font-size: 1.2em;
+   
+}
+
+.vertical-timeline{
+    padding: 0!important;
+}
+
+.vertical-timeline-element-content {
+    background: #fff !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
+    border-radius: 7px !important;
+}
+
+.vertical-timeline-element-icon {
+    -webkit-box-shadow: none !important;
+    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
+    background-color: white;
+}
+
+.vertical-timeline-description {
+    display: none;
+}
+
+.vertical-timeline-description-inv {
+    display: block;
+}
+
+.vertical-timeline-element-content-arrow{
+    border-right: 7px solid white !important;
+   
+}
+
+.icn {
+    font-size:2em !important;
+    padding-top: 5px;
+    padding-left:5px;
+}
+
+
+
+
+@media only screen and (max-width: 1169px) {
+    .vertical-timeline-description-inv {
+        display: none;
+    }
+    .vertical-timeline-description {
+        display: block;
+    }
+    .icn {
+        font-size:1.5em !important;
+        padding-top: 0px;
+        padding-left:0px;
+
+    }
+    
+
+}
+
+.accordion__button:before {
+    color: $primary-color !important;
+ 
+}
+
+.accordion__button {
+    background-color: white !important;
+}
+
+.accordion__item {
+    border-top: 1px solid $primary-color !important
+}
+
+.accordion__item:first-child {
+    border-top: 0 !important
+}
+
+.move-down{
+    display: inline;
+}
+
+.primary{
+    color: $primary-color !important;
+}
+
+@-webkit-keyframes flip-diagonal-1-tr{0%{-webkit-transform:rotate3d(1,1,0,0deg);transform:rotate3d(1,1,0,0deg)}100%{-webkit-transform:rotate3d(1,1,0,180deg);transform:rotate3d(1,1,0,180deg)}}@keyframes flip-diagonal-1-tr{0%{-webkit-transform:rotate3d(1,1,0,0deg);transform:rotate3d(1,1,0,0deg)}100%{-webkit-transform:rotate3d(1,1,0,180deg);transform:rotate3d(1,1,0,180deg)}}
+@-webkit-keyframes flip-diagonal-1-bl{0%{-webkit-transform:rotate3d(1,1,0,0deg);transform:rotate3d(1,1,0,0deg)}100%{-webkit-transform:rotate3d(1,1,0,-180deg);transform:rotate3d(1,1,0,-180deg)}}@keyframes flip-diagonal-1-bl{0%{-webkit-transform:rotate3d(1,1,0,0deg);transform:rotate3d(1,1,0,0deg)}100%{-webkit-transform:rotate3d(1,1,0,-180deg);transform:rotate3d(1,1,0,-180deg)}}
