@@ -156,14 +156,6 @@ class LandingNavbar extends React.Component {
             </form> */}
            
             <Nav navbar>
-            <NavItem>
-                <a href="/start" className="nav-link" style={{color: "#888"}}>
-                  {/* <i className="now-ui-icons media-2_sound-wave" /> */}
-                  <p>
-                    <span className="d-lg-inline d-md-block">Start</span>
-                  </p>
-                </a>
-              </NavItem>
               <NavItem>
                 <a href="/wein-investments" className="nav-link" style={{color: "#888"}}>
                   {/* <i className="now-ui-icons media-2_sound-wave" /> */}
