@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
-
+import dynamic from 'next/dynamic';
 import { Chrono } from "react-chrono";
 
 import {
@@ -10,68 +10,12 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-// reactstrap components
-import {
-  Button,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
-
-// import image from "next/image/assets/img";
-// import anagram80 from "../public/assets/img/bc_anagram_80.png";
-
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 // core components
-import ContactUs from "components/ContactUs.js";
-import LandingFooter from "components/Footer/LandingFooter";
-// const Process = () => {
-//   const items = [
-//     {},
-//     {
-//     title: "May 1940",
-//     cardTitle: "Dunkirk",
-//     cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-//     media: {
-//       type: "IMAGE",
-//       source: {
-//         url: "http://someurl/image.jpg"
-//       }
-//     }
-//   },
-//   {
-//     title: "May 1940",
-//     cardTitle: "Dunkirk",
-//     cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-//     media: {
-//       type: "IMAGE",
-//       source: {
-//         url: "http://someurl/image.jpg"
-//       }
-//     }
-//   },
-//   {
-//     title: "May 1940",
-//     cardTitle: "Dunkirk",
-//     cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-//     media: {
-//       type: "IMAGE",
-//       source: {
-//         url: "http://someurl/image.jpg"
-//       }
-//     }
-//   }];
 
-//   return (
-//     <div style={{ width: "100%", height: "85%" }}>
-//       <Chrono items={items} mode={"HORIZONTAL"} slideShow allowDynamicUpdate hideControls scrollable/>
-//     </div>
-//   )
-// }
+import LandingFooter from "components/Footer/LandingFooter";
+
+
 
 class Index extends React.Component {
   onLeave(origin, destination, direction) {
@@ -83,7 +27,6 @@ class Index extends React.Component {
   render() {
     return (
       <>
-        <ContactUs></ContactUs>
         <ReactFullpage
           anchors={["firstPage", "secondPage", "thirdPage"]}
           sectionsColor={["#ebecf1", "#ebecf1", "#ebecf1"]}
@@ -103,12 +46,17 @@ class Index extends React.Component {
                             "col-md-12 col-sm-12 mt-5 text-center animated zoomIn slower"
                           }
                         >
-                          {/* <img src={anagram80} width={"150px"} height={"180px"} className={"d-inline"}/> */}
+                          <img
+                            src={"/assets/img/bc_anagram_80.png"}
+                            width={"150px"}
+                            height={"180px"}
+                            className={"d-inline"}
+                          />
                         </div>
                         <div class="col-md-12 col-sm-12 text-center my-auto animated fadeIn slower">
                           <h2 class="text-left d-inline heading mb-4">
-                            Exquisite Weine -<br /> Ihr Investment ist unsere
-                            Passion.
+                            Exquisite Weine -<br /> {"Ihr Investment ist unsere "} 
+                            <span style={{fontFamily: " 'Nothing You Could Do', cursive;", fontSize: "1.25em"}}>Passion</span>.
                           </h2>
                         </div>
                       </div>

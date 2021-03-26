@@ -1,5 +1,5 @@
 {
-  "name": "now-ui-dashboard-react",
+  "name": "bc-web",
   "version": "1.2.0",
   "engines": {
     "node": "14.x",
@@ -8,11 +8,12 @@
   "main": "dist/index.js",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.12",
     "@fullpage/react-fullpage": "^0.1.18",
     "apollo-boost": "^0.4.7",
     "bootstrap": "4.3.1",
     "chart.js": "2.8.0",
-    "graphql": "^15.0.0",
+    "graphql": "^15.5.0",
     "history": "4.9.0",
     "leaflet": "^1.6.0",
     "next": "^10.0.9",

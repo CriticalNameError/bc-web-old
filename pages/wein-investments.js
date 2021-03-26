@@ -1,26 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
-import { Chrono } from "react-chrono";
 
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "react-accessible-accordion/dist/fancy-example.css";
-// reactstrap components
-import {
-  Button,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-  Card,
-} from "reactstrap";
 
 import LandingFooter from "../src/components/Footer/LandingFooter";
 import {
@@ -29,9 +11,6 @@ import {
   primary_t50,
   primary_t60,
 } from "helpers/colorScheme";
-
-
-
 
 import WineDaxSap from "../src/components/WineDaxSap";
 
@@ -43,51 +22,6 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 
-import ContactUs from "components/ContactUs.js";
-// const Process = () => {
-//   const items = [
-//     {},
-//     {
-//     title: "May 1940",
-//     cardTitle: "Dunkirk",
-//     cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-//     media: {
-//       type: "IMAGE",
-//       source: {
-//         url: "http://someurl/image.jpg"
-//       }
-//     }
-//   },
-//   {
-//     title: "May 1940",
-//     cardTitle: "Dunkirk",
-//     cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-//     media: {
-//       type: "IMAGE",
-//       source: {
-//         url: "http://someurl/image.jpg"
-//       }
-//     }
-//   },
-//   {
-//     title: "May 1940",
-//     cardTitle: "Dunkirk",
-//     cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-//     media: {
-//       type: "IMAGE",
-//       source: {
-//         url: "http://someurl/image.jpg"
-//       }
-//     }
-//   }];
-
-//   return (
-//     <div style={{ width: "100%", height: "85%" }}>
-//       <Chrono items={items} mode={"HORIZONTAL"} slideShow allowDynamicUpdate hideControls scrollable/>
-//     </div>
-//   )
-// }
-
 class WineInvestments extends React.Component {
   onLeave(origin, destination, direction) {
     console.log("Leaving section " + origin.index);
@@ -98,7 +32,6 @@ class WineInvestments extends React.Component {
   render() {
     return (
       <>
-        <ContactUs></ContactUs>
         <ReactFullpage
           anchors={["firstPage", "secondPage", "thirdPage"]}
           sectionsColor={[
@@ -172,16 +105,42 @@ class WineInvestments extends React.Component {
                   <div className="section fp-auto-height-responsive section1 ">
                     <div class="container mt-md-n5 mt-sm-0">
                       <h2>Die Zahlen sprechen für sich...</h2>
-                      <p>
-                        Ein Blick auf die letzten 30 Jahre zeigt, dass Wein die
-                        Performance des S&P 500 Index nachweislich übertroffen
-                        hat. Ein Weininvestment kann kann aufgrund seiner
-                        geringen Korrelation zu den Aktienmärkten eine wichtige
-                        Quelle für die Diversifizierung von Anlageklassen
-                        bilden.{" "}
-                      </p>
+                      <h5 className={"d-block d-lg-none"}>
+                        Der Liv-Ex Fine <br className={"d-inline d-lg-none"} />{" "}
+                        Wine 1000 Index
+                      </h5>
+                      <p></p>
+                    </div>
 
+                    <div
+                      className="container-fluid px-0 mx-0"
+                      style={{ marginTop: "-150px", marginLeft: "-20px" }}
+                    >
                       <WineDaxSap />
+                      <div className={"pull-right"}>
+                        <p
+                          className={
+                            "chart-info-text text-justify mr-1 mr-md-5 pr-0 pr-md-5 pl-5 pt-3 pt-md-0 pl-md-0 text-right mr-md-5"
+                          }
+                        >
+                          <div className={"mr-0 mr-md-5 text-justify"}>
+                            <h5 className={"d-none d-lg-block"}>
+                              Der Liv-Ex Fine Wine 1000 Index
+                            </h5>
+                            Ein Blick auf die letzten 16 Jahre des Liv-Ex Fine
+                            Wine 1000 Index zeigt, dass Wein aufgrund seiner
+                            stabilen Wertzuwächse eine echte Alternative zu
+                            traditionellen Sachanlagen darstellt.
+                          </div>
+                        </p>
+                      </div>
+                      <br />
+                      <i className={"pull-right pr-2 pr-md-4"}>
+                        * im Vergleich zum Vorjahresdurchschnitt
+                      </i>
+                    </div>
+
+                    <div class="container mt-md-n5 mt-sm-0">
                       <div
                         className={"row text-center"}
                         style={{ position: "fixed", left: "48%" }}
