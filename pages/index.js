@@ -54,8 +54,8 @@ class Index extends React.Component {
                         <div class="col-md-12 col-sm-12 text-center my-auto animated fadeIn slower">
                           <h2 class="text-left d-inline heading mb-4">
                             Exquisite Weine -<br />{" "}
-                            {"Ihr Investment ist unsere "}
-                            <span
+                            {"Ihr Investment ist unsere Passion"}
+                            {/* <span
                               style={{
                                 fontFamily: " 'Nothing You Could Do', cursive;",
                                 fontSize: "1.25em",
@@ -63,7 +63,7 @@ class Index extends React.Component {
                             >
                               Passion
                             </span>
-                            .
+                            . */}
                           </h2>
                         </div>
                       </div>
