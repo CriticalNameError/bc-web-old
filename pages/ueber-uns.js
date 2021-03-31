@@ -31,6 +31,7 @@ class AboutUs extends React.Component {
             "#ebecf1",
             "#ebecf1",
             "#ebecf1",
+            "#ebecf1",
           ]}
           navigation
           scrollOverflow={true}
