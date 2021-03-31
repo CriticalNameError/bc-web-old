@@ -12,19 +12,19 @@
 }
 
 .alert.alert-success {
-  background-color: #1be611;
+  background-color: #009260;
 }
 
 .alert.alert-danger {
-  background-color: #ff5050;
+  background-color: #be004f;
 }
 
 .alert.alert-warning {
-  background-color: #ffbc50;
+  background-color: #ffa21a;
 }
 
 .alert.alert-info {
-  background-color: #46b3ff;
+  background-color: #0aa5e5;
 }
 
 .alert.alert-primary {
@@ -434,17 +434,17 @@
 
 .sidebar[data-color="blue"]:after,
 .off-canvas-sidebar[data-color="blue"]:after {
-  background: #2CA8FF;
+  background: #0993cd;
 }
 
 .sidebar[data-color="blue"] .nav li.active > a,
 .off-canvas-sidebar[data-color="blue"] .nav li.active > a {
-  color: #2CA8FF;
+  color: #0993cd;
 }
 
 .sidebar[data-color="blue"] .nav li.active > a i,
 .off-canvas-sidebar[data-color="blue"] .nav li.active > a i {
-  color: #2CA8FF;
+  color: #0993cd;
 }
 
 .sidebar[data-color="light-bg"]:after,
@@ -494,17 +494,17 @@
 
 .sidebar[data-color="green"]:after,
 .off-canvas-sidebar[data-color="green"]:after {
-  background: #18ce0f;
+  background: #00784f;
 }
 
 .sidebar[data-color="green"] .nav li.active > a,
 .off-canvas-sidebar[data-color="green"] .nav li.active > a {
-  color: #18ce0f;
+  color: #00784f;
 }
 
 .sidebar[data-color="green"] .nav li.active > a i,
 .off-canvas-sidebar[data-color="green"] .nav li.active > a i {
-  color: #18ce0f;
+  color: #00784f;
 }
 
 .sidebar[data-color="orange"]:after,
@@ -539,17 +539,17 @@
 
 .sidebar[data-color="yellow"]:after,
 .off-canvas-sidebar[data-color="yellow"]:after {
-  background: #FFB236;
+  background: #ff9800;
 }
 
 .sidebar[data-color="yellow"] .nav li.active > a,
 .off-canvas-sidebar[data-color="yellow"] .nav li.active > a {
-  color: #FFB236;
+  color: #ff9800;
 }
 
 .sidebar[data-color="yellow"] .nav li.active > a i,
 .off-canvas-sidebar[data-color="yellow"] .nav li.active > a i {
-  color: #FFB236;
+  color: #ff9800;
 }
 
 .visible-on-sidebar-regular {

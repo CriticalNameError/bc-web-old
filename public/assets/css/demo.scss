@@ -60,6 +60,14 @@
 
 @media only screen and (max-width: 800px) {
 
+    .chart-info-text{
+        max-width: 350px!important;
+        padding-top: 35px !important;
+    }
+    
+    .chart-info-headline{
+        font-size:1.27em!important;
+    }
 
     .img-blog{
         max-height: 200px;
@@ -237,15 +245,41 @@
 
 .wrapper{background-color: #ebecf1!important;}
 
+.chart-info-text{
+    max-width: 400px;
+    margin-top: -245px;
+}
+
+.chart-info-headline{
+    max-width: 400px;
+}
+
+.blog-post-card:hover{
+    box-shadow: 0px 1px 15px 1px rgba(39, 39, 39, 0.25)!important;
+}
+
 .round-icon{
     border-radius: 50%;
-    background: #fff;
+    background: $primary-color;
+    color: white !important;
     width: 60px;
     height: 60px;
     box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
     padding-top: 15px;
-    font-size: 30px;
+    font-size: 30px!important;
 }
+
+.round-icon-lg {
+    border-radius: 50%;
+    background: $primary-color;
+    color: white !important;
+    width: 80px;
+    height: 80px;
+    -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
+            box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
+    padding-top: 20px;
+    font-size: 40px!important;
+  }
 
 
 .card{
@@ -443,7 +477,7 @@
 }
 
 .vertical-timeline::before {
-    background: rgb(255, 255, 255) !important;
+    background: #714f9b !important;
     box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
     width: 2px !important;
     height: 80% !important;

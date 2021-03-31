@@ -51,16 +51,9 @@ class WineInvestments extends React.Component {
             return (
               <div>
                 <div id="fullpage-wrapper">
-                  <div className="section fp-auto-height-responsive section1 ">
-                    <div class="container mt-md-n5 mt-sm-0 animated fadeIn slower">
+                  <div className="section fp-auto-height-responsive section1 mt-5 pt-5 mt-md-0 pt-md-0">
+                    <div class="container animated fadeIn slower">
                       <div class="row pb-2">
-                        <div class="col-md-12 col-sm-12  text-center ">
-                          <h2 class="text-left d-inline heading">
-                            Warum Wein nicht nur Genuss sondern auch stabile
-                            Renditen bringen kann.{" "}
-                          </h2>
-                        </div>
-
                         <div class="col-md-12 col-sm-12 text-left my-auto text-center pt-4">
                           <i
                             className="fas fa-seedling ml-2"
@@ -75,11 +68,24 @@ class WineInvestments extends React.Component {
                             style={{ color: primary, fontSize: "5em" }}
                           ></i>
                         </div>
+                        <div class="col-md-12 col-sm-12  text-center ">
+                          <h1>
+                            <span
+                              style={{
+                                wordBreak: "break-word",
+                                hyphens: "auto",
+                              }}
+                            >
+                              Wein&shy;investments
+                            </span>
+                          </h1>
+                          <p class="text-left d-inline h3">
+                            Warum Wein nicht nur Genuss, sondern auch stabile
+                            Renditen bringen kann.
+                          </p>
+                        </div>
+
                         <div class="col-md-12 col-sm-12 text-center">
-                          <h4>
-                            Langfristig stabile Wertentwicklungen und geringe
-                            Volatilität.
-                          </h4>
                           <div
                             className={"row text-center"}
                             style={{ position: "fixed", left: "48%" }}
@@ -104,33 +110,44 @@ class WineInvestments extends React.Component {
 
                   <div className="section fp-auto-height-responsive section1 ">
                     <div class="container mt-md-n5 mt-sm-0">
-                      <h2>Die Zahlen sprechen für sich...</h2>
-                      <h5 className={"d-block d-lg-none"}>
-                        Der Liv-Ex Fine <br className={"d-inline d-lg-none"} />{" "}
-                        Wine 1000 Index
-                      </h5>
-                      <p></p>
+                      <div
+                        className={
+                          "pb-5 pb-md-0 mb-3 mb-md-n5 pt-5 pt-md-5 mt-5 mt-md-0 "
+                        }
+                      >
+                        <h2 className={"heading"}>
+                          Die Zahlen sprechen für sich...
+                        </h2>
+                        <p className={"h5"}>
+                          Der Liv-Ex Fine{" "}
+                          <br className={"d-inline d-lg-none"} /> Wine 1000
+                          Index
+                        </p>
+                      </div>
                     </div>
 
                     <div
                       className="container-fluid px-0 mx-0"
-                      style={{ marginTop: "-150px", marginLeft: "-20px" }}
+                      style={{ marginLeft: "-20px" }}
                     >
                       <WineDaxSap />
                       <div className={"pull-right"}>
                         <p
                           className={
-                            "chart-info-text text-justify mr-1 mr-md-5 pr-0 pr-md-5 pl-5 pt-3 pt-md-0 pl-md-0 text-right mr-md-5"
+                            "chart-info-text text-justify mr-1 mr-sm-3 mr-md-5 pr-1 pr-md-3 pr-lg-5 pl-5 pt-3 pt-md-0 pl-md-0 text-right mr-md-5"
                           }
                         >
                           <div className={"mr-0 mr-md-5 text-justify"}>
-                            <h5 className={"d-none d-lg-block"}>
-                              Der Liv-Ex Fine Wine 1000 Index
-                            </h5>
-                            Ein Blick auf die letzten 16 Jahre des Liv-Ex Fine
-                            Wine 1000 Index zeigt, dass Wein aufgrund seiner
-                            stabilen Wertzuwächse eine echte Alternative zu
-                            traditionellen Sachanlagen darstellt.
+                            <p className={"h5 text-right chart-info-headline"}>
+                              Stabile <br className={"d-inline d-lg-none"} />{" "}
+                              Wertentwicklung <br /> bei geringer Volatilität
+                            </p>
+                            <p>
+                              Ein Blick auf die letzten 16 Jahre des Liv-Ex Fine
+                              Wine 1000 Index zeigt, dass Wein aufgrund seiner
+                              stabilen Wertzuwächse eine echte Alternative zu
+                              traditionellen Sachanlagen darstellt.
+                            </p>
                           </div>
                         </p>
                       </div>
@@ -174,24 +191,24 @@ class WineInvestments extends React.Component {
                       <div class="row pt-5 pb-0">
                         <div class="col-md-4 col-sm-12 text-center">
                           <i
-                            class="far fa-gem mb-3 round-icon"
+                            class="now-ui-icons sport_user-run mb-3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
-                          <h5>Geringe Mengen</h5>
+                          <p>Geringe Mengen</p>
                         </div>
                         <div class="col-md-4 col-sm-12 text-center">
                           <i
-                            class="far fa-clock mb-3 round-icon"
+                            class="now-ui-icons tech_watch-time mb-3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
-                          <h5>Reifung</h5>
+                          <p>Reifung</p>
                         </div>
                         <div class="col-md-4 col-sm-12 text-center mb-5 ms-md-0">
                           <i
-                            class="fas fa-comments-dollar mb-3 round-icon"
+                            class="now-ui-icons ui-2_like mb-3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
-                          <h5>Angebot & Nachfrage</h5>
+                          <p>Angebot & Nachfrage</p>
                         </div>
                       </div>
                       <div
@@ -230,15 +247,15 @@ class WineInvestments extends React.Component {
                           style={{ zIndex: 400 }}
                         >
                           <i
-                            class="far fa-gem mb-n3 ml-n3 round-icon"
+                            class="now-ui-icons sport_user-run mb-n3 ml-n3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
                         </div>
                         <div class="col-md-8 offset-md-2 col-sm-12">
                           <div class="info info-horizontal">
                             <div class="card p-3">
-                              <h5 class="">Geringe Mengen</h5>
-                              <p class="">
+                              <h3 class="">Geringe Mengen</h3>
+                              <p class="text-justify">
                                 Es kein neues Phänomen, die besten Weine der
                                 Welt besitzen zu wollen, sie zu sammeln und in
                                 sie zu investieren. <br />
@@ -297,7 +314,7 @@ class WineInvestments extends React.Component {
                           style={{ zIndex: 400 }}
                         >
                           <i
-                            class="fas fa-clock mb-n3 ml-n3 round-icon"
+                            class="now-ui-icons tech_watch-time mb-n3 ml-n3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
                         </div>
@@ -305,8 +322,8 @@ class WineInvestments extends React.Component {
                         <div class="col-md-8 offset-md-2 col-sm-12">
                           <div class="info info-horizontal">
                             <div class="card p-3">
-                              <h5 class="">Reifung</h5>
-                              <p class="">
+                              <h3 class="">Reifung</h3>
+                              <p class="text-justify">
                                 Viele hochwertige Weine haben ein
                                 Entwicklungspotenzial, welches sie erst nach
                                 vielen Jahren und teilweise sogar erst
@@ -367,15 +384,15 @@ class WineInvestments extends React.Component {
                           style={{ zIndex: 400 }}
                         >
                           <i
-                            class="fas fa-comments-dollar mb-n3 ml-n3 round-icon"
+                            class="now-ui-icons ui-2_like mb-n3 ml-n3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
                         </div>
                         <div class="col-md-8 offset-md-2 col-sm-12">
                           <div class="info info-horizontal">
                             <div class="card p-3">
-                              <h5 class="">Angebot & Nachfrage</h5>
-                              <p class="">
+                              <h3 class="">Angebot & Nachfrage</h3>
+                              <p class="text-justify">
                                 Angebot und Nachfrage bestimmen, wie überall,
                                 auch bei hochklassigen Weinen den Markt. Je
                                 besser ein Wein mit dem Alter wird, desto
@@ -434,6 +451,7 @@ class WineInvestments extends React.Component {
                       <h2 class="text-left d-inline heading">
                         Was ist noch wichtig zu wissen?
                       </h2>
+    
                       <Accordion allowZeroExpanded={true} className={"pt-4"}>
                         <AccordionItem>
                           <AccordionItemHeading>
@@ -527,6 +545,20 @@ class WineInvestments extends React.Component {
                           </AccordionItemPanel>
                         </AccordionItem>
                       </Accordion>
+                      <h3 className={"mt-5"}>Haftungsausschluss</h3>
+                      <p className={"text-justify"}>
+                        Die Firma Berghaus & Cie. GmbH ist ein
+                        Weinhandelsunternehmen, das Kunden zu ihren Weinen
+                        Vergleichswerte in der preislichen Entwicklung zur
+                        Verfügung stellt. Berghaus & Cie. ist kein
+                        Finanzdienstleister oder -berater. Berghaus & Cie. verkauft
+                        Weine nur in für Privatpersonen vertretbaren Mengen. Für
+                        individuelle steuerliche Fragen wenden Sie sich bitte an
+                        einen Steuerberater. Es gelten die Allgemeinen
+                        Geschäftsbedingungen der Berghaus & Cie. GmbH, eine
+                        aktuelle Fassung finden Sie unter
+                        https://www.berghaus-cie.com/agb.
+                      </p>
                     </div>
                   </div>
 

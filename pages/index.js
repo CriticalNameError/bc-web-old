@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ReactFullpage from "@fullpage/react-fullpage";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import { Chrono } from "react-chrono";
 
 import {
@@ -14,8 +14,6 @@ import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 // core components
 
 import LandingFooter from "components/Footer/LandingFooter";
-
-
 
 class Index extends React.Component {
   onLeave(origin, destination, direction) {
@@ -55,8 +53,17 @@ class Index extends React.Component {
                         </div>
                         <div class="col-md-12 col-sm-12 text-center my-auto animated fadeIn slower">
                           <h2 class="text-left d-inline heading mb-4">
-                            Exquisite Weine -<br /> {"Ihr Investment ist unsere "} 
-                            <span style={{fontFamily: " 'Nothing You Could Do', cursive;", fontSize: "1.25em"}}>Passion</span>.
+                            Exquisite Weine -<br />{" "}
+                            {"Ihr Investment ist unsere "}
+                            <span
+                              style={{
+                                fontFamily: " 'Nothing You Could Do', cursive;",
+                                fontSize: "1.25em",
+                              }}
+                            >
+                              Passion
+                            </span>
+                            .
                           </h2>
                         </div>
                       </div>
@@ -318,7 +325,7 @@ class Index extends React.Component {
                           className="vertical-timeline-element--work"
                           contentStyle={{
                             background: "#efefef",
-                            color: "#888",
+                            color: "#2c2c2c",
                           }}
                           contentArrowStyle={{
                             borderRight: "7px solid #efefef ",
@@ -328,7 +335,7 @@ class Index extends React.Component {
                               <b className={"vertical-timeline-item-title"}>
                                 Individuelle Beratung
                               </b>
-                              <div className={"vertical-timeline-description"}>
+                              <div className={"vertical-timeline-description text-justify"}>
                                 Egal ob über die App oder telefonisch - wir sind
                                 für Sie da und erarbeiten gemeinsam mit Ihnen
                                 eine individuelle Anlagestrategie.
@@ -337,8 +344,8 @@ class Index extends React.Component {
                           }
                           position={"left"}
                           iconStyle={{
-                            color: primary,
-                            backgroundColor: "#fff",
+                            backgroundColor: primary,
+                            color: "#fff",
                             boxShadow: "0 1px 15px 1px black",
                           }}
                           icon={
@@ -348,7 +355,7 @@ class Index extends React.Component {
                             ></i>
                           }
                         >
-                          <div className={"vertical-timeline-description-inv"}>
+                          <div className={"vertical-timeline-description-inv text-justify"}>
                             Egal ob über die App oder telefonisch - wir sind für
                             Sie da und erarbeiten gemeinsam mit Ihnen eine
                             individuelle Anlagestrategie.
@@ -359,7 +366,7 @@ class Index extends React.Component {
                           className="vertical-timeline-element--work"
                           contentStyle={{
                             background: "#efefef",
-                            color: "#888",
+                            color: "#2c2c2c",
                           }}
                           contentArrowStyle={{
                             borderRight: "7px solid #efefef ",
@@ -369,18 +376,18 @@ class Index extends React.Component {
                               <b className={"vertical-timeline-item-title"}>
                                 Kaufabwicklung
                               </b>
-                              <div className={"vertical-timeline-description"}>
+                              <div className={"vertical-timeline-description text-justify"}>
                                 {" "}
                                 Über unser globales Netzwerk können wir Ihre
-                                Traumweine zu bestmöglichen Konditionen
-                                beziehen.
+                                persönliche Weinauswahl zu bestmöglichen
+                                Konditionen beziehen.
                               </div>
                             </>
                           }
                           position={"right"}
                           iconStyle={{
-                            color: primary,
-                            backgroundColor: "#fff",
+                            backgroundColor: primary,
+                            color: "#fff",
                             boxShadow: "0 1px 15px 1px black",
                           }}
                           icon={
@@ -390,7 +397,7 @@ class Index extends React.Component {
                             ></i>
                           }
                         >
-                          <div className={"vertical-timeline-description-inv"}>
+                          <div className={"vertical-timeline-description-inv text-justify"}>
                             {" "}
                             Über unser globales Netzwerk können wir Ihre
                             Traumweine zu bestmöglichen Konditionen beziehen.
@@ -401,7 +408,7 @@ class Index extends React.Component {
                           className="vertical-timeline-element--work"
                           contentStyle={{
                             background: "#efefef",
-                            color: "#888",
+                            color: "#2c2c2c",
                           }}
                           contentArrowStyle={{
                             borderRight: "7px solid #efefef ",
@@ -409,18 +416,18 @@ class Index extends React.Component {
                           date={
                             <>
                               <b className={"vertical-timeline-item-title"}>
-                                Klimakontrollierter Transport
+                                Sicherer Transport
                               </b>
-                              <div className={"vertical-timeline-description"}>
-                                Bereits ab dem Transport wird der Wein unter
-                                Optimalbedingungen gelagert.
+                              <div className={"vertical-timeline-description text-justify"}>
+                                Ihre Weine werden fachgerecht und sicher in das
+                                klimatisierte Umsatzsteuerlager transportiert.
                               </div>
                             </>
                           }
                           position={"left"}
                           iconStyle={{
-                            color: primary,
-                            backgroundColor: "#fff",
+                            backgroundColor: primary,
+                            color: "#fff",
                             boxShadow: "0 1px 15px 1px black",
                           }}
                           icon={
@@ -430,9 +437,9 @@ class Index extends React.Component {
                             ></i>
                           }
                         >
-                          <div className={"vertical-timeline-description-inv"}>
-                            Bereits ab dem Transport wird der Wein unter
-                            Optimalbedingungen gelagert.
+                          <div className={"vertical-timeline-description-inv text-justify"}>
+                            BIhre Weine werden fachgerecht und sicher in das
+                            klimatisierte Umsatzsteuerlager transportiert.
                           </div>
                         </VerticalTimelineElement>
 
@@ -440,7 +447,7 @@ class Index extends React.Component {
                           className="vertical-timeline-element--work"
                           contentStyle={{
                             background: "#efefef",
-                            color: "#888",
+                            color: "#2c2c2c",
                           }}
                           contentArrowStyle={{
                             borderRight: "7px solid #efefef ",
@@ -450,7 +457,7 @@ class Index extends React.Component {
                               <b className={"vertical-timeline-item-title"}>
                                 Versicherte Lagerung
                               </b>
-                              <div className={"vertical-timeline-description"}>
+                              <div className={"vertical-timeline-description text-justify"}>
                                 Hohe Werte wollen gut versichert sein. Die
                                 Versicherung Ihrer Weine ist daher Teil unseres
                                 Services für Sie.
@@ -459,8 +466,8 @@ class Index extends React.Component {
                           }
                           position={"right"}
                           iconStyle={{
-                            color: primary,
-                            backgroundColor: "#fff",
+                            backgroundColor: primary,
+                            color: "#fff",
                             boxShadow: "0 1px 15px 1px black",
                           }}
                           icon={
@@ -470,7 +477,7 @@ class Index extends React.Component {
                             ></i>
                           }
                         >
-                          <div className={"vertical-timeline-description-inv"}>
+                          <div className={"vertical-timeline-description-inv text-justify"}>
                             Hohe Werte wollen gut versichert sein. Die
                             Versicherung Ihrer Weine ist daher Teil unseres
                             Services für Sie.
@@ -481,7 +488,7 @@ class Index extends React.Component {
                           className="vertical-timeline-element--work"
                           contentStyle={{
                             background: "#efefef",
-                            color: "#888",
+                            color: "#2c2c2c",
                           }}
                           contentArrowStyle={{
                             borderRight: "7px solid #efefef ",
@@ -489,9 +496,9 @@ class Index extends React.Component {
                           date={
                             <>
                               <b className={"vertical-timeline-item-title"}>
-                                Accountmanagement
+                                Portfolio-Entwicklung
                               </b>
-                              <div className={"vertical-timeline-description"}>
+                              <div className={"vertical-timeline-description text-justify"}>
                                 Wir helfen Ihnen dabei, Ihr Portfolio ständig zu
                                 erweitern und den Gegebenheiten seitens Ihrer
                                 persönlichen Ziele oder seitens des Marktes
@@ -501,8 +508,8 @@ class Index extends React.Component {
                           }
                           position={"left"}
                           iconStyle={{
-                            color: primary,
-                            backgroundColor: "#fff",
+                            backgroundColor: primary,
+                            color: "#fff",
                             boxShadow: "0 1px 15px 1px black",
                           }}
                           icon={
@@ -512,7 +519,7 @@ class Index extends React.Component {
                             ></i>
                           }
                         >
-                          <div className={"vertical-timeline-description-inv"}>
+                          <div className={"vertical-timeline-description-inv text-justify"}>
                             Wir helfen Ihnen dabei, Ihr Portfolio ständig zu
                             erweitern und den Gegebenheiten seitens Ihrer
                             persönlichen Ziele oder seitens des Marktes

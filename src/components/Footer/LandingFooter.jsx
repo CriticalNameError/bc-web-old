@@ -106,7 +106,7 @@ const LandingFooter = () => {
     <a style={{cursor: "pointer"}} onClick={()=>changeMarkup(agb_markup, toggleShowModal(true))}>AGB</a>
     </div>
 </div>
-<center><small>© Berghaus & Cie.</small></center>
+<center><small>© Berghaus & Cie. GmbH</small></center>
 
 
 

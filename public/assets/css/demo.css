@@ -12,11 +12,6 @@
 /*     brand Colors              */
 /*      light colors         */
 @media only screen and (max-width: 991px) {
-
-  body { 
-    font-size: 0.85em; 
- }
-
   .search_mobile {
     visibility: visible !important;
   }
@@ -49,25 +44,16 @@
   .img-blog {
     max-height: 200px;
   }
-  .chart-info-text{
-    margin-top: -180px;
-    max-width: 350px
-  }
 }
 
 @media only screen and (max-width: 800px) {
-
-  .chart-info-text{
-    margin-top: -140px;
-    max-width: 300px;
-    font-size: 0.9em;
+  .chart-info-text {
+    max-width: 350px !important;
+    padding-top: 35px !important;
   }
-
-  body { 
-    font-size: 0.75em; 
- }
-
-
+  .chart-info-headline {
+    font-size: 1.27em !important;
+  }
   .img-blog {
     max-height: 200px;
   }
@@ -137,16 +123,6 @@
 }
 
 @media only screen and (min-width: 800px) {
-
-  .AreaChart-module_areaChart__1BikF{
-    margin-left: -0.8%;
-  }
-
-  .chart-info-text{
-    margin-top: -250px;
-    max-width: 500px
-  }
-
   .jwfbbd {
     width: 200px !important;
     -webkit-transition: width 0.4s ease-in-out !important;
@@ -201,13 +177,6 @@
   }
 }
 
-
-
-body { 
-  font-size: 0.83em; 
-}
-
-
 .nav-link {
   border-radius: 25px !important;
 }
@@ -220,15 +189,42 @@ body {
   background-color: #ebecf1 !important;
 }
 
+.chart-info-text {
+  max-width: 400px;
+  margin-top: -245px;
+}
+
+.chart-info-headline {
+  max-width: 400px;
+}
+
+.blog-post-card:hover {
+  -webkit-box-shadow: 0px 1px 15px 1px rgba(39, 39, 39, 0.25) !important;
+          box-shadow: 0px 1px 15px 1px rgba(39, 39, 39, 0.25) !important;
+}
+
 .round-icon {
   border-radius: 50%;
-  background: #fff;
+  background: #714f9b;
+  color: white !important;
   width: 60px;
   height: 60px;
   -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
           box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
   padding-top: 15px;
-  font-size: 30px;
+  font-size: 30px !important;
+}
+
+.round-icon-lg {
+  border-radius: 50%;
+  background: #714f9b;
+  color: white !important;
+  width: 80px;
+  height: 80px;
+  -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
+  box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
+  padding-top: 20px;
+  font-size: 40px !important;
 }
 
 .card {
@@ -432,11 +428,11 @@ body {
 }
 
 .vertical-timeline::before {
-  background: white !important;
+  background: #714f9b !important;
   -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
           box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
   width: 2px !important;
-  height: 77% !important;
+  height: 80% !important;
 }
 
 .vertical-timeline-item-title {
@@ -481,9 +477,6 @@ body {
 }
 
 @media only screen and (max-width: 1169px) {
-
-
-
   .vertical-timeline-description-inv {
     display: none;
   }

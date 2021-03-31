@@ -3,8 +3,14 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import "react-vertical-timeline-component/style.min.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import ReactTooltip from "react-tooltip";
-import { primary, primary_t50, primary_t80 } from "../src/helpers/colorScheme";
+import {
+  primary,
+  primary_t50,
+  primary_t80,
+  primary_t60,
+} from "../src/helpers/colorScheme";
 import LandingFooter from "../src/components/Footer/LandingFooter";
+import { urlObjectKeys } from "next/dist/next-server/lib/utils";
 
 class AboutUs extends React.Component {
   onLeave(origin, destination, direction) {
@@ -35,6 +41,42 @@ class AboutUs extends React.Component {
             return (
               <div>
                 <div id="fullpage-wrapper">
+                  <div className={"section fp-auto-height-responsive"}>
+                    <div className={"container pt-5 pt-md-0"}>
+                      <div class="row pb-2 text-center">
+                        <div class="col-10 offset-1 my-auto text-center pt-4 pt-md-0 pb-5">
+                        <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img>
+                        </div>
+                        <div class="col-md-12 col-sm-12  text-center animated fadeIn slow">
+                        <h1>Über uns </h1>
+                          <p className="h4">
+                            Erfahren Sie mehr über die Menschen hinter Berghaus
+                            & Cie. und Ihre Motivation.
+                          </p>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 text-center">
+                          <div
+                            className={"row text-center"}
+                            style={{ position: "fixed", left: "48%" }}
+                          >
+                            <div
+                              className="text-center mx-auto p-5"
+                              onClick={() => fullpageApi.moveSectionDown()}
+                              style={{ cursor: "pointer" }}
+                            >
+                              <a className={"move-down"}>
+                                <i
+                                  class="fas fa-chevron-down fa-3x animated infinite pulse"
+                                  style={{ cursor: "pointer", color: primary }}
+                                ></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="section fp-auto-height-responsive ">
                     <div class="container pt-5 animated fadeIn slow ">
                       <div className={"row mt-5"}>
@@ -43,7 +85,7 @@ class AboutUs extends React.Component {
                           style={{ zIndex: 400 }}
                         >
                           <i
-                            class="fas fa-users mb-n3 ml-n3 round-icon"
+                            class="fas fa-users mb-n3 ml-n3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
                         </div>
@@ -75,7 +117,7 @@ class AboutUs extends React.Component {
                           style={{ zIndex: 400 }}
                         >
                           <i
-                            class="fas fa-briefcase mb-n3 ml-n3 round-icon"
+                            class="fas fa-briefcase mb-n3 ml-n3 round-icon-lg"
                             style={{ color: primary }}
                           ></i>
                         </div>
@@ -107,112 +149,6 @@ class AboutUs extends React.Component {
                     >
                       <div
                         className="text-center mx-auto p-5"
-                        onClick={() => fullpageApi.moveSectionDown()}
-                        style={{ cursor: "pointer" }}
-                      >
-                        <a className={"move-down"}>
-                          <i
-                            class="fas fa-chevron-down fa-3x animated infinite pulse"
-                            style={{ cursor: "pointer", color: primary }}
-                          ></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="section fp-auto-height-responsive mt-n5 mt-sm-0 ">
-                    <div class="container pt-0 pt-sm-5 animated fadeIn slow ">
-                      <div className={"row mt-5"}>
-                        <div
-                          className={"col-12 text-center"}
-                          style={{ zIndex: 400 }}
-                        >
-                          <i
-                            class="fas fa-child mb-n3 ml-n3 round-icon"
-                            style={{ color: primary }}
-                          ></i>
-                        </div>
-                        <div class="col-md-8 offset-md-2 col-sm-12">
-                          <div class="info info-horizontal">
-                            <div class="card p-3">
-                              <h5 class="">Unsere Überzeugung</h5>
-                              <p class="rext-justify">
-                                Wein ist langfristig gesehen nicht nur eine
-                                Ergänzung, sondern unter Umständen eine echte
-                                Alternative zu den üblichen Anlageformen. Unter
-                                fachkundiger Anleitung bringen Weininvestments
-                                nicht nur eine starke Rendite, sondern bietet
-                                darüber hinaus auch einen greifbaren
-                                Vermögenswert mit einer spannende Zukunft.{" "}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="container mt-sm-n5 animated fadeIn slower">
-                      <div className={"row mt-5"}>
-                        <div
-                          className={"col-12 text-center"}
-                          style={{ zIndex: 400 }}
-                        >
-                          <i
-                            class="fas fa-rocket mb-n3 ml-n3 round-icon"
-                            style={{ color: primary }}
-                          ></i>
-                        </div>
-                        <div class="col-md-8 offset-md-2 col-sm-12">
-                          <div class="info info-horizontal">
-                            <div class="card p-3">
-                              <h5 class="">Unser Ziel</h5>
-                              <p class="text-justify">
-                                Berghaus & Cie. möchte das Thema Weininvestment
-                                für jeden zugänglich machen. Dabei setzen wir
-                                auf Transparenz, datenbasierte Analysen und
-                                Digitalisierung.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="container mt-sm-n5 animated fadeIn slower">
-                      <div className={"row mt-5"}>
-                        <div
-                          className={"col-12 text-center"}
-                          style={{ zIndex: 400 }}
-                        >
-                          <i
-                            class="fas fa-hands-helping mb-n3 ml-n3 round-icon"
-                            style={{ color: primary }}
-                          ></i>
-                        </div>
-                        <div class="col-md-8 offset-md-2 col-sm-12">
-                          <div class="info info-horizontal">
-                            <div class="card p-3">
-                              <h5 class="">Das dürfen Sie erwarten</h5>
-                              <p class="text-justify">
-                                Basierend auf den Erfahrungswerten der
-                                vergangenen Jahrzehnte, aktuellen statistischen
-                                Analysen und datengetriebenen
-                                Technologielösungen, richten wir unsere
-                                Weinempfehlungen auf Sie ganz persönlich aus.
-                                Wir sorgen dafür, dass Ihr Wein-Portfolio
-                                individuell auf Ihre Risikobereitschaft, Ihre
-                                Anlagedauer und Ihre Renditeziele zugeschnitten
-                                ist.{" "}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className={"row text-center"}>
-                      <div
-                        className="text-center mx-auto pb-5 px-5"
                         onClick={() => fullpageApi.moveSectionDown()}
                         style={{ cursor: "pointer" }}
                       >
@@ -490,6 +426,112 @@ class AboutUs extends React.Component {
                       className={"row text-center mt-5"}
                       style={{ position: "fixed", left: "48%" }}
                     >
+                      <div
+                        className="text-center mx-auto pb-5 px-5"
+                        onClick={() => fullpageApi.moveSectionDown()}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <a className={"move-down"}>
+                          <i
+                            class="fas fa-chevron-down fa-3x animated infinite pulse"
+                            style={{ cursor: "pointer", color: primary }}
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="section fp-auto-height-responsive mt-n5 mt-sm-0 ">
+                    <div class="container pt-0 pt-sm-5 animated fadeIn slow ">
+                      <div className={"row mt-5"}>
+                        <div
+                          className={"col-12 text-center"}
+                          style={{ zIndex: 400 }}
+                        >
+                          <i
+                            class="fas fa-child mb-n3 ml-n3 round-icon-lg"
+                            style={{ color: primary }}
+                          ></i>
+                        </div>
+                        <div class="col-md-8 offset-md-2 col-sm-12">
+                          <div class="info info-horizontal">
+                            <div class="card p-3">
+                              <h5 class="">Unsere Überzeugung</h5>
+                              <p class="rext-justify">
+                                Wein ist langfristig gesehen nicht nur eine
+                                Ergänzung, sondern unter Umständen eine echte
+                                Alternative zu den üblichen Anlageformen. Unter
+                                fachkundiger Anleitung bringen Weininvestments
+                                nicht nur eine starke Rendite, sondern bietet
+                                darüber hinaus auch einen greifbaren
+                                Vermögenswert mit einer spannende Zukunft.{" "}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container mt-sm-n5 animated fadeIn slower">
+                      <div className={"row mt-5"}>
+                        <div
+                          className={"col-12 text-center"}
+                          style={{ zIndex: 400 }}
+                        >
+                          <i
+                            class="fas fa-rocket mb-n3 ml-n3 round-icon-lg"
+                            style={{ color: primary }}
+                          ></i>
+                        </div>
+                        <div class="col-md-8 offset-md-2 col-sm-12">
+                          <div class="info info-horizontal">
+                            <div class="card p-3">
+                              <h5 class="">Unser Ziel</h5>
+                              <p class="text-justify">
+                                Berghaus & Cie. möchte das Thema Weininvestment
+                                für jeden zugänglich machen. Dabei setzen wir
+                                auf Transparenz, datenbasierte Analysen und
+                                Digitalisierung.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container mt-sm-n5 animated fadeIn slower">
+                      <div className={"row mt-5"}>
+                        <div
+                          className={"col-12 text-center"}
+                          style={{ zIndex: 400 }}
+                        >
+                          <i
+                            class="fas fa-hands-helping mb-n3 ml-n3 round-icon-lg"
+                            style={{ color: primary }}
+                          ></i>
+                        </div>
+                        <div class="col-md-8 offset-md-2 col-sm-12">
+                          <div class="info info-horizontal">
+                            <div class="card p-3">
+                              <h5 class="">Das dürfen Sie erwarten</h5>
+                              <p class="text-justify">
+                                Basierend auf den Erfahrungswerten der
+                                vergangenen Jahrzehnte, aktuellen statistischen
+                                Analysen und datengetriebenen
+                                Technologielösungen, richten wir unsere
+                                Weinempfehlungen auf Sie ganz persönlich aus.
+                                Wir sorgen dafür, dass Ihr Wein-Portfolio
+                                individuell auf Ihre Risikobereitschaft, Ihre
+                                Anlagedauer und Ihre Renditeziele zugeschnitten
+                                ist.{" "}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={"row text-center"}>
                       <div
                         className="text-center mx-auto pb-5 px-5"
                         onClick={() => fullpageApi.moveSectionDown()}

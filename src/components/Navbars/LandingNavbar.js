@@ -181,13 +181,11 @@ class LandingNavbar extends React.Component {
                 </a>
               </NavItem>
               <NavItem>
-              <a href="/login" className="nav-link" style={{color: "#888"}}>
+              <a href="https://weindepot.berghaus-cie.com" className="nav-link" style={{color: "#888"}}>
                 
                   <p>
                   <i className="fas fa-sign-in-alt pr-3 fa-fw" style={{color: primary, fontSize: "1.15em"}} />
-                    <span className="d-lg-inline d-md-block">Weindepot</span>
-                 
-              
+                    <span className="d-lg-inline d-md-block">Login</span>
                   </p>
 
                 </a>

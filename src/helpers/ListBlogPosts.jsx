@@ -169,19 +169,21 @@ const ListBlogPosts = () => {
           <div className={"row mt-5 pt-5 mx-2"}>
             <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-sm-10 offset-sm-1 col-xs-12">
               <a href={"/blog/" + item.slug} style={{ color: "#2c2c2c" }}>
-                <div class="card p-3 animated fadeInUp faster">
-                  {item.postCategory.map((cat, index) => (
+                <div class="card p-3 animated fadeInUp faster blog-post-card">
+                  <div className={"row"}>
+                    <div className={"col-md-6 col-12 text-center my-auto"}>
+                      <div className={"text-left"}>
+                    {item.postCategory.map((cat, index) => (
                     <span
-                      class="badge pull-right"
-                      style={{ color: "white", backgroundColor: primary }}
+                      class="badge"
+                      style={{ color: primary_t80, marginRight: "5px",border: "1px solid " + primary_t80, backgroundColor: "white", fontSize: "1em"}}
                     >
                       {cat.title}
                     </span>
                   ))}
-                  <br></br>
-
-                  <div className={"row"}>
-                    <div className={"col-md-6 col-12 text-center my-auto"}>
+                  </div>
+                  <br/>
+                  <br/>
                       <img
                         className={"img-raised img img-fluid img-blog"}
                         src={item.titleImage.src}

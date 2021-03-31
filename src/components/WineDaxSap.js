@@ -401,9 +401,9 @@ render(){
       <TooltipArea
         tooltip={
           <ChartTooltip
-            followCursor={true}
+            followCursor={false}
             modifiers={{
-              offset: '5px, 5px'
+              offset: '5px, -5px'
             }}
             content={(data, color) => (
               <>
