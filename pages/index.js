@@ -202,7 +202,7 @@ class Index extends React.Component {
                                 ist eine umfassende Beratung, die Ihre
                                 speziellen Wünsche und Bedürfnisse in den
                                 Mittelpunkt stellt. Ob Einsteiger oder Profi,
-                                wir bieten in jeden Fall die passende Beratung.
+                                wir bieten in jedem Fall die passende Beratung.
                               </p>
                             </div>
                           </div>
