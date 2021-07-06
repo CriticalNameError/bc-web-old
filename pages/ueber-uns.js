@@ -11,6 +11,7 @@ import {
 } from "../src/helpers/colorScheme";
 import LandingFooter from "../src/components/Footer/LandingFooter";
 import { urlObjectKeys } from "next/dist/next-server/lib/utils";
+import { ImageFromCms } from "helpers/utils";
 
 class AboutUs extends React.Component {
   onLeave(origin, destination, direction) {
@@ -46,7 +47,8 @@ class AboutUs extends React.Component {
                     <div className={"container pt-5 pt-md-0"}>
                       <div class="row pb-2 text-center">
                         <div class="col-10 offset-1 my-auto text-center pt-4 pt-md-0 pb-5">
-                        <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img>
+                        {/* <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img> */}
+                        <ImageFromCms title={"team_formal"} width={350} classes={"animated fadeIn img img-raised"}/>
                         </div>
                         <div class="col-md-12 col-sm-12  text-center animated fadeIn slow">
                         <h1>Über uns </h1>

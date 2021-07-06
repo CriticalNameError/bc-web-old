@@ -25,9 +25,16 @@ import {
 class WineInvestments extends React.Component {
   onLeave(origin, destination, direction) {
     console.log("Leaving section " + origin.index);
+    
+    document.getElementById("contact").classList.remove("visible");
+    document.getElementById("vert-nav").classList.remove("pt-5")
   }
   afterLoad(origin, destination, direction) {
     console.log("After load: " + destination.index);
+    if(destination.index === 0){
+      document.getElementById("contact").classList.add("visible")
+      document.getElementById("vert-nav").classList.add("pt-5")
+    }
   }
   render() {
     return (

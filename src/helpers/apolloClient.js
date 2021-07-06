@@ -4,7 +4,7 @@ import { useMemo } from "react";
 
  let apolloClient;
 
- function createApolloClient() {
+ export function createApolloClient() {
    return new ApolloClient({
      ssrMode: typeof window === "undefined", // set to true for SSR
      link: new HttpLink({
@@ -14,6 +14,9 @@ import { useMemo } from "react";
    });
  }
 
+export const client = createApolloClient()
+
+export default client;
 
  export function initializeApollo(initialState = null) {
   const _apolloClient = apolloClient ?? createApolloClient();

@@ -149,7 +149,10 @@ const ContactUs = () => {
             </div>
           </form>
 :
-<h4 className={"p-4 animated fadeIn text-center"}>Danke für Ihre Nachricht!</h4>
+<h4 className={"p-4 animated fadeIn text-center"}>
+Danke für Ihre Kontaktanfrage!<br/>
+<small>Wir melden uns bei Ihnen.</small>
+</h4>
 }
         </ModalBody>
       </Modal>

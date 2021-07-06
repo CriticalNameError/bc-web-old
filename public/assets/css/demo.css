@@ -177,8 +177,17 @@
   }
 }
 
+.visible {
+  display: block !important;
+}
+
 .nav-link {
   border-radius: 25px !important;
+}
+
+.nav-link:hover {
+  background: transparent !important;
+  color: #714f9b !important;
 }
 
 #root {

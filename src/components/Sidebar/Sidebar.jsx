@@ -19,7 +19,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Nav } from "reactstrap";
-
+import { ImageFromCms } from "helpers/utils";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
@@ -68,7 +68,8 @@ class Sidebar extends React.Component {
             className="simple-text logo-normal"
             target="_blank"
           ><center className={"pb-4 pt-5"}>
-              <img src='https://bcassets.s3.amazonaws.com/static/images/schwarz.height-70.png' width="180px" alt="react-logo" />
+            {/* <ImageFromCms title={"logo_primary"} width={200}/> */}
+              <img src='https://bcassets.s3.amazonaws.com/static/images/logo_prim.width-250.png' width="180px" alt="react-logo" />
               </center>
           </a>
         </div>
