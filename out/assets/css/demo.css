@@ -177,6 +177,10 @@
   }
 }
 
+#contact {
+  display: none;
+}
+
 .visible {
   display: block !important;
 }

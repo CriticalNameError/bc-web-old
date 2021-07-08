@@ -177,7 +177,11 @@
   }
 }
 
-.visible {
+#contact {
+  display: none;
+}
+
+.contact-visible {
   display: block !important;
 }
 
