@@ -101,7 +101,7 @@ componentWillUnmount() {
         >
               <div
           id={"contact"}
-          className={"justify-content-space-between p-2 pl-4 d-none visible"}
+          className={"justify-content-space-between p-2 pl-4"}
           style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "3em", backgroundColor: "#ebecf1", fontFamily: "Montserrat,Helvetica Neue,Arial,sans-serif" }}
         >
           {/* #ebecf1 */}
