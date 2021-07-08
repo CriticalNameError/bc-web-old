@@ -93,7 +93,7 @@ const ContactUs = () => {
                 </div>
                 <div class="col-md-6 col-sm-12 pl-2">
                   <div class="form-group">
-                    <label>Email address</label>
+                    <label>Email</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
@@ -115,7 +115,7 @@ const ContactUs = () => {
               </div>
 
               <div class="form-group">
-                <label>Your message</label>
+                <label>Nachricht</label>
                 <textarea
                   name="message"
                   class="form-control"
@@ -133,7 +133,7 @@ const ContactUs = () => {
                     <label class="form-check-label">
                       <input class="form-check-input" type="checkbox" />
                       <span class="form-check-sign"></span>
-                      I'm not a robot
+                      Ich bin kein Roboter
                     </label>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ const ContactUs = () => {
                     type="submit"
                     class="btn btn-primary btn-round pull-right"
                   >
-                    Send Message
+                    Nachricht senden
                   </button>
                 </div>
               </div>
@@ -172,15 +172,16 @@ Danke für Ihre Kontaktanfrage!<br/>
             toggleShowModal(true);
           }}
         >
-          <small className={"text-primary d-none d-md-inline"}>KONTAKT</small>{" "}
+          <small id={"contact-us-text"} className={"d-none d-md-inline"}>KONTAKT</small>{" "}
           <br />
           <i
-            className="fas fa-comments round-icon animated infinite pulse"
-            style={{
-              color: "#fff",
-              backgroundImage:
-                "linear-gradient(-45deg, #a0b9b9 0%, " + primary + " 100%)",
-            }}
+            id={"contact-us"}
+            className="fas fa-comments round-icon animated infinite pulse bg-primary text-white"
+            // style={{
+            //   color: "#fff",
+            //   backgroundImage:
+            //     "linear-gradient(-45deg, #a0b9b9 0%, " + primary + " 100%)",
+            // }}
           ></i>
         </a>
       </div>

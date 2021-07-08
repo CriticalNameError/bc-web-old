@@ -166,7 +166,7 @@ componentWillUnmount() {
             <Collapse
               isOpen={this.state.isOpen}
               navbar
-              className="justify-content-start"
+              className="justify-content-start w-100"
             >
               {/* <form>
               <InputGroup className="no-border">
@@ -179,7 +179,7 @@ componentWillUnmount() {
               </InputGroup>
             </form> */}
 
-              <Nav navbar>
+              <Nav navbar className={"w-100"}>
                 <NavItem>
                   <a
                     href="/wein-investments"
@@ -236,7 +236,7 @@ componentWillUnmount() {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem>
+                <NavItem className={"ml-lg-auto"}>
                   <a
                     href="https://weindepot.berghaus-cie.com"
                     className={"nav-link ml-lg-auto"}

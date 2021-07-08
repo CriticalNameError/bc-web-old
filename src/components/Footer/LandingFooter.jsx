@@ -103,11 +103,11 @@ const LandingFooter = () => {
       </Modal>
 
       <div
-        class="container pb-3 mt-0 pt-0 tect-center"
+        class="container pb-2 mt-0 pt-0 text-center"
         style={{ color: "white" }}
       >
         <div class="row text- pb-5">
-          <div class="col-md-6 text-center p-2">
+          <div class="col-md-6 text-center p-2 pt-1">
             <a
               style={{ cursor: "pointer" }}
               onClick={() =>

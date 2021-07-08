@@ -251,20 +251,25 @@ const ListBlogPosts = () => {
           >
             {loadingMore ? "Lade..." : "Weitere Posts"}
           </Button>
+          <br/>
+          <br/>
         </center>
         <div
-          className={"section fp-auto-height fp-auto-height-responsive p-5"}
-          style={{
-            backgroundImage:
-              "linear-gradient(" +
-              primary_t50 +
-              " 0%, " +
-              primary_t80 +
-              " 100%)",
-          }}
+          className={"section fp-auto-height fp-auto-height-responsive p-4 bg-gradient"}
+          // style={{
+          //   backgroundImage:
+          //     "linear-gradient(" +
+          //     primary_t50 +
+          //     " 0%, " +
+          //     primary_t80 +
+          //     " 100%)",
+          // }}
         >
           <LandingFooter />
         </div>
+
+
+
       </>
     );
 };

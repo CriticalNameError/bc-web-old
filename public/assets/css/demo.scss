@@ -250,6 +250,15 @@
     background-color: #ebecf1!important;
 }
 
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+background: $primary-color!important
+}
+
+.bg-gradient {
+    background: none;
+    background-image: linear-gradient(-45deg,rgba(113,79,155,.5),#714f9b);
+}
+
 .wrapper{background-color: #ebecf1!important;}
 
 .chart-info-text{

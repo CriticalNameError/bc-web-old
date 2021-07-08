@@ -25,12 +25,33 @@ import {
 class WineInvestments extends React.Component {
   onLeave(origin, destination, direction) {
     console.log("Leaving section " + origin.index);
-    
+    console.log(origin)
     document.getElementById("contact").classList.add("d-none");
     document.getElementById("vert-nav").classList.remove("pt-5")
+
+    if(origin.anchor === "footer"){
+      document.getElementById("contact-us").classList.add("bg-primary")
+      document.getElementById("contact-us").classList.add("bg-white")
+      document.getElementById("contact-us-text").classList.add("text-primary")
+      document.getElementById("contact-us").classList.remove("bg-white")
+      document.getElementById("contact-us").classList.remove("text-primary")
+      document.getElementById("contact-us-text").classList.remove("text-white")
+      
+    }
+
+    if (destination.anchor === "footer"){
+      document.getElementById("contact-us").classList.remove("bg-primary")
+      document.getElementById("contact-us").classList.remove("bg-white")
+      document.getElementById("contact-us-text").classList.remove("text-primary")
+      document.getElementById("contact-us").classList.add("bg-white")
+      document.getElementById("contact-us").classList.add("text-primary")
+      document.getElementById("contact-us-text").classList.add("text-white")
+    }
+
   }
   afterLoad(origin, destination, direction) {
     console.log("After load: " + destination.index);
+   
     if(destination.index === 0){
       document.getElementById("contact").classList.remove("d-none")
       document.getElementById("vert-nav").classList.add("pt-5")
@@ -40,7 +61,7 @@ class WineInvestments extends React.Component {
     return (
       <>
         <ReactFullpage
-          anchors={["firstPage", "secondPage", "thirdPage"]}
+          anchors={["firstPage", "secondPage", "thirdPage", "4", "5", "6", "7", "footer"]}
           sectionsColor={[
             "#ebecf1",
             "#ebecf1",
@@ -571,16 +592,16 @@ class WineInvestments extends React.Component {
 
                   <div
                     className={
-                      "section fp-auto-height fp-auto-height-responsive p-5"
+                      "section bg-gradient fp-auto-height fp-auto-height-responsive p-4"
                     }
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(" +
-                        primary_t50 +
-                        " 0%, " +
-                        primary_t80 +
-                        " 100%)",
-                    }}
+                    // style={{
+                    //   backgroundImage:
+                    //     "linear-gradient(" +
+                    //     primary_t50 +
+                    //     " 0%, " +
+                    //     primary_t80 +
+                    //     " 100%)",
+                    // }}
                   >
                     <LandingFooter />
                   </div>
