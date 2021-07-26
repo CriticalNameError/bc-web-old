@@ -114,7 +114,7 @@ class WineInvestments extends React.Component {
             "#ebecf1",
           ]}
           navigation
-          responsiveWidth={991}
+          responsiveWidth={0}
           scrollOverflow={true}
           onLeave={this.onLeave.bind(this)}
           afterLoad={this.afterLoad.bind(this)}

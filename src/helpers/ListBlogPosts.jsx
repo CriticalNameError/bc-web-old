@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoadingOverlay from "react-loading-overlay";
 
 import { Button } from "reactstrap";
@@ -56,7 +56,9 @@ const GET_POSTS = gql`
       title
       firstPublishedAt
       titleImage {
-        src
+        rendition(fill: "250x150", jpegquality: 30){
+            url
+        }
       }
       intro
       tags
@@ -76,7 +78,9 @@ const MORE_POSTS = gql`
       title
       firstPublishedAt
       titleImage {
-        src
+        rendition(fill: "250x150", jpegquality: 30){
+            url
+        }
       }
       intro
       tags
@@ -97,6 +101,8 @@ const MORE_POSTS = gql`
 //    }
 //  }
 //  `
+
+
 
 const notify = (msg) =>
   toast.success(msg, {
@@ -186,7 +192,7 @@ const ListBlogPosts = () => {
                   <br/>
                       <img
                         className={"img-raised img img-fluid img-blog"}
-                        src={item.titleImage.src}
+                        src={item.titleImage.rendition.url}
                       ></img>
                     </div>
                     <div className={"col-12 col-md-6 text-center"}>
@@ -250,6 +256,7 @@ const ListBlogPosts = () => {
             }}
           >
             {loadingMore ? "Lade..." : "Weitere Posts"}
+          
           </Button>
           <br/>
           <br/>

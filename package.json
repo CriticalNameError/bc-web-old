@@ -10,6 +10,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.12",
     "@fullpage/react-fullpage": "^0.1.18",
+    "aos": "^3.0.0-beta.6",
     "apollo-boost": "^0.4.7",
     "bootstrap": "4.3.1",
     "chart.js": "2.8.0",
@@ -30,6 +31,7 @@
     "react-https-redirect": "^1.1.0",
     "react-icons": "^3.10.0",
     "react-infinite-scroll-component": "^6.0.0",
+    "react-lazy-load-image-component": "^1.5.1",
     "react-leaflet": "^2.7.0",
     "react-leaflet-control": "^2.1.2",
     "react-loading-overlay": "^1.0.1",

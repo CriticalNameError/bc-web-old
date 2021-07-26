@@ -27,13 +27,19 @@
         
     }
 
-  
+    #services{
+        margin-top: -120px;
+        padding-top: 20px;
+    }
+
+    #contact{
+        font-size: 0.75em!important;
+    }
 
     .wrapper{overflow-x: hidden !important;}
 
     .navbar-brand {
-        width: 80px !important;
-        margin: 0 !important;
+        width: 110px !important;
         padding: 0 !important;
     }
 
@@ -53,6 +59,11 @@
 
 .img-blog{
     max-height: 200px;
+}
+
+#services{
+    margin-top: -160px;
+    padding-top: 80px;
 }
 
 }
@@ -235,6 +246,14 @@
     
   }
 
+  .transp-card:hover{
+    cursor: pointer;
+  }
+
+.transp-card:hover > .round-icon-lg{
+    background-color: $primary-100;
+    
+}
 
 .nav-link{
     border-radius: 25px !important;
@@ -401,7 +420,7 @@ background: $primary-color!important
 }
 
 .navbar-brand {
-    width: 140px;
+    width: 175px;
 }
 
 .has-success>input {

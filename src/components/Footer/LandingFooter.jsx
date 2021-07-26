@@ -103,8 +103,9 @@ const LandingFooter = () => {
       </Modal>
 
       <div
-        class="container pb-2 mt-0 pt-0 text-center"
-        style={{ color: "white" }}
+        class="container-fluid pb-2 mt-0 p-3 pt-5 text-center bg-gradient"
+        id={"footer"}
+        style={{ color: "white"}}
       >
         <div class="row text- pb-5">
           <div class="col-md-6 text-center p-2 pt-1">

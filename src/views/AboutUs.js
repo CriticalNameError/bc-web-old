@@ -116,7 +116,7 @@ class AboutUs extends React.Component {
           ]}
           navigation
           scrollOverflow={true}
-          responsiveWidth={991}
+          responsiveWidth={0}
           onLeave={this.onLeave.bind(this)}
           afterLoad={this.afterLoad.bind(this)}
           render={({ state, fullpageApi }) => {

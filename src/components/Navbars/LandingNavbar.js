@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -27,8 +27,70 @@ import { primary } from "helpers/colorScheme";
 
 // }
 
+const ContactBar = (props) => {
+  const [scrollY, setScrollY] = useState(0);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      if(window.scrollY > 0){
+        document.getElementById("vert-nav").classList.remove("pt-5");
+        document.getElementById("nav-tgl").classList.remove("pt-2");
+        document.getElementById("nav-tgl").classList.remove("mt-4");
+        
+      }else{
+        document.getElementById("vert-nav").classList.add("pt-5");
+        document.getElementById("nav-tgl").classList.add("pt-2");
+        document.getElementById("nav-tgl").classList.add("mt-4");
+      }
+    };
 
+    // just trigger this so that the initial state
+    // is updated as soon as the component is mounted
+    // related: https://stackoverflow.com/a/63408216
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <>
+      {scrollY == 0 ? (
+        <div
+          id={"contact"}
+          className={"justify-content-space-between p-2 pl-4"}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "3em",
+            fontSize: "0.9em",
+            backgroundColor: "#ebecf1",
+            fontFamily: "Montserrat,Helvetica Neue,Arial,sans-serif",
+          }}
+        >
+          <span>
+            <span
+              className={"now-ui-icons tech_mobile"}
+              style={{ verticalAlign: "middle" }}
+            ></span>{" "}
+            <span className={"pr-5"}>+49 172 6345 99</span>
+            <span
+              className={"now-ui-icons ui-1_email-85 pr-2"}
+              style={{ verticalAlign: "middle" }}
+            ></span>
+            <span>contact@berghaus-cie.com</span>
+          </span>
+        </div>
+      ) : null}
+    </>
+  );
+};
 
 class LandingNavbar extends React.Component {
   state = {
@@ -37,7 +99,7 @@ class LandingNavbar extends React.Component {
     color: "white",
   };
   sidebarToggle = React.createRef();
- 
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen,
@@ -51,12 +113,12 @@ class LandingNavbar extends React.Component {
   // };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.onScroll, false);
-}
+    window.addEventListener("scroll", this.onScroll, false);
+  }
 
-componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll, false);
-}
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll, false);
+  }
 
   openSidebar = () => {
     document.documentElement.classList.toggle("nav-open");
@@ -89,9 +151,7 @@ componentWillUnmount() {
   // }
   render() {
     return (
-      // add or remove classes depending if we are on full-screen-maps page or not
       <>
-  
         <Navbar
           color={"white"}
           expand="lg"
@@ -99,22 +159,7 @@ componentWillUnmount() {
           id={"vert-nav"}
           style={{ top: "0px" }}
         >
-              <div
-          id={"contact"}
-          className={"justify-content-space-between p-2 pl-4"}
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "3em", backgroundColor: "#ebecf1", fontFamily: "Montserrat,Helvetica Neue,Arial,sans-serif" }}
-        >
-          {/* #ebecf1 */}
-          
-          <span>
-            <span className={"now-ui-icons tech_mobile"} style={{verticalAlign: "middle"}}></span> <span className={"pr-5"}>+49 172 6345 99</span>
-            <span className={"now-ui-icons ui-1_email-85 pr-2"} style={{verticalAlign: "middle"}}>
-              
-            </span>
-            <span>contact@berghaus-cie.com</span>
-          </span>
-          {/* <span className={"pull-right"}>DE | EN</span> */}
-        </div>
+          <ContactBar />
           <Container fluid>
             {/* <button
                 type="button"
@@ -128,8 +173,8 @@ componentWillUnmount() {
               </button> */}
 
             <NavbarBrand href="/">
-              <a class="navbar-brand pull-left" href="/">
-                <ImageFromCms title={"logo_primary"} width={140}></ImageFromCms>
+              <a class="navbar-brand pull-left mt-n1 mt-lg-0" href="/">
+                <ImageFromCms title={"logo_primary"} width={175}></ImageFromCms>
                 {/* <img src="https://bcassets.s3.amazonaws.com/static/images/schwarz.height-70.png" alt="Berghaus &amp; Cie."/> */}
               </a>
             </NavbarBrand>
@@ -150,7 +195,7 @@ componentWillUnmount() {
                 </Link>
               </NavItem> */}
 
-            <div className="navbar-toggle top-right-toggler d-fixed">
+            <div className="navbar-toggle top-right-toggler d-fixed mt-4 pt-2 mt-lg-0 pt-lg-0" id={"nav-tgl"}>
               <button
                 type="button"
                 ref={this.sidebarToggle}
@@ -189,7 +234,7 @@ componentWillUnmount() {
                         ? primary
                         : "#999",
                       marginTop: "4px",
-                      fontSize: "11px",
+                      fontSize: "12px",
                     }}
                   >
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
@@ -209,7 +254,7 @@ componentWillUnmount() {
                         ? primary
                         : "#999",
                       marginTop: "4px",
-                      fontSize: "11px",
+                      fontSize: "12px",
                     }}
                   >
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
@@ -227,7 +272,7 @@ componentWillUnmount() {
                         ? primary
                         : "#999",
                       marginTop: "4px",
-                      fontSize: "11px",
+                      fontSize: "12px",
                     }}
                   >
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
@@ -243,7 +288,7 @@ componentWillUnmount() {
                     style={{
                       color: "#999",
                       marginTop: "4px",
-                      fontSize: "11px",
+                      fontSize: "12px",
                     }}
                   >
                     <p>

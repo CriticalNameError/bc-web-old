@@ -21,7 +21,7 @@ import {
 
 
 import anagram80 from "assets/img/bc_anagram_80.png"
-
+import { ImageFromCms } from "helpers/utils";
 import {primary, primary_t50, primary_t80} from "helpers/colorScheme";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -92,7 +92,7 @@ class LandingPage extends React.Component {
         anchors={["firstPage", "secondPage", "thirdPage"]}
         sectionsColor={["#ebecf1", "#ebecf1", "#ebecf1"]}
         navigation
-        responsiveWidth={991}
+        responsiveWidth={0}
         onLeave={this.onLeave.bind(this)}
         afterLoad={this.afterLoad.bind(this)}
         render={({ state, fullpageApi }) => {
@@ -110,7 +110,8 @@ class LandingPage extends React.Component {
      <div class="container mt-n5  mt-md-n5 mt-sm-5 text-center">
        <div class="row pb-2">
          <div className={"col-md-12 col-sm-12 mt-5 text-center animated zoomIn slower"}>
-         <img src={anagram80} width={"150px"} height={"180px"} className={"d-inline"}/>
+           <ImageFromCms title={"logo_subline_lavendel"} width={150} jpegquality={60}></ImageFromCms>
+         {/* <img src={anagram80} width={"150px"} height={"180px"} className={"d-inline"}/> */}
          </div>
             <div class="col-md-12 col-sm-12 text-center my-auto animated fadeIn slower">
            
