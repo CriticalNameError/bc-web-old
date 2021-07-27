@@ -123,7 +123,7 @@ const WineInvestments = () => {
                 </p>
                 <a
                   className={"move-down"}
-                  href={"#services"}
+                  href={"#livex"}
                   style={{ cursor: "pointer" }}
                 >
                   <i
@@ -138,7 +138,7 @@ const WineInvestments = () => {
           <div>
             <div
               class="container text-center pb-5 "
-              id={"services"}
+              id={"livex"}
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
             >
@@ -378,12 +378,12 @@ const WineInvestments = () => {
             </div>
           </div>
 
-          <div class="container mt-md-n5 mt-sm-5 mb-sm-5 pb-5">
-            <h2 class="text-left d-inline heading">
-              Was ist noch wichtig zu wissen?
+          <div class="container mt-md-n5 mt-sm-5 pt-5 mb-sm-5 pb-5">
+            <h2>
+              Was Sie vorab wissen sollten ...
             </h2>
 
-            <Accordion allowZeroExpanded={true} className={"pt-4"}>
+            <Accordion allowZeroExpanded={true} className={"mt-4 card"}>
               <AccordionItem>
                 <AccordionItemHeading>
                   <AccordionItemButton>Anlagehorizont</AccordionItemButton>

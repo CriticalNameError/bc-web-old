@@ -11,14 +11,12 @@ import { convertDateString } from "helpers/utils";
 import "react-toastify/dist/ReactToastify.css";
 import LandingFooter from "components/Footer/LandingFooter";
 
-const GET_POST = gql`
-  query getPost($slug: String!) {
-    page(slug: $slug) {
+const GET_HOME_PAGE = gql`
+  query homePage($slug: String!) {
+    homePage(slug: $slug) {
       title
       slug
-      ... on PostPage {
-        intro
-        firstPublishedAt
+      ...on HomePage{
         body
       }
     }
@@ -36,10 +34,10 @@ const notify = (msg) =>
     progress: undefined,
   });
 
-const PostPage = () => {
+const LegalPage = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const { data, loading, error, fetchMore } = useQuery(GET_POST, {
+  const { data, loading, error, fetchMore } = useQuery(GET_HOME_PAGE, {
     variables: { slug: slug },
   });
   if (loading)
@@ -66,7 +64,7 @@ const PostPage = () => {
           }),
         }}
         spinner
-        text="Lade Blogpost...."
+        text="Lade ...."
       >
         {/* <p>Some content or children or something.</p> */}
       </LoadingOverlay>
@@ -82,12 +80,12 @@ const PostPage = () => {
         }}
       >
         <div className={"mx-auto text-justify mb-5"} style={{ maxWidth: "750px" }}>
-          <i>{convertDateString(data.page.firstPublishedAt)}</i>
+          {/* <i>{convertDateString(data.page.firstPublishedAt)}</i> */}
           <h1>{data.page.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.page.body }}></div>
-          <a href={"/blog"} className={"btn btn-primary"}>
+          {/* <a href={"/blog"} className={"btn btn-primary"}>
             Zurück zur Übersicht
-          </a>
+          </a> */}
         </div>
 
         <LandingFooter />
@@ -95,4 +93,4 @@ const PostPage = () => {
     );
 };
 
-export default PostPage;
+export default LegalPage;

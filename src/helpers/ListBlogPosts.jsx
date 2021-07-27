@@ -56,8 +56,8 @@ const GET_POSTS = gql`
       title
       firstPublishedAt
       titleImage {
-        rendition(fill: "250x150", jpegquality: 30){
-            url
+        rendition(fill: "250x150", jpegquality: 30) {
+          url
         }
       }
       intro
@@ -78,8 +78,8 @@ const MORE_POSTS = gql`
       title
       firstPublishedAt
       titleImage {
-        rendition(fill: "250x150", jpegquality: 30){
-            url
+        rendition(fill: "250x150", jpegquality: 30) {
+          url
         }
       }
       intro
@@ -101,8 +101,6 @@ const MORE_POSTS = gql`
 //    }
 //  }
 //  `
-
-
 
 const notify = (msg) =>
   toast.success(msg, {
@@ -179,17 +177,23 @@ const ListBlogPosts = () => {
                   <div className={"row"}>
                     <div className={"col-md-6 col-12 text-center my-auto"}>
                       <div className={"text-left"}>
-                    {item.postCategory.map((cat, index) => (
-                    <span
-                      class="badge"
-                      style={{ color: primary_t80, marginRight: "5px",border: "1px solid " + primary_t80, backgroundColor: "white", fontSize: "1em"}}
-                    >
-                      {cat.title}
-                    </span>
-                  ))}
-                  </div>
-                  <br/>
-                  <br/>
+                        {item.postCategory.map((cat, index) => (
+                          <span
+                            class="badge"
+                            style={{
+                              color: primary_t80,
+                              marginRight: "5px",
+                              border: "1px solid " + primary_t80,
+                              backgroundColor: "white",
+                              fontSize: "1em",
+                            }}
+                          >
+                            {cat.title}
+                          </span>
+                        ))}
+                      </div>
+                      <br />
+                      <br />
                       <img
                         className={"img-raised img img-fluid img-blog"}
                         src={item.titleImage.rendition.url}
@@ -256,27 +260,12 @@ const ListBlogPosts = () => {
             }}
           >
             {loadingMore ? "Lade..." : "Weitere Posts"}
-          
           </Button>
-          <br/>
-          <br/>
+          <br />
+          <br />
         </center>
-        <div
-          className={"section fp-auto-height fp-auto-height-responsive p-4 bg-gradient"}
-          // style={{
-          //   backgroundImage:
-          //     "linear-gradient(" +
-          //     primary_t50 +
-          //     " 0%, " +
-          //     primary_t80 +
-          //     " 100%)",
-          // }}
-        >
-          <LandingFooter />
-        </div>
 
-
-
+        <LandingFooter />
       </>
     );
 };

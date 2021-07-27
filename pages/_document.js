@@ -23,6 +23,8 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Caveat&family=La+Belle+Aurore&family=Nothing+You+Could+Do&display=swap"
             rel="stylesheet"
           />
+          <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet"></link>
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
             rel="stylesheet"

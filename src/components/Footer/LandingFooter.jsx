@@ -110,20 +110,18 @@ const LandingFooter = () => {
         <div class="row text- pb-5">
           <div class="col-md-6 text-center p-2 pt-1">
             <a
-              style={{ cursor: "pointer" }}
-              onClick={() =>
-                changeMarkup(datenschutz_markup, toggleShowModal(true))
-              }
+              className={"text-white"}
+              style={{ cursor: "pointer", color: "white" }}
+              href={"/legal/datenschutz"}
             >
               Datenschutz
             </a>
           </div>
           <div class="col-md-6 text-center p-2">
             <a
-              style={{ cursor: "pointer" }}
-              onClick={() =>
-                changeMarkup(impressum_markup, toggleShowModal(true))
-              }
+              className={"text-white"}
+              style={{ cursor: "pointer", color: "white" }}
+              href={"/legal/impressum"}
             >
               Impressum
             </a>
@@ -133,8 +131,9 @@ const LandingFooter = () => {
     </div> */}
           <div class="col-md-6 text-center p-2">
             <a
-              style={{ cursor: "pointer" }}
-              onClick={() => changeMarkup(agb_markup, toggleShowModal(true))}
+              className={"text-white"}
+              style={{ cursor: "pointer", color: "white" }}
+              href={"/legal/allgemeine-geschäftsbedingungen"}
             >
               AGB
             </a>

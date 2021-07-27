@@ -18,7 +18,7 @@ import {
 } from "reactstrap";
 import { withRouter } from "next/router";
 import { ImageFromCms } from "../../helpers/utils";
-import { primary } from "helpers/colorScheme";
+import { primary, primary_t60 } from "helpers/colorScheme";
 
 // export const trackFullpagePage = () => {
 //   const [page, setPage] = useState(null);
@@ -62,7 +62,7 @@ const ContactBar = (props) => {
       {scrollY == 0 ? (
         <div
           id={"contact"}
-          className={"justify-content-space-between p-2 pl-4"}
+          className={"justify-content-space-between p-2 pl-4 text-white bg-gradient"}
           style={{
             position: "absolute",
             top: 0,
@@ -70,8 +70,8 @@ const ContactBar = (props) => {
             width: "100%",
             height: "3em",
             fontSize: "0.9em",
-            backgroundColor: "#ebecf1",
             fontFamily: "Montserrat,Helvetica Neue,Arial,sans-serif",
+            //backgroundColor: primary_t60
           }}
         >
           <span>
