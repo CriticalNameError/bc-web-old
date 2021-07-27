@@ -76,13 +76,12 @@ const LegalPage = () => {
         className={"container-fluid mx-auto px-0 text-center"}
         style={{
           paddingTop: "150px",
-          backgroundColor: "rgb(235, 236, 241)",
         }}
       >
         <div className={"mx-auto text-justify mb-5"} style={{ maxWidth: "750px" }}>
           {/* <i>{convertDateString(data.page.firstPublishedAt)}</i> */}
-          <h1>{data.page.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: data.page.body }}></div>
+          <h1>{data.homePage.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: data.homePage.body }}></div>
           {/* <a href={"/blog"} className={"btn btn-primary"}>
             Zurück zur Übersicht
           </a> */}

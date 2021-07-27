@@ -78,7 +78,6 @@ const PostPage = () => {
         className={"container-fluid mx-auto px-0 text-center"}
         style={{
           paddingTop: "150px",
-          backgroundColor: "rgb(235, 236, 241)",
         }}
       >
         <div className={"mx-auto text-justify mb-5"} style={{ maxWidth: "750px" }}>
