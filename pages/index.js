@@ -57,7 +57,7 @@ const Index = () => {
   const [showModal, toggleShowModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   const [width, setWidth] = useState(0);
-  const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null)
+  const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,18 +66,15 @@ const Index = () => {
     const getMaximumServicesCardHeight = () => {
       let cards = document.getElementsByClassName("services-card");
       //let cardsHeights = cards.map(c => c.style.height);
-      let cardsArr = Array.prototype.slice.call( cards );
-      let cardHeight = cardsArr.map(c => c.clientHeight);
+      let cardsArr = Array.prototype.slice.call(cards);
+      let cardHeight = cardsArr.map((c) => c.clientHeight);
       setMaxServicesCardHeight(Math.max(...cardHeight));
-      
-
-
-    }
+    };
     // just trigger this so that the initial state
     // is updated as soon as the component is mounted
     // related: https://stackoverflow.com/a/63408216
     handleResize();
-    getMaximumServicesCardHeight()
+    getMaximumServicesCardHeight();
     window.addEventListener("resize", handleResize);
     window.addEventListener("resize", getMaximumServicesCardHeight);
     return () => {
@@ -152,17 +149,20 @@ const Index = () => {
             id={"services"}
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
-            
           >
-            <h2 className={"h2"}>Welche Faktoren bestimmen die    <span
-                        style={{
-                          wordBreak: "break-word",
-                          hyphens: "auto"
-                        }}
-                      >
-                        Wert&shy;entwicklung
-                      </span> von Wein?</h2>
-            <p style={{fontSize: "18px" }}>
+            <h2 className={"h2"}>
+              Welche Faktoren bestimmen die{" "}
+              <span
+                style={{
+                  wordBreak: "break-word",
+                  hyphens: "auto",
+                }}
+              >
+                Wert&shy;entwicklung
+              </span>{" "}
+              von Wein?
+            </h2>
+            <p style={{ fontSize: "18px" }}>
               Hochklassige Weine werden aufgrund einfacher Wirkmechanismen im
               Laufe der Jahre immer wertvoller.
             </p>
@@ -236,15 +236,18 @@ const Index = () => {
             <ImageFromCms
               title={"team_formal"}
               width={Math.min(width * 0.85, 1100)}
-              fill={(width > 991? "1200x450" : "600x430")}
+              fill={width > 991 ? "1200x450" : "600x430"}
               jpegquality={80}
               classes={"animated fadeIn img img-raised mb-3"}
             />
           </section>
 
-          <div className={"row mx-auto pt-5"} data-aos="fade-up"
+          <div
+            className={"row mx-auto pt-5"}
+            data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}>
+            style={{ maxWidth: "1200px" }}
+          >
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
               <i class="far fa-gem round-icon" style={{ color: primary }}></i>
             </div>
@@ -255,14 +258,20 @@ const Index = () => {
                     className={
                       "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
                     }
-                    style={(maxServicesCardHeight? {minHeight: maxServicesCardHeight} : {})}
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
                   >
                     <h3 class="text-center mt-0 h4">Exquisite Weine</h3>
-                    Wir bieten Ihnen hochklassige und seltene Weine für Ihr
-                    persönliches Weininvestment. Durch unser großes
-                    Einkaufsnetzwerk profitieren Sie von attraktiven
-                    Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
-                    Kapitals.
+                    <div className={"text-left"}>
+                      Wir bieten Ihnen hochklassige und seltene Weine für Ihr
+                      persönliches Weininvestment. Durch unser großes
+                      Einkaufsnetzwerk profitieren Sie von attraktiven
+                      Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
+                      Kapitals.
+                    </div>
                   </p>
                 </div>
               </div>
@@ -281,15 +290,21 @@ const Index = () => {
                     className={
                       "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
                     }
-                    style={(maxServicesCardHeight? {minHeight: maxServicesCardHeight} : {})}
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
                   >
                     <h3 class="text-center mt-0 h4">
                       Individuelles Wein-Portfolio
                     </h3>
-                    Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
-                    an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
-                    zusätzlich Ihren persönlichen Geschmack und Ihre
-                    individuellen Präferenzen als treibenden Faktor mit ein.
+                    <div className={"text-left"}>
+                      Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
+                      an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
+                      zusätzlich Ihren persönlichen Geschmack und Ihre
+                      individuellen Präferenzen als treibenden Faktor mit ein.
+                    </div>
                   </p>
                 </div>
               </div>
@@ -315,13 +330,21 @@ const Index = () => {
                     className={
                       "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
                     }
-                    style={(maxServicesCardHeight? {minHeight: maxServicesCardHeight} : {})}
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
                   >
-                    <h3 class="text-center mt-0 h4">Persönliches Online-Depot</h3>
-                    Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
-                    oder über die Website, die Möglichkeit auf Ihr persönliches
-                    Online-Depot zuzugreifen und sich über die Entwicklung Ihres
-                    Investments zu informieren.
+                    <h3 class="text-center mt-0 h4">
+                      Persönliches Online-Depot
+                    </h3>
+                    <div className={"text-left"}>
+                      Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
+                      oder über die Website, die Möglichkeit auf Ihr
+                      persönliches Online-Depot zuzugreifen und sich über die
+                      Entwicklung Ihres Investments zu informieren.
+                    </div>
                   </p>
                 </div>
               </div>
@@ -340,13 +363,19 @@ const Index = () => {
                     className={
                       "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
                     }
-                    style={(maxServicesCardHeight? {minHeight: maxServicesCardHeight} : {})}
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
                   >
                     <h3 class="text-center mt-0 h4">Fundierte Beratung</h3>
-                    Grundlage für den Erfolg Ihres Weininvestments ist eine
-                    umfassende Beratung, die Ihre speziellen Wünsche und
-                    Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
-                    Profi, wir bieten in jedem Fall die passende Beratung.
+                    <div className={"text-left"}>
+                      Grundlage für den Erfolg Ihres Weininvestments ist eine
+                      umfassende Beratung, die Ihre speziellen Wünsche und
+                      Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
+                      Profi, wir bieten in jedem Fall die passende Beratung.
+                    </div>
                   </p>
                 </div>
               </div>
@@ -372,14 +401,20 @@ const Index = () => {
                     className={
                       "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
                     }
-                    style={(maxServicesCardHeight? {minHeight: maxServicesCardHeight} : {})}
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
                   >
                     <h3 class="text-center mt-0 h4">Professionelle Lagerung</h3>
-                    Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
-                    klimatische Bedingungen sorgen dafür, dass er bestmöglich
-                    ausreift. Zudem ist das Lager als Umsatzsteuerlager
-                    deklariert. Das bedeutet, solange der Wein das Lager nicht
-                    verlässt, wird keine Mehrwertsteuer erhoben.
+                    <div className={"text-left"}>
+                      Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
+                      klimatische Bedingungen sorgen dafür, dass er bestmöglich
+                      ausreift. Zudem ist das Lager als Umsatzsteuerlager
+                      deklariert. Das bedeutet, solange der Wein das Lager nicht
+                      verlässt, wird keine Mehrwertsteuer erhoben.
+                    </div>
                   </p>
                 </div>
               </div>
@@ -398,14 +433,20 @@ const Index = () => {
                     className={
                       "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
                     }
-                    style={(maxServicesCardHeight? {minHeight: maxServicesCardHeight} : {})}
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
                   >
                     <h3 class="text-center mt-0 h4">Globales Netzwerk</h3>
-                    Wein ist ein endliches Gut und die internationale Nachfrage
-                    nach gereiften hochwertigen Weinen nimmt mit den Jahren zu.
-                    Wir unterstützen Sie dabei, Ihre Weine zum besten Zeitpunkt
-                    zu veräußern und bieten Ihnen den Zugang zu unserem
-                    weltweiten Netzwerk an Verkaufskanälen.
+                    <div className={"text-left"}>
+                      Wein ist ein endliches Gut und die internationale
+                      Nachfrage nach gereiften hochwertigen Weinen nimmt mit den
+                      Jahren zu. Wir unterstützen Sie dabei, Ihre Weine zum
+                      besten Zeitpunkt zu veräußern und bieten Ihnen den Zugang
+                      zu unserem weltweiten Netzwerk an Verkaufskanälen.
+                    </div>
                   </p>
                 </div>
               </div>

@@ -32,13 +32,14 @@ const ContactUs = () => {
   const [formSent, toggleFormSent] = useState(false);
   const [width, setWidth] = useState(0);
 
-
   useEffect(() => {
     const handleScroll = () => {
       toggleAtBottom(
         window.scrollY + window.outerHeight >
           document.body.clientHeight -
-            document.getElementById("footer").clientHeight
+            (document.getElementById("footer")
+              ? document.getElementById("footer").clientHeight
+              : 300)
       );
     };
 
@@ -46,9 +47,8 @@ const ContactUs = () => {
       setWidth(window.innerWidth);
     };
 
-
-
     handleScroll();
+
     handleResize();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
@@ -202,9 +202,13 @@ const ContactUs = () => {
           onClick={(e) => {
             toggleShowModal(true);
           }}
-        
         >
-          <small id={"contact-us-text"} className={"d-none d-md-inline " + (atBottom ? "text-white" : "text-primary")}>
+          <small
+            id={"contact-us-text"}
+            className={
+              "d-none d-md-inline " + (atBottom ? "text-white" : "text-primary")
+            }
+          >
             KONTAKT
           </small>{" "}
           <br />
