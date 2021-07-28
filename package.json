@@ -41,7 +41,7 @@
     "react-select": "^3.1.0",
     "react-toastify": "^6.0.8",
     "react-tooltip": "^4.2.11",
-    "react-vertical-timeline-component": "^3.3.1",
+    "react-vertical-timeline-component": "^3.3.3",
     "reactstrap": "8.0.0",
     "reaviz": "^9.5.4",
     "redux": "^4.0.5",

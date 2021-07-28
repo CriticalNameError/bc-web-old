@@ -133,7 +133,7 @@ const LandingFooter = () => {
             <a
               className={"text-white"}
               style={{ cursor: "pointer", color: "white" }}
-              href={"/legal/allgemeine-geschäftsbedingungen"}
+              href={"/legal/allgemeine-geschaeftsbedingungen"}
             >
               AGB
             </a>

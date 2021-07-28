@@ -347,7 +347,7 @@ background: $primary-color!important
     border-radius: 0px;
     }
     ::-webkit-scrollbar-thumb:hover{
-    background: #B3AFB3;
+    background: #8562af;
     }
     ::-webkit-scrollbar-track{
     background: #F0F0F0;
@@ -604,6 +604,12 @@ background: $primary-color!important
 
 
 @media only screen and (max-width: 1169px) {
+
+     .timeline-icon{
+        font-size: 20px!important;
+        padding: 10px !important;
+     }
+
     .vertical-timeline-description-inv {
         display: none;
     }
@@ -619,6 +625,8 @@ background: $primary-color!important
     
 
 }
+
+
 
 .accordion__button:before {
     color: $primary-color !important;

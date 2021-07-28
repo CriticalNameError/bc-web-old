@@ -604,6 +604,12 @@ background: $primary-color!important
 
 
 @media only screen and (max-width: 1169px) {
+
+     .timeline-icon{
+        font-size: 20px!important;
+        padding: 10px !important;
+     }
+
     .vertical-timeline-description-inv {
         display: none;
     }
@@ -619,6 +625,8 @@ background: $primary-color!important
     
 
 }
+
+
 
 .accordion__button:before {
     color: $primary-color !important;

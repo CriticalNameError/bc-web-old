@@ -547,6 +547,10 @@ html {
 }
 
 @media only screen and (max-width: 1169px) {
+  .timeline-icon {
+    font-size: 20px !important;
+    padding: 10px !important;
+  }
   .vertical-timeline-description-inv {
     display: none;
   }

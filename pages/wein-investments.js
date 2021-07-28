@@ -243,141 +243,7 @@ const WineInvestments = () => {
             </div>
           </div>
 
-          <div>
-            <div class="container text-center pb-5 mt-5">
-              <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className={"mb-3"}>
-                <h2 className={"h2"}>
-                  Wie läuft ein{" "}
-                  <span
-                    style={{
-                      wordBreak: "break-word",
-                      hyphens: "auto",
-                    }}
-                  >
-                    Wein&shy;investment
-                  </span>{" "}
-                  bei Berghaus & Cie. ab?
-                </h2>
-              </div>
-
-              <VerticalTimeline>
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                  
-                  iconStyle={{ background: primary, color: "#fff" }}
-                  icon={
-                    <i
-                      class="now-ui-icons sport_user-run text-white"
-                      style={{
-                        color: primary,
-                        fontSize: "30px",
-                        padding: "13px",
-                      }}
-                    ></i>
-                  }
-                >
-                  <h3 className="vertical-timeline-element-title">Beratung</h3>
-
-                  <p>
-                    Wir sind für Sie da und entwickeln gemeinsam Ihre ganz
-                    persönliche Anlagestrategie.
-                  </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                 
-                  iconStyle={{ background: primary, color: "#fff" }}
-                  icon={
-                    <i
-                      class="now-ui-icons sport_user-run text-white"
-                      style={{
-                        color: primary,
-                        fontSize: "30px",
-                        padding: "13px",
-                      }}
-                    ></i>
-                  }
-                >
-                  <h3 className="vertical-timeline-element-title">
-                    Kaufabwicklung
-                  </h3>
-
-                  <p>
-                    Über unser globales Netzwerk beziehen wir Ihre Weine mit
-                    lückenloser Provenienz zu besten Konditionen.
-                  </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                 
-                  iconStyle={{ background: primary, color: "#fff" }}
-                  icon={
-                    <i
-                      class="now-ui-icons sport_user-run text-white"
-                      style={{
-                        color: primary,
-                        fontSize: "30px",
-                        padding: "13px",
-                      }}
-                    ></i>
-                  }
-                >
-                  <h3 className="vertical-timeline-element-title">Transport</h3>
-
-                  <p>
-                    Nach dem Kauf werden Ihre exquisiten Weine professionell und
-                    sicher in unser Lager transportiert.
-                  </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                 
-                  iconStyle={{ background: primary, color: "#fff" }}
-                  icon={
-                    <i
-                      class="now-ui-icons sport_user-run text-white"
-                      style={{
-                        color: primary,
-                        fontSize: "30px",
-                        padding: "13px",
-                      }}
-                    ></i>
-                  }
-                >
-                  <h3 className="vertical-timeline-element-title">Lagerung</h3>
-                  <h4 className="vertical-timeline-element-subtitle"></h4>
-                  <p>
-                    In unserem Weinlager können Ihre Weine versichert und unter
-                    besten klimatischen Bedingungen optimal ausreifen.
-                  </p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--education"
-                  
-                  iconStyle={{ background: primary, color: "#fff" }}
-                  icon={
-                    <i
-                      class="now-ui-icons sport_user-run text-white"
-                      style={{
-                        color: primary,
-                        fontSize: "30px",
-                        padding: "13px",
-                      }}
-                    ></i>
-                  }
-                >
-                  <h3 className="vertical-timeline-element-title">Verkauf</h3>
-
-                  <p>
-                    Wir behalten die Reifung und Wertentwicklung Ihres Wein im
-                    Blick, damit Sie ihn zum bestmöglichen Zeitpunkt veräußern
-                    können.
-                  </p>
-                </VerticalTimelineElement>
-              </VerticalTimeline>
-            </div>
-          </div>
-
+         
           <div class="container mt-md-n5 mt-sm-5 pt-5 mb-sm-5 pb-5">
             <h2>
               Was Sie vorab wissen sollten ...
@@ -472,7 +338,7 @@ const WineInvestments = () => {
               steuerliche Fragen wenden Sie sich bitte an einen Steuerberater.
               Es gelten die Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
               GmbH, eine aktuelle Fassung finden Sie unter
-              https://www.berghaus-cie.com/agb.
+              https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen.
             </p>
           </div>
         </div>

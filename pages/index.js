@@ -97,7 +97,7 @@ const Index = () => {
             <div className={"mb-3 mb-md-4"}>
               <ImageFromCms
                 title={"logo_subline_lavendel"}
-                width={350}
+                width={width > 500 ? 550 : 250}
                 jpegquality={5}
               ></ImageFromCms>
             </div>
@@ -144,7 +144,7 @@ const Index = () => {
           </div>
         </div>
         <div>
-          <div
+          {/* <div
             class="container text-center pb-5"
             id={"services"}
             data-aos="fade-up"
@@ -224,11 +224,12 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <section
-            className={"mx-auto pt-5 text-center"}
+            className={"mx-auto text-center"}
             data-aos="fade-up"
+            id={"services"}
             data-aos-anchor-placement="center-bottom"
             style={{ maxWidth: "1200px" }}
           >
@@ -450,6 +451,169 @@ const Index = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="container text-center pb-5 mt-5" style={{overflowX: "hidden"}}>
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              className={"mb-3"}
+            >
+              <h2 className={"h2"}>
+                Wie läuft ein{" "}
+                <span
+                  style={{
+                    wordBreak: "break-word",
+                    hyphens: "auto",
+                  }}
+                >
+                  Wein&shy;investment
+                </span>{" "}
+                bei Berghaus & Cie. ab?
+              </h2>
+            </div>
+
+            <VerticalTimeline>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                iconStyle={{ background: primary, color: "#fff" }}
+                icon={
+                  <i
+                    class="now-ui-icons sport_user-run text-white timeline-icon"
+                    style={{
+                      color: primary,
+                      fontSize: "30px",
+                      padding: "13px",
+                    }}
+                  ></i>
+                }
+              >
+                <h3 className="vertical-timeline-element-title">Beratung</h3>
+
+                <p>
+                  Wir sind für Sie da und entwickeln gemeinsam Ihre ganz
+                  persönliche Anlagestrategie.
+                </p>
+              </VerticalTimelineElement>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                iconStyle={{ background: primary, color: "#fff" }}
+                icon={
+                  <i
+                    class="now-ui-icons sport_user-run text-white timeline-icon"
+                    style={{
+                      color: primary,
+                      fontSize: "30px",
+                      padding: "13px",
+                    }}
+                  ></i>
+                }
+              >
+                <h3 className="vertical-timeline-element-title">
+                  Kaufabwicklung
+                </h3>
+
+                <p>
+                  Über unser globales Netzwerk beziehen wir Ihre Weine mit
+                  lückenloser Provenienz zu besten Konditionen.
+                </p>
+              </VerticalTimelineElement>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                iconStyle={{ background: primary, color: "#fff" }}
+                icon={
+                  <i
+                    class="now-ui-icons sport_user-run text-white timeline-icon"
+                    style={{
+                      color: primary,
+                      fontSize: "30px",
+                      padding: "13px",
+                    }}
+                  ></i>
+                }
+              >
+                <h3 className="vertical-timeline-element-title">Transport</h3>
+
+                <p>
+                  Nach dem Kauf werden Ihre exquisiten Weine professionell und
+                  sicher in unser Lager transportiert.
+                </p>
+              </VerticalTimelineElement>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                iconStyle={{ background: primary, color: "#fff" }}
+                icon={
+                  <i
+                    class="now-ui-icons sport_user-run text-white timeline-icon"
+                    style={{
+                      color: primary,
+                      fontSize: "30px",
+                      padding: "13px",
+                    }}
+                  ></i>
+                }
+              >
+                <h3 className="vertical-timeline-element-title">Lagerung</h3>
+                <h4 className="vertical-timeline-element-subtitle"></h4>
+                <p>
+                  In unserem Weinlager können Ihre Weine versichert und unter
+                  besten klimatischen Bedingungen optimal ausreifen.
+                </p>
+              </VerticalTimelineElement>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--education"
+                iconStyle={{ background: primary, color: "#fff" }}
+                icon={
+                  <i
+                    class="now-ui-icons sport_user-run text-white timeline-icon"
+                    style={{
+                      color: primary,
+                      fontSize: "30px",
+                      padding: "13px",
+                    }}
+                  ></i>
+                }
+              >
+                <h3 className="vertical-timeline-element-title">Verkauf</h3>
+
+                <p>
+                  Wir behalten die Reifung und Wertentwicklung Ihres Wein im
+                  Blick, damit Sie ihn zum bestmöglichen Zeitpunkt veräußern
+                  können.
+                </p>
+              </VerticalTimelineElement>
+            </VerticalTimeline>
+          </div>
+        </div>
+
+        <div>
+          <div class="container text-center pb-5 mt-5">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              className={"mb-3"}
+            >
+              <ImageFromCms
+                title={(width  > 600? "mockup_all" : "mockup_mobile")}
+                width={width > 991 ? (width > 1500 ? 1100 : 950) : 300}
+                jpegquality={30}
+              />
+              <a href={"https://weindepot.berghaus-cie.com/register"}>
+                <button
+                  className={"btn btn-primary"}
+                  style={{ fontSize: "16px" }}
+                >
+                  <span
+                    className={
+                      "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
+                    }
+                  ></span>
+                  Jetzt Weindepot eröffnen
+                </button>
+              </a>
             </div>
           </div>
         </div>
