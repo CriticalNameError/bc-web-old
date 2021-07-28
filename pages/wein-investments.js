@@ -27,6 +27,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import ContactUs from "components/ContactUs";
 
 let potentialanalyse_markup = (
   <div className={"p-4"}>
@@ -74,9 +75,12 @@ let zustand_lagerung_markup = (
 
 const WineInvestments = () => {
   const [showModal, toggleShowModal] = useState(false);
+  const [showContactModal, toggleShowContactModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   return (
     <>
+      <ContactUs showButton={true} />
+      <ContactUs showButton={false} showModal={showContactModal} />
       <>
         <CustomModal
           markup={markup}
@@ -148,11 +152,117 @@ const WineInvestments = () => {
               <p style={{ fontSize: "18px" }}>
                 Stabile Wertentwicklung bei geringer Volatilität
               </p>
-              <div className={"card p-4"}>
+              <div className={"card p-4 pb-5"}>
                 <WineDaxSap />
-                <p className={"mt-4 pull-right"} style={{ fontSize: "12px" }}>
-                  * im Vergleich zum Vorjahresdurchschnitt
-                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="container text-center pb-5 mt-5"
+            id={"services"}
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
+            <h2 className={"h2"}>
+              Welche Faktoren bestimmen die{" "}
+              <span
+                style={{
+                  wordBreak: "break-word",
+                  hyphens: "auto",
+                }}
+              >
+                Wert&shy;entwicklung
+              </span>{" "}
+              von Wein?
+            </h2>
+            <p style={{ fontSize: "18px" }}>
+              Hochklassige Weine werden aufgrund einfacher Wirkmechanismen im
+              Laufe der Jahre immer wertvoller.
+            </p>
+          </div>
+
+          <div class="container mt-sm-n5 animated fadeIn slower">
+            <div className={"row mt-5"}>
+              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+                <i
+                  class="fas fa-rocket mb-n3 ml-n3 round-icon"
+                  style={{ color: primary }}
+                ></i>
+              </div>
+              <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="info info-horizontal">
+                  <div class="card p-3">
+                    <h5 class="">Geringe Mengen</h5>
+                    <p class="text-left">
+                      Weltweit gibt es in allen hochklassigen Weinbaugebieten
+                      strenge Richtlinien und Regeln, um sowohl die Qualität zu
+                      kontrollieren als auch die Produktion zu begrenzen.
+                      <br />
+                      <br />
+                      Exquisite Weine, die sich für ein Weininvestment eignen,
+                      stehen nur in einem sehr begrenzten Umfang (circa 1 % der
+                      weltweiten Weinproduktion) zu Verfügung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-sm-n5 animated fadeIn slower">
+            <div className={"row mt-5"}>
+              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+                <i
+                  class="fas fa-hands-helping mb-n3 ml-n3 round-icon"
+                  style={{ color: primary }}
+                ></i>
+              </div>
+              <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="info info-horizontal">
+                  <div class="card p-3">
+                    <h5 class="">Reifung</h5>
+                    <p class="text-left">
+                      Viele hochwertige Weine haben ein Entwicklungspotenzial,
+                      welches sie erst nach Jahren und teilweise sogar erst nach
+                      Jahrzehnten angemessener Lagerung voll ausschöpfen können.
+                      <br />
+                      <br />
+                      Je besser ein Wein mit dem Alter wird, umso
+                      begehrenswerter und „wertvoller“ wird er auch im monetären
+                      Sinn.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-sm-n5 animated fadeIn slower">
+            <div className={"row mt-5"}>
+              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+                <i
+                  class="fas fa-hands-helping mb-n3 ml-n3 round-icon"
+                  style={{ color: primary }}
+                ></i>
+              </div>
+              <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="info info-horizontal">
+                  <div class="card p-3">
+                    <h5 class="">Angebot & Nachfrage</h5>
+                    <p class="text-left">
+                      Angebot und Nachfrage bestimmen, wie überall, auch bei
+                      hochklassigen Weinen den Markt. Mit jeder Flasche, die
+                      konsumiert wird, reduziert sich das verfügbare Angebot der
+                      ohnehin seltenen Weine.
+                      <br />
+                      <br />
+                      Da im Laufe der Zeit der weltweiten Nachfrage ein immer
+                      geringer werdendes Angebot gegenüber steht, erhöht sich
+                      der Preis der Weine.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -243,11 +353,8 @@ const WineInvestments = () => {
             </div>
           </div>
 
-         
           <div class="container mt-md-n5 mt-sm-5 pt-5 mb-sm-5 pb-5">
-            <h2>
-              Was Sie vorab wissen sollten ...
-            </h2>
+            <h2>Was Sie vorab wissen sollten ...</h2>
 
             <Accordion allowZeroExpanded={true} className={"mt-4 card"}>
               <AccordionItem>
@@ -328,6 +435,26 @@ const WineInvestments = () => {
                 </AccordionItemPanel>
               </AccordionItem>
             </Accordion>
+
+            <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+              <span style={{fontSize: "18px"}}>
+              Für alle weiteren Fragen zum Thema stehen wir Ihnen gerne per Email oder telefonisch zur Verfügung.<br/>
+              </span>
+            <a onClick={() => toggleShowContactModal(!showContactModal)}>
+              <button
+                className={"btn btn-primary mt-4 p-3 px-5"}
+                style={{ fontSize: "18px" }}
+              >
+                <span
+                  className={
+                    "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
+                  }
+                ></span>
+                Jetzt kontaktieren
+              </button>
+            </a>
+          </div>
+
             <h3 className={"mt-5"}>Haftungsausschluss</h3>
             <p className={"text-justify"}>
               Die Firma Berghaus & Cie. GmbH ist ein Weinhandelsunternehmen, das
@@ -341,9 +468,11 @@ const WineInvestments = () => {
               https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen.
             </p>
           </div>
+
+    
         </div>
       </>
-      );
+
       <LandingFooter />
     </>
   );

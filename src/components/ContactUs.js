@@ -22,7 +22,7 @@ const SEND_MESSAGE = gql`
   }
 `;
 
-const ContactUs = () => {
+const ContactUs = (props) => {
   let contact_name;
   let senderEmail;
   let message;
@@ -57,6 +57,10 @@ const ContactUs = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    toggleShowModal(props.showModal);
+  }, [props.showModal]);
 
   return (
     <>
@@ -187,45 +191,47 @@ const ContactUs = () => {
           )}
         </ModalBody>
       </Modal>
-
-      <div
-        className={"text-center"}
-        style={{
-          cursor: "pointer",
-          zIndex: "100",
-          position: "fixed",
-          bottom: "10px",
-          right: "10px",
-        }}
-      >
-        <a
-          onClick={(e) => {
-            toggleShowModal(true);
+      {props.showButton ? (
+        <div
+          className={"text-center"}
+          style={{
+            cursor: "pointer",
+            zIndex: "100",
+            position: "fixed",
+            bottom: "10px",
+            right: "10px",
           }}
         >
-          <small
-            id={"contact-us-text"}
-            className={
-              "d-none d-md-inline " + (atBottom ? "text-white" : "text-primary")
-            }
+          <a
+            onClick={(e) => {
+              toggleShowModal(true);
+            }}
           >
-            KONTAKT
-          </small>{" "}
-          <br />
-          <i
-            id={"contact-us"}
-            className={
-              "fas fa-comments round-icon animated infinite pulse " +
-              (atBottom ? "bg-white text-primary" : "bg-primary text-white")
-            }
-            // style={{
-            //   color: "#fff",
-            //   backgroundImage:
-            //     "linear-gradient(-45deg, #a0b9b9 0%, " + primary + " 100%)",
-            // }}
-          ></i>
-        </a>
-      </div>
+            <small
+              id={"contact-us-text"}
+              className={
+                "d-none d-md-inline " +
+                (atBottom ? "text-white" : "text-primary")
+              }
+            >
+              KONTAKT
+            </small>{" "}
+            <br />
+            <i
+              id={"contact-us"}
+              className={
+                "fas fa-comments round-icon animated infinite pulse " +
+                (atBottom ? "bg-white text-primary" : "bg-primary text-white")
+              }
+              // style={{
+              //   color: "#fff",
+              //   backgroundImage:
+              //     "linear-gradient(-45deg, #a0b9b9 0%, " + primary + " 100%)",
+              // }}
+            ></i>
+          </a>
+        </div>
+      ) : null}
     </>
   );
 };

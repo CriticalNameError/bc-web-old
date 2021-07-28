@@ -12,10 +12,11 @@ import {
 import LandingFooter from "../src/components/Footer/LandingFooter";
 import { urlObjectKeys } from "next/dist/next-server/lib/utils";
 import { ImageFromCms } from "helpers/utils";
+import ContactUs from "components/ContactUs";
 
 const AboutUs = () => {
   const [width, setWidth] = useState(0);
-
+  const [showContactModal, toggleShowContactModal] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -34,6 +35,8 @@ const AboutUs = () => {
 
   return (
     <>
+      <ContactUs showButton={true} />
+      <ContactUs showButton={false} showModal={showContactModal} />
       <div>
         <div className={"container-fluid"}>
           <div className="row" style={{ height: "100vh" }}>
@@ -43,7 +46,7 @@ const AboutUs = () => {
               {/* <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img> */}
               <ImageFromCms
                 title={"anagram_lavendel"}
-                width={270}
+                width={230}
                 classes={"animated fadeIn slower img mb-5"}
               />
 
@@ -394,6 +397,26 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+            <span style={{ fontSize: "18px" }}>
+              Für alle weiteren Fragen zum Thema stehen wir Ihnen gerne per
+              Email oder telefonisch zur Verfügung.
+              <br />
+            </span>
+            <a onClick={() => toggleShowContactModal(!showContactModal)}>
+              <button
+                className={"btn btn-primary mt-4 p-3 px-5"}
+                style={{ fontSize: "18px" }}
+              >
+                <span
+                  className={
+                    "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
+                  }
+                ></span>
+                Jetzt kontaktieren
+              </button>
+            </a>
           </div>
         </div>
       </div>

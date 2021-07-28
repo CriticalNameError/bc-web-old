@@ -265,13 +265,12 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Exquisite Weine</h3>
+                    <h3 class="text-center mt-0 h4">Fundierte Beratung</h3>
                     <div className={"text-left"}>
-                      Wir bieten Ihnen hochklassige und seltene Weine für Ihr
-                      persönliches Weininvestment. Durch unser großes
-                      Einkaufsnetzwerk profitieren Sie von attraktiven
-                      Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
-                      Kapitals.
+                      Grundlage für den Erfolg Ihres Weininvestments ist eine
+                      umfassende Beratung, die Ihre speziellen Wünsche und
+                      Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
+                      Profi, wir bieten in jedem Fall die passende Beratung.
                     </div>
                   </p>
                 </div>
@@ -297,14 +296,13 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">
-                      Individuelles Wein-Portfolio
-                    </h3>
+                    <h3 class="text-center mt-0 h4">Exquisite Weine</h3>
                     <div className={"text-left"}>
-                      Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
-                      an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
-                      zusätzlich Ihren persönlichen Geschmack und Ihre
-                      individuellen Präferenzen als treibenden Faktor mit ein.
+                      Wir bieten Ihnen hochklassige und seltene Weine für Ihr
+                      persönliches Weininvestment. Durch unser großes
+                      Einkaufsnetzwerk profitieren Sie von attraktiven
+                      Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
+                      Kapitals.
                     </div>
                   </p>
                 </div>
@@ -337,14 +335,12 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">
-                      Persönliches Online-Depot
-                    </h3>
+                    <h3 class="text-center mt-0 h4">Individuelles Portfolio</h3>
                     <div className={"text-left"}>
-                      Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
-                      oder über die Website, die Möglichkeit auf Ihr
-                      persönliches Online-Depot zuzugreifen und sich über die
-                      Entwicklung Ihres Investments zu informieren.
+                      Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
+                      an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
+                      zusätzlich Ihren persönlichen Geschmack und Ihre
+                      individuellen Präferenzen als treibenden Faktor mit ein.
                     </div>
                   </p>
                 </div>
@@ -370,12 +366,12 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Fundierte Beratung</h3>
+                    <h3 class="text-center mt-0 h4">Digitales Weindepot</h3>
                     <div className={"text-left"}>
-                      Grundlage für den Erfolg Ihres Weininvestments ist eine
-                      umfassende Beratung, die Ihre speziellen Wünsche und
-                      Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
-                      Profi, wir bieten in jedem Fall die passende Beratung.
+                      Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
+                      oder über die Website, die Möglichkeit auf Ihr
+                      persönliches Online-Depot zuzugreifen und sich über die
+                      Entwicklung Ihres Investments zu informieren.
                     </div>
                   </p>
                 </div>
@@ -408,7 +404,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Professionelle Lagerung</h3>
+                    <h3 class="text-center mt-0 h4">Optimale Lagerung</h3>
                     <div className={"text-left"}>
                       Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
                       klimatische Bedingungen sorgen dafür, dass er bestmöglich
@@ -456,7 +452,10 @@ const Index = () => {
         </div>
 
         <div>
-          <div class="container text-center pb-5 mt-5" style={{overflowX: "hidden"}}>
+          <div
+            class="container text-center pb-5 mt-5"
+            style={{ overflowX: "hidden" }}
+          >
             <div
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
@@ -597,14 +596,14 @@ const Index = () => {
               className={"mb-3"}
             >
               <ImageFromCms
-                title={(width  > 600? "mockup_all" : "mockup_mobile")}
+                title={width > 600 ? "mockup_all" : "mockup_mobile"}
                 width={width > 991 ? (width > 1500 ? 1100 : 950) : 300}
                 jpegquality={30}
               />
               <a href={"https://weindepot.berghaus-cie.com/register"}>
                 <button
-                  className={"btn btn-primary"}
-                  style={{ fontSize: "16px" }}
+                  className={"btn btn-primary p-3 px-5"}
+                  style={{ fontSize: "18px" }}
                 >
                   <span
                     className={

@@ -103,7 +103,7 @@ class BlogPage extends React.Component {
   render() {
     return (
       <>
-      <ContactUs></ContactUs>
+      <ContactUs showButton={true} />
 
         
 
