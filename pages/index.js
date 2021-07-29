@@ -104,16 +104,12 @@ const Index = () => {
 
             <div
               class="animated fadeIn slower mx-auto"
-              style={{ maxWidth: "750px", fontSize: "18px" }}
+              style={{ maxWidth: "750px"}}
             >
-              <p>
+              <p className={"h3"}>
                 Wir verbinden die traditionelle Welt der exquisiten Weine mit
                 der modernen Investmentwelt.
-                <br /> <br />
-                Berghaus & Cie. bietet Ihnen Zugang zu den besten Weinen der
-                Welt für Ihr persönliches Weininvestment. Wir unterstützen Sie
-                beim Vermögensaufbau durch den Erwerb von Sachwerten – fundiert,
-                transparent und mit Unterstützung modernster Technologien.
+              
               </p>
 
               {/* <h2 class="text-left d-inline heading mb-4">
@@ -233,7 +229,14 @@ const Index = () => {
             data-aos-anchor-placement="center-bottom"
             style={{ maxWidth: "1200px" }}
           >
-            <h2 className={"h2"}>Was dürfen Sie von uns erwarten?</h2>
+            <h2 className={"h3"}>Was dürfen Sie von uns erwarten?</h2>
+            <p className={"mx-auto"} style={{fontSize: "18px", maxWidth: "750px"}}>
+            Berghaus & Cie. bietet Ihnen Zugang zu den besten Weinen der
+                Welt für Ihr persönliches Weininvestment. Wir unterstützen Sie
+                beim Vermögensaufbau durch den Erwerb von Sachwerten – fundiert,
+                transparent und mit Unterstützung modernster Technologien.
+            </p>
+
             <ImageFromCms
               title={"team_formal"}
               width={Math.min(width * 0.85, 1100)}
@@ -265,7 +268,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Fundierte Beratung</h3>
+                    <h3 class="text-center mt-0 h5">Fundierte Beratung</h3>
                     <div className={"text-left"}>
                       Grundlage für den Erfolg Ihres Weininvestments ist eine
                       umfassende Beratung, die Ihre speziellen Wünsche und
@@ -296,7 +299,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Exquisite Weine</h3>
+                    <h3 class="text-center mt-0 h5">Exquisite Weine</h3>
                     <div className={"text-left"}>
                       Wir bieten Ihnen hochklassige und seltene Weine für Ihr
                       persönliches Weininvestment. Durch unser großes
@@ -335,7 +338,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Individuelles Portfolio</h3>
+                    <h3 class="text-center mt-0 h5">Individuelles Portfolio</h3>
                     <div className={"text-left"}>
                       Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
                       an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
@@ -366,7 +369,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Digitales Weindepot</h3>
+                    <h3 class="text-center mt-0 h5">Digitales Weindepot</h3>
                     <div className={"text-left"}>
                       Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
                       oder über die Website, die Möglichkeit auf Ihr
@@ -404,7 +407,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Optimale Lagerung</h3>
+                    <h3 class="text-center mt-0 h5">Optimale Lagerung</h3>
                     <div className={"text-left"}>
                       Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
                       klimatische Bedingungen sorgen dafür, dass er bestmöglich
@@ -436,7 +439,7 @@ const Index = () => {
                         : {}
                     }
                   >
-                    <h3 class="text-center mt-0 h4">Globales Netzwerk</h3>
+                    <h3 class="text-center mt-0 h5">Globales Netzwerk</h3>
                     <div className={"text-left"}>
                       Wein ist ein endliches Gut und die internationale
                       Nachfrage nach gereiften hochwertigen Weinen nimmt mit den
@@ -461,7 +464,7 @@ const Index = () => {
               data-aos-anchor-placement="center-bottom"
               className={"mb-3"}
             >
-              <h2 className={"h2"}>
+              <h2 className={"h3"}>
                 Wie läuft ein{" "}
                 <span
                   style={{
@@ -490,9 +493,9 @@ const Index = () => {
                   ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title">Beratung</h3>
+                <h3 className="vertical-timeline-element-title h5">Beratung</h3>
 
-                <p>
+                <p style={{fontSize: "14px"}}>
                   Wir sind für Sie da und entwickeln gemeinsam Ihre ganz
                   persönliche Anlagestrategie.
                 </p>
@@ -511,11 +514,11 @@ const Index = () => {
                   ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title">
+                <h3 className="vertical-timeline-element-title h5">
                   Kaufabwicklung
                 </h3>
 
-                <p>
+                <p style={{fontSize: "14px"}}>
                   Über unser globales Netzwerk beziehen wir Ihre Weine mit
                   lückenloser Provenienz zu besten Konditionen.
                 </p>
@@ -534,9 +537,9 @@ const Index = () => {
                   ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title">Transport</h3>
+                <h3 className="vertical-timeline-element-title h5">Transport</h3>
 
-                <p>
+                <p style={{fontSize: "14px"}}>
                   Nach dem Kauf werden Ihre exquisiten Weine professionell und
                   sicher in unser Lager transportiert.
                 </p>
@@ -555,9 +558,9 @@ const Index = () => {
                   ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title">Lagerung</h3>
+                <h3 className="vertical-timeline-element-title h5">Lagerung</h3>
                 <h4 className="vertical-timeline-element-subtitle"></h4>
-                <p>
+                <p style={{fontSize: "14px"}}>
                   In unserem Weinlager können Ihre Weine versichert und unter
                   besten klimatischen Bedingungen optimal ausreifen.
                 </p>
@@ -576,9 +579,9 @@ const Index = () => {
                   ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title">Verkauf</h3>
+                <h3 className="vertical-timeline-element-title h5">Verkauf</h3>
 
-                <p>
+                <p style={{fontSize: "14px"}}>
                   Wir behalten die Reifung und Wertentwicklung Ihres Wein im
                   Blick, damit Sie ihn zum bestmöglichen Zeitpunkt veräußern
                   können.

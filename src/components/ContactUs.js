@@ -101,12 +101,13 @@ const ContactUs = (props) => {
               }}
             >
               <div class="text-center">
-                <h4 class="">Schreiben Sie uns!</h4>
+              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> +49 175 678 7654 <br/> oder schreiben Sie uns</h4>
+            
               </div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6 col-sm-12 pr-2">
-                    <label>Name</label>
+                    {/* <label>Name</label> */}
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
@@ -116,7 +117,7 @@ const ContactUs = (props) => {
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Name..."
+                        placeholder="Name und Vorname"
                         aria-label="Name..."
                         autocomplete="given-name"
                         ref={(node) => {
@@ -127,7 +128,7 @@ const ContactUs = (props) => {
                   </div>
                   <div class="col-md-6 col-sm-12 pl-2">
                     <div class="form-group">
-                      <label>Email</label>
+                      {/* <label>Mail</label> */}
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <span class="input-group-text">
@@ -137,7 +138,7 @@ const ContactUs = (props) => {
                         <input
                           type="email"
                           class="form-control"
-                          placeholder="Email Here..."
+                          placeholder="Ihre Mailadresse"
                           autocomplete="email"
                           ref={(node) => {
                             senderEmail = node;
@@ -149,10 +150,11 @@ const ContactUs = (props) => {
                 </div>
 
                 <div class="form-group">
-                  <label>Nachricht</label>
+                  {/* <label>Ihre Nachricht</label> */}
                   <textarea
                     name="message"
                     class="form-control"
+                    placeholder={"Ihre Nachricht"}
                     id="message"
                     rows="3"
                     ref={(node) => {

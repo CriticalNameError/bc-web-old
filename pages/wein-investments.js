@@ -31,7 +31,7 @@ import ContactUs from "components/ContactUs";
 
 let potentialanalyse_markup = (
   <div className={"p-4"}>
-    <p className={"h3 text-primary"}>Potentialanalyse</p>
+    <p className={"h5 text-primary"}>Potentialanalyse</p>
     In die Beurteilung und die Auswahl der Weine fließen bei Berghaus & Cie.
     unterschiedliche Faktoren ein. Hierzu gehören, z. B. die Reputation des
     Weinguts, die Bewertungen der einzelnen Jahrgänge durch renommierte
@@ -46,7 +46,7 @@ let potentialanalyse_markup = (
 );
 let provenienz_markup = (
   <div className={"p-4"}>
-    <p className={"h3 text-primary"}>Lückenlose Provenienz</p>
+    <p className={"h5 text-primary"}>Lückenlose Provenienz</p>
     Unseren strengen Selektionskriterien erfüllen nur hochklassige Weine mit
     lückenloser Provenienz. Berghaus & Cie. bezieht diese entweder direkt vom
     Weingut oder von autorisierten Händlern. Nur so können wir sicherstellen,
@@ -60,7 +60,7 @@ let provenienz_markup = (
 );
 let zustand_lagerung_markup = (
   <div className={"p-4"}>
-    <p className={"h3 text-primary"}>Zustand & Lagerung</p>
+    <p className={"h5 text-primary"}>Zustand & Lagerung</p>
     Der Zustand des Weins und dessen Lagerung, vorzugsweise in den Original-
     Holzkisten des Weinguts, spielen eine wesentliche Rolle. Das Hauptaugenmerk
     liegt hierbei auf der vorhandenen Füllmenge, dem Zustand der Flasche, des
@@ -95,23 +95,23 @@ const WineInvestments = () => {
               <div className={"mb-3 mb-md-4"}>
                 <i
                   className="fas fa-seedling ml-2"
-                  style={{ color: primary_t60, fontSize: "1em" }}
+                  style={{ color: primary_t60, fontSize: "2em" }}
                 ></i>
                 <i
                   className="fas fa-seedling ml-2 animated fadeInLeft"
-                  style={{ color: primary_t80, fontSize: "2.5em" }}
+                  style={{ color: primary_t80, fontSize: "5em" }}
                 ></i>
                 <i
                   className="fas fa-seedling ml-2 animated fadeInLeft slower"
-                  style={{ color: primary, fontSize: "5em" }}
+                  style={{ color: primary, fontSize: "10em" }}
                 ></i>
               </div>
 
               <div
                 class="animated fadeIn slower mx-auto"
-                style={{ maxWidth: "750px", fontSize: "18px" }}
+                style={{ maxWidth: "750px" }}
               >
-                <h1>
+                {/* <h1>
                   <span
                     style={{
                       wordBreak: "break-word",
@@ -120,8 +120,8 @@ const WineInvestments = () => {
                   >
                     Wein&shy;investments
                   </span>
-                </h1>
-                <p>
+                </h1> */}
+                <p className={"h3"} style={{ fontSize: "24px" }}>
                   Warum Wein nicht nur Genuss, sondern auch stabile Renditen
                   bringen kann.
                 </p>
@@ -146,7 +146,7 @@ const WineInvestments = () => {
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
             >
-              <h2 className={"h2"}>
+              <h2 className={"h3"} style={{ fontSize: "24px" }}>
                 Wie entwickelte sich der Liv-ex Fine Wine 1000 Index?
               </h2>
               <p style={{ fontSize: "18px" }}>
@@ -164,7 +164,7 @@ const WineInvestments = () => {
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
           >
-            <h2 className={"h2"}>
+            <h2 className={"h3"} style={{ fontSize: "24px" }}>
               Welche Faktoren bestimmen die{" "}
               <span
                 style={{
@@ -273,7 +273,7 @@ const WineInvestments = () => {
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
             >
-              <h2 className={"h2"}>
+              <h2 className={"h3"} style={{ fontSize: "24px" }}>
                 Was macht ein{" "}
                 <span
                   style={{
@@ -306,7 +306,9 @@ const WineInvestments = () => {
                       style={{ color: primary }}
                     ></i>
                     <p>
-                      <h3 className={"mb-0"}>Potentialanalyse</h3>
+                      <h3 className={"mb-0 h5"} style={{ fontSize: "18px" }}>
+                        Potentialanalyse
+                      </h3>
                       <b className={"text-primary"}>mehr erfahren</b>
                     </p>
                   </div>
@@ -323,7 +325,9 @@ const WineInvestments = () => {
                       style={{ color: primary }}
                     ></i>
                     <p>
-                      <h3 className={"mb-0"}>Lückenlose Provenienz</h3>
+                      <h3 className={"mb-0 h5"} style={{ fontSize: "18px" }}>
+                        Lückenlose Provenienz
+                      </h3>
                       <b className={"text-primary"}>mehr erfahren</b>
                     </p>
                   </div>
@@ -344,7 +348,9 @@ const WineInvestments = () => {
                       style={{ color: primary }}
                     ></i>
                     <p>
-                      <h3 className={"mb-0"}>Zustand & Lagerung</h3>
+                      <h3 className={"mb-0"} style={{ fontSize: "18px" }}>
+                        Zustand & Lagerung
+                      </h3>
                       <b className={"text-primary"}>mehr erfahren</b>
                     </p>
                   </div>
@@ -353,8 +359,10 @@ const WineInvestments = () => {
             </div>
           </div>
 
-          <div class="container mt-md-n5 mt-sm-5 pt-5 mb-sm-5 pb-5">
-            <h2>Was Sie vorab wissen sollten ...</h2>
+          <div class="container mt-md-n5 mt-sm-5 pt-5 mb-sm-5 pb-5 text-center">
+            <h2 style={{ fontSize: "24px" }}>
+              Was Sie vorab wissen sollten ...
+            </h2>
 
             <Accordion allowZeroExpanded={true} className={"mt-4 card"}>
               <AccordionItem>
@@ -437,25 +445,29 @@ const WineInvestments = () => {
             </Accordion>
 
             <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
-              <span style={{fontSize: "18px"}}>
-              Für alle weiteren Fragen zum Thema stehen wir Ihnen gerne per Email oder telefonisch zur Verfügung.<br/>
+              <span style={{ fontSize: "18px" }}>
+                Für alle weiteren Fragen zum Thema stehen wir Ihnen gerne per
+                Mail oder telefonisch zur Verfügung.
+                <br />
               </span>
-            <a onClick={() => toggleShowContactModal(!showContactModal)}>
-              <button
-                className={"btn btn-primary mt-4 p-3 px-5"}
-                style={{ fontSize: "18px" }}
-              >
-                <span
-                  className={
-                    "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
-                  }
-                ></span>
-                Jetzt kontaktieren
-              </button>
-            </a>
-          </div>
+              <a onClick={() => toggleShowContactModal(!showContactModal)}>
+                <button
+                  className={"btn btn-primary mt-4 p-3 px-5"}
+                  style={{ fontSize: "18px" }}
+                >
+                  <span
+                    className={
+                      "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
+                    }
+                  ></span>
+                  Jetzt kontaktieren
+                </button>
+              </a>
+            </div>
 
-            <h3 className={"mt-5"}>Haftungsausschluss</h3>
+            <h3 className={"mt-5 text-center"} style={{ fontSize: "24px" }}>
+              Haftungsausschluss
+            </h3>
             <p className={"text-justify"}>
               Die Firma Berghaus & Cie. GmbH ist ein Weinhandelsunternehmen, das
               Kunden zu ihren Weinen Vergleichswerte in der preislichen
@@ -468,8 +480,6 @@ const WineInvestments = () => {
               https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen.
             </p>
           </div>
-
-    
         </div>
       </>
 
