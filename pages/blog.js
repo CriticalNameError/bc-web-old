@@ -14,7 +14,7 @@ const BlogPage = () => {
       <>
         
 
-        <div style={{ marginTop: "80px", backgroundColor: "rgb(235, 236, 241)" }}>
+        <div style={{ marginTop: "80px" }}>
           <ListBlogPosts></ListBlogPosts>
         </div>
       </>

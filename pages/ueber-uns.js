@@ -46,11 +46,11 @@ const AboutUs = () => {
               {/* <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img> */}
               <ImageFromCms
                 title={"anagram_lavendel"}
-                width={230}
+                width={200}
                 classes={"animated fadeIn slower img mb-5"}
               />
 
-              <h1>
+              <h1 className={"h3"} style={{fontSize: "24px"}}>
                 {" "}
                 Exquisite Weine -<br /> {"Ihr Investment ist unsere "}
                 <span
@@ -94,7 +94,7 @@ const AboutUs = () => {
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="">Unsere Überzeugung</h5>
+                    <h5 class="" style={{fontSize: "21px"}}>Unsere Überzeugung</h5>
                     <p class="rext-justify">
                       Wein ist langfristig gesehen nicht nur eine Ergänzung,
                       sondern unter Umständen eine echte Alternative zu den
@@ -120,7 +120,7 @@ const AboutUs = () => {
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="">Unser Ziel</h5>
+                    <h5 class="" style={{fontSize: "21px"}}>Unser Ziel</h5>
                     <p class="text-justify">
                       Berghaus & Cie. möchte das Thema Weininvestment für jeden
                       zugänglich machen. Dabei setzen wir auf Transparenz,
@@ -155,10 +155,10 @@ const AboutUs = () => {
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-              <h2 class="text-left d-inline heading mt-sm-3">
+              <h2 class="text-left d-inline heading mt-sm-3 h3" style={{fontSize: "21px"}}>
                 Tristan Berghaus
               </h2>
-              <h5>Sales</h5>
+              <h5 style={{fontSize: "18px"}}>Sales</h5>
               <p>
                 Wer Tristan persönlich kennt, der verbindet ihn mit dem Thema
                 Wein. Er ist Initiator und Namensgeber von Berghaus & Cie. Seit
@@ -222,10 +222,10 @@ const AboutUs = () => {
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-              <h2 class="text-left d-inline heading mt-sm-3">
+              <h2 class="text-left d-inline heading mt-sm-3 h3" style={{fontSize: "21px"}}>
                 Martin Dammrath
               </h2>
-              <h5>Information Technology</h5>
+              <h5 style={{fontSize: "18px"}}>Information Technology</h5>
               <p>
                 Martin Dammrath hat Mathematik mit dem Schwerpunkt Statistik und
                 VWL studiert. Er besitzt einen Bachelor in Mathematik der
@@ -271,8 +271,8 @@ const AboutUs = () => {
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-              <h2 class="text-left d-inline heading mt-sm-3">Peter Irnich</h2>
-              <h5>Operations</h5>
+              <h2 class="text-left d-inline heading mt-sm-3 h3" style={{fontSize: "21px"}}>Peter Irnich</h2>
+              <h5 style={{fontSize: "18px"}}>Operations</h5>
               <p>
                 Durch seine Ausbildung als Industriekaufmann und diversen
                 Tätigkeiten im Einkauf und im Bereich Operations verfügt Peter
@@ -353,7 +353,7 @@ const AboutUs = () => {
                 <div class="col-md-8 offset-md-2 col-sm-12">
                   <div class="info info-horizontal">
                     <div class="card p-3">
-                      <h5 class="">Was uns verbindet</h5>
+                      <h5 class="" style={{fontSize: "21px"}}>Was uns verbindet</h5>
                       <p class="text-justify">
                         Uns von Berghaus & Cie. verbindet nicht nur die
                         Leidenschaft für exquisite Weine, sondern auch ein gutes
@@ -381,7 +381,7 @@ const AboutUs = () => {
                 <div class="col-md-8 offset-md-2 col-sm-12 mb-5">
                   <div class="info info-horizontal">
                     <div class="card p-3">
-                      <h5 class="">Unsere Expertise</h5>
+                      <h5 class="" style={{fontSize: "21px"}}>Unsere Expertise</h5>
                       <p class="text-justify">
                         Berghaus & Cie. bietet Ihnen die Möglichkeit, einfach,
                         transparent und zielgerichtet in den Weinmarkt zu
@@ -400,8 +400,8 @@ const AboutUs = () => {
           </div>
           <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
             <span style={{ fontSize: "18px" }}>
-              Für alle weiteren Fragen zum Thema stehen wir Ihnen gerne per
-              Email oder telefonisch zur Verfügung.
+              Für alle weiteren Fragen stehen wir Ihnen gerne per
+              Mail oder telefonisch zur Verfügung.
               <br />
             </span>
             <a onClick={() => toggleShowContactModal(!showContactModal)}>

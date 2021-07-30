@@ -273,7 +273,7 @@ const WineInvestments = () => {
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
             >
-              <h2 className={"h3"} style={{ fontSize: "24px" }}>
+              <h2 className={"h3 mt-5"} style={{ fontSize: "24px" }}>
                 Was macht ein{" "}
                 <span
                   style={{
@@ -359,7 +359,7 @@ const WineInvestments = () => {
             </div>
           </div>
 
-          <div class="container mt-md-n5 mt-sm-5 pt-5 mb-sm-5 pb-5 text-center">
+          <div class="container mt-5 mt-sm-5 pt-5 mb-sm-5 pb-5 text-center">
             <h2 style={{ fontSize: "24px" }}>
               Was Sie vorab wissen sollten ...
             </h2>
@@ -446,7 +446,7 @@ const WineInvestments = () => {
 
             <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
               <span style={{ fontSize: "18px" }}>
-                Für alle weiteren Fragen zum Thema stehen wir Ihnen gerne per
+                Für alle weiteren Fragen stehen wir Ihnen gerne per
                 Mail oder telefonisch zur Verfügung.
                 <br />
               </span>
@@ -476,8 +476,8 @@ const WineInvestments = () => {
               nur in für Privatpersonen vertretbaren Mengen. Für individuelle
               steuerliche Fragen wenden Sie sich bitte an einen Steuerberater.
               Es gelten die Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
-              GmbH, eine aktuelle Fassung finden Sie unter
-              https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen.
+              GmbH, eine aktuelle Fassung finden Sie unter{" "}
+              <a className={"text-black"} href={"https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen"}>https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen</a>.
             </p>
           </div>
         </div>

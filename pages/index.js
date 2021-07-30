@@ -233,7 +233,7 @@ const Index = () => {
             <p className={"mx-auto"} style={{fontSize: "18px", maxWidth: "750px"}}>
             Berghaus & Cie. bietet Ihnen Zugang zu den besten Weinen der
                 Welt für Ihr persönliches Weininvestment. Wir unterstützen Sie
-                beim Vermögensaufbau durch den Erwerb von Sachwerten – fundiert,
+                beim Vermögensaufbau durch den Erwerb von Sachwerten – kompetent,
                 transparent und mit Unterstützung modernster Technologien.
             </p>
 
