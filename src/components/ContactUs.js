@@ -104,7 +104,7 @@ const ContactUs = (props) => {
               }}
             >
               <div class="text-center">
-              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> +49 175 678 7654 <br/> oder schreiben Sie uns.</h4>
+              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a href={"tel: +49 175 678 7654"}> +49 175 678 7654</a> <br/> oder schreiben Sie uns.</h4>
             
               </div>
               <div class="card-body">
