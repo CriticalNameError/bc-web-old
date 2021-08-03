@@ -311,6 +311,10 @@ background: $primary-color!important
     box-shadow: 0px 1px 15px 1px rgba(39, 39, 39, 0.25)!important;
 }
 
+.accordion__button:before {
+    display: none!important;
+}
+
 .round-icon{
     border-radius: 50%;
     background: $primary-color;
@@ -318,8 +322,9 @@ background: $primary-color!important
     width: 60px;
     height: 60px;
     box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
-    padding-top: 15px;
+    padding-top: 5px;
     font-size: 30px!important;
+    display: inline-block;
 }
 
 .round-icon-lg {
@@ -330,8 +335,9 @@ background: $primary-color!important
     height: 80px;
     -webkit-box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
             box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3);
-    padding-top: 20px;
+    padding-top: 7px;
     font-size: 40px!important;
+    display: inline-block;
   }
 
   html {
@@ -579,6 +585,14 @@ background: $primary-color!important
     -webkit-box-shadow: none !important;
     box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.3) !important;
     background-color: white;
+   
+}
+
+.vertical-timeline-element-icon svg{
+    width: 30px!important;
+    height: 30px!important;
+    margin-top: -15px!important;
+    margin-left: -15px!important;
 }
 
 .vertical-timeline-description {

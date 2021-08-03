@@ -13,6 +13,12 @@ import LandingFooter from "../src/components/Footer/LandingFooter";
 import { urlObjectKeys } from "next/dist/next-server/lib/utils";
 import { ImageFromCms } from "helpers/utils";
 import ContactUs from "components/ContactUs";
+import BComment from "icons/b-comment";
+import DownArrow from "icons/down-arrow";
+import Bulb63 from "icons/bulb-63";
+import Position from "icons/position";
+import Multiple11 from "icons/multiple-11";
+import SportsFan from "icons/sports-fan";
 
 const AboutUs = () => {
   const [width, setWidth] = useState(0);
@@ -70,10 +76,12 @@ const AboutUs = () => {
                 href={"#mission"}
                 style={{ cursor: "pointer" }}
               >
-                <i
-                  class="fas fa-chevron-down fa-2x animated infinite pulse"
+               <span
+                  className={"animated infinite pulse"}
                   style={{ cursor: "pointer", color: primary }}
-                ></i>
+                >
+                  <DownArrow width={"30px"} height={"30px"} strokewidth={3} style={{display: "inline-block"}}/>
+                </span>
               </a>
             </div>
           </div>
@@ -86,10 +94,19 @@ const AboutUs = () => {
           >
             <div className={"row mt-5"}>
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                <i
+                {/* <i
                   class="fas fa-users mb-n3 ml-n3 round-icon-lg"
                   style={{ color: primary }}
-                ></i>
+                ></i> */}
+                      <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <SportsFan
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
@@ -97,7 +114,7 @@ const AboutUs = () => {
                     <h5 class="" style={{fontSize: "21px"}}>Unsere Überzeugung</h5>
                     <p class="rext-justify">
                       Wein ist langfristig gesehen nicht nur eine Ergänzung,
-                      sondern unter Umständen eine echte Alternative zu den
+                      sondern eine echte Alternative zu den
                       üblichen Anlageformen. Unter fachkundiger Anleitung
                       bringen Weininvestments nicht nur eine starke Rendite,
                       sondern bieten darüber hinaus auch einen greifbaren
@@ -112,10 +129,19 @@ const AboutUs = () => {
           <div class="container mt-sm-n5 animated fadeIn slower">
             <div className={"row mt-5"}>
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                <i
+                {/* <i
                   class="fas fa-briefcase mb-n3 ml-n3 round-icon-lg"
                   style={{ color: primary }}
-                ></i>
+                ></i> */}
+                      <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <Position
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
@@ -345,10 +371,19 @@ const AboutUs = () => {
             <div class="container pt-0 pt-sm-5 animated fadeIn slow ">
               <div className={"row mt-5"}>
                 <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                  <i
+                  {/* <i
                     class="fas fa-child mb-n3 ml-n3 round-icon-lg"
                     style={{ color: primary }}
-                  ></i>
+                  ></i> */}
+                        <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <Multiple11
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
                 </div>
                 <div class="col-md-8 offset-md-2 col-sm-12">
                   <div class="info info-horizontal">
@@ -373,10 +408,19 @@ const AboutUs = () => {
             <div class="container mt-sm-n5 animated fadeIn slower">
               <div className={"row mt-5"}>
                 <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                  <i
+                  {/* <i
                     class="fas fa-rocket mb-n3 ml-n3 round-icon-lg"
                     style={{ color: primary }}
-                  ></i>
+                  ></i> */}
+                        <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <Bulb63
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
                 </div>
                 <div class="col-md-8 offset-md-2 col-sm-12 mb-5">
                   <div class="info info-horizontal">
@@ -398,26 +442,31 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
+    
           <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
-            <span style={{ fontSize: "18px" }}>
-              Für alle weiteren Fragen stehen wir Ihnen gerne per
-              Mail oder telefonisch zur Verfügung.
-              <br />
-            </span>
-            <a onClick={() => toggleShowContactModal(!showContactModal)}>
-              <button
-                className={"btn btn-primary mt-4 p-3 px-5"}
-                style={{ fontSize: "18px" }}
-              >
-                <span
-                  className={
-                    "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
-                  }
-                ></span>
-                Jetzt kontaktieren
-              </button>
-            </a>
-          </div>
+              <span style={{ fontSize: "18px" }}>
+                Für alle weiteren Fragen stehen wir Ihnen gerne per
+                Mail oder telefonisch zur Verfügung.
+                <br />
+              </span>
+              <a onClick={() => toggleShowContactModal(!showContactModal)}>
+                <button
+                  className={"btn btn-primary mt-4 p-3 px-5"}
+                  style={{ fontSize: "18px" }}
+                >
+                         <span className={"p-1 pl-0 pr-3"}>
+                    {" "}
+                    <BComment
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                      style={{ display: "inline-block" }}
+                    />
+                  </span>
+                  Jetzt kontaktieren
+                </button>
+              </a>
+            </div>
         </div>
       </div>
 

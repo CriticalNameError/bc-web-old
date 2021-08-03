@@ -9,8 +9,17 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 import "react-accessible-accordion/dist/fancy-example.css";
-
+import BComment from "icons/b-comment";
+import DownArrow from "icons/down-arrow";
 import LandingFooter from "../src/components/Footer/LandingFooter";
+import Diamond from "icons/diamond";
+import TimeMachine from "icons/time-machine";
+import Ranking from "icons/ranking";
+import Statistics from "icons/statistics";
+import PaperDiploma from "icons/paper-diploma";
+import CheckDouble from "icons/check-double";
+import RightArrow from "icons/right-arrow";
+import BottleWine from "icons/bottle-wine";
 import {
   primary,
   primary_t80,
@@ -93,6 +102,32 @@ const WineInvestments = () => {
               className={"col-12 my-auto text-center animated fadeIn slower "}
             >
               <div className={"mb-3 mb-md-4"}>
+                {/* <span style={{ color: primary_t60, display: "inline-block" }}>
+                  {" "}
+                  <BottleWine
+                    width={"30px"}
+                    height={"30px"}
+                    
+                    strokewidth={3}
+                  />
+                </span>
+
+                <span className={"animated fadeInLeft"} style={{ color: primary_t80, display: "inline-block" }}>
+                  <BottleWine
+                    width={"60px"}
+                    height={"60px"}
+                    
+                    strokewidth={4}
+                  />
+                </span>
+                <span className={"animated fadeInLeft slower"} style={{ color: primary, display: "inline-block" }}>
+                  <BottleWine
+                    width={"90px"}
+                    height={"90px"}
+                    
+                    strokewidth={5}
+                  />
+                </span> */}
                 <i
                   className="fas fa-seedling ml-2"
                   style={{ color: primary_t60, fontSize: "2em" }}
@@ -130,10 +165,17 @@ const WineInvestments = () => {
                   href={"#livex"}
                   style={{ cursor: "pointer" }}
                 >
-                  <i
-                    class="fas fa-chevron-down fa-2x animated infinite pulse"
+                  <span
+                    className={"animated infinite pulse"}
                     style={{ cursor: "pointer", color: primary }}
-                  ></i>
+                  >
+                    <DownArrow
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                      style={{ display: "inline-block" }}
+                    />
+                  </span>
                 </a>
               </div>
             </div>
@@ -185,10 +227,15 @@ const WineInvestments = () => {
           <div class="container mt-sm-n5 animated fadeIn slower">
             <div className={"row mt-5"}>
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                <i
+                <span class="round-icon text-white mb-n3">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <Diamond width={"30px"} height={"30px"} strokewidth={3} />
+                  </span>
+                </span>
+                {/* <i
                   class="fas fa-rocket mb-n3 ml-n3 round-icon"
                   style={{ color: primary }}
-                ></i>
+                ></i> */}
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
@@ -213,10 +260,19 @@ const WineInvestments = () => {
           <div class="container mt-sm-n5 animated fadeIn slower">
             <div className={"row mt-5"}>
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                <i
+                <span class="round-icon text-white mb-n3">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <TimeMachine
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                    />
+                  </span>
+                </span>
+                {/* <i
                   class="fas fa-hands-helping mb-n3 ml-n3 round-icon"
                   style={{ color: primary }}
-                ></i>
+                ></i> */}
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
@@ -241,10 +297,15 @@ const WineInvestments = () => {
           <div class="container mt-sm-n5 animated fadeIn slower">
             <div className={"row mt-5"}>
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                <i
+                <span class="round-icon text-white mb-n3">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <Ranking width={"30px"} height={"30px"} strokewidth={3} />
+                  </span>
+                </span>
+                {/* <i
                   class="fas fa-hands-helping mb-n3 ml-n3 round-icon"
                   style={{ color: primary }}
-                ></i>
+                ></i> */}
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
@@ -301,12 +362,26 @@ const WineInvestments = () => {
                       )
                     }
                   >
-                    <i
+                    {/* <i
                       class="now-ui-icons sport_user-run mb-3 round-icon-lg"
                       style={{ color: primary }}
-                    ></i>
+                    ></i> */}
+
+                    <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <Statistics
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
+
                     <p>
-                      <h3 className={"mb-0 h5"} style={{ fontSize: "18px" }}>
+                      <h3
+                        className={"mb-0 h5 mt-2"}
+                        style={{ fontSize: "18px" }}
+                      >
                         Potentialanalyse
                       </h3>
                       <b className={"text-primary"}>mehr erfahren</b>
@@ -320,12 +395,20 @@ const WineInvestments = () => {
                       changeMarkup(provenienz_markup, toggleShowModal(true))
                     }
                   >
-                    <i
-                      class="now-ui-icons tech_watch-time mb-3 round-icon-lg"
-                      style={{ color: primary }}
-                    ></i>
+                    <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <PaperDiploma
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
                     <p>
-                      <h3 className={"mb-0 h5"} style={{ fontSize: "18px" }}>
+                      <h3
+                        className={"mb-0 h5 mt-2"}
+                        style={{ fontSize: "18px" }}
+                      >
                         Lückenlose Provenienz
                       </h3>
                       <b className={"text-primary"}>mehr erfahren</b>
@@ -343,12 +426,21 @@ const WineInvestments = () => {
                     }
                   >
                     {" "}
-                    <i
+                    {/* <i
                       class="now-ui-icons ui-2_like mb-3 round-icon-lg"
                       style={{ color: primary }}
-                    ></i>
+                    ></i> */}
+                    <span class="round-icon-lg text-white">
+                      <span style={{ width: "40px", height: "40px" }}>
+                        <CheckDouble
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={3}
+                        />
+                      </span>
+                    </span>
                     <p>
-                      <h3 className={"mb-0"} style={{ fontSize: "18px" }}>
+                      <h3 className={"mb-0 mt-2"} style={{ fontSize: "18px" }}>
                         Zustand & Lagerung
                       </h3>
                       <b className={"text-primary"}>mehr erfahren</b>
@@ -367,7 +459,20 @@ const WineInvestments = () => {
             <Accordion allowZeroExpanded={true} className={"mt-4 card"}>
               <AccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>Anlagehorizont</AccordionItemButton>
+                  <AccordionItemButton>
+                    {" "}
+                    <span
+                      className={"text-primary mr-2"}
+                      style={{ display: "inline-block" }}
+                    >
+                      <RightArrow
+                        width={"20px"}
+                        height={"20px"}
+                        strokewidth={4}
+                      />
+                    </span>
+                    Anlagehorizont
+                  </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <p>
@@ -380,7 +485,20 @@ const WineInvestments = () => {
               </AccordionItem>
               <AccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>Marktdaten</AccordionItemButton>
+                  <AccordionItemButton>
+                    {" "}
+                    <span
+                      className={"text-primary mr-2"}
+                      style={{ display: "inline-block" }}
+                    >
+                      <RightArrow
+                        width={"20px"}
+                        height={"20px"}
+                        strokewidth={4}
+                      />
+                    </span>
+                    Marktdaten
+                  </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <p>
@@ -409,6 +527,17 @@ const WineInvestments = () => {
               <AccordionItem>
                 <AccordionItemHeading>
                   <AccordionItemButton>
+                    {" "}
+                    <span
+                      className={"text-primary mr-2"}
+                      style={{ display: "inline-block" }}
+                    >
+                      <RightArrow
+                        width={"20px"}
+                        height={"20px"}
+                        strokewidth={4}
+                      />
+                    </span>
                     Herkunft, Lagerbedingungen und Mehrsteuer
                   </AccordionItemButton>
                 </AccordionItemHeading>
@@ -446,8 +575,8 @@ const WineInvestments = () => {
 
             <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
               <span style={{ fontSize: "18px" }}>
-                Für alle weiteren Fragen stehen wir Ihnen gerne per
-                Mail oder telefonisch zur Verfügung.
+                Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
+                telefonisch zur Verfügung.
                 <br />
               </span>
               <a onClick={() => toggleShowContactModal(!showContactModal)}>
@@ -455,11 +584,15 @@ const WineInvestments = () => {
                   className={"btn btn-primary mt-4 p-3 px-5"}
                   style={{ fontSize: "18px" }}
                 >
-                  <span
-                    className={
-                      "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
-                    }
-                  ></span>
+                  <span className={"p-1 pl-0 pr-3"}>
+                    {" "}
+                    <BComment
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                      style={{ display: "inline-block" }}
+                    />
+                  </span>
                   Jetzt kontaktieren
                 </button>
               </a>
@@ -477,7 +610,15 @@ const WineInvestments = () => {
               steuerliche Fragen wenden Sie sich bitte an einen Steuerberater.
               Es gelten die Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
               GmbH, eine aktuelle Fassung finden Sie unter{" "}
-              <a className={"text-black"} href={"https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen"}>https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen</a>.
+              <a
+                className={"text-dark"}
+                href={
+                  "https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen"
+                }
+              >
+                https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen
+              </a>
+              .
             </p>
           </div>
         </div>

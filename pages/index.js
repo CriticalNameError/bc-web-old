@@ -11,7 +11,20 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
+import ContactUs from "components/ContactUs";
+import BMeeting from "icons/b-meeting";
+import Podium from "icons/podium";
+import Questionaire from "icons/questionnaire";
+import VirtualAssistant from "icons/virtual-assistant";
+import StorageUnit from "icons/storage-unit";
+import World from "icons/world";
+import BComment from "icons/b-comment";
+import Handshake from "icons/handshake";
+import DeliveryFast from "icons/delivery-fast";
+import Privacy from "icons/privacy";
+import Handout from "icons/handout";
+import LogIn from "icons/log-in";
+import DownArrow from "icons/down-arrow"
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 // core components
 
@@ -86,6 +99,7 @@ const Index = () => {
   }, []);
   return (
     <>
+      <ContactUs showButton={true} />
       <CustomModal
         markup={markup}
         showModal={showModal}
@@ -104,12 +118,11 @@ const Index = () => {
 
             <div
               class="animated fadeIn slower mx-auto"
-              style={{ maxWidth: "750px"}}
+              style={{ maxWidth: "750px" }}
             >
               <p className={"h3"}>
                 Wir verbinden die traditionelle Welt der exquisiten Weine mit
                 der modernen Investmentwelt.
-              
               </p>
 
               {/* <h2 class="text-left d-inline heading mb-4">
@@ -131,10 +144,12 @@ const Index = () => {
                 href={"#services"}
                 style={{ cursor: "pointer" }}
               >
-                <i
-                  class="fas fa-chevron-down fa-2x animated infinite pulse"
+                <span
+                  className={"animated infinite pulse"}
                   style={{ cursor: "pointer", color: primary }}
-                ></i>
+                >
+                  <DownArrow width={"30px"} height={"30px"} strokewidth={3} style={{display: "inline-block"}}/>
+                </span>
               </a>
             </div>
           </div>
@@ -230,17 +245,20 @@ const Index = () => {
             style={{ maxWidth: "1200px" }}
           >
             <h2 className={"h3"}>Was dürfen Sie von uns erwarten?</h2>
-            <p className={"mx-auto"} style={{fontSize: "18px", maxWidth: "750px"}}>
-            Berghaus & Cie. bietet Ihnen Zugang zu den besten Weinen der
-                Welt für Ihr persönliches Weininvestment. Wir unterstützen Sie
-                beim Vermögensaufbau durch den Erwerb von Sachwerten – kompetent,
-                transparent und mit Unterstützung modernster Technologien.
+            <p
+              className={"mx-auto"}
+              style={{ fontSize: "18px", maxWidth: "750px" }}
+            >
+              Berghaus & Cie. bietet Ihnen Zugang zu den besten Weinen der Welt
+              für Ihr persönliches Weininvestment. Wir unterstützen Sie beim
+              Vermögensaufbau durch den Erwerb von Sachwerten – kompetent,
+              transparent und mit Unterstützung modernster Technologien.
             </p>
 
             <ImageFromCms
               title={"team_formal"}
-              width={Math.min(width * 0.85, 1100)}
-              fill={width > 991 ? "1200x450" : "600x430"}
+              width={Math.min(width * 0.85, 950)}
+              fill={width > 991 ? "1200x550" : "600x430"}
               jpegquality={80}
               classes={"animated fadeIn img img-raised mb-3"}
             />
@@ -253,7 +271,11 @@ const Index = () => {
             style={{ maxWidth: "1200px" }}
           >
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <i class="far fa-gem round-icon" style={{ color: primary }}></i>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <BMeeting width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
             </div>
             <div class="col-md-5 mb-sm-5">
               <div class="info info-horizontal pr-md-5">
@@ -281,10 +303,11 @@ const Index = () => {
             </div>
 
             <div class="col-md-1 text-center " style={{ zIndex: 100 }}>
-              <i
-                className="fas fa-boxes  round-icon"
-                style={{ color: primary }}
-              ></i>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <Podium width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
             </div>
             <div class="col-md-5  mb-sm-5">
               <div class="info info-horizontal pr-md-5">
@@ -320,10 +343,15 @@ const Index = () => {
             style={{ maxWidth: "1200px" }}
           >
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <i
-                className="fas fa-mobile-alt round-icon"
-                style={{ color: primary }}
-              ></i>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <Questionaire
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </span>
+              </span>
             </div>
             <div class="col-md-5  mb-sm-5">
               <div class="info info-horizontal pr-md-5">
@@ -351,10 +379,15 @@ const Index = () => {
             </div>
 
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <i
-                className="fas fa-hands-helping round-icon"
-                style={{ color: primary }}
-              ></i>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <VirtualAssistant
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </span>
+              </span>
             </div>
             <div class="col-md-5 mb-sm-5">
               <div class="info info-horizontal pr-md-5">
@@ -389,10 +422,11 @@ const Index = () => {
             style={{ maxWidth: "1200px" }}
           >
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <i
-                className="fas fa-warehouse round-icon"
-                style={{ color: primary }}
-              ></i>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <StorageUnit width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
             </div>
             <div class="col-md-5  mb-sm-5">
               <div class="info info-horizontal pr-md-5">
@@ -421,10 +455,11 @@ const Index = () => {
             </div>
 
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <i
-                className="fas fa-globe-europe round-icon"
-                style={{ color: primary }}
-              ></i>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <World width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
             </div>
             <div class="col-md-5  mb-sm-5">
               <div class="info info-horizontal pr-md-5">
@@ -483,19 +518,27 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <i
-                    class="now-ui-icons sport_user-run text-white timeline-icon"
-                    style={{
-                      color: primary,
-                      fontSize: "30px",
-                      padding: "13px",
-                    }}
-                  ></i>
+                  <BComment
+                    className={"text-white timeline-icon"}
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ padding: "13px" }}
+                  />
+
+                  // <i
+                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
+                  //   style={{
+                  //     color: primary,
+                  //     fontSize: "30px",
+                  //     padding: "13px",
+                  //   }}
+                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">Beratung</h3>
 
-                <p style={{fontSize: "14px"}}>
+                <p style={{ fontSize: "14px" }}>
                   Wir sind für Sie da und entwickeln gemeinsam Ihre ganz
                   persönliche Anlagestrategie.
                 </p>
@@ -504,21 +547,28 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <i
-                    class="now-ui-icons sport_user-run text-white timeline-icon"
-                    style={{
-                      color: primary,
-                      fontSize: "30px",
-                      padding: "13px",
-                    }}
-                  ></i>
+                  <Handshake
+                    className={"text-white timeline-icon"}
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ padding: "13px" }}
+                  />
+                  // <i
+                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
+                  //   style={{
+                  //     color: primary,
+                  //     fontSize: "30px",
+                  //     padding: "13px",
+                  //   }}
+                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
                   Kaufabwicklung
                 </h3>
 
-                <p style={{fontSize: "14px"}}>
+                <p style={{ fontSize: "14px" }}>
                   Über unser globales Netzwerk beziehen wir Ihre Weine mit
                   lückenloser Provenienz zu besten Konditionen.
                 </p>
@@ -527,19 +577,28 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <i
-                    class="now-ui-icons sport_user-run text-white timeline-icon"
-                    style={{
-                      color: primary,
-                      fontSize: "30px",
-                      padding: "13px",
-                    }}
-                  ></i>
+                  <DeliveryFast
+                    className={"text-white timeline-icon"}
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ padding: "13px" }}
+                  />
+                  // <i
+                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
+                  //   style={{
+                  //     color: primary,
+                  //     fontSize: "30px",
+                  //     padding: "13px",
+                  //   }}
+                  // ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">Transport</h3>
+                <h3 className="vertical-timeline-element-title h5">
+                  Transport
+                </h3>
 
-                <p style={{fontSize: "14px"}}>
+                <p style={{ fontSize: "14px" }}>
                   Nach dem Kauf werden Ihre exquisiten Weine professionell und
                   sicher in unser Lager transportiert.
                 </p>
@@ -548,19 +607,26 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <i
-                    class="now-ui-icons sport_user-run text-white timeline-icon"
-                    style={{
-                      color: primary,
-                      fontSize: "30px",
-                      padding: "13px",
-                    }}
-                  ></i>
+                  <Privacy
+                    className={"text-white timeline-icon"}
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ padding: "13px" }}
+                  />
+                  // <i
+                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
+                  //   style={{
+                  //     color: primary,
+                  //     fontSize: "30px",
+                  //     padding: "13px",
+                  //   }}
+                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">Lagerung</h3>
                 <h4 className="vertical-timeline-element-subtitle"></h4>
-                <p style={{fontSize: "14px"}}>
+                <p style={{ fontSize: "14px" }}>
                   In unserem Weinlager können Ihre Weine versichert und unter
                   besten klimatischen Bedingungen optimal ausreifen.
                 </p>
@@ -569,19 +635,26 @@ const Index = () => {
                 className="vertical-timeline-element--education"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <i
-                    class="now-ui-icons sport_user-run text-white timeline-icon"
-                    style={{
-                      color: primary,
-                      fontSize: "30px",
-                      padding: "13px",
-                    }}
-                  ></i>
+                  <Handout
+                    className={"text-white timeline-icon"}
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ padding: "13px" }}
+                  />
+                  // <i
+                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
+                  //   style={{
+                  //     color: primary,
+                  //     fontSize: "30px",
+                  //     padding: "13px",
+                  //   }}
+                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">Verkauf</h3>
 
-                <p style={{fontSize: "14px"}}>
+                <p style={{ fontSize: "14px" }}>
                   Wir behalten die Reifung und Wertentwicklung Ihres Wein im
                   Blick, damit Sie ihn zum bestmöglichen Zeitpunkt veräußern
                   können.
@@ -608,11 +681,20 @@ const Index = () => {
                   className={"btn btn-primary p-3 px-5"}
                   style={{ fontSize: "18px" }}
                 >
-                  <span
+                  {/* <span
                     className={
                       "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
                     }
-                  ></span>
+                  ></span> */}
+                  <span className={"p-1 pl-0 pr-3"}>
+                    {" "}
+                    <LogIn
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                      style={{ display: "inline-block" }}
+                    />
+                  </span>
                   Jetzt Weindepot eröffnen
                 </button>
               </a>

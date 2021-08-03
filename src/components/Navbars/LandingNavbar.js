@@ -16,10 +16,12 @@ import {
   InputGroupAddon,
   Input,
 } from "reactstrap";
+import MobilePhone from "../../icons/mobile-phone";
+import Mail from "../../icons/mail";
 import { withRouter } from "next/router";
 import { ImageFromCms } from "../../helpers/utils";
 import { primary, primary_t60 } from "helpers/colorScheme";
-
+import LogIn from "icons/log-in";
 // export const trackFullpagePage = () => {
 //   const [page, setPage] = useState(null);
 //   useEffect(()=>{setPage(window.fullpage_api.getActiveSection().index)}, [window.fullpage_api])
@@ -33,12 +35,11 @@ const ContactBar = (props) => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
-      if(window.scrollY > 0){
+      if (window.scrollY > 0) {
         document.getElementById("vert-nav").classList.remove("pt-5");
         document.getElementById("nav-tgl").classList.remove("pt-2");
         document.getElementById("nav-tgl").classList.remove("mt-4");
-        
-      }else{
+      } else {
         document.getElementById("vert-nav").classList.add("pt-5");
         document.getElementById("nav-tgl").classList.add("pt-2");
         document.getElementById("nav-tgl").classList.add("mt-4");
@@ -62,7 +63,9 @@ const ContactBar = (props) => {
       {scrollY == 0 ? (
         <div
           id={"contact"}
-          className={"justify-content-space-between p-2 pl-4 text-white bg-gradient"}
+          className={
+            "justify-content-space-between p-2 pl-4 text-white bg-gradient"
+          }
           style={{
             position: "absolute",
             top: 0,
@@ -75,16 +78,45 @@ const ContactBar = (props) => {
           }}
         >
           <span>
-            <span
+            {/* <span
               className={"now-ui-icons tech_mobile"}
               style={{ verticalAlign: "middle" }}
-            ></span>{" "}
-            <span className={"pr-5"}>+49 172 6345 99</span>
-            <span
+            >
+
+              </span>{" "} */}
+            
+            <span className={"pr-5"}>
+            <a
+                className={"text-white"}
+                href="tel: +4915765412"
+              >
+            <span style={{ verticalAlign: "middle" }}>
+              <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
+            </span>
+            <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
+            
+               +49 175 432 125 66
+            
+            </span>
+            </a>
+            </span>
+            {/* <span
               className={"now-ui-icons ui-1_email-85 pr-2"}
               style={{ verticalAlign: "middle" }}
-            ></span>
-            <span><a className={"text-white"} href = "mailto: contact@berghaus-cie.com">contact@berghaus-cie.com</a></span>
+            ></span> */}
+             <a
+                className={"text-white"}
+                href="mailto: contact@berghaus-cie.com"
+              >
+            <span style={{ verticalAlign: "middle" }}>
+              <Mail width={"14px"} height={"14px"} strokewidth={3} />
+            </span>
+            <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
+            
+                contact@berghaus-cie.com
+            
+            </span>
+            </a>
           </span>
         </div>
       ) : null}
@@ -195,7 +227,10 @@ class LandingNavbar extends React.Component {
                 </Link>
               </NavItem> */}
 
-            <div className="navbar-toggle top-right-toggler d-fixed mt-4 pt-2 mt-lg-0 pt-lg-0" id={"nav-tgl"}>
+            <div
+              className="navbar-toggle top-right-toggler d-fixed mt-4 pt-2 mt-lg-0 pt-lg-0"
+              id={"nav-tgl"}
+            >
               <button
                 type="button"
                 ref={this.sidebarToggle}
@@ -224,7 +259,7 @@ class LandingNavbar extends React.Component {
               </InputGroup>
             </form> */}
 
-              <Nav navbar className={"w-100"}>
+              <Nav navbar className={"w-100"} style={{ marginBottom: "-7px" }}>
                 <NavItem>
                   <a
                     href="/wein-investments"
@@ -292,11 +327,23 @@ class LandingNavbar extends React.Component {
                     }}
                   >
                     <p>
-                      <i
-                        className="fas fa-sign-in-alt pr-3 fa-fw"
-                        style={{ color: primary, fontSize: "1.15em" }}
-                      />
-                      <span className="d-lg-inline d-md-block">Login</span>
+                      <span
+                        className={"p-2 btn btn-primary m-0 mt-n2 text-white"}
+                        // style={{fontSize: "1.15em" }}
+                      >
+                        <LogIn
+                          width={"16px"}
+                          height={"16px"}
+                          style={{ display: "inline-block" }}
+                          strokewidth={3}
+                        />
+                        <span
+                          className="ml-1 d-lg-inline d-md-block"
+                          style={{ textTransform: "none" }}
+                        >
+                          Weindepot
+                        </span>
+                      </span>
                     </p>
                   </a>
                 </NavItem>

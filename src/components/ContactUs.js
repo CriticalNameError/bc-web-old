@@ -6,6 +6,8 @@ import { gql, useMutation } from "@apollo/client";
 
 import { primary } from "helpers/colorScheme";
 
+import BComment from "icons/b-comment";
+
 const SEND_MESSAGE = gql`
   mutation sendContactFormMail(
     $senderEmail: String!
@@ -29,6 +31,7 @@ const ContactUs = (props) => {
   const [sendMessage, { data }] = useMutation(SEND_MESSAGE);
   const [atBottom, toggleAtBottom] = useState(false);
   const [showModal, toggleShowModal] = useState(false);
+  const [notARobot, toggleNotARobot] = useState(false);
   const [formSent, toggleFormSent] = useState(false);
   const [width, setWidth] = useState(0);
 
@@ -71,7 +74,7 @@ const ContactUs = (props) => {
       >
         <ModalBody className="py-4 px-3">
           <i
-            className="now-ui-icons ui-1_simple-remove pull-right mt-0"
+            className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
             style={{ color: "black", fontSize: "18px", cursor: "pointer" }}
             onClick={(e) => {
               toggleShowModal(!showModal);
@@ -101,7 +104,7 @@ const ContactUs = (props) => {
               }}
             >
               <div class="text-center">
-              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> +49 175 678 7654 <br/> oder schreiben Sie uns</h4>
+              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> +49 175 678 7654 <br/> oder schreiben Sie uns.</h4>
             
               </div>
               <div class="card-body">
@@ -165,9 +168,9 @@ const ContactUs = (props) => {
 
                 <div class="row">
                   <div class="col-md-6 col-sm-12">
-                    <div class="form-check">
+                    <div class="form-check" >
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" />
+                        <input class="form-check-input" type="checkbox" onClick={()=>toggleNotARobot(!notARobot)}/>
                         <span class="form-check-sign"></span>
                         Ich bin kein Roboter
                       </label>
@@ -176,7 +179,7 @@ const ContactUs = (props) => {
                   <div class="col-md-6 col-sm-12">
                     <button
                       type="submit"
-                      class="btn btn-primary btn-round pull-right"
+                      className={"btn btn-primary btn-round pull-right " + (notARobot? "" : "disabled")}
                     >
                       Nachricht senden
                     </button>
@@ -222,7 +225,7 @@ const ContactUs = (props) => {
             <i
               id={"contact-us"}
               className={
-                "fas fa-comments round-icon animated infinite pulse " +
+                "round-icon animated infinite pulse " +
                 (atBottom ? "bg-white text-primary" : "bg-primary text-white")
               }
               // style={{
@@ -230,7 +233,9 @@ const ContactUs = (props) => {
               //   backgroundImage:
               //     "linear-gradient(-45deg, #a0b9b9 0%, " + primary + " 100%)",
               // }}
-            ></i>
+            >
+              <BComment width={"30px"} height={"30px"} style={{display: "inline-block"}} strokewidth={3}></BComment>
+            </i>
           </a>
         </div>
       ) : null}

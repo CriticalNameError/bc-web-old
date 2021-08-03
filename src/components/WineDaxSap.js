@@ -427,7 +427,7 @@ class WineDaxSap extends React.Component {
                       padding={5}
                       position="start"
                       right={150}
-                      tickFormat={(v) => v + " %"}
+                      tickFormat={(v) => (v + " %")}
                     />
                   }
                 />
