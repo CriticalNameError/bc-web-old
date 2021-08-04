@@ -18,10 +18,8 @@ import Questionaire from "icons/questionnaire";
 import VirtualAssistant from "icons/virtual-assistant";
 import StorageUnit from "icons/storage-unit";
 import World from "icons/world";
-import BComment from "icons/b-comment";
 import Handshake from "icons/handshake";
 import DeliveryFast from "icons/delivery-fast";
-import Privacy from "icons/privacy";
 import Handout from "icons/handout";
 import LogIn from "icons/log-in";
 import DownArrow from "icons/down-arrow"
@@ -108,8 +106,8 @@ const Index = () => {
       ></CustomModal>
       <div className={"container-fluid"}>
         <div className="row" style={{ height: "100vh" }}>
-          <div className={"col-12 my-auto text-center animated fadeIn slower "}>
-            <div className={"mb-3 mb-md-4"}>
+          <div className={"col-12 my-auto text-center  "}>
+            <div className={"mb-3 mb-md-4 animated zoomIn slow"}>
               <span style={{display: "inline-block"}} className={"text-primary"}>
                 <LogoSublineLavendel width={width > 500 ? "550px" : "250px"}/>
               </span>
@@ -124,7 +122,9 @@ const Index = () => {
               class="animated fadeIn slower mx-auto"
               style={{ maxWidth: "750px" }}
             >
-              <p className={"h3"}>
+              <p className={"h3"} 
+              //style={{fontSize: "24px"}}
+              >
                 Wir verbinden die traditionelle Welt der exquisiten Weine mit
                 der modernen Investmentwelt.
               </p>
@@ -388,7 +388,7 @@ const Index = () => {
                   <VirtualAssistant
                     width={"30px"}
                     height={"30px"}
-                    strokewidth={3}
+                    strokewidth={2}
                   />
                 </span>
               </span>
@@ -522,7 +522,7 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <BComment
+                  <BMeeting
                     className={"text-white timeline-icon"}
                     width={"30px"}
                     height={"30px"}
@@ -551,13 +551,14 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <Handshake
+                  <VirtualAssistant
                     className={"text-white timeline-icon"}
                     width={"30px"}
                     height={"30px"}
-                    strokewidth={3}
+                    strokewidth={2}
                     style={{ padding: "13px" }}
                   />
+                  // Handshake
                   // <i
                   //   class="now-ui-icons sport_user-run text-white timeline-icon"
                   //   style={{
@@ -611,7 +612,7 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <Privacy
+                  <StorageUnit
                     className={"text-white timeline-icon"}
                     width={"30px"}
                     height={"30px"}

@@ -50,16 +50,22 @@ const AboutUs = () => {
         <div className={"container-fluid"}>
           <div className="row" style={{ height: "100vh" }}>
             <div
-              className={"col-12 my-auto text-center animated fadeIn slower "}
+              className={"col-12 my-auto text-center "}
             >
+              <span
+                style={{ display: "inline-block" }}
+                className={"text-primary mb-4 animated zoomIn slow"}
+              >
+                <Anagram100 width={Math.min(width * 0.65, 230) + "px"} />
+              </span>
               {/* <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img> */}
-              <ImageFromCms
+              {/* <ImageFromCms
                 title={"anagram_lavendel"}
                 width={200}
                 classes={"animated fadeIn slower img mb-5"}
-              />
+              /> */}
 
-              <h1 className={"h3"} style={{fontSize: "24px"}}>
+              <h1 className={"h3 animated fadeIn slower "} style={{ fontSize: "24px" }}>
                 {" "}
                 Exquisite Weine -<br /> {"Ihr Investment ist unsere "}
                 <span
@@ -79,11 +85,16 @@ const AboutUs = () => {
                 href={"#mission"}
                 style={{ cursor: "pointer" }}
               >
-               <span
+                <span
                   className={"animated infinite pulse"}
                   style={{ cursor: "pointer", color: primary }}
                 >
-                  <DownArrow width={"30px"} height={"30px"} strokewidth={3} style={{display: "inline-block"}}/>
+                  <DownArrow
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ display: "inline-block" }}
+                  />
                 </span>
               </a>
             </div>
@@ -101,27 +112,25 @@ const AboutUs = () => {
                   class="fas fa-users mb-n3 ml-n3 round-icon-lg"
                   style={{ color: primary }}
                 ></i> */}
-                      <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <SportsFan
-                          width={"40px"}
-                          height={"40px"}
-                          strokewidth={3}
-                        />
-                      </span>
-                    </span>
+                <span class="round-icon-lg text-white mb-n3">
+                  <span style={{ width: "40px", height: "40px" }}>
+                    <SportsFan width={"40px"} height={"40px"} strokewidth={3} />
+                  </span>
+                </span>
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="" style={{fontSize: "21px"}}>Unsere Überzeugung</h5>
+                    <h5 class="" style={{ fontSize: "21px" }}>
+                      Unsere Überzeugung
+                    </h5>
                     <p class="rext-justify">
                       Wein ist langfristig gesehen nicht nur eine Ergänzung,
-                      sondern eine echte Alternative zu den
-                      üblichen Anlageformen. Unter fachkundiger Anleitung
-                      bringen Weininvestments nicht nur eine starke Rendite,
-                      sondern bieten darüber hinaus auch einen greifbaren
-                      Vermögenswert mit einer spannende Zukunft.{" "}
+                      sondern eine echte Alternative zu den üblichen
+                      Anlageformen. Unter fachkundiger Anleitung bringen
+                      Weininvestments nicht nur eine starke Rendite, sondern
+                      bieten darüber hinaus auch einen greifbaren Vermögenswert
+                      mit einer spannende Zukunft.{" "}
                     </p>
                   </div>
                 </div>
@@ -136,20 +145,18 @@ const AboutUs = () => {
                   class="fas fa-briefcase mb-n3 ml-n3 round-icon-lg"
                   style={{ color: primary }}
                 ></i> */}
-                      <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <Position
-                          width={"40px"}
-                          height={"40px"}
-                          strokewidth={3}
-                        />
-                      </span>
-                    </span>
+                <span class="round-icon-lg text-white mb-n3">
+                  <span style={{ width: "40px", height: "40px" }}>
+                    <Position width={"40px"} height={"40px"} strokewidth={3} />
+                  </span>
+                </span>
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="" style={{fontSize: "21px"}}>Unser Ziel</h5>
+                    <h5 class="" style={{ fontSize: "21px" }}>
+                      Unser Ziel
+                    </h5>
                     <p class="text-justify">
                       Berghaus & Cie. möchte das Thema Weininvestment für jeden
                       zugänglich machen. Dabei setzen wir auf Transparenz,
@@ -169,16 +176,13 @@ const AboutUs = () => {
               }
               style={{ zIndex: 1000 }}
             >
-              <span style={{display: "inline-block"}} className={"text-primary"}>
-                <Anagram100 width={Math.min(width * 0.85, 300) + "px"}/>
-              </span>
-              {/* <ImageFromCms
+              <ImageFromCms
                 title={"tristan_formal"}
                 width={Math.min(width * 0.85, 300)}
                 fill={width > 991 ? "300x300" : "300x300"}
                 jpegquality={80}
                 classes={"animated fadeIn img img-raised"}
-              /> */}
+              />
               {/* <img
                     src={"/assets/img/tristan_berghaus_berghaus_cie.png"}
                     class={"img-raised"}
@@ -187,10 +191,13 @@ const AboutUs = () => {
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-              <h2 class="text-left d-inline heading mt-sm-3 h3" style={{fontSize: "21px"}}>
+              <h2
+                class="text-left d-inline heading mt-sm-3 h3"
+                style={{ fontSize: "21px" }}
+              >
                 Tristan Berghaus
               </h2>
-              <h5 style={{fontSize: "18px"}}>Sales</h5>
+              <h5 style={{ fontSize: "18px" }}>Sales</h5>
               <p>
                 Wer Tristan persönlich kennt, der verbindet ihn mit dem Thema
                 Wein. Er ist Initiator und Namensgeber von Berghaus & Cie. Seit
@@ -228,13 +235,22 @@ const AboutUs = () => {
                 In seiner Freizeit trifft man ihn auf der Driving Rage oder auf
                 dem Platz.
               </p>
-              <br/>
-              <span className={"pull-right"} style={{displey: "inline-block"}}>
-                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
-             
-              {" "}
-
-              <a href={"https://www.linkedin.com/in/tristan-berghaus/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              <br />
+              <span
+                className={"pull-right"}
+                style={{ displey: "inline-block" }}
+              >
+                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}>
+                  {" "}
+                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
+                </a>{" "}
+                <a href={"https://www.linkedin.com/in/tristan-berghaus/"}>
+                  <LogoLinkedin
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </a>
               </span>
             </div>
           </div>
@@ -262,10 +278,13 @@ const AboutUs = () => {
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-              <h2 class="text-left d-inline heading mt-sm-3 h3" style={{fontSize: "21px"}}>
+              <h2
+                class="text-left d-inline heading mt-sm-3 h3"
+                style={{ fontSize: "21px" }}
+              >
                 Martin Dammrath
               </h2>
-              <h5 style={{fontSize: "18px"}}>Information Technology</h5>
+              <h5 style={{ fontSize: "18px" }}>Information Technology</h5>
               <p>
                 Martin Dammrath hat Mathematik mit dem Schwerpunkt Statistik und
                 VWL studiert. Er besitzt einen Bachelor in Mathematik der
@@ -285,13 +304,22 @@ const AboutUs = () => {
                 Neben seiner Leidenschaft für Wein und gutes Essen, wandert er
                 gerne und fährt mit seinem Rennrad durch das Bergischen Land.
               </p>
-              <br/>
-              <span className={"pull-right"} style={{displey: "inline-block"}}>
-                <a href={"https://www.xing.com/profile/Martin_Dammrath/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
-             
-              {" "}
-
-              <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              <br />
+              <span
+                className={"pull-right"}
+                style={{ displey: "inline-block" }}
+              >
+                <a href={"https://www.xing.com/profile/Martin_Dammrath/"}>
+                  {" "}
+                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
+                </a>{" "}
+                <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}>
+                  <LogoLinkedin
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </a>
               </span>
             </div>
           </div>
@@ -319,8 +347,13 @@ const AboutUs = () => {
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-              <h2 class="text-left d-inline heading mt-sm-3 h3" style={{fontSize: "21px"}}>Peter Irnich</h2>
-              <h5 style={{fontSize: "18px"}}>Operations</h5>
+              <h2
+                class="text-left d-inline heading mt-sm-3 h3"
+                style={{ fontSize: "21px" }}
+              >
+                Peter Irnich
+              </h2>
+              <h5 style={{ fontSize: "18px" }}>Operations</h5>
               <p>
                 Durch seine Ausbildung als Industriekaufmann und diversen
                 Tätigkeiten im Einkauf und im Bereich Operations verfügt Peter
@@ -342,13 +375,22 @@ const AboutUs = () => {
                 Neben seiner Arbeit für Berghaus & Cie. ist er ein
                 leidenschaftlicher Tennis- und Fußballspieler.
               </p>
-              <br/>
-              <span className={"pull-right"} style={{displey: "inline-block"}}>
-                <a href={"https://www.xing.com/profile/Peter_Irnich/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
-             
-              {" "}
-
-              <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              <br />
+              <span
+                className={"pull-right"}
+                style={{ displey: "inline-block" }}
+              >
+                <a href={"https://www.xing.com/profile/Peter_Irnich/"}>
+                  {" "}
+                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
+                </a>{" "}
+                <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}>
+                  <LogoLinkedin
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </a>
               </span>
             </div>
           </div>
@@ -405,20 +447,22 @@ const AboutUs = () => {
                     class="fas fa-child mb-n3 ml-n3 round-icon-lg"
                     style={{ color: primary }}
                   ></i> */}
-                        <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <Multiple11
-                          width={"40px"}
-                          height={"40px"}
-                          strokewidth={3}
-                        />
-                      </span>
+                  <span class="round-icon-lg text-white mb-n3">
+                    <span style={{ width: "40px", height: "40px" }}>
+                      <Multiple11
+                        width={"40px"}
+                        height={"40px"}
+                        strokewidth={3}
+                      />
                     </span>
+                  </span>
                 </div>
                 <div class="col-md-8 offset-md-2 col-sm-12">
                   <div class="info info-horizontal">
                     <div class="card p-3">
-                      <h5 class="" style={{fontSize: "21px"}}>Was uns verbindet</h5>
+                      <h5 class="" style={{ fontSize: "21px" }}>
+                        Was uns verbindet
+                      </h5>
                       <p class="text-justify">
                         Uns von Berghaus & Cie. verbindet nicht nur die
                         Leidenschaft für exquisite Weine, sondern auch ein gutes
@@ -442,20 +486,18 @@ const AboutUs = () => {
                     class="fas fa-rocket mb-n3 ml-n3 round-icon-lg"
                     style={{ color: primary }}
                   ></i> */}
-                        <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <Bulb63
-                          width={"40px"}
-                          height={"40px"}
-                          strokewidth={3}
-                        />
-                      </span>
+                  <span class="round-icon-lg text-white mb-n3">
+                    <span style={{ width: "40px", height: "40px" }}>
+                      <Bulb63 width={"40px"} height={"40px"} strokewidth={3} />
                     </span>
+                  </span>
                 </div>
                 <div class="col-md-8 offset-md-2 col-sm-12 mb-5">
                   <div class="info info-horizontal">
                     <div class="card p-3">
-                      <h5 class="" style={{fontSize: "21px"}}>Unsere Expertise</h5>
+                      <h5 class="" style={{ fontSize: "21px" }}>
+                        Unsere Expertise
+                      </h5>
                       <p class="text-justify">
                         Berghaus & Cie. bietet Ihnen die Möglichkeit, einfach,
                         transparent und zielgerichtet in den Weinmarkt zu
@@ -472,31 +514,31 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-    
+
           <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
-              <span style={{ fontSize: "18px" }}>
-                Für alle weiteren Fragen stehen wir Ihnen gerne per
-                Mail oder telefonisch zur Verfügung.
-                <br />
-              </span>
-              <a onClick={() => toggleShowContactModal(!showContactModal)}>
-                <button
-                  className={"btn btn-primary mt-4 p-3 px-5"}
-                  style={{ fontSize: "18px" }}
-                >
-                         <span className={"p-1 pl-0 pr-3"}>
-                    {" "}
-                    <BComment
-                      width={"30px"}
-                      height={"30px"}
-                      strokewidth={3}
-                      style={{ display: "inline-block" }}
-                    />
-                  </span>
-                  Jetzt kontaktieren
-                </button>
-              </a>
-            </div>
+            <span style={{ fontSize: "18px" }}>
+              Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
+              telefonisch zur Verfügung.
+              <br />
+            </span>
+            <a onClick={() => toggleShowContactModal(!showContactModal)}>
+              <button
+                className={"btn btn-primary mt-4 p-3 px-5"}
+                style={{ fontSize: "18px" }}
+              >
+                <span className={"p-1 pl-0 pr-3"}>
+                  {" "}
+                  <BComment
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ display: "inline-block" }}
+                  />
+                </span>
+                Jetzt kontaktieren
+              </button>
+            </a>
+          </div>
         </div>
       </div>
 
