@@ -22,6 +22,7 @@ import { withRouter } from "next/router";
 import { ImageFromCms } from "../../helpers/utils";
 import { primary, primary_t60 } from "helpers/colorScheme";
 import LogIn from "icons/log-in";
+import LogoLav from "icons/logo_lav";
 // export const trackFullpagePage = () => {
 //   const [page, setPage] = useState(null);
 //   useEffect(()=>{setPage(window.fullpage_api.getActiveSection().index)}, [window.fullpage_api])
@@ -206,7 +207,10 @@ class LandingNavbar extends React.Component {
 
             <NavbarBrand href="/">
               <a class="navbar-brand pull-left mt-n1 mt-lg-0" href="/">
-                <ImageFromCms title={"logo_primary"} width={175}></ImageFromCms>
+                <span style={{display: "inline-block"}} className={"text-primary"}>
+                  <LogoLav width={"175px"} />
+                </span>
+                {/* <ImageFromCms title={"logo_primary"} width={175}></ImageFromCms> */}
                 {/* <img src="https://bcassets.s3.amazonaws.com/static/images/schwarz.height-70.png" alt="Berghaus &amp; Cie."/> */}
               </a>
             </NavbarBrand>

@@ -21,6 +21,7 @@ import Multiple11 from "icons/multiple-11";
 import SportsFan from "icons/sports-fan";
 import LogoLinkedin from "icons/logo-linkedin";
 import XingIcon from "icons/xing-icon";
+import Anagram100 from "icons/Anagram-100";
 
 const AboutUs = () => {
   const [width, setWidth] = useState(0);
@@ -168,13 +169,16 @@ const AboutUs = () => {
               }
               style={{ zIndex: 1000 }}
             >
-              <ImageFromCms
+              <span style={{display: "inline-block"}} className={"text-primary"}>
+                <Anagram100 width={Math.min(width * 0.85, 300) + "px"}/>
+              </span>
+              {/* <ImageFromCms
                 title={"tristan_formal"}
                 width={Math.min(width * 0.85, 300)}
                 fill={width > 991 ? "300x300" : "300x300"}
                 jpegquality={80}
                 classes={"animated fadeIn img img-raised"}
-              />
+              /> */}
               {/* <img
                     src={"/assets/img/tristan_berghaus_berghaus_cie.png"}
                     class={"img-raised"}
@@ -226,11 +230,11 @@ const AboutUs = () => {
               </p>
               <br/>
               <span className={"pull-right"} style={{displey: "inline-block"}}>
-                <a href={"https://www.linkedin.com/in/tristan-berghaus/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
+                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
              
               {" "}
 
-              <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              <a href={"https://www.linkedin.com/in/tristan-berghaus/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
               </span>
             </div>
           </div>
@@ -283,11 +287,11 @@ const AboutUs = () => {
               </p>
               <br/>
               <span className={"pull-right"} style={{displey: "inline-block"}}>
-                <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
+                <a href={"https://www.xing.com/profile/Martin_Dammrath/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
              
               {" "}
 
-              <a href={"https://www.xing.com/profile/Martin_Dammrath/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
               </span>
             </div>
           </div>
@@ -340,11 +344,11 @@ const AboutUs = () => {
               </p>
               <br/>
               <span className={"pull-right"} style={{displey: "inline-block"}}>
-                <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
+                <a href={"https://www.xing.com/profile/Peter_Irnich/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
              
               {" "}
 
-              <a href={"https://www.xing.com/profile/Peter_Irnich/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
               </span>
             </div>
           </div>

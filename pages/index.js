@@ -25,6 +25,7 @@ import Privacy from "icons/privacy";
 import Handout from "icons/handout";
 import LogIn from "icons/log-in";
 import DownArrow from "icons/down-arrow"
+import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 // core components
 
@@ -109,11 +110,14 @@ const Index = () => {
         <div className="row" style={{ height: "100vh" }}>
           <div className={"col-12 my-auto text-center animated fadeIn slower "}>
             <div className={"mb-3 mb-md-4"}>
-              <ImageFromCms
+              <span style={{display: "inline-block"}} className={"text-primary"}>
+                <LogoSublineLavendel width={width > 500 ? "550px" : "250px"}/>
+              </span>
+              {/* <ImageFromCms
                 title={"logo_subline_lavendel"}
                 width={width > 500 ? 550 : 250}
                 jpegquality={5}
-              ></ImageFromCms>
+              ></ImageFromCms> */}
             </div>
 
             <div

@@ -63,11 +63,11 @@ const LandingFooter = () => {
         </div>
         <center>
         <span className={""} style={{display: "inline-block"}}>
-                <a className={"mr-2"} href={"https://www.linkedin.com/company/berghaus-cie-gmbh/"}> <XingIcon width={"20px"} height={"20px"} strokewidth={3}/></a>
+                <a className={"mr-2"} href={"https://www.xing.com/company/berhaus-cie-gmbh/"}> <XingIcon width={"20px"} height={"20px"} strokewidth={3}/></a>
              
               {" "}
 
-              <a  href={"https://www.xing.com/company/berhaus-cie-gmbh/"}><LogoLinkedin width={"20px"} height={"20px"} strokewidth={3}/></a>
+              <a  href={"https://www.linkedin.com/company/berghaus-cie-gmbh/"}><LogoLinkedin width={"20px"} height={"20px"} strokewidth={3}/></a>
               </span>
               <br/>
           <small>© Berghaus & Cie. GmbH</small>
