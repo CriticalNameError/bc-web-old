@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import ContactUs from "components/ContactUs";
-
+import XingIcon from "icons/xing-icon";
+import LogoLinkedin from "icons/logo-linkedin";
 
 
 const LandingFooter = () => {
@@ -61,6 +62,14 @@ const LandingFooter = () => {
           </div>
         </div>
         <center>
+        <span className={""} style={{display: "inline-block"}}>
+                <a className={"mr-2"} href={"https://www.linkedin.com/company/berghaus-cie-gmbh/"}> <XingIcon width={"20px"} height={"20px"} strokewidth={3}/></a>
+             
+              {" "}
+
+              <a  href={"https://www.xing.com/company/berhaus-cie-gmbh/"}><LogoLinkedin width={"20px"} height={"20px"} strokewidth={3}/></a>
+              </span>
+              <br/>
           <small>© Berghaus & Cie. GmbH</small>
         </center>
       </div>

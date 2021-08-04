@@ -19,6 +19,8 @@ import Bulb63 from "icons/bulb-63";
 import Position from "icons/position";
 import Multiple11 from "icons/multiple-11";
 import SportsFan from "icons/sports-fan";
+import LogoLinkedin from "icons/logo-linkedin";
+import XingIcon from "icons/xing-icon";
 
 const AboutUs = () => {
   const [width, setWidth] = useState(0);
@@ -222,6 +224,14 @@ const AboutUs = () => {
                 In seiner Freizeit trifft man ihn auf der Driving Rage oder auf
                 dem Platz.
               </p>
+              <br/>
+              <span className={"pull-right"} style={{displey: "inline-block"}}>
+                <a href={"https://www.linkedin.com/in/tristan-berghaus/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
+             
+              {" "}
+
+              <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              </span>
             </div>
           </div>
 
@@ -271,6 +281,14 @@ const AboutUs = () => {
                 Neben seiner Leidenschaft für Wein und gutes Essen, wandert er
                 gerne und fährt mit seinem Rennrad durch das Bergischen Land.
               </p>
+              <br/>
+              <span className={"pull-right"} style={{displey: "inline-block"}}>
+                <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
+             
+              {" "}
+
+              <a href={"https://www.xing.com/profile/Martin_Dammrath/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              </span>
             </div>
           </div>
 
@@ -320,6 +338,14 @@ const AboutUs = () => {
                 Neben seiner Arbeit für Berghaus & Cie. ist er ein
                 leidenschaftlicher Tennis- und Fußballspieler.
               </p>
+              <br/>
+              <span className={"pull-right"} style={{displey: "inline-block"}}>
+                <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}> <XingIcon width={"30px"} height={"30px"} strokewidth={3}/></a>
+             
+              {" "}
+
+              <a href={"https://www.xing.com/profile/Peter_Irnich/"}><LogoLinkedin width={"30px"} height={"30px"} strokewidth={3}/></a>
+              </span>
             </div>
           </div>
 
