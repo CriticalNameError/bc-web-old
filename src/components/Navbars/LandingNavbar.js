@@ -226,7 +226,7 @@ class LandingNavbar extends React.Component {
                       Rausch & Rendite
                     </h3>
                     <b className={"text-primary"}>
-                      Jetzt reinhören auf Spotify{" "}
+                      Jetzt reinhören auf Spotify
                       <LogoSpotify
                         width={"15px"}
                         height={"15px"}
