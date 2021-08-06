@@ -192,7 +192,7 @@ class LandingNavbar extends React.Component {
       <>
         <Modal
           isOpen={this.state.showPodcastModal}
-          toggle={() => toggleShowPodcastModal()}
+          toggle={() => this.toggleShowPodcastModal()}
           className="modal-md modal-dialog-centered"
         >
           <ModalBody className="py-4 px-3">
