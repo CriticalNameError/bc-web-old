@@ -15,6 +15,10 @@ import {
   InputGroupText,
   InputGroupAddon,
   Input,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  ModalFooter,
 } from "reactstrap";
 import MobilePhone from "../../icons/mobile-phone";
 import Mail from "../../icons/mail";
@@ -23,6 +27,8 @@ import { ImageFromCms } from "../../helpers/utils";
 import { primary, primary_t60 } from "helpers/colorScheme";
 import LogIn from "icons/log-in";
 import LogoLav from "icons/logo_lav";
+import LogoSpotify from "icons/logo-spotify";
+import Earbuds from "icons/earbuds";
 // export const trackFullpagePage = () => {
 //   const [page, setPage] = useState(null);
 //   useEffect(()=>{setPage(window.fullpage_api.getActiveSection().index)}, [window.fullpage_api])
@@ -85,38 +91,28 @@ const ContactBar = (props) => {
             >
 
               </span>{" "} */}
-            
+
             <span className={"pr-5"}>
-            <a
-                className={"text-white"}
-                href="tel: +4915765412"
-              >
-            <span style={{ verticalAlign: "middle" }}>
-              <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
-            </span>
-            <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-            
-               +49 175 432 125 66
-            
-            </span>
-            </a>
+              <a className={"text-white"} href="tel: +4915765412">
+                <span style={{ verticalAlign: "middle" }}>
+                  <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
+                </span>
+                <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
+                  +49 175 432 125 66
+                </span>
+              </a>
             </span>
             {/* <span
               className={"now-ui-icons ui-1_email-85 pr-2"}
               style={{ verticalAlign: "middle" }}
             ></span> */}
-             <a
-                className={"text-white"}
-                href="mailto: contact@berghaus-cie.com"
-              >
-            <span style={{ verticalAlign: "middle" }}>
-              <Mail width={"14px"} height={"14px"} strokewidth={3} />
-            </span>
-            <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-            
+            <a className={"text-white"} href="mailto: contact@berghaus-cie.com">
+              <span style={{ verticalAlign: "middle" }}>
+                <Mail width={"14px"} height={"14px"} strokewidth={3} />
+              </span>
+              <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
                 contact@berghaus-cie.com
-            
-            </span>
+              </span>
             </a>
           </span>
         </div>
@@ -126,12 +122,21 @@ const ContactBar = (props) => {
 };
 
 class LandingNavbar extends React.Component {
-  state = {
-    isOpen: false,
-    dropdownOpen: false,
-    color: "white",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      dropdownOpen: false,
+      color: "white",
+      showPodcastModal: false,
+    };
+    this.toggleShowPodcastModal = this.toggleShowPodcastModal.bind(this);
+  }
   sidebarToggle = React.createRef();
+
+  toggleShowPodcastModal = () => {
+    this.setState({ showPodcastModal: !this.state.showPodcastModal });
+  };
 
   toggle = () => {
     this.setState({
@@ -185,6 +190,55 @@ class LandingNavbar extends React.Component {
   render() {
     return (
       <>
+        <Modal
+          isOpen={this.state.showPodcastModal}
+          toggle={() => toggleShowPodcastModal()}
+          className="modal-md modal-dialog-centered"
+        >
+          <ModalBody className="py-4 px-3">
+            <i
+              className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
+              style={{ color: "black", fontSize: "18px", cursor: "pointer" }}
+              onClick={(e) => {
+                this.toggleShowPodcastModal();
+              }}
+            ></i>
+
+            <div class="text-center">
+              <h4 class="" style={{ fontSize: "18px" }}>
+                Der Weininvestment Podcast
+              </h4>
+              <div className={""}>
+                <a
+                  href={"https://spotify.de/rausch_und_rendite"}
+                  target={"_blank"}
+                  style={{ textDecoration: "none" }}
+                  className={"text-dark transp-card"}
+                >
+                  <span class="round-icon-lg text-white">
+                    <span style={{ width: "40px", height: "40px" }}>
+                      <Earbuds width={"40px"} height={"40px"} strokewidth={3} />
+                    </span>
+                  </span>
+
+                  <p>
+                    <h3 className={"mb-0 h5 mt-2"} style={{ fontSize: "18px" }}>
+                      Rausch & Rendite
+                    </h3>
+                    <b className={"text-primary"}>
+                      Jetzt reinhören auf Spotify{" "}
+                      <LogoSpotify
+                        width={"15px"}
+                        height={"15px"}
+                        strokewidth={3}
+                      />
+                    </b>
+                  </p>
+                </a>
+              </div>
+            </div>
+          </ModalBody>
+        </Modal>
         <Navbar
           color={"white"}
           expand="lg"
@@ -207,7 +261,10 @@ class LandingNavbar extends React.Component {
 
             <NavbarBrand href="/">
               <a class="navbar-brand pull-left mt-n1 mt-lg-0" href="/">
-                <span style={{display: "inline-block"}} className={"text-primary"}>
+                <span
+                  style={{ display: "inline-block" }}
+                  className={"text-primary"}
+                >
                   <LogoLav width={"175px"} />
                 </span>
                 {/* <ImageFromCms title={"logo_primary"} width={175}></ImageFromCms> */}
@@ -299,6 +356,25 @@ class LandingNavbar extends React.Component {
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
                     <p>
                       <span className="d-lg-inline d-md-block">Über uns</span>
+                    </p>
+                  </a>
+                </NavItem>
+                <NavItem
+                  onClick={() => this.toggleShowPodcastModal()}
+                  style={{ cursor: "pointer" }}
+                >
+                  <a
+                    className="nav-link"
+                    style={{
+                      color: "#999",
+                      marginTop: "4px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    <p style={{ cursor: "pointer" }}>
+                      <span className="d-lg-inline d-md-block">
+                        Rausch & Rendite
+                      </span>
                     </p>
                   </a>
                 </NavItem>
