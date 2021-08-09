@@ -27,8 +27,6 @@ function MyApp({ Component, pageProps }) {
     <ApolloProvider client={apolloClient}>
       <LandingNavbar {...pageProps} />
       <Component {...pageProps} />
-    
-    
     </ApolloProvider>
   );
 }

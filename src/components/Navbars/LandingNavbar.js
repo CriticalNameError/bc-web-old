@@ -29,6 +29,7 @@ import LogIn from "icons/log-in";
 import LogoLav from "icons/logo_lav";
 import LogoSpotify from "icons/logo-spotify";
 import Earbuds from "icons/earbuds";
+import SpotifyLogoWithText from "icons/Spotify_logo_with_text";
 // export const trackFullpagePage = () => {
 //   const [page, setPage] = useState(null);
 //   useEffect(()=>{setPage(window.fullpage_api.getActiveSection().index)}, [window.fullpage_api])
@@ -206,7 +207,7 @@ class LandingNavbar extends React.Component {
 
             <div class="text-center">
               <h4 class="" style={{ fontSize: "18px" }}>
-                Der Weininvestment Podcast
+                Der Weininvestment-Podcast
               </h4>
               <div className={""}>
                 <a
@@ -226,13 +227,15 @@ class LandingNavbar extends React.Component {
                       Rausch & Rendite
                     </h3>
                     <b className={"text-primary"}>
-                      Jetzt reinhören auf Spotify
-                      <LogoSpotify
-                        width={"15px"}
-                        height={"15px"}
+                      Jetzt reinhören
+                    </b>
+                    <div className={"mt-2"}>
+                    <SpotifyLogoWithText
+                        width={"100px"}
                         strokewidth={3}
                       />
-                    </b>
+                    </div>
+                    
                   </p>
                 </a>
               </div>
@@ -341,24 +344,7 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem>
-                  <a
-                    href="/ueber-uns"
-                    className="nav-link"
-                    style={{
-                      color: /ueber-uns/.test(this.props.router.pathname)
-                        ? primary
-                        : "#999",
-                      marginTop: "4px",
-                      fontSize: "12px",
-                    }}
-                  >
-                    {/* <i className="now-ui-icons media-2_sound-wave" /> */}
-                    <p>
-                      <span className="d-lg-inline d-md-block">Über uns</span>
-                    </p>
-                  </a>
-                </NavItem>
+               
                 <NavItem
                   onClick={() => this.toggleShowPodcastModal()}
                   style={{ cursor: "pointer" }}
@@ -393,6 +379,24 @@ class LandingNavbar extends React.Component {
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
                     <p>
                       <span className="d-lg-inline d-md-block">Blog</span>
+                    </p>
+                  </a>
+                </NavItem>
+                <NavItem>
+                  <a
+                    href="/ueber-uns"
+                    className="nav-link"
+                    style={{
+                      color: /ueber-uns/.test(this.props.router.pathname)
+                        ? primary
+                        : "#999",
+                      marginTop: "4px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    {/* <i className="now-ui-icons media-2_sound-wave" /> */}
+                    <p>
+                      <span className="d-lg-inline d-md-block">Über uns</span>
                     </p>
                   </a>
                 </NavItem>

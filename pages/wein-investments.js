@@ -12,12 +12,12 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import BComment from "icons/b-comment";
 import DownArrow from "icons/down-arrow";
 import LandingFooter from "../src/components/Footer/LandingFooter";
-import Diamond from "icons/diamond";
+import Search from "icons/search";
 import TimeMachine from "icons/time-machine";
-import Ranking from "icons/ranking";
+import Athletics from "icons/athletics";
 import Statistics from "icons/statistics";
 import PaperDiploma from "icons/paper-diploma";
-import CheckDouble from "icons/check-double";
+import ThumbUp from "icons/thumb-up";
 import RightArrow from "icons/right-arrow";
 import BottleWine from "icons/bottle-wine";
 import {
@@ -229,7 +229,7 @@ const WineInvestments = () => {
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
                 <span class="round-icon text-white mb-n3">
                   <span style={{ width: "30px", height: "30px" }}>
-                    <Diamond width={"30px"} height={"30px"} strokewidth={3} />
+                    <Search width={"30px"} height={"30px"} strokewidth={3} />
                   </span>
                 </span>
                 {/* <i
@@ -299,7 +299,7 @@ const WineInvestments = () => {
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
                 <span class="round-icon text-white mb-n3">
                   <span style={{ width: "30px", height: "30px" }}>
-                    <Ranking width={"30px"} height={"30px"} strokewidth={3} />
+                    <Athletics width={"30px"} height={"30px"} strokewidth={3} />
                   </span>
                 </span>
                 {/* <i
@@ -432,7 +432,7 @@ const WineInvestments = () => {
                     ></i> */}
                     <span class="round-icon-lg text-white">
                       <span style={{ width: "40px", height: "40px" }}>
-                        <CheckDouble
+                        <ThumbUp
                           width={"40px"}
                           height={"40px"}
                           strokewidth={3}

@@ -15,13 +15,13 @@ import { ImageFromCms } from "helpers/utils";
 import ContactUs from "components/ContactUs";
 import BComment from "icons/b-comment";
 import DownArrow from "icons/down-arrow";
-import Bulb63 from "icons/bulb-63";
-import Position from "icons/position";
+import Spaceship from "icons/spaceship";
 import Multiple11 from "icons/multiple-11";
 import SportsFan from "icons/sports-fan";
 import LogoLinkedin from "icons/logo-linkedin";
 import XingIcon from "icons/xing-icon";
 import Anagram100 from "icons/Anagram-100";
+import Logic from "icons/logic";
 
 const AboutUs = () => {
   const [width, setWidth] = useState(0);
@@ -54,7 +54,7 @@ const AboutUs = () => {
             >
               <span
                 style={{ display: "inline-block" }}
-                className={"text-primary mb-4 animated zoomIn slow"}
+                className={"text-primary mb-4 animated zoomIn slower"}
               >
                 <Anagram100 width={Math.min(width * 0.65, 230) + "px"} />
               </span>
@@ -147,7 +147,7 @@ const AboutUs = () => {
                 ></i> */}
                 <span class="round-icon-lg text-white mb-n3">
                   <span style={{ width: "40px", height: "40px" }}>
-                    <Position width={"40px"} height={"40px"} strokewidth={3} />
+                    <Spaceship width={"40px"} height={"40px"} strokewidth={3} />
                   </span>
                 </span>
               </div>
@@ -488,7 +488,7 @@ const AboutUs = () => {
                   ></i> */}
                   <span class="round-icon-lg text-white mb-n3">
                     <span style={{ width: "40px", height: "40px" }}>
-                      <Bulb63 width={"40px"} height={"40px"} strokewidth={3} />
+                      <Logic width={"40px"} height={"40px"} strokewidth={3} />
                     </span>
                   </span>
                 </div>

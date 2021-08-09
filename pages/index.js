@@ -15,14 +15,15 @@ import ContactUs from "components/ContactUs";
 import BMeeting from "icons/b-meeting";
 import Podium from "icons/podium";
 import Questionaire from "icons/questionnaire";
-import VirtualAssistant from "icons/virtual-assistant";
+import MobilePhone from "icons/mobile-phone";
+import Diamond from "icons/diamond";
 import StorageUnit from "icons/storage-unit";
 import World from "icons/world";
 import Handshake from "icons/handshake";
 import DeliveryFast from "icons/delivery-fast";
 import Handout from "icons/handout";
 import LogIn from "icons/log-in";
-import DownArrow from "icons/down-arrow"
+import DownArrow from "icons/down-arrow";
 import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 // core components
@@ -107,9 +108,12 @@ const Index = () => {
       <div className={"container-fluid"}>
         <div className="row" style={{ height: "100vh" }}>
           <div className={"col-12 my-auto text-center  "}>
-            <div className={"mb-3 mb-md-4 animated zoomIn slow"}>
-              <span style={{display: "inline-block"}} className={"text-primary"}>
-                <LogoSublineLavendel width={width > 500 ? "550px" : "250px"}/>
+            <div className={"mb-3 mb-md-4 animated zoomIn slower"}>
+              <span
+                style={{ display: "inline-block" }}
+                className={"text-primary"}
+              >
+                <LogoSublineLavendel width={width > 500 ? "550px" : "250px"} />
               </span>
               {/* <ImageFromCms
                 title={"logo_subline_lavendel"}
@@ -122,8 +126,9 @@ const Index = () => {
               class="animated fadeIn slower mx-auto"
               style={{ maxWidth: "750px" }}
             >
-              <p className={"h3"} 
-              //style={{fontSize: "24px"}}
+              <p
+                className={"h3"}
+                //style={{fontSize: "24px"}}
               >
                 Wir verbinden die traditionelle Welt der exquisiten Weine mit
                 der modernen Investmentwelt.
@@ -152,7 +157,12 @@ const Index = () => {
                   className={"animated infinite pulse"}
                   style={{ cursor: "pointer", color: primary }}
                 >
-                  <DownArrow width={"30px"} height={"30px"} strokewidth={3} style={{display: "inline-block"}}/>
+                  <DownArrow
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                    style={{ display: "inline-block" }}
+                  />
                 </span>
               </a>
             </div>
@@ -309,7 +319,7 @@ const Index = () => {
             <div class="col-md-1 text-center " style={{ zIndex: 100 }}>
               <span class="round-icon text-white">
                 <span style={{ width: "30px", height: "30px" }}>
-                  <Podium width={"30px"} height={"30px"} strokewidth={3} />
+                  <Diamond width={"30px"} height={"30px"} strokewidth={3} />
                 </span>
               </span>
             </div>
@@ -385,11 +395,7 @@ const Index = () => {
             <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
               <span class="round-icon text-white">
                 <span style={{ width: "30px", height: "30px" }}>
-                  <VirtualAssistant
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={2}
-                  />
+                  <MobilePhone width={"30px"} height={"30px"} strokewidth={3} />
                 </span>
               </span>
             </div>
@@ -551,11 +557,11 @@ const Index = () => {
                 className="vertical-timeline-element--work"
                 iconStyle={{ background: primary, color: "#fff" }}
                 icon={
-                  <VirtualAssistant
+                  <Handshake
                     className={"text-white timeline-icon"}
                     width={"30px"}
                     height={"30px"}
-                    strokewidth={2}
+                    strokewidth={3}
                     style={{ padding: "13px" }}
                   />
                   // Handshake
@@ -704,6 +710,27 @@ const Index = () => {
                 </button>
               </a>
             </div>
+          </div>
+        </div>
+
+        <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={"mb-3"}
+          >
+            <span style={{ fontSize: "18px" }}>
+              Wenn Sie noch mehr wissen möchten, schauf Sie auf
+              <br />
+            </span>
+            <a href={"wein-investments"}>
+              <button
+                className={"btn btn-primary mt-4 p-3 px-5"}
+                style={{ fontSize: "18px" }}
+              >
+                Weininvestments
+              </button>
+            </a>
           </div>
         </div>
 
