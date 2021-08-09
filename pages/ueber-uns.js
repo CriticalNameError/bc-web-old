@@ -67,7 +67,7 @@ const AboutUs = () => {
 
               <h1 className={"h3 animated fadeIn slower "} style={{ fontSize: "24px" }}>
                 {" "}
-                Exquisite Weine -<br /> {"Ihr Investment ist unsere "}
+                Exquisite Weine - Ihr Investment ist unsere{" "}
                 <span
                   style={{
                     fontFamily: " 'Fuggles', cursive;",

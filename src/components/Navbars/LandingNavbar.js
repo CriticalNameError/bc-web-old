@@ -324,10 +324,10 @@ class LandingNavbar extends React.Component {
             </form> */}
 
               <Nav navbar className={"w-100"} style={{ marginBottom: "-7px" }}>
-                <NavItem>
+                <NavItem style={{position: "relative"}}>
                   <a
                     href="/wein-investments"
-                    className="nav-link"
+                    className={"nav-link " +  (/wein-investments/.test(this.props.router.pathname)? "link-active" : "link-underline")}
                     style={{
                       color: /wein-investments/.test(this.props.router.pathname)
                         ? primary
@@ -347,10 +347,10 @@ class LandingNavbar extends React.Component {
                
                 <NavItem
                   onClick={() => this.toggleShowPodcastModal()}
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", position: "relative" }}
                 >
                   <a
-                    className="nav-link"
+                    className="nav-link link-underline"
                     style={{
                       color: "#999",
                       marginTop: "4px",
@@ -364,10 +364,10 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem>
+                <NavItem style={{position: "relative"}}>
                   <a
                     href="/blog"
-                    className="nav-link"
+                    className={"nav-link " +  (/blog/.test(this.props.router.pathname)? "link-active" : "link-underline")}
                     style={{
                       color: /blog/.test(this.props.router.pathname)
                         ? primary
@@ -382,10 +382,10 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem>
+                <NavItem style={{position: "relative"}}>
                   <a
                     href="/ueber-uns"
-                    className="nav-link"
+                    className={"nav-link " +  (/ueber-uns/.test(this.props.router.pathname)? "link-active" : "link-underline")}
                     style={{
                       color: /ueber-uns/.test(this.props.router.pathname)
                         ? primary
@@ -400,7 +400,7 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem className={"ml-lg-auto"}>
+                <NavItem className={"ml-lg-auto"} >
                   <a
                     href="https://weindepot.berghaus-cie.com"
                     className={"nav-link ml-lg-auto"}

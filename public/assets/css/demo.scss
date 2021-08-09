@@ -196,6 +196,46 @@
         display: inline;
     } */
 
+
+    .link-underline::after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-60;
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+    }
+
+    .link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-60;
+        opacity: 1;
+    }
+    
+    .link-underline:hover::after,
+    .link-underline:focus::after {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .link-underline::after {
+        opacity: 1;
+        transform: scale(0);
+        transform-origin: center;
+    }
+    
+    .link-underline:hover::after,
+    .link-underline:focus::after{
+        transform: scale(1);
+    }
     
 
     .search_mobile{
