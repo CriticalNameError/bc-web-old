@@ -4,18 +4,20 @@ import "../public/assets/css/demo.css";
 import "../public/assets/css/now-ui-dashboard.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "../public/assets/scss/now-ui-dashboard.scss?v1.2.0";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ApolloProvider } from "@apollo/client";
 import { useApollo } from "../src/helpers/apolloClient";
 import ContactUs from "components/ContactUs.js";
-
+import CookieConsent from "components/CookieConsent";
 import LandingNavbar from "../src/components/Navbars/LandingNavbar";
 import AOS from "aos";
+import { CookiesProvider } from "react-cookie";
 
 import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
+  const [showCookieModal, toggleShowCookieModal] = useState(true);
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
@@ -24,10 +26,16 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
   return (
-    <ApolloProvider client={apolloClient}>
-      <LandingNavbar {...pageProps} />
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <CookiesProvider>
+      <CookieConsent
+        showModal={showCookieModal}
+        toggleShowModal={toggleShowCookieModal}
+      />
+      <ApolloProvider client={apolloClient}>
+        <LandingNavbar {...pageProps} />
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </CookiesProvider>
   );
 }
 

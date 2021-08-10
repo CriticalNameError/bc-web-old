@@ -26,6 +26,7 @@ import LogIn from "icons/log-in";
 import DownArrow from "icons/down-arrow";
 import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
+import GoogleAnalytics from "helpers/GoogleAnalytics";
 // core components
 
 let geringe_mengen_markup = (
@@ -66,7 +67,7 @@ let angebot_nachfrage_markup = (
   </div>
 );
 
-const Index = () => {
+const Index = (props) => {
   const [showModal, toggleShowModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   const [width, setWidth] = useState(0);
