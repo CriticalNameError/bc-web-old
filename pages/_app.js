@@ -31,8 +31,8 @@ function MyApp({ Component, pageProps }) {
         toggleShowModal={toggleShowCookieModal}
       />
       <ApolloProvider client={apolloClient}>
-       
-        {!showCookieModal && <> <LandingNavbar {...pageProps} /> <Component {...pageProps}/></>}
+        <LandingNavbar {...pageProps} />
+        {!showCookieModal && <Component {...pageProps} />}
         {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
       </ApolloProvider>
     </CookiesProvider>
