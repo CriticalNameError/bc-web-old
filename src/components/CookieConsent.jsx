@@ -6,7 +6,7 @@ import GoogleAnalytics from "../helpers/GoogleAnalytics";
 const CookieConsent = (props) => {
   const [showModal, toggleShowModal] = useState(true);
   const [cookies, setCookie] = useCookies(["cookie_consent"]);
-  const [marketingCookies, setMarketingCookies] = useState(true);
+  const [marketingCookies, setMarketingCookies] = useState(false);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
   useEffect(() => {
@@ -15,6 +15,11 @@ const CookieConsent = (props) => {
   //   useEffect(()=>{
   //     toggleShowModal(props.showModal)
   //   }, [props.showModal])
+  useEffect(()=>{
+    if((/with_marketing/.test(document.cookie)) || (/required_only/.test(document.cookie))){
+        props.toggleShowModal(false);
+    }
+  }, [finishedLoadingDocument])
   return (
     <>
       {!cookies.cookie_consent && finishedLoadingDocument && (
@@ -64,25 +69,43 @@ const CookieConsent = (props) => {
                       checked={marketingCookies}
                     />
                     <span class="form-check-sign"></span>
-                    Marketing-Cookies (optional)
+                    Statistik-Cookies (optional)
                   </label>
                 </div>
               </div>
             </div>
             <center>
+            <Button
+                className={"btn-primary btn-lg"}
+                onClick={() => {
+                  toggleShowModal(false);
+                  if(marketingCookies){
+                    setCookie("cookie_consent", "with_marketing", { path: "/" });
+                    props.toggleShowModal(false);
+                  }else{
+                    setCookie("cookie_consent", "required_only", { path: "/" });
+                    props.toggleShowModal(false);
+                  }
+                  
+                }}
+              >
+                Alle akzeptieren
+              </Button>
               <Button
                 className={"btn-primary btn-lg"}
                 onClick={() => {
                   toggleShowModal(false);
                   if(marketingCookies){
                     setCookie("cookie_consent", "with_marketing", { path: "/" });
+                    props.toggleShowModal(false);
                   }else{
                     setCookie("cookie_consent", "required_only", { path: "/" });
+                    props.toggleShowModal(false);
                   }
                   
                 }}
               >
-                Auswahl akzeptieren
+                Nur notwendige Cookies akzeptieren
               </Button>
             </center>
           </ModalBody>

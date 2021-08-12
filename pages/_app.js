@@ -12,7 +12,6 @@ import CookieConsent from "components/CookieConsent";
 import LandingNavbar from "../src/components/Navbars/LandingNavbar";
 import AOS from "aos";
 import { CookiesProvider } from "react-cookie";
-
 import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }) {
@@ -32,8 +31,9 @@ function MyApp({ Component, pageProps }) {
         toggleShowModal={toggleShowCookieModal}
       />
       <ApolloProvider client={apolloClient}>
-        <LandingNavbar {...pageProps} />
-        <Component {...pageProps} />
+       
+        {!showCookieModal && <> <LandingNavbar {...pageProps} /> <Component {...pageProps}/></>}
+        {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
       </ApolloProvider>
     </CookiesProvider>
   );

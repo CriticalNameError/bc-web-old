@@ -72,7 +72,15 @@ const Index = (props) => {
   const [markup, changeMarkup] = useState(null);
   const [width, setWidth] = useState(0);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
-
+  const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
+    useState(false);
+  const [cookieConsentVisible, toggleCookieConsentVisible] = useState(props.cookieConsentVisible)
+  useEffect(() => {
+    toggleCookieConsentVisible(props.cookieConsentVisible)
+  }, [props.cookieConsentVisible]);
+  useEffect(() => {
+    toggleFinishedLoadingDocument(true);
+  }, []);
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -108,7 +116,7 @@ const Index = (props) => {
       ></CustomModal>
       <div className={"container-fluid"}>
         <div className="row" style={{ height: "100vh" }}>
-          <div className={"col-12 my-auto text-center  "}>
+          <div className={"col-12 my-auto text-center  "} >
             <div className={"mb-3 mb-md-4 animated zoomIn slower"}>
               <span
                 style={{ display: "inline-block" }}
@@ -124,7 +132,7 @@ const Index = (props) => {
             </div>
 
             <div
-              class="animated fadeIn slower mx-auto"
+              className={"mx-auto animated fadeIn slower"}
               style={{ maxWidth: "750px" }}
             >
               <p
@@ -170,88 +178,6 @@ const Index = (props) => {
           </div>
         </div>
         <div>
-          {/* <div
-            class="container text-center pb-5"
-            id={"services"}
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <h2 className={"h2"}>
-              Welche Faktoren bestimmen die{" "}
-              <span
-                style={{
-                  wordBreak: "break-word",
-                  hyphens: "auto",
-                }}
-              >
-                Wert&shy;entwicklung
-              </span>{" "}
-              von Wein?
-            </h2>
-            <p style={{ fontSize: "18px" }}>
-              Hochklassige Weine werden aufgrund einfacher Wirkmechanismen im
-              Laufe der Jahre immer wertvoller.
-            </p>
-
-            <div class="row pt-5 pb-0">
-              <div class="col-md-4 col-sm-12 text-center ">
-                <div
-                  className={"transp-card"}
-                  onClick={() =>
-                    changeMarkup(geringe_mengen_markup, toggleShowModal(true))
-                  }
-                >
-                  <i
-                    class="now-ui-icons sport_user-run mb-3 round-icon-lg"
-                    style={{ color: primary }}
-                  ></i>
-                  <p>
-                    <h3 className={"mb-0"}>Geringe Mengen</h3>
-                    <b className={"text-primary"}>mehr erfahren</b>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-12 text-center mt-5 mt-md-0">
-                <div
-                  className={"transp-card"}
-                  onClick={() =>
-                    changeMarkup(reifung_markup, toggleShowModal(true))
-                  }
-                >
-                  <i
-                    class="now-ui-icons tech_watch-time mb-3 round-icon-lg"
-                    style={{ color: primary }}
-                  ></i>
-                  <p>
-                    <h3 className={"mb-0"}>Reifung</h3>
-                    <b className={"text-primary"}>mehr erfahren</b>
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-12 text-center mt-5 mt-md-0 ">
-                <div
-                  className={"transp-card"}
-                  onClick={() =>
-                    changeMarkup(
-                      angebot_nachfrage_markup,
-                      toggleShowModal(true)
-                    )
-                  }
-                >
-                  {" "}
-                  <i
-                    class="now-ui-icons ui-2_like mb-3 round-icon-lg"
-                    style={{ color: primary }}
-                  ></i>
-                  <p>
-                    <h3 className={"mb-0"}>Angebot & Nachfrage</h3>
-                    <b className={"text-primary"}>mehr erfahren</b>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
           <section
             className={"mx-auto text-center"}
             data-aos="fade-up"
