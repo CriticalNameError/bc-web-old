@@ -13,6 +13,7 @@ import LandingNavbar from "../src/components/Navbars/LandingNavbar";
 import AOS from "aos";
 import { CookiesProvider } from "react-cookie";
 import "aos/dist/aos.css";
+import HttpsRedirect from "react-https-redirect";
 
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
@@ -31,9 +32,11 @@ function MyApp({ Component, pageProps }) {
         toggleShowModal={toggleShowCookieModal}
       />
       <ApolloProvider client={apolloClient}>
-        <LandingNavbar {...pageProps} />
-        {!showCookieModal && <Component {...pageProps} />}
-        {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
+        <HttpsRedirect>
+          <LandingNavbar {...pageProps} />
+          {!showCookieModal && <Component {...pageProps} />}
+          {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
+        </HttpsRedirect>
       </ApolloProvider>
     </CookiesProvider>
   );
