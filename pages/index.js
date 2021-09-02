@@ -616,9 +616,9 @@ const Index = (props) => {
                 jpegquality={30}
               />
               <a href={"https://weindepot.berghaus-cie.com/register"}>
-                <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/>
+                {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
                 <button
-                  className={"btn bg-cta p-3 px-5"}
+                  className={"btn bg-cta p-3 px-5 animated infinite pulse slower"}
                   style={{ fontSize: "18px" }}
                 >
                   {/* <span
@@ -626,7 +626,7 @@ const Index = (props) => {
                       "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
                     }
                   ></span> */}
-                  <span className={"p-1 pl-0 pr-3"}>
+                  {/* <span className={"p-1 pl-0 pr-3"}>
                     {" "}
                     <LogIn
                       width={"30px"}
@@ -634,7 +634,7 @@ const Index = (props) => {
                       strokewidth={3}
                       style={{ display: "inline-block" }}
                     />
-                  </span>
+                  </span> */}
                   Jetzt starten
                 </button>
               </a>
@@ -654,7 +654,7 @@ const Index = (props) => {
             </span>
             <a href={"wein-investments"}>
               <button
-                className={"btn btn-primary mt-4 p-3 px-5"}
+                className={"btn bg-cta animated infinite pulse slow mt-4 p-3 px-5"}
                 style={{ fontSize: "18px" }}
               >
                 Weininvestments
