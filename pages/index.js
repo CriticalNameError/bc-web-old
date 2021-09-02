@@ -27,6 +27,7 @@ import DownArrow from "icons/down-arrow";
 import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
+import CtaButton from "components/CtaButton";
 // core components
 
 let geringe_mengen_markup = (
@@ -615,8 +616,9 @@ const Index = (props) => {
                 jpegquality={30}
               />
               <a href={"https://weindepot.berghaus-cie.com/register"}>
+                <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/>
                 <button
-                  className={"btn btn-primary p-3 px-5"}
+                  className={"btn bg-cta p-3 px-5"}
                   style={{ fontSize: "18px" }}
                 >
                   {/* <span
@@ -633,7 +635,7 @@ const Index = (props) => {
                       style={{ display: "inline-block" }}
                     />
                   </span>
-                  Jetzt Weindepot eröffnen
+                  Jetzt starten
                 </button>
               </a>
             </div>

@@ -171,7 +171,7 @@
   .link-active::after {
     content: '';
     position: absolute;
-    bottom: 0bpx;
+    bottom: 0px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -252,6 +252,10 @@
 
 .nav-link {
   border-radius: 25px !important;
+}
+
+.bg-cta {
+  background-color: #bfac82 !important;
 }
 
 .nav-link:hover {
