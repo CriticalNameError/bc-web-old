@@ -24,10 +24,12 @@ import DeliveryFast from "icons/delivery-fast";
 import Handout from "icons/handout";
 import LogIn from "icons/log-in";
 import DownArrow from "icons/down-arrow";
+import CheckSingle from "icons/check-single";
 import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
+
 // core components
 
 let geringe_mengen_markup = (
@@ -75,9 +77,11 @@ const Index = (props) => {
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
-  const [cookieConsentVisible, toggleCookieConsentVisible] = useState(props.cookieConsentVisible)
+  const [cookieConsentVisible, toggleCookieConsentVisible] = useState(
+    props.cookieConsentVisible
+  );
   useEffect(() => {
-    toggleCookieConsentVisible(props.cookieConsentVisible)
+    toggleCookieConsentVisible(props.cookieConsentVisible);
   }, [props.cookieConsentVisible]);
   useEffect(() => {
     toggleFinishedLoadingDocument(true);
@@ -115,51 +119,123 @@ const Index = (props) => {
         showModal={showModal}
         toggleShowModal={toggleShowModal}
       ></CustomModal>
-      <div className={"container-fluid"}>
+      <div className={"container-fluid px-0"} style={{ overflowX: "hidden" }}>
         <div className="row" style={{ height: "100vh" }}>
-          <div className={"col-12 my-auto text-center  "} >
-            <div className={"mb-3 mb-md-4 animated zoomIn slower"}>
-              <span
-                style={{ display: "inline-block" }}
-                className={"text-primary"}
-              >
-                <LogoSublineLavendel width={width > 500 ? "550px" : "250px"} />
-              </span>
-              {/* <ImageFromCms
+          <div className={"col-12 my-auto text-center  "}>
+            <div
+              className={"mx-auto"}
+              // style={{ maxWidth: "750px" }}
+            >
+              <div className={"mt-md-4 animated zoomIn slower"}>
+                <span
+                  style={{
+                    display: "inline-block",
+                    minHeight: "130px",
+                    marginTop: "150px",
+                  }}
+                  className={"text-primary"}
+                >
+                  <LogoSublineLavendel
+                    width={width > 500 ? "400px" : "250px"}
+                  />
+                </span>
+                {/* <ImageFromCms
                 title={"logo_subline_lavendel"}
                 width={width > 500 ? 550 : 250}
                 jpegquality={5}
               ></ImageFromCms> */}
-            </div>
+              </div>
 
-            <div
-              className={"mx-auto animated fadeIn slower"}
-              style={{ maxWidth: "750px" }}
-            >
-              <p
-                className={"h3"}
-                //style={{fontSize: "24px"}}
+              <div
+                // className={
+                //   " pl-md-4 animate__animated animate__delay-1s animate__fadeInLeft animate__slow"
+                // }
+                className={"pl-md-4 animated fadeIn slower"}
               >
-                Wir verbinden die traditionelle Welt der exquisiten Weine mit
-                der modernen Investmentwelt.
-              </p>
+                <h1 className={" "} style={{ fontSize: "30px" }}>
+                  Investieren Sie in einen genussvollen Sachwert <br /> mit
+                  einem attraktiven Renditepotential.
+                </h1>{" "}
+                <br />
+                <div className={"row"}>
+                  <div className={"col-6 text-right"}>
+                    <div
+                      className={"text-left ml-md-auto"}
+                      style={{ fontSize: "19px", width: "300px" }}
+                    >
+                      <br />
+                      <CheckSingle
+                        width={"25px"}
+                        height={"30px"}
+                        strokewidth={3}
+                      />{" "}
+                      ohne spezielles Vorwissen <br />
+                      <CheckSingle
+                        width={"25px"}
+                        height={"30px"}
+                        strokewidth={3}
+                      />{" "}
+                      sparen Sie wertvolle Zeit <br />
+                      <CheckSingle
+                        width={"25px"}
+                        height={"30px"}
+                        strokewidth={3}
+                      />{" "}
+                      bequem von zuhause aus <br />
+                      <br />
+                    </div>
 
-              {/* <h2 class="text-left d-inline heading mb-4">
-                            Exquisite Weine -<br />{" "}
-                            {"Ihr Investment ist unsere Passion."}
-                            <span
-                              style={{
-                                fontFamily: " 'Nothing You Could Do', cursive;",
-                                fontSize: "1.25em",
-                              }}
-                            >
-                              Passion
-                            </span>
-                            . 
-                          </h2>  */}
+                    <a href={"#appointment"}>
+                      {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
+                      <button
+                        className={
+                          "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
+                        }
+                        style={{ fontSize: "18px" }}
+                      >
+                        Erstgespräch vereinbaren
+                      </button>
+                    </a>
+                  </div>
+                  <br />
+
+                  <div className={"col-6 text-left"}>
+                    <ImageFromCms
+                      title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
+                      width={width > 991 ? (width > 1500 ? 275 : 235) : 200}
+                      jpegquality={30}
+                    />
+                  </div>
+                </div>
+                <div
+                  // className={
+                  //   "animate__animated animate__delay-1s animate__fadeInRight animate__slow"
+                  // }
+                  className={"animated fadeIn slower"}
+                >
+                  {/* <ImageFromCms
+                    title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
+                    width={width > 991 ? (width > 1500 ? 475 : 295) : 250}
+                    jpegquality={30}
+                  /> */}
+                </div>
+                {/* <span>
+                  <a href={"https://weindepot.berghaus-cie.com/register"}>
+
+                    <button
+                      className={
+                        "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
+                      }
+                      style={{ fontSize: "18px" }}
+                    >
+                      Erstgespräch vereinbaren
+                    </button>
+                  </a>
+                </span> */}
+              </div>
 
               <a
-                className={"move-down"}
+                className={"move-down mt-n3"}
                 href={"#services"}
                 style={{ cursor: "pointer" }}
               >
@@ -206,7 +282,7 @@ const Index = (props) => {
             />
           </section>
 
-          <div
+          {/* <div
             className={"row mx-auto pt-5"}
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
@@ -425,6 +501,7 @@ const Index = (props) => {
               </div>
             </div>
           </div>
+          */}
         </div>
 
         <div>
@@ -438,7 +515,9 @@ const Index = (props) => {
               className={"mb-3"}
             >
               <h2 className={"h3"}>
-                Wie läuft ein{" "}
+                In nur fünf Schritten zu Ihrem persönlichen Weininvestment bei
+                Berghaus & Cie.
+                {/* Wie läuft ein{" "}
                 <span
                   style={{
                     wordBreak: "break-word",
@@ -447,7 +526,7 @@ const Index = (props) => {
                 >
                   Wein&shy;investment
                 </span>{" "}
-                bei Berghaus & Cie. ab?
+                bei Berghaus & Cie. ab? */}
               </h2>
             </div>
 
@@ -474,7 +553,9 @@ const Index = (props) => {
                   // ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">Beratung</h3>
+                <h3 className="vertical-timeline-element-title h5">
+                  1. Beratung
+                </h3>
 
                 <p style={{ fontSize: "14px" }}>
                   Wir sind für Sie da und entwickeln gemeinsam Ihre ganz
@@ -504,7 +585,7 @@ const Index = (props) => {
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
-                  Kaufabwicklung
+                  2. Kaufabwicklung
                 </h3>
 
                 <p style={{ fontSize: "14px" }}>
@@ -534,7 +615,7 @@ const Index = (props) => {
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
-                  Transport
+                  3. Transport
                 </h3>
 
                 <p style={{ fontSize: "14px" }}>
@@ -563,7 +644,9 @@ const Index = (props) => {
                   // ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">Lagerung</h3>
+                <h3 className="vertical-timeline-element-title h5">
+                  4. Lagerung
+                </h3>
                 <h4 className="vertical-timeline-element-subtitle"></h4>
                 <p style={{ fontSize: "14px" }}>
                   In unserem Weinlager können Ihre Weine versichert und unter
@@ -591,7 +674,9 @@ const Index = (props) => {
                   // ></i>
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">Verkauf</h3>
+                <h3 className="vertical-timeline-element-title h5">
+                  5. Verkauf
+                </h3>
 
                 <p style={{ fontSize: "14px" }}>
                   Wir behalten die Reifung und Wertentwicklung Ihres Wein im
@@ -603,41 +688,91 @@ const Index = (props) => {
           </div>
         </div>
 
-        <div>
-          <div class="container text-center pb-5 mt-5">
-            <div
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              className={"mb-3"}
-            >
-              <ImageFromCms
-                title={width > 600 ? "mockup_all" : "mockup_mobile"}
-                width={width > 991 ? (width > 1500 ? 1100 : 950) : 300}
-                jpegquality={30}
-              />
-              <a href={"https://weindepot.berghaus-cie.com/register"}>
-                {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                <button
-                  className={"btn bg-cta p-3 px-5 animated infinite pulse slower"}
-                  style={{ fontSize: "18px" }}
+        <div class=" text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={"mb-3"}
+            style={{ backgroundColor: "rgb(191, 157, 226)" }}
+          >
+            <div style={{ overflow: "hidden" }}>
+              <svg
+                preserveAspectRatio="none"
+                viewBox="0 0 1200 120"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  fill: "#ffffff",
+                  width: "146%",
+                  height: 80,
+                  transform: "scaleX(-1)",
+                  marginBottom: "-1px",
+                  marginLeft: "-1px",
+                }}
+              >
+                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+              </svg>
+            </div>
+            <div className={"text-white"}>
+              <h3>Unsere Auszeichnungen</h3>
+              <div className={"d-flex justify-content-between px-md-5"}>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    backgroundColor: "white",
+                  }}
                 >
-                  {/* <span
-                    className={
-                      "now-ui-icons objects_spaceship p-1 pr-2 pt-0 mt-n1"
-                    }
-                  ></span> */}
-                  {/* <span className={"p-1 pl-0 pr-3"}>
-                    {" "}
-                    <LogIn
-                      width={"30px"}
-                      height={"30px"}
-                      strokewidth={3}
-                      style={{ display: "inline-block" }}
-                    />
-                  </span> */}
-                  Jetzt starten
-                </button>
-              </a>
+                  <ImageFromCms
+                    title={"award_1"}
+                    height={width > 50 ? 115 : 75}
+                    jpegquality={25}
+                  ></ImageFromCms>
+                </div>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ImageFromCms
+                    title={"award_2"}
+                    height={width > 50 ? 112 : 75}
+                    jpegquality={25}
+                  ></ImageFromCms>
+                </div>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ImageFromCms
+                    title={"award_3"}
+                    height={width > 50 ? 115 : 75}
+                    jpegquality={25}
+                  ></ImageFromCms>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <svg
+                preserveAspectRatio="none"
+                viewBox="0 0 1200 120"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  fill: "#ffffff",
+                  width: "197%",
+                  height: 67,
+                  transform: "rotate(180deg) scaleX(-1)",
+                  marginBottom: "-1px",
+                  marginLeft: "-1px",
+                }}
+              >
+                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+              </svg>
             </div>
           </div>
         </div>
@@ -648,18 +783,275 @@ const Index = (props) => {
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
           >
-            <span style={{ fontSize: "18px" }}>
-              Wenn Sie noch mehr wissen möchten, schauf Sie auf
+            <div className={" text-center"}>
+              <div style={{ fontSize: "26px" }}>Ihr digitales Weindepot</div>
               <br />
-            </span>
-            <a href={"wein-investments"}>
-              <button
-                className={"btn bg-cta animated infinite pulse slow mt-4 p-3 px-5"}
-                style={{ fontSize: "18px" }}
+              <br />
+
+              <ImageFromCms
+                title={width > 600 ? "mockup_all" : "mockup_all"}
+                width={width > 991 ? (width > 1500 ? 775 : 535) : 200}
+                jpegquality={30}
+              />
+
+              <div
+                className={
+                  "d-flex w-50 mx-auto justify-content-between px-md-6"
+                }
+                style={{ fontSize: "19px" }}
               >
-                Weininvestments
-              </button>
-            </a>
+                <div>
+                  <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
+                  intuitiv
+                </div>
+                <div>
+                  <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
+                  transparent
+                </div>
+                <div>
+                  <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
+                  mobil
+                </div>
+
+                {/* <a href={"https://weindepot.berghaus-cie.com/register"}>
+                        <button
+                        className={
+                          "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
+                        }
+                        style={{ fontSize: "18px" }}
+                      >
+                        Erstgespräch vereinbaren
+                      </button>
+                    </a> */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={"mb-3"}
+            style={{ backgroundColor: "rgb(191, 157, 226)" }}
+          >
+            <div style={{ overflow: "hidden" }}>
+              <svg
+                preserveAspectRatio="none"
+                viewBox="0 0 1200 120"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  fill: "#ffffff",
+                  width: "146%",
+                  height: 80,
+                  transform: "scaleX(-1)",
+                  marginBottom: "-1px",
+                  marginLeft: "-1px",
+                }}
+              >
+                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+              </svg>
+            </div>
+            <div className={"text-white"}>
+              <h3>Unsere Partner</h3>
+              <div className={"d-flex justify-content-between px-md-5"}>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ImageFromCms
+                    title={"partner_1"}
+                    height={width > 50 ? 115 : 75}
+                    jpegquality={25}
+                  ></ImageFromCms>
+                </div>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ImageFromCms
+                    title={"partner_2"}
+                    height={width > 50 ? 112 : 75}
+                    jpegquality={25}
+                  ></ImageFromCms>
+                </div>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "8px",
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ImageFromCms
+                    title={"partner_3"}
+                    height={width > 50 ? 115 : 75}
+                    jpegquality={25}
+                  ></ImageFromCms>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ overflow: "hidden" }}>
+              <svg
+                preserveAspectRatio="none"
+                viewBox="0 0 1200 120"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  fill: "#ffffff",
+                  width: "197%",
+                  height: 67,
+                  transform: "rotate(180deg) scaleX(-1)",
+                  marginBottom: "-1px",
+                  marginLeft: "-1px",
+                }}
+              >
+                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"} id={"appointment"}>
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={"mb-3"}
+          
+          >
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="title">Erstgespräch vereinbaren</h2>
+                <h4 class="">
+                  You need more information? Check what other persons are saying
+                  about our product. They are very happy with their purchase.
+                </h4>
+                <div class="info info-horizontal">
+                  <div class="icon icon-info">
+                    <i class="now-ui-icons location_pin"></i>
+                  </div>
+                  <div class="">
+                    <h4 class="info-title">Find us at the office</h4>
+                    <p class="">
+                      Bld Mihail Kogalniceanu, nr. 8, <br />
+                      7652 Bucharest, <br />
+                      Romania
+                    </p>
+                  </div>
+                </div>
+                <div class="info info-horizontal">
+                  <div class="icon icon-info">
+                    <i class="now-ui-icons tech_mobile"></i>
+                  </div>
+                  <div class="">
+                    <h4 class="info-title">Give us a ring</h4>
+                    <p class="">
+                      Michael Jordan <br />
+                      +40 762 321 762 <br />
+                      Mon - Fri, 8:00-22:00
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="ml-auto mr-auto col-md-5">
+                <div class="card-contact card-raised card">
+                  <form id="contact-form1" method="post" role="form" class="">
+                    <div class="text-center card-header">
+                      <h4 class="card-title">Terminkalender</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="pr-2 col-md-6">
+                          <label>First name</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                <i class="now-ui-icons users_circle-08"></i>
+                              </span>
+                            </div>
+                            <input
+                              aria-label="First Name..."
+                              autocomplete="given-name"
+                              placeholder="First Name..."
+                              type="text"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div class="pl-2 col-md-6">
+                          <div class="form-group">
+                            <label>Last name</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                  <i class="now-ui-icons text_caps-small"></i>
+                                </span>
+                              </div>
+                              <input
+                                aria-label="Last Name..."
+                                autocomplete="family-name"
+                                placeholder="Last Name..."
+                                type="text"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Email address</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="now-ui-icons ui-1_email-85"></i>
+                            </span>
+                          </div>
+                          <input
+                            autocomplete="email"
+                            placeholder="Email Here..."
+                            type="email"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Your message</label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows="6"
+                          class="form-control"
+                        ></textarea>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" />
+                              <span class="form-check-sign"></span>I'm not a
+                              robot
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn-round pull-right btn btn-info"
+                          >
+                            Send Message
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

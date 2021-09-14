@@ -18,6 +18,19 @@ export const ALL_BRAND_IMAGES = gql`
     
   }`
 
+  export const ALL_BRAND_IMAGES_HEIGHT = gql`
+  query allBrandImages($height: Int, $jpegquality: Int) {
+      allBrandImages{
+    title
+    image {
+      rendition(height: $height, jpegquality: $jpegquality){
+          url
+      }
+    }
+  }
+  
+}`
+
   export const ALL_BRAND_IMAGES_FILL = gql`
   query allBrandImages($fill: String, $jpegquality: Int) {
       allBrandImages{
@@ -67,6 +80,23 @@ export const  getBrandImageUrlByTitleFill = async (title, fill, jpegquality) => 
   
 }
 
+export const  getBrandImageUrlByTitleHeight = async (title, height, jpegquality) => {
+  let res;
+  try{
+      res = client.query({ query: ALL_BRAND_IMAGES_HEIGHT, variables: {height: height, jpegquality: jpegquality} }).then((result, data) => {
+          //console.log("FRESH:", result.data.allBrandImages.filter(obj => obj.title === title)[0].image)
+          res =  String(result.data.allBrandImages.filter(obj => obj.title === title)[0].image.rendition.url)
+          return res
+      });
+    }
+    catch(error){
+      console.log(error)
+    }
+  return res
+ 
+  
+}
+
 export const ImageFromCms = props => {
   const [url, setUrl] = useState(false)
   const [placeholderUrl, setPlaceholderUrl] = useState(false);
@@ -81,6 +111,11 @@ export const ImageFromCms = props => {
         getBrandImageUrlByTitle(props.title, props.width, (props.jpegquality? props.jpegquality : 100)).then((res) =>
         setUrl(res) );
         getBrandImageUrlByTitle(props.title, props.width, (props.jpegquality? props.jpegquality / 10 : 10)).then((res) =>
+        setPlaceholderUrl(res) );
+      }else if(props.height){
+        getBrandImageUrlByTitleHeight(props.title, props.height, (props.jpegquality? props.jpegquality : 100)).then((res) =>
+        setUrl(res) );
+        getBrandImageUrlByTitleHeight(props.title, props.height, (props.jpegquality? props.jpegquality / 10 : 10)).then((res) =>
         setPlaceholderUrl(res) );
       }
 

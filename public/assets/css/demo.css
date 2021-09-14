@@ -24,10 +24,6 @@
   .heading {
     font-size: 2em;
   }
-  #services {
-    margin-top: -120px;
-    padding-top: 20px;
-  }
   #livex {
     margin-top: -120px;
     padding-top: 20px;
@@ -54,10 +50,6 @@
 @media only screen and (min-width: 1170px) {
   .img-blog {
     max-height: 200px;
-  }
-  #services {
-    margin-top: -160px;
-    padding-top: 80px;
   }
   #livex {
     margin-top: -260px;
@@ -256,6 +248,30 @@
 
 .bg-cta {
   background-color: #bfac82 !important;
+}
+
+@-webkit-keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .nav-link:hover {
