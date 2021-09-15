@@ -29,7 +29,7 @@ import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
-
+import { InlineWidget, openPopupWidget } from "react-calendly";
 // core components
 
 let geringe_mengen_markup = (
@@ -281,227 +281,6 @@ const Index = (props) => {
               classes={"animated fadeIn img img-raised mb-3"}
             />
           </section>
-
-          {/* <div
-            className={"row mx-auto pt-5"}
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}
-          >
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <BMeeting width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5 mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Fundierte Beratung</h3>
-                    <div className={"text-left"}>
-                      Grundlage für den Erfolg Ihres Weininvestments ist eine
-                      umfassende Beratung, die Ihre speziellen Wünsche und
-                      Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
-                      Profi, wir bieten in jedem Fall die passende Beratung.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-1 text-center " style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <Diamond width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Exquisite Weine</h3>
-                    <div className={"text-left"}>
-                      Wir bieten Ihnen hochklassige und seltene Weine für Ihr
-                      persönliches Weininvestment. Durch unser großes
-                      Einkaufsnetzwerk profitieren Sie von attraktiven
-                      Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
-                      Kapitals.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="row mt-md-n5 mx-auto"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}
-          >
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <Questionaire
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                  />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Individuelles Portfolio</h3>
-                    <div className={"text-left"}>
-                      Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
-                      an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
-                      zusätzlich Ihren persönlichen Geschmack und Ihre
-                      individuellen Präferenzen als treibenden Faktor mit ein.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <MobilePhone width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5 mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Digitales Weindepot</h3>
-                    <div className={"text-left"}>
-                      Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
-                      oder über die Website, die Möglichkeit auf Ihr
-                      persönliches Online-Depot zuzugreifen und sich über die
-                      Entwicklung Ihres Investments zu informieren.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="row mt-md-n5 mx-auto"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}
-          >
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <StorageUnit width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Optimale Lagerung</h3>
-                    <div className={"text-left"}>
-                      Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
-                      klimatische Bedingungen sorgen dafür, dass er bestmöglich
-                      ausreift. Zudem ist das Lager als Umsatzsteuerlager
-                      deklariert. Das bedeutet, solange der Wein das Lager nicht
-                      verlässt, wird keine Mehrwertsteuer erhoben.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <World width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Globales Netzwerk</h3>
-                    <div className={"text-left"}>
-                      Wein ist ein endliches Gut und die internationale
-                      Nachfrage nach gereiften hochwertigen Weinen nimmt mit den
-                      Jahren zu. Wir unterstützen Sie dabei, Ihre Weine zum
-                      besten Zeitpunkt zu veräußern und bieten Ihnen den Zugang
-                      zu unserem weltweiten Netzwerk an Verkaufskanälen.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          */}
         </div>
 
         <div>
@@ -542,15 +321,6 @@ const Index = (props) => {
                     strokewidth={3}
                     style={{ padding: "13px" }}
                   />
-
-                  // <i
-                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
-                  //   style={{
-                  //     color: primary,
-                  //     fontSize: "30px",
-                  //     padding: "13px",
-                  //   }}
-                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
@@ -573,15 +343,6 @@ const Index = (props) => {
                     strokewidth={3}
                     style={{ padding: "13px" }}
                   />
-                  // Handshake
-                  // <i
-                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
-                  //   style={{
-                  //     color: primary,
-                  //     fontSize: "30px",
-                  //     padding: "13px",
-                  //   }}
-                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
@@ -604,14 +365,6 @@ const Index = (props) => {
                     strokewidth={3}
                     style={{ padding: "13px" }}
                   />
-                  // <i
-                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
-                  //   style={{
-                  //     color: primary,
-                  //     fontSize: "30px",
-                  //     padding: "13px",
-                  //   }}
-                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
@@ -634,14 +387,6 @@ const Index = (props) => {
                     strokewidth={3}
                     style={{ padding: "13px" }}
                   />
-                  // <i
-                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
-                  //   style={{
-                  //     color: primary,
-                  //     fontSize: "30px",
-                  //     padding: "13px",
-                  //   }}
-                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
@@ -664,14 +409,6 @@ const Index = (props) => {
                     strokewidth={3}
                     style={{ padding: "13px" }}
                   />
-                  // <i
-                  //   class="now-ui-icons sport_user-run text-white timeline-icon"
-                  //   style={{
-                  //     color: primary,
-                  //     fontSize: "30px",
-                  //     padding: "13px",
-                  //   }}
-                  // ></i>
                 }
               >
                 <h3 className="vertical-timeline-element-title h5">
@@ -812,17 +549,6 @@ const Index = (props) => {
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   mobil
                 </div>
-
-                {/* <a href={"https://weindepot.berghaus-cie.com/register"}>
-                        <button
-                        className={
-                          "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
-                        }
-                        style={{ fontSize: "18px" }}
-                      >
-                        Erstgespräch vereinbaren
-                      </button>
-                    </a> */}
               </div>
             </div>
           </div>
@@ -917,14 +643,30 @@ const Index = (props) => {
           </div>
         </div>
 
-        <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"} id={"appointment"}>
+        <div
+          className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}
+         
+        >
           <div
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
-          
+            
           >
-            <div class="row">
+            <div id={"appointment"}>
+             <InlineWidget 
+             
+             url="https://calendly.com/berghausundcie/15-minutiges-erstgesprach" 
+             pageSettings={{
+              backgroundColor: 'ffffff',
+              hideEventTypeDetails: false,
+              hideLandingPageDetails: false,
+              primaryColor: '714F9B',
+              textColor: '2c2c2c'
+            }}
+             />
+             </div>
+            {/* <div class="row">
               <div class="col-md-5">
                 <h2 class="title">Erstgespräch vereinbaren</h2>
                 <h4 class="">
@@ -1051,245 +793,9 @@ const Index = (props) => {
                   </form>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-
-        {/* <div className="section fp-auto-width-responsive ">
-                    <div class="container">
-                      <h4 class="text">Der Ablauf</h4>
-                      <VerticalTimeline animate={false}>
-              
-
-                        <VerticalTimelineElement
-                          className="vertical-timeline-element--work"
-                          contentStyle={{
-                            background: "#efefef",
-                            color: "#2c2c2c",
-                          }}
-                          contentArrowStyle={{
-                            borderRight: "7px solid #efefef ",
-                          }}
-                          date={
-                            <>
-                              <b className={"vertical-timeline-item-title"}>
-                                Individuelle Beratung
-                              </b>
-                              <div
-                                className={
-                                  "vertical-timeline-description text-justify"
-                                }
-                              >
-                                Egal ob über die App oder telefonisch - wir sind
-                                für Sie da und erarbeiten gemeinsam mit Ihnen
-                                eine individuelle Anlagestrategie.
-                              </div>
-                            </>
-                          }
-                          position={"left"}
-                          iconStyle={{
-                            backgroundColor: primary,
-                            color: "#fff",
-                            boxShadow: "0 1px 15px 1px black",
-                          }}
-                          icon={
-                            <i
-                              class="fas fa-comments fa-fw icn"
-                              style={{ marginTop: "10px", marginLeft: "8px" }}
-                            ></i>
-                          }
-                        >
-                          <div
-                            className={
-                              "vertical-timeline-description-inv text-justify"
-                            }
-                          >
-                            Egal ob über die App oder telefonisch - wir sind für
-                            Sie da und erarbeiten gemeinsam mit Ihnen eine
-                            individuelle Anlagestrategie.
-                          </div>
-                        </VerticalTimelineElement>
-
-                        <VerticalTimelineElement
-                          className="vertical-timeline-element--work"
-                          contentStyle={{
-                            background: "#efefef",
-                            color: "#2c2c2c",
-                          }}
-                          contentArrowStyle={{
-                            borderRight: "7px solid #efefef ",
-                          }}
-                          date={
-                            <>
-                              <b className={"vertical-timeline-item-title"}>
-                                Kaufabwicklung
-                              </b>
-                              <div
-                                className={
-                                  "vertical-timeline-description text-justify"
-                                }
-                              >
-                                {" "}
-                                Über unser globales Netzwerk können wir Ihre
-                                persönliche Weinauswahl zu bestmöglichen
-                                Konditionen beziehen.
-                              </div>
-                            </>
-                          }
-                          position={"right"}
-                          iconStyle={{
-                            backgroundColor: primary,
-                            color: "#fff",
-                            boxShadow: "0 1p <LandingFooter />
-                              "vertical-timeline-description-inv text-justify"
-                            }
-                          >
-                            {" "}
-                            Über unser globales Netzwerk können wir Ihre
-                            Traumweine zu bestmöglichen Konditionen beziehen.
-                          </div>
-                        </VerticalTimelineElement>
-
-                        <VerticalTimelineElement
-                          className="vertical-timeline-element--work"
-                          contentStyle={{
-                            background: "#efefef",
-                            color: "#2c2c2c",
-                          }}
-                          contentArrowStyle={{
-                            borderRight: "7px solid #efefef ",
-                          }}
-                          date={
-                            <>
-                              <b className={"vertical-timeline-item-title"}>
-                                Sicherer Transport
-                              </b>
-                              <div
-                                className={
-                                  "vertical-timeline-description text-justify"
-                                }
-                              >
-                                Ihre Weine werden fachgerecht und sicher in das
-                                klimatisierte Umsatzsteuerlager transportiert.
-                              </div>
-                            </>
-                          }
-                          position={"left"}
-                          iconStyle={{
-                            backgroundColor: primary,
-                            color: "#fff",
-                            boxShadow: "0 1px 15px 1px black",
-                          }}
-                          icon={
-                            <i
-                              class="fas fa-truck fa-fw icn"
-                              style={{ marginTop: "10px", marginLeft: "8px" }}
-                            ></i>
-                          }
-                        >
-                          <div
-                            className={
-                              "vertical-timeline-description-inv text-justify"
-                            }
-                          >
-                            BIhre Weine werden fachgerecht und sicher in das
-                            klimatisierte Umsatzsteuerlager transportiert.
-                          </div>
-                        </VerticalTimelineElement>
-
-                        <VerticalTimelineElement
-                          className="vertical-timeline-element--work"
-                          contentStyle={{
-                            background: "#efefef",
-                            color: "#2c2c2c",
-                          }}
-                          contentArrowStyle={{
-                            borderRight: "7px solid #efefef ",
-                          }}
-                          date={
-                            <><div  className={
-                              "vertical-timeline-description-inv text-justify"
-                            }>
-                                Hohe Werte wollen gut versichert sein. Die
-                                Versicherung Ihrer Weine ist daher Teil unseres
-                                Services für Sie.
-                              </div>
-                            </>
-                          }
-                          position={"right"}
-                          iconStyle={{
-                            backgroundColor: primary,
-                            color: "#fff",
-                            boxShadow: "0 1px 15px 1px black",
-                          }}
-                          icon={
-                            <i
-                              class="fas fa-shield-alt fa-fw icn"
-                              style={{ marginTop: "10px", marginLeft: "8px" }}
-                            ></i>
-                          }
-                        >
-                          <div
-                            className={
-                              "vertical-timeline-description-inv text-justify"
-                            }
-                          >
-                            Hohe Werte wollen gut versichert sein. Die
-                            Versicherung Ihrer Weine ist daher Teil unseres
-                            Services für Sie.
-                          </div>
-                        </VerticalTimelineElement>
-
-                        <VerticalTimelineElement
-                          className="vertical-timeline-element--work"
-                          contentStyle={{
-                            background: "#efefef",
-                            color: "#2c2c2c",
-                          }}
-                          contentArrowStyle={{
-                            borderRight: "7px solid #efefef ",
-                          }}
-                          date={
-                            <>
-                              <b className={"vertical-timeline-item-title"}>
-                                Portfolio-Entwicklung
-                              </b>
-                              <div
-                                className={
-                                  "vertical-timeline-description text-justify"
-                                }
-                              >
-                                Wir helfen Ihnen d>abei, Ihr Portfolio ständig zu
-                                erweitern und den Gegebenheiten seitens Ihrer
-                                persönlichen Ziele oder seitens des Marktes
-                                anzupassen.
-                              </div>
-                            </>
-                          }
-                        import LandingFooter from "components/Footer/LandingFooter";color: "#fff",
-                            boxShadow: "0 1px 15px 1px black",
-                          }}
-                          icon={{ marginTop: "10px", marginLeft: "8px" }}
-                            ></i>
-                          }
-                        >
-                          <div
-                            className={
-                              "vertical-timeline-description-inv text-justify"
-                            }
-                          >
-                            Wir helfen Ihnen dabei, Ihr Portfolio ständig zu
-                            erweitern und den Gegebenheiten seitens Ihrer
-                            persönlichen Ziele oder seitens des Marktes
-                            anzupassen.
-                          </div>
-                        </VerticalTimelineElement>
-
-       
-                        <br />
-                      </VerticalTimeline> 
-                    </div>
-                  </div>*/}
       </div>
       <LandingFooter />
     </>
