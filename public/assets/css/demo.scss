@@ -253,9 +253,9 @@
         
     }
     
-    .sc-htpNat:hover>.jwfbbd{
+    // .sc-htpNat:hover>.jwfbbd{
         
-    }
+    // }
 
     .zNoeh{
         background: none !important;
@@ -367,7 +367,7 @@
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
-background: $primary-color!important
+    background: $primary-color!important
 }
 
 .bg-gradient {
@@ -375,7 +375,9 @@ background: $primary-color!important
     background-image: linear-gradient(-45deg,rgba(113,79,155,.5),#714f9b);
 }
 
-.wrapper{background-color: #ebecf1!important;}
+.wrapper{
+    background-color: #ebecf1!important;
+}
 
 .chart-info-text{
     max-width: 400px;
@@ -384,6 +386,10 @@ background: $primary-color!important
 
 .chart-info-headline{
     max-width: 400px;
+}
+
+._27tQ7ar32s{
+    color: $primary-color!important;
 }
 
 .blog-post-card:hover{
@@ -719,6 +725,9 @@ background: $primary-color!important
 
 }
 
+._27tQ7ar32s{
+    color: $primary-color!important;
+}
 
 
 .accordion__button:before {

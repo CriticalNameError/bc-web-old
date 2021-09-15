@@ -30,6 +30,11 @@ import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
 import { InlineWidget, openPopupWidget } from "react-calendly";
+import Award1 from "icons/award_1";
+import Award2 from "icons/award_2";
+import Award3 from "icons/award_3";
+import PlayAudio from "components/PlayPodcast";
+
 // core components
 
 let geringe_mengen_markup = (
@@ -150,18 +155,29 @@ const Index = (props) => {
                 // className={
                 //   " pl-md-4 animate__animated animate__delay-1s animate__fadeInLeft animate__slow"
                 // }
-                className={"pl-md-4 animated fadeIn slower"}
+                className={"pl-md-4 mt-3 animated fadeIn slower"}
               >
-                <h1 className={" "} style={{ fontSize: "30px" }}>
+                <h1 className={" "} style={{ fontSize: "24px" }}>
                   Investieren Sie in einen genussvollen Sachwert <br /> mit
                   einem attraktiven Renditepotential.
                 </h1>{" "}
                 <br />
                 <div className={"row"}>
-                  <div className={"col-6 text-right"}>
+                  <div className={"col-6 text-right animated fadeIn slower"}>
+                    <ImageFromCms
+                      title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
+                      width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
+                      jpegquality={10}
+                    />
+                  </div>
+                  <div className={"col-6 text-left mt-md-5"}>
                     <div
-                      className={"text-left ml-md-auto"}
-                      style={{ fontSize: "19px", width: "300px" }}
+                      className={"text-left"}
+                      style={{
+                        fontSize: "19px",
+                        width: "300px",
+                        lineHeight: "1.5em",
+                      }}
                     >
                       <br />
                       <CheckSingle
@@ -189,7 +205,7 @@ const Index = (props) => {
                       {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
                       <button
                         className={
-                          "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
+                          "mr-auto btn bg-cta p-2 animated infinite pulse slower"
                         }
                         style={{ fontSize: "18px" }}
                       >
@@ -198,14 +214,6 @@ const Index = (props) => {
                     </a>
                   </div>
                   <br />
-
-                  <div className={"col-6 text-left"}>
-                    <ImageFromCms
-                      title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
-                      width={width > 991 ? (width > 1500 ? 275 : 235) : 200}
-                      jpegquality={30}
-                    />
-                  </div>
                 </div>
                 <div
                   // className={
@@ -234,7 +242,7 @@ const Index = (props) => {
                 </span> */}
               </div>
 
-              <a
+              {/* <a
                 className={"move-down mt-n3"}
                 href={"#services"}
                 style={{ cursor: "pointer" }}
@@ -250,7 +258,107 @@ const Index = (props) => {
                     style={{ display: "inline-block" }}
                   />
                 </span>
-              </a>
+              </a> */}
+            </div>
+          </div>
+
+          <div class=" text-center w-100 animated fadeIn slower">
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              className={"mb-3"}
+              // style={{ backgroundColor: "rgb(191, 157, 226)" }}
+            >
+              {/* <div style={{ overflow: "hidden" }}>
+                <svg
+                  preserveAspectRatio="none"
+                  viewBox="0 0 1200 120"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    fill: "#ffffff",
+                    width: "196%",
+                    height: 50,
+                    transform: "scaleX(-1)",
+                    marginBottom: "-1px",
+                    marginLeft: "-1px",
+                  }}
+                >
+                  <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+                </svg>
+              </div> */}
+              
+              <div className={"row animated fadeInUp slower text-left"}>
+              <h3 className={"col-md-8 offset-md-2"} style={{fontSize: "18px"}}>Unsere Auszeichnungen</h3><br/>
+                <div style={{}} className={"d-flex justify-content-between col-md-8 offset-md-2"}>
+                 
+                  <div
+                   
+                    style={{
+                      padding: "10px",
+                      borderRadius: "7px",
+                      backgroundColor: "white",
+                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                    }}
+                  >
+                     <Award1 height={"50px"}/>
+                    {/* <ImageFromCms
+                      title={"award_1"}
+                      height={width > 50 ? 80 : 75}
+                      jpegquality={17}
+                    ></ImageFromCms> */}
+                  </div>
+                  <div
+                  
+                    style={{
+                      padding: "10px",
+                      borderRadius: "7px",
+                      backgroundColor: "white",
+                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                    }}
+                  >
+                      <Award2 height={"50px"}/>
+                    {/* <ImageFromCms
+                      title={"award_2"}
+                      height={width > 50 ? 80 : 75}
+                      jpegquality={17}
+                    ></ImageFromCms> */}
+                  </div>
+                  <div
+                 
+                    style={{
+                      padding: "10px",
+                      borderRadius: "7px",
+                      backgroundColor: "white",
+                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                    }}
+                  >
+                     <Award3 height={"50px"}/>
+                    {/* <ImageFromCms
+                      title={"award_3"}
+                      height={width > 50 ? 80 : 75}
+                      jpegquality={17}
+                    ></ImageFromCms> */}
+                  </div>
+                </div>
+              </div>
+
+              {/* <div style={{ overflow: "hidden" }}>
+                <svg
+                  preserveAspectRatio="none"
+                  viewBox="0 0 1200 120"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    fill: "#ffffff",
+                    width: "197%",
+                    height: 50,
+                    transform: "rotate(180deg) scaleX(-1)",
+                    marginBottom: "-1px",
+                    marginLeft: "-1px",
+                  }}
+                >
+                  <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
+                </svg>
+              </div> */}
             </div>
           </div>
         </div>
@@ -262,7 +370,9 @@ const Index = (props) => {
             data-aos-anchor-placement="center-bottom"
             style={{ maxWidth: "1200px" }}
           >
-            <h2 className={"h3"}>Was dürfen Sie von uns erwarten?</h2>
+            <h2 className={"h3"} style={{ fontSize: "24px" }}>
+              Was dürfen Sie von uns erwarten?
+            </h2>
             <p
               className={"mx-auto"}
               style={{ fontSize: "18px", maxWidth: "750px" }}
@@ -280,12 +390,19 @@ const Index = (props) => {
               jpegquality={80}
               classes={"animated fadeIn img img-raised mb-3"}
             />
+            <br/>
+            <br/>
+            "Weininvestments bei Berghaus & Cie."<br/>
+            in 180 Sekunden
+             <PlayAudio/>
+
           </section>
+        
         </div>
 
         <div>
           <div
-            class="container text-center pb-5 mt-5"
+            class="container text-center pb-5 mt-5 pt-4"
             style={{ overflowX: "hidden" }}
           >
             <div
@@ -293,9 +410,9 @@ const Index = (props) => {
               data-aos-anchor-placement="center-bottom"
               className={"mb-3"}
             >
-              <h2 className={"h3"}>
-                In nur fünf Schritten zu Ihrem persönlichen Weininvestment bei
-                Berghaus & Cie.
+              <h2 className={"h3"} style={{ fontSize: "24px" }}>
+                In fünf einfachen Schritten zu Ihrem persönlichen Weininvestment
+                bei Berghaus & Cie.
                 {/* Wie läuft ein{" "}
                 <span
                   style={{
@@ -425,95 +542,6 @@ const Index = (props) => {
           </div>
         </div>
 
-        <div class=" text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            className={"mb-3"}
-            style={{ backgroundColor: "rgb(191, 157, 226)" }}
-          >
-            <div style={{ overflow: "hidden" }}>
-              <svg
-                preserveAspectRatio="none"
-                viewBox="0 0 1200 120"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  fill: "#ffffff",
-                  width: "146%",
-                  height: 80,
-                  transform: "scaleX(-1)",
-                  marginBottom: "-1px",
-                  marginLeft: "-1px",
-                }}
-              >
-                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-              </svg>
-            </div>
-            <div className={"text-white"}>
-              <h3>Unsere Auszeichnungen</h3>
-              <div className={"d-flex justify-content-between px-md-5"}>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ImageFromCms
-                    title={"award_1"}
-                    height={width > 50 ? 115 : 75}
-                    jpegquality={25}
-                  ></ImageFromCms>
-                </div>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ImageFromCms
-                    title={"award_2"}
-                    height={width > 50 ? 112 : 75}
-                    jpegquality={25}
-                  ></ImageFromCms>
-                </div>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ImageFromCms
-                    title={"award_3"}
-                    height={width > 50 ? 115 : 75}
-                    jpegquality={25}
-                  ></ImageFromCms>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ overflow: "hidden" }}>
-              <svg
-                preserveAspectRatio="none"
-                viewBox="0 0 1200 120"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  fill: "#ffffff",
-                  width: "197%",
-                  height: 67,
-                  transform: "rotate(180deg) scaleX(-1)",
-                  marginBottom: "-1px",
-                  marginLeft: "-1px",
-                }}
-              >
-                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
         <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
           <div
             data-aos="fade-up"
@@ -550,6 +578,27 @@ const Index = (props) => {
                   mobil
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={"mb-3"}
+          >
+            <div id={"appointment"}>
+              <InlineWidget
+                url="https://calendly.com/berghausundcie/15-minutiges-erstgesprach"
+                pageSettings={{
+                  backgroundColor: "ffffff",
+                  hideEventTypeDetails: false,
+                  hideLandingPageDetails: false,
+                  primaryColor: "714F9B",
+                  textColor: "2c2c2c",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -640,160 +689,6 @@ const Index = (props) => {
                 <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
               </svg>
             </div>
-          </div>
-        </div>
-
-        <div
-          className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}
-         
-        >
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            className={"mb-3"}
-            
-          >
-            <div id={"appointment"}>
-             <InlineWidget 
-             
-             url="https://calendly.com/berghausundcie/15-minutiges-erstgesprach" 
-             pageSettings={{
-              backgroundColor: 'ffffff',
-              hideEventTypeDetails: false,
-              hideLandingPageDetails: false,
-              primaryColor: '714F9B',
-              textColor: '2c2c2c'
-            }}
-             />
-             </div>
-            {/* <div class="row">
-              <div class="col-md-5">
-                <h2 class="title">Erstgespräch vereinbaren</h2>
-                <h4 class="">
-                  You need more information? Check what other persons are saying
-                  about our product. They are very happy with their purchase.
-                </h4>
-                <div class="info info-horizontal">
-                  <div class="icon icon-info">
-                    <i class="now-ui-icons location_pin"></i>
-                  </div>
-                  <div class="">
-                    <h4 class="info-title">Find us at the office</h4>
-                    <p class="">
-                      Bld Mihail Kogalniceanu, nr. 8, <br />
-                      7652 Bucharest, <br />
-                      Romania
-                    </p>
-                  </div>
-                </div>
-                <div class="info info-horizontal">
-                  <div class="icon icon-info">
-                    <i class="now-ui-icons tech_mobile"></i>
-                  </div>
-                  <div class="">
-                    <h4 class="info-title">Give us a ring</h4>
-                    <p class="">
-                      Michael Jordan <br />
-                      +40 762 321 762 <br />
-                      Mon - Fri, 8:00-22:00
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="ml-auto mr-auto col-md-5">
-                <div class="card-contact card-raised card">
-                  <form id="contact-form1" method="post" role="form" class="">
-                    <div class="text-center card-header">
-                      <h4 class="card-title">Terminkalender</h4>
-                    </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="pr-2 col-md-6">
-                          <label>First name</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text">
-                                <i class="now-ui-icons users_circle-08"></i>
-                              </span>
-                            </div>
-                            <input
-                              aria-label="First Name..."
-                              autocomplete="given-name"
-                              placeholder="First Name..."
-                              type="text"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                        <div class="pl-2 col-md-6">
-                          <div class="form-group">
-                            <label>Last name</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                  <i class="now-ui-icons text_caps-small"></i>
-                                </span>
-                              </div>
-                              <input
-                                aria-label="Last Name..."
-                                autocomplete="family-name"
-                                placeholder="Last Name..."
-                                type="text"
-                                class="form-control"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label>Email address</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">
-                              <i class="now-ui-icons ui-1_email-85"></i>
-                            </span>
-                          </div>
-                          <input
-                            autocomplete="email"
-                            placeholder="Email Here..."
-                            type="email"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label>Your message</label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          rows="6"
-                          class="form-control"
-                        ></textarea>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" />
-                              <span class="form-check-sign"></span>I'm not a
-                              robot
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <button
-                            type="submit"
-                            class="btn-round pull-right btn btn-info"
-                          >
-                            Send Message
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
