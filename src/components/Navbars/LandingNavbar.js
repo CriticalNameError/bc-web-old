@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import {
   Collapse,
   Navbar,
@@ -30,6 +30,7 @@ import LogoLav from "icons/logo_lav";
 import LogoSpotify from "icons/logo-spotify";
 import Earbuds from "icons/earbuds";
 import SpotifyLogoWithText from "icons/Spotify_logo_with_text";
+import { useScrollDirection } from "react-use-scroll-direction";
 // export const trackFullpagePage = () => {
 //   const [page, setPage] = useState(null);
 //   useEffect(()=>{setPage(window.fullpage_api.getActiveSection().index)}, [window.fullpage_api])
@@ -40,8 +41,34 @@ import SpotifyLogoWithText from "icons/Spotify_logo_with_text";
 const ContactBar = (props) => {
   const [scrollY, setScrollY] = useState(0);
 
+  let lastScrollY = 0;
+
+
+
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth > 836) {
+        if (window.scrollY == 0) {
+          document.getElementById("vert-nav").classList.add("d-block");
+        } else if (window.scrollY - lastScrollY <= 0) {
+          console.log("scroll up");
+          document
+            .getElementById("vert-nav")
+            .classList.remove("animated", "slideOutUp", "faster");
+          document
+            .getElementById("vert-nav")
+            .classList.add("animated", "slideInDown", "faster");
+        } else if (window.scrollY - lastScrollY > 0) {
+          document
+          .getElementById("vert-nav")
+          .classList.remove("animated", "slideInDown", "faster");
+          document
+            .getElementById("vert-nav")
+            .classList.add("animated", "slideOutUp", "faster");
+          console.log("scroll down");
+        }
+        lastScrollY = window.scrollY;
+      }
       setScrollY(window.scrollY);
       if (window.scrollY > 0) {
         document.getElementById("vert-nav").classList.remove("pt-5");
@@ -226,16 +253,10 @@ class LandingNavbar extends React.Component {
                     <h3 className={"mb-0 h5 mt-2"} style={{ fontSize: "18px" }}>
                       Rausch & Rendite
                     </h3>
-                    <b className={"text-primary"}>
-                      Jetzt reinhören
-                    </b>
+                    <b className={"text-primary"}>Jetzt reinhören</b>
                     <div className={"mt-2"}>
-                    <SpotifyLogoWithText
-                        width={"100px"}
-                        strokewidth={3}
-                      />
+                      <SpotifyLogoWithText width={"100px"} strokewidth={3} />
                     </div>
-                    
                   </p>
                 </a>
               </div>
@@ -245,7 +266,7 @@ class LandingNavbar extends React.Component {
         <Navbar
           color={"white"}
           expand="lg"
-          className={" fixed-top pt-5"}
+          className={"fixed-top pt-5 d-none d-block"}
           id={"vert-nav"}
           style={{ top: "0px" }}
         >
@@ -324,10 +345,15 @@ class LandingNavbar extends React.Component {
             </form> */}
 
               <Nav navbar className={"w-100"} style={{ marginBottom: "-7px" }}>
-                <NavItem style={{position: "relative"}}>
+                <NavItem style={{ position: "relative" }}>
                   <a
                     href="/wein-investments"
-                    className={"nav-link " +  (/wein-investments/.test(this.props.router.pathname)? "link-active" : "link-underline")}
+                    className={
+                      "nav-link " +
+                      (/wein-investments/.test(this.props.router.pathname)
+                        ? "link-active"
+                        : "link-underline")
+                    }
                     style={{
                       color: /wein-investments/.test(this.props.router.pathname)
                         ? primary
@@ -344,7 +370,7 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-               
+
                 <NavItem
                   onClick={() => this.toggleShowPodcastModal()}
                   style={{ cursor: "pointer", position: "relative" }}
@@ -364,10 +390,15 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem style={{position: "relative"}}>
+                <NavItem style={{ position: "relative" }}>
                   <a
                     href="/blog"
-                    className={"nav-link " +  (/blog/.test(this.props.router.pathname)? "link-active" : "link-underline")}
+                    className={
+                      "nav-link " +
+                      (/blog/.test(this.props.router.pathname)
+                        ? "link-active"
+                        : "link-underline")
+                    }
                     style={{
                       color: /blog/.test(this.props.router.pathname)
                         ? primary
@@ -382,10 +413,15 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem style={{position: "relative"}}>
+                <NavItem style={{ position: "relative" }}>
                   <a
                     href="/ueber-uns"
-                    className={"nav-link " +  (/ueber-uns/.test(this.props.router.pathname)? "link-active" : "link-underline")}
+                    className={
+                      "nav-link " +
+                      (/ueber-uns/.test(this.props.router.pathname)
+                        ? "link-active"
+                        : "link-underline")
+                    }
                     style={{
                       color: /ueber-uns/.test(this.props.router.pathname)
                         ? primary
@@ -400,7 +436,7 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem className={"ml-lg-auto"} >
+                <NavItem className={"ml-lg-auto"}>
                   <a
                     href="https://weindepot.berghaus-cie.com"
                     className={"nav-link ml-lg-auto"}

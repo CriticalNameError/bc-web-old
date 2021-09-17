@@ -23,8 +23,14 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Caveat&family=La+Belle+Aurore&family=Nothing+You+Could+Do&display=swap"
             rel="stylesheet"
           />
-          <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet"></link>
-          <link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet"></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap"
+            rel="stylesheet"
+          ></link>
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
             rel="stylesheet"
@@ -106,13 +112,26 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
           />
-         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/aos@next/dist/aos.css"
+          />
+
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charset="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
-        
         </body>
       </Html>
     );

@@ -246,6 +246,10 @@
   border-radius: 25px !important;
 }
 
+.slick-track {
+  padding-top: 0.5rem !important;
+}
+
 .bg-cta {
   background-color: #bfac82 !important;
 }

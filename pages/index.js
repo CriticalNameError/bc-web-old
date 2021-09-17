@@ -11,7 +11,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import ContactUs from "components/ContactUs";
+import ScheduleAppointment from "components/ScheduleAppointment";
 import BMeeting from "icons/b-meeting";
 import Podium from "icons/podium";
 import Questionaire from "icons/questionnaire";
@@ -33,7 +33,12 @@ import { InlineWidget, openPopupWidget } from "react-calendly";
 import Award1 from "icons/award_1";
 import Award2 from "icons/award_2";
 import Award3 from "icons/award_3";
+import Partner1 from "icons/partner_1";
+import Partner2 from "icons/partner_2";
+import Partner3 from "icons/partner_3";
+import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
+import Slider from "react-slick";
 
 // core components
 
@@ -116,9 +121,10 @@ const Index = (props) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
-      <ContactUs showButton={true} />
+      <ScheduleAppointment showButton={true} />
       <CustomModal
         markup={markup}
         showModal={showModal}
@@ -164,11 +170,14 @@ const Index = (props) => {
                 <br />
                 <div className={"row"}>
                   <div className={"col-6 text-right animated fadeIn slower"}>
-                    <ImageFromCms
+                    <MockupLanding
+                      width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
+                    />
+                    {/* <ImageFromCms
                       title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
                       width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
                       jpegquality={10}
-                    />
+                    /> */}
                   </div>
                   <div className={"col-6 text-left mt-md-5"}>
                     <div
@@ -286,13 +295,22 @@ const Index = (props) => {
                   <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
                 </svg>
               </div> */}
-              
+
               <div className={"row animated fadeInUp slower text-left"}>
-              <h3 className={"col-md-8 offset-md-2"} style={{fontSize: "18px"}}>Unsere Auszeichnungen</h3><br/>
-                <div style={{}} className={"d-flex justify-content-between col-md-8 offset-md-2"}>
-                 
+                <h3
+                  className={"col-md-8 offset-md-2"}
+                  style={{ fontSize: "18px" }}
+                >
+                  Unsere Auszeichnungen
+                </h3>
+                <br />
+                <div
+                  style={{}}
+                  className={
+                    "d-flex justify-content-between col-md-8 offset-md-2"
+                  }
+                >
                   <div
-                   
                     style={{
                       padding: "10px",
                       borderRadius: "7px",
@@ -300,7 +318,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                     <Award1 height={"50px"}/>
+                    <Award1 height={"50px"} />
                     {/* <ImageFromCms
                       title={"award_1"}
                       height={width > 50 ? 80 : 75}
@@ -308,7 +326,6 @@ const Index = (props) => {
                     ></ImageFromCms> */}
                   </div>
                   <div
-                  
                     style={{
                       padding: "10px",
                       borderRadius: "7px",
@@ -316,7 +333,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                      <Award2 height={"50px"}/>
+                    <Award2 height={"50px"} />
                     {/* <ImageFromCms
                       title={"award_2"}
                       height={width > 50 ? 80 : 75}
@@ -324,7 +341,6 @@ const Index = (props) => {
                     ></ImageFromCms> */}
                   </div>
                   <div
-                 
                     style={{
                       padding: "10px",
                       borderRadius: "7px",
@@ -332,7 +348,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                     <Award3 height={"50px"}/>
+                    <Award3 height={"50px"} />
                     {/* <ImageFromCms
                       title={"award_3"}
                       height={width > 50 ? 80 : 75}
@@ -382,7 +398,6 @@ const Index = (props) => {
               Vermögensaufbau durch den Erwerb von Sachwerten – kompetent,
               transparent und mit Unterstützung modernster Technologien.
             </p>
-
             <ImageFromCms
               title={"team_formal"}
               width={Math.min(width * 0.85, 950)}
@@ -390,14 +405,13 @@ const Index = (props) => {
               jpegquality={80}
               classes={"animated fadeIn img img-raised mb-3"}
             />
-            <br/>
-            <br/>
-            "Weininvestments bei Berghaus & Cie."<br/>
+            <br />
+            <br />
+            "Weininvestments bei Berghaus & Cie."
+            <br />
             in 180 Sekunden
-             <PlayAudio/>
-
+            <PlayAudio />
           </section>
-        
         </div>
 
         <div>
@@ -549,7 +563,7 @@ const Index = (props) => {
             className={"mb-3"}
           >
             <div className={" text-center"}>
-              <div style={{ fontSize: "26px" }}>Ihr digitales Weindepot</div>
+              <div style={{ fontSize: "24px" }}>Ihr digitales Weindepot</div>
               <br />
               <br />
 
@@ -560,23 +574,91 @@ const Index = (props) => {
               />
 
               <div
-                className={
-                  "d-flex w-50 mx-auto justify-content-between px-md-6"
-                }
+                className={"row w-50 mx-auto px-md-6 mt-2"}
                 style={{ fontSize: "19px" }}
               >
-                <div>
+                <div className={"col-md-4 text-left"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   intuitiv
                 </div>
-                <div>
+                <div className={"col-md-4 text-center"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   transparent
                 </div>
-                <div>
+                <div className={"col-md-4 text-right"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   mobil
                 </div>
+              </div>
+              <div className={"mt-5"} style={{ fontSize: "18px" }}>
+                Hier finden Sie aktuelle Markttrends, Branchenneuheiten,
+                Hintergrundinformationen zu Weingütern und ein breites Sortiment
+                an exquisiten Weinen. Darüber hinaus können Sie im Weindepot Ihr
+                Wein-Portfolio verwalten. Auf diese Weise haben Sie Ihr
+                persönliches Weininvestment stets im Blick.
+              </div>
+              <div className={"mt-5"}>
+                <div className={"mb-3"} style={{ fontSize: "24px" }}>
+                  Exquisite Jahrgänge aus unserem aktuellen Sortiment
+                </div>
+                <Slider
+                  {...{
+                    dots: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                  }}
+                >
+                  <div>
+                    <div
+                      className={"card"}
+                      style={{ width: "300px", height: "190px" }}
+                    >
+                      <h3>1</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className={"card"}
+                      style={{ width: "300px", height: "190px" }}
+                    >
+                      <h3>2</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className={"card"}
+                      style={{ width: "300px", height: "190px" }}
+                    >
+                      <h3>3</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className={"card"}
+                      style={{ width: "300px", height: "190px" }}
+                    >
+                      <h3>4</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className={"card"}
+                      style={{ width: "300px", height: "190px" }}
+                    >
+                      <h3>5</h3>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      className={"card"}
+                      style={{ width: "300px", height: "190px" }}
+                    >
+                      <h3>6</h3>
+                    </div>
+                  </div>
+                </Slider>
               </div>
             </div>
           </div>
@@ -608,9 +690,8 @@ const Index = (props) => {
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
-            style={{ backgroundColor: "rgb(191, 157, 226)" }}
           >
-            <div style={{ overflow: "hidden" }}>
+            {/* <div style={{ overflow: "hidden" }}>
               <svg
                 preserveAspectRatio="none"
                 viewBox="0 0 1200 120"
@@ -626,53 +707,51 @@ const Index = (props) => {
               >
                 <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
               </svg>
-            </div>
-            <div className={"text-white"}>
-              <h3>Unsere Partner</h3>
-              <div className={"d-flex justify-content-between px-md-5"}>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ImageFromCms
-                    title={"partner_1"}
-                    height={width > 50 ? 115 : 75}
-                    jpegquality={25}
-                  ></ImageFromCms>
+            </div> */}
+            <div>
+              <h3 style={{ fontSize: "24px" }}>Unsere Partner</h3>
+              <div style={{}} className={"row"}>
+                <div className={"col-md-4 text-center"}>
+                  <span
+                    style={{
+                      padding: "35px",
+                      borderRadius: "7px",
+                      backgroundColor: "white",
+                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                    }}
+                  >
+                    <Partner1 height={"70px"} />
+                  </span>
                 </div>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ImageFromCms
-                    title={"partner_2"}
-                    height={width > 50 ? 112 : 75}
-                    jpegquality={25}
-                  ></ImageFromCms>
+
+                <div className={"col-md-4 text-center"}>
+                  <span
+                    style={{
+                      padding: "35px",
+                      borderRadius: "7px",
+                      backgroundColor: "white",
+                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                    }}
+                  >
+                    <Partner3 height={"70px"} />
+                  </span>
                 </div>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "8px",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ImageFromCms
-                    title={"partner_3"}
-                    height={width > 50 ? 115 : 75}
-                    jpegquality={25}
-                  ></ImageFromCms>
+                <div className={"col-md-4 text-center"}>
+                  <span
+                    style={{
+                      padding: "35px",
+                      borderRadius: "7px",
+                      backgroundColor: "white",
+                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                    }}
+                  >
+                    <Partner2 height={"70px"} />
+                  </span>
                 </div>
               </div>
             </div>
 
-            <div style={{ overflow: "hidden" }}>
+            {/* <div style={{ overflow: "hidden" }}>
               <svg
                 preserveAspectRatio="none"
                 viewBox="0 0 1200 120"
@@ -688,7 +767,7 @@ const Index = (props) => {
               >
                 <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

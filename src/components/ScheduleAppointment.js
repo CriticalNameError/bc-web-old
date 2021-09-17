@@ -8,6 +8,8 @@ import { primary } from "helpers/colorScheme";
 
 import BComment from "icons/b-comment";
 
+import ATime from "../icons/a-time";
+
 const SEND_MESSAGE = gql`
   mutation sendContactFormMail(
     $senderEmail: String!
@@ -104,11 +106,13 @@ const ScheduleAppointment = (props) => {
               }}
             >
               <div class="text-center">
+                {props.additionalText ? props.additionalText : null}
 
-              {props.additionalText? props.additionalText : null}
-
-              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a href={"tel: +49 175 678 7654"}> +49 175 678 7654</a> <br/> oder schreiben Sie uns.</h4>
-            
+                <h4 class="" style={{ fontSize: "18px" }}>
+                  Rufen Sie uns an unter <br />{" "}
+                  <a href={"tel: +49 175 678 7654"}> +49 175 678 7654</a> <br />{" "}
+                  oder schreiben Sie uns.
+                </h4>
               </div>
               <div class="card-body">
                 <div class="row">
@@ -171,9 +175,13 @@ const ScheduleAppointment = (props) => {
 
                 <div class="row">
                   <div class="col-md-6 col-sm-12">
-                    <div class="form-check" >
+                    <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" onClick={()=>toggleNotARobot(!notARobot)}/>
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          onClick={() => toggleNotARobot(!notARobot)}
+                        />
                         <span class="form-check-sign"></span>
                         Ich bin kein Roboter
                       </label>
@@ -182,7 +190,10 @@ const ScheduleAppointment = (props) => {
                   <div class="col-md-6 col-sm-12">
                     <button
                       type="submit"
-                      className={"btn btn-primary btn-round pull-right " + (notARobot? "" : "disabled")}
+                      className={
+                        "btn btn-primary btn-round pull-right " +
+                        (notARobot ? "" : "disabled")
+                      }
                     >
                       Nachricht senden
                     </button>
@@ -201,13 +212,13 @@ const ScheduleAppointment = (props) => {
       </Modal>
       {props.showButton ? (
         <div
-          className={"text-center"}
+          className={"text-center btn bg-cta p-2"}
           style={{
             cursor: "pointer",
             zIndex: "100",
             position: "fixed",
-            bottom: "10px",
-            right: "10px",
+            top: "200px",
+            right: "0px",
           }}
         >
           <a
@@ -215,30 +226,14 @@ const ScheduleAppointment = (props) => {
               toggleShowModal(true);
             }}
           >
-            <small
-              id={"contact-us-text"}
-              className={
-                "d-none d-md-inline " +
-                (atBottom ? "text-white" : "text-primary")
-              }
-            >
-              Erstgespräch vereinbaren
-            </small>{" "}
-            <br />
-            <i
-              id={"contact-us"}
-              className={
-                "round-icon animated infinite pulse " +
-                (atBottom ? "bg-white text-primary" : "bg-primary text-white")
-              }
-              // style={{
-              //   color: "#fff",
-              //   backgroundImage:
-              //     "linear-gradient(-45deg, #a0b9b9 0%, " + primary + " 100%)",
-              // }}
-            >
-              <BComment width={"30px"} height={"30px"} style={{display: "inline-block"}} strokewidth={3}></BComment>
-            </i>
+            <div className={"text-white"} style={{ fontSize: "14px"}}>
+              Erstgespräch
+              <br />
+              vereinbaren
+            </div>{" "}
+            <div className={"p-2"}>
+            <ATime width={"30px"} height={"30px"} strokewidth={3} />
+            </div>
           </a>
         </div>
       ) : null}
