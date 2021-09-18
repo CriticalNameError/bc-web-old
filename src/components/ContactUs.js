@@ -67,7 +67,7 @@ const ContactUs = (props) => {
 
   return (
     <>
-      <Modal
+      {/* <Modal
         isOpen={showModal}
         toggle={() => toggleShowModal()}
         className="modal-md modal-dialog-centered"
@@ -79,7 +79,7 @@ const ContactUs = (props) => {
             onClick={(e) => {
               toggleShowModal(!showModal);
             }}
-          ></i>
+          ></i> */}
           {!formSent ? (
             <form
               role="form"
@@ -103,14 +103,14 @@ const ContactUs = (props) => {
                 }, 1500);
               }}
             >
-              <div class="text-center">
+              <div class="text-center text-primary">
 
               {props.additionalText? props.additionalText : null}
 
-              <h4 class="" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a href={"tel: +49 175 678 7654"}> +49 175 678 7654</a> <br/> oder schreiben Sie uns.</h4>
+              <h4 class="text-white" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a style={{color: "white", textDecoration: "underline"}} href={"tel: +49 175 678 7654"}> +49 175 678 7654</a> <br/> oder schreiben Sie uns.</h4>
             
               </div>
-              <div class="card-body">
+              <div class="card-body white-placeholders">
                 <div class="row">
                   <div class="col-md-6 col-sm-12 pr-2">
                     {/* <label>Name</label> */}
@@ -155,7 +155,7 @@ const ContactUs = (props) => {
                   </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group textarea">
                   {/* <label>Ihre Nachricht</label> */}
                   <textarea
                     name="message"
@@ -197,7 +197,7 @@ const ContactUs = (props) => {
               <small>Wir melden uns bei Ihnen.</small>
             </h4>
           )}
-        </ModalBody>
+        {/* </ModalBody>
       </Modal>
       {props.showButton ? (
         <div
@@ -241,7 +241,7 @@ const ContactUs = (props) => {
             </i>
           </a>
         </div>
-      ) : null}
+      ) : null} */}
     </>
   );
 };

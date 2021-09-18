@@ -1161,7 +1161,7 @@ fieldset[disabled]
 .has-danger .input-group-prepend .input-group-text:focus,
 .has-danger.input-group-focus .input-group-prepend .input-group-text:focus,
 .has-danger.input-group-focus .input-group-append .input-group-text:focus {
-  background-color: #FFFFFF;
+  background-color: transparent;
 }
 
 .has-success:after,

@@ -43,15 +43,12 @@ const ContactBar = (props) => {
 
   let lastScrollY = 0;
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerWidth > 836) {
         if (window.scrollY == 0) {
           document.getElementById("vert-nav").classList.add("d-block");
         } else if (window.scrollY - lastScrollY <= 0) {
-          console.log("scroll up");
           document
             .getElementById("vert-nav")
             .classList.remove("animated", "slideOutUp", "faster");
@@ -60,12 +57,11 @@ const ContactBar = (props) => {
             .classList.add("animated", "slideInDown", "faster");
         } else if (window.scrollY - lastScrollY > 0) {
           document
-          .getElementById("vert-nav")
-          .classList.remove("animated", "slideInDown", "faster");
+            .getElementById("vert-nav")
+            .classList.remove("animated", "slideInDown", "faster");
           document
             .getElementById("vert-nav")
             .classList.add("animated", "slideOutUp", "faster");
-          console.log("scroll down");
         }
         lastScrollY = window.scrollY;
       }
@@ -366,6 +362,32 @@ class LandingNavbar extends React.Component {
                     <p>
                       <span className="d-lg-inline d-md-block">
                         Weininvestments
+                      </span>
+                    </p>
+                  </a>
+                </NavItem>
+
+                <NavItem style={{ position: "relative" }}>
+                  <a
+                    href="/faq"
+                    className={
+                      "nav-link " +
+                      (/faq/.test(this.props.router.pathname)
+                        ? "link-active"
+                        : "link-underline")
+                    }
+                    style={{
+                      color: /faq/.test(this.props.router.pathname)
+                        ? primary
+                        : "#999",
+                      marginTop: "4px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    {/* <i className="now-ui-icons media-2_sound-wave" /> */}
+                    <p>
+                      <span className="d-lg-inline d-md-block">
+                        FAQ
                       </span>
                     </p>
                   </a>

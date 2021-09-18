@@ -14,10 +14,13 @@ import AOS from "aos";
 import { CookiesProvider } from "react-cookie";
 import "aos/dist/aos.css";
 import HttpsRedirect from "react-https-redirect";
+import  SelectCalendylDateModal  from "../src/components/SelectCalendlyDateModal";
+import CtaFixed from "../src/components/CtaFixed";
 
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
   const [showCookieModal, toggleShowCookieModal] = useState(true);
+  const [showCalendlyModal, toggleShowCalendlyModal] = useState(false);
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
@@ -33,8 +36,10 @@ function MyApp({ Component, pageProps }) {
       />
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
+          <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal}/>
+          <SelectCalendylDateModal showModal={showCalendlyModal} toggleShowCalendlyModal={toggleShowCalendlyModal}/>
           <LandingNavbar {...pageProps} />
-          {!showCookieModal && <Component {...pageProps} />}
+          {!showCookieModal && <Component {...pageProps} toggleShowCalendlyModal={toggleShowCalendlyModal}/>}
           {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
         </HttpsRedirect>
       </ApolloProvider>

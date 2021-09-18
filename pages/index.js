@@ -11,7 +11,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import ScheduleAppointment from "components/ScheduleAppointment";
 import BMeeting from "icons/b-meeting";
 import Podium from "icons/podium";
 import Questionaire from "icons/questionnaire";
@@ -29,16 +28,18 @@ import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
-import { InlineWidget, openPopupWidget } from "react-calendly";
+import SelectCalendlyDate from "components/SelectCalendlyDate";
+
 import Award1 from "icons/award_1";
 import Award2 from "icons/award_2";
 import Award3 from "icons/award_3";
 import Partner1 from "icons/partner_1";
 import Partner2 from "icons/partner_2";
 import Partner3 from "icons/partner_3";
+import ATime from "icons/a-time";
 import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
-import Slider from "react-slick";
+import OfferPromotionSlider from "components/OfferPromotionSlider";
 
 // core components
 
@@ -124,7 +125,6 @@ const Index = (props) => {
 
   return (
     <>
-      <ScheduleAppointment showButton={true} />
       <CustomModal
         markup={markup}
         showModal={showModal}
@@ -210,9 +210,10 @@ const Index = (props) => {
                       <br />
                     </div>
 
-                    <a href={"#appointment"}>
+                    
                       {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
                       <button
+                      onClick={()=>props.toggleShowCalendlyModal(true)}
                         className={
                           "mr-auto btn bg-cta p-2 animated infinite pulse slower"
                         }
@@ -220,7 +221,7 @@ const Index = (props) => {
                       >
                         Erstgespräch vereinbaren
                       </button>
-                    </a>
+                
                   </div>
                   <br />
                 </div>
@@ -401,8 +402,8 @@ const Index = (props) => {
             <ImageFromCms
               title={"team_formal"}
               width={Math.min(width * 0.85, 950)}
-              fill={width > 991 ? "1200x550" : "600x430"}
-              jpegquality={80}
+              fill={width > 991 ? "1200x650" : "600x430"}
+              jpegquality={40}
               classes={"animated fadeIn img img-raised mb-3"}
             />
             <br />
@@ -570,7 +571,7 @@ const Index = (props) => {
               <ImageFromCms
                 title={width > 600 ? "mockup_all" : "mockup_all"}
                 width={width > 991 ? (width > 1500 ? 775 : 535) : 200}
-                jpegquality={30}
+                jpegquality={5}
               />
 
               <div
@@ -601,64 +602,7 @@ const Index = (props) => {
                 <div className={"mb-3"} style={{ fontSize: "24px" }}>
                   Exquisite Jahrgänge aus unserem aktuellen Sortiment
                 </div>
-                <Slider
-                  {...{
-                    dots: true,
-                    infinite: true,
-                    speed: 500,
-                    slidesToShow: 3,
-                    slidesToScroll: 2,
-                  }}
-                >
-                  <div>
-                    <div
-                      className={"card"}
-                      style={{ width: "300px", height: "190px" }}
-                    >
-                      <h3>1</h3>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className={"card"}
-                      style={{ width: "300px", height: "190px" }}
-                    >
-                      <h3>2</h3>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className={"card"}
-                      style={{ width: "300px", height: "190px" }}
-                    >
-                      <h3>3</h3>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className={"card"}
-                      style={{ width: "300px", height: "190px" }}
-                    >
-                      <h3>4</h3>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className={"card"}
-                      style={{ width: "300px", height: "190px" }}
-                    >
-                      <h3>5</h3>
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className={"card"}
-                      style={{ width: "300px", height: "190px" }}
-                    >
-                      <h3>6</h3>
-                    </div>
-                  </div>
-                </Slider>
+                <OfferPromotionSlider />
               </div>
             </div>
           </div>
@@ -670,18 +614,20 @@ const Index = (props) => {
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
           >
-            <div id={"appointment"}>
-              <InlineWidget
-                url="https://calendly.com/berghausundcie/15-minutiges-erstgesprach"
-                pageSettings={{
-                  backgroundColor: "ffffff",
-                  hideEventTypeDetails: false,
-                  hideLandingPageDetails: false,
-                  primaryColor: "714F9B",
-                  textColor: "2c2c2c",
-                }}
-              />
-            </div>
+            <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
+              <span className={"pr-2"}></span>
+              Erstgespräch vereinbaren
+            </h3>
+            <p className={"mb-3"} style={{ fontSize: "18px" }}>
+              "Wie Sie mit Berghaus & Cie. einfach und professionell in Wein
+              investieren können."
+            </p>
+
+
+
+         <SelectCalendlyDate width={"60%"}/>
+
+
           </div>
         </div>
 
@@ -720,10 +666,9 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Partner1 height={"70px"} />
+                    <Partner3 height={"70px"} />
                   </span>
                 </div>
-
                 <div className={"col-md-4 text-center"}>
                   <span
                     style={{
@@ -733,7 +678,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Partner3 height={"70px"} />
+                    <Partner1 height={"70px"} />
                   </span>
                 </div>
                 <div className={"col-md-4 text-center"}>

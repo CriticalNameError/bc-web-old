@@ -6,12 +6,13 @@ import ContactUs from "components/ContactUs";
 import XingLogo from "icons/xing-logo";
 import LinkedinLogo from "icons/linkedin_logo";
 
+
 const LandingFooter = () => {
   const [showModal, toggleShowModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   return (
     <>
-      <ContactUs
+      {/* <ContactUs
         showButton={false}
         showModal={showModal}
         toggleShowModal={toggleShowModal}
@@ -22,13 +23,19 @@ const LandingFooter = () => {
             </span>
           </h4>
         }
-      />
+      /> */}
+
+     
 
       <div
         class="container-fluid pb-2 mt-0 p-3 pt-5 text-center bg-gradient"
         id={"footer"}
         style={{ color: "white" }}
       >
+<div className={"mx-auto"} style={{width: "550px"}}>
+<ContactUs/>
+</div>
+
         <div class="row text- pb-5">
           <div class="col-md-6 text-center p-2">
             <a

@@ -36,7 +36,6 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import ContactUs from "components/ContactUs";
 
 let potentialanalyse_markup = (
   <div className={"p-4"}>
@@ -88,8 +87,7 @@ const WineInvestments = () => {
   const [markup, changeMarkup] = useState(null);
   return (
     <>
-      <ContactUs showButton={true} />
-      <ContactUs showButton={false} showModal={showContactModal} />
+     
       <>
         <CustomModal
           markup={markup}
