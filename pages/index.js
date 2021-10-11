@@ -131,7 +131,7 @@ const Index = (props) => {
         toggleShowModal={toggleShowModal}
       ></CustomModal>
       <div className={"container-fluid px-0"} style={{ overflowX: "hidden" }}>
-        <div className="row" style={{ height: "100vh" }}>
+        <div className="row">
           <div className={"col-12 my-auto text-center  "}>
             <div
               className={"mx-auto"}
@@ -168,7 +168,7 @@ const Index = (props) => {
                   einem attraktiven Renditepotential.
                 </h1>{" "}
                 <br />
-                <div className={"row"}>
+                <div className={"row mt-3"}>
                   <div className={"col-6 text-right animated fadeIn slower"}>
                     <MockupLanding
                       width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
@@ -179,12 +179,12 @@ const Index = (props) => {
                       jpegquality={10}
                     /> */}
                   </div>
-                  <div className={"col-6 text-left mt-md-5"}>
+                  <div className={"col-6 text-left mt-md-4"}>
                     <div
                       className={"text-left"}
                       style={{
-                        fontSize: "19px",
-                        width: "300px",
+                        fontSize: "18px",
+                        width: "400px",
                         lineHeight: "1.5em",
                       }}
                     >
@@ -194,34 +194,32 @@ const Index = (props) => {
                         height={"30px"}
                         strokewidth={3}
                       />{" "}
-                      ohne spezielles Vorwissen <br />
+                      ohne spezielle Vorkenntnisse <br />
                       <CheckSingle
                         width={"25px"}
                         height={"30px"}
                         strokewidth={3}
                       />{" "}
-                      sparen Sie wertvolle Zeit <br />
+                      sparen Sie Ihre wertvolle Zeit <br />
                       <CheckSingle
                         width={"25px"}
                         height={"30px"}
                         strokewidth={3}
                       />{" "}
-                      bequem von zuhause aus <br />
+                      durchschnittliche Rendite 7 % p.a. <br />
                       <br />
                     </div>
 
-                    
-                      {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                      <button
-                      onClick={()=>props.toggleShowCalendlyModal(true)}
-                        className={
-                          "mr-auto btn bg-cta p-2 animated infinite pulse slower"
-                        }
-                        style={{ fontSize: "18px" }}
-                      >
-                        Erstgespräch vereinbaren
-                      </button>
-                
+                    {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
+                    <button
+                      onClick={() => props.toggleShowCalendlyModal(true)}
+                      className={
+                        "mr-auto btn bg-cta p-2 animated infinite pulse slower"
+                      }
+                      style={{ fontSize: "18px" }}
+                    >
+                      Erstgespräch vereinbaren
+                    </button>
                   </div>
                   <br />
                 </div>
@@ -299,7 +297,7 @@ const Index = (props) => {
 
               <div className={"row animated fadeInUp slower text-left"}>
                 <h3
-                  className={"col-md-8 offset-md-2"}
+                  className={"col-md-8 offset-md-2 mb-3"}
                   style={{ fontSize: "18px" }}
                 >
                   Unsere Auszeichnungen
@@ -308,7 +306,7 @@ const Index = (props) => {
                 <div
                   style={{}}
                   className={
-                    "d-flex justify-content-between col-md-8 offset-md-2"
+                    "d-flex justify-content-between col-md-8 offset-md-2 pt-1 mt-1"
                   }
                 >
                   <div
@@ -319,7 +317,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Award1 height={"50px"} />
+                    <Award1 height={"60px"} />
                     {/* <ImageFromCms
                       title={"award_1"}
                       height={width > 50 ? 80 : 75}
@@ -334,7 +332,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Award2 height={"50px"} />
+                    <Award2 height={"60px"} />
                     {/* <ImageFromCms
                       title={"award_2"}
                       height={width > 50 ? 80 : 75}
@@ -349,7 +347,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Award3 height={"50px"} />
+                    <Award3 height={"60px"} />
                     {/* <ImageFromCms
                       title={"award_3"}
                       height={width > 50 ? 80 : 75}
@@ -381,7 +379,7 @@ const Index = (props) => {
         </div>
         <div>
           <section
-            className={"mx-auto text-center"}
+            className={"mx-auto text-center mt-md-5"}
             data-aos="fade-up"
             id={"services"}
             data-aos-anchor-placement="center-bottom"
@@ -412,6 +410,12 @@ const Index = (props) => {
             <br />
             in 180 Sekunden
             <PlayAudio />
+            <div className={"mt-5"}>
+              <div className={"mb-3 mt-md-5"} style={{ fontSize: "24px" }}>
+                Exquisite Jahrgänge aus unserem aktuellen Sortiment
+              </div>
+              <OfferPromotionSlider />
+            </div>
           </section>
         </div>
 
@@ -423,7 +427,7 @@ const Index = (props) => {
             <div
               data-aos="fade-up"
               data-aos-anchor-placement="center-bottom"
-              className={"mb-3"}
+              className={"mb-3 mt-md-5"}
             >
               <h2 className={"h3"} style={{ fontSize: "24px" }}>
                 In fünf einfachen Schritten zu Ihrem persönlichen Weininvestment
@@ -455,7 +459,10 @@ const Index = (props) => {
                   />
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">
+                <h3
+                  className="vertical-timeline-element-title h5"
+                  style={{ fontSize: "18px" }}
+                >
                   1. Beratung
                 </h3>
 
@@ -477,7 +484,10 @@ const Index = (props) => {
                   />
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">
+                <h3
+                  className="vertical-timeline-element-title h5"
+                  style={{ fontSize: "18px" }}
+                >
                   2. Kaufabwicklung
                 </h3>
 
@@ -499,7 +509,10 @@ const Index = (props) => {
                   />
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">
+                <h3
+                  className="vertical-timeline-element-title h5"
+                  style={{ fontSize: "18px" }}
+                >
                   3. Transport
                 </h3>
 
@@ -521,7 +534,10 @@ const Index = (props) => {
                   />
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">
+                <h3
+                  className="vertical-timeline-element-title h5"
+                  style={{ fontSize: "18px" }}
+                >
                   4. Lagerung
                 </h3>
                 <h4 className="vertical-timeline-element-subtitle"></h4>
@@ -543,7 +559,10 @@ const Index = (props) => {
                   />
                 }
               >
-                <h3 className="vertical-timeline-element-title h5">
+                <h3
+                  className="vertical-timeline-element-title h5"
+                  style={{ fontSize: "18px" }}
+                >
                   5. Verkauf
                 </h3>
 
@@ -576,7 +595,7 @@ const Index = (props) => {
 
               <div
                 className={"row w-50 mx-auto px-md-6 mt-2"}
-                style={{ fontSize: "19px" }}
+                style={{ fontSize: "18px" }}
               >
                 <div className={"col-md-4 text-left"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
@@ -598,36 +617,7 @@ const Index = (props) => {
                 Wein-Portfolio verwalten. Auf diese Weise haben Sie Ihr
                 persönliches Weininvestment stets im Blick.
               </div>
-              <div className={"mt-5"}>
-                <div className={"mb-3"} style={{ fontSize: "24px" }}>
-                  Exquisite Jahrgänge aus unserem aktuellen Sortiment
-                </div>
-                <OfferPromotionSlider />
-              </div>
             </div>
-          </div>
-        </div>
-
-        <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>
-          <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            className={"mb-3"}
-          >
-            <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
-              <span className={"pr-2"}></span>
-              Erstgespräch vereinbaren
-            </h3>
-            <p className={"mb-3"} style={{ fontSize: "18px" }}>
-              "Wie Sie mit Berghaus & Cie. einfach und professionell in Wein
-              investieren können."
-            </p>
-
-
-
-         <SelectCalendlyDate width={"60%"}/>
-
-
           </div>
         </div>
 
@@ -666,7 +656,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Partner3 height={"70px"} />
+                    <Partner3 height={"60px"} />
                   </span>
                 </div>
                 <div className={"col-md-4 text-center"}>
@@ -678,7 +668,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Partner1 height={"70px"} />
+                    <Partner1 height={"60px"} />
                   </span>
                 </div>
                 <div className={"col-md-4 text-center"}>
@@ -690,7 +680,7 @@ const Index = (props) => {
                       boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
                     }}
                   >
-                    <Partner2 height={"70px"} />
+                    <Partner2 height={"60px"} />
                   </span>
                 </div>
               </div>
@@ -713,6 +703,25 @@ const Index = (props) => {
                 <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
               </svg>
             </div> */}
+          </div>
+        </div>
+
+        <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className={"mb-3"}
+          >
+            <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
+              <span className={"pr-2"}></span>
+              Erstgespräch vereinbaren
+            </h3>
+            <p className={"mb-3"} style={{ fontSize: "18px" }}>
+              "Wie Sie mit Berghaus & Cie. einfach und professionell in Wein
+              investieren können."
+            </p>
+
+            <SelectCalendlyDate width={"60%"} />
           </div>
         </div>
       </div>

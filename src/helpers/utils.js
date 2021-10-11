@@ -130,6 +130,7 @@ export const ImageFromCms = props => {
     {url && placeholderUrl? 
     <LazyLoadImage
     alt={props.alt}
+    visibleByDefault={true}
     src={url} // use normal <img> attributes as props
     width={props.width} 
     placeholderSrc={placeholderUrl}
