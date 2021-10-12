@@ -12,7 +12,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import BComment from "icons/b-comment";
 import DownArrow from "icons/down-arrow";
 import LandingFooter from "../src/components/Footer/LandingFooter";
-import Search from "icons/search";
+import Magnifier from "icons/magnifier";
 import TimeMachine from "icons/time-machine";
 import Athletics from "icons/athletics";
 import Statistics from "icons/statistics";
@@ -227,7 +227,7 @@ const WineInvestments = () => {
               <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
                 <span class="round-icon text-white mb-n3">
                   <span style={{ width: "30px", height: "30px" }}>
-                    <Search width={"30px"} height={"30px"} strokewidth={3} />
+                    <Magnifier width={"30px"} height={"30px"} strokewidth={3} />
                   </span>
                 </span>
                 {/* <i

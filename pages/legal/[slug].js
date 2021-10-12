@@ -73,7 +73,7 @@ const LegalPage = () => {
   if (data)
     return (
       <div
-        className={"container-fluid mx-auto px-0 text-center"}
+        className={"container-fluid mx-auto px-5 px-md-0 text-center"}
         style={{
           paddingTop: "150px",
         }}
