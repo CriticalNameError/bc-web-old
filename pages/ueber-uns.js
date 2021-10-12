@@ -49,7 +49,7 @@ const AboutUs = () => {
           <div className="row">
             <div className={"col-12 my-auto text-center mt-md-5"}>
               <span
-                style={{ display: "inline-block", marginTop: "150px", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))" }}
+                style={{ display: "inline-block", marginTop: "150px", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
                 className={"text-primary mb-4 animated zoomIn slower"}
                 
               >

@@ -143,7 +143,7 @@ const Index = (props) => {
                     display: "inline-block",
                     minHeight: "130px",
                     marginTop: "150px",
-                    filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))",
+                    filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
                   }}
                   className={"text-primary"}
                 >

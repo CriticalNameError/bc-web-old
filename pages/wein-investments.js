@@ -129,15 +129,15 @@ const WineInvestments = () => {
                 </span> */}
                 <i
                   className="fas fa-seedling ml-2"
-                  style={{ color: primary_t60, fontSize: "2em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))" }}
+                  style={{ color: primary_t60, fontSize: "2em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
                 ></i>
                 <i
                   className="fas fa-seedling ml-2 animated fadeInLeft"
-                  style={{ color: primary_t80, fontSize: "5em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))" }}
+                  style={{ color: primary_t80, fontSize: "5em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
                 ></i>
                 <i
                   className="fas fa-seedling ml-2 animated fadeInLeft slower"
-                  style={{ color: primary, fontSize: "10em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))" }}
+                  style={{ color: primary, fontSize: "10em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
                 ></i>
               </div>
 
