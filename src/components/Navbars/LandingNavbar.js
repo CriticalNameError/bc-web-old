@@ -28,7 +28,7 @@ import { primary, primary_t60 } from "helpers/colorScheme";
 import LogIn from "icons/log-in";
 import LogoLav from "icons/logo_lav";
 import LogoSpotify from "icons/logo-spotify";
-import Earbuds from "icons/earbuds";
+import Sound from "icons/sound";
 import SpotifyLogoWithText from "icons/Spotify_logo_with_text";
 import { useScrollDirection } from "react-use-scroll-direction";
 // export const trackFullpagePage = () => {
@@ -241,7 +241,7 @@ class LandingNavbar extends React.Component {
                 >
                   <span class="round-icon-lg text-white">
                     <span style={{ width: "40px", height: "40px" }}>
-                      <Earbuds width={"40px"} height={"40px"} strokewidth={3} />
+                      <Sound width={"40px"} height={"40px"} strokewidth={3} />
                     </span>
                   </span>
 

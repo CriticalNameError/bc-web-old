@@ -31,7 +31,9 @@ const Faq = () => {
         <div className="row">
           <div className={"col-12 my-auto text-center animated fadeIn slower mt-md-4"} >
             <div className={"mb-3 mb-md-4 text-primary"} style={{marginTop: "150px"}}>
+              <span style={{filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))"}}>
               <BulbAnimated width={"170px"} height={"170px"} strokewidth={4} />
+              </span>
               {/* <i
                   className="fas fa-seedling ml-2"
                   style={{ color: primary_t60, fontSize: "2em" }}

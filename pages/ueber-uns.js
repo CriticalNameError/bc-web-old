@@ -49,10 +49,11 @@ const AboutUs = () => {
           <div className="row">
             <div className={"col-12 my-auto text-center mt-md-5"}>
               <span
-                style={{ display: "inline-block", marginTop: "150px" }}
+                style={{ display: "inline-block", marginTop: "150px", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.1))" }}
                 className={"text-primary mb-4 animated zoomIn slower"}
+                
               >
-                <Anagram100 width={Math.min(width * 0.55, 230) + "px"} />
+                <Anagram100 width={Math.min(width * 0.65, 175) + "px"} />
               </span>
               {/* <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img> */}
               {/* <ImageFromCms
@@ -145,7 +146,7 @@ const AboutUs = () => {
                 ></i> */}
                 <span class="round-icon-lg text-white mb-n3">
                   <span style={{ width: "40px", height: "40px" }}>
-                    <Spaceship width={"40px"} height={"40px"} strokewidth={3} />
+                    <Spaceship width={"40px"} height={"40px"} strokewidth={3}/>
                   </span>
                 </span>
               </div>
