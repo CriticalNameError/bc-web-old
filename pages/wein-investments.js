@@ -87,7 +87,6 @@ const WineInvestments = () => {
   const [markup, changeMarkup] = useState(null);
   return (
     <>
-     
       <>
         <CustomModal
           markup={markup}
@@ -95,11 +94,13 @@ const WineInvestments = () => {
           toggleShowModal={toggleShowModal}
         ></CustomModal>
         <div className={"container-fluid"}>
-          <div className="row" style={{ height: "100vh" }}>
+          <div className="row">
             <div
-              className={"col-12 my-auto text-center animated fadeIn slower "}
+              className={
+                "col-12 my-auto text-center animated fadeIn slower mt-md-4"
+              }
             >
-              <div className={"mb-3 mb-md-4"}>
+              <div className={"mb-3 mb-md-4"} style={{ marginTop: "150px" }}>
                 {/* <span style={{ color: primary_t60, display: "inline-block" }}>
                   {" "}
                   <BottleWine
@@ -158,7 +159,7 @@ const WineInvestments = () => {
                   Warum Wein nicht nur Genuss, sondern auch stabile Renditen
                   bringen kann.
                 </p>
-                <a
+                {/* <a
                   className={"move-down"}
                   href={"#livex"}
                   style={{ cursor: "pointer" }}
@@ -174,17 +175,16 @@ const WineInvestments = () => {
                       style={{ display: "inline-block" }}
                     />
                   </span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
 
-          <div>
+          <div className={"mt-md-5 "}>
             <div
-              class="container text-center pb-5 "
-              id={"livex"}
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+              class="container text-center pb-5 animated fadeIn slower"
+              // data-aos="fade-up"
+              // data-aos-anchor-placement="center-bottom"
             >
               <h2 className={"h3"} style={{ fontSize: "24px" }}>
                 Wie entwickelte sich der Liv-ex Fine Wine 1000 Index?
@@ -450,134 +450,13 @@ const WineInvestments = () => {
           </div>
 
           <div class="container mt-5 mt-sm-5 pt-5 mb-sm-5 pb-5 text-center">
-            <h2 style={{ fontSize: "24px" }}>
-              Was Sie vorab wissen sollten ...
-            </h2>
-
-            <Accordion allowZeroExpanded={true} className={"mt-4 card"}>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    {" "}
-                    <span
-                      className={"text-primary mr-2"}
-                      style={{ display: "inline-block" }}
-                    >
-                      <RightArrow
-                        width={"20px"}
-                        height={"20px"}
-                        strokewidth={4}
-                      />
-                    </span>
-                    Anlagehorizont
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>
-                  <p>
-                    Wichtig zu wissen: Wein ist keine kurzfristige Anlage.
-                    Anleger, die auf schnelle Gewinne aus sind, sollten sich von
-                    Wein fernhalten. Beim Weininvestment ist Zeit der
-                    entscheidende Schlüssel zum Erfolg.
-                  </p>
-                </AccordionItemPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    {" "}
-                    <span
-                      className={"text-primary mr-2"}
-                      style={{ display: "inline-block" }}
-                    >
-                      <RightArrow
-                        width={"20px"}
-                        height={"20px"}
-                        strokewidth={4}
-                      />
-                    </span>
-                    Marktdaten
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>
-                  <p>
-                    Weinbörse Liv-ex – Übersicht über Performance und
-                    Wertentwicklung
-                  </p>
-                  <p>
-                    Liv-Ex (Londons International Vintners Exchange) wurde im
-                    Jahr 2000 durch die beiden Börsenmakler Justin Gibbs und
-                    James Miles gegründet. Die Wein-Handelsplattform mit Sitz in
-                    London startete mit 10 Gründungsmitgliedern und dem Ziel,
-                    den Markt für hochklassige und exquisite Weine
-                    transparenter, effizienter und sicherer zu gestalten.
-                  </p>
-                  <p>
-                    Heute bietet Liv-ex die größte Datenbank im Wein Sektor und
-                    präsentiert diverse Indizes, an denen sich die gesamte
-                    Branche orientiert. Liv-Ex zählt mittlerweile 400 Mitglieder
-                    in 36 Ländern. Die Services von Liv-Ex stehen ausschließlich
-                    Händlern zur Verfügung. Berghaus & Cie. nutzt diese
-                    zuverlässige Quelle, um Ihnen qualitativ aufbereitete
-                    Marktzahlen und Analysen bereitzustellen
-                  </p>
-                </AccordionItemPanel>
-              </AccordionItem>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    {" "}
-                    <span
-                      className={"text-primary mr-2"}
-                      style={{ display: "inline-block" }}
-                    >
-                      <RightArrow
-                        width={"20px"}
-                        height={"20px"}
-                        strokewidth={4}
-                      />
-                    </span>
-                    Herkunft, Lagerbedingungen und Mehrsteuer
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel>
-                  <p>
-                    Der einfachste Weg, die zweifelsfreie Herkunft eines Weines
-                    nachzuweisen, ist die Lagerung in Holzkisten (OHK) unter
-                    Zollverschluss in einem Zolllager. Berghaus & Cie. nutzt ein
-                    Zolllager in Belgien, das strengen Regeln unterliegt. Das
-                    Ergebnis ist ein Prüfpfad für jeden unter Zollverschluss
-                    eingelagerten Wein, der Ihnen eine solide Methode zur
-                    Rückverfolgung der Herkunft bietet.
-                  </p>
-                  <p>
-                    Darüberhinaus bietet Ihnen unser Zolllager durch sorgfältige
-                    Regulierung von Temperatur, Feuchtigkeit und anderen
-                    mikroklimatischen Faktoren die optimale Umgebung für die
-                    Lagerung Ihrer Weine.
-                  </p>
-                  <p>
-                    Weine, die unter Zollverschluss gelagert werden, sind nicht
-                    mehrwertsteuerpflichtig, da sie als "im Transit" betrachtet
-                    werden. Eine Kiste Wein kann mehrmals den Besitzer wechseln,
-                    ohne das Zolllager jemals zu verlassen, wodurch das Risiko
-                    von Schäden und Störungen beseitigt wird. Als Besitzer von
-                    Wein, der in einem Zolllager gelagert wird, erhalten Sie ein
-                    Zertifikat, das Ihr Eigentum als physisches Gut belegt – das
-                    ein bedeutender Vorteil gegenüber nicht-physischen Gütern
-                    wie Aktien, die außer dem Papier, auf dem sie gedruckt sind,
-                    keinen inhärenten Wert besitzen.{" "}
-                  </p>
-                </AccordionItemPanel>
-              </AccordionItem>
-            </Accordion>
-
-            <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+            {/* <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
               <span style={{ fontSize: "18px" }}>
                 Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
                 telefonisch zur Verfügung.
                 <br />
               </span>
-              <a onClick={() => toggleShowContactModal(!showContactModal)}>
+              <a href={"#footer"}>
                 <button
                   className={"btn btn-primary mt-4 p-3 px-5"}
                   style={{ fontSize: "18px" }}
@@ -594,7 +473,7 @@ const WineInvestments = () => {
                   Jetzt kontaktieren
                 </button>
               </a>
-            </div>
+            </div> */}
 
             <h3 className={"mt-5 text-center"} style={{ fontSize: "24px" }}>
               Haftungsausschluss

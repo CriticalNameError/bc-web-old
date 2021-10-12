@@ -44,19 +44,15 @@ const AboutUs = () => {
 
   return (
     <>
-      <ContactUs showButton={true} />
-      <ContactUs showButton={false} showModal={showContactModal} />
       <div>
         <div className={"container-fluid"}>
-          <div className="row" style={{ height: "100vh" }}>
-            <div
-              className={"col-12 my-auto text-center "}
-            >
+          <div className="row">
+            <div className={"col-12 my-auto text-center mt-md-5"}>
               <span
-                style={{ display: "inline-block" }}
+                style={{ display: "inline-block", marginTop: "150px" }}
                 className={"text-primary mb-4 animated zoomIn slower"}
               >
-                <Anagram100 width={Math.min(width * 0.65, 230) + "px"} />
+                <Anagram100 width={Math.min(width * 0.55, 230) + "px"} />
               </span>
               {/* <img className={"animated fadeIn"} src={"/assets/img/bc_logo_80.png"} alt={"Berghaus &amp; Cie."} width="250px"></img> */}
               {/* <ImageFromCms
@@ -65,12 +61,15 @@ const AboutUs = () => {
                 classes={"animated fadeIn slower img mb-5"}
               /> */}
 
-              <h1 className={"h3 animated fadeIn slower "} style={{ fontSize: "24px" }}>
+              <h1
+                className={"h3 animated fadeIn slower "}
+                style={{ fontSize: "24px" }}
+              >
                 {" "}
                 Exquisite Weine - Ihr Investment ist unsere{" "}
                 <span
                   style={{
-                    fontFamily: " 'Fuggles', cursive;",
+                    fontFamily: "'Fuggles', cursive",
                     fontSize: "1.7em",
                     lineHeight: "60%",
                   }}
@@ -80,7 +79,7 @@ const AboutUs = () => {
                 .{" "}
               </h1>
 
-              <a
+              {/* <a
                 className={"move-down"}
                 href={"#mission"}
                 style={{ cursor: "pointer" }}
@@ -96,13 +95,12 @@ const AboutUs = () => {
                     style={{ display: "inline-block" }}
                   />
                 </span>
-              </a>
+              </a> */}
             </div>
           </div>
 
           <div
-            class="container pt-5 animated fadeIn slow "
-            id={"mission"}
+            class="container pt-5 animated fadeIn slow mt-mb-5"
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
           >
@@ -514,14 +512,14 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-
+{/* 
           <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
             <span style={{ fontSize: "18px" }}>
               Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
               telefonisch zur Verfügung.
               <br />
             </span>
-            <a onClick={() => toggleShowContactModal(!showContactModal)}>
+            <a href={"#footer"}>
               <button
                 className={"btn btn-primary mt-4 p-3 px-5"}
                 style={{ fontSize: "18px" }}
@@ -538,7 +536,7 @@ const AboutUs = () => {
                 Jetzt kontaktieren
               </button>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 

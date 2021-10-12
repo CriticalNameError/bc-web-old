@@ -28,9 +28,9 @@ const Faq = () => {
   return (
     <>
       <div className={"container mx-auto"} style={{width: "60%"}}>
-        <div className="row" style={{ height: "100vh" }}>
-          <div className={"col-12 my-auto text-center animated fadeIn slower "}>
-            <div className={"mb-3 mb-md-4 text-primary"}>
+        <div className="row">
+          <div className={"col-12 my-auto text-center animated fadeIn slower mt-md-4"} >
+            <div className={"mb-3 mb-md-4 text-primary"} style={{marginTop: "150px"}}>
               <BulbAnimated width={"170px"} height={"170px"} strokewidth={4} />
               {/* <i
                   className="fas fa-seedling ml-2"
@@ -63,7 +63,7 @@ const Faq = () => {
               <p className={"h3"} style={{ fontSize: "24px" }}>
                 Antworten auf die am häufigsten gestellte Fragen - sachlich und transparent.
               </p>
-              <a
+              {/* <a
                 className={"move-down"}
                 href={"#list"}
                 style={{ cursor: "pointer" }}
@@ -79,7 +79,7 @@ const Faq = () => {
                     style={{ display: "inline-block" }}
                   />
                 </span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -376,13 +376,13 @@ const Faq = () => {
             </Accordion>
           </div>
 
-          <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+          {/* <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
             <span style={{ fontSize: "18px" }}>
               Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
               telefonisch zur Verfügung.
               <br />
             </span>
-            <a onClick={() => toggleShowContactModal(!showContactModal)}>
+            <a href={"#footer"}>
               <button
                 className={"btn btn-primary mt-4 p-3 px-5"}
                 style={{ fontSize: "18px" }}
@@ -399,7 +399,7 @@ const Faq = () => {
                 Jetzt kontaktieren
               </button>
             </a>
-          </div>
+          </div> */}
 
           <h3 className={"mt-5 text-center"} style={{ fontSize: "24px" }}>
             Haftungsausschluss
