@@ -412,7 +412,7 @@ class LandingNavbar extends React.Component {
                     </p>
                   </a>
                 </NavItem>
-                <NavItem style={{ position: "relative" }}>
+                {/* <NavItem style={{ position: "relative" }}>
                   <a
                     href="/blog"
                     className={
@@ -429,12 +429,11 @@ class LandingNavbar extends React.Component {
                       fontSize: "12px",
                     }}
                   >
-                    {/* <i className="now-ui-icons media-2_sound-wave" /> */}
                     <p>
                       <span className="d-lg-inline d-md-block">Blog</span>
                     </p>
                   </a>
-                </NavItem>
+                </NavItem> */}
                 <NavItem style={{ position: "relative" }}>
                   <a
                     href="/ueber-uns"

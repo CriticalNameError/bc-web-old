@@ -345,7 +345,7 @@ const WineInvestments = () => {
                 erfolgreich?
               </h2>
               <p style={{ fontSize: "18px" }}>
-                Diese drei Aspekte spielen für ein erfolgreiches Weininvestment
+                Drei Aspekte spielen für ein profitables Weininvestment
                 eine zentrale Rolle.
               </p>
 

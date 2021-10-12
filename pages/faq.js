@@ -63,7 +63,7 @@ const Faq = () => {
                   </span>
                 </h1> */}
               <p className={"h3"} style={{ fontSize: "24px" }}>
-                Antworten auf die am häufigsten gestellte Fragen - sachlich und transparent.
+                Auf den Punkt gebracht - unsere Antworten auf die am häufigsten gestellten Fragen.
               </p>
               {/* <a
                 className={"move-down"}
@@ -92,8 +92,8 @@ const Faq = () => {
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
           >
-            <h2 style={{ fontSize: "24px" }}>
-              Was Sie vorab wissen sollten ...
+            <h2 style={{ fontSize: "24px", textAlign: "center" }}>
+              (Obsolet?) Was Sie vorab wissen sollten ...
             </h2>
 
             <Accordion
@@ -115,12 +115,12 @@ const Faq = () => {
                         strokewidth={4}
                       />
                     </span>
-                    Wann empfiehlt sich ein Weininvestment besonders?
+                    Für wen empfiehlt sich ein Weininvestment?
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <p>
-                    Ein Weininvestment empfiehlt sich besonders für alle, die
+                    Ein Weininvestment empfiehlt sich besonders für all diejenigen, die
                     ihr Portfolio abrunden wollen und ein alternatives
                     Investment mit einem mittel- bis langfristiges
                     Anlagehorizont (ca. 5 bis 10 Jahre) und der Aussicht auf
