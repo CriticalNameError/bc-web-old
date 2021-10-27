@@ -44,6 +44,7 @@ const OfferPromotionSlider = () => {
     return (
       <Slider
         {...{
+          arrows: true,
           dots: true,
           infinite: true,
           autoplay: true,

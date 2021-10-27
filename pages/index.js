@@ -41,45 +41,26 @@ import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
 
-// core components
 
-let geringe_mengen_markup = (
-  <div className={"p-4"}>
-    <p className={"h3 text-primary"}>Geringe Mengen</p>
-    Weltweit gibt es in allen hochklassigen Weinbaugebieten strenge Richtlinien
-    und Regeln, um sowohl die Qualität zu kontrollieren als auch die Produktion
-    zu begrenzen.
-    <br />
-    <br />
-    Exquisite Weine, die sich für ein Weininvestment eignen, stehen nur in einem
-    sehr begrenzten Umfang (circa 1 % der weltweiten Weinproduktion) zu
-    Verfügung.
-  </div>
-);
-let reifung_markup = (
-  <div className={"p-4"}>
-    <p className={"h3 text-primary"}>Reifung</p>
-    Viele hochwertige Weine haben ein Entwicklungspotenzial, welches sie erst
-    nach Jahren und teilweise sogar erst nach Jahrzehnten angemessener Lagerung
-    voll ausschöpfen können.
-    <br />
-    <br />
-    Je besser ein Wein mit dem Alter wird, umso begehrenswerter und „wertvoller“
-    wird er auch im monetären Sinn.
-  </div>
-);
-let angebot_nachfrage_markup = (
-  <div className={"p-4"}>
-    <p className={"h3 text-primary"}>Angebot & Nachfrage</p>
-    Angebot und Nachfrage bestimmen, wie überall, auch bei hochklassigen Weinen
-    den Markt. Mit jeder Flasche, die konsumiert wird, reduziert sich das
-    verfügbare Angebot der ohnehin seltenen Weine.
-    <br />
-    <br />
-    Da im Laufe der Zeit der weltweiten Nachfrage ein immer geringer werdendes
-    Angebot gegenüber steht, erhöht sich der Preis der Weine.
-  </div>
-);
+
+const songs = [
+  {
+    url: 'path/to/mp3',
+    cover: 'path/to/jpeg',
+    artist: {
+      name: 'Metallica',
+      song: 'Fuel'
+    }
+  },
+  {
+    url: 'path/to/your/mp3',
+    artist: {
+      name: 'X Japan',
+      song: 'Art of Life'
+    }
+  }
+];
+
 
 const Index = (props) => {
   const [showModal, toggleShowModal] = useState(false);
@@ -398,19 +379,17 @@ const Index = (props) => {
               Vermögensaufbau durch den Erwerb von Sachwerten – kompetent,
               transparent und mit Unterstützung modernster Technologien.
             </p>
+            <div className={"card"} style={{maxWidth: "950px"}}>
             <ImageFromCms
               title={"team_formal"}
               width={Math.min(width * 0.85, 950)}
               fill={width > 991 ? "1200x650" : "600x430"}
               jpegquality={40}
-              classes={"animated fadeIn img img-raised mb-3"}
+              classes={"animated fadeIn img  mb-3"}
             />
-            <br />
-            <br />
-            "Weininvestments bei Berghaus & Cie."
-            <br />
-            in 180 Sekunden
+            
             <PlayAudio />
+            </div>
             <div className={"mt-5"}>
               <div className={"mb-3 mt-md-5"} style={{ fontSize: "24px" }}>
                 Exquisite Jahrgänge aus unserem aktuellen Sortiment

@@ -15,11 +15,18 @@ import LandingFooter from "../src/components/Footer/LandingFooter";
 import Magnifier from "icons/magnifier";
 import TimeMachine from "icons/time-machine";
 import Athletics from "icons/athletics";
-import Statistics from "icons/statistics";
+import BarArrowStraight from "icons/bar-arrow-straight";
 import PaperDiploma from "icons/paper-diploma";
 import ThumbUp from "icons/thumb-up";
 import RightArrow from "icons/right-arrow";
 import BottleWine from "icons/bottle-wine";
+import BMeeting from "icons/b-meeting";
+import Questionaire from "icons/questionnaire";
+import MobilePhone from "icons/mobile-phone";
+import Diamond from "icons/diamond";
+import StorageUnit from "icons/storage-unit";
+import World from "icons/world";
+
 import {
   primary,
   primary_t80,
@@ -85,6 +92,35 @@ const WineInvestments = () => {
   const [showModal, toggleShowModal] = useState(false);
   const [showContactModal, toggleShowContactModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
+  const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      // setWidth(window.innerWidth);
+    };
+    const getMaximumServicesCardHeight = () => {
+      let cards = document.getElementsByClassName("services-card");
+      //let cardsHeights = cards.map(c => c.style.height);
+      let cardsArr = Array.prototype.slice.call(cards);
+      let cardHeight = cardsArr.map((c) => c.clientHeight);
+      setMaxServicesCardHeight(Math.max(...cardHeight));
+    };
+    // just trigger this so that the initial state
+    // is updated as soon as the component is mounted
+    // related: https://stackoverflow.com/a/63408216
+    handleResize();
+    getMaximumServicesCardHeight();
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", getMaximumServicesCardHeight);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", getMaximumServicesCardHeight);
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <>
@@ -367,9 +403,9 @@ const WineInvestments = () => {
 
                     <span class="round-icon-lg text-white">
                       <span style={{ width: "40px", height: "40px" }}>
-                        <Statistics
-                          width={"40px"}
-                          height={"40px"}
+                        <BarArrowStraight
+                          width={"45px"}
+                          height={"45px"}
                           strokewidth={3}
                         />
                       </span>
@@ -474,6 +510,236 @@ const WineInvestments = () => {
                 </button>
               </a>
             </div> */}
+
+
+
+
+
+<div
+            className={"row mx-auto pt-5"}
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            style={{ maxWidth: "1200px" }}
+          >
+            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <BMeeting width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-5 mb-sm-5">
+              <div class="info info-horizontal pr-md-5">
+                <div class="">
+                  <p
+                    className={
+                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                    }
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
+                  >
+                    <h3 class="text-center mt-0 h5">Fundierte Beratung</h3>
+                    <div className={"text-left"}>
+                      Grundlage für den Erfolg Ihres Weininvestments ist eine
+                      umfassende Beratung, die Ihre speziellen Wünsche und
+                      Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
+                      Profi, wir bieten in jedem Fall die passende Beratung.
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 text-center " style={{ zIndex: 100 }}>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <Diamond width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-5  mb-sm-5">
+              <div class="info info-horizontal pr-md-5">
+                <div class="">
+                  <p
+                    className={
+                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                    }
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
+                  >
+                    <h3 class="text-center mt-0 h5">Exquisite Weine</h3>
+                    <div className={"text-left"}>
+                      Wir bieten Ihnen hochklassige und seltene Weine für Ihr
+                      persönliches Weininvestment. Durch unser großes
+                      Einkaufsnetzwerk profitieren Sie von attraktiven
+                      Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
+                      Kapitals.
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="row mt-md-n5 mx-auto"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            style={{ maxWidth: "1200px" }}
+          >
+            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <Questionaire
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-5  mb-sm-5">
+              <div class="info info-horizontal pr-md-5">
+                <div class="">
+                  <p
+                    className={
+                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                    }
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
+                  >
+                    <h3 class="text-center mt-0 h5">Individuelles Portfolio</h3>
+                    <div className={"text-left"}>
+                      Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
+                      an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
+                      zusätzlich Ihren persönlichen Geschmack und Ihre
+                      individuellen Präferenzen als treibenden Faktor mit ein.
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <MobilePhone width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-5 mb-sm-5">
+              <div class="info info-horizontal pr-md-5">
+                <div class="">
+                  <p
+                    className={
+                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                    }
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
+                  >
+                    <h3 class="text-center mt-0 h5">Digitales Weindepot</h3>
+                    <div className={"text-left"}>
+                      Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
+                      oder über die Website, die Möglichkeit auf Ihr
+                      persönliches Online-Depot zuzugreifen und sich über die
+                      Entwicklung Ihres Investments zu informieren.
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="row mt-md-n5 mx-auto"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            style={{ maxWidth: "1200px" }}
+          >
+            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <StorageUnit width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-5  mb-sm-5">
+              <div class="info info-horizontal pr-md-5">
+                <div class="">
+                  <p
+                    className={
+                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                    }
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
+                  >
+                    <h3 class="text-center mt-0 h5">Optimale Lagerung</h3>
+                    <div className={"text-left"}>
+                      Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
+                      klimatische Bedingungen sorgen dafür, dass er bestmöglich
+                      ausreift. Zudem ist das Lager als Umsatzsteuerlager
+                      deklariert. Das bedeutet, solange der Wein das Lager nicht
+                      verlässt, wird keine Mehrwertsteuer erhoben.
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+              <span class="round-icon text-white">
+                <span style={{ width: "30px", height: "30px" }}>
+                  <World width={"30px"} height={"30px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-5  mb-sm-5">
+              <div class="info info-horizontal pr-md-5">
+                <div class="">
+                  <p
+                    className={
+                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                    }
+                    style={
+                      maxServicesCardHeight
+                        ? { minHeight: maxServicesCardHeight }
+                        : {}
+                    }
+                  >
+                    <h3 class="text-center mt-0 h5">Globales Netzwerk</h3>
+                    <div className={"text-left"}>
+                      Wein ist ein endliches Gut und die internationale
+                      Nachfrage nach gereiften hochwertigen Weinen nimmt mit den
+                      Jahren zu. Wir unterstützen Sie dabei, Ihre Weine zum
+                      besten Zeitpunkt zu veräußern und bieten Ihnen den Zugang
+                      zu unserem weltweiten Netzwerk an Verkaufskanälen.
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+
+
+
+
 
             <h3 className={"mt-5 text-center"} style={{ fontSize: "24px" }}>
               Haftungsausschluss

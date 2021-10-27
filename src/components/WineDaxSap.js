@@ -11,8 +11,14 @@ import {
   DiscreteLegendEntry,
   PointSeries,
 } from "reaviz";
-import React from "react";
+// import * as am4core from "@amcharts/amcharts4/core";
+// import * as am4charts from "@amcharts/amcharts4/charts";
+// import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import React, { useEffect } from "react";
 import { primary_t50 } from "helpers/colorScheme";
+
+// am4core.useTheme(am4themes_animated);
+
 export const data = [
   {
     key: "Fine Wine",
@@ -362,11 +368,8 @@ export const data = [
   // }
 ];
 
-class WineDaxSap extends React.Component {
-  state = {
-    backgroundColor: "blue",
-  };
-  render() {
+const WineDaxSap = (props) => {
+
     return (
       <div style={{ width: "100%", height: "60vh" }} className={"mx-auto p-3"}>
         <span
@@ -375,31 +378,7 @@ class WineDaxSap extends React.Component {
         >
           Wertsteigerung in %
         </span>
-        {/* <AreaChart
-            gridlines={false}
-            yAxis={   <LinearYAxis
-              position="end"
-              axisLine={null}
-              tickSeries={
-                <LinearYAxisTickSeries
-                  line={null}
-                  label={"Zuwachs in %"}
-                />
-              }
-            />}
-            data={[
-              { key: new Date('11/29/2019'), data: 13 },
-              { key: new Date('11/30/2019'), data: 13 },
-              { key: new Date('12/1/2019'), data: 13 },
-            ]}
-              // series={<AreaSeries interpolation="smooth" colorScheme={["#B37870"]}/>}
-            />
-            <DiscreteLegend
-      orientation="horizontal"
-      entries={[
-        <DiscreteLegendEntry label="Fine Wine" color="#B37870" />
-      ]}
-    /> */}
+      
         <span className={"pull-right"}>
           <DiscreteLegend
             orientation="horizontal"
@@ -473,6 +452,6 @@ class WineDaxSap extends React.Component {
         />
       </div>
     );
-  }
+  
 }
 export default WineDaxSap;

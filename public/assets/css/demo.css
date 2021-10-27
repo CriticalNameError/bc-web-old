@@ -242,6 +242,27 @@
   background-color: #4e2382;
 }
 
+.rhap_play-pause-button {
+  color: #714f9b !important;
+}
+
+.rhap_progress-filled {
+  background-color: #957bb4 !important;
+}
+
+.rhap_progress-indicator {
+  background: #714f9b !important;
+}
+
+.rhap_container {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.rhap_additional-controls {
+  visibility: hidden !important;
+}
+
 .nav-link {
   border-radius: 25px !important;
 }
@@ -249,6 +270,19 @@
 .slick-track {
   padding-top: 2.5rem !important;
   padding-bottom: 1.5em !important;
+}
+
+.slick-next:before {
+  color: #4e2382 !important;
+}
+
+.slick-prev:before {
+  color: #4e2382 !important;
+}
+
+.fadeInSlower {
+  -webkit-animation-duration: 4s !important;
+          animation-duration: 4s !important;
 }
 
 .white-placeholders ::-webkit-input-placeholder {

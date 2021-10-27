@@ -313,6 +313,26 @@
     
 }
 
+.rhap_play-pause-button{
+    color: $primary-color!important;
+}
+
+.rhap_progress-filled{
+    background-color: $primary-60!important;
+}
+
+.rhap_progress-indicator{
+    background: $primary-color!important;
+}
+
+.rhap_container{
+    box-shadow: none !important;
+}
+
+.rhap_additional-controls{
+    visibility: hidden!important;
+}
+
 .nav-link{
     border-radius: 25px !important;
 
@@ -345,8 +365,17 @@
 //    color:    #909!important;
 // }
 
+.slick-next:before{
+    color: $primary-100!important
+}
 
+.slick-prev:before{
+    color: $primary-100!important
+}
 
+.fadeInSlower {
+    animation-duration: 4s!important; 
+  }
 
 .white-placeholders {
     ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
