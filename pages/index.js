@@ -151,7 +151,7 @@ const Index = (props) => {
             <b>inkl. Versand</b> und MwSt.
           </span>
           <br />
-          <span>
+          <span className={"px-3 px-md-0"}>
             <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
           </span>
           <br />
@@ -475,7 +475,7 @@ const Index = (props) => {
                 <b>inkl. Versand</b> und MwSt.
               </span>
               <br />
-              <span>
+              <span className={"px-3 px-md-0"}>
                 <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
               </span>
               <br />
