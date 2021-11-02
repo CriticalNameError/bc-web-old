@@ -41,26 +41,23 @@ import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
 
-
-
 const songs = [
   {
-    url: 'path/to/mp3',
-    cover: 'path/to/jpeg',
+    url: "path/to/mp3",
+    cover: "path/to/jpeg",
     artist: {
-      name: 'Metallica',
-      song: 'Fuel'
-    }
+      name: "Metallica",
+      song: "Fuel",
+    },
   },
   {
-    url: 'path/to/your/mp3',
+    url: "path/to/your/mp3",
     artist: {
-      name: 'X Japan',
-      song: 'Art of Life'
-    }
-  }
+      name: "X Japan",
+      song: "Art of Life",
+    },
+  },
 ];
-
 
 const Index = (props) => {
   const [showModal, toggleShowModal] = useState(false);
@@ -112,294 +109,389 @@ const Index = (props) => {
         toggleShowModal={toggleShowModal}
       ></CustomModal>
       <div className={"container-fluid px-0"} style={{ overflowX: "hidden" }}>
-        <div className="row">
-          <div className={"col-12 my-auto text-center  "}>
-            <div
-              className={"mx-auto"}
-              // style={{ maxWidth: "750px" }}
-            >
-              <div className={"mt-md-4 animated zoomIn slower"}>
-                <span
-                  style={{
-                    display: "inline-block",
-                    minHeight: "130px",
-                    marginTop: "150px",
-                    filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
-                  }}
-                  className={"text-primary"}
-                >
-                  <LogoSublineLavendel
-                    width={width > 500 ? "400px" : "250px"}
-                  />
-                </span>
-                {/* <ImageFromCms
-                title={"logo_subline_lavendel"}
-                width={width > 500 ? 550 : 250}
-                jpegquality={5}
-              ></ImageFromCms> */}
-              </div>
-
-              <div
-                // className={
-                //   " pl-md-4 animate__animated animate__delay-1s animate__fadeInLeft animate__slow"
-                // }
-                className={"pl-md-4 mt-3 animated fadeIn slower"}
-              >
-                <h1 className={" "} style={{ fontSize: "24px" }}>
-                  Investieren Sie in einen genussvollen Sachwert <br /> mit
-                  einem attraktiven Renditepotential.
-                </h1>{" "}
-                <br />
-                <div className={"row mt-3"}>
-                  <div className={"col-6 text-right animated fadeIn slower"}>
-                    <MockupLanding
-                      width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
-                    />
-                    {/* <ImageFromCms
-                      title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
-                      width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
-                      jpegquality={10}
-                    /> */}
-                  </div>
-                  <div className={"col-6 text-left mt-md-4"}>
-                    <div
-                      className={"text-left"}
-                      style={{
-                        fontSize: "18px",
-                        width: "400px",
-                        lineHeight: "1.5em",
-                      }}
-                    >
-                      <br />
-                      <CheckSingle
-                        width={"25px"}
-                        height={"30px"}
-                        strokewidth={3}
-                      />{" "}
-                      ohne spezielle Vorkenntnisse <br />
-                      <CheckSingle
-                        width={"25px"}
-                        height={"30px"}
-                        strokewidth={3}
-                      />{" "}
-                      sparen Sie Ihre wertvolle Zeit <br />
-                      <CheckSingle
-                        width={"25px"}
-                        height={"30px"}
-                        strokewidth={3}
-                      />{" "}
-                      durchschnittliche Rendite 7 % p.a. <br />
-                      <br />
-                    </div>
-
-                    {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                    <button
-                      onClick={() => props.toggleShowCalendlyModal(true)}
-                      className={
-                        "mr-auto btn bg-cta p-2 animated infinite pulse slower"
-                      }
-                      style={{ fontSize: "18px" }}
-                    >
-                      Erstgespräch vereinbaren
-                    </button>
-                  </div>
-                  <br />
-                </div>
-                <div
-                  // className={
-                  //   "animate__animated animate__delay-1s animate__fadeInRight animate__slow"
-                  // }
-                  className={"animated fadeIn slower"}
-                >
-                  {/* <ImageFromCms
-                    title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
-                    width={width > 991 ? (width > 1500 ? 475 : 295) : 250}
-                    jpegquality={30}
-                  /> */}
-                </div>
-                {/* <span>
-                  <a href={"https://weindepot.berghaus-cie.com/register"}>
-
-                    <button
-                      className={
-                        "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
-                      }
-                      style={{ fontSize: "18px" }}
-                    >
-                      Erstgespräch vereinbaren
-                    </button>
-                  </a>
-                </span> */}
-              </div>
-
-              {/* <a
-                className={"move-down mt-n3"}
-                href={"#services"}
-                style={{ cursor: "pointer" }}
-              >
-                <span
-                  className={"animated infinite pulse"}
-                  style={{ cursor: "pointer", color: primary }}
-                >
-                  <DownArrow
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                    style={{ display: "inline-block" }}
-                  />
-                </span>
-              </a> */}
-            </div>
-          </div>
-
-          <div class=" text-center w-100 animated fadeIn slower">
-            <div
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              className={"mb-3"}
-              // style={{ backgroundColor: "rgb(191, 157, 226)" }}
-            >
-              {/* <div style={{ overflow: "hidden" }}>
-                <svg
-                  preserveAspectRatio="none"
-                  viewBox="0 0 1200 120"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fill: "#ffffff",
-                    width: "196%",
-                    height: 50,
-                    transform: "scaleX(-1)",
-                    marginBottom: "-1px",
-                    marginLeft: "-1px",
-                  }}
-                >
-                  <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-                </svg>
-              </div> */}
-
-              <div className={"row animated fadeInUp slower text-left"}>
-                <h3
-                  className={"col-md-8 offset-md-2 mb-3"}
-                  style={{ fontSize: "18px" }}
-                >
-                  Unsere Auszeichnungen
-                </h3>
-                <br />
-                <div
-                  style={{}}
-                  className={
-                    "d-flex justify-content-between col-md-8 offset-md-2 pt-1 mt-1"
-                  }
-                >
-                  <div
-                    style={{
-                      padding: "10px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Award1 height={"60px"} />
-                    {/* <ImageFromCms
-                      title={"award_1"}
-                      height={width > 50 ? 80 : 75}
-                      jpegquality={17}
-                    ></ImageFromCms> */}
-                  </div>
-                  <div
-                    style={{
-                      padding: "10px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Award2 height={"60px"} />
-                    {/* <ImageFromCms
-                      title={"award_2"}
-                      height={width > 50 ? 80 : 75}
-                      jpegquality={17}
-                    ></ImageFromCms> */}
-                  </div>
-                  <div
-                    style={{
-                      padding: "10px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Award3 height={"60px"} />
-                    {/* <ImageFromCms
-                      title={"award_3"}
-                      height={width > 50 ? 80 : 75}
-                      jpegquality={17}
-                    ></ImageFromCms> */}
-                  </div>
-                </div>
-              </div>
-
-              {/* <div style={{ overflow: "hidden" }}>
-                <svg
-                  preserveAspectRatio="none"
-                  viewBox="0 0 1200 120"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fill: "#ffffff",
-                    width: "197%",
-                    height: 50,
-                    transform: "rotate(180deg) scaleX(-1)",
-                    marginBottom: "-1px",
-                    marginLeft: "-1px",
-                  }}
-                >
-                  <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-                </svg>
-              </div> */}
-            </div>
-          </div>
+        <div
+          // className={
+          //   " pl-md-4 animate__animated animate__delay-1s animate__fadeInLeft animate__slow"
+          // }
+          className={"animated fadeIn slower text-center"}
+          style={{ marginTop: "30vh" }}
+        >
+          <span
+            className={"text-center px-3 px-md-0"}
+            style={{
+              //fontFamily: "'Nothing You Could Do', cursive",
+              fontSize: width > 991 ? "43px" : "25px",
+              fontWeight: "200",
+              //color: "#bfac86",
+              //textShadow: "rgb(76 69 55) 1px 1px 1.5px",
+            }}
+          >
+            Die ganze Welt des Weines - <br />
+            verkörpert durch ein einzigartiges Ensemble.
+          </span>{" "}
         </div>
+
+        <div class=" text-center w-100 animated fadeIn slower mb-md-4">
+          <div
+          
+            className={"mb-3 mt-5"}
+            // style={{ backgroundColor: "rgb(191, 157, 226)" }}
+          >
+            <ImageFromCms
+              title={"weinensemble"}
+              width={Math.min(width * 0.75, 950)}
+              //fill={width > 991 ? "1200x650" : "600x430"}
+              jpegquality={35}
+              classes={"animated fadeIn img  mb-3"}
+            />
+          </div>
+          <span style={{ fontWeight: "200", fontSize: "35px" }}>119,00 €</span>
+          <br />
+          <span>
+            <b>inkl. Versand</b> und MwSt.
+          </span>
+          <br />
+          <span>
+            <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
+          </span>
+          <br />
+          <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}>
+            <button
+              class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
+              style={{ fontSize: "18px" }}
+            >
+              Jetzt vorbestellen!
+            </button>
+          </a>
+        </div>
+        <br />
+        <br />
         <div>
           <section
             className={"mx-auto text-center mt-md-5"}
-            data-aos="fade-up"
-            id={"services"}
-            data-aos-anchor-placement="center-bottom"
+           
             style={{ maxWidth: "1200px" }}
           >
             <h2 className={"h3"} style={{ fontSize: "24px" }}>
-              Was dürfen Sie von uns erwarten?
+              Lassen Sie sich begeistern!
             </h2>
             <p
-              className={"mx-auto"}
-              style={{ fontSize: "18px", maxWidth: "750px" }}
+              className={"mx-auto px-3 px-md-0"}
+              style={{ fontSize: "18px", maxWidth: "950px" }}
             >
-              Berghaus & Cie. bietet Ihnen Zugang zu den besten Weinen der Welt
-              für Ihr persönliches Weininvestment. Wir unterstützen Sie beim
-              Vermögensaufbau durch den Erwerb von Sachwerten – kompetent,
-              transparent und mit Unterstützung modernster Technologien.
+              Wir freuen uns, Ihnen ein ganz besonderes Weinensemble anbieten zu
+              drüfen. Dieses besteht aus drei Weinen, die einerseits nicht
+              unterschiedlicher sein könnten und die andererseits perfekt
+              aufeinander abgestimmt sind. Mit dieser Auswahl unternehmen Sie
+              eine spannede Reise durch die Weinwelt. <br />
+              <br />
+              Wir wünschen viel (Gaumen-)Freude
+              <br />
+              <span
+                className={"text-center "}
+                style={{
+                  fontFamily: "'Nothing You Could Do', cursive",
+                  fontSize: "24px",
+                }}
+              >
+                Tristan Berghaus, Peter Irnich und Martin Dammrath
+              </span>
             </p>
-            <div className={"card"} style={{maxWidth: "950px"}}>
-            <ImageFromCms
-              title={"team_formal"}
-              width={Math.min(width * 0.85, 950)}
-              fill={width > 991 ? "1200x650" : "600x430"}
-              jpegquality={40}
-              classes={"animated fadeIn img  mb-3"}
-            />
-            
-            <PlayAudio />
-            </div>
-            <div className={"mt-5"}>
-              <div className={"mb-3 mt-md-5"} style={{ fontSize: "24px" }}>
-                Exquisite Jahrgänge aus unserem aktuellen Sortiment
+
+            <div
+              class="row mx-auto mt-3 mt-md-5 pt-md-5"
+              style={{ maxWidth: "1200px" }}
+            >
+              <div
+                className={
+                  "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-sm-0 my-sm-auto py-3" +
+                  (width < 768 ? " text-center" : "")
+                }
+                style={{ zIndex: 1000 }}
+              >
+                <ImageFromCms
+                  title={"brim"}
+                  width={150}
+                  jpegquality={40}
+                  classes={"animated fadeIn img  p-4 "}
+                />
+                <br />
+                94 / 100 Punkte (Andrew Caiilard)
+                <br />
+                Grand Cru
+                {/* <img
+                    src={"/assets/img/tristan_berghaus_berghaus_cie.png"}
+                    class={"img-raised"}
+                    width="350px"
+                  ></img> */}
               </div>
-              <OfferPromotionSlider />
+
+              <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
+                <h2
+                  class="text-left d-inline heading mt-sm-3 h3 "
+                  style={{ fontSize: "24px", fontWeight: "200" }}
+                >
+                  Brimoncourt Champagner, 0.75l
+                </h2>
+
+                <h5 className={"mt-2"} style={{ fontSize: "18px" }}>
+                  <span style={{}}>
+                    „Champagner ist wohl die glückhafteste Inspirationsquelle.”
+                    – Mark Twain
+                  </span>
+                </h5>
+                <b>Degustationsnotiz</b>
+                <br />
+                <p>
+                  Der von Chardonnay dominierte Champagner weist sehr feine
+                  Aromen auf. Mit seiner Frische, seiner runden Textur sowie dem
+                  feinfruchtigen Abgang ist der Schaumwein ein idealer Begleiter
+                  zum Aperitif. Seine helle Farbe und die Aromen von frischer
+                  Grapefruit, Tonic und Zitrone machen den cremigen Champagner
+                  zu einer sehr attraktiven und eleganten Erfrischung.
+                </p>
+                <b>Das Weingut</b>
+                <br />
+                <p>
+                  Im Jahre 2008 erweckte Alexandre Cornot das Weingut
+                  Brimoncourt zu neuem Leben. In der Gemeinde Aÿ, dem
+                  historischen Herz der Champagne, liegen die Weinberge des
+                  Hauses. Das hervorragend Terroir spiegelt sich in jedem
+                  Champagner von Brimoncourt wieder.
+                </p>
+
+                <br />
+              </div>
+            </div>
+
+            <div
+              class="row mx-auto mt-3 mt-md-5"
+              style={{ maxWidth: "1200px" }}
+            >
+              <div
+                className={
+                  "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-sm-0 my-sm-auto py-3" +
+                  (width < 768 ? " text-center" : "")
+                }
+                style={{ zIndex: 1000 }}
+              >
+                <ImageFromCms
+                  title={"juff"}
+                  width={150}
+                  //fill={width > 991 ? "200x400" : "200x400"}
+                  jpegquality={80}
+                  classes={"animated fadeIn p-4 "}
+                />
+                <br />
+                94 / 100 Punkte (James Suckling)
+                <br />
+                Großes Gewächs, VDP
+                {/* <img
+                    src={"/assets/img/tristan_berghaus_berghaus_cie.png"}
+                    class={"img-raised"}
+                    width="350px"
+                  ></img> */}
+              </div>
+
+              <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
+                <h2
+                  class="text-left d-inline heading mt-sm-3 h3 mb-2"
+                  style={{ fontSize: "24px", fontWeight: "200" }}
+                >
+                  Juffer Sonnenuhr GG 2018, 0.75 l
+                </h2>
+
+                <h5 className={"mt-2"} style={{ fontSize: "18px" }}>
+                  <span>
+                    „Es lebe die Freiheit! Es lebe der Wein!“ – Johann W. von
+                    Goethe
+                  </span>
+                </h5>
+                <b>Degustationsnotiz</b>
+                <br />
+                <p>
+                  Ungemein mineralisch und dicht zeigt sich das Bouquet dieses
+                  Weines. Ganz viel kühle Pfirsichfrucht, begleitet von frischem
+                  Apfel und allerlei Zitrusaromen zeigen sich zuerst. Die dichte
+                  Mineralität und die faszinierend herben Noten kommen im
+                  „zweiten Aufzug“ so richtig zur Geltung. Am Gaumen ist der
+                  Wein trocken wunderbar druckvoll, lebendig und anfangs noch
+                  regelrecht stürmisch. Saftig, mit schöner Frucht und richtig
+                  viel Mineralität ist auch der Abgang.
+                </p>
+                <b>Das Weingut</b>
+                <br />
+                <p>
+                  Das Weingut Fritz Haag liegt im Kernstück der Mittelmosel und
+                  blickt auf eine lange Geschichte zurück: 1605 wurde es
+                  erstmals urkundlich erwähnt. Die weltberühmte Weinbergslage
+                  „Brauneberger Juffer Sonnenuhr“, die vielleicht beste Lage der
+                  trockenen Weine an der Mosel, zählte bereits Napoleon zu den
+                  Perlen der Moselregion. Seit 2005 führt Oliver Haag das
+                  VDP-Weingut und setzt bei der möglichst biologischen
+                  Weinbereitung ausnahmslos auf höchste Qualität.
+                </p>
+
+                <br />
+              </div>
+            </div>
+
+            <div
+              class="row mx-auto mt-3 mt-md-5"
+              style={{ maxWidth: "1200px" }}
+            >
+              <div
+                className={
+                  "col-md-4 col-sm-12 mx-2 mx-sm-n3  mb-sm-0 my-sm-auto py-3" +
+                  (width < 768 ? " text-center" : "")
+                }
+                style={{ zIndex: 1000 }}
+              >
+                <ImageFromCms
+                  title={"cant"}
+                  width={150}
+                  //fill={width > 991 ? "200x600" : "200x600"}
+                  jpegquality={80}
+                  classes={"animated fadeIn img p-4 "}
+                />
+                <br />
+                92 / 100 Punkte (James Suckling)
+                <br />
+                Grand Cru Classé en 1855
+                {/* <img
+                    src={"/assets/img/tristan_berghaus_berghaus_cie.png"}
+                    class={"img-raised"}
+                    width="350px"
+                  ></img> */}
+              </div>
+
+              <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
+                <h2
+                  class="text-left d-inline heading mt-sm-3 h3 mb-2"
+                  style={{ fontSize: "24px", fontWeight: "200" }}
+                >
+                  Château Cantemerle 2012, 0.75 l:
+                </h2>
+
+                <h5 className={"mt-2"} style={{ fontSize: "18px" }}>
+                  <span>
+                    „Le vin entre et la raison sort.” – frz. Sprichwort
+                  </span>{" "}
+                </h5>
+                <b>Degustationsnotiz</b>
+                <br />
+                <p>
+                  Ein hervorragender Wein mit dichter, rubin-violetter Farbe,
+                  geringer Säure und weit überdurchschnittlicher Tiefe. Der
+                  Château Cantemerle besticht durch seine Eleganz und seinem
+                  reinen Stil. Es dominieren florale Noten und Aromen von
+                  Heidelbeere und Schwarzkirsche. Der Wein mit mittlerem Körper
+                  und leichten Tanninen eignet sich hervorragend als Begleiter
+                  zu einem festlichen Dinner
+                </p>
+                <b>Das Weingut</b>
+                <br />
+                <p>
+                  Das traditionsreiche und sehr bekannte Weingut aus Haut-Médoc
+                  (linkes Ufer) wurde erstmalig im Jahre 1147 urkundlich
+                  erwähnt. Ursprünglich wurde das Weingut nicht bei der
+                  Klassifikation von 1855 berücksichtigt, wurde jedoch später
+                  als Grand Cru Weingut aufgenommen. Dies schaffte seitdem
+                  ebenfalls nur das legendäre Château Mouton-Rothschild. Aus 90
+                  Hektar Weinbergen produziert das Weingut gerade einmal 50.000
+                  Flaschen des Erstweins pro Jahr.
+                </p>
+
+                <br />
+              </div>
             </div>
           </section>
+          <br />
+          <br />
+          <div
+          
+            className={"mb-3 mt-md-5"}
+          >
+            <div className={" text-center"}>
+              <div style={{ fontSize: "24px" }}>
+                Der Online-Genussleitfaden garantiert den perfekten
+                Genuss
+              </div>
+              <br />
+              <br />
+
+              <ImageFromCms title={"qrcode"} width={300} jpegquality={30} />
+
+              <div
+                className={"mt-5 text-center mx-auto px-3 px-md-0"}
+                style={{ fontSize: "18px", maxWidth: "950px" }}
+              >
+                Damit Sie das Wein-Ensemble voll und ganz genießen können,
+                stellen wir Ihnen einen auf die einzelnen Weine individuell
+                abgestimmten Genussleitfaden zur Seite. Dieser kann über den{" "}
+                <b>beigefügten QR-Code</b> aufgerufen werden.
+              </div>
+              <br />
+              <br />
+              <div
+                className={"row mx-auto mt-2"}
+                style={{ fontSize: "18px" }}
+              >
+                <div className={"col-md-12 mb-4 text-center"}>
+                  <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
+                  Verkostungsvideos von Berghaus & Cie.
+                </div>
+               
+                <div className={"col-md-12 mb-4 text-center"}>
+                  <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
+                  Anregungen für passende Speisen und Gerichte
+                </div>
+               
+                <div className={"col-md-12 text-center"}>
+                  <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
+                  weitere spannende Hintergrundinformationen
+                </div>
+              </div>
+
+              <br />
+              <br />
+              <br />
+              <br />
+              <ImageFromCms
+                title={"weinensemble"}
+                width={Math.min(width * 0.75, 350)}
+                //fill={width > 991 ? "1200x650" : "600x430"}
+                jpegquality={35}
+                classes={"animated fadeIn img  mb-3"}
+              />
+              <br />
+              <br />
+
+              <span style={{ fontWeight: "200", fontSize: "35px" }}>
+                119,00 €
+              </span>
+              <br />
+              <span>
+                <b>inkl. Versand</b> und MwSt.
+              </span>
+              <br />
+              <span>
+                <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
+              </span>
+              <br />
+              <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}>
+                <button
+                  class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
+                  style={{ fontSize: "18px" }}
+                >
+                  Jetzt vorbestellen!
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div>
+        {/* <div>
           <div
             class="container text-center pb-5 mt-5 pt-4"
             style={{ overflowX: "hidden" }}
@@ -412,16 +504,7 @@ const Index = (props) => {
               <h2 className={"h3"} style={{ fontSize: "24px" }}>
                 In fünf einfachen Schritten zu Ihrem persönlichen Weininvestment
                 bei Berghaus & Cie.
-                {/* Wie läuft ein{" "}
-                <span
-                  style={{
-                    wordBreak: "break-word",
-                    hyphens: "auto",
-                  }}
-                >
-                  Wein&shy;investment
-                </span>{" "}
-                bei Berghaus & Cie. ab? */}
+            
               </h2>
             </div>
 
@@ -554,9 +637,9 @@ const Index = (props) => {
               </VerticalTimelineElement>
             </VerticalTimeline>
           </div>
-        </div>
+        </div> */}
 
-        <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
+        {/* <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
           <div
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
@@ -599,7 +682,7 @@ const Index = (props) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div class=" text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
           <div
@@ -607,24 +690,7 @@ const Index = (props) => {
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
           >
-            {/* <div style={{ overflow: "hidden" }}>
-              <svg
-                preserveAspectRatio="none"
-                viewBox="0 0 1200 120"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  fill: "#ffffff",
-                  width: "146%",
-                  height: 80,
-                  transform: "scaleX(-1)",
-                  marginBottom: "-1px",
-                  marginLeft: "-1px",
-                }}
-              >
-                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-              </svg>
-            </div> */}
-            <div>
+            {/* <div>
               <h3 style={{ fontSize: "24px" }}>Unsere Partner</h3>
               <div style={{}} className={"row"}>
                 <div className={"col-md-4 text-center"}>
@@ -664,29 +730,11 @@ const Index = (props) => {
                   </span>
                 </div>
               </div>
-            </div>
-
-            {/* <div style={{ overflow: "hidden" }}>
-              <svg
-                preserveAspectRatio="none"
-                viewBox="0 0 1200 120"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                  fill: "#ffffff",
-                  width: "197%",
-                  height: 67,
-                  transform: "rotate(180deg) scaleX(-1)",
-                  marginBottom: "-1px",
-                  marginLeft: "-1px",
-                }}
-              >
-                <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-              </svg>
             </div> */}
           </div>
         </div>
 
-        <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>
+        {/* <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>
           <div
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
@@ -703,7 +751,7 @@ const Index = (props) => {
 
             <SelectCalendlyDate width={"60%"} />
           </div>
-        </div>
+        </div> */}
       </div>
       <LandingFooter />
     </>

@@ -64,7 +64,7 @@ const LandingFooter = () => {
         id={"footer"}
         style={{ color: "white" }}
       >
-        <div className={"mx-auto"} style={{ width: "550px" }}>
+        <div className={"mx-auto"} style={{ maxWidth: "550px" }}>
           <ContactUs />
         </div>
 

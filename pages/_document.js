@@ -23,6 +23,11 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Caveat&family=La+Belle+Aurore&family=Nothing+You+Could+Do&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap"
+            rel="stylesheet"
+          ></link>
           <link
             href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap"
             rel="stylesheet"
@@ -132,6 +137,16 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+
+          <script
+            type="text/javascript"
+            id="hs-script-loader"
+            async
+            defer
+            src="//js.hs-scripts.com/8965709.js"
+          ></script>
+
+  
         </body>
       </Html>
     );

@@ -107,12 +107,12 @@ const ContactUs = (props) => {
 
               {props.additionalText? props.additionalText : null}
 
-              <h4 class="text-white" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a style={{color: "white", textDecoration: "underline"}} href={"tel: +49 175 678 7654"}> +49 175 678 7654</a> <br/> oder schreiben Sie uns.</h4>
+              <h4 class="text-white" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a style={{color: "white", textDecoration: "underline"}} href={"tel: +4915167310664"}> +49 151 673 106 64</a> <br/> oder schreiben Sie uns.</h4>
             
               </div>
               <div class="card-body white-placeholders">
                 <div class="row">
-                  <div class="col-md-6 col-sm-12 pr-2">
+                  <div class="col-md-6 col-sm-12 pr-2" style={{paddingLeft: "8px", paddingRight: "0px"}}>
                     {/* <label>Name</label> */}
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -179,7 +179,7 @@ const ContactUs = (props) => {
                       </label>
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
+                  <div class="col-md-6 col-sm-12 ">
                     <button
                       type="submit"
                       className={"btn btn-primary btn-round pull-right " + (notARobot? "" : "disabled")}

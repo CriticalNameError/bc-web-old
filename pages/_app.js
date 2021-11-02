@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       />
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
-          <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal}/>
+          {/* <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal}/> */}
           <SelectCalendylDateModal showModal={showCalendlyModal} toggleShowCalendlyModal={toggleShowCalendlyModal}/>
           <LandingNavbar {...pageProps} />
           {!showCookieModal && <Component {...pageProps} toggleShowCalendlyModal={toggleShowCalendlyModal}/>}
