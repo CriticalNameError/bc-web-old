@@ -120,7 +120,7 @@ const Index = (props) => {
             className={"text-center px-3 px-md-0"}
             style={{
               //fontFamily: "'Nothing You Could Do', cursive",
-              fontSize: width > 991 ? "43px" : "25px",
+              fontSize: width > 991 ? "43px" : "23px",
               fontWeight: "200",
               //color: "#bfac86",
               //textShadow: "rgb(76 69 55) 1px 1px 1.5px",
@@ -216,7 +216,7 @@ const Index = (props) => {
                   classes={"animated fadeIn img  p-4 "}
                 />
                 <br />
-                94 / 100 Punkte (Andrew Caiilard)
+                94 / 100 Punkte (Andrew Caillard)
                 <br />
                 Grand Cru
                 {/* <img
