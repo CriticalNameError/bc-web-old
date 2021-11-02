@@ -155,7 +155,7 @@ const Index = (props) => {
             <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
           </span>
           <br />
-          <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}>
+          <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"} target={"_blank"}>
             <button
               class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
               style={{ fontSize: "18px" }}
@@ -479,7 +479,7 @@ const Index = (props) => {
                 <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
               </span>
               <br />
-              <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}>
+              <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"} target={"_blank"}>
                 <button
                   class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
                   style={{ fontSize: "18px" }}
