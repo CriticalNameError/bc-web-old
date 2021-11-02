@@ -116,7 +116,7 @@ const ContactBar = (props) => {
 
               </span>{" "} */}
 
-            <span className={"pr-5"}>
+            <span className={"pr-3 pr-md-5"}>
               <a className={"text-white"} href="tel: +4915167310664">
                 <span style={{ verticalAlign: "middle" }}>
                   <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
