@@ -30,10 +30,10 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <CookiesProvider>
-      <CookieConsent
+      {/* <CookieConsent
         showModal={showCookieModal}
         toggleShowModal={toggleShowCookieModal}
-      />
+      /> */}
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
           {/* <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal}/> */}
