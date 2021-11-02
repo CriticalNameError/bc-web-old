@@ -272,6 +272,36 @@
   padding-bottom: 1.5em !important;
 }
 
+.amcharts-AmChartsLogo-group {
+  display: none;
+}
+
+.amcharts-price-history-series {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 300%;
+  -webkit-animation: am-draw ease 13s;
+  animation: am-draw ease 13s;
+}
+
+@-webkit-keyframes am-draw {
+  0% {
+    stroke-dashoffset: 300%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
+@keyframes am-draw {
+  0% {
+    stroke-dashoffset: 300%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
 .slick-next:before {
   color: #4e2382 !important;
 }

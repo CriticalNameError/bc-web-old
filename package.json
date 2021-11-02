@@ -8,6 +8,7 @@
   "main": "dist/index.js",
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.22",
     "@apollo/client": "^3.3.12",
     "@fullpage/react-fullpage": "^0.1.18",
     "aos": "^3.0.0-beta.6",

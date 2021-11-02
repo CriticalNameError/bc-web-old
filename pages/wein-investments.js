@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import CustomModal from "../src/helpers/CustomModal";
 import { ImageFromCms } from "helpers/utils";
+import dynamic from "next/dynamic";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -43,6 +44,13 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+
+const DynamicLivexPriceChart = dynamic(
+  () => import("../src/components/LivexPriceChart"),
+  {
+    ssr: false,
+  }
+);
 
 let potentialanalyse_markup = (
   <div className={"p-4"}>
@@ -93,7 +101,6 @@ const WineInvestments = () => {
   const [showContactModal, toggleShowContactModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -165,15 +172,27 @@ const WineInvestments = () => {
                 </span> */}
                 <i
                   className="fas fa-seedling ml-2"
-                  style={{ color: primary_t60, fontSize: "2em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
+                  style={{
+                    color: primary_t60,
+                    fontSize: "2em",
+                    filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
+                  }}
                 ></i>
                 <i
                   className="fas fa-seedling ml-2 animated fadeInLeft"
-                  style={{ color: primary_t80, fontSize: "5em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
+                  style={{
+                    color: primary_t80,
+                    fontSize: "5em",
+                    filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
+                  }}
                 ></i>
                 <i
                   className="fas fa-seedling ml-2 animated fadeInLeft slower"
-                  style={{ color: primary, fontSize: "10em", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
+                  style={{
+                    color: primary,
+                    fontSize: "10em",
+                    filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
+                  }}
                 ></i>
               </div>
 
@@ -229,7 +248,8 @@ const WineInvestments = () => {
                 Stabile Wertentwicklung bei geringer Volatilität
               </p>
               <div className={"card p-4 pb-5"}>
-                <WineDaxSap />
+                <DynamicLivexPriceChart />
+                {/* <WineDaxSap /> */}
               </div>
             </div>
           </div>
@@ -381,8 +401,8 @@ const WineInvestments = () => {
                 erfolgreich?
               </h2>
               <p style={{ fontSize: "18px" }}>
-                Drei Aspekte spielen für ein profitables Weininvestment
-                eine zentrale Rolle.
+                Drei Aspekte spielen für ein profitables Weininvestment eine
+                zentrale Rolle.
               </p>
 
               <div class="row pt-5 pb-0">
@@ -511,235 +531,239 @@ const WineInvestments = () => {
               </a>
             </div> */}
 
-
-
-
-
-<div
-            className={"row mx-auto pt-5"}
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}
-          >
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <BMeeting width={"30px"} height={"30px"} strokewidth={3} />
+            <div
+              className={"row mx-auto pt-5"}
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              style={{ maxWidth: "1200px" }}
+            >
+              <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+                <span class="round-icon text-white">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <BMeeting width={"30px"} height={"30px"} strokewidth={3} />
+                  </span>
                 </span>
-              </span>
-            </div>
-            <div class="col-md-5 mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Fundierte Beratung</h3>
-                    <div className={"text-left"}>
-                      Grundlage für den Erfolg Ihres Weininvestments ist eine
-                      umfassende Beratung, die Ihre speziellen Wünsche und
-                      Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger oder
-                      Profi, wir bieten in jedem Fall die passende Beratung.
-                    </div>
-                  </p>
+              </div>
+              <div class="col-md-5 mb-sm-5">
+                <div class="info info-horizontal pr-md-5">
+                  <div class="">
+                    <p
+                      className={
+                        "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                      }
+                      style={
+                        maxServicesCardHeight
+                          ? { minHeight: maxServicesCardHeight }
+                          : {}
+                      }
+                    >
+                      <h3 class="text-center mt-0 h5">Fundierte Beratung</h3>
+                      <div className={"text-left"}>
+                        Grundlage für den Erfolg Ihres Weininvestments ist eine
+                        umfassende Beratung, die Ihre speziellen Wünsche und
+                        Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger
+                        oder Profi, wir bieten in jedem Fall die passende
+                        Beratung.
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-1 text-center " style={{ zIndex: 100 }}>
+                <span class="round-icon text-white">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <Diamond width={"30px"} height={"30px"} strokewidth={3} />
+                  </span>
+                </span>
+              </div>
+              <div class="col-md-5  mb-sm-5">
+                <div class="info info-horizontal pr-md-5">
+                  <div class="">
+                    <p
+                      className={
+                        "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                      }
+                      style={
+                        maxServicesCardHeight
+                          ? { minHeight: maxServicesCardHeight }
+                          : {}
+                      }
+                    >
+                      <h3 class="text-center mt-0 h5">Exquisite Weine</h3>
+                      <div className={"text-left"}>
+                        Wir bieten Ihnen hochklassige und seltene Weine für Ihr
+                        persönliches Weininvestment. Durch unser großes
+                        Einkaufsnetzwerk profitieren Sie von attraktiven
+                        Einstiegspreisen. Dies erlaubt ein größeres Wachstum
+                        Ihres Kapitals.
+                      </div>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-1 text-center " style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <Diamond width={"30px"} height={"30px"} strokewidth={3} />
+            <div
+              class="row mt-md-n5 mx-auto"
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              style={{ maxWidth: "1200px" }}
+            >
+              <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+                <span class="round-icon text-white">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <Questionaire
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                    />
+                  </span>
                 </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Exquisite Weine</h3>
-                    <div className={"text-left"}>
-                      Wir bieten Ihnen hochklassige und seltene Weine für Ihr
-                      persönliches Weininvestment. Durch unser großes
-                      Einkaufsnetzwerk profitieren Sie von attraktiven
-                      Einstiegspreisen. Dies erlaubt ein größeres Wachstum Ihres
-                      Kapitals.
-                    </div>
-                  </p>
+              </div>
+              <div class="col-md-5  mb-sm-5">
+                <div class="info info-horizontal pr-md-5">
+                  <div class="">
+                    <p
+                      className={
+                        "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                      }
+                      style={
+                        maxServicesCardHeight
+                          ? { minHeight: maxServicesCardHeight }
+                          : {}
+                      }
+                    >
+                      <h3 class="text-center mt-0 h5">
+                        Individuelles Portfolio
+                      </h3>
+                      <div className={"text-left"}>
+                        Wir stellen Ihnen ein eigens für Sie kuratiertes
+                        Portfolio an hochwertigen Weinen zusammen. Auf Wunsch
+                        bringen wir zusätzlich Ihren persönlichen Geschmack und
+                        Ihre individuellen Präferenzen als treibenden Faktor mit
+                        ein.
+                      </div>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div
-            class="row mt-md-n5 mx-auto"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}
-          >
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <Questionaire
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                  />
+              <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+                <span class="round-icon text-white">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <MobilePhone
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                    />
+                  </span>
                 </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Individuelles Portfolio</h3>
-                    <div className={"text-left"}>
-                      Wir stellen Ihnen ein eigens für Sie kuratiertes Portfolio
-                      an hochwertigen Weinen zusammen. Auf Wunsch bringen wir
-                      zusätzlich Ihren persönlichen Geschmack und Ihre
-                      individuellen Präferenzen als treibenden Faktor mit ein.
-                    </div>
-                  </p>
-                </div>
               </div>
-            </div>
-
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <MobilePhone width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5 mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Digitales Weindepot</h3>
-                    <div className={"text-left"}>
-                      Sie haben zu jeder Zeit und von jedem Ort aus, ob per App
-                      oder über die Website, die Möglichkeit auf Ihr
-                      persönliches Online-Depot zuzugreifen und sich über die
-                      Entwicklung Ihres Investments zu informieren.
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="row mt-md-n5 mx-auto"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-            style={{ maxWidth: "1200px" }}
-          >
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <StorageUnit width={"30px"} height={"30px"} strokewidth={3} />
-                </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Optimale Lagerung</h3>
-                    <div className={"text-left"}>
-                      Ihr Wein wird fachgerecht in Belgien eingelagert. Optimale
-                      klimatische Bedingungen sorgen dafür, dass er bestmöglich
-                      ausreift. Zudem ist das Lager als Umsatzsteuerlager
-                      deklariert. Das bedeutet, solange der Wein das Lager nicht
-                      verlässt, wird keine Mehrwertsteuer erhoben.
-                    </div>
-                  </p>
+              <div class="col-md-5 mb-sm-5">
+                <div class="info info-horizontal pr-md-5">
+                  <div class="">
+                    <p
+                      className={
+                        "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                      }
+                      style={
+                        maxServicesCardHeight
+                          ? { minHeight: maxServicesCardHeight }
+                          : {}
+                      }
+                    >
+                      <h3 class="text-center mt-0 h5">Digitales Weindepot</h3>
+                      <div className={"text-left"}>
+                        Sie haben zu jeder Zeit und von jedem Ort aus, ob per
+                        App oder über die Website, die Möglichkeit auf Ihr
+                        persönliches Online-Depot zuzugreifen und sich über die
+                        Entwicklung Ihres Investments zu informieren.
+                      </div>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
-              <span class="round-icon text-white">
-                <span style={{ width: "30px", height: "30px" }}>
-                  <World width={"30px"} height={"30px"} strokewidth={3} />
+            <div
+              class="row mt-md-n5 mx-auto"
+              data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"
+              style={{ maxWidth: "1200px" }}
+            >
+              <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+                <span class="round-icon text-white">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <StorageUnit
+                      width={"30px"}
+                      height={"30px"}
+                      strokewidth={3}
+                    />
+                  </span>
                 </span>
-              </span>
-            </div>
-            <div class="col-md-5  mb-sm-5">
-              <div class="info info-horizontal pr-md-5">
-                <div class="">
-                  <p
-                    className={
-                      "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
-                    }
-                    style={
-                      maxServicesCardHeight
-                        ? { minHeight: maxServicesCardHeight }
-                        : {}
-                    }
-                  >
-                    <h3 class="text-center mt-0 h5">Globales Netzwerk</h3>
-                    <div className={"text-left"}>
-                      Wein ist ein endliches Gut und die internationale
-                      Nachfrage nach gereiften hochwertigen Weinen nimmt mit den
-                      Jahren zu. Wir unterstützen Sie dabei, Ihre Weine zum
-                      besten Zeitpunkt zu veräußern und bieten Ihnen den Zugang
-                      zu unserem weltweiten Netzwerk an Verkaufskanälen.
-                    </div>
-                  </p>
+              </div>
+              <div class="col-md-5  mb-sm-5">
+                <div class="info info-horizontal pr-md-5">
+                  <div class="">
+                    <p
+                      className={
+                        "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                      }
+                      style={
+                        maxServicesCardHeight
+                          ? { minHeight: maxServicesCardHeight }
+                          : {}
+                      }
+                    >
+                      <h3 class="text-center mt-0 h5">Optimale Lagerung</h3>
+                      <div className={"text-left"}>
+                        Ihr Wein wird fachgerecht in Belgien eingelagert.
+                        Optimale klimatische Bedingungen sorgen dafür, dass er
+                        bestmöglich ausreift. Zudem ist das Lager als
+                        Umsatzsteuerlager deklariert. Das bedeutet, solange der
+                        Wein das Lager nicht verlässt, wird keine Mehrwertsteuer
+                        erhoben.
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
+                <span class="round-icon text-white">
+                  <span style={{ width: "30px", height: "30px" }}>
+                    <World width={"30px"} height={"30px"} strokewidth={3} />
+                  </span>
+                </span>
+              </div>
+              <div class="col-md-5  mb-sm-5">
+                <div class="info info-horizontal pr-md-5">
+                  <div class="">
+                    <p
+                      className={
+                        "text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2 services-card"
+                      }
+                      style={
+                        maxServicesCardHeight
+                          ? { minHeight: maxServicesCardHeight }
+                          : {}
+                      }
+                    >
+                      <h3 class="text-center mt-0 h5">Globales Netzwerk</h3>
+                      <div className={"text-left"}>
+                        Wein ist ein endliches Gut und die internationale
+                        Nachfrage nach gereiften hochwertigen Weinen nimmt mit
+                        den Jahren zu. Wir unterstützen Sie dabei, Ihre Weine
+                        zum besten Zeitpunkt zu veräußern und bieten Ihnen den
+                        Zugang zu unserem weltweiten Netzwerk an
+                        Verkaufskanälen.
+                      </div>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        
-
-
-
-
-
 
             <h3 className={"mt-5 text-center"} style={{ fontSize: "24px" }}>
               Haftungsausschluss

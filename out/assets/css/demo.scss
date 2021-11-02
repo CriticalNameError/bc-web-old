@@ -343,6 +343,37 @@
     padding-bottom: 1.5em!important;
 }
 
+.amcharts-AmChartsLogo-group{
+    display: none;
+}
+
+.amcharts-price-history-series {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dasharray: 300%;
+    // stroke-dasharray: 0 /;    /* fixes IE prob */
+    // stroke-dashoffset: 0 /;   /* fixes IE prob */
+    -webkit-animation: am-draw ease 13s;
+    animation: am-draw ease 13s;
+   
+  }
+  @-webkit-keyframes am-draw {
+      0% {
+          stroke-dashoffset: 300%;
+      }
+      100% {
+          stroke-dashoffset: 0%;
+      }
+  }
+  @keyframes am-draw {
+      0% {
+          stroke-dashoffset: 300%;
+      }
+      100% {
+          stroke-dashoffset: 0%;
+      }
+  }
+
 // ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 //     color:    #909!important;
 // }

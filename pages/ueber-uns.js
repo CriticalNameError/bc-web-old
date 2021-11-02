@@ -49,9 +49,12 @@ const AboutUs = () => {
           <div className="row">
             <div className={"col-12 my-auto text-center mt-md-5"}>
               <span
-                style={{ display: "inline-block", marginTop: "150px", filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))" }}
+                style={{
+                  display: "inline-block",
+                  marginTop: "150px",
+                  filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
+                }}
                 className={"text-primary mb-4 animated zoomIn slower"}
-                
               >
                 <Anagram100 width={Math.min(width * 0.65, 175) + "px"} />
               </span>
@@ -97,6 +100,22 @@ const AboutUs = () => {
                   />
                 </span>
               </a> */}
+             
+              <div className={"text-center mx-auto px-2 px-md-0"} style={{ fontSize: "24px", maxWidth: "1100px" }}>
+              <p  > 
+                Berghaus & Cie. verbindet die traditionelle Welt der exquisiten
+                Weine mit der modernen Investmentwelt. Dabei setzen wir auf
+                Transparenz, datenbasierte Analysen und Digitalisierung.
+              </p>
+              <br />
+              <p  >
+                Uns verbindet nicht nur die Leidenschaft für exquisite Weine,
+                sondern auch ein gutes Gespür für lukrative Investments. Unser
+                Team besteht aus unterschiedlichen Persönlichkeiten, deren
+                berufliche Expertise und individuelle Sichtweisen sich
+                gegenseitig ergänzen und bereichern.
+              </p>
+              </div>
             </div>
           </div>
 
@@ -120,7 +139,7 @@ const AboutUs = () => {
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="" style={{ fontSize: "21px" }}>
+                    <h5 class="" style={{ fontSize: "18px" }}>
                       Unsere Überzeugung
                     </h5>
                     <p class="rext-justify">
@@ -129,7 +148,7 @@ const AboutUs = () => {
                       Anlageformen. Unter fachkundiger Anleitung bringen
                       Weininvestments nicht nur eine starke Rendite, sondern
                       bieten darüber hinaus auch einen greifbaren Vermögenswert
-                      mit einer spannende Zukunft.{" "}
+                      mit einer spannenden Zukunft.{" "}
                     </p>
                   </div>
                 </div>
@@ -146,14 +165,14 @@ const AboutUs = () => {
                 ></i> */}
                 <span class="round-icon-lg text-white mb-n3">
                   <span style={{ width: "40px", height: "40px" }}>
-                    <Spaceship width={"40px"} height={"40px"} strokewidth={3}/>
+                    <Spaceship width={"40px"} height={"40px"} strokewidth={3} />
                   </span>
                 </span>
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="" style={{ fontSize: "21px" }}>
+                    <h5 class="" style={{ fontSize: "18px" }}>
                       Unser Ziel
                     </h5>
                     <p class="text-justify">
@@ -196,12 +215,32 @@ const AboutUs = () => {
               >
                 Tristan Berghaus
               </h2>
-              <h5 style={{ fontSize: "18px" }}>Sales</h5>
+              <span
+                className={"pull-right"}
+                style={{ displey: "inline-block" }}
+              >
+                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}>
+                  {" "}
+                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
+                </a>{" "}
+                <a href={"https://www.linkedin.com/in/tristan-berghaus/"}>
+                  <LogoLinkedin
+                    width={"30px"}
+                    height={"30px"}
+                    strokewidth={3}
+                  />
+                </a>
+              </span>
+              <h5 style={{ fontSize: "18px" }}>Sales / Account Management</h5>
               <p>
-                Wer Tristan persönlich kennt, der verbindet ihn mit dem Thema
-                Wein. Er ist Initiator und Namensgeber von Berghaus & Cie. Seit
-                Jahren leitet er Weinproben mit einem Fokus auf gereifte Weine
-                und besitzt das Zertifikat WSET® Level 3*, Award in Wine, des
+                Diejenigen, die Tristan Berghaus persönlich kennen, verbinden
+                ihn mit dem Thema Wein. Er leitet seit Jahren Weinproben mit dem
+                Schwerpunkt auf gereifte Weine und hat im Laufe der Zeit sein
+                Wissen über Wein kontinuierlich vertieft.
+              </p>
+              <p>
+                Tristan besitzt das Zertifikat WSET® Level 3*, Award in Wine,
+                des
                 <i data-tip data-for="global">
                   {" "}
                   Wine and Spirit Education Trust (WSET).
@@ -220,41 +259,14 @@ const AboutUs = () => {
                     spezielle Qualifikationen für Weinkenner an.
                   </p>
                 </ReactTooltip>{" "}
-                Bei Berghaus & Cie. ist er für den Bereich Strategie und
-                Vertrieb zuständig.
+                und ist Initiator und Namensgeber von Berghaus & Cie.
               </p>
-              <p>
-                Parallel zu seinem Studium der Betriebswirtschaftslehre an der
-                Universität zu Köln hat Tristan Berghaus sein Wissen über Wein
-                kontinuierlich vertieft. Neben seiner internationalen
-                Arbeitserfahrung in Singapur und der Schweiz hat er bei einem
-                namenhaften Deutschen Direktimporteur gearbeitet.
-              </p>
-              <p>
-                In seiner Freizeit trifft man ihn auf der Driving Rage oder auf
-                dem Platz.
-              </p>
+          
               <br />
-              <span
-                className={"pull-right"}
-                style={{ displey: "inline-block" }}
-              >
-                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}>
-                  {" "}
-                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
-                </a>{" "}
-                <a href={"https://www.linkedin.com/in/tristan-berghaus/"}>
-                  <LogoLinkedin
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                  />
-                </a>
-              </span>
             </div>
           </div>
 
-          <div class="row mx-auto" style={{ maxWidth: "1200px" }}>
+          <div class="row mx-auto mt-3 mt-md-5" style={{ maxWidth: "1200px" }}>
             <div
               className={
                 "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto " +
@@ -283,27 +295,6 @@ const AboutUs = () => {
               >
                 Martin Dammrath
               </h2>
-              <h5 style={{ fontSize: "18px" }}>Information Technology</h5>
-              <p>
-                Martin Dammrath hat Mathematik mit dem Schwerpunkt Statistik und
-                VWL studiert. Er besitzt einen Bachelor in Mathematik der
-                Universität zu Köln. Als Unternehmensberater für Data Science
-                und Data Engineering war er hauptsächlich in der Finanzdienst-
-                leistungsbranche (Banken und Vermögensverwaltung) tätig.
-              </p>
-              <p>
-                Mit seiner ausgeprägten Methodenkompetenz in den Bereichen
-                Datenanalyse und Künstliche Intelligenz erarbeitet er wertvolle
-                Kennzahlen und Trends für die Investmententscheidungen unserer
-                Kunden. Darüber hinaus ist er bei Berghaus & Cie. für die
-                Entwicklung der Handelsplattform und die internen Systeme
-                zuständig.
-              </p>
-              <p>
-                Neben seiner Leidenschaft für Wein und gutes Essen, wandert er
-                gerne und fährt mit seinem Rennrad durch das Bergischen Land.
-              </p>
-              <br />
               <span
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
@@ -320,10 +311,24 @@ const AboutUs = () => {
                   />
                 </a>
               </span>
+              <h5 style={{ fontSize: "18px" }}>IT / Data Science</h5>
+              <p>
+                Mit seiner ausgeprägten Methodenkompetenz in den Bereichen
+                Datenanalyse und Künstliche Intelligenz erarbeitet Martin
+                Dammrath wertvolle Kennzahlen und Trends für die
+                Investmententscheidungen unserer Kunden.
+              </p>
+              <p>
+                Als studierte Mathematiker ist er bei Berghaus & Cie. für die
+                Entwicklung und den weiteren Ausbau der Handelsplattform und die
+                internen Systeme verantwortlich.
+              </p>
+
+              <br />
             </div>
           </div>
 
-          <div class="row mx-auto" style={{ maxWidth: "1200px" }}>
+          <div class="row mx-auto mt-3 mt-md-5" style={{ maxWidth: "1200px" }}>
             <div
               className={
                 "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto " +
@@ -352,29 +357,6 @@ const AboutUs = () => {
               >
                 Peter Irnich
               </h2>
-              <h5 style={{ fontSize: "18px" }}>Operations</h5>
-              <p>
-                Durch seine Ausbildung als Industriekaufmann und diversen
-                Tätigkeiten im Einkauf und im Bereich Operations verfügt Peter
-                Irnich über ein breites Spektrum an Praxiserfahrung. Er besitzt
-                einen Abschluss in Betriebswirtschaftslehre mit dem Schwerpunkt
-                Supply Chain Management der Universität zu Köln.
-              </p>
-              <p>
-                Bei Berghaus & Cie. ist er aufgrund seines Organisationstalentes
-                für die Logistik und optimale Lagerung der Weine sowie für die
-                unternehmensinternen Prozesse zuständig. Er besitzt das
-                Zertifikat WSET® Level 2, Award in Wine, des{" "}
-                <i data-tip data-for="global">
-                  {" "}
-                  Wine and Spirit Education Trust (WSET).
-                </i>
-              </p>
-              <p>
-                Neben seiner Arbeit für Berghaus & Cie. ist er ein
-                leidenschaftlicher Tennis- und Fußballspieler.
-              </p>
-              <br />
               <span
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
@@ -391,6 +373,23 @@ const AboutUs = () => {
                   />
                 </a>
               </span>
+              <h5 style={{ fontSize: "18px" }}>Finance / Operations</h5>
+              <p>
+                Aufgrund seiner umfassenden Expertise im Bereich Finance und
+                seines ausgeprägten Organisationstalentes ist Peter Irnich bei
+                Berghaus & Cie. für Finanzen und Controlling sowie für die
+                Logistik und die optimale Lagerung der Weine zuständig.
+              </p>
+              <p>
+                Darüber hinaus besitzt er das Zertifikat WSET® Level 2, Award in
+                Wine, des{" "}
+                <i data-tip data-for="global">
+                  {" "}
+                  Wine and Spirit Education Trust (WSET).
+                </i>
+              </p>
+
+              <br />
             </div>
           </div>
 
@@ -413,26 +412,18 @@ const AboutUs = () => {
                   <h2 class="text-left d-inline heading mt-sm-3">
                     Bernadette Baur
                   </h2>
-                  <h5>Brandmanagement/Marketing</h5>
+                  <h5>Marketing / Communications</h5>
                   <p>
-                    Sie arbeitet seit über 20 Jahren als Markenberaterin für
-                    namhafte mittelständische Unternehmen und internationale
-                    Konzerne. Bernadette Baur ist spezialisiert auf die Themen
-                    Markenaufbau und -strategie, Corporate Identity-Entwicklung
-                    und Marketing. Sie besitzt einen Abschluss in
-                    Lingustik/Psychologie der Universität Bonn.
+                    Bernadette Baur ist eine echte Marketing-Allrounderin und Weinliebhaberin. Mit über
+20 Jahren Berufserfahrung ist sie für die Bereiche Branding, Corporate Design und
+Kommunikation verantwortlich.
                   </p>
                   <p>
-                    Bei Berghaus & Cie. ist sie für das Brandmanagement
-                    (Markenstrategie/-aufbau), das Corporate Design sowie die
-                    Entwicklung und Durchführung der begleitenden Marketing- und
-                    Kommunikationsmaßnahmen zuständig.
+                    Sie entwickelt Strategien für den weitere Markenausbau, ist zuständig für alle
+Marketingmaßnahmen (on-/offline) und Ansprechpartnerin für Presse- und
+Kooperationsanfragen.
                   </p>
-                  <p>
-                    Neben ihrem Interesse für Literatur, Mode und Fotografie
-                    sind Reisen in fremde Länder und das Entdecken anderer
-                    Kulturen ihre größte Leidenschaft.
-                  </p>
+             
                 </div>
               </div>
             </div>
@@ -459,7 +450,7 @@ const AboutUs = () => {
                 <div class="col-md-8 offset-md-2 col-sm-12">
                   <div class="info info-horizontal">
                     <div class="card p-3">
-                      <h5 class="" style={{ fontSize: "21px" }}>
+                      <h5 class="" style={{ fontSize: "18px" }}>
                         Was uns verbindet
                       </h5>
                       <p class="text-justify">
@@ -494,7 +485,7 @@ const AboutUs = () => {
                 <div class="col-md-8 offset-md-2 col-sm-12 mb-5">
                   <div class="info info-horizontal">
                     <div class="card p-3">
-                      <h5 class="" style={{ fontSize: "21px" }}>
+                      <h5 class="" style={{ fontSize: "18px" }}>
                         Unsere Expertise
                       </h5>
                       <p class="text-justify">
@@ -513,7 +504,7 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-{/* 
+          {/* 
           <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
             <span style={{ fontSize: "18px" }}>
               Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
