@@ -139,9 +139,9 @@ const Index = (props) => {
           >
             <ImageFromCms
               title={"weinensemble"}
-              width={Math.min(width * 0.75, 950)}
+              width={Math.min(width * 0.65, 700)}
               //fill={width > 991 ? "1200x650" : "600x430"}
-              jpegquality={35}
+              jpegquality={20}
               classes={"animated fadeIn img  mb-3"}
             />
           </div>

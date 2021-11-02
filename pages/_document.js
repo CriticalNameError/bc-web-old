@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
 
-          {/* <link rel="manifest" href="/manifest.json" /> */}
+          <link rel="manifest" href="/manifest.json" />
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
@@ -67,7 +67,7 @@ class MyDocument extends Document {
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 
-          <link rel="manifest" href="/site.webmanifest" />
+          {/* <link rel="manifest" href="/site.webmanifest" /> */}
           <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"

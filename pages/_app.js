@@ -19,7 +19,7 @@ import CtaFixed from "../src/components/CtaFixed";
 
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
-  const [showCookieModal, toggleShowCookieModal] = useState(true);
+  const [showCookieModal, toggleShowCookieModal] = useState(false);
   const [showCalendlyModal, toggleShowCalendlyModal] = useState(false);
   useEffect(() => {
     AOS.init({
