@@ -74,6 +74,15 @@ const ContactBar = (props) => {
         document.getElementById("vert-nav").classList.add("pt-5");
         document.getElementById("nav-tgl").classList.add("pt-2");
         document.getElementById("nav-tgl").classList.add("mt-4");
+        
+      }
+      if( window.innerWidth < 836){
+        if (window.scrollY == 0) {
+        document.getElementById("navbrand").classList.add("mt-n1")
+        }
+        if (window.scrollY > 0) {
+          document.getElementById("navbrand").classList.remove("mt-n1")
+        }
       }
     };
 
@@ -280,7 +289,7 @@ class LandingNavbar extends React.Component {
               </button> */}
 
             <NavbarBrand href="/">
-              <a class="navbar-brand pull-left mt-n1 mt-lg-0" href="/">
+              <a id={"navbrand"} class="navbar-brand pull-left mt-0 mt-lg-0" href="/">
                 <span
                   style={{ display: "inline-block" }}
                   className={"text-primary"}
