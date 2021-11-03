@@ -150,9 +150,12 @@ const Index = (props) => {
             <b>inkl. Versand</b> und MwSt.
           </span>
           <br />
-          <span className={"px-3 px-md-0"}>
-            <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
-          </span>
+          <center className={"px-3 px-md-0"} style={{ fontWeight: "bold" }}>
+            <b>
+              Garantierte Zustellung bis {width < 991 ? <br /> : null}spätestens
+              20.12.2021
+            </b>
+          </center>
           <br />
           <a
             href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}
@@ -162,7 +165,7 @@ const Index = (props) => {
               class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
               style={{ fontSize: "18px" }}
             >
-              Jetzt vorbestellen!
+              Jetzt kaufen!
             </button>
           </a>
         </div>
@@ -205,7 +208,6 @@ const Index = (props) => {
                     Martin Dammrath
                   </span>
                 )}
-                
               </span>
             </p>
 
@@ -479,9 +481,12 @@ const Index = (props) => {
                 <b>inkl. Versand</b> und MwSt.
               </span>
               <br />
-              <span className={"px-3 px-md-0"}>
-                <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
-              </span>
+              <center className={"px-3 px-md-0"} style={{ fontWeight: "bold" }}>
+                <b>
+                  Garantierte Zustellung bis {width < 991 ? <br /> : null}
+                  spätestens 20.12.2021
+                </b>
+              </center>
               <br />
               <a
                 href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}
@@ -491,7 +496,7 @@ const Index = (props) => {
                   class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
                   style={{ fontSize: "18px" }}
                 >
-                  Jetzt vorbestellen!
+                  Jetzt kaufen!
                 </button>
               </a>
             </div>
