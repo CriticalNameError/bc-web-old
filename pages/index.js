@@ -114,7 +114,7 @@ const Index = (props) => {
           //   " pl-md-4 animate__animated animate__delay-1s animate__fadeInLeft animate__slow"
           // }
           className={"animated fadeIn slower text-center"}
-          style={{ marginTop: "30vh" }}
+          style={{ marginTop: width > 991 ? "25vh" : "18vh" }}
         >
           <span
             className={"text-center px-3 px-md-0"}
@@ -133,15 +133,14 @@ const Index = (props) => {
 
         <div class=" text-center w-100 animated fadeIn slower mb-md-4">
           <div
-          
             className={"mb-3 mt-5"}
             // style={{ backgroundColor: "rgb(191, 157, 226)" }}
           >
             <ImageFromCms
               title={"weinensemble"}
-              width={Math.min(width * 0.65, 700)}
+              width={Math.min(width * 0.65, 650)}
               //fill={width > 991 ? "1200x650" : "600x430"}
-              jpegquality={20}
+              jpegquality={15}
               classes={"animated fadeIn img  mb-3"}
             />
           </div>
@@ -155,7 +154,10 @@ const Index = (props) => {
             <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
           </span>
           <br />
-          <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"} target={"_blank"}>
+          <a
+            href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}
+            target={"_blank"}
+          >
             <button
               class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
               style={{ fontSize: "18px" }}
@@ -169,7 +171,6 @@ const Index = (props) => {
         <div>
           <section
             className={"mx-auto text-center mt-md-5"}
-           
             style={{ maxWidth: "1200px" }}
           >
             <h2 className={"h3"} style={{ fontSize: "24px" }}>
@@ -187,6 +188,7 @@ const Index = (props) => {
               <br />
               Wir wünschen viel (Gaumen-)Freude
               <br />
+              <br />
               <span
                 className={"text-center "}
                 style={{
@@ -194,7 +196,16 @@ const Index = (props) => {
                   fontSize: "24px",
                 }}
               >
-                Tristan Berghaus, Peter Irnich und Martin Dammrath
+                {width > 991 ? (
+                  "Tristan Berghaus, Peter Irnich und Martin Dammrath"
+                ) : (
+                  <span>
+                    Tristan Berghaus,
+                    <br /> Peter Irnich und <br />
+                    Martin Dammrath
+                  </span>
+                )}
+                
               </span>
             </p>
 
@@ -212,7 +223,7 @@ const Index = (props) => {
                 <ImageFromCms
                   title={"brim"}
                   width={150}
-                  jpegquality={40}
+                  jpegquality={30}
                   classes={"animated fadeIn img  p-4 "}
                 />
                 <br />
@@ -279,7 +290,7 @@ const Index = (props) => {
                   title={"juff"}
                   width={150}
                   //fill={width > 991 ? "200x400" : "200x400"}
-                  jpegquality={80}
+                  jpegquality={30}
                   classes={"animated fadeIn p-4 "}
                 />
                 <br />
@@ -351,7 +362,7 @@ const Index = (props) => {
                   title={"cant"}
                   width={150}
                   //fill={width > 991 ? "200x600" : "200x600"}
-                  jpegquality={80}
+                  jpegquality={30}
                   classes={"animated fadeIn img p-4 "}
                 />
                 <br />
@@ -408,14 +419,10 @@ const Index = (props) => {
           </section>
           <br />
           <br />
-          <div
-          
-            className={"mb-3 mt-md-5"}
-          >
+          <div className={"mb-3 mt-md-5"}>
             <div className={" text-center"}>
               <div style={{ fontSize: "24px" }}>
-                Der Online-Genussleitfaden garantiert den perfekten
-                Genuss
+                Der Online-Genussleitfaden garantiert den perfekten Genuss
               </div>
               <br />
               <br />
@@ -433,20 +440,17 @@ const Index = (props) => {
               </div>
               <br />
               <br />
-              <div
-                className={"row mx-auto mt-2"}
-                style={{ fontSize: "18px" }}
-              >
+              <div className={"row mx-auto mt-2"} style={{ fontSize: "18px" }}>
                 <div className={"col-md-12 mb-4 text-center"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   Verkostungsvideos von Berghaus & Cie.
                 </div>
-               
+
                 <div className={"col-md-12 mb-4 text-center"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   Anregungen für passende Speisen und Gerichte
                 </div>
-               
+
                 <div className={"col-md-12 text-center"}>
                   <CheckSingle width={"25px"} height={"30px"} strokewidth={3} />{" "}
                   weitere spannende Hintergrundinformationen
@@ -479,7 +483,10 @@ const Index = (props) => {
                 <b>Garantierte Zustellung bis spätestens 20.12.2021</b>
               </span>
               <br />
-              <a href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"} target={"_blank"}>
+              <a
+                href={"https://buy.stripe.com/bIY9CQaDa33Tfx66op"}
+                target={"_blank"}
+              >
                 <button
                   class="mr-auto btn bg-cta p-3 animated infinite pulse slower"
                   style={{ fontSize: "18px" }}
