@@ -138,13 +138,13 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
 
-          <script
+          {/* <script
             type="text/javascript"
             id="hs-script-loader"
             async
             defer
             src="//js.hs-scripts.com/8965709.js"
-          ></script>
+          ></script> */}
 
   
         </body>
