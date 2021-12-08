@@ -8,6 +8,9 @@ import { primary } from "helpers/colorScheme";
 
 import BComment from "icons/b-comment";
 
+import Head from "next/head"
+
+
 const SEND_MESSAGE = gql`
   mutation sendContactFormMail(
     $senderEmail: String!
@@ -23,6 +26,26 @@ const SEND_MESSAGE = gql`
     }
   }
 `;
+
+const HubspotContactForm = () => {
+  return(
+    <>
+    <Head>
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+</Head>
+    <script dangerouslySetInnerHTML={{ __html: `
+       hbspt.forms.create({
+           region: "na1",
+           portalId: "8965709",
+           formId: "d3dc6fc2-87af-4aa7-829f-69cddd34108f",
+           taget: "#my-form"
+       });
+     `}} />
+<div className="text-white" id="my-form"></div>
+  </>
+  )
+ 
+}
 
 const ContactUs = (props) => {
   let contact_name;
@@ -80,7 +103,7 @@ const ContactUs = (props) => {
               toggleShowModal(!showModal);
             }}
           ></i> */}
-          {!formSent ? (
+          {/* {!formSent ? (
             <form
               role="form"
               id="contact-form1"
@@ -102,18 +125,24 @@ const ContactUs = (props) => {
                   toggleShowModal(false);
                 }, 1500);
               }}
-            >
+            > */}
               <div class="text-center text-primary">
+
+
+
 
               {props.additionalText? props.additionalText : null}
 
-              <h4 class="text-white" style={{fontSize: "18px"}}>Rufen Sie uns an unter <br/> <a style={{color: "white", textDecoration: "underline"}} href={"tel: +4915167310664"}> +49 151 673 106 64</a> <br/> oder schreiben Sie uns.</h4>
-            
+              <h4 class="text-white" style={{fontSize: "18px"}}> Haben Sie Fragen? Schreiben Sie uns!</h4>
+            <div className={"p-2 p-md-4 card"} style={{background: "rgba(255,255,255,0.5)"}}>
+              <HubspotContactForm/>
+              </div>
+
               </div>
               <div class="card-body white-placeholders">
-                <div class="row">
+                {/* <div class="row">
                   <div class="col-md-6 col-sm-12 pr-2" style={{paddingLeft: "8px", paddingRight: "0px"}}>
-                    {/* <label>Name</label> */}
+               
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
@@ -134,7 +163,7 @@ const ContactUs = (props) => {
                   </div>
                   <div class="col-md-6 col-sm-12 pl-2">
                     <div class="form-group">
-                      {/* <label>Mail</label> */}
+                    
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <span class="input-group-text">
@@ -153,10 +182,10 @@ const ContactUs = (props) => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div class="form-group textarea">
-                  {/* <label>Ihre Nachricht</label> */}
+                {/* <div class="form-group textarea">
+                
                   <textarea
                     name="message"
                     class="form-control"
@@ -167,9 +196,9 @@ const ContactUs = (props) => {
                       message = node;
                     }}
                   ></textarea>
-                </div>
+                </div> */}
 
-                <div class="row">
+                {/* <div class="row">
                   <div class="col-md-6 col-sm-12">
                     <div class="form-check" >
                       <label class="form-check-label">
@@ -187,16 +216,16 @@ const ContactUs = (props) => {
                       Nachricht senden
                     </button>
                   </div>
-                </div>
+                </div> */}
               </div>
-            </form>
+            {/* </form>
           ) : (
             <h4 className={"p-4 animated fadeIn text-center"}>
               Danke für Ihre Kontaktanfrage!
               <br />
               <small>Wir melden uns bei Ihnen.</small>
             </h4>
-          )}
+          )} */}
         {/* </ModalBody>
       </Modal>
       {props.showButton ? (

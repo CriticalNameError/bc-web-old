@@ -369,7 +369,7 @@ class LandingNavbar extends React.Component {
                   >
                    <p>
                       <span className="d-lg-inline d-md-block">
-                        Weinpakete
+                        Weininvestments
                       </span>
                     </p>
                   </a>

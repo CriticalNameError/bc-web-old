@@ -219,11 +219,11 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}>
+                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"} target={"_blank"}>
                   {" "}
                   <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
                 </a>{" "}
-                <a href={"https://www.linkedin.com/in/tristan-berghaus/"}>
+                <a href={"https://www.linkedin.com/in/tristan-berghaus/"} target={"_blank"}>
                   <LogoLinkedin
                     width={"30px"}
                     height={"30px"}
@@ -299,11 +299,11 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-                <a href={"https://www.xing.com/profile/Martin_Dammrath/"}>
+                <a href={"https://www.xing.com/profile/Martin_Dammrath/"} target={"_blank"}>
                   {" "}
                   <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
                 </a>{" "}
-                <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}>
+                <a href={"https://www.linkedin.com/in/martin-c-dammrath/"} target={"_blank"}>
                   <LogoLinkedin
                     width={"30px"}
                     height={"30px"}
@@ -319,7 +319,7 @@ const AboutUs = () => {
                 Investmententscheidungen unserer Kunden.
               </p>
               <p>
-                Als studierte Mathematiker ist er bei Berghaus & Cie. für die
+                Als studierter Mathematiker ist er bei Berghaus & Cie. für die
                 Entwicklung und den weiteren Ausbau der Handelsplattform und die
                 internen Systeme verantwortlich.
               </p>
@@ -361,11 +361,11 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-                <a href={"https://www.xing.com/profile/Peter_Irnich/"}>
+                <a href={"https://www.xing.com/profile/Peter_Irnich/"} target={"_blank"}>
                   {" "}
                   <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
                 </a>{" "}
-                <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}>
+                <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"} target={"_blank"}>
                   <LogoLinkedin
                     width={"30px"}
                     height={"30px"}
