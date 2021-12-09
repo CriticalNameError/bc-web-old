@@ -120,7 +120,7 @@ const Index = (props) => {
           style={{ marginTop: width > 991 ? "25vh" : "18vh" }}
         >
           <span
-            className={"text-center px-3 px-md-0"}
+            className={"text-center"}
             style={{
               //fontFamily: "'Nothing You Could Do', cursive",
               fontSize: width > 991 ? "43px" : "23px",
@@ -129,8 +129,8 @@ const Index = (props) => {
               //textShadow: "rgb(76 69 55) 1px 1px 1.5px",
             }}
           >
-            Vielen Dank <br />
-            für Ihr Vertrauen.
+            Das Berghaus & Cie. <br />
+            Weinensemble.
           </span>{" "}
         </div>
 
