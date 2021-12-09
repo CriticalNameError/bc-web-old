@@ -131,7 +131,7 @@ const ContactBar = (props) => {
                   <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
                 </span>
                 <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                +49 151 673 106 64
+                +49 2207 90198 91
                 </span>
               </a>
             </span>
@@ -420,7 +420,7 @@ class LandingNavbar extends React.Component {
                   </a>
                 </NavItem> */}
             
-                <NavItem style={{ position: "relative" }}>
+                {/* <NavItem style={{ position: "relative" }}>
                   <a
                     href="/ueber-uns"
                     className={
@@ -437,12 +437,12 @@ class LandingNavbar extends React.Component {
                       fontSize: "12px",
                     }}
                   >
-                    {/* <i className="now-ui-icons media-2_sound-wave" /> */}
+                   
                     <p>
                       <span className="d-lg-inline d-md-block">Über uns</span>
                     </p>
                   </a>
-                </NavItem>
+                </NavItem> */}
                 {/* <NavItem className={"ml-lg-auto"}>
                   <a
                     href="https://weindepot.berghaus-cie.com"

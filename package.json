@@ -49,6 +49,7 @@
     "react-tooltip": "^4.2.11",
     "react-use-scroll-direction": "^0.1.0",
     "react-vertical-timeline-component": "^3.3.3",
+    "react-youtube": "^7.13.1",
     "reactstrap": "8.0.0",
     "reaviz": "^9.5.4",
     "redux": "^4.0.5",

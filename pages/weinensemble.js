@@ -40,7 +40,10 @@ import ATime from "icons/a-time";
 import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
-
+import YouTube from "react-youtube";
+import Fish from "icons/fish";
+import LemonSlice from "icons/lemon-slice";
+import Cow from "icons/cow";
 const songs = [
   {
     url: "path/to/mp3",
@@ -183,10 +186,12 @@ const Index = (props) => {
               className={"mx-auto px-3 px-md-0"}
               style={{ fontSize: "18px", maxWidth: "950px" }}
             >
-              Wir freuen uns, Ihnen ein ganz besonderes Weinensemble präsentieren zu dürfen. Dieses besteht aus drei Weinen, die einerseits nicht
-              unterschiedlicher sein könnten und die andererseits perfekt
-              aufeinander abgestimmt sind. Mit dieser Auswahl unternehmen Sie
-              eine spannede Reise durch die Weinwelt. <br />
+              Wir freuen uns, Ihnen ein ganz besonderes Weinensemble
+              präsentieren zu dürfen. Dieses besteht aus drei Weinen, die
+              einerseits nicht unterschiedlicher sein könnten und die
+              andererseits perfekt aufeinander abgestimmt sind. Mit dieser
+              Auswahl unternehmen Sie eine spannede Reise durch die Weinwelt.{" "}
+              <br />
               <br />
               Wir wünschen viel (Gaumen-)Freude
               <br />
@@ -252,6 +257,13 @@ const Index = (props) => {
                     – Mark Twain
                   </span>
                 </h5>
+                <div className={"py-3 " + (width < 600 ? "text-center" : "")}>
+                  <YouTube
+                    videoId={"uD6RQbmIst8"} // defaults -> null
+                    opts={{ width: width < 600 ? 320 : 600 }}
+                  />
+                </div>
+
                 <b>Degustationsnotiz</b>
                 <br />
                 <p>
@@ -319,6 +331,13 @@ const Index = (props) => {
                     Goethe
                   </span>
                 </h5>
+
+                <div className={"py-3 " + (width < 600 ? "text-center" : "")}>
+                  <YouTube
+                    videoId={"nR5i5Lea20M"} // defaults -> null
+                    opts={{ width: width < 600 ? 320 : 600 }}
+                  />
+                </div>
                 <b>Degustationsnotiz</b>
                 <br />
                 <p>
@@ -390,6 +409,13 @@ const Index = (props) => {
                     „Le vin entre et la raison sort.” – frz. Sprichwort
                   </span>{" "}
                 </h5>
+
+                <div className={"py-3 " + (width < 600 ? "text-center" : "")}>
+                  <YouTube
+                    videoId={"Z2cyWdl4YHU"} // defaults -> null
+                    opts={{ width: width < 600 ? 320 : 600 }}
+                  />
+                </div>
                 <b>Degustationsnotiz</b>
                 <br />
                 <p>
@@ -695,54 +721,246 @@ const Index = (props) => {
           </div>
         </div> */}
 
+        <div
+          class="container pt-5 animated fadeIn slow mt-mb-5"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
+          <div className={"row mt-5"}>
+            <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+              {/* <i
+                  class="fas fa-users mb-n3 ml-n3 round-icon-lg"
+                  style={{ color: primary }}
+                ></i> */}
+              <span class="round-icon-lg text-white mb-n3">
+                <span style={{ width: "40px", height: "40px" }}>
+                  <Fish width={"40px"} height={"40px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-8 offset-md-2 col-sm-12">
+              <div class="info info-horizontal">
+                <div class="card p-3">
+                  <h5 class="" style={{ fontSize: "18px" }}>
+                    Lachstatar zum Champagner
+                  </h5>
+                  <p class="rext-justify">
+                    <i>
+                      <b>Zutaten für 4 Portionen</b>
+                      <br />
+                      500g Lachs (geräuchert)
+                      <br />
+                      1 Bund Dill
+                      <br />
+                      1 Bund Koriander
+                      <br />
+                      2 EL Olivenöl
+                      <br />
+                      4 EL Zitronen (Saft)
+                      <br />
+                      4 Schalotten
+                      <br />
+                      2 Prisen Pfeffer
+                      <br />
+                      2 Prisen Salz
+                      <br />
+                    </i>
+                  </p>
+                  <b>Zubereitung</b>
+                  <br />
+                  <ol>
+                    <li>
+                      Für das Lachstatar mit Räucherlachs, den Fisch sehr klein
+                      schneiden. Schalotten schälen und ebenfalls fein würfeln.
+                      Dill und Koriander waschen, abtropfen lassen und klein
+                      schneiden.
+                    </li>
+                    <li>
+                      Alles in einer Schüssel gut vermengen und mit
+                      Zitronensaft, Öl, Salz und Pfeffer abschmecken.
+                    </li>
+                    <li>
+                      Im Kühlschrank gut durchziehen lassen ca. 2 Stunden.
+                    </li>
+                    <li>
+                      Aus dem Tatar kleine Laibchen formen (dazu können auch
+                      runde Keksformen verwendet werden) und mit Salat oder fein
+                      geschnittenen Gemüsestücken garnieren.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="container pt-5 animated fadeIn slow mt-mb-5"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
+          <div className={"row mt-5"}>
+            <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+              {/* <i
+                  class="fas fa-users mb-n3 ml-n3 round-icon-lg"
+                  style={{ color: primary }}
+                ></i> */}
+              <span class="round-icon-lg text-white mb-n3">
+                <span style={{ width: "40px", height: "40px" }}>
+                  <LemonSlice width={"40px"} height={"40px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-8 offset-md-2 col-sm-12">
+              <div class="info info-horizontal">
+                <div class="card p-3">
+                  <h5 class="" style={{ fontSize: "18px" }}>
+                    Schnitzel zum Riesling
+                  </h5>
+                  <p class="rext-justify">
+                    <i>
+                      <b>Zutaten für 4 Portionen</b>
+                      <br />
+                      4 Kalbsschnitzel (à 160 g)
+                      <br />
+                      1 Prise Salz
+                      <br />
+                      150g griffiges Mehl
+                      <br />
+                      2 Eier
+                      <br />
+                      300g Semmelbrösel
+                      <br />
+                      Backfett, Öl od. Butterschmalz
+                      <br />
+                      1 Zitrone
+                      <br />
+                    </i>
+                  </p>
+                  <b>Zubereitung</b>
+                  <br />
+                  <ol>
+                    <li>
+                      Schnitzel zwischen Frischhaltefolie behutsam klopfen.
+                      Fleisch beidseitig salzen, in Mehl wenden, abklopfen,
+                      durch die Eier ziehen und in den Bröseln wenden.
+                    </li>
+                    <li>
+                      Schnitzel ca. 2 Finger hoch Backfett goldgelb backen.
+                      Während des Backens die Pfanne ein wenig rütteln, damit
+                      die Schnitzel gleichmäßig goldbraun werden. Schnitzel
+                      herausheben, auf Küchenpapier abtropfen lassen.
+                    </li>
+                    <li>
+                      Zitrone in Spalten schneiden und die fertigen Wiener
+                      Schnitzel mit Zitronenspalten garnieren.
+                    </li>
+                    <li>
+                      Das klassische Wiener Schnitzel wird mit
+                      Petersilkartoffeln oder Kartoffelsalat als Beilage
+                      serviert.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="container pt-5 animated fadeIn slow mt-mb-5"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
+          <div className={"row mt-5"}>
+            <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+              {/* <i
+                  class="fas fa-users mb-n3 ml-n3 round-icon-lg"
+                  style={{ color: primary }}
+                ></i> */}
+              <span class="round-icon-lg text-white mb-n3">
+                <span style={{ width: "40px", height: "40px" }}>
+                  <Cow width={"40px"} height={"40px"} strokewidth={3} />
+                </span>
+              </span>
+            </div>
+            <div class="col-md-8 offset-md-2 col-sm-12">
+              <div class="info info-horizontal">
+                <div class="card p-3">
+                  <h5 class="" style={{ fontSize: "18px" }}>
+                    Roastbeef zum Bordeaux
+                  </h5>
+                  <p class="rext-justify">
+                    <i>
+                      <b>Zutaten für 4 Portionen</b>
+                      <br />
+                      750g Kartoffeln
+                      <br />
+                      500g weiße Zwiebeln
+                      <br />
+                      3 grüne Paprikaschoten (ca. 600g)
+                      <br />
+                      2 EL Sonnenblumenöl
+                      <br />
+                      1kg Roastbeef
+                      <br />
+                      Salz und Pfeffer
+                      <br />
+                      250g kleine Tomaten
+                      <br />
+                      150g kleine Champions
+                      <br />
+                      1 Bund glatte Petersilie
+                      <br />
+                    </i>
+                  </p>
+                  <b>Zubereitung</b>
+                  <br />
+                  <ol>
+                    <li>
+                      Die Kartoffeln schälen, waschen und in Würfel schneiden.
+                      Kartoffelwürfel in Salzwasser ankochen, 10 Minuten weiter
+                      kochen, dann abgießen. Zwiebeln schälen und würfeln.
+                      Paprika halbieren, Kerne entfernen und würfeln.
+                    </li>
+                    <li>
+                      Die Fettpfanne des Backofens mit Öl auspinseln. Ein
+                      Viertel der Fettpfanne mit Kartoffeln, ein Viertel mit
+                      Zwiebeln und ein Viertel mit Paprika auslegen. Das
+                      Roastbeef unter kaltem Wasser waschen, abtrocknen, mit
+                      Salz und Pfeffer einreiben. Die Fettschicht des Roastbeef
+                      einritzen und das Fleisch mit der Fettschicht nach oben
+                      auf den Rost legen. Die Fettpfanne unter dem Rost
+                      einschieben und alles bei 200 Grad ca. 50 - 60 Minuten
+                      braten.
+                    </li>
+                    <li>
+                      In der Zwischenzeit die Tomaten überbrühen, abschrecken
+                      und abziehen. Die Champignons putzen und mit den Tomaten
+                      10 Minuten vor Bratzeitende auf das letzte Viertel der
+                      Fettpfanne geben.
+                    </li>
+                    <li>
+                      Nach Ende der Bratzeit den Ofen abschalten, jedoch die
+                      Fettpfanne noch 5 - 10 Minuten im Ofen belassen. Damit das
+                      Roastbeef durch und durch rosa ist, vor dem Anschneiden 5
+                      - 10 Minuten auf der Fettschicht ruhen lassen! Tipp:
+                      Roastbeef durch Kasselerbraten ohne Knochen ersetzen -
+                      auch sehr köstlich!
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class=" text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
           <div
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
-          >
-            {/* <div>
-              <h3 style={{ fontSize: "24px" }}>Unsere Partner</h3>
-              <div style={{}} className={"row"}>
-                <div className={"col-md-4 text-center"}>
-                  <span
-                    style={{
-                      padding: "35px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Partner3 height={"60px"} />
-                  </span>
-                </div>
-                <div className={"col-md-4 text-center"}>
-                  <span
-                    style={{
-                      padding: "35px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Partner1 height={"60px"} />
-                  </span>
-                </div>
-                <div className={"col-md-4 text-center"}>
-                  <span
-                    style={{
-                      padding: "35px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Partner2 height={"60px"} />
-                  </span>
-                </div>
-              </div>
-            </div> */}
-          </div>
+          ></div>
         </div>
 
         {/* <div className={"text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>

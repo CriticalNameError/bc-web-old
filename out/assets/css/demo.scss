@@ -196,6 +196,24 @@
         display: inline;
     } */
 
+    ::-webkit-scrollbar{
+        width: 8px;
+        height: 8px;
+        }
+        ::-webkit-scrollbar-thumb{
+        background: #714f9b;
+        border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+        background: #8562af;
+        }
+        ::-webkit-scrollbar-track{
+        background: #F0F0F0;
+        border-radius: 4px;
+        box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+        }
+    
+
 
     .link-underline::after {
         content: '';
@@ -478,6 +496,10 @@
     
 }
 
+.hbspt-form > p{
+    font-size: 10px!important;
+}
+
 .hs-button{
     background: white!important;
     color: rgb(191, 172,130)!important;
@@ -601,23 +623,7 @@
 	scroll-behavior: smooth;
 }
 
-  ::-webkit-scrollbar{
-    width: 8px;
-    height: 8px;
-    }
-    ::-webkit-scrollbar-thumb{
-    background: #714f9b;
-    border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover{
-    background: #8562af;
-    }
-    ::-webkit-scrollbar-track{
-    background: #F0F0F0;
-    border-radius: 4px;
-    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
-    }
-
+ 
 
 .card{
     border-radius:7px !important;

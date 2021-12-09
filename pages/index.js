@@ -33,6 +33,7 @@ import Head from "next/head";
 import Award1 from "icons/award_1";
 import Award2 from "icons/award_2";
 import Award3 from "icons/award_3";
+import Anagram100 from "icons/Anagram-100";
 import Partner1 from "icons/partner_1";
 import Partner2 from "icons/partner_2";
 import Partner3 from "icons/partner_3";
@@ -41,46 +42,50 @@ import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
 
-
-
 const songs = [
   {
-    url: 'path/to/mp3',
-    cover: 'path/to/jpeg',
+    url: "path/to/mp3",
+    cover: "path/to/jpeg",
     artist: {
-      name: 'Metallica',
-      song: 'Fuel'
-    }
+      name: "Metallica",
+      song: "Fuel",
+    },
   },
   {
-    url: 'path/to/your/mp3',
+    url: "path/to/your/mp3",
     artist: {
-      name: 'X Japan',
-      song: 'Art of Life'
-    }
-  }
+      name: "X Japan",
+      song: "Art of Life",
+    },
+  },
 ];
 
 const HubspotNewsletterForm = () => {
-  return(
+  return (
     <>
-    <Head>
-      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-</Head>
-    <script dangerouslySetInnerHTML={{ __html: `
+      <Head>
+        <script
+          charset="utf-8"
+          type="text/javascript"
+          src="//js.hsforms.net/forms/shell.js"
+        ></script>
+      </Head>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
        hbspt.forms.create({
            region: "na1",
            portalId: "8965709",
            formId: "2f89bfd7-4deb-4e19-a1c6-aca99175b26c",
            taget: "#my-newsletter-form"
        });
-     `}} />
-<div className="text-white bg-cta" id="my-newsletter-form"></div>
-  </>
-  )
- 
-}
-
+     `,
+        }}
+      />
+      <div className="text-white bg-cta" id="my-newsletter-form"></div>
+    </>
+  );
+};
 
 const Index = (props) => {
   const [showModal, toggleShowModal] = useState(false);
@@ -132,9 +137,9 @@ const Index = (props) => {
         showModal={showModal}
         toggleShowModal={toggleShowModal}
       ></CustomModal>
-      <div className={"container-fluid px-0"} style={{ overflowX: "hidden" }}>
+      <div className={"container-fluid px-0"} style={{ overflowX: "hidden", overflowY: "hidden" }}>
         <div className="row">
-          <div className={"col-12 my-auto text-center  "}>
+          <div className={"col-12 my-auto text-center mt-md-5"} style={{overflowY: "hidden"}}>
             <div
               className={"mx-auto"}
               // style={{ maxWidth: "750px" }}
@@ -172,135 +177,92 @@ const Index = (props) => {
                 </h1>{" "}
                 <br />
                 <div className={"row mt-3"}>
-                  <div className={"col-6 text-right animated fadeIn slower"}>
-                    <MockupLanding
-                      width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
+                  <div className={"col-12 text-centeranimated fadeIn slower"}>
+                    <ImageFromCms
+                      title={width > 600 ? "mockup_all" : "mockup_all"}
+                      width={width > 991 ? (width > 1500 ? 775 : 535) : 200}
+                      jpegquality={2}
                     />
+                    {width > 991? 
+                    <div
+                      className={"row w-50 mx-auto px-md-6 mt-2"}
+                      style={{ fontSize: "18px", maxWidth: "600px" }}
+                    >
+                      <div className={"col-md-4 text-left"}>
+                        <CheckSingle
+                          width={"25px"}
+                          height={"30px"}
+                          strokewidth={3}
+                        />{" "}
+                        intuitiv
+                      </div>
+                      <div className={"col-md-4 text-center"}>
+                        <CheckSingle
+                          width={"25px"}
+                          height={"30px"}
+                          strokewidth={3}
+                        />{" "}
+                        transparent
+                      </div>
+                      <div className={"col-md-4 text-center"}>
+                        <CheckSingle
+                          width={"25px"}
+                          height={"30px"}
+                          strokewidth={3}
+                        />{" "}
+                        mobil
+                      </div>
+                  
+                    </div>
+                   :
+                   <>
+                   <div className={"text-center mt-3"}>
+                   <CheckSingle
+                     width={"25px"}
+                     height={"30px"}
+                     strokewidth={3}
+                   />{" "}
+                   intuitiv
+                 </div>
+                    <div className={"text-center"}>
+                    <CheckSingle
+                      width={"25px"}
+                      height={"30px"}
+                      strokewidth={3}
+                    />{" "}
+                    transparent
+                  </div>
+                  <div className={"text-center"}>
+                        <CheckSingle
+                          width={"25px"}
+                          height={"30px"}
+                          strokewidth={3}
+                        />{" "}
+                        mobil
+                      </div>
+                  </>
+                   }
+
+                    <div className={"text-center mx-auto px-2 px-md-0 mt-5"} style={{ fontSize: "24px", maxWidth: "1100px" }}>
+              <p  > 
+                Berghaus & Cie. verbindet die traditionelle Welt der exquisiten
+                Weine mit der modernen Investmentwelt. Dabei setzen wir auf
+                Transparenz, datenbasierte Analysen und Digitalisierung.
+              </p>
+             
+              </div>
+
+
                     {/* <ImageFromCms
                       title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
                       width={width > 991 ? (width > 1500 ? 235 : 205) : 200}
                       jpegquality={10}
                     /> */}
                   </div>
-                  <div className={"col-6 text-left mt-md-4"}>
-                    <div
-                      className={"text-left"}
-                      style={{
-                        fontSize: "18px",
-                        width: "400px",
-                        lineHeight: "1.5em",
-                      }}
-                    >
-                      <br />
-                      <CheckSingle
-                        width={"25px"}
-                        height={"30px"}
-                        strokewidth={3}
-                      />{" "}
-                      ohne spezielle Vorkenntnisse <br />
-                      <CheckSingle
-                        width={"25px"}
-                        height={"30px"}
-                        strokewidth={3}
-                      />{" "}
-                      sparen Sie Ihre wertvolle Zeit <br />
-                      <CheckSingle
-                        width={"25px"}
-                        height={"30px"}
-                        strokewidth={3}
-                      />{" "}
-                      durchschnittliche Rendite 8 - 12 % p.a. <br />
-                      <br />
-                    </div>
-
-                    {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                    <a href={"#early-access"}>
-                    <button
-                      onClick={() => toggleShowNewsletterSub(true)}
-                      className={
-                        "mr-auto btn bg-cta p-2 animated infinite pulse slower"
-                      }
-                      style={{ fontSize: "18px" }}
-                    >
-                      Exklusiver Platformzugang
-                    </button>
-                    </a>
-                  </div>
-                  <br />
                 </div>
-                <div
-                  // className={
-                  //   "animate__animated animate__delay-1s animate__fadeInRight animate__slow"
-                  // }
-                  className={"animated fadeIn slower"}
-                >
-                  {/* <ImageFromCms
-                    title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
-                    width={width > 991 ? (width > 1500 ? 475 : 295) : 250}
-                    jpegquality={30}
-                  /> */}
-                </div>
-                {/* <span>
-                  <a href={"https://weindepot.berghaus-cie.com/register"}>
-
-                    <button
-                      className={
-                        "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
-                      }
-                      style={{ fontSize: "18px" }}
-                    >
-                      Erstgespräch vereinbaren
-                    </button>
-                  </a>
-                </span> */}
               </div>
 
-              {/* <a
-                className={"move-down mt-n3"}
-                href={"#services"}
-                style={{ cursor: "pointer" }}
-              >
-                <span
-                  className={"animated infinite pulse"}
-                  style={{ cursor: "pointer", color: primary }}
-                >
-                  <DownArrow
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                    style={{ display: "inline-block" }}
-                  />
-                </span>
-              </a> */}
-            </div>
-          </div>
-
-          <div class=" text-center w-100 animated fadeIn slower">
-            <div
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
-              className={"mb-3"}
-              // style={{ backgroundColor: "rgb(191, 157, 226)" }}
-            >
-              {/* <div style={{ overflow: "hidden" }}>
-                <svg
-                  preserveAspectRatio="none"
-                  viewBox="0 0 1200 120"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    fill: "#ffffff",
-                    width: "196%",
-                    height: 50,
-                    transform: "scaleX(-1)",
-                    marginBottom: "-1px",
-                    marginLeft: "-1px",
-                  }}
-                >
-                  <path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" />
-                </svg>
-              </div> */}
-
-              <div className={"row animated fadeInUp slower text-left"}>
+              <div className={"row animated fadeInUp slower text-left mt-5 " + (width < 991? "text-center": "")}>
                 <h3
                   className={"col-md-8 offset-md-2 mb-3"}
                   style={{ fontSize: "18px" }}
@@ -308,8 +270,9 @@ const Index = (props) => {
                   Unsere Auszeichnungen
                 </h3>
                 <br />
+                {width > 991? 
                 <div
-                  style={{}}
+                 
                   className={
                     "d-flex justify-content-between col-md-8 offset-md-2 pt-1 mt-1"
                   }
@@ -360,6 +323,63 @@ const Index = (props) => {
                     ></ImageFromCms> */}
                   </div>
                 </div>
+                :
+                <div
+                 
+                className={
+                  "text-center pt-1 mt-1 w-100 mx-5"
+                }
+              >
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "7px",
+                    backgroundColor: "white",
+                    boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                  }}
+                >
+                
+                  <Award1 height={"60px"} />
+                  {/* <ImageFromCms
+                    title={"award_1"}
+                    height={width > 50 ? 80 : 75}
+                    jpegquality={17}
+                  ></ImageFromCms> */}
+                </div>
+                <br/>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "7px",
+                    backgroundColor: "white",
+                    boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                  }}
+                >
+                  <Award2 height={"60px"} />
+                  {/* <ImageFromCms
+                    title={"award_2"}
+                    height={width > 50 ? 80 : 75}
+                    jpegquality={17}
+                  ></ImageFromCms> */}
+                </div>
+                <br/>
+                <div
+                  style={{
+                    padding: "10px",
+                    borderRadius: "7px",
+                    backgroundColor: "white",
+                    boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                  }}
+                >
+                  <Award3 height={"60px"} />
+                  {/* <ImageFromCms
+                    title={"award_3"}
+                    height={width > 50 ? 80 : 75}
+                    jpegquality={17}
+                  ></ImageFromCms> */}
+                </div>
+              </div>
+                }
               </div>
 
               {/* <div style={{ overflow: "hidden" }}>
@@ -383,55 +403,67 @@ const Index = (props) => {
           </div>
         </div>
 
-         <div>
+        <div>
           <section
-            className={"mx-auto text-center mt-md-5 mb-5"}
+            className={"mx-3 mx-md-auto text-center mt-md-5 mb-5 mt-5 pt-5"}
             data-aos="fade-up"
             id={"services"}
             data-aos-anchor-placement="center-bottom"
             style={{ maxWidth: "1200px" }}
           >
-            
-            <div id={"early-access"} className={"text-center mx-auto mt-3 mt-md-5"} style={{maxWidth: "950px"}}>
-            <h2 className={"h3 pt-5"} style={{ fontSize: "24px" }}>
-              Exklusiver Plattformzugang
-            </h2>
-            <p
-              className={"mx-auto"}
-              style={{ fontSize: "18px", maxWidth: "750px" }}
+            <div
+              id={"early-access"}
+              className={"text-center bg-cta text-white mx-auto mt-3 mt-md-5"}
+              style={{ maxWidth: "550px" }}
             >
-              Registrieren Sie sich zum Newlsetter und erhalten Sie als einer der ersten den exklusiven Zugang zu unserer Platform.
-            </p>
-            <ImageFromCms
-              title={"exclusive_access"}
-              width={Math.min(width * 0.85, 450)}
-              // fill={width > 991 ? "1200x650" : "600x430"}
-              jpegquality={40}
-              classes={"animated fadeIn img  mb-3"}
-            />
-            <br/>
-{!showNewsletterSub?
- <button
- onClick={() => toggleShowNewsletterSub(true)}
- className={
-   "mr-auto btn bg-cta p-2 animated infinite pulse slower"
- }
- style={{ fontSize: "18px" }}
->
- Jetzt Newsletter abonnieren
-</button>
-:
-null
-}
-              
-<div  className={"animated fadeIn p-2 p-md-5"} style={{display: (!showNewsletterSub? "none" : "block")}}>
-<h2 className={"h3"} style={{ fontSize: "24px" }}>
-              Registrierung
-            </h2>
-<HubspotNewsletterForm/>
-  </div>
-            
-            
+              <h2 className={"h3 pt-4"} style={{ fontSize: "24px" }}>
+                Coming Soon
+              </h2>
+              <p
+                className={"mx-auto px-2 px-md-5"}
+                style={{ fontSize: "14px", maxWidth: "450px" }}
+              >
+                Sie wollen erfahrenm wann wir online gehen und wie es mit
+                Berghaus & Cie. weitergeht?
+                <br />
+                <br />
+                Wir informieren Sie gerne vorab per E-Mail.
+              </p>
+              {/* <ImageFromCms
+                title={"exclusive_access"}
+                width={Math.min(width * 0.85, 450)}
+                // fill={width > 991 ? "1200x650" : "600x430"}
+                jpegquality={40}
+                classes={"animated fadeIn img  mb-3"}
+              /> */}
+              <br />
+              {/* {!showNewsletterSub ? (
+                <button
+                  onClick={() => toggleShowNewsletterSub(true)}
+                  className={
+                    "mr-auto btn bg-cta p-2 animated infinite pulse slower"
+                  }
+                  style={{ fontSize: "18px" }}
+                >
+                  Jetzt Newsletter abonnieren
+                </button>
+              ) : null} */}
+
+              <div
+                className={"animated fadeIn p-2 p-md-5"}
+                // style={{ display: !showNewsletterSub ? "none" : "block" }}
+              >
+                {/* <h2 className={"h3"} style={{ fontSize: "24px" }}>
+                  Registrierung
+                </h2> */}
+
+                <HubspotNewsletterForm />
+                <span style={{fontSize: "14px", color: primary}} className={"text-primary"}>
+                  Mit Klicken auf "Einsenden" erklären Sie sich mit unserer{" "}
+                  <a href={"/legal/datenschutz"}>Datenschutzerklärung</a>{" "}
+                  einverstanden.
+                </span>
+              </div>
             </div>
             {/* <PlayAudio />
             </div>
@@ -442,8 +474,7 @@ null
               <OfferPromotionSlider />
             </div> */}
           </section>
-        </div> 
-
+        </div>
 
         {/* <div>
           <section
