@@ -130,7 +130,7 @@ const Index = (props) => {
             }}
           >
             Das Berghaus & Cie. <br />
-            Weinensemble.
+            Weinensemble
           </span>{" "}
         </div>
 
