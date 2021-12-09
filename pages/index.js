@@ -249,6 +249,21 @@ const Index = (props) => {
                 Weine mit der modernen Investmentwelt. Dabei setzen wir auf
                 Transparenz, datenbasierte Analysen und Digitalisierung.
               </p>
+
+              <div className={"text-center mx-auto px-2 px-md-0 mt-5"} style={{ fontSize: "24px", maxWidth: "1100px" }}>
+                {" "}
+                Exquisite Weine - Ihr Investment ist unsere{" "}
+                <span
+                  style={{
+                    fontFamily: "'Fuggles', cursive",
+                    fontSize: "1.7em",
+                    lineHeight: "60%",
+                  }}
+                >
+                  Passion
+                </span>
+                .{" "}
+              </div>
              
               </div>
 
@@ -423,7 +438,7 @@ const Index = (props) => {
                 className={"mx-auto px-2 px-md-5"}
                 style={{ fontSize: "14px", maxWidth: "450px" }}
               >
-                Sie wollen erfahrenm wann wir online gehen und wie es mit
+                Sie wollen erfahren, wann wir online gehen und wie es mit
                 Berghaus & Cie. weitergeht?
                 <br />
                 <br />
