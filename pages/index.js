@@ -461,9 +461,9 @@ const Index = (props) => {
         <div>
           <section
             className={"mx-3 mx-md-auto text-center mt-md-5 mb-5 mt-5 pt-5"}
-            data-aos="fade-up"
+            // data-aos="fade-up"
             id={"services"}
-            data-aos-anchor-placement="center-bottom"
+            // data-aos-anchor-placement="center-bottom"
             style={{ maxWidth: "1200px" }}
           >
             <div
