@@ -41,7 +41,7 @@ import ATime from "icons/a-time";
 import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
-
+import { Row, Col } from "reactstrap";
 const songs = [
   {
     url: "path/to/mp3",
@@ -137,9 +137,15 @@ const Index = (props) => {
         showModal={showModal}
         toggleShowModal={toggleShowModal}
       ></CustomModal>
-      <div className={"container-fluid px-0"} style={{ overflowX: "hidden", overflowY: "hidden" }}>
+      <div
+        className={"container-fluid px-0"}
+        style={{ overflowX: "hidden", overflowY: "hidden" }}
+      >
         <div className="row">
-          <div className={"col-12 my-auto text-center mt-md-5"} style={{overflowY: "hidden"}}>
+          <div
+            className={"col-12 my-auto text-center mt-md-5"}
+            style={{ overflowY: "hidden" }}
+          >
             <div
               className={"mx-auto"}
               // style={{ maxWidth: "750px" }}
@@ -177,96 +183,132 @@ const Index = (props) => {
                 </h1>{" "}
                 <br />
                 <div className={"row mt-3"}>
-                  <div className={"col-12 text-centeranimated fadeIn slower"}>
-                    <ImageFromCms
-                      title={width > 600 ? "mockup_all" : "mockup_all"}
-                      width={width > 991 ? (width > 1500 ? 775 : 535) : 200}
-                      jpegquality={2}
-                    />
-                    {width > 991? 
-                    <div
-                      className={"row w-50 mx-auto px-md-6 mt-2"}
-                      style={{ fontSize: "18px", maxWidth: "600px" }}
-                    >
-                      <div className={"col-md-4 text-left"}>
-                        <CheckSingle
-                          width={"25px"}
-                          height={"30px"}
-                          strokewidth={3}
-                        />{" "}
-                        intuitiv
+                  <div className={"col-12 text-center animated fadeIn slower"}>
+                    <div className={"mx-auto my-auto"} style={{ position: "relative", height: "300px"}}>
+           
+
+             <div
+                        style={{
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+                          
+                        }}
+                      >
+                        <Row className={"h-100"}>
+                          <Col className={"my-auto"}>
+                          <ImageFromCms
+                        title={width > 600 ? "mockup_all" : "mockup_all"}
+                        width={width < 991? 300 : 600}
+                        jpegquality={1}
+                        classes={"blurry-img d-block mx-auto"}
+                      />
+                          </Col>
+                        </Row>
                       </div>
-                      <div className={"col-md-4 text-center"}>
-                        <CheckSingle
-                          width={"25px"}
-                          height={"30px"}
-                          strokewidth={3}
-                        />{" "}
-                        transparent
+
+                      <div
+                        style={{
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+                          
+                        }}
+                      >
+                        <Row className={"h-100 white-overlay"}>
+                          <Col className={"my-auto"} style={{fontSize: "24px", display: "inline-block", transform: "rotate(-15deg)", color: "#bfac82", }}><span className={"overlay-container " + (width<991? "px-5 p-3" : "")} style={{padding: "20px 120px 20px 120px"}}>Coming Soon</span></Col>
+                        </Row>
                       </div>
-                      <div className={"col-md-4 text-center"}>
-                        <CheckSingle
-                          width={"25px"}
-                          height={"30px"}
-                          strokewidth={3}
-                        />{" "}
-                        mobil
-                      </div>
-                  
                     </div>
-                   :
-                   <>
-                   <div className={"text-center mt-3"}>
-                   <CheckSingle
-                     width={"25px"}
-                     height={"30px"}
-                     strokewidth={3}
-                   />{" "}
-                   intuitiv
-                 </div>
-                    <div className={"text-center"}>
-                    <CheckSingle
-                      width={"25px"}
-                      height={"30px"}
-                      strokewidth={3}
-                    />{" "}
-                    transparent
-                  </div>
-                  <div className={"text-center"}>
-                        <CheckSingle
-                          width={"25px"}
-                          height={"30px"}
-                          strokewidth={3}
-                        />{" "}
-                        mobil
+
+                    {width > 991 ? (
+                      <div
+                        className={"row w-50 mx-auto px-md-6 mt-2"}
+                        style={{ fontSize: "18px", maxWidth: "600px" }}
+                      >
+                        <div className={"col-md-4 text-left"}>
+                          <CheckSingle
+                            width={"25px"}
+                            height={"30px"}
+                            strokewidth={3}
+                          />{" "}
+                          intuitiv
+                        </div>
+                        <div className={"col-md-4 text-center"}>
+                          <CheckSingle
+                            width={"25px"}
+                            height={"30px"}
+                            strokewidth={3}
+                          />{" "}
+                          transparent
+                        </div>
+                        <div className={"col-md-4 text-center"}>
+                          <CheckSingle
+                            width={"25px"}
+                            height={"30px"}
+                            strokewidth={3}
+                          />{" "}
+                          mobil
+                        </div>
                       </div>
-                  </>
-                   }
+                    ) : (
+                      <>
+                        <div className={"text-center mt-3"}>
+                          <CheckSingle
+                            width={"25px"}
+                            height={"30px"}
+                            strokewidth={3}
+                          />{" "}
+                          intuitiv
+                        </div>
+                        <div className={"text-center"}>
+                          <CheckSingle
+                            width={"25px"}
+                            height={"30px"}
+                            strokewidth={3}
+                          />{" "}
+                          transparent
+                        </div>
+                        <div className={"text-center"}>
+                          <CheckSingle
+                            width={"25px"}
+                            height={"30px"}
+                            strokewidth={3}
+                          />{" "}
+                          mobil
+                        </div>
+                      </>
+                    )}
 
-                    <div className={"text-center mx-auto px-2 px-md-0 mt-5"} style={{ fontSize: "24px", maxWidth: "1100px" }}>
-              <p  > 
-                Berghaus & Cie. verbindet die traditionelle Welt der exquisiten
-                Weine mit der modernen Investmentwelt. Dabei setzen wir auf
-                Transparenz, datenbasierte Analysen und Digitalisierung.
-              </p>
+                    <div
+                      className={"text-center mx-auto px-2 px-md-0 mt-5"}
+                      style={{ fontSize: "24px", maxWidth: "1100px" }}
+                    >
+                      <p>
+                        Berghaus & Cie. verbindet die traditionelle Welt der
+                        exquisiten Weine mit der modernen Investmentwelt. Dabei
+                        setzen wir auf Transparenz, datenbasierte Analysen und
+                        Digitalisierung.
+                      </p>
 
-              <div className={"text-center mx-auto px-2 px-md-0 mt-5"} style={{ fontSize: "24px", maxWidth: "1100px" }}>
-                {" "}
-                Exquisite Weine - Ihr Investment ist unsere{" "}
-                <span
-                  style={{
-                    fontFamily: "'Fuggles', cursive",
-                    fontSize: "1.7em",
-                    lineHeight: "60%",
-                  }}
-                >
-                  Passion
-                </span>
-                .{" "}
-              </div>
-             
-              </div>
-
+                      <div
+                        className={"text-center mx-auto px-2 px-md-0 mt-5"}
+                        style={{ fontSize: "24px", maxWidth: "1100px" }}
+                      >
+                        {" "}
+                        Exquisite Weine - Ihr Investment ist unsere{" "}
+                        <span
+                          style={{
+                            fontFamily: "'Fuggles', cursive",
+                            fontSize: "1.7em",
+                            lineHeight: "60%",
+                          }}
+                        >
+                          Passion
+                        </span>
+                        .{" "}
+                      </div>
+                    </div>
 
                     {/* <ImageFromCms
                       title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
@@ -277,7 +319,12 @@ const Index = (props) => {
                 </div>
               </div>
 
-              <div className={"row animated fadeInUp slower text-left mt-5 " + (width < 991? "text-center": "")}>
+              <div
+                className={
+                  "row animated fadeInUp slower text-left mt-5 " +
+                  (width < 991 ? "text-center" : "")
+                }
+              >
                 <h3
                   className={"col-md-8 offset-md-2 mb-3"}
                   style={{ fontSize: "18px" }}
@@ -285,116 +332,109 @@ const Index = (props) => {
                   Unsere Auszeichnungen
                 </h3>
                 <br />
-                {width > 991? 
-                <div
-                 
-                  className={
-                    "d-flex justify-content-between col-md-8 offset-md-2 pt-1 mt-1"
-                  }
-                >
+                {width > 991 ? (
                   <div
-                    style={{
-                      padding: "10px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
+                    className={
+                      "d-flex justify-content-between col-md-8 offset-md-2 pt-1 mt-1"
+                    }
                   >
-                    <Award1 height={"60px"} />
-                    {/* <ImageFromCms
+                    <div
+                      style={{
+                        padding: "10px",
+                        borderRadius: "7px",
+                        backgroundColor: "white",
+                        boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                      }}
+                    >
+                      <Award1 height={"60px"} />
+                      {/* <ImageFromCms
                       title={"award_1"}
                       height={width > 50 ? 80 : 75}
                       jpegquality={17}
                     ></ImageFromCms> */}
-                  </div>
-                  <div
-                    style={{
-                      padding: "10px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Award2 height={"60px"} />
-                    {/* <ImageFromCms
+                    </div>
+                    <div
+                      style={{
+                        padding: "10px",
+                        borderRadius: "7px",
+                        backgroundColor: "white",
+                        boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                      }}
+                    >
+                      <Award2 height={"60px"} />
+                      {/* <ImageFromCms
                       title={"award_2"}
                       height={width > 50 ? 80 : 75}
                       jpegquality={17}
                     ></ImageFromCms> */}
-                  </div>
-                  <div
-                    style={{
-                      padding: "10px",
-                      borderRadius: "7px",
-                      backgroundColor: "white",
-                      boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                    }}
-                  >
-                    <Award3 height={"60px"} />
-                    {/* <ImageFromCms
+                    </div>
+                    <div
+                      style={{
+                        padding: "10px",
+                        borderRadius: "7px",
+                        backgroundColor: "white",
+                        boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                      }}
+                    >
+                      <Award3 height={"60px"} />
+                      {/* <ImageFromCms
                       title={"award_3"}
                       height={width > 50 ? 80 : 75}
                       jpegquality={17}
                     ></ImageFromCms> */}
+                    </div>
                   </div>
-                </div>
-                :
-                <div
-                 
-                className={
-                  "text-center pt-1 mt-1 w-100 mx-5"
-                }
-              >
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "7px",
-                    backgroundColor: "white",
-                    boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                  }}
-                >
-                
-                  <Award1 height={"60px"} />
-                  {/* <ImageFromCms
+                ) : (
+                  <div className={"text-center pt-1 mt-1 w-100 mx-5"}>
+                    <div
+                      style={{
+                        padding: "10px",
+                        borderRadius: "7px",
+                        backgroundColor: "white",
+                        boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                      }}
+                    >
+                      <Award1 height={"60px"} />
+                      {/* <ImageFromCms
                     title={"award_1"}
                     height={width > 50 ? 80 : 75}
                     jpegquality={17}
                   ></ImageFromCms> */}
-                </div>
-                <br/>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "7px",
-                    backgroundColor: "white",
-                    boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                  }}
-                >
-                  <Award2 height={"60px"} />
-                  {/* <ImageFromCms
+                    </div>
+                    <br />
+                    <div
+                      style={{
+                        padding: "10px",
+                        borderRadius: "7px",
+                        backgroundColor: "white",
+                        boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                      }}
+                    >
+                      <Award2 height={"60px"} />
+                      {/* <ImageFromCms
                     title={"award_2"}
                     height={width > 50 ? 80 : 75}
                     jpegquality={17}
                   ></ImageFromCms> */}
-                </div>
-                <br/>
-                <div
-                  style={{
-                    padding: "10px",
-                    borderRadius: "7px",
-                    backgroundColor: "white",
-                    boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
-                  }}
-                >
-                  <Award3 height={"60px"} />
-                  {/* <ImageFromCms
+                    </div>
+                    <br />
+                    <div
+                      style={{
+                        padding: "10px",
+                        borderRadius: "7px",
+                        backgroundColor: "white",
+                        boxShadow: "0 1px 15px 1px rgb(39 39 39 / 10%)",
+                      }}
+                    >
+                      <Award3 height={"60px"} />
+                      {/* <ImageFromCms
                     title={"award_3"}
                     height={width > 50 ? 80 : 75}
                     jpegquality={17}
                   ></ImageFromCms> */}
-                </div>
-              </div>
-                }
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* <div style={{ overflow: "hidden" }}>
@@ -428,7 +468,9 @@ const Index = (props) => {
           >
             <div
               id={"early-access"}
-              className={"text-center bg-cta text-white mx-auto mt-3 mt-md-5"}
+              className={
+                "text-center bg-cta card text-white mx-auto mt-3 mt-md-5"
+              }
               style={{ maxWidth: "550px" }}
             >
               <h2 className={"h3 pt-4"} style={{ fontSize: "24px" }}>
@@ -465,7 +507,7 @@ const Index = (props) => {
               ) : null} */}
 
               <div
-                className={"animated fadeIn p-2 p-md-5"}
+                className={"animated fadeIn p-2  p-md-5 pt-0"}
                 // style={{ display: !showNewsletterSub ? "none" : "block" }}
               >
                 {/* <h2 className={"h3"} style={{ fontSize: "24px" }}>
@@ -473,10 +515,18 @@ const Index = (props) => {
                 </h2> */}
 
                 <HubspotNewsletterForm />
-                <span style={{fontSize: "14px", color: primary}} className={"text-primary"}>
-                  Mit Klicken auf "Einsenden" erklären Sie sich mit unserer{" "}
-                  <a href={"/legal/datenschutz"}>Datenschutzerklärung</a>{" "}
-                  einverstanden.
+                <span style={{ fontSize: "11px" }} className={"text-white"}>
+                  <span style={{ color: "red", fontSize: "14px" }}>* </span>Ich
+                  bin damit einverstanden, weitere Infomationen zum Starttermin
+                  der Website und über Berghaus & Cie zu erhalten. (Weitere
+                  informationen finden Sie in unserer{" "}
+                  <a
+                    style={{ color: "white", textDecoration: "underline" }}
+                    href={"/legal/datenschutz"}
+                  >
+                    Datenschutzerklärung
+                  </a>
+                  ).
                 </span>
               </div>
             </div>
