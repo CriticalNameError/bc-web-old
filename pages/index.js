@@ -184,25 +184,25 @@ const Index = (props) => {
                 <br />
                 <div className={"row mt-3"}>
                   <div className={"col-12 text-center animated fadeIn slower"}>
-                    <div className={"mx-auto my-auto"} style={{ position: "relative", height: "300px"}}>
-           
-
-             <div
+                    <div
+                      className={"mx-auto my-auto"}
+                      style={{ position: "relative", height: "300px" }}
+                    >
+                      <div
                         style={{
                           position: "absolute",
                           width: "100%",
                           height: "100%",
-                          
                         }}
                       >
                         <Row className={"h-100"}>
                           <Col className={"my-auto"}>
-                          <ImageFromCms
-                        title={width > 600 ? "mockup_all" : "mockup_all"}
-                        width={width < 991? 300 : 600}
-                        jpegquality={1}
-                        classes={"blurry-img d-block mx-auto"}
-                      />
+                            <ImageFromCms
+                              title={width > 600 ? "mockup_all" : "mockup_all"}
+                              width={width < 991 ? 300 : 600}
+                              jpegquality={1}
+                              classes={"blurry-img d-block mx-auto"}
+                            />
                           </Col>
                         </Row>
                       </div>
@@ -212,11 +212,28 @@ const Index = (props) => {
                           position: "absolute",
                           width: "100%",
                           height: "100%",
-                          
                         }}
                       >
                         <Row className={"h-100 white-overlay"}>
-                          <Col className={"my-auto"} style={{fontSize: "24px", display: "inline-block", transform: "rotate(-15deg)", color: "#bfac82", }}><span className={"overlay-container " + (width<991? "px-5 p-3" : "")} style={{padding: "20px 120px 20px 120px"}}>Coming Soon</span></Col>
+                          <Col
+                            className={"my-auto"}
+                            style={{
+                              fontSize: "24px",
+                              display: "inline-block",
+                              transform: "rotate(-15deg)",
+                              color: "#bfac82",
+                            }}
+                          >
+                            <span
+                              className={
+                                "overlay-container " +
+                                (width < 991 ? "px-2 p-1" : "")
+                              }
+                              style={{ padding: "20px 120px 20px 120px" }}
+                            >
+                              Coming Soon
+                            </span>
+                          </Col>
                         </Row>
                       </div>
                     </div>
@@ -518,8 +535,8 @@ const Index = (props) => {
                 <span style={{ fontSize: "11px" }} className={"text-white"}>
                   <span style={{ color: "red", fontSize: "14px" }}>* </span>Ich
                   bin damit einverstanden, weitere Infomationen zum Starttermin
-                  der Website und über Berghaus & Cie zu erhalten. (Weitere
-                  informationen finden Sie in unserer{" "}
+                  der Website und über Berghaus & Cie zu erhalten.
+                  (Informationen zum Datenschutz Sie in unserer{" "}
                   <a
                     style={{ color: "white", textDecoration: "underline" }}
                     href={"/legal/datenschutz"}

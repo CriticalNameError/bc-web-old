@@ -144,7 +144,7 @@ const ContactBar = (props) => {
                 <Mail width={"14px"} height={"14px"} strokewidth={3} />
               </span>
               <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                contact@berghaus-cie.com
+                contact@berghauscie.de
               </span>
             </a>
           </span>
