@@ -536,7 +536,7 @@ const Index = (props) => {
                   <span style={{ color: "red", fontSize: "14px" }}>* </span>Ich
                   bin damit einverstanden, weitere Infomationen zum Starttermin
                   der Website und über Berghaus & Cie zu erhalten.
-                  (Informationen zum Datenschutz Sie in unserer{" "}
+                  (Informationen zum Datenschutz finden Sie in unserer{" "}
                   <a
                     style={{ color: "white", textDecoration: "underline" }}
                     href={"/legal/datenschutz"}
