@@ -266,7 +266,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div class="row mx-auto mt-3 mt-md-5" style={{ maxWidth: "1200px" }}>
+          {/* <div class="row mx-auto mt-3 mt-md-5" style={{ maxWidth: "1200px" }}>
             <div
               className={
                 "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto " +
@@ -281,11 +281,7 @@ const AboutUs = () => {
                 jpegquality={80}
                 classes={"animated fadeIn img img-raised"}
               />
-              {/* <img
-                    src={"/assets/img/tristan_berghaus_berghaus_cie.png"}
-                    class={"img-raised"}
-                    width="350px"
-                  ></img> */}
+          
             </div>
 
             <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
@@ -326,7 +322,7 @@ const AboutUs = () => {
 
               <br />
             </div>
-          </div>
+          </div> */}
 
           <div class="row mx-auto mt-3 mt-md-5" style={{ maxWidth: "1200px" }}>
             <div
