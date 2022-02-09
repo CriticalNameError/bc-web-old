@@ -126,12 +126,12 @@ const ContactBar = (props) => {
               </span>{" "} */}
 
             <span className={"pr-5"}>
-              <a className={"text-white"} href="tel: +4915765412">
+              <a className={"text-white"} href="tel: +4922079019890">
                 <span style={{ verticalAlign: "middle" }}>
                   <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
                 </span>
                 <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                  +49 175 432 125 66
+                  +49 2207 901 98 90
                 </span>
               </a>
             </span>
@@ -139,12 +139,12 @@ const ContactBar = (props) => {
               className={"now-ui-icons ui-1_email-85 pr-2"}
               style={{ verticalAlign: "middle" }}
             ></span> */}
-            <a className={"text-white"} href="mailto: contact@berghaus-cie.com">
+            <a className={"text-white"} href="mailto: info@berghauscie.de">
               <span style={{ verticalAlign: "middle" }}>
                 <Mail width={"14px"} height={"14px"} strokewidth={3} />
               </span>
               <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                contact@berghaus-cie.com
+                info@berghauscie.de
               </span>
             </a>
           </span>
