@@ -47,6 +47,7 @@
     "react-slick": "^0.28.1",
     "react-toastify": "^6.0.8",
     "react-tooltip": "^4.2.11",
+    "react-tsparticles": "^1.41.5",
     "react-use-scroll-direction": "^0.1.0",
     "react-vertical-timeline-component": "^3.3.3",
     "reactstrap": "8.0.0",
