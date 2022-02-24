@@ -378,30 +378,7 @@ const Faq = () => {
             </Accordion>
           </div>
 
-          {/* <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
-            <span style={{ fontSize: "18px" }}>
-              Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
-              telefonisch zur Verfügung.
-              <br />
-            </span>
-            <a href={"#footer"}>
-              <button
-                className={"btn btn-primary mt-4 p-3 px-5"}
-                style={{ fontSize: "18px" }}
-              >
-                <span className={"p-1 pl-0 pr-3"}>
-                  {" "}
-                  <BComment
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                    style={{ display: "inline-block" }}
-                  />
-                </span>
-                Jetzt kontaktieren
-              </button>
-            </a>
-          </div> */}
+
 
           <h3 className={"mt-5 text-center"} style={{ fontSize: "24px" }}>
             Haftungsausschluss
@@ -428,7 +405,7 @@ const Faq = () => {
         </div>
       </div>
 
-      <LandingFooter />
+     
     </>
   );
 };

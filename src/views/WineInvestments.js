@@ -561,7 +561,7 @@ const WineInvestments = () => {
                   </div>
                 </div>
 
-                <div
+                {/* <div
                   className={
                     "section fp-auto-height fp-auto-height-responsive p-5"
                   }
@@ -574,8 +574,8 @@ const WineInvestments = () => {
                       " 100%)",
                   }}
                 >
-                  <LandingFooter />
-                </div>
+                 
+                </div> */}
               </div>
             </div>
           );

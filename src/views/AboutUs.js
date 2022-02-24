@@ -597,7 +597,7 @@ const AboutUs = () => {
                       " 100%)",
                   }}
                 >
-                  <LandingFooter />
+                
                 </div>
               </div>
             </div>

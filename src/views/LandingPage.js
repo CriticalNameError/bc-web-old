@@ -468,7 +468,7 @@ class LandingPage extends React.Component {
 
 
 
-<LandingFooter/>
+
 
 
 

@@ -87,7 +87,7 @@ const LegalPage = () => {
           </a> */}
         </div>
 
-        <LandingFooter />
+        
       </div>
     );
 };

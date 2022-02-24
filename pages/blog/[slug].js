@@ -89,7 +89,7 @@ const PostPage = () => {
           </a>
         </div>
 
-        <LandingFooter />
+       
       </div>
     );
 };

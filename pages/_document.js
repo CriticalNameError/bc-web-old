@@ -1,3 +1,4 @@
+import LandingFooter from "components/Footer/LandingFooter";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
@@ -10,6 +11,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="robots" content="noindex,nofollow"/>
           <meta charset="utf-8" />
           {/* <link rel="shortcut icon" href="../public/assets/favicon.ico" /> */}
           <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
@@ -132,7 +134,16 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+
+          <LandingFooter/>
+          <script
+          
+          src="https://nethunt.com/service/automation/forms/620a4817eab7f0495a741161?embed=script"
+          async="async"
+        ></script>{" "}
+        
         </body>
+     
       </Html>
     );
   }

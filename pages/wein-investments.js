@@ -791,7 +791,7 @@ const WineInvestments = () => {
         </div>
       </>
 
-      <LandingFooter />
+     
     </>
   );
 };

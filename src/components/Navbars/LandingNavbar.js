@@ -269,9 +269,9 @@ class LandingNavbar extends React.Component {
           </ModalBody>
         </Modal>
         <Navbar
-          color={"white"}
+          // color={"white"}
           expand="lg"
-          className={"fixed-top pt-5 d-none d-block"}
+          className={"fixed-top pt-5 d-none d-block bg-white animated"}
           id={"vert-nav"}
           style={{ top: "0px" }}
         >
@@ -293,6 +293,7 @@ class LandingNavbar extends React.Component {
                 <span
                   style={{ display: "inline-block" }}
                   className={"text-primary"}
+                  id={"logo-svg"}
                 >
                   <LogoLav width={"175px"} />
                 </span>

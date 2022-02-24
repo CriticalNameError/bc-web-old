@@ -32,7 +32,7 @@ const CtaFixed = (props) => {
     <>
 
         <div
-          className={"text-center btn bg-cta p-2"}
+          className={"text-center btn bg-cta p-2 animated fadeIn slower"}
           style={{
             cursor: "pointer",
             zIndex: "100",
@@ -40,6 +40,8 @@ const CtaFixed = (props) => {
             top: "200px",
             right: "0px",
           }}
+          id={"side-cta"}
+          
         >
           <a
             onClick={(e) => {
