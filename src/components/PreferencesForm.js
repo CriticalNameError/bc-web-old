@@ -15,10 +15,8 @@ import {
   primary_t50,
   primary_t60,
 } from "../helpers/colorScheme";
-import RangeSlider from "react-bootstrap-range-slider";
 import Favorite from "icons/favorite";
 import "bootstrap/dist/css/bootstrap.css"; // or include from a CDN
-import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
 // import "../../src/assets/scss/custom.css";
 import MoneyCoins from "icons/money-coins";
 import MoneyBag from "icons/money-bag";
