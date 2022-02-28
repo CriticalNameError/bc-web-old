@@ -202,7 +202,7 @@ const LivexPriceChart = (props) => {
         
           <div
             id={"priceChartDiv"}
-            style={{ width: "100%", height: "450px" }}
+            style={{ width: "100%", height: "100%" }}
           ></div>
         
       </>

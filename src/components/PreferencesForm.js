@@ -25,6 +25,7 @@ import Security from "icons/security";
 import Sword from "icons/sword";
 import Reading from "icons/reading";
 import Hat3 from "icons/hat-3";
+import Mail from "icons/mail";
 import CandlestickChart from "icons/candlestick-chart";
 import World1 from "icons/world-1";
 import Home from "icons/home";
@@ -231,9 +232,9 @@ const PreferencesForm = (props) => {
       document.getElementById("form-card").style.boxShadow = "none";
     } else if (step == 6) {
       console.log("... getting Portfolio!");
-    }else if (step == 7) {
-        console.log("... sending Mail!");
-      } else {
+    } else if (step == 7) {
+      console.log("... sending Mail!");
+    } else {
       document.getElementById("form-header").classList.remove("fadeOut");
       document.getElementById("form-header").classList.add("fadeIn");
       document.getElementById("form-card").style.background = "white";
@@ -339,17 +340,17 @@ const PreferencesForm = (props) => {
         setDone(true);
         setStep(step + 1);
         while (
-            mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition
+          mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition
             .length < 3
         ) {
-            mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition.push(
+          mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition.push(
             data.createPreferencesProfileFromWebsite.rec.recommendedPosition[0]
           );
         }
         setRecommendation(mutData);
         setUid(mutData.createPreferencesProfileFromWebsite.uid);
         console.log(
-            mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition[0]
+          mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition[0]
             .offer.vintage.title
         );
       },
@@ -1203,7 +1204,7 @@ const PreferencesForm = (props) => {
               className={"btn text-white"}
               style={{ background: cta, fontWeight: "bold" }}
               disabled={!dataProtection || !emailValid}
-              onClick={()=>postEmail()}
+              onClick={() => postEmail()}
             >
               Portfolio per Mail erhalten
             </button>
@@ -1402,11 +1403,16 @@ const PreferencesForm = (props) => {
             md={12}
             className={"my-auto mx-auto text-center px-0 px-md-4"}
           >
+            <span style={{ color: "white" }}>
+              <Mail width={"45px"} strokewidth={4} />
+              <br/>
+              <br/>
+            </span>
             <h3 className={"text-white"} style={{ fontSize: "21px" }}>
               Wir haben Ihnen Ihren Portfolio-Vorschlag per Mail gesendet und
               wünschen Ihnen viel Freude damit. <br />
               <br />
-              Gerne stehen wir Ihnen bei Rückfragen zur Verfügung.
+              Überprüfen Sie nun bitte Ihr Email-Postfach.
             </h3>
           </Col>
         </Row>

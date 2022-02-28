@@ -14,13 +14,28 @@ import AOS from "aos";
 import { CookiesProvider } from "react-cookie";
 import "aos/dist/aos.css";
 import HttpsRedirect from "react-https-redirect";
-import  SelectCalendylDateModal  from "../src/components/SelectCalendlyDateModal";
+import SelectCalendylDateModal from "../src/components/SelectCalendlyDateModal";
 import CtaFixed from "../src/components/CtaFixed";
 
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
   const [showCookieModal, toggleShowCookieModal] = useState(true);
   const [showCalendlyModal, toggleShowCalendlyModal] = useState(false);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
@@ -36,10 +51,23 @@ function MyApp({ Component, pageProps }) {
       />
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
-          <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal}/>
-          <SelectCalendylDateModal showModal={showCalendlyModal} toggleShowCalendlyModal={toggleShowCalendlyModal}/>
-          <LandingNavbar {...pageProps} />
-          {!showCookieModal && <Component {...pageProps} toggleShowCalendlyModal={toggleShowCalendlyModal}/>}
+          {width > 1100 ? (
+            <>
+              <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
+              <SelectCalendylDateModal
+                showModal={showCalendlyModal}
+                toggleShowCalendlyModal={toggleShowCalendlyModal}
+              />
+
+              <LandingNavbar {...pageProps} />
+            </>
+          ) : null}
+          {!showCookieModal && (
+            <Component
+              {...pageProps}
+              toggleShowCalendlyModal={toggleShowCalendlyModal}
+            />
+          )}
           {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
         </HttpsRedirect>
       </ApolloProvider>

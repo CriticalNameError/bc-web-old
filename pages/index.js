@@ -513,8 +513,7 @@ const Index = (props) => {
                 </button>
                 <Particles
                   id="tsparticles"
-                  // init={particlesInit}
-                  // loaded={particlesLoaded}
+                  
 
                   style={{ position: "absolute", left: 0, top: 0 }}
                   options={{
