@@ -101,7 +101,7 @@ const IndexMobile = () => {
           style={{ fontSize: "10px", background: "rgba(255,255,255,0.3)" }}
           onClick={() => setActive(1)}
         >
-          Zurück
+           <Undo width={"25px"} strokewidth={2}/>
         </button>
         </div>
         <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
