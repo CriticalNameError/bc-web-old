@@ -137,6 +137,22 @@
   }
 }
 
+#button1i1 {
+  display: none;
+}
+
+#button1i2 {
+  display: none;
+}
+
+#clipping1 > #blob-path1 {
+  display: none;
+}
+
+#clipping2 > #blob-path2 {
+  display: none;
+}
+
 #nh-modalWrapper {
   background-image: linear-gradient(-45deg, #906cbd, #714f9b) !important;
 }

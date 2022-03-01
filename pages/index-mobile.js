@@ -1,5 +1,5 @@
 import Liquidswipe from "react-liquidswipe";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Particles from "react-tsparticles";
 import MockupLanding from "icons/mockup_landing";
 import dynamic from "next/dynamic";
@@ -18,173 +18,204 @@ const DynamicLivexPriceChart = dynamic(
   }
 );
 
-let components = [
-  <div
-    style={{
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-
-      background: "white",
-      position: "relative",
-      height: "100%",
-    }}
-    className={"animated fadeIn row text-center my-auto pr-3"}
-  >
-    <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
-      <h1 style={{ fontSize: "35px" }}>
-        Realer Wert,
-        <br />
-        digital geklärt
-      </h1>
-      <br />
-      <div>
-        <MockupLanding width={200} />
-      </div>
-    </div>
-  </div>,
-  <div
-    style={{
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-      color: "white",
-    }}
-    className={"bg-primary row text-center my-auto "}
-  >
-    <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
-      <h1 style={{ fontSize: "35px" }}>Assets im Vergleich</h1>
-      Der Chart wird hier nicht gut funktionieren. Zu detailreich für's Handy!
-      <div style={{ width: "300px", height: "200px" }}>
-        <DynamicLivexPriceChart />
-      </div>
-    </div>
-  </div>,
-  <div
-    style={{
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-
-      background:
-        "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
-      color: "white",
-    }}
-    className={"row text-center my-auto"}
-  >
-    <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
-      <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
-      <Particles
-        id="tsparticles"
-        style={{ position: "absolute", left: 0, top: 0 }}
-        options={{
-          fullScreen: { enable: false, zIndex: 0 },
-          background: {
-            color: {
-              value: "transparent",
-            },
-          },
-          fpsLimit: 40,
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: "grab",
-              },
-              onHover: {
-                enable: true,
-                mode: "grab",
-              },
-              resize: true,
-            },
-            modes: {
-              bubble: {
-                distance: 400,
-                duration: 20,
-                opacity: 0.8,
-                size: 40,
-              },
-              push: {
-                quantity: 0,
-              },
-              repulse: {
-                distance: 200,
-                duration: 0.9,
-              },
-              grab: {
-                distance: 200,
-                duration: 1,
-                color: "white",
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: "#b29f74",
-            },
-            links: {
-              color: "#b29f74",
-              distance: 210,
-              enable: true,
-              opacity: 0.6,
-              width: 1,
-            },
-            collisions: {
-              enable: true,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outMode: "bounce",
-              random: false,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 30,
-              limit: 80,
-            },
-            opacity: {
-              value: 0.6,
-            },
-            shape: {
-              type: "circle",
-              opacity: 0.6,
-              stroke: {
-                width: 1,
-                color: "red",
-              },
-              size: {
-                value: 10,
-                random: true,
-                // anim: {
-                //   enable: true,
-                //   speed: 10,
-                //   size_min: 10,
-                //   sync: false
-                // }
-              },
-            },
-            // size: {
-            //   random: true,
-            //   value: 5,
-            // },
-          },
-          detectRetina: true,
-        }}
-      />
-    </div>
-  </div>,
-];
-
 const IndexMobile = () => {
+  const lqsw = useRef(null);
+  const [isActive, setActive] = useState(0);
+
+  let components = [
+    <div
+      id={"start"}
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+
+        background: "white",
+        position: "relative",
+        height: "100%",
+      }}
+      className={"animated fadeIn row text-center my-auto pr-3"}
+    >
+      <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
+        <h1 style={{ fontSize: "35px" }}>
+          Realer Wert,
+          <br />
+          digital geklärt
+        </h1>
+        <br />
+        <div>
+          <MockupLanding width={200} />
+        </div>
+        <button
+          className={"btn text-white"}
+          style={{ background: cta }}
+          onClick={() => setActive(2)}
+        >
+          Zur wineTelligence
+        </button>
+      </div>
+    </div>,
+    <div
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        color: "white",
+      }}
+      className={"bg-primary row text-center my-auto "}
+    >
+      <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
+        <div className={"text-left"} style={{width: "100%"}}>
+        <button
+          className={"btn  btn-sm text-white"}
+          style={{ fontSize: "10px", background: "rgba(255,255,255,0.3)" }}
+          onClick={() => setActive(0)}
+        >
+          Zurück
+        </button>
+        </div>
+        <h1 style={{ fontSize: "35px" }}>Assets im Vergleich</h1>
+        Der Chart wird hier nicht gut funktionieren. Zu detailreich für's Handy!
+        <div style={{ width: "300px", height: "200px" }}>
+          <DynamicLivexPriceChart />
+        </div>
+      </div>
+    </div>,
+    <div
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+
+        background:
+          "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
+        color: "white",
+      }}
+      className={"row text-center my-auto"}
+    >
+      <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
+      <div className={"text-left"} style={{width: "100%"}}>
+        <button
+          className={"btn  btn-sm text-white"}
+          style={{ fontSize: "10px", background: "rgba(255,255,255,0.3)" }}
+          onClick={() => setActive(1)}
+        >
+          Zurück
+        </button>
+        </div>
+        <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
+        <Particles
+          id="tsparticles"
+          style={{ position: "absolute", left: 0, top: 0 }}
+          options={{
+            fullScreen: { enable: false, zIndex: 0 },
+            background: {
+              color: {
+                value: "transparent",
+              },
+            },
+            fpsLimit: 40,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "grab",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "grab",
+                },
+                resize: true,
+              },
+              modes: {
+                bubble: {
+                  distance: 400,
+                  duration: 20,
+                  opacity: 0.8,
+                  size: 40,
+                },
+                push: {
+                  quantity: 0,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.9,
+                },
+                grab: {
+                  distance: 200,
+                  duration: 1,
+                  color: "white",
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: "#b29f74",
+              },
+              links: {
+                color: "#b29f74",
+                distance: 210,
+                enable: true,
+                opacity: 0.6,
+                width: 1,
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outMode: "bounce",
+                random: false,
+                speed: 1,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  area: 800,
+                },
+                value: 30,
+                limit: 80,
+              },
+              opacity: {
+                value: 0.6,
+              },
+              shape: {
+                type: "circle",
+                opacity: 0.6,
+                stroke: {
+                  width: 1,
+                  color: "red",
+                },
+                size: {
+                  value: 10,
+                  random: true,
+                  // anim: {
+                  //   enable: true,
+                  //   speed: 10,
+                  //   size_min: 10,
+                  //   sync: false
+                  // }
+                },
+              },
+              // size: {
+              //   random: true,
+              //   value: 5,
+              // },
+            },
+            detectRetina: true,
+          }}
+        />
+      </div>
+    </div>,
+  ];
+
   return (
     <Liquidswipe
       components={components}
+      isActive={isActive}
+      setActive={setActive}
       style={{
         height: "100vh",
         width: "100vw",
