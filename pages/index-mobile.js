@@ -222,6 +222,7 @@ const IndexMobile = () => {
         width: "100vw",
         margin: "0",
         borderRadius: "0px",
+        zIndex: 100,
       }}
     />
   );

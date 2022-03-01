@@ -16,7 +16,7 @@ import "aos/dist/aos.css";
 import HttpsRedirect from "react-https-redirect";
 import SelectCalendylDateModal from "../src/components/SelectCalendlyDateModal";
 import CtaFixed from "../src/components/CtaFixed";
-
+import MobileNavbar from "../src/components/Navbars/MobileNavbar";
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
   const [showCookieModal, toggleShowCookieModal] = useState(true);
@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }) {
 
               <LandingNavbar {...pageProps} />
             </>
-          ) : null}
+          ) : <MobileNavbar/>}
           {!showCookieModal && (
             <Component
               {...pageProps}
