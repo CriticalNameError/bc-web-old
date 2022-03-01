@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Particles from "react-tsparticles";
 import MockupLanding from "icons/mockup_landing";
 import dynamic from "next/dynamic";
+import Undo from "icons/undo";
 import {
   primary,
   primary_t80,
@@ -71,7 +72,7 @@ const IndexMobile = () => {
           style={{ fontSize: "10px", background: "rgba(255,255,255,0.3)" }}
           onClick={() => setActive(0)}
         >
-          Zurück
+          <Undo width={"25px"} strokewidth={2}/>
         </button>
         </div>
         <h1 style={{ fontSize: "35px" }}>Assets im Vergleich</h1>
