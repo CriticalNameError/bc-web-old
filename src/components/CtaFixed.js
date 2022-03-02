@@ -8,7 +8,8 @@ import { primary } from "helpers/colorScheme";
 
 import BComment from "icons/b-comment";
 
-import ATime from "../icons/a-time";
+import Atom from "../icons/atom";
+import router, { withRouter } from "next/router";
 
 const SEND_MESSAGE = gql`
   mutation sendContactFormMail(
@@ -44,17 +45,17 @@ const CtaFixed = (props) => {
           
         >
           <a
-            onClick={(e) => {
-              props.toggleShowCalendlyModal(true);
-            }}
+            // onClick={(e) => {
+            //   props.toggleShowCalendlyModal(true);
+            //}}
+            onClick={()=>{router.push("/#letsgo")}}
           >
             <div className={"text-white"} style={{ fontSize: "14px"}}>
-              Erstgespräch
-              <br />
-              vereinbaren
+              wineTelligence<br/>
+              starten
             </div>{" "}
             <div className={"p-2"}>
-            <ATime width={"30px"} height={"30px"} strokewidth={3} />
+            <Atom width={"30px"} height={"30px"} strokewidth={3} />
             </div>
           </a>
         </div>
@@ -63,4 +64,4 @@ const CtaFixed = (props) => {
   );
 };
 
-export default CtaFixed;
+export default withRouter(CtaFixed);

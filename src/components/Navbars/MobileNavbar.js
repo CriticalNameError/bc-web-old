@@ -4,7 +4,7 @@ import MenuToClose2 from "../../icons/menu-to-close-2";
 import LeftArrow from "../../icons/left-arrow";
 import { Modal, ModalBody } from "reactstrap";
 import ReactDOMServer from "react-dom/server";
-import { withRouter } from "next/router";
+import router, { withRouter } from "next/router";
 const MobileNavbar = (props) => {
   const [mode, setMode] = useState("light");
   const [showModal, toggleShowModal] = useState(false);
@@ -30,9 +30,6 @@ const MobileNavbar = (props) => {
   }, []);
 
   useEffect(() => {
-     
-          
-    
     try {
       let b1 = document.getElementById("button2i0");
       let b2 = document.getElementById("button2i1");
@@ -89,16 +86,44 @@ const MobileNavbar = (props) => {
           style={{ height: "100%" }}
         >
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
-            Weininvestments
+            <span
+              onClick={() => {
+                router.push("/wein-investments");
+                toggleShowModal(false);
+              }}
+            >
+              Weininvestments
+            </span>
           </div>
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
-            FAQ
+            <span
+              onClick={() => {
+                router.push("/faq");
+                toggleShowModal(false);
+              }}
+            >
+              FAQ
+            </span>
           </div>
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
-            Über uns
+            <span
+              onClick={() => {
+                router.push("/ueber-uns");
+                toggleShowModal(false);
+              }}
+            >
+              Über uns
+            </span>
           </div>
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
-            Blog
+            <span
+              onClick={() => {
+                router.push("/blog");
+                toggleShowModal(false);
+              }}
+            >
+              Blog
+            </span>
           </div>
           <div
             className={"text-center px-4"}
@@ -109,8 +134,33 @@ const MobileNavbar = (props) => {
               width: "100%",
             }}
           >
-            <span className={"pull-left"}>AGB </span> <span>Datenschutz </span>{" "}
-            <span className={"pull-right"}> Impressum</span>
+            <span
+              className={"pull-left"}
+              onClick={() => {
+                router.push("/legal/allgemeine-geschaeftsbedingungen");
+                toggleShowModal(false);
+              }}
+            >
+              AGB{" "}
+            </span>{" "}
+            <span
+              onClick={() => {
+                router.push("/legal/datenschutz");
+                toggleShowModal(false);
+              }}
+            >
+              Datenschutz{" "}
+            </span>{" "}
+            <span
+              className={"pull-right"}
+              onClick={() => {
+                router.push("/legal/impressum");
+                toggleShowModal(false);
+              }}
+            >
+              {" "}
+              Impressum
+            </span>
           </div>
         </ModalBody>
       </Modal>
@@ -125,8 +175,9 @@ const MobileNavbar = (props) => {
       >
         <span
           style={{ display: "inline-block", transition: "color 1.5s ease" }}
-          className={ ""}
+          className={""}
           id={"logo-svg"}
+          onClick={() => router.push("index-mobile")}
         >
           <LogoLav width={"175px"} />
         </span>

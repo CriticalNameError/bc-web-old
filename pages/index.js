@@ -41,7 +41,7 @@ import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
 import ReactFullpage from "@fullpage/react-fullpage";
-import { withRouter } from "next/router";
+import router, { withRouter } from "next/router";
 import Particles from "react-tsparticles";
 import PreferencesForm from "components/PreferencesForm";
 import RightArrow from "icons/right-arrow";
@@ -77,11 +77,14 @@ const DynamicLivexPriceChart = dynamic(
   }
 );
 
+
+
 const Index = (props) => {
+
   const [showModal, toggleShowModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   const [section, setSection] = useState("welcome");
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(1300);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
@@ -89,6 +92,11 @@ const Index = (props) => {
     props.cookieConsentVisible
   );
   const [inputPosition, setInputPosition] = useState(50);
+  useEffect(()=>{
+    if(width < 1100){
+      router.push("/index-mobile")
+    }
+  },[width])
   useEffect(() => {
     toggleCookieConsentVisible(props.cookieConsentVisible);
   }, [props.cookieConsentVisible]);
