@@ -180,6 +180,11 @@
     display:none;
 }
 
+#menu-modal > .modal-content{
+  position:fixed;
+  height: 100%;
+}
+
 #clipping1 > #blob-path1{
     display: none;
 }

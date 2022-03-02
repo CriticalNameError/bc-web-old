@@ -59,8 +59,10 @@ const MobileNavbar = (props) => {
     <>
       <Modal
         className={"modal-xl modal-dialog-centered m-0 "}
+        style={{height: "100%"}}
         isOpen={showModal}
         toggle={() => toggleShowModal(false)}
+        id={"menu-modal"}
       >
         <i
           className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
@@ -79,7 +81,7 @@ const MobileNavbar = (props) => {
         ></i>
         <ModalBody
           className={"p-4 animated fadeInBottom"}
-          style={{ height: height - 3 + "px" }}
+          style={{ height: "100%"}}
         >
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
             Weininvestments
