@@ -53,7 +53,7 @@ const IndexMobile = () => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+      
 
         background: "white",
         position: "relative",
@@ -84,7 +84,7 @@ const IndexMobile = () => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "100%",
         color: "white",
       }}
       id={"facts"}
@@ -102,7 +102,7 @@ const IndexMobile = () => {
         <button
           className={"btn  btn-sm text-white p-2"}
           style={{ fontSize: "10px", borderRadius: "30px", background: "rgba(255,255,255,0.3)" }}
-          onClick={() => setActive(1)}
+          onClick={() => setActive(0)}
         >
            <ArrowLeft width={"25px"} strokewidth={3}/>
         </button>
@@ -112,7 +112,7 @@ const IndexMobile = () => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "100%",
 
         background:
           "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
@@ -246,7 +246,8 @@ const IndexMobile = () => {
       isActive={isActive}
       setActive={setActive}
       style={{
-        height: "100vh",
+        position: "fixed",
+        height: "100%",
         width: "100vw",
         margin: "0",
         borderRadius: "0px",
