@@ -77,10 +77,7 @@ const DynamicLivexPriceChart = dynamic(
   }
 );
 
-
-
 const Index = (props) => {
-
   const [showModal, toggleShowModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
   const [section, setSection] = useState("welcome");
@@ -92,24 +89,30 @@ const Index = (props) => {
     props.cookieConsentVisible
   );
   const [inputPosition, setInputPosition] = useState(50);
-  useEffect(()=>{
-    if(width < 1100){
-      router.push("/index-mobile")
+  useEffect(() => {
+    if (width < 1100) {
+      router.push("/index-mobile");
     }
-  },[width])
+  }, [width]);
   useEffect(() => {
     toggleCookieConsentVisible(props.cookieConsentVisible);
   }, [props.cookieConsentVisible]);
   useEffect(() => {
+    try{
     toggleFinishedLoadingDocument(true);
     let vn = document.getElementById("vert-nav");
     let ct = document.getElementById("contact");
+    
     document.getElementById("side-cta").style.display = "none";
+   
     vn.style.boxShadow = "none";
     vn.classList.toggle("bg-white");
     vn.classList.remove("pt-5");
     vn.classList.remove("py-5");
     ct.classList.add("d-none");
+  }catch(error){
+    console.log(error)
+  }
   }, []);
 
   useEffect(
@@ -118,7 +121,11 @@ const Index = (props) => {
       if (section == "letsgo") {
         let vn = document.getElementById("vert-nav");
         vn.classList.add("fadeOut");
-        vn.style.zIndex = "-1";
+        try {
+          vn.style.zIndex = "-1";
+        } catch (error) {
+          console.log(error);
+        }
 
         window.fullpage_api.setAllowScrolling(false, "down");
         window.fullpage_api.setAllowScrolling(false, "up");
@@ -127,7 +134,11 @@ const Index = (props) => {
         window.fullpage_api.setAllowScrolling(true, "down");
         window.fullpage_api.setAllowScrolling(true, "up");
         vn.classList.add("fadeIn");
-        vn.style.zIndex = "100";
+        try {
+          vn.style.zIndex = "100";
+        } catch (error) {
+          console.log(error);
+        }
       }
 
       if (section == "welcome") {
@@ -223,7 +234,14 @@ const Index = (props) => {
       licenseKey={"YOUR_KEY_HERE"}
       scrollingSpeed={1000} /* Options here */
       sectionsColor={["transparent", "transparent", "#bfac82"]}
-      anchors={["welcome", "facts", "letsgo", "faq", "book-appointment", "fp-footer"]}
+      anchors={[
+        "welcome",
+        "facts",
+        "letsgo",
+        "faq",
+        "book-appointment",
+        "fp-footer",
+      ]}
       // autoScrolling={false}
       touchSensitivity={5}
       onLeave={(a, b, c) => {
@@ -521,8 +539,6 @@ const Index = (props) => {
                 </button>
                 <Particles
                   id="tsparticles"
-                  
-
                   style={{ position: "absolute", left: 0, top: 0 }}
                   options={{
                     fullScreen: { enable: false, zIndex: 0 },
@@ -854,14 +870,18 @@ const Index = (props) => {
                 </center>
               </div>
 
-              <div className={"section"} >
-                <div id={"calendly-slide"} className={"animated text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}>
+              <div className={"section"}>
+                <div
+                  id={"calendly-slide"}
+                  className={"animated text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}
+                >
                   <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
                     <span className={"pr-2"}></span>
-                  Gespräch vereinbaren
+                    Gespräch vereinbaren
                   </h3>
                   <p className={"mb-3"} style={{ fontSize: "18px" }}>
-                    Wünschen Sie eine persönliche Beratung? Gerne beantorten wir Ihnre Fragen im Rahmen eines Beratungstermins.
+                    Wünschen Sie eine persönliche Beratung? Gerne beantorten wir
+                    Ihnre Fragen im Rahmen eines Beratungstermins.
                   </p>
 
                   <SelectCalendlyDate width={"60%"} />
