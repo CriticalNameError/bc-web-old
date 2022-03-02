@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }) {
 
               <LandingNavbar {...pageProps} />
             </>
-          ) : <MobileNavbar/>}
+          ) : <MobileNavbar {...pageProps}/>}
           {!showCookieModal && (
             <Component
               {...pageProps}

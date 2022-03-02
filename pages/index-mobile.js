@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Particles from "react-tsparticles";
 import MockupLanding from "icons/mockup_landing";
 import dynamic from "next/dynamic";
-import Undo from "icons/undo";
+import ArrowLeft from "icons/arrow-left";
+import {useRouter} from 'next/router'
 import {
   primary,
   primary_t80,
@@ -22,7 +23,30 @@ const DynamicLivexPriceChart = dynamic(
 const IndexMobile = () => {
   const lqsw = useRef(null);
   const [isActive, setActive] = useState(0);
+  const router = useRouter()
 
+  useEffect(()=>{
+    if(isActive == 0){
+      document.getElementById("logo-svg").classList.remove("text-white")
+      document.getElementById("logo-svg").classList.add("text-primary")
+      document.getElementById("menu-svg").classList.remove("text-white")
+      document.getElementById("menu-svg").classList.add("text-primary")
+
+    }else if(isActive == 1){
+      document.getElementById("logo-svg").classList.add("text-white")
+      document.getElementById("logo-svg").classList.remove("text-primary")
+      document.getElementById("menu-svg").classList.add("text-white")
+      document.getElementById("menu-svg").classList.remove("text-primary")
+
+    }else{
+      document.getElementById("logo-svg").classList.remove("text-white")
+      document.getElementById("logo-svg").classList.add("text-primary")
+      document.getElementById("menu-svg").classList.remove("text-white")
+      document.getElementById("menu-svg").classList.add("text-primary")
+    }
+    
+  }, [isActive])
+  
   let components = [
     <div
       id={"start"}
@@ -63,24 +87,26 @@ const IndexMobile = () => {
         height: "100vh",
         color: "white",
       }}
+      id={"facts"}
       className={"bg-primary row text-center my-auto "}
     >
       <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
-        <div className={"text-left"} style={{width: "100%"}}>
-        <button
-          className={"btn  btn-sm text-white"}
-          style={{ fontSize: "10px", background: "rgba(255,255,255,0.3)" }}
-          onClick={() => setActive(0)}
-        >
-          <Undo width={"25px"} strokewidth={2}/>
-        </button>
-        </div>
+        
         <h1 style={{ fontSize: "35px" }}>Assets im Vergleich</h1>
         Der Chart wird hier nicht gut funktionieren. Zu detailreich für's Handy!
         <div style={{ width: "300px", height: "200px" }}>
           <DynamicLivexPriceChart />
         </div>
       </div>
+      <div className={"text-left mt-auto mx-4"} style={{width: "100%"}}>
+        <button
+          className={"btn  btn-sm text-white p-2"}
+          style={{ fontSize: "10px", borderRadius: "30px", background: "rgba(255,255,255,0.3)" }}
+          onClick={() => setActive(1)}
+        >
+           <ArrowLeft width={"25px"} strokewidth={3}/>
+        </button>
+        </div>
     </div>,
     <div
       style={{
@@ -92,18 +118,11 @@ const IndexMobile = () => {
           "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
         color: "white",
       }}
+      id={"winetelligence"}
       className={"row text-center my-auto"}
     >
       <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
-      <div className={"text-left"} style={{width: "100%"}}>
-        <button
-          className={"btn  btn-sm text-white"}
-          style={{ fontSize: "10px", background: "rgba(255,255,255,0.3)" }}
-          onClick={() => setActive(1)}
-        >
-           <Undo width={"25px"} strokewidth={2}/>
-        </button>
-        </div>
+  
         <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
         <Particles
           id="tsparticles"
@@ -209,6 +228,15 @@ const IndexMobile = () => {
           }}
         />
       </div>
+      <div className={"text-left mt-auto mx-4"} style={{width: "100%"}}>
+        <button
+          className={"btn  btn-sm text-white p-2"}
+          style={{ fontSize: "10px", borderRadius: "30px", background: "rgba(255,255,255,0.3)" }}
+          onClick={() => setActive(1)}
+        >
+           <ArrowLeft width={"25px"} strokewidth={3}/>
+        </button>
+        </div>
     </div>,
   ];
 

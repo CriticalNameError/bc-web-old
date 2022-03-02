@@ -4,6 +4,7 @@ import MenuToClose2 from "../../icons/menu-to-close-2";
 import LeftArrow from "../../icons/left-arrow";
 import { Modal, ModalBody } from "reactstrap";
 import ReactDOMServer from "react-dom/server";
+import { withRouter } from "next/router";
 const MobileNavbar = (props) => {
   const [mode, setMode] = useState("light");
   const [showModal, toggleShowModal] = useState(false);
@@ -29,6 +30,9 @@ const MobileNavbar = (props) => {
   }, []);
 
   useEffect(() => {
+     
+          
+    
     try {
       let b1 = document.getElementById("button2i0");
       let b2 = document.getElementById("button2i1");
@@ -59,10 +63,11 @@ const MobileNavbar = (props) => {
     <>
       <Modal
         className={"modal-xl modal-dialog-centered m-0 "}
-        style={{height: "100%"}}
+        style={{ height: "100%" }}
         isOpen={showModal}
         toggle={() => toggleShowModal(false)}
         id={"menu-modal"}
+        backdrop={false}
       >
         <i
           className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
@@ -81,7 +86,7 @@ const MobileNavbar = (props) => {
         ></i>
         <ModalBody
           className={"p-4 animated fadeInBottom"}
-          style={{ height: "100%"}}
+          style={{ height: "100%" }}
         >
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
             Weininvestments
@@ -119,16 +124,16 @@ const MobileNavbar = (props) => {
         }}
       >
         <span
-          style={{ display: "inline-block" }}
-          className={"text-primary"}
+          style={{ display: "inline-block", transition: "color 1.5s ease" }}
+          className={ ""}
           id={"logo-svg"}
         >
           <LogoLav width={"175px"} />
         </span>
         <span onClick={() => toggleShowModal(true)}>
           <span
-            style={{ display: "inline-block" }}
-            className={"text-primary"}
+            style={{ display: "inline-block", transition: "color 1.5s ease" }}
+            className={""}
             id={"menu-svg"}
           >
             <MenuToClose2 width={"32px"} strokewidth={2} />
@@ -139,4 +144,4 @@ const MobileNavbar = (props) => {
   );
 };
 
-export default MobileNavbar;
+export default withRouter(MobileNavbar);
