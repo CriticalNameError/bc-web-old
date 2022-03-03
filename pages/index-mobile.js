@@ -5,6 +5,7 @@ import MockupLanding from "icons/mockup_landing";
 import dynamic from "next/dynamic";
 import ArrowLeft from "icons/arrow-left";
 import {useRouter} from 'next/router'
+import ReactFullpage from "@fullpage/react-fullpage";
 import {
   primary,
   primary_t80,
@@ -22,17 +23,18 @@ const DynamicLivexPriceChart = dynamic(
 
 const IndexMobile = () => {
   const lqsw = useRef(null);
-  const [isActive, setActive] = useState(0);
+  const [isActive, setActive] = useState("welcome");
   const router = useRouter()
+  const [section, setSection] = useState("welcome");
 
   useEffect(()=>{
-    if(isActive == 0){
+    if(isActive == "chart"){
       document.getElementById("logo-svg").classList.remove("text-white")
       document.getElementById("logo-svg").classList.add("text-primary")
       document.getElementById("menu-svg").classList.remove("text-white")
       document.getElementById("menu-svg").classList.add("text-primary")
 
-    }else if(isActive == 1){
+    }else if(isActive == "letsgo"){
       document.getElementById("logo-svg").classList.add("text-white")
       document.getElementById("logo-svg").classList.remove("text-primary")
       document.getElementById("menu-svg").classList.add("text-white")
@@ -51,17 +53,16 @@ const IndexMobile = () => {
     <div
       id={"start"}
       style={{
-        justifyContent: "center",
-        alignItems: "center",
+        
       
 
         background: "white",
-        position: "relative",
-        height: "100%",
+       
+       
       }}
-      className={"animated fadeIn row text-center my-auto pr-3"}
+      className={"section animated fadeIn row text-center m-0"}
     >
-      <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
+      <div className={"col-12 "}>
         <h1 style={{ fontSize: "35px" }}>
           Realer Wert,
           <br />
@@ -82,15 +83,14 @@ const IndexMobile = () => {
     </div>,
     <div
       style={{
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
+       
+      
         color: "white",
       }}
       id={"facts"}
-      className={"bg-primary row text-center my-auto "}
+      className={"section bg-primary row text-center  m-0"}
     >
-      <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
+      <div className={"col-12 "} >
         
         <h1 style={{ fontSize: "35px" }}>Assets im Vergleich</h1>
         Der Chart wird hier nicht gut funktionieren. Zu detailreich für's Handy!
@@ -110,18 +110,16 @@ const IndexMobile = () => {
     </div>,
     <div
       style={{
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-
+       
+       
         background:
           "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
         color: "white",
       }}
       id={"winetelligence"}
-      className={"row text-center my-auto"}
+      className={"row section text-center m-0"}
     >
-      <div className={"col-12 my-auto"} style={{ position: "absolute" }}>
+      <div className={"col-12 "} >
   
         <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
         <Particles
@@ -241,20 +239,35 @@ const IndexMobile = () => {
   ];
 
   return (
-    <Liquidswipe
-      components={components}
-      isActive={isActive}
-      setActive={setActive}
-      style={{
-        position: "fixed",
-        height: "100%",
-        width: "100vw",
-        margin: "0",
-        borderRadius: "0px",
-        zIndex: 100,
-      }}
-    />
-  );
-};
+    <ReactFullpage
+    //fullpage options
+    licenseKey={"YOUR_KEY_HERE"}
+    scrollingSpeed={1000} /* Options here */
+    sectionsColor={["transparent", "transparent", "#bfac82"]}
+    anchors={[
+      "welcome",
+      "chart",
+      "letsgo",
+      // "faq",
+      // "book-appointment",
+      // "fp-footer",
+    ]}
+    // autoScrolling={false}
+    touchSensitivity={5}
+    // onLeave={(a, b, c) => {
+    //   setActive(b["anchor"]);
+    //   console.log(a, b["anchor"], c);
+    // }}
+    render={({ state, fullpageApi }) => {
+      return (
+        <>
+          <ReactFullpage.Wrapper>
+          {components}
+          </ReactFullpage.Wrapper>
+        </>
+      )
+      
+}}
+/>)}
 
 export default IndexMobile;

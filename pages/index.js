@@ -299,22 +299,14 @@ const Index = (props) => {
                         </div>
 
                         <div className={"pl-md-4 mt-2 animated fadeIn slower"}>
-                          {/* <h1 className={" "} style={{ fontSize: "24px" }}>
-                            Investieren Sie in einen genussvollen Sachwert{" "}
-                            <br /> mit einem attraktiven Renditepotential.
-                          </h1>{" "}
-                          <br /> */}
+                         
                           <div className={"row mt-3"}>
                             <div
                               className={
                                 "col-12 text-right animated fadeIn slower"
                               }
                             >
-                              {/* <MockupLanding
-                                width={
-                                  width > 991 ? (width > 1500 ? 235 : 205) : 200
-                                }
-                              /> */}
+                            
                               <div
                                 className={"text-center mx-auto"}
                                 style={{ width: "100%" }}
@@ -324,7 +316,7 @@ const Index = (props) => {
                                   muted={true}
                                   playing={isPlaying}
                                   //  light={"https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"}
-
+                                  controls={true}
                                   width={"50%"}
                                   height={"400px"}
                                   className={"mx-auto"}
