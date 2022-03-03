@@ -45,6 +45,7 @@ import router, { withRouter } from "next/router";
 import Particles from "react-tsparticles";
 import PreferencesForm from "components/PreferencesForm";
 import RightArrow from "icons/right-arrow";
+import ReactPlayer from "react-player";
 import {
   Accordion,
   AccordionItem,
@@ -52,6 +53,7 @@ import {
   AccordionItemButton,
   AccordionItemHeading,
 } from "react-accessible-accordion";
+
 const songs = [
   {
     url: "path/to/mp3",
@@ -82,6 +84,7 @@ const Index = (props) => {
   const [markup, changeMarkup] = useState(null);
   const [section, setSection] = useState("welcome");
   const [width, setWidth] = useState(1300);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
@@ -293,89 +296,94 @@ const Index = (props) => {
                             {" "}
                             Realer Wert, digital geklärt.
                           </h1>
-                          {/* <span
-                            style={{
-                              display: "inline-block",
-                              minHeight: "130px",
-                              marginTop: "150px",
-                              filter:
-                                "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.07))",
-                            }}
-                            className={"text-primary"}
-                          >
-                            <LogoSublineLavendel
-                              width={width > 500 ? "400px" : "250px"}
-                            />
-                          </span> */}
                         </div>
 
-                        <div
-                          // className={
-                          //   " pl-md-4 animate__animated animate__delay-1s animate__fadeInLeft animate__slow"
-                          // }
-                          className={"pl-md-4 mt-2 animated fadeIn slower"}
-                        >
-                          <h1 className={" "} style={{ fontSize: "24px" }}>
+                        <div className={"pl-md-4 mt-2 animated fadeIn slower"}>
+                          {/* <h1 className={" "} style={{ fontSize: "24px" }}>
                             Investieren Sie in einen genussvollen Sachwert{" "}
                             <br /> mit einem attraktiven Renditepotential.
                           </h1>{" "}
-                          <br />
+                          <br /> */}
                           <div className={"row mt-3"}>
                             <div
                               className={
-                                "col-6 text-right animated fadeIn slower"
+                                "col-12 text-right animated fadeIn slower"
                               }
                             >
-                              <MockupLanding
+                              {/* <MockupLanding
                                 width={
                                   width > 991 ? (width > 1500 ? 235 : 205) : 200
                                 }
-                              />
-                            </div>
-                            <div className={"col-6 text-left mt-md-4"}>
+                              /> */}
                               <div
-                                className={"text-left"}
+                                className={"text-center mx-auto"}
+                                style={{ width: "100%" }}
+                              >
+                                <ReactPlayer
+                                  url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
+                                  muted={true}
+                                  playing={isPlaying}
+                                  //  light={"https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"}
+                                  controls
+                                  width={"50%"}
+                                  height={"400px"}
+                                  className={"mx-auto"}
+                                />
+
+<div className={"text-center mt-md-4 px-5 mx-auto py-3"} style={{width: "50%"}}>
+                              <div
+                                className={
+                                  "text-center d-flex justify-content-between"
+                                }
                                 style={{
-                                  fontSize: "18px",
-                                  width: "400px",
+                                  fontSize: "15px",
+          
                                   lineHeight: "1.5em",
                                 }}
                               >
-                                <br />
-                                <CheckSingle
-                                  width={"25px"}
-                                  height={"30px"}
-                                  strokewidth={3}
-                                />{" "}
-                                ohne spezielle Vorkenntnisse <br />
-                                <CheckSingle
-                                  width={"25px"}
-                                  height={"30px"}
-                                  strokewidth={3}
-                                />{" "}
-                                sparen Sie Ihre wertvolle Zeit <br />
-                                <CheckSingle
-                                  width={"25px"}
-                                  height={"30px"}
-                                  strokewidth={3}
-                                />{" "}
-                                durchschnittliche Rendite 7 % p.a. <br />
-                                <br />
+                                <span>
+                                  <CheckSingle
+                                    width={"25px"}
+                                    height={"30px"}
+                                    strokewidth={3}
+                                  />{" "}
+                                  Zugang zu den weltbesten Weinen
+                                </span>
+                                <span>
+                                  <CheckSingle
+                                    width={"25px"}
+                                    height={"30px"}
+                                    strokewidth={3}
+                                  />{" "}
+                                  KI-unterstützter Prozess
+                                </span>
+                                <span>
+                                  <CheckSingle
+                                    width={"25px"}
+                                    height={"30px"}
+                                    strokewidth={3}
+                                  />{" "}
+                                  durchschnittliche Rendite 10 % p.a.
+                                </span>
                               </div>
 
                               {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                              <button
-                                onClick={() =>
-                                  props.toggleShowCalendlyModal(true)
-                                }
-                                className={
-                                  "mr-auto btn bg-cta p-2 animated infinite pulse slower"
-                                }
-                                style={{ fontSize: "18px" }}
-                              >
-                                Erstgespräch vereinbaren
-                              </button>
+                              <div>
+                                <button
+                                  onClick={() => fullpageApi.moveTo(3)}
+                                  className={
+                                    "mr-auto btn bg-cta p-2  animated infinite pulse slower"
+                                  }
+                                  style={{ fontSize: "18px" }}
+                                >
+                                  wineTelligence starten
+                                </button>
+                              </div>
                             </div>
+
+                              </div>
+                            </div>
+                           
                             <br />
                           </div>
                           <div
@@ -384,25 +392,9 @@ const Index = (props) => {
                             // }
                             className={"animated fadeIn slower"}
                           >
-                            {/* <ImageFromCms
-                    title={width > 600 ? "mockup_mobile" : "mockup_mobile"}
-                    width={width > 991 ? (width > 1500 ? 475 : 295) : 250}
-                    jpegquality={30}
-                  /> */}
+                         
                           </div>
-                          {/* <span>
-                  <a href={"https://weindepot.berghaus-cie.com/register"}>
-
-                    <button
-                      className={
-                        "mx-auto btn bg-cta p-3 px-5 animated infinite pulse slower"
-                      }
-                      style={{ fontSize: "18px" }}
-                    >
-                      Erstgespräch vereinbaren
-                    </button>
-                  </a>
-                </span> */}
+                        
                           <div className={"p-4"}>
                             <a
                               className={"move-down"}

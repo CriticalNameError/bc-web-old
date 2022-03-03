@@ -172,6 +172,14 @@
   }
 }
 
+.react-player__play-icon {
+  border-color: transparent transparent transparent $cta-color!important;
+}
+
+.react-player__shadow{
+  background: white!important
+}
+
 #button1i1{
     display:none;
 }
