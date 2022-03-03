@@ -98,21 +98,21 @@ const Index = (props) => {
     toggleCookieConsentVisible(props.cookieConsentVisible);
   }, [props.cookieConsentVisible]);
   useEffect(() => {
-    try{
-    toggleFinishedLoadingDocument(true);
-    let vn = document.getElementById("vert-nav");
-    let ct = document.getElementById("contact");
-    
-    document.getElementById("side-cta").style.display = "none";
-   
-    vn.style.boxShadow = "none";
-    vn.classList.toggle("bg-white");
-    vn.classList.remove("pt-5");
-    vn.classList.remove("py-5");
-    ct.classList.add("d-none");
-  }catch(error){
-    console.log(error)
-  }
+    try {
+      toggleFinishedLoadingDocument(true);
+      let vn = document.getElementById("vert-nav");
+      let ct = document.getElementById("contact");
+
+      document.getElementById("side-cta").style.display = "none";
+
+      vn.style.boxShadow = "none";
+      vn.classList.toggle("bg-white");
+      vn.classList.remove("pt-5");
+      vn.classList.remove("py-5");
+      ct.classList.add("d-none");
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   useEffect(
@@ -130,11 +130,12 @@ const Index = (props) => {
         window.fullpage_api.setAllowScrolling(false, "down");
         window.fullpage_api.setAllowScrolling(false, "up");
       } else {
-        vn.classList.remove("fadeOut");
-        window.fullpage_api.setAllowScrolling(true, "down");
-        window.fullpage_api.setAllowScrolling(true, "up");
-        vn.classList.add("fadeIn");
         try {
+          vn.classList.remove("fadeOut");
+          window.fullpage_api.setAllowScrolling(true, "down");
+          window.fullpage_api.setAllowScrolling(true, "up");
+          vn.classList.add("fadeIn");
+
           vn.style.zIndex = "100";
         } catch (error) {
           console.log(error);
@@ -144,57 +145,73 @@ const Index = (props) => {
       if (section == "welcome") {
         try {
           document.getElementById("welcome-slide").classList.remove("fadeOut");
+          document
+            .getElementById("welcome-slide")
+            .classList.add("d-block", "fadeIn");
         } catch {
           console.log("not fadedOut yet");
         }
-        document
-          .getElementById("welcome-slide")
-          .classList.add("d-block", "fadeIn");
       } else {
-        document.getElementById("welcome-slide").classList.remove("fadeIn");
+        try {
+          document.getElementById("welcome-slide").classList.remove("fadeIn");
 
-        document.getElementById("welcome-slide").classList.add("fadeOut");
+          document.getElementById("welcome-slide").classList.add("fadeOut");
+        } catch (error) {
+          console.log(error);
+        }
       }
 
       if (section == "facts") {
         try {
           document.getElementById("facts-slide").classList.remove("fadeOut");
+          document
+            .getElementById("facts-slide")
+            .classList.add("d-block", "fadeIn");
         } catch {
           console.log("not fadedOut yet");
         }
-        document
-          .getElementById("facts-slide")
-          .classList.add("d-block", "fadeIn");
       } else {
-        document.getElementById("facts-slide").classList.remove("fadeIn");
+        try {
+          document.getElementById("facts-slide").classList.remove("fadeIn");
 
-        document.getElementById("facts-slide").classList.add("fadeOut");
+          document.getElementById("facts-slide").classList.add("fadeOut");
+        } catch (error) {
+          console.log(error);
+        }
       }
 
       if (section == "faq") {
         try {
           document.getElementById("faq-slide").classList.remove("fadeOut");
+          document.getElementById("faq-slide").classList.add("fadeIn");
         } catch {
           console.log("not fadedOut yet");
         }
-        document.getElementById("faq-slide").classList.add("fadeIn");
       } else {
-        document.getElementById("faq-slide").classList.remove("fadeIn");
+        try {
+          document.getElementById("faq-slide").classList.remove("fadeIn");
 
-        document.getElementById("faq-slide").classList.add("fadeOut");
+          document.getElementById("faq-slide").classList.add("fadeOut");
+        } catch (error) {
+          console.log(error);
+        }
       }
 
       if (section == "book-appointment") {
         try {
           document.getElementById("calendly-slide").classList.remove("fadeOut");
+          document.getElementById("calendly-slide").classList.add("fadeIn");
         } catch {
           console.log("not fadedOut yet");
         }
-        document.getElementById("calendly-slide").classList.add("fadeIn");
       } else {
-        document.getElementById("calendly-slide").classList.remove("fadeIn");
+        try {
+          document.getElementById("calendly-slide").classList.remove("fadeIn");
 
-        document.getElementById("calendly-slide").classList.add("fadeOut");
+          document.getElementById("calendly-slide").classList.add("fadeOut");
+        } catch (error) {
+          console.log(error);
+        }
       }
 
       //  console.log(window.fullpage_api.getActiveSection())
