@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Particles from "react-tsparticles";
 import MockupLanding from "icons/mockup_landing";
 import dynamic from "next/dynamic";
-import ArrowLeft from "icons/arrow-left";
+import UpArrow from "icons/up-arrow";
 import {useRouter} from 'next/router'
 import ReactFullpage from "@fullpage/react-fullpage";
 import {
@@ -98,13 +98,13 @@ const IndexMobile = () => {
           <DynamicLivexPriceChart />
         </div>
       </div>
-      <div className={"text-left mt-auto mx-4"} style={{width: "100%"}}>
+      <div className={"text-centermt-auto mx-4"} style={{width: "100%", position: "absolute", bottom:"20px"}}>
         <button
           className={"btn  btn-sm text-white p-2"}
           style={{ fontSize: "10px", borderRadius: "30px", background: "rgba(255,255,255,0.3)" }}
           onClick={() => setActive(0)}
         >
-           <ArrowLeft width={"25px"} strokewidth={3}/>
+           <UpArrow width={"25px"} strokewidth={3}/>
         </button>
         </div>
     </div>,
@@ -232,7 +232,7 @@ const IndexMobile = () => {
           style={{ fontSize: "10px", borderRadius: "30px", background: "rgba(255,255,255,0.3)" }}
           onClick={() => setActive(1)}
         >
-           <ArrowLeft width={"25px"} strokewidth={3}/>
+           <UpArrow width={"25px"} strokewidth={3}/>
         </button>
         </div>
     </div>,
@@ -242,7 +242,9 @@ const IndexMobile = () => {
     <ReactFullpage
     //fullpage options
     licenseKey={"YOUR_KEY_HERE"}
-    scrollingSpeed={1000} /* Options here */
+    scrollBar={true}
+    autoScrolling={true}
+    //scrollingSpeed={1000} /* Options here */
     sectionsColor={["transparent", "transparent", "#bfac82"]}
     anchors={[
       "welcome",
