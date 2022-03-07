@@ -483,7 +483,7 @@ const Index = (props) => {
                 <center id="facts-slide" className={"animated d-none"}>
                   <h2>Assets im Vergleich</h2>
                   <div style={{ width: "800px", height: "500px" }}>
-                    <DynamicLivexPriceChart />
+                    <DynamicLivexPriceChart height={"500px"}/>
                   </div>
                 </center>
               </div>

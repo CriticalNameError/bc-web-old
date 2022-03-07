@@ -80,8 +80,8 @@ const IndexMobile = () => {
         <div>
           <ReactPlayer
             url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
-            muted={true}
-            playing={isPlaying}
+            muted={false}
+            //playing={isPlaying}
             light={
               "https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"
             }
@@ -100,7 +100,7 @@ const IndexMobile = () => {
       </div>
       <div
         className={"text-center mt-auto"}
-        style={{ width: "100%", bottom: "20px" }}
+        style={{ width: "100%", bottom: "50px" }}
       >
         <a href={"#facts"}>
           <button
@@ -126,13 +126,13 @@ const IndexMobile = () => {
         color: "white",
       }}
       id={"facts"}
-      className={"section snapscroll-section bg-primary row text-center  m-0"}
+      className={"section snapscroll-section bg-primary text-white row text-center  m-0"}
     >
       <div className={"col-12 my-auto"}>
-        <h1 style={{ fontSize: "35px" }}>Assets im Vergleich</h1>
-        Der Chart wird hier nicht gut funktionieren. Zu detailreich für's Handy!
+        <h1 style={{ fontSize: "35px" }}>Wein kann sich sehen lassen</h1>
+       
         <div style={{ width: "300px", height: "200px" }}>
-          <DynamicLivexPriceChart />
+          <DynamicLivexPriceChart mode={"light"} height={"60vh"}/>
         </div>
       </div>
       <div
@@ -167,7 +167,7 @@ const IndexMobile = () => {
         className={"text-center mb-auto"}
         style={{ width: "100%", bottom: "20px" }}
       >
-        <a href={"#facts"}>
+        {/* <a href={"#facts"}>
           <button
             className={"btn  btn-sm text-white p-2"}
             style={{
@@ -179,7 +179,7 @@ const IndexMobile = () => {
           >
             <UpArrow width={"25px"} strokewidth={3} />
           </button>
-        </a>
+        </a> */}
       </div>
       <div className={"col-12 my-auto"}>
         <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
@@ -287,7 +287,7 @@ const IndexMobile = () => {
           }}
         />
       </div>
-      <div className={"text-center mt-auto"} style={{ width: "100%" }}>
+      {/* <div className={"text-center mt-auto"} style={{ width: "100%" }}>
         <button
           className={"btn  btn-sm text-white p-2"}
           style={{
@@ -299,7 +299,7 @@ const IndexMobile = () => {
         >
           <UpArrow width={"25px"} strokewidth={3} />
         </button>
-      </div>
+      </div> */}
     </div>,
   ];
 
