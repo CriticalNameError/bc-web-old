@@ -100,7 +100,7 @@ const IndexMobile = () => {
       </div>
       <div
         className={"text-center mt-auto"}
-        style={{ width: "100%", bottom: "50px" }}
+        style={{ width: "100%", bottom: "70px" }}
       >
         <a href={"#facts"}>
           <button
