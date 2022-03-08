@@ -494,7 +494,7 @@ const PreferencesForm = (props) => {
           <Col
             xs={3}
             md={3}
-            className={"my-auto mx-auto text-center px-0 px-md-4"}
+            className={"my-auto mx-auto text-center px-0 px-md-4 order-first"}
           >
             <div className={"mx-auto text-primary"} style={{ height: "50px" }}>
               <Favorite
@@ -513,7 +513,7 @@ const PreferencesForm = (props) => {
               Weinliebhaber
             </span>
           </Col>
-          <Col xs={6} md={6} className={"my-auto mx-auto"}>
+          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -597,7 +597,7 @@ const PreferencesForm = (props) => {
           <Col
             xs={3}
             md={3}
-            className={"my-auto mx-auto text-center px-0 px-md-4"}
+            className={"my-auto mx-auto text-center px-0 px-md-4 order-first"}
           >
             <div className={"mx-auto text-primary"} style={{ height: "50px" }}>
               <FingerSnap
@@ -616,7 +616,7 @@ const PreferencesForm = (props) => {
               5 Jahren
             </span>
           </Col>
-          <Col xs={6} md={6} className={"my-auto mx-auto"}>
+          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -671,7 +671,7 @@ const PreferencesForm = (props) => {
           <Col
             xs={3}
             md={3}
-            className={"my-auto mx-auto text-center px-0 px-md-4"}
+            className={"my-auto mx-auto text-center px-0 px-md-4 order-first"}
           >
             <div className={"mx-auto text-primary"} style={{ height: "50px" }}>
               <Security
@@ -694,7 +694,7 @@ const PreferencesForm = (props) => {
               orientiert
             </span>
           </Col>
-          <Col xs={6} md={6} className={"my-auto mx-auto"}>
+          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -1025,7 +1025,7 @@ const PreferencesForm = (props) => {
           <Col
             xs={3}
             md={3}
-            className={"my-auto mx-auto text-center px-0 px-md-4"}
+            className={"my-auto mx-auto text-center px-0 px-md-4 order-first"}
           >
             <div className={"mx-auto text-primary"} style={{ height: "50px" }}>
               <BottleWine width={"20px"} strokewidth={3} />
@@ -1041,7 +1041,7 @@ const PreferencesForm = (props) => {
               {"2000€"}
             </span>
           </Col>
-          <Col xs={6} md={6} className={"my-auto mx-auto"}>
+          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -1440,6 +1440,7 @@ const PreferencesForm = (props) => {
         maxWidth: "1000px",
         zIndex: 3000,
         transition: "background-color 0.25s ease 0s",
+        position: "relative"
       }}
     >
       <div
