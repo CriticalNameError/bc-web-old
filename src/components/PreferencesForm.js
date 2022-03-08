@@ -354,7 +354,7 @@ const PreferencesForm = (props) => {
             .length < 3
         ) {
           mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition.push(
-            data.createPreferencesProfileFromWebsite.rec.recommendedPosition[0]
+            mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition[0]
           );
         }
         setRecommendation(mutData);
@@ -1264,7 +1264,7 @@ const PreferencesForm = (props) => {
                   slidesToScroll: 2,
                 }}
               >
-                {recommendation ? (
+                {recommendation && recommendation.createPreferencesProfileFromWebsite ? (
                   recommendation.createPreferencesProfileFromWebsite.rec.recommendedPosition.map(
                     (item, index) => {
                       return (
