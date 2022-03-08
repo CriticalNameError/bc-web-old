@@ -299,14 +299,12 @@ const Index = (props) => {
                         </div>
 
                         <div className={"pl-md-4 mt-2 animated fadeIn slower"}>
-                         
                           <div className={"row mt-3"}>
                             <div
                               className={
                                 "col-12 text-right animated fadeIn slower"
                               }
                             >
-                            
                               <div
                                 className={"text-center mx-auto"}
                                 style={{ width: "100%" }}
@@ -483,7 +481,7 @@ const Index = (props) => {
                 <center id="facts-slide" className={"animated d-none"}>
                   <h2>Assets im Vergleich</h2>
                   <div style={{ width: "800px", height: "500px" }}>
-                    <DynamicLivexPriceChart height={"500px"}/>
+                    <DynamicLivexPriceChart height={"500px"} />
                   </div>
                 </center>
               </div>
@@ -522,8 +520,7 @@ const Index = (props) => {
                     className={"text-white pb-5"}
                     style={{ fontSize: "24px" }}
                   >
-                    Ihr unverbindlicher Portfoliovorschlag in wenigen Sekunden -
-                    .
+                    Ihr unverbindlicher Portfoliovorschlag in wenigen Sekunden.
                     <br /> Künstliche neuronaler Netze - echte Weine.
                   </h3>
                   <PreferencesForm />

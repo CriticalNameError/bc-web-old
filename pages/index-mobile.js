@@ -137,7 +137,7 @@ const IndexMobile = () => {
         <h1 style={{ fontSize: "35px" }}>Wein ist Top-Performer</h1>
 
         <div className={"mx-auto px-2"} style={{ width: "90vw", height: "200px" }}>
-          <DynamicLivexPriceChart mode={"light"} height={"60vh"} />
+          <DynamicLivexPriceChart mode={"light"} height={"60vh"} mobile={true}/>
         </div>
       </div>
       <div

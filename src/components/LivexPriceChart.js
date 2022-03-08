@@ -4,7 +4,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
 am4core.options.autoSetClassName = true;
-import {cta} from "helpers/colorScheme"
+import { cta } from "helpers/colorScheme";
 
 const chart_data = [
   {
@@ -198,10 +198,6 @@ const LivexPriceChart = (props) => {
     valueAxis.renderer.labels.template.fill = am4core.color("#fff");
     valueAxis.renderer.labels.template.text = "{valueY}";
     valueAxis.title.text = "Index (Basis = 100)";
-   
-    
-
-    
 
     // Create series # DAX
     let series1 = chart.series.push(new am4charts.LineSeries());
@@ -212,7 +208,7 @@ const LivexPriceChart = (props) => {
     // let strokeGradient = new am4core.LinearGradient();
     // strokeGradient.addColor("#eee")
     // strokeGradient.addColor("#fff")
-    series1.name="DAX";
+    series1.name = "DAX";
     series1.stroke = am4core.color("#a0b9de");
     series1.tensionX = 0.77;
     series1.tooltip.getFillFromObject = false;
@@ -226,7 +222,7 @@ const LivexPriceChart = (props) => {
     series2.dataFields.valueY = "value";
     series2.dataFields.dateX = "year";
     series2.strokeWidth = 1.5;
-    series2.name="S&P 500";
+    series2.name = "S&P 500";
     series2.id = "price-history-series2";
     // let strokeGradient = new am4core.LinearGradient();
     // strokeGradient.addColor("#eee")
@@ -255,7 +251,7 @@ const LivexPriceChart = (props) => {
     series.tooltip.background.fill = am4core.color("#fff");
     series.tooltip.label.fill = am4core.color("#714f9b");
     series.tooltip.label.fontSize = 17;
-    series.name="Liv-Ex 1000 Fine Wine";
+    series.name = "Liv-Ex 1000 Fine Wine";
 
     // bullet is added because we add tooltip to a bullet for it to change color
     // let bullet = series.bullets.push(new am4charts.Bullet());
@@ -278,10 +274,12 @@ const LivexPriceChart = (props) => {
     // scrollbarX.series.push(series);
     // chart.scrollbarX = scrollbarX;
     chart.legend = new am4charts.Legend();
-    chart.legend.position = "bottom"
-    chart.cursor = new am4charts.XYCursor();
+    chart.legend.position = "bottom";
+    if (!props.mobile) {
+      chart.cursor = new am4charts.XYCursor();
+    }
 
-    if(props.mode == "light"){
+    if (props.mode == "light") {
       valueAxis.title.fill = am4core.color("#fff");
       categoryAxis.title.fill = am4core.color("#fff");
       valueAxis.renderer.labels.template.fill = am4core.color("#fff");
@@ -289,11 +287,10 @@ const LivexPriceChart = (props) => {
       categoryAxis.renderer.grid.template.stroke = am4core.color("#fff");
       categoryAxis.renderer.labels.template.fill = am4core.color("#fff");
       chart.legend.labels.template.fill = am4core.color("#fff");
-      chart.legend.valueLabels.template.fill = am4core.color("#fff"); 
+      chart.legend.valueLabels.template.fill = am4core.color("#fff");
       series.tooltip.background.fill = am4core.color(cta);
       series.stroke = am4core.color(cta);
-     
-    }else{
+    } else {
       valueAxis.title.fill = am4core.color("#2c2c2c");
       categoryAxis.title.fill = am4core.color("#2c2c2c");
       valueAxis.renderer.labels.template.fill = am4core.color("#2c2c2c");
@@ -301,14 +298,17 @@ const LivexPriceChart = (props) => {
       categoryAxis.renderer.grid.template.stroke = am4core.color("#2c2c2c");
       categoryAxis.renderer.labels.template.fill = am4core.color("#2c2c2c");
       chart.legend.labels.template.fill = am4core.color("#2c2c2c");
-      chart.legend.valueLabels.template.fill = am4core.color("#2c2c2c"); 
+      chart.legend.valueLabels.template.fill = am4core.color("#2c2c2c");
     }
     //chart.cursor.snapToSeries = [series]
   }, []);
 
   return (
     <>
-      <div id={"priceChartDiv"} style={{ width: "100%", height: props.height }}></div>
+      <div
+        id={"priceChartDiv"}
+        style={{ width: "100%", height: props.height }}
+      ></div>
     </>
   );
 };

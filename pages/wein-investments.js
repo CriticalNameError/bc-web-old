@@ -248,7 +248,7 @@ const WineInvestments = () => {
                 Stabile Wertentwicklung bei geringer Volatilität
               </p>
               <div className={"card p-4 pb-5"}>
-                <DynamicLivexPriceChart />
+                <DynamicLivexPriceChart height={"450px"}/>
                 {/* <WineDaxSap /> */}
               </div>
             </div>
