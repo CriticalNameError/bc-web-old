@@ -1226,7 +1226,7 @@ const PreferencesForm = (props) => {
             md={12}
             className={"my-auto mx-auto text-center px-0 px-md-4"}
           >
-            <div className={"my-auto animated fadeIn"}>
+            <div className={"my-auto animated fadeIn text-dark"}>
               <div className={"card p-3 animated fadeIn text-center"}>
                 <h3 style={{ fontSize: "21px" }} className={"mb-2"}>
                   Ihr individueller Portfolio-Vorschlag ist fertig!{" "}
@@ -1260,8 +1260,8 @@ const PreferencesForm = (props) => {
                   autoplaySpeed: 3000,
                   speed: 1000,
                   easing: "sine",
-                  slidesToShow: 3,
-                  slidesToScroll: 2,
+                  slidesToShow: props.mobile? 1 : 3,
+                  slidesToScroll: props.mobile? 1 : 2,
                 }}
               >
                 {recommendation && recommendation.createPreferencesProfileFromWebsite ? (
@@ -1321,6 +1321,7 @@ const PreferencesForm = (props) => {
                                 {item.offer.vintage.wine.image && (
                                   <img
                                     className={"mx-auto"}
+                                    style={props.mobile? {height: "120px"} : {}}
                                     src={
                                       item.offer.vintage.wine.image.rendition
                                         .url
