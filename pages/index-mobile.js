@@ -7,6 +7,7 @@ import UpArrow from "icons/up-arrow";
 import SwipeUp from "icons/swipe-up";
 import { useRouter } from "next/router";
 import ReactFullpage from "@fullpage/react-fullpage";
+import PreferencesForm from "components/PreferencesForm";
 import {
   primary,
   primary_t80,
@@ -28,16 +29,18 @@ const IndexMobile = () => {
   const [isActive, setActive] = useState("welcome");
   const router = useRouter();
   const [section, setSection] = useState("welcome");
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.add("fadeIn");
       document.getElementById("swipe-up-btn").classList.remove("invisible");
-    }, 2500)
+    }, 2500);
     setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.remove("fadeIn");
-      document.getElementById("swipe-up-btn").classList.add("bounce", "infinite");
+      document
+        .getElementById("swipe-up-btn")
+        .classList.add("bounce", "infinite");
     }, 3500);
   }, []);
 
@@ -71,7 +74,7 @@ const IndexMobile = () => {
       }
     >
       <div className={"col-12"}>
-        <h1 style={{ fontSize: "35px", marginTop: "60px" }}>
+        <h1 style={{ fontSize: "35px", marginTop: "70px" }}>
           Realer Wert,
           <br />
           digital geklärt
@@ -81,10 +84,10 @@ const IndexMobile = () => {
           <ReactPlayer
             url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
             muted={false}
-            //playing={isPlaying}
-            light={
-              "https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"
-            }
+            playing={isPlaying}
+            // light={
+            //   "https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"
+            // }
             controls={true}
             width={"90%"}
             height={"260px"}
@@ -99,13 +102,13 @@ const IndexMobile = () => {
         </a>
       </div>
       <div
-        className={"text-center mt-auto"}
+        className={"text-center"}
         style={{ width: "100%", bottom: "70px" }}
       >
         <a href={"#facts"}>
           <button
             id={"swipe-up-btn"}
-            className={"btn  btn-sm p-2 animated invisible slower"}
+            className={"btn btn-sm p-2 animated invisible slower"}
             style={{
               fontSize: "10px",
               borderRadius: "30px",
@@ -126,13 +129,15 @@ const IndexMobile = () => {
         color: "white",
       }}
       id={"facts"}
-      className={"section snapscroll-section bg-primary text-white row text-center  m-0"}
+      className={
+        "section snapscroll-section bg-primary text-white row text-center  m-0"
+      }
     >
       <div className={"col-12 my-auto"}>
-        <h1 style={{ fontSize: "35px" }}>Wein kann sich sehen lassen</h1>
-       
-        <div style={{ width: "300px", height: "200px" }}>
-          <DynamicLivexPriceChart mode={"light"} height={"60vh"}/>
+        <h1 style={{ fontSize: "35px" }}>Wein ist Top-Performer</h1>
+
+        <div className={"mx-auto px-2"} style={{ width: "90vw", height: "200px" }}>
+          <DynamicLivexPriceChart mode={"light"} height={"60vh"} />
         </div>
       </div>
       <div
@@ -163,26 +168,9 @@ const IndexMobile = () => {
       id={"winetelligence"}
       className={"row section snapscroll-section text-center m-0"}
     >
-      <div
-        className={"text-center mb-auto"}
-        style={{ width: "100%", bottom: "20px" }}
-      >
-        {/* <a href={"#facts"}>
-          <button
-            className={"btn  btn-sm text-white p-2"}
-            style={{
-              fontSize: "10px",
-              borderRadius: "30px",
-              background: "rgba(255,255,255,0.3)",
-            }}
-            href={"#facts"}
-          >
-            <UpArrow width={"25px"} strokewidth={3} />
-          </button>
-        </a> */}
-      </div>
       <div className={"col-12 my-auto"}>
-        <h1 style={{ fontSize: "35px" }}>wineTelligence</h1>
+        {/* <h1 style={{ fontSize: "35px" }}>wineTelligence</h1> */}
+        <PreferencesForm mobile={true} />
         <Particles
           id="tsparticles"
           style={{ position: "absolute", left: 0, top: 0 }}

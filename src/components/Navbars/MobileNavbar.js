@@ -66,6 +66,14 @@ const MobileNavbar = (props) => {
         id={"menu-modal"}
         backdrop={false}
       >
+        <span
+              style={{ transition: "color 1.5s ease" }}
+              className={"pull-left text-primary pl-3 pt-2"}
+              id={"logo-svg"}
+              onClick={() => router.push("index-mobile")}
+            >
+              <LogoLav width={"175px"} />
+            </span>
         <i
           className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
           style={{
@@ -73,8 +81,8 @@ const MobileNavbar = (props) => {
             fontSize: "30px",
             cursor: "pointer",
             position: "absolute",
-            top: "15px",
-            right: "15px",
+            top: "0.5rem",
+            right: "1.0rem",
             zIndex: "100",
           }}
           onClick={(e) => {
@@ -85,6 +93,8 @@ const MobileNavbar = (props) => {
           className={"p-4 animated fadeInBottom"}
           style={{ height: "100%" }}
         >
+         
+
           <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
             <span
               onClick={() => {

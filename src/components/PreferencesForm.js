@@ -224,6 +224,7 @@ const PreferencesForm = (props) => {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   useEffect(() => {
+    try{
     if (step == 5) {
       document.getElementById("form-header").classList.remove("fadeIn");
       document.getElementById("form-header").classList.add("fadeOut");
@@ -237,10 +238,15 @@ const PreferencesForm = (props) => {
     } else {
       document.getElementById("form-header").classList.remove("fadeOut");
       document.getElementById("form-header").classList.add("fadeIn");
+      if(!props.mobile){
       document.getElementById("form-card").style.background = "white";
       document.getElementById("form-card").style.boxShadow =
         "0 1px 15px 1px rgb(39 39 39 / 10%)";
+      }
     }
+  }catch(error){
+    console.log(error)
+  }
   }, [step]);
 
   useEffect(() => {
@@ -321,6 +327,7 @@ const PreferencesForm = (props) => {
   }, [investmentSumTunerPosition]);
 
   useEffect(() => {
+    try{
     function watchWheel() {
       document.getElementById("letsgo-slide").addEventListener("wheel", logit);
     }
@@ -330,6 +337,9 @@ const PreferencesForm = (props) => {
         .getElementById("letsgo-slide")
         .removeEventListener("wheel", logit);
     };
+  }catch(error){
+    console.log(error)
+  }
   });
 
   const [postPreferences, { mutData, mutLoading, mutError }] = useMutation(
@@ -477,9 +487,9 @@ const PreferencesForm = (props) => {
 
   const Form = {
     0: (
-      <ModalBody className={"px-4 mt-4 animated fadeIn slow"}>
-        <h5 style={{ fontSize: "21px" }}>Ich bin....</h5>
-        <br />
+      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
+        <h5 style={{ fontSize: "21px" }}>Ich bin...</h5>
+       
         <Row style={{ height: "228px" }} className={"mb-5"}>
           <Col
             xs={3}
@@ -559,9 +569,9 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     4: (
-      <ModalBody className={"px-4 mt-4 animated fadeIn slow"}>
+      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
         <h5 style={{ fontSize: "21px" }}>Mein Anlagehorizont liegt bei....</h5>
-        <br />
+        
         <div
           className={"text-center"}
           style={{ fontSize: "28px", fontWeight: "200" }}
@@ -654,9 +664,9 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     2: (
-      <ModalBody className={"px-4 mt-4 animated fadeIn slow"}>
+      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
         <h5 style={{ fontSize: "21px" }}>Ich investiere im Allgemeinen....</h5>
-        <br />
+        
         <Row style={{ height: "228px" }} className={"mb-5"}>
           <Col
             xs={3}
@@ -736,9 +746,9 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     1: (
-      <ModalBody className={"px-4 mt-4"}>
+      <ModalBody className={"px-4 " + (props.mobile? "": "mt-4")}>
         <h5 style={{ fontSize: "21px" }}>Ich habe bereits Erfahrung mit....</h5>
-        <br />
+       
         <Row style={{ height: "90px" }} className={"mb-5"}>
           <Col
             xs={4}
@@ -987,11 +997,11 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     3: (
-      <ModalBody className={"px-4 mt-4 animated fadeIn slow"}>
+      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
         <h5 style={{ fontSize: "21px" }}>
           So viel würde ich in Wein investieren....
         </h5>
-        <br />
+       
         <div
           className={"text-center"}
           style={{ fontSize: "28px", fontWeight: "200" }}
@@ -1084,7 +1094,7 @@ const PreferencesForm = (props) => {
     ),
     5: (
       <ModalBody
-        className={"px-4 mt-4 animated fadeIn slow"}
+        className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}
         style={{ height: "70%" }}
       >
         <Row style={{ height: "100%" }} className={"mb-5"}>
@@ -1422,12 +1432,12 @@ const PreferencesForm = (props) => {
 
   return (
     <div
-      className={"card p-4"}
+      className={props.mobile? "" : "card p-4"}
       id={"form-card"}
       style={{
-        height: "580px",
+        height: props.mobile? "" : "580px",
         maxWidth: "1000px",
-        zIndex: 100,
+        zIndex: 3000,
         transition: "background-color 0.25s ease 0s",
       }}
     >
@@ -1439,7 +1449,7 @@ const PreferencesForm = (props) => {
           <span
             class="play-btn mx-auto"
             href="#"
-            style={{ transform: "scale(1.2)", marginTop: "-70px" }}
+            style={{ transform: props.mobile? "scale(0.9)" : "scale(1.2)", marginTop: props.mobile? "" : "-70px", marginBottom: props.mobile? "-15px": ""}}
           >
             <div
               style={{
