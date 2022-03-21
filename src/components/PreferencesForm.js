@@ -224,29 +224,29 @@ const PreferencesForm = (props) => {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   useEffect(() => {
-    try{
-    if (step == 5) {
-      document.getElementById("form-header").classList.remove("fadeIn");
-      document.getElementById("form-header").classList.add("fadeOut");
+    try {
+      if (step == 5) {
+        document.getElementById("form-header").classList.remove("fadeIn");
+        document.getElementById("form-header").classList.add("fadeOut");
 
-      document.getElementById("form-card").style.background = "transparent";
-      document.getElementById("form-card").style.boxShadow = "none";
-    } else if (step == 6) {
-      console.log("... getting Portfolio!");
-    } else if (step == 7) {
-      console.log("... sending Mail!");
-    } else {
-      document.getElementById("form-header").classList.remove("fadeOut");
-      document.getElementById("form-header").classList.add("fadeIn");
-      if(!props.mobile){
-      document.getElementById("form-card").style.background = "white";
-      document.getElementById("form-card").style.boxShadow =
-        "0 1px 15px 1px rgb(39 39 39 / 10%)";
+        document.getElementById("form-card").style.background = "transparent";
+        document.getElementById("form-card").style.boxShadow = "none";
+      } else if (step == 6) {
+        console.log("... getting Portfolio!");
+      } else if (step > 7) {
+        console.log("... sending Mail!");
+      } else {
+        document.getElementById("form-header").classList.remove("fadeOut");
+        document.getElementById("form-header").classList.add("fadeIn");
+        if (!props.mobile) {
+          document.getElementById("form-card").style.background = "white";
+          document.getElementById("form-card").style.boxShadow =
+            "0 1px 15px 1px rgb(39 39 39 / 10%)";
+        }
       }
+    } catch (error) {
+      console.log(error);
     }
-  }catch(error){
-    console.log(error)
-  }
   }, [step]);
 
   useEffect(() => {
@@ -327,19 +327,21 @@ const PreferencesForm = (props) => {
   }, [investmentSumTunerPosition]);
 
   useEffect(() => {
-    try{
-    function watchWheel() {
-      document.getElementById("letsgo-slide").addEventListener("wheel", logit);
+    try {
+      function watchWheel() {
+        document
+          .getElementById("letsgo-slide")
+          .addEventListener("wheel", logit);
+      }
+      watchWheel();
+      return () => {
+        document
+          .getElementById("letsgo-slide")
+          .removeEventListener("wheel", logit);
+      };
+    } catch (error) {
+      console.log(error);
     }
-    watchWheel();
-    return () => {
-      document
-        .getElementById("letsgo-slide")
-        .removeEventListener("wheel", logit);
-    };
-  }catch(error){
-    console.log(error)
-  }
   });
 
   const [postPreferences, { mutData, mutLoading, mutError }] = useMutation(
@@ -354,7 +356,8 @@ const PreferencesForm = (props) => {
             .length < 3
         ) {
           mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition.push(
-            mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition[0]
+            mutData.createPreferencesProfileFromWebsite.rec
+              .recommendedPosition[0]
           );
         }
         setRecommendation(mutData);
@@ -386,8 +389,14 @@ const PreferencesForm = (props) => {
 
     {
       onCompleted: (data) => {
+        if(data.requestRecommendationLinkWithEmail.success == true){
         console.log(data);
         setStep(step + 1);
+      } else if(data.requestRecommendationLinkWithEmail.errors[0] == "Email requested already"){
+        setStep(step + 2);
+      }else{
+        setStep(step + 3);
+      }
       },
       variables: {
         email: email,
@@ -487,9 +496,11 @@ const PreferencesForm = (props) => {
 
   const Form = {
     0: (
-      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
+      <ModalBody
+        className={"px-4 animated fadeIn slow " + (props.mobile ? "" : "mt-4")}
+      >
         <h5 style={{ fontSize: "21px" }}>Ich bin...</h5>
-       
+
         <Row style={{ height: "228px" }} className={"mb-5"}>
           <Col
             xs={3}
@@ -513,7 +524,11 @@ const PreferencesForm = (props) => {
               Weinliebhaber
             </span>
           </Col>
-          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
+          <Col
+            xs={12}
+            md={6}
+            className={"my-auto mx-auto order-last order-md-first"}
+          >
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -569,9 +584,11 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     4: (
-      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
+      <ModalBody
+        className={"px-4 animated fadeIn slow " + (props.mobile ? "" : "mt-4")}
+      >
         <h5 style={{ fontSize: "21px" }}>Mein Anlagehorizont liegt bei....</h5>
-        
+
         <div
           className={"text-center"}
           style={{ fontSize: "28px", fontWeight: "200" }}
@@ -616,7 +633,11 @@ const PreferencesForm = (props) => {
               5 Jahren
             </span>
           </Col>
-          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
+          <Col
+            xs={12}
+            md={6}
+            className={"my-auto mx-auto order-last order-md-first"}
+          >
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -664,9 +685,11 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     2: (
-      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
+      <ModalBody
+        className={"px-4 animated fadeIn slow " + (props.mobile ? "" : "mt-4")}
+      >
         <h5 style={{ fontSize: "21px" }}>Ich investiere im Allgemeinen....</h5>
-        
+
         <Row style={{ height: "228px" }} className={"mb-5"}>
           <Col
             xs={3}
@@ -694,7 +717,11 @@ const PreferencesForm = (props) => {
               orientiert
             </span>
           </Col>
-          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
+          <Col
+            xs={12}
+            md={6}
+            className={"my-auto mx-auto order-last order-md-first"}
+          >
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -746,9 +773,9 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     1: (
-      <ModalBody className={"px-4 " + (props.mobile? "": "mt-4")}>
+      <ModalBody className={"px-4 " + (props.mobile ? "" : "mt-4")}>
         <h5 style={{ fontSize: "21px" }}>Ich habe bereits Erfahrung mit....</h5>
-       
+
         <Row style={{ height: "90px" }} className={"mb-5"}>
           <Col
             xs={4}
@@ -997,11 +1024,13 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     3: (
-      <ModalBody className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}>
+      <ModalBody
+        className={"px-4 animated fadeIn slow " + (props.mobile ? "" : "mt-4")}
+      >
         <h5 style={{ fontSize: "21px" }}>
           So viel würde ich in Wein investieren....
         </h5>
-       
+
         <div
           className={"text-center"}
           style={{ fontSize: "28px", fontWeight: "200" }}
@@ -1041,7 +1070,11 @@ const PreferencesForm = (props) => {
               {"2000€"}
             </span>
           </Col>
-          <Col xs={12} md={6} className={"my-auto mx-auto order-last order-md-first"}>
+          <Col
+            xs={12}
+            md={6}
+            className={"my-auto mx-auto order-last order-md-first"}
+          >
             <Input
               style={{ border: "0" }}
               id="exampleRange"
@@ -1094,7 +1127,7 @@ const PreferencesForm = (props) => {
     ),
     5: (
       <ModalBody
-        className={"px-4 animated fadeIn slow " + (props.mobile? "" : "mt-4")}
+        className={"px-4 animated fadeIn slow " + (props.mobile ? "" : "mt-4")}
         style={{ height: "70%" }}
       >
         <Row style={{ height: "100%" }} className={"mb-5"}>
@@ -1260,11 +1293,12 @@ const PreferencesForm = (props) => {
                   autoplaySpeed: 3000,
                   speed: 1000,
                   easing: "sine",
-                  slidesToShow: props.mobile? 1 : 3,
-                  slidesToScroll: props.mobile? 1 : 2,
+                  slidesToShow: props.mobile ? 1 : 3,
+                  slidesToScroll: props.mobile ? 1 : 2,
                 }}
               >
-                {recommendation && recommendation.createPreferencesProfileFromWebsite ? (
+                {recommendation &&
+                recommendation.createPreferencesProfileFromWebsite ? (
                   recommendation.createPreferencesProfileFromWebsite.rec.recommendedPosition.map(
                     (item, index) => {
                       return (
@@ -1321,7 +1355,9 @@ const PreferencesForm = (props) => {
                                 {item.offer.vintage.wine.image && (
                                   <img
                                     className={"mx-auto"}
-                                    style={props.mobile? {height: "120px"} : {}}
+                                    style={
+                                      props.mobile ? { height: "120px" } : {}
+                                    }
                                     src={
                                       item.offer.vintage.wine.image.rendition
                                         .url
@@ -1416,8 +1452,8 @@ const PreferencesForm = (props) => {
           >
             <span style={{ color: "white" }}>
               <Mail width={"45px"} strokewidth={4} />
-              <br/>
-              <br/>
+              <br />
+              <br />
             </span>
             <h3 className={"text-white"} style={{ fontSize: "21px" }}>
               Wir haben Ihnen Ihren Portfolio-Vorschlag per Mail gesendet und
@@ -1429,18 +1465,71 @@ const PreferencesForm = (props) => {
         </Row>
       </ModalBody>
     ),
+    8: (
+      <ModalBody
+        className={"px-4 mt-4 animated fadeIn slow"}
+        style={{ height: "70%" }}
+      >
+        <Row style={{ height: "100%" }} className={"mb-5"}>
+          <Col
+            xs={12}
+            md={12}
+            className={"my-auto mx-auto text-center px-0 px-md-4"}
+          >
+            <span style={{ color: "white" }}></span>
+            <h3 className={"text-white"} style={{ fontSize: "18px" }}>
+              Sie haben die wineTelligence bereits in der Vergangenheit genutzt!
+              <br />
+              <br />
+              Benötigen Sie eine individuelle Beratung? <br />
+              <br />
+              Nehmen Sie gerne Kontakt zu uns auf.
+            </h3>
+          </Col>
+        </Row>
+      </ModalBody>
+    ),
+    9: (
+      <ModalBody
+        className={"px-4 mt-4 animated fadeIn slow"}
+        style={{ height: "70%" }}
+      >
+        <Row style={{ height: "100%" }} className={"mb-5"}>
+          <Col
+            xs={12}
+            md={12}
+            className={"my-auto mx-auto text-center px-0 px-md-4"}
+          >
+            <span style={{ color: "white" }}></span>
+            <h3 className={"text-white"} style={{ fontSize: "21px" }}>
+              Sie haben bereits einen Account bei uns.
+              <br />
+              <br />
+              Loggen Sie sich bitte ein, um die wineTelligence zu nutzen.
+              <br />
+              <br />
+              <a href={"https://weindepot.berghauscie.de"} target={"_blank"}>
+                <button className={"btn bg-primary text-white"}>
+                  Zum Weindpot
+                </button>
+              </a>
+            </h3>
+          </Col>
+        </Row>
+      </ModalBody>
+    ),
   };
 
   return (
     <div
-      className={props.mobile? "" : "card p-4"}
+      className={props.mobile ? "" : "card p-4"}
       id={"form-card"}
       style={{
-        height: props.mobile? "" : "580px",
+        height: props.mobile ? "" : "580px",
         maxWidth: "1000px",
-        zIndex: 3000,
+        zIndex: 1000,
         transition: "background-color 0.25s ease 0s",
-        position: "relative"
+        position: "relative",
       }}
     >
       <div
@@ -1451,7 +1540,11 @@ const PreferencesForm = (props) => {
           <span
             class="play-btn mx-auto"
             href="#"
-            style={{ transform: props.mobile? "scale(0.9)" : "scale(1.2)", marginTop: props.mobile? "" : "-70px", marginBottom: props.mobile? "-15px": ""}}
+            style={{
+              transform: props.mobile ? "scale(0.9)" : "scale(1.2)",
+              marginTop: props.mobile ? "" : "-70px",
+              marginBottom: props.mobile ? "-15px" : "",
+            }}
           >
             <div
               style={{
