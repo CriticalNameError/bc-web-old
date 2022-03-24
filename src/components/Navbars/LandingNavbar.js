@@ -139,12 +139,12 @@ const ContactBar = (props) => {
               className={"now-ui-icons ui-1_email-85 pr-2"}
               style={{ verticalAlign: "middle" }}
             ></span> */}
-            <a className={"text-white"} href="mailto: contact@berghaus-cie.com">
+            <a className={"text-white"} href="mailto: info@berghauscie.de">
               <span style={{ verticalAlign: "middle" }}>
                 <Mail width={"14px"} height={"14px"} strokewidth={3} />
               </span>
               <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                contact@berghauscie.de
+                info@berghauscie.de
               </span>
             </a>
           </span>
