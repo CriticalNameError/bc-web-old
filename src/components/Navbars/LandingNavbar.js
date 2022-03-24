@@ -126,12 +126,12 @@ const ContactBar = (props) => {
               </span>{" "} */}
 
             <span className={"pr-3 pr-md-5"}>
-              <a className={"text-white"} href="tel: +4915167310664">
+              <a className={"text-white"} href="tel: +4917655136856">
                 <span style={{ verticalAlign: "middle" }}>
                   <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
                 </span>
                 <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                +49 2207 90198 91
+                +49 176 55136856
                 </span>
               </a>
             </span>
@@ -273,7 +273,7 @@ class LandingNavbar extends React.Component {
           expand="lg"
           className={"fixed-top pt-5 d-none d-block"}
           id={"vert-nav"}
-          style={{ top: "0px" }}
+          style={{ top: "0px", zIndex:500, }}
         >
           <ContactBar />
           <Container fluid>

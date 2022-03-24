@@ -137,7 +137,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-
           {/* <script
             type="text/javascript"
             id="hs-script-loader"
@@ -145,8 +144,10 @@ class MyDocument extends Document {
             defer
             src="//js.hs-scripts.com/8965709.js"
           ></script> */}
-
-  
+          <script
+            src="https://nethunt.com/service/automation/forms/623b0d58dc083f179d345bf7?embed=script"
+            async="async"
+          ></script>{" "}
         </body>
       </Html>
     );

@@ -42,6 +42,7 @@ import MockupLanding from "icons/mockup_landing";
 import PlayAudio from "components/PlayPodcast";
 import OfferPromotionSlider from "components/OfferPromotionSlider";
 import { Row, Col } from "reactstrap";
+import ContactUs from "components/ContactUs";
 const songs = [
   {
     url: "path/to/mp3",
@@ -486,22 +487,25 @@ const Index = (props) => {
             <div
               id={"early-access"}
               className={
-                "text-center bg-cta card text-white mx-auto mt-3 mt-md-5"
+                "text-center bg-primary card text-white mx-auto mt-3 mt-md-5"
               }
               style={{ maxWidth: "550px" }}
             >
               <h2 className={"h3 pt-4"} style={{ fontSize: "24px" }}>
-                Coming Soon
+                Interesse an einem Weininvestment?
               </h2>
               <p
-                className={"mx-auto px-2 px-md-5"}
+                className={"mx-auto px-2 mb-0"}
                 style={{ fontSize: "14px", maxWidth: "450px" }}
               >
-                Sie wollen erfahren, wann wir online gehen und wie es mit
-                Berghaus & Cie. weitergeht?
+                Haben wir Ihre Neugier geweckt? Wir würden uns sehr freuen, Sie
+                kennenzulernen.
                 <br />
                 <br />
-                Wir informieren Sie gerne vorab per E-Mail.
+                Dafür eignet sich ein individuelles Beratungsgespräch am besten.
+                Darin klären wir die wichtigsten Fragen und erarbeiten auf der
+                Basis Ihre Vorstellungen ein gemeinsames Konzept für Ihre
+                Anlage.
               </p>
               {/* <ImageFromCms
                 title={"exclusive_access"}
@@ -510,7 +514,7 @@ const Index = (props) => {
                 jpegquality={40}
                 classes={"animated fadeIn img  mb-3"}
               /> */}
-              <br />
+
               {/* {!showNewsletterSub ? (
                 <button
                   onClick={() => toggleShowNewsletterSub(true)}
@@ -524,19 +528,19 @@ const Index = (props) => {
               ) : null} */}
 
               <div
-                className={"animated fadeIn p-2  p-md-5 pt-0"}
+                className={"animated fadeIn p-2  pt-0"}
                 // style={{ display: !showNewsletterSub ? "none" : "block" }}
               >
                 {/* <h2 className={"h3"} style={{ fontSize: "24px" }}>
                   Registrierung
                 </h2> */}
 
-                <HubspotNewsletterForm />
-                <span style={{ fontSize: "11px" }} className={"text-white"}>
+                <ContactUs />
+                <div className={"p-3 text-white"} style={{ fontSize: "11px" }}>
                   <span style={{ color: "red", fontSize: "14px" }}>* </span>Ich
-                  bin damit einverstanden, weitere Infomationen zum Starttermin
-                  der Website und über Berghaus & Cie zu erhalten.
-                  (Informationen zum Datenschutz finden Sie in unserer{" "}
+                  bin damit einverstanden, weitere Infomationen über Berghaus &
+                  Cie zu erhalten. (Informationen zum Datenschutz finden Sie in
+                  unserer{" "}
                   <a
                     style={{ color: "white", textDecoration: "underline" }}
                     href={"/legal/datenschutz"}
@@ -544,7 +548,7 @@ const Index = (props) => {
                     Datenschutzerklärung
                   </a>
                   ).
-                </span>
+                </div>
               </div>
             </div>
             {/* <PlayAudio />
