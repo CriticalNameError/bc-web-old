@@ -233,7 +233,7 @@ const PreferencesForm = (props) => {
         document.getElementById("form-card").style.boxShadow = "none";
       } else if (step == 6) {
         console.log("... getting Portfolio!");
-      } else if (step > 7) {
+      } else if (step > 6) {
         console.log("... sending Mail!");
       } else {
         document.getElementById("form-header").classList.remove("fadeOut");
