@@ -907,6 +907,11 @@ html {
   z-index: 1;
 }
 
+.modal-transparent > .modal-content {
+  background-color: transparent;
+  border: 0;
+}
+
 .search-icon_mobile {
   visibility: hidden;
 }

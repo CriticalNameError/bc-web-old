@@ -9,13 +9,20 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { Row, Col } from "reactstrap";
+import {
+  Row,
+  Col,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "reactstrap";
 import "react-vertical-timeline-component/style.min.css";
 import BMeeting from "icons/b-meeting";
 import Podium from "icons/podium";
 import Questionaire from "icons/questionnaire";
 import MobilePhone from "icons/mobile-phone";
-import Diamond from "icons/diamond";
+import WineList from "icons/wine-list";
 import StorageUnit from "icons/storage-unit";
 import World from "icons/world";
 import Handshake from "icons/handshake";
@@ -25,7 +32,7 @@ import LogIn from "icons/log-in";
 import DownArrow from "icons/down-arrow";
 import CheckSingle from "icons/check-single";
 import LogoSublineLavendel from "icons/logo_subline_lavendel";
-import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
+import { primary, primary_t50, primary_t80, cta } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
 import SelectCalendlyDate from "components/SelectCalendlyDate";
@@ -49,6 +56,7 @@ import ReactPlayer from "react-player";
 import Anagram100 from "icons/Anagram-100";
 import Atom from "icons/atom";
 import Security from "icons/security";
+import TriangleRight1 from "icons/triangle-right-1";
 import {
   Accordion,
   AccordionItem,
@@ -56,7 +64,6 @@ import {
   AccordionItemButton,
   AccordionItemHeading,
 } from "react-accessible-accordion";
-import { cta } from "helpers/colorScheme";
 
 const songs = [
   {
@@ -92,6 +99,7 @@ const Index = (props) => {
   const [markup, changeMarkup] = useState(null);
   const [section, setSection] = useState("welcome");
   const [width, setWidth] = useState(1300);
+  const [showVideoModal, toggleShowVideoModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
@@ -257,6 +265,11 @@ const Index = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const playVideoAfterDelay = () =>
+    setTimeout(() => {
+      document.getElementById("explainer-video").play();
+    }, 1000);
+
   return (
     <ReactFullpage
       //fullpage options
@@ -280,6 +293,51 @@ const Index = (props) => {
       render={({ state, fullpageApi }) => {
         return (
           <>
+            <Modal
+              className={"modal-xl modal-dialog-centered modal-transparent"}
+              isOpen={showVideoModal}
+              toggle={() => {
+                toggleShowVideoModal(!showVideoModal);
+                document.getElementById("explainer-video").pause();
+                document.getElementById("video-background").play();
+              }}
+              style={{ border: 0, backgroundColor: "transparent" }}
+            >
+              <ModalBody
+                className={"p-0 m-0"}
+                style={{ border: 0, backgroundColor: "transparent" }}
+              >
+                <video
+                  id="explainer-video"
+                  style={{
+                    minWidth: "100%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                  plays-inline
+                  controls
+                >
+                  <source
+                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </ModalBody>
+              <ModalFooter
+                className={"text-center"}
+                style={{ background: "transparent", borderTop: 0 }}
+              >
+                <button
+                  onClick={() => {fullpageApi.moveTo(3); toggleShowVideoModal(false); document.getElementById("video-background").play()}}
+                  className={"mx-auto btn btn-lg bg-cta p-3 mt-4"}
+                  style={{ fontSize: "18px" }}
+                >
+                  wineTelligence ausprobieren
+                </button>
+              </ModalFooter>
+            </Modal>
             <ReactFullpage.Wrapper>
               <div className="section">
                 <video
@@ -335,7 +393,7 @@ const Index = (props) => {
                               <div
                                 className={"text-center mx-auto"}
                                 style={{
-                                  width: "50%",
+                                  // width: "50%",
                                   position: "relative",
                                   height: "400px",
                                 }}
@@ -360,59 +418,101 @@ const Index = (props) => {
                                 <Row>
                                   <Col>
                                     <div className={"animated fadeIn my-auto"}>
-                                    
                                       <h1
-                                        className={"p-3 pt-2"}
+                                        className={"p-3 pb-1 pt-0 mb-n3"}
                                         style={{
+                                          color: "#333",
                                           filter:
-                                            "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.02))",
-                                          fontSize: "56px",
+                                            "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
+                                          fontSize: "65px",
                                           fontFamily: "'Whisper', cursive",
                                         }}
                                       >
                                         {" "}
                                         Disruptiv Traditionell
                                       </h1>
+                                      <div className={"pb-5 mb-3"}>
+                                        Ihr Weininvestment in den besten Händen
+                                        - professionell, transparent, zeitgemäß.{" "}
+                                      </div>
+                                      <span
+                                        onClick={() => {
+                                          toggleShowVideoModal(true);
+                                          playVideoAfterDelay();
+                                          document
+                                            .getElementById("video-background")
+                                            .pause();
+                                        }}
+                                        class="play-btn mx-auto"
+                                        href="#"
+                                        style={{
+                                          transform: props.mobile
+                                            ? "scale(0.9)"
+                                            : "scale(1.2)",
+
+                                          background: "transparent",
+                                          cursor: "pointer",
+                                        }}
+                                      >
+                                        <div
+                                          className={
+                                            "animated pulse infinite slower"
+                                          }
+                                          style={{
+                                            textAlign: "center",
+                                            color: cta,
+                                            paddingLeft: "10px",
+                                            paddingTop: "25px",
+                                          }}
+                                        >
+                                          <TriangleRight1
+                                            width={"50px"}
+                                            strokewidth={3}
+                                          />
+                                        </div>
+                                      </span>
                                     </div>
                                     <div
                                       className={
-                                        "text-center mt-md-4 px-5 mx-auto py-3"
+                                        "text-center mt-md-5 pt-2 px-5 mx-auto py-3"
                                       }
                                     >
                                       <div
-                                        className={"text-left pl-2"}
+                                        className={
+                                          "text-center pt-3 justify-content-between"
+                                        }
                                         style={{
                                           fontSize: "15px",
 
                                           lineHeight: "1.5em",
                                         }}
                                       >
-                                        <div>
-                                          <Diamond
+                                        <span className={"mr-3"}>
+                                          <WineList
                                             width={"25px"}
                                             height={"30px"}
                                             strokewidth={3}
                                           />{" "}
                                           Zugang zu den weltbesten Weinen
-                                        </div>
-                                        <br />
-                                        <div>
+                                        </span>
+
+                                        <span className={"mr-3"}>
                                           <Atom
                                             width={"25px"}
                                             height={"30px"}
                                             strokewidth={3}
                                           />{" "}
-                                          KI-unterstützter Prozess
-                                        </div>
-                                        <br />
-                                        <div>
+                                          KI-unterstützte Portfolioberatung
+                                        </span>
+
+                                        <span>
                                           <Security
                                             width={"25px"}
                                             height={"30px"}
                                             strokewidth={3}
                                           />{" "}
-                                          echter Sachwert
-                                        </div>
+                                          echte Sachwerte
+                                        </span>
                                       </div>
 
                                       {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
@@ -430,8 +530,7 @@ const Index = (props) => {
                                     </div>
                                   </Col>
 
-                                  <Col className={"align-self-center"}>
-                                    <ReactPlayer
+                                  {/* <ReactPlayer
                                       url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
                                       muted={false}
                                       playing={isPlaying}
@@ -443,7 +542,7 @@ const Index = (props) => {
                                       controls={true}
                                       width={"100%"}
                                       height={"300px"}
-                                      className={"mx-auto card my-auto"}
+                                      className={"mx-auto my-auto"}
                                       pip={true}
                                       style={{
                                         // background:
@@ -456,8 +555,7 @@ const Index = (props) => {
                                       }}
                                     >
                                       
-                                    </ReactPlayer>
-                                  </Col>
+                                    </ReactPlayer> */}
                                 </Row>
 
                                 {/* <Row
@@ -548,7 +646,7 @@ const Index = (props) => {
                           ></div>
                         </div>
                       </div>
-                     
+
                       {/* <div class=" text-center w-100 animated fadeIn slower">
                       <div
                         data-aos="fade-up"
@@ -615,29 +713,28 @@ const Index = (props) => {
                   </div>
                 </div>
                 <div
-                        className={"p-4 text-center w-100"}
-                        style={{ position: "absolute", bottom: "15px" }}
-                      >
-                        <a
-                          className={"move-down"}
-                          href={"#services"}
-                          style={{ cursor: "pointer" }}
-                          onClick={() => fullpageApi.moveSectionDown()}
-                        >
-                          <span
-                            className={"animated infinite pulse"}
-                            style={{ cursor: "pointer", color: primary }}
-                          >
-                            <DownArrow
-                              width={"40px"}
-                              height={"40px"}
-                              strokewidth={4}
-                              style={{ display: "inline-block" }}
-                            />
-                          </span>
-                        </a>
-                      </div>
-
+                  className={"p-4 text-center w-100"}
+                  style={{ position: "absolute", bottom: "15px" }}
+                >
+                  <a
+                    className={"move-down"}
+                    href={"#services"}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  >
+                    <span
+                      className={"animated infinite pulse"}
+                      style={{ cursor: "pointer", color: primary }}
+                    >
+                      <DownArrow
+                        width={"40px"}
+                        height={"40px"}
+                        strokewidth={4}
+                        style={{ display: "inline-block" }}
+                      />
+                    </span>
+                  </a>
+                </div>
               </div>
 
               <div className="section">
