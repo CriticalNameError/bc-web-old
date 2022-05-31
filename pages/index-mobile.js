@@ -73,11 +73,34 @@ const IndexMobile = () => {
         "section snapscroll-section animated fadeIn row text-center m-0"
       }
     >
+        {/* <video
+                  autoplay
+                  loop
+                  id="video-background"
+                  style={{
+                    position: "absolute",
+                    // filter: "grayscale(1)",
+                    top: 0,
+                    left: 0,
+                    minWidth: "100%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    zIndex: "-100",
+                  }}
+                  muted
+                  plays-inline
+                >
+                  <source
+                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4"
+                    type="video/mp4"
+                  />
+                </video> */}
       <div className={"col-12"}>
-        <h1 style={{ fontSize: "35px", marginTop: "70px" }}>
-          Realer Wert,
+        <h1 style={{ fontSize: "40px", marginTop: "70px", fontFamily: "'Whisper', cursive", }}>
+          Disruptiv
           <br />
-          digital geklärt
+          Traditionell
         </h1>
         <br />
         <div>
@@ -85,9 +108,10 @@ const IndexMobile = () => {
             url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
             muted={false}
             playing={isPlaying}
-            // light={
-            //   "https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"
-            // }
+            light={
+              // "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1200px-HD_transparent_picture.png"
+              "https://bcassets.s3.amazonaws.com/static/images/chateau_illu.original.png"
+            }
             controls={true}
             width={"90%"}
             height={"260px"}
@@ -101,7 +125,7 @@ const IndexMobile = () => {
           </button>
         </a>
       </div>
-      <div
+      {/* <div
         className={"text-center"}
         style={{ width: "100%", bottom: "70px" }}
       >
@@ -122,7 +146,7 @@ const IndexMobile = () => {
             <SwipeUp width={"32px"} strokewidth={3} />
           </button>
         </a>
-      </div>
+      </div> */}
     </div>,
     <div
       style={{
@@ -140,7 +164,7 @@ const IndexMobile = () => {
           <DynamicLivexPriceChart mode={"light"} height={"60vh"} mobile={true}/>
         </div>
       </div>
-      <div
+      {/* <div
         className={"text-center mt-auto"}
         style={{ width: "100%", bottom: "20px" }}
       >
@@ -157,7 +181,7 @@ const IndexMobile = () => {
             <UpArrow width={"25px"} strokewidth={3} />
           </button>
         </a>
-      </div>
+      </div> */}
     </div>,
     <div
       style={{
