@@ -469,7 +469,8 @@ class LandingNavbar extends React.Component {
                 </NavItem>
                 <NavItem className={"ml-lg-auto"}>
                   <a
-                    href="https://weindepot.berghaus-cie.com"
+                    href="https://weindepot.berghauscie.de"
+                    target={"_blank"}
                     className={"nav-link ml-lg-auto"}
                     style={{
                       color: "#999",

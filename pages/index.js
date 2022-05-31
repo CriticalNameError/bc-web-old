@@ -9,6 +9,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { Row, Col } from "reactstrap";
 import "react-vertical-timeline-component/style.min.css";
 import BMeeting from "icons/b-meeting";
 import Podium from "icons/podium";
@@ -28,7 +29,6 @@ import { primary, primary_t50, primary_t80 } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
 import SelectCalendlyDate from "components/SelectCalendlyDate";
-
 import "react-accessible-accordion/dist/fancy-example.css";
 import Award1 from "icons/award_1";
 import Award2 from "icons/award_2";
@@ -46,6 +46,9 @@ import Particles from "react-tsparticles";
 import PreferencesForm from "components/PreferencesForm";
 import RightArrow from "icons/right-arrow";
 import ReactPlayer from "react-player";
+import Anagram100 from "icons/Anagram-100";
+import Atom from "icons/atom";
+import Security from "icons/security";
 import {
   Accordion,
   AccordionItem,
@@ -53,6 +56,7 @@ import {
   AccordionItemButton,
   AccordionItemHeading,
 } from "react-accessible-accordion";
+import { cta } from "helpers/colorScheme";
 
 const songs = [
   {
@@ -78,6 +82,10 @@ const DynamicLivexPriceChart = dynamic(
     ssr: false,
   }
 );
+
+const DynamicLiveData = dynamic(() => import("../src/components/LiveData"), {
+  ssr: false,
+});
 
 const Index = (props) => {
   const [showModal, toggleShowModal] = useState(false);
@@ -223,6 +231,7 @@ const Index = (props) => {
   );
 
   useEffect(() => {
+    document.getElementById("video-background").play();
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
@@ -273,31 +282,49 @@ const Index = (props) => {
           <>
             <ReactFullpage.Wrapper>
               <div className="section">
+                <video
+                  autoplay
+                  loop
+                  id="video-background"
+                  style={{
+                    position: "absolute",
+                    // filter: "grayscale(1)",
+                    top: 0,
+                    left: 0,
+                    minWidth: "100%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    zIndex: "-100",
+                  }}
+                  muted
+                  plays-inline
+                >
+                  <source
+                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4"
+                    type="video/mp4"
+                  />
+                </video>
                 <div
-                  className={"container-fluid px-0 animated"}
-                  style={{ overflowX: "hidden" }}
+                  className={" px-0 animated"}
+                  style={{
+                    overflowX: "hidden",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    minWidth: "100%",
+                    width: "100%",
+                    height: "100%",
+                    background: "rgba(255,255,255,0.85)",
+                  }}
                   id={"welcome-slide"}
                 >
-                  <div className="row">
+                  <div className="row h-100">
                     <div className={"col-12 my-auto text-center  "}>
                       <div
-                        className={"mx-auto"}
+                        className={"mx-auto my-auto"}
                         // style={{ maxWidth: "750px" }}
                       >
-                        <div className={"animated fadeIn"}>
-                          <h1
-                            className={"p-3 pt-5 mt-2"}
-                            style={{
-                              filter:
-                                "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.02))",
-                              fontSize: "56px",
-                            }}
-                          >
-                            {" "}
-                            Realer Wert, digital geklärt.
-                          </h1>
-                        </div>
-
                         <div className={"pl-md-4 mt-2 animated fadeIn slower"}>
                           <div className={"row mt-3"}>
                             <div
@@ -307,74 +334,207 @@ const Index = (props) => {
                             >
                               <div
                                 className={"text-center mx-auto"}
-                                style={{ width: "100%" }}
+                                style={{
+                                  width: "50%",
+                                  position: "relative",
+                                  height: "400px",
+                                }}
                               >
-                                <ReactPlayer
-                                  url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
-                                  muted={true}
-                                  playing={isPlaying}
-                                  //  light={"https://bcassets.s3.amazonaws.com/static/images/bc_team.original.png"}
-                                  controls={true}
-                                  width={"50%"}
-                                  height={"400px"}
-                                  className={"mx-auto"}
-                                />
-
-                                <div
-                                  className={
-                                    "text-center mt-md-4 px-5 mx-auto py-3"
+                                {/* <span className={"blink_me"} style={{position: "absolute", top: "15px", left: "15px"}}></span> */}
+                                {/* <img
+                                  src={
+                                    "https://bcassets.s3.amazonaws.com/static/images/Mouton_Rothschild_2016.width-450.jpegquality-10.png"
                                   }
-                                  style={{ width: "50%" }}
+                                  style={{
+                                    height: "300px",
+                                    position: "absolute",
+                                    left: "25px",
+                                    top: "70px",
+                                    filter:
+                                      "drop-shadow(rgba(0, 0, 0, 0.77) 10px 10px 10px)",
+                                    animation: "float 6s ease-in-out infinite",
+                                  }}
+                                ></img>
+
+                                <DynamicLiveData /> */}
+                                <Row>
+                                  <Col>
+                                    <div className={"animated fadeIn my-auto"}>
+                                    
+                                      <h1
+                                        className={"p-3 pt-2"}
+                                        style={{
+                                          filter:
+                                            "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.02))",
+                                          fontSize: "56px",
+                                          fontFamily: "'Whisper', cursive",
+                                        }}
+                                      >
+                                        {" "}
+                                        Disruptiv Traditionell
+                                      </h1>
+                                    </div>
+                                    <div
+                                      className={
+                                        "text-center mt-md-4 px-5 mx-auto py-3"
+                                      }
+                                    >
+                                      <div
+                                        className={"text-left pl-2"}
+                                        style={{
+                                          fontSize: "15px",
+
+                                          lineHeight: "1.5em",
+                                        }}
+                                      >
+                                        <div>
+                                          <Diamond
+                                            width={"25px"}
+                                            height={"30px"}
+                                            strokewidth={3}
+                                          />{" "}
+                                          Zugang zu den weltbesten Weinen
+                                        </div>
+                                        <br />
+                                        <div>
+                                          <Atom
+                                            width={"25px"}
+                                            height={"30px"}
+                                            strokewidth={3}
+                                          />{" "}
+                                          KI-unterstützter Prozess
+                                        </div>
+                                        <br />
+                                        <div>
+                                          <Security
+                                            width={"25px"}
+                                            height={"30px"}
+                                            strokewidth={3}
+                                          />{" "}
+                                          echter Sachwert
+                                        </div>
+                                      </div>
+
+                                      {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
+                                      <div>
+                                        <button
+                                          onClick={() => fullpageApi.moveTo(3)}
+                                          className={
+                                            "mr-auto btn bg-cta p-2 mt-4"
+                                          }
+                                          style={{ fontSize: "18px" }}
+                                        >
+                                          wineTelligence ausprobieren
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </Col>
+
+                                  <Col className={"align-self-center"}>
+                                    <ReactPlayer
+                                      url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
+                                      muted={false}
+                                      playing={isPlaying}
+                                      light={
+                                        // "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1200px-HD_transparent_picture.png"
+                                        "https://bcassets.s3.amazonaws.com/static/images/chateau_illu.original.png"
+                                      }
+                                      //light={true}
+                                      controls={true}
+                                      width={"100%"}
+                                      height={"300px"}
+                                      className={"mx-auto card my-auto"}
+                                      pip={true}
+                                      style={{
+                                        // background:
+                                        // "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
+                                       
+                                        borderRadius: "7px",
+                                       
+                                       
+                                        
+                                      }}
+                                    >
+                                      
+                                    </ReactPlayer>
+                                  </Col>
+                                </Row>
+
+                                {/* <Row
+                                  className={
+                                    "text-center card-overlay-from-transp mx-0"
+                                  }
+                                  style={{
+                                    minHeight: "200px",
+                                    borderDadius: "0.25rem",
+                                    height: "200px",
+                                  }}
                                 >
                                   <div
-                                    className={
-                                      "text-center d-flex justify-content-between"
-                                    }
+                                    className={""}
                                     style={{
-                                      fontSize: "15px",
-
-                                      lineHeight: "1.5em",
+                                      position: "absolute",
+                                      top: 0,
+                                      left: 0,
+                                      textAlign: "center",
+                                      width: "100%",
+                                      height: "100%",
                                     }}
                                   >
-                                    <span>
-                                      <CheckSingle
-                                        width={"25px"}
-                                        height={"30px"}
-                                        strokewidth={3}
-                                      />{" "}
-                                      Zugang zu den weltbesten Weinen
-                                    </span>
-                                    <span>
-                                      <CheckSingle
-                                        width={"25px"}
-                                        height={"30px"}
-                                        strokewidth={3}
-                                      />{" "}
-                                      KI-unterstützter Prozess
-                                    </span>
-                                    <span>
-                                      <CheckSingle
-                                        width={"25px"}
-                                        height={"30px"}
-                                        strokewidth={3}
-                                      />{" "}
-                                      durchschnittliche Rendite 10 % p.a.
-                                    </span>
+                                    {" "}
+                                    <DynamicLiveData />
                                   </div>
 
-                                  {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                                  <div>
-                                    <button
-                                      onClick={() => fullpageApi.moveTo(3)}
-                                      className={
-                                        "mr-auto btn bg-cta p-2  animated infinite pulse slower"
-                                      }
-                                      style={{ fontSize: "18px" }}
+                                  <Col
+                                    className={"my-auto overlay_text"}
+                                    style={{
+                                      fontSize: "27px",
+                                      position: "relative",
+                                      zIndex: "2",
+                                    }}
+                                  >
+                                    <span
+                                      style={{
+                                        position: "absolute",
+                                        top: "-10px",
+                                        left: "15px",
+                                      }}
+                                      className={"blink_me"}
+                                    ></span>
+                                    <div className={"mx-auto text-center p-2"}>
+                                      {" "}
+                                    </div>
+                                    Mein Depot
+                                    <br />
+                                    <center
+                                      className={"mx-auto"}
+                                      style={{
+                                        fontSize: "13px",
+                                        fontWeight: "normal",
+                                        maxWidth: "350px",
+                                      }}
                                     >
-                                      wineTelligence starten
-                                    </button>
-                                  </div>
-                                </div>
+                                      Ihre persönliches Depot mit den
+                                      wichtigsten Hintergrundinformationen auf
+                                      einen Blick.
+                                    </center>
+                                  </Col>
+                                </Row> */}
+
+                                {/* <div
+                                  className={""}
+                                  style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    textAlign: "center",
+                                    width: "100%",
+                                    height: "100%",
+                                  }}
+                                >
+                                  {" "}
+                                  <DynamicLiveData />
+                                </div> */}
                               </div>
                             </div>
 
@@ -386,30 +546,9 @@ const Index = (props) => {
                             // }
                             className={"animated fadeIn slower"}
                           ></div>
-
-                          <div className={"p-4"}>
-                            <a
-                              className={"move-down"}
-                              href={"#services"}
-                              style={{ cursor: "pointer" }}
-                              onClick={() => fullpageApi.moveSectionDown()}
-                            >
-                              <span
-                                className={"animated infinite pulse"}
-                                style={{ cursor: "pointer", color: primary }}
-                              >
-                                <DownArrow
-                                  width={"40px"}
-                                  height={"40px"}
-                                  strokewidth={4}
-                                  style={{ display: "inline-block" }}
-                                />
-                              </span>
-                            </a>
-                          </div>
                         </div>
                       </div>
-
+                     
                       {/* <div class=" text-center w-100 animated fadeIn slower">
                       <div
                         data-aos="fade-up"
@@ -475,6 +614,30 @@ const Index = (props) => {
                     </div>
                   </div>
                 </div>
+                <div
+                        className={"p-4 text-center w-100"}
+                        style={{ position: "absolute", bottom: "15px" }}
+                      >
+                        <a
+                          className={"move-down"}
+                          href={"#services"}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => fullpageApi.moveSectionDown()}
+                        >
+                          <span
+                            className={"animated infinite pulse"}
+                            style={{ cursor: "pointer", color: primary }}
+                          >
+                            <DownArrow
+                              width={"40px"}
+                              height={"40px"}
+                              strokewidth={4}
+                              style={{ display: "inline-block" }}
+                            />
+                          </span>
+                        </a>
+                      </div>
+
               </div>
 
               <div className="section">

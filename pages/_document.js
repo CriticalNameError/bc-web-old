@@ -4,15 +4,15 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    
-    return { ...initialProps};
+
+    return { ...initialProps };
   }
 
   render() {
     return (
       <Html>
         <Head>
-          <meta name="robots" content="noindex,nofollow"/>
+          <meta name="robots" content="noindex,nofollow" />
           <meta charset="utf-8" />
           {/* <link rel="shortcut icon" href="../public/assets/favicon.ico" /> */}
           <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
@@ -51,6 +51,11 @@ class MyDocument extends Document {
             href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
             integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
             crossorigin=""
+          />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Whisper&display=swap"
+            rel="stylesheet"
           />
 
           <title>Berghaus & Cie - Ihr Investment ist unsere Passion</title>
@@ -135,18 +140,14 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-
           <div className={"d-none d-md-block"}>
-          <LandingFooter/>
+            <LandingFooter />
           </div>
           <script
-          
-          src="https://nethunt.com/service/automation/forms/620a4817eab7f0495a741161?embed=script"
-          async="async"
-        ></script>{" "}
-        
+            src="https://nethunt.com/service/automation/forms/620a4817eab7f0495a741161?embed=script"
+            async="async"
+          ></script>{" "}
         </body>
-     
       </Html>
     );
   }

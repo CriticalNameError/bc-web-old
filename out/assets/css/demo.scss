@@ -193,6 +193,120 @@
   display: none;
 }
 
+
+.card-overlay {
+  background-color: rgba(100, 100, 100, 0.2);
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.card-overlay-gold {
+  background-color: rgba(191, 172, 130, 0.65);
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.card-overlay-gold:hover {
+  z-index: 3;
+  background-color: rgba(170, 150, 107, 0.8);
+  border-radius: 0.25rem;
+
+  -webkit-transition: background-color 500ms ease;
+  -ms-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+}
+
+.card-overlay-from-transp {
+  background-color: rgba(100, 100, 100, 0);
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.overlay_text {
+  opacity: 1 !important;
+  color: white;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border: 1px solid green;
+  background-color: green;
+  border-radius: 100%;
+  box-shadow: 2px 2px 4px grey;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes float {
+  0% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6));
+    transform: translatey(0px);
+  }
+  50% {
+    filter: drop-shadow(0 25px 15px rgba(0, 0, 0, 0.2));
+    transform: translatey(-20px);
+  }
+  100% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6));
+    transform: translatey(0px);
+  }
+}
+
+@-webkit-keyframes float {
+  0% {
+    // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    // box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.bg-cta-gradient {
+  background: linear-gradient(#bfac82, #9b8a69);
+}
+
+.bg-gradient {
+  background-color: #714f9b!important;
+  background: linear-gradient(-45deg, rgba(113, 79, 155, 0.5) 0%, #714f9b 100%)!important;
+  
+}
+
+.card-overlay:hover {
+  z-index: 3;
+  background-color: rgba(123, 98, 155, 0.8);
+  border-radius: 0.25rem;
+
+  -webkit-transition: background-color 500ms ease;
+  -ms-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+}
+
+.card-overlay-from-transp:hover {
+  z-index: 3;
+  background-color: rgba(170, 150, 107, 0.8);
+  border-radius: 0.25rem;
+
+  -webkit-transition: background-color 500ms ease;
+  -ms-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+}
+
+
 .snapscroll-section {
   width: 100%;
   height: 100vh;
@@ -748,6 +862,81 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.separator{
+  background: #ff574a;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  -webkit-transition: opacity 350ms linear;
+  -moz-transition: opacity 350ms linear;
+  -ms-transition: opacity 350ms linear;
+  -o-transition: opacity 350ms linear;
+  transition: opacity 350ms linear;
+}
+
+.separator > * {
+    position: relative;
+    z-index: 2;
+}
+
+.separator:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent #f6f2f2 transparent;
+  border-width: 0 0 400px 400px;
+}
+
+
+
+@media(min-width: 768px){
+  .separator:after{
+    border-width: 0 0 1200px 500px;
+  }
+}
+
+@media(min-width: 992px){
+  .separator:after{
+    border-width: 0 0 1200px 700px;
+  }
+}
+
+
+.separator-content{
+  background: transparent;
+  text-align: center;
+  padding: 0 4%;
+}
+
+
+
+
+
+#video-background:before{
+  content:'';
+  position:absolute;
+  top:0; right:0;
+  width:100%; height:100%;
+  background-color: rgba(90, 74, 199, .8);
+  border-right:40px solid rgba(173, 96, 223, .8);
+
+  -webkit-transform-origin:100% 100%;
+  -ms-transform-origin:100% 100%;
+  transform-origin:100% 100%;
+
+  -webkit-transform:skewX(30deg);
+  -ms-transform:skewX(30deg);
+  transform:skewX(25deg);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -763,6 +952,11 @@ html {
   background: #f0f0f0;
   border-radius: 4px;
   box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+}
+
+.react-player__shadow {
+  transform:scale(1.5);
+  animation: flash 4s infinite;
 }
 
 .card {
