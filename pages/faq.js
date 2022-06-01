@@ -88,13 +88,11 @@ const Faq = () => {
 
         <div class=" mt-sm-5 pt-5 mb-sm-5 pb-5">
           <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
+            // data-aos="fade-up"
+            // data-aos-anchor-placement="center-bottom"
             className={"mb-3"}
           >
-            <h2 style={{ fontSize: "24px", textAlign: "center" }}>
-              (Obsolet?) Was Sie vorab wissen sollten ...
-            </h2>
+  
 
             <Accordion
               allowZeroExpanded={true}

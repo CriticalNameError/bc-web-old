@@ -19,7 +19,7 @@ import Spaceship from "icons/spaceship";
 import Multiple11 from "icons/multiple-11";
 import SportsFan from "icons/sports-fan";
 import LogoLinkedin from "icons/logo-linkedin";
-import XingIcon from "icons/xing-icon";
+
 import Anagram100 from "icons/Anagram-100";
 import Logic from "icons/logic";
 
@@ -67,20 +67,10 @@ const AboutUs = () => {
 
               <h1
                 className={"h3 animated fadeIn slower "}
-                style={{ fontSize: "24px" }}
+                style={{ fontSize: "65px", fontFamily: "'Whisper', cursive", }}
               >
                 {" "}
-                Exquisite Weine - Ihr Investment ist unsere{" "}
-                <span
-                  style={{
-                    fontFamily: "'Fuggles', cursive",
-                    fontSize: "1.7em",
-                    lineHeight: "60%",
-                  }}
-                >
-                  Passion
-                </span>
-                .{" "}
+                Disruptiv Traditionell{" "}
               </h1>
 
               {/* <a
@@ -101,7 +91,7 @@ const AboutUs = () => {
                 </span>
               </a> */}
              
-              <div className={"text-center mx-auto px-2 px-md-0"} style={{ fontSize: "24px", maxWidth: "1100px" }}>
+              <div className={"text-center mx-auto px-2 px-md-0"} style={{ fontSize: "15px", maxWidth: "1100px" }}>
               <p  > 
                 Berghaus & Cie. verbindet die traditionelle Welt der exquisiten
                 Weine mit der modernen Investmentwelt. Dabei setzen wir auf
@@ -219,10 +209,7 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-                <a href={"https://www.xing.com/profile/Tristan_Berghaus2/"}>
-                  {" "}
-                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
-                </a>{" "}
+               
                 <a href={"https://www.linkedin.com/in/tristan-berghaus/"}>
                   <LogoLinkedin
                     width={"30px"}
@@ -295,10 +282,7 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-                <a href={"https://www.xing.com/profile/Martin_Dammrath/"}>
-                  {" "}
-                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
-                </a>{" "}
+               
                 <a href={"https://www.linkedin.com/in/martin-c-dammrath/"}>
                   <LogoLinkedin
                     width={"30px"}
@@ -357,10 +341,7 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-                <a href={"https://www.xing.com/profile/Peter_Irnich/"}>
-                  {" "}
-                  <XingIcon width={"30px"} height={"30px"} strokewidth={3} />
-                </a>{" "}
+               
                 <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}>
                   <LogoLinkedin
                     width={"30px"}

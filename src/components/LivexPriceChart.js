@@ -199,6 +199,11 @@ const LivexPriceChart = (props) => {
     valueAxis.renderer.labels.template.text = "{valueY}";
     valueAxis.title.text = "Index (Basis = 100)";
 
+
+    categoryAxis.renderer.grid.template.disabled = true;
+    valueAxis.renderer.grid.template.disabled = true;
+
+
     // Create series # DAX
     let series1 = chart.series.push(new am4charts.LineSeries());
     series1.dataFields.valueY = "value1";
@@ -252,6 +257,8 @@ const LivexPriceChart = (props) => {
     series.tooltip.label.fill = am4core.color("#714f9b");
     series.tooltip.label.fontSize = 17;
     series.name = "Liv-Ex 1000 Fine Wine";
+
+
 
     // bullet is added because we add tooltip to a bullet for it to change color
     // let bullet = series.bullets.push(new am4charts.Bullet());
@@ -374,6 +381,10 @@ export const LiveData = (props) => {
 
     dateAxis.renderer.grid.template.disabled = true;
     valueAxis.renderer.grid.template.disabled = true;
+
+   
+
+
 
     document.addEventListener(
       "visibilitychange",

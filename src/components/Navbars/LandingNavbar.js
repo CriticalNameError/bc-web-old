@@ -126,12 +126,12 @@ const ContactBar = (props) => {
               </span>{" "} */}
 
             <span className={"pr-5"}>
-              <a className={"text-white"} href="tel: +4922079019890">
+              <a className={"text-white"} href="tel: +4922129243270">
                 <span style={{ verticalAlign: "middle" }}>
                   <MobilePhone width={"14px"} height={"14px"} strokewidth={3} />
                 </span>
                 <span className={"pl-2"} style={{ verticalAlign: "middle" }}>
-                  +49 2207 901 98 90
+                  +49 221 292 432 70
                 </span>
               </a>
             </span>
@@ -223,7 +223,7 @@ class LandingNavbar extends React.Component {
   render() {
     return (
       <>
-        <Modal
+        {/* <Modal
           isOpen={this.state.showPodcastModal}
           toggle={() => this.toggleShowPodcastModal()}
           className="modal-md modal-dialog-centered"
@@ -267,7 +267,7 @@ class LandingNavbar extends React.Component {
               </div>
             </div>
           </ModalBody>
-        </Modal>
+        </Modal> */}
         <Navbar
           // color={"white"}
           expand="lg"
@@ -353,6 +353,34 @@ class LandingNavbar extends React.Component {
               <Nav navbar className={"w-100"} style={{ marginBottom: "-7px" }}>
                 <NavItem style={{ position: "relative" }}>
                   <a
+                    href="/"
+                    className={
+                      "nav-link "
+                      +
+                      (this.props.router.pathname == "/"
+                        ? "link-active"
+                        : "link-underline")
+                    }
+                    style={{
+                      color: this.props.router.pathname == "/"
+                        ? primary
+                        : "#999",
+                      marginTop: "4px",
+                      fontSize: "12px",
+                    }}
+                  >
+                    {/* <i className="now-ui-icons media-2_sound-wave" /> */}
+                    <p>
+                      <span className="d-lg-inline d-md-block">
+                        Weininvestments
+                      </span>
+                    </p>
+                  </a>
+                </NavItem>
+
+              
+                <NavItem style={{ position: "relative" }}>
+                  <a
                     href="/wein-investments"
                     className={
                       "nav-link " +
@@ -371,7 +399,7 @@ class LandingNavbar extends React.Component {
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
                     <p>
                       <span className="d-lg-inline d-md-block">
-                        Weininvestments
+                        Warum Wein?
                       </span>
                     </p>
                   </a>
@@ -403,7 +431,7 @@ class LandingNavbar extends React.Component {
                   </a>
                 </NavItem>
 
-                <NavItem
+                {/* <NavItem
                   onClick={() => this.toggleShowPodcastModal()}
                   style={{ cursor: "pointer", position: "relative" }}
                 >
@@ -421,8 +449,8 @@ class LandingNavbar extends React.Component {
                       </span>
                     </p>
                   </a>
-                </NavItem>
-                {/* <NavItem style={{ position: "relative" }}>
+                </NavItem> */}
+                <NavItem style={{ position: "relative" }}>
                   <a
                     href="/blog"
                     className={
@@ -440,10 +468,10 @@ class LandingNavbar extends React.Component {
                     }}
                   >
                     <p>
-                      <span className="d-lg-inline d-md-block">Blog</span>
+                      <span className="d-lg-inline d-md-block">Magazin</span>
                     </p>
                   </a>
-                </NavItem> */}
+                </NavItem>
                 <NavItem style={{ position: "relative" }}>
                   <a
                     href="/ueber-uns"

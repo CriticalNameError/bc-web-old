@@ -18,7 +18,7 @@ import {
 import ReactPlayer from "react-player";
 
 const DynamicLivexPriceChart = dynamic(
-  () => import("../src/components/LivexPriceChart"),
+  () => import("./LivexPriceChart"),
   {
     ssr: false,
   }

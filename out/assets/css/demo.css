@@ -999,6 +999,12 @@ html {
   font-weight: bold;
 }
 
+.dotted-background {
+  background: linear-gradient(90deg, white 20px, transparent 1%) center, linear-gradient(white 20px, transparent 1%) center, #ccc;
+  background-size: 22px 22px;
+  background-color: #ccc !important;
+}
+
 .country-select__control {
   border-radius: 30px !important;
 }

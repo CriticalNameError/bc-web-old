@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import ContactUs from "components/ContactUs";
-import XingLogo from "icons/xing-logo";
 import LinkedinLogo from "icons/linkedin_logo";
 
 const LandingFooter = () => {
@@ -138,16 +137,7 @@ const LandingFooter = () => {
               verticalAlign: "middle",
             }}
           >
-            <a
-              className={"mr-3"}
-              href={"https://www.xing.com/company/berhaus-cie-gmbh/"}
-              style={{ textDecoration: "none" }}
-            >
-              {" "}
-              <span className={"text-white"}>
-                <XingLogo width={"20px"} height={"20px"} strokewidth={3} /> Xing
-              </span>
-            </a>{" "}
+           
             <a
               href={"https://www.linkedin.com/company/berghaus-cie-gmbh/"}
               style={{ textDecoration: "none" }}

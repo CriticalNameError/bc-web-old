@@ -191,12 +191,12 @@ const ListBlogPosts = () => {
     // }
  
     return (
-      <div style={{marginTop: "150px"}}>
+      <div>
         {data.allPostPages.map((item, index) => (
           <>
           <a href={"/blog/" + item.slug} className={"text-dark"} style={{textDecoration: "none"}}  >
-            <div class="row mx-auto mt-5" data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom" style={{ maxWidth: "1200px" }}>
+            <div class="row mx-auto" data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" style={{ paddingTop: "90px", maxWidth: "1200px" }}>
               <div
                 className={
                   "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto " +
@@ -381,7 +381,7 @@ const ListBlogPosts = () => {
           <br />
         </center>
 
-        <LandingFooter />
+       
       </div>
     );
   }

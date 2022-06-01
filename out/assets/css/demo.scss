@@ -1050,6 +1050,32 @@ html {
   font-weight: bold;
 }
 
+$bg-color: hsl(256,256,256);
+$dot-color: #ccc;
+
+// Dimensions
+$dot-size: 2px;
+$dot-space: 22px;
+
+.dotted-background {
+  background:
+		linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+		$dot-color;
+	background-size: $dot-space $dot-space;
+  background-color: #ccc!important
+}
+
+// .amcharts-DateAxis-group{
+ 
+//   animation: fadeInUp 3s ease!important;
+// }
+
+// .amcharts-ValueAxis-group{
+  
+//   animation: fadeInLeft 3s ease!important;
+// }
+
 .country-select__control {
   border-radius: 30px !important;
 }
