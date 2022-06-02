@@ -189,7 +189,11 @@ const LivexPriceChart = (props) => {
     categoryAxis.startLocation = 0.4;
     categoryAxis.endLocation = 0.7;
     categoryAxis.renderer.labels.template.fill = am4core.color("#fff");
-    categoryAxis.title.text = "Jahr";
+    if(props.mobile){
+      categoryAxis.title.text = "[font-size: 10px]Jahr[/]";
+    }else{
+      categoryAxis.title.text = "Jahr";
+    }
     categoryAxis.title.fill = am4core.color("#2c2c2c");
 
     // Create value axis
@@ -197,7 +201,23 @@ const LivexPriceChart = (props) => {
     valueAxis.baseValue = 0;
     valueAxis.renderer.labels.template.fill = am4core.color("#fff");
     valueAxis.renderer.labels.template.text = "{valueY}";
-    valueAxis.title.text = "Index (Basis = 100)";
+    if(props.mobile){
+      valueAxis.title.text = "[font-size: 10px]Index (Basis = 100)[/]";
+      valueAxis.title.dx = 10;
+      chart.paddingTop = 60;
+      valueAxis.layout = "absolute";
+      chart.marginLeft = -80;
+      //chart.paddingRight = 0;
+      valueAxis.title.rotation = 0;
+      // valueAxis.title.align = "center";
+      valueAxis.title.valign = "top";
+      valueAxis.title.dy = -35;
+      // valueAxis.title.fontWeight = 600;
+    }else{
+      valueAxis.title.text = "Index (Basis = 100)";
+      
+    }
+    
 
 
     categoryAxis.renderer.grid.template.disabled = true;
@@ -314,7 +334,7 @@ const LivexPriceChart = (props) => {
     <>
       <div
         id={"priceChartDiv"}
-        style={{ width: "100%", height: props.height }}
+        style={{ width: "100%", height: props.height, marginLeft: "-18px" }}
       ></div>
     </>
   );
