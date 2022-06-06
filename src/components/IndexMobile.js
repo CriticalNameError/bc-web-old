@@ -255,7 +255,7 @@ const IndexMobile = (props) => {
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h1 className={"px-1"} style={{ fontSize: "35px" }}>Zweistellige jährliche Renditen</h1>
+        <h1 className={"px-1"} style={{ fontSize: "35px" }}>Herausragende Renditen</h1>
         <div className={"px-1"}>
           Der Livex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
