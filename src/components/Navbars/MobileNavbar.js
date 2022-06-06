@@ -6,10 +6,12 @@ import LogIn from "../../icons/log-in";
 import { Modal, ModalBody } from "reactstrap";
 import ReactDOMServer from "react-dom/server";
 import router, { withRouter } from "next/router";
+
 const MobileNavbar = (props) => {
   const [mode, setMode] = useState("light");
   const [showModal, toggleShowModal] = useState(false);
   const [height, setHeight] = useState(0);
+  const [onLandingPage, setOnLandingPage] = useState(true);
   useEffect(() => {
     setMode(props.mode);
   }, [props.mode]);
@@ -31,6 +33,12 @@ const MobileNavbar = (props) => {
   }, []);
 
   useEffect(() => {
+    //console.log("PATH", props.router.pathname)
+    if(props.router.pathname === "/"){
+      setOnLandingPage(true)
+    }else{
+      setOnLandingPage(false)
+    }
     try {
       let b1 = document.getElementById("button2i0");
       let b2 = document.getElementById("button2i1");
@@ -71,7 +79,7 @@ const MobileNavbar = (props) => {
           style={{ transition: "color 1.5s ease" }}
           className={"pull-left text-primary pl-3 pt-2"}
           id={"logo-svg"}
-          onClick={() => router.push("index-mobile")}
+          onClick={() => router.push("/")}
         >
           <LogoLav width={"175px"} />
         </span>
@@ -91,20 +99,30 @@ const MobileNavbar = (props) => {
           }}
         ></i>
         <ModalBody
-          className={"p-4 animated fadeInBottom"}
+          className={"p-4 animated fadeInBottom text-center"}
           style={{ height: "100%" }}
         >
-          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
+           <div className={"mt-4 text-primary"} style={{ fontSize: "26px", textDecoration: onLandingPage? "underline": "" }}>
             <span
               onClick={() => {
-                router.push("/wein-investments");
+                router.push("/");
                 toggleShowModal(false);
               }}
             >
               Weininvestments
             </span>
           </div>
-          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
+          <div className={"mt-4 text-primary"} style={{ fontSize: "26px",  textDecoration: (/wein-investments/.test(props.router.pathname)? "underline": "") }}>
+            <span
+              onClick={() => {
+                router.push("/wein-investments");
+                toggleShowModal(false);
+              }}
+            >
+              Warum Wein?
+            </span>
+          </div>
+          <div className={"mt-4 text-primary"} style={{ fontSize: "26px", textDecoration: (/faq/.test(props.router.pathname)? "underline": "") }}>
             <span
               onClick={() => {
                 router.push("/faq");
@@ -114,7 +132,7 @@ const MobileNavbar = (props) => {
               FAQ
             </span>
           </div>
-          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
+          <div className={"mt-4 text-primary"} style={{ fontSize: "26px",  textDecoration: (/ueber-uns/.test(props.router.pathname)? "underline": "") }}>
             <span
               onClick={() => {
                 router.push("/ueber-uns");
@@ -124,7 +142,7 @@ const MobileNavbar = (props) => {
               Über uns
             </span>
           </div>
-          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
+          <div className={"mt-4 text-primary"} style={{ fontSize: "26px",  textDecoration: (/blog/.test(props.router.pathname)? "underline": "") }}>
             <span
               onClick={() => {
                 router.push("/blog");
@@ -137,7 +155,7 @@ const MobileNavbar = (props) => {
           <a href={"https://weindepot.berghauscie.de"} target={"_blank"}>
             <div
               className={"mt-5 btn btn-primary"}
-              style={{ fontSize: "20px", fontWeight: 200 }}
+              style={{ fontSize: "20px" }}
             >
               <LogIn
                 width={"20px"}
@@ -193,22 +211,23 @@ const MobileNavbar = (props) => {
         style={{
           width: "100%",
           position: "fixed",
-          zIndex: 2000,
-          background: "transparent",
+          zIndex: 1049,
+          background: onLandingPage? "transparent" : "white",
+
         }}
       >
         <span
           style={{ display: "inline-block", transition: "color 1.5s ease" }}
-          className={""}
+          className={"text-primary"}
           id={"logo-svg"}
-          onClick={() => router.push("index-mobile")}
+          onClick={() => router.push("/")}
         >
           <LogoLav width={"175px"} />
         </span>
         <span onClick={() => toggleShowModal(true)}>
           <span
             style={{ display: "inline-block", transition: "color 1.5s ease" }}
-            className={""}
+            className={"text-primary"}
             id={"menu-svg"}
           >
             <MenuToClose2 width={"32px"} strokewidth={2} />

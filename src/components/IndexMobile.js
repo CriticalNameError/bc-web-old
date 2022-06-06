@@ -50,24 +50,24 @@ const IndexMobile = (props) => {
     document.getElementById("video-background-mobile").play();
   }, []);
 
-  useEffect(() => {
-    if (isActive == "chart") {
-      document.getElementById("logo-svg").classList.remove("text-white");
-      document.getElementById("logo-svg").classList.add("text-primary");
-      document.getElementById("menu-svg").classList.remove("text-white");
-      document.getElementById("menu-svg").classList.add("text-primary");
-    } else if (isActive == "letsgo") {
-      document.getElementById("logo-svg").classList.add("text-white");
-      document.getElementById("logo-svg").classList.remove("text-primary");
-      document.getElementById("menu-svg").classList.add("text-white");
-      document.getElementById("menu-svg").classList.remove("text-primary");
-    } else {
-      document.getElementById("logo-svg").classList.remove("text-white");
-      document.getElementById("logo-svg").classList.add("text-primary");
-      document.getElementById("menu-svg").classList.remove("text-white");
-      document.getElementById("menu-svg").classList.add("text-primary");
-    }
-  }, [isActive]);
+  // useEffect(() => {
+  //   if (isActive == "chart") {
+  //     document.getElementById("logo-svg").classList.remove("text-white");
+  //     document.getElementById("logo-svg").classList.add("text-primary");
+  //     document.getElementById("menu-svg").classList.remove("text-white");
+  //     document.getElementById("menu-svg").classList.add("text-primary");
+  //   } else if (isActive == "letsgo") {
+  //     document.getElementById("logo-svg").classList.add("text-white");
+  //     document.getElementById("logo-svg").classList.remove("text-primary");
+  //     document.getElementById("menu-svg").classList.add("text-white");
+  //     document.getElementById("menu-svg").classList.remove("text-primary");
+  //   } else {
+  //     document.getElementById("logo-svg").classList.remove("text-white");
+  //     document.getElementById("logo-svg").classList.add("text-primary");
+  //     document.getElementById("menu-svg").classList.remove("text-white");
+  //     document.getElementById("menu-svg").classList.add("text-primary");
+  //   }
+  // }, [isActive]);
 
   let components = [
     <div

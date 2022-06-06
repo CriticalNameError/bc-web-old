@@ -521,7 +521,7 @@ const PreferencesForm = (props) => {
                 opacity: 1 - ((investVsEnjoy - 50) / 50) * 0.5,
               }}
             >
-              Weinliebhaber
+              Liebhaber
             </span>
           </Col>
           <Col

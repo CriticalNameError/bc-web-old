@@ -75,9 +75,10 @@ const PostPage = () => {
   if (data)
     return (
       <div
-        className={"container-fluid mx-auto px-0 text-center"}
+        className={"container-fluid mx-auto px-3 px-md-0 text-center"}
         style={{
           paddingTop: "150px",
+          overflowWrap: "break-word",
         }}
       >
         <div className={"mx-auto text-justify mb-5"} style={{ maxWidth: "750px" }}>
