@@ -247,16 +247,16 @@ const IndexMobile = (props) => {
     </div>,
     <div
       style={{
-        color: "white",
+        color: "#333",
       }}
       id={"facts"}
       className={
-        "section snapscroll-section row h-100 m-0 p-0 bg-primary text-white  text-center"
+        "section snapscroll-section dotted-background row h-100 m-0 p-0  text-dark  text-center"
       }
     >
       <div className={"col-12 my-auto p-0"}>
         <h1 className={"px-1"} style={{ fontSize: "35px" }}>Zweistellige jährliche Renditen</h1>
-        <div>
+        <div className={"px-1"}>
           Der Livex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
         </div>
@@ -266,7 +266,7 @@ const IndexMobile = (props) => {
           style={{ width: "100vw" }}
         >
           <DynamicLivexPriceChart
-            mode={"light"}
+            mode={"dark"}
             height={"60vh"}
             mobile={true}
           />

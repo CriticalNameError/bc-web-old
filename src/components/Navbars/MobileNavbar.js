@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import LogoLav from "../../icons/logo_lav";
 import MenuToClose2 from "../../icons/menu-to-close-2";
 import LeftArrow from "../../icons/left-arrow";
+import LogIn from "../../icons/log-in";
 import { Modal, ModalBody } from "reactstrap";
 import ReactDOMServer from "react-dom/server";
 import router, { withRouter } from "next/router";
@@ -67,13 +68,13 @@ const MobileNavbar = (props) => {
         backdrop={false}
       >
         <span
-              style={{ transition: "color 1.5s ease" }}
-              className={"pull-left text-primary pl-3 pt-2"}
-              id={"logo-svg"}
-              onClick={() => router.push("index-mobile")}
-            >
-              <LogoLav width={"175px"} />
-            </span>
+          style={{ transition: "color 1.5s ease" }}
+          className={"pull-left text-primary pl-3 pt-2"}
+          id={"logo-svg"}
+          onClick={() => router.push("index-mobile")}
+        >
+          <LogoLav width={"175px"} />
+        </span>
         <i
           className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
           style={{
@@ -93,9 +94,7 @@ const MobileNavbar = (props) => {
           className={"p-4 animated fadeInBottom"}
           style={{ height: "100%" }}
         >
-         
-
-          <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
+          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
             <span
               onClick={() => {
                 router.push("/wein-investments");
@@ -105,7 +104,7 @@ const MobileNavbar = (props) => {
               Weininvestments
             </span>
           </div>
-          <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
+          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
             <span
               onClick={() => {
                 router.push("/faq");
@@ -115,7 +114,7 @@ const MobileNavbar = (props) => {
               FAQ
             </span>
           </div>
-          <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
+          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
             <span
               onClick={() => {
                 router.push("/ueber-uns");
@@ -125,16 +124,31 @@ const MobileNavbar = (props) => {
               Über uns
             </span>
           </div>
-          <div className={"mt-5"} style={{ fontSize: "35px", fontWeight: 200 }}>
+          <div className={"mt-5"} style={{ fontSize: "30px", fontWeight: 200 }}>
             <span
               onClick={() => {
                 router.push("/blog");
                 toggleShowModal(false);
               }}
             >
-              Blog
+              Magazin
             </span>
           </div>
+          <a href={"https://weindepot.berghauscie.de"} target={"_blank"}>
+            <div
+              className={"mt-5 btn btn-primary"}
+              style={{ fontSize: "20px", fontWeight: 200 }}
+            >
+              <LogIn
+                width={"20px"}
+                height={"20px"}
+                style={{ display: "inline-block" }}
+                strokewidth={3}
+              />
+              <span className={"ml-2"}>Weindepot</span>
+              
+            </div>
+          </a>
           <div
             className={"text-center px-4"}
             style={{
@@ -179,7 +193,7 @@ const MobileNavbar = (props) => {
         style={{
           width: "100%",
           position: "fixed",
-          zIndex: 1000,
+          zIndex: 2000,
           background: "transparent",
         }}
       >

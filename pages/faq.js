@@ -27,7 +27,7 @@ import {
 const Faq = () => {
   return (
     <>
-      <div className={"container mx-auto"} style={{width: "60%"}}>
+      <div className={"container mx-auto"}>
         <div className="row">
           <div className={"col-12 my-auto text-center animated fadeIn slower mt-md-4"} >
             <div className={"mb-3 mb-md-4 text-primary"} style={{marginTop: "150px"}}>

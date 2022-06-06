@@ -247,8 +247,8 @@ const WineInvestments = () => {
               <p style={{ fontSize: "18px" }}>
                 Stabile Wertentwicklung bei geringer Volatilität
               </p>
-              <div className={"card p-4 pb-5"}>
-                <DynamicLivexPriceChart height={"450px"}/>
+              <div className={"card p-0 p-md-4 pb-5"}>
+                <DynamicLivexPriceChart mobile={window.innerWidth < 800} height={"450px"}/>
                 {/* <WineDaxSap /> */}
               </div>
             </div>
@@ -257,8 +257,8 @@ const WineInvestments = () => {
           <div
             class="container text-center pb-5 mt-5"
             id={"services"}
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
+            // data-aos="fade-up"
+            // data-aos-anchor-placement="center-bottom"
           >
             <h2 className={"h3"} style={{ fontSize: "24px" }}>
               Welche Faktoren bestimmen die{" "}
@@ -385,8 +385,8 @@ const WineInvestments = () => {
           <div>
             <div
               class="container text-center pb-5 mt-5"
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+              // data-aos="fade-up"
+              // data-aos-anchor-placement="center-bottom"
             >
               <h2 className={"h3 mt-5"} style={{ fontSize: "24px" }}>
                 Was macht ein{" "}
@@ -533,8 +533,8 @@ const WineInvestments = () => {
 
             <div
               className={"row mx-auto pt-5"}
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+              // data-aos="fade-up"
+              // data-aos-anchor-placement="center-bottom"
               style={{ maxWidth: "1200px" }}
             >
               <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
@@ -606,8 +606,8 @@ const WineInvestments = () => {
 
             <div
               class="row mt-md-n5 mx-auto"
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+              // data-aos="fade-up"
+              // data-aos-anchor-placement="center-bottom"
               style={{ maxWidth: "1200px" }}
             >
               <div class="col-md-1 text-center" style={{ zIndex: 100 }}>
@@ -688,8 +688,8 @@ const WineInvestments = () => {
 
             <div
               class="row mt-md-n5 mx-auto"
-              data-aos="fade-up"
-              data-aos-anchor-placement="center-bottom"
+              // data-aos="fade-up"
+              // data-aos-anchor-placement="center-bottom"
               style={{ maxWidth: "1200px" }}
             >
               <div class="col-md-1 text-center" style={{ zIndex: 100 }}>

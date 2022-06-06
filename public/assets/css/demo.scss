@@ -189,6 +189,10 @@
 
 }
 
+.snaspscroll-container > div {
+  scroll-snap-stop: always;
+}
+
 .snapscroll-container::-webkit-scrollbar {
   display: none;
 }
@@ -312,6 +316,7 @@
   height: 100vh;
   background-size:  cover;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .react-player__shadow{
@@ -1051,7 +1056,7 @@ html {
 }
 
 $bg-color: hsl(256,256,256);
-$dot-color: #ccc;
+$dot-color: #ddd;
 
 // Dimensions
 $dot-size: 2px;
@@ -1063,7 +1068,7 @@ $dot-space: 22px;
 		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
 		$dot-color;
 	background-size: $dot-space $dot-space;
-  background-color: #ccc!important
+  background-color: #ddd!important
 }
 
 // .amcharts-DateAxis-group{
