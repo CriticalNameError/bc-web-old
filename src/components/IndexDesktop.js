@@ -360,7 +360,7 @@ const IndexDesktop = (props) => {
                   plays-inline
                 >
                   <source
-                    src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background.mp4#t=14,44"
+                    src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background_lq.mp4#t=14,44"
                     type="video/mp4"
                   />
                 </video>
