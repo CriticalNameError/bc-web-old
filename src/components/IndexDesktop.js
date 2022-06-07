@@ -35,7 +35,7 @@ import LogoSublineLavendel from "icons/logo_subline_lavendel";
 import { primary, primary_t50, primary_t80, cta } from "helpers/colorScheme";
 import GoogleAnalytics from "helpers/GoogleAnalytics";
 import CtaButton from "components/CtaButton";
-import SelectCalendlyDate from "components/SelectCalendlyDate";
+// import SelectCalendlyDate from "components/SelectCalendlyDate";
 import "react-accessible-accordion/dist/fancy-example.css";
 import Award1 from "icons/award_1";
 import Award2 from "icons/award_2";
@@ -1185,7 +1185,7 @@ const IndexDesktop = (props) => {
                     Ihnre Fragen im Rahmen eines Beratungstermins.
                   </p>
 
-                  <SelectCalendlyDate width={"60%"} />
+                  {/* <SelectCalendlyDate width={"60%"} /> */}
                 </div>
               </div>
 

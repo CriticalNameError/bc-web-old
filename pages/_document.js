@@ -18,7 +18,7 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" />
-
+          <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'"/>
           {/* <link rel="manifest" href="/manifest.json" /> */}
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />

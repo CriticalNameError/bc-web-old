@@ -1,6 +1,7 @@
 {
   "name": "bc-web",
   "version": "1.2.0",
+  "homepage": "https://berghauscie.de",
   "engines": {
     "node": "14.x",
     "npm": "8.5.2"
