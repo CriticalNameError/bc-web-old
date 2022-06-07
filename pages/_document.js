@@ -140,9 +140,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <div className={"d-none d-md-block"}>
-            <LandingFooter />
-          </div>
+         
           <script
             src="https://nethunt.com/service/automation/forms/620a4817eab7f0495a741161?embed=script"
             async="async"

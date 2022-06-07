@@ -36,7 +36,7 @@ const CtaFixed = (props) => {
           className={"text-center btn bg-cta p-2 animated fadeIn slower"}
           style={{
             cursor: "pointer",
-            zIndex: "100",
+            zIndex: "2000",
             position: "fixed",
             top: "200px",
             right: "0px",

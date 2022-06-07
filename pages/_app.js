@@ -16,6 +16,7 @@ import "aos/dist/aos.css";
 import HttpsRedirect from "react-https-redirect";
 import SelectCalendylDateModal from "../src/components/SelectCalendlyDateModal";
 import CtaFixed from "../src/components/CtaFixed";
+import LandingFooter from "components/Footer/LandingFooter";
 import MobileNavbar from "../src/components/Navbars/MobileNavbar";
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
@@ -51,6 +52,8 @@ function MyApp({ Component, pageProps }) {
       />
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
+        
+       
           {width > 1100 ? (
             <>
               <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
@@ -63,10 +66,17 @@ function MyApp({ Component, pageProps }) {
             </>
           ) : <MobileNavbar {...pageProps}/>}
           {!showCookieModal && (
+            <>
             <Component
               {...pageProps}
               toggleShowCalendlyModal={toggleShowCalendlyModal}
             />
+             {width > 1100 && (
+            <div className={"d-none d-md-block"}>
+            <LandingFooter />
+           
+          </div>)}
+          </>
           )}
           {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
         </HttpsRedirect>

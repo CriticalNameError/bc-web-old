@@ -5,8 +5,9 @@ import GoogleAnalytics from "../helpers/GoogleAnalytics";
 
 const CookieConsent = (props) => {
   const [showModal, toggleShowModal] = useState(true);
+  const [showSettings, toggleShowSetting] = useState(false);
   const [cookies, setCookie] = useCookies(["cookie_consent"]);
-  //   const [marketingCookies, setMarketingCookies] = useState(false);
+  const [marketingCookies, setMarketingCookies] = useState(false);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
   useEffect(() => {
@@ -22,6 +23,7 @@ const CookieConsent = (props) => {
     ) {
       props.toggleShowModal(false);
     }
+    console.log(cookies.cookie_consent)
   }, [finishedLoadingDocument]);
   return (
     <>
@@ -41,8 +43,44 @@ const CookieConsent = (props) => {
             Einstellungen womöglich nicht mehr alle Funktionalitäten der Seite
             zur Verfügung stehen. Weitere Informationen finden Sie in unseren{" "}
             <a href={"legal/datenschutz/"}>Datenschutzhinweisen</a>.<br />
-            {/* <div class="row mt-3 mb-4">
-              <div class="col-md-6 col-sm-12">
+            <div class="row mt-3 mb-4 text-center text-md-left">
+           
+              <div class="col-md-12 col-sm-12 text-md-right">
+                {" "}
+                <Button
+                  className={"btn-primary btn-lg"}
+                  onClick={() => {
+                    toggleShowModal(false);
+
+                    setCookie("cookie_consent", "with_marketing", {
+                      path: "/",
+                    });
+                    props.toggleShowModal(false);
+                  }}
+                >
+                  Alle akzeptieren
+                </Button>
+              </div>
+              <div class="col-md-12 col-sm-12 text-center text-md-right">
+                {" "}
+                <Button
+                  className={"btn"}
+                  onClick={() => {
+                    // toggleShowModal(false);
+
+                    // setCookie("cookie_consent", "required_only", { path: "/" });
+                    // props.toggleShowModal(false);
+                    document
+                      .getElementById("cookie-settings")
+                      .classList.toggle("d-none");
+                  }}
+                >
+                  Einstellungen
+                </Button>
+              </div>
+            </div>
+            <div class="row mt-3 mb-4 d-none" id={"cookie-settings"}>
+              <div class="col-md-12 col-sm-12">
                 <div className={"form-check pl-0"} style={{ color: "grey" }}>
                   <label
                     class="form-check-label "
@@ -58,12 +96,19 @@ const CookieConsent = (props) => {
                       class="form-check-sign"
                       style={{ cursor: "default" }}
                     ></span>
-                    Notwendige Cookies
+                    Essenzielle Cookies
                   </label>
+                  <br/>
+                  <small className={"mb-2"}>
+                    Essenzielle Services sind für die grundlegende
+                    Funktionalität der Website erforderlich. Sie enthalten nur
+                    technisch notwendige Services. Diesen Services kann nicht
+                    widersprochen werden
+                  </small>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="form-check">
+              <div class="col-md-12 col-sm-12">
+                <div class="form-check pl-0">
                   <label class="form-check-label">
                     <input
                       class="form-check-input"
@@ -72,41 +117,53 @@ const CookieConsent = (props) => {
                       checked={marketingCookies}
                     />
                     <span class="form-check-sign"></span>
-                    Statistik-Cookies (optional)
+                    Funktionale Cookies
                   </label>
+                  <br/>
+                  <small className={"mb-2"}>
+                    Funktionale Services sind notwendig, um über die wesentliche
+                    Funktionalität der Website hinausgehende Features wie
+                    hübschere Schriftarten, Videowiedergabe oder interaktive Web
+                    2.0-Features bereitzustellen. Inhalte von z.B. Video- und
+                    Social Media-Plattformen sind standardmäßig gesperrt und
+                    können zugestimmt werden. Wenn dem Service zugestimmt wird,
+                    werden diese Inhalte automatisch ohne weitere manuelle
+                    Einwilligung geladen
+                  </small>
+
                 </div>
               </div>
-            </div> */}
-            <div class="row mt-3 mb-4 text-center text-md-left">
-              <div class="col-md-6 col-sm-12">
-                {" "}
-                <Button
-                  className={"btn-primary btn-lg"}
-                  onClick={() => {
+              <div class="col-md-12 col-sm-12">
+                <div class="form-check pl-0">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      onClick={() => setMarketingCookies(!marketingCookies)}
+                      checked={marketingCookies}
+                    />
+                    <span class="form-check-sign"></span>
+                    Statistik-Cookies
+                  </label>
+                  <br/>
+                  <small >
+                    Statistik-Services werden benötigt, um pseudonymisierte
+                    Daten über die Besucher der Website zu sammeln. Die Daten
+                    ermöglichen es uns, die Besucher besser zu verstehen und die
+                    Website zu optimieren.
+                  </small>
+                </div>
+              </div>
+              <div className={"text-center text-md-left"}>
+              <button  onClick={() => {
                     toggleShowModal(false);
 
                     setCookie("cookie_consent", "required_only", { path: "/" });
                     props.toggleShowModal(false);
-                  }}
-                >
-                  Nur notwendige Cookies akzeptieren
-                </Button>
-              </div>
-              <div class="col-md-6 col-sm-12 text-md-right">
-                {" "}
-                <Button
-                  className={"btn-primary btn-lg"}
-                  onClick={() => {
-                    toggleShowModal(false);
-
-                    setCookie("cookie_consent", "with_marketing", {
-                      path: "/",
-                    });
-                    props.toggleShowModal(false);
-                  }}
-                >
-                  Alle akzeptieren
-                </Button>
+                   
+                  }} className={"btn mt-3 text-center"}>
+                Auswahl akzeptieren
+              </button>
               </div>
             </div>
           </ModalBody>

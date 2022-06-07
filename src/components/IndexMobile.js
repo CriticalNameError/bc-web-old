@@ -90,8 +90,8 @@ const IndexMobile = (props) => {
         style={{ border: 0, backgroundColor: "transparent" }}
       >
         <ModalBody
-          className={"p-0 m-0 animated fadeIn slow"}
-          style={{ border: 0, backgroundColor: "transparent" }}
+          className={"p-0 m-0 animated fadeIn slow bg-white"}
+          style={{ border: 0 }}
         >
           <video
             id="explainer-video"
@@ -106,7 +106,7 @@ const IndexMobile = (props) => {
             controls
           >
             <source
-              src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4"
+              src="https://bcassets.s3.eu-west-1.amazonaws.com/Untitled.mp4"
               type="video/mp4"
             />
           </video>
@@ -121,7 +121,7 @@ const IndexMobile = (props) => {
               toggleShowVideoModal(false);
               document.getElementById("video-background-mobile").play();
             }}
-            className={"mx-auto btn btn-lg bg-cta p-3 mt-4"}
+            className={"mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite"}
             style={{ fontSize: "18px" }}
           >
             wineTelligence ausprobieren
@@ -148,7 +148,7 @@ const IndexMobile = (props) => {
         plays-inline
       >
         <source
-          src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4#t=14,44"
+          src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background.mp4#t=14,44"
           type="video/mp4"
         />
       </video>
@@ -217,7 +217,7 @@ const IndexMobile = (props) => {
               className={"btn text-white mt-5"}
               style={{ background: cta }}
             >
-              Zur wineTelligence
+              wineTelligence ausprobieren
             </button>
           </a>
         </div>
@@ -255,7 +255,7 @@ const IndexMobile = (props) => {
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h1 className={"px-1"} style={{ fontSize: "35px" }}>Herausragende Renditen</h1>
+        <h1 className={"px-1"} style={{ fontSize: "35px" }}>Herausragende Rendite</h1>
         <div className={"px-1"}>
           Der Livex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.

@@ -16,6 +16,7 @@
     "apollo-boost": "^0.4.7",
     "bootstrap": "4.3.1",
     "chart.js": "2.8.0",
+    "cookies-next": "^2.0.4",
     "granim": "^2.0.0",
     "graphql": "^15.5.0",
     "history": "4.9.0",

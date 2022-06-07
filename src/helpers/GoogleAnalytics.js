@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import { getCookie } from 'cookies-next';
 
 const GoogleAnalytics = () => {
   return (
     <>
-      {process.env.NEXT_PUBLIC_NODE_ENV === "production" && process.browser ? (
+      {/* {process.env.NEXT_PUBLIC_NODE_ENV === "development"  ? ( */}
         <Head>
           <script
             async
@@ -21,7 +22,7 @@ const GoogleAnalytics = () => {
             }}
           />
         </Head>
-      ) : null}
+      {/* ) : null} */}
     </>
   );
 };

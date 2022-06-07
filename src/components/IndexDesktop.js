@@ -118,8 +118,8 @@ const IndexDesktop = (props) => {
       toggleFinishedLoadingDocument(true);
       let vn = document.getElementById("vert-nav");
       let ct = document.getElementById("contact");
-
-      document.getElementById("side-cta").style.display = "none";
+     
+      
 
       vn.style.boxShadow = "none";
       vn.classList.toggle("bg-white");
@@ -235,6 +235,14 @@ const IndexDesktop = (props) => {
     [section]
   );
 
+  useEffect(()=>{
+    if(width > 800){
+      document.getElementById("side-cta").style.display = "none";
+    }else{
+      document.getElementById("side-cta").style.display = "inline";
+    }
+  },[width])
+
   useEffect(() => {
     document.getElementById("video-background").play();
     const handleResize = () => {
@@ -301,8 +309,8 @@ const IndexDesktop = (props) => {
               style={{ border: 0, backgroundColor: "transparent" }}
             >
               <ModalBody
-                className={"p-0 m-0 animated fadeIn slow"}
-                style={{ border: 0, backgroundColor: "transparent" }}
+                className={"p-0 m-0 animated fadeIn slow bg-white"}
+                style={{ border: 0 }}
               >
                 <video
                   id="explainer-video"
@@ -317,7 +325,7 @@ const IndexDesktop = (props) => {
                   controls
                 >
                   <source
-                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4"
+                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Untitled.mp4"
                     type="video/mp4"
                   />
                 </video>
@@ -332,7 +340,7 @@ const IndexDesktop = (props) => {
                     toggleShowVideoModal(false);
                     document.getElementById("video-background").play();
                   }}
-                  className={"mx-auto btn btn-lg bg-cta p-3 mt-4"}
+                  className={"mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite "}
                   style={{ fontSize: "18px" }}
                 >
                   wineTelligence ausprobieren
@@ -360,7 +368,7 @@ const IndexDesktop = (props) => {
                   plays-inline
                 >
                   <source
-                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Newsletter+Teaser.mp4#t=14,44"
+                    src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background.mp4#t=14,44"
                     type="video/mp4"
                   />
                 </video>
@@ -746,7 +754,7 @@ const IndexDesktop = (props) => {
                 </div>
               </div>
 
-              <div className="section dotted-background" >
+              <div className="section dotted-background">
                 <center id="facts-slide" className={"animated d-none"}>
                   <h2>
                     Exquisiter Wein - stabiler Sachwert mit attraktiver Rendite
@@ -759,7 +767,14 @@ const IndexDesktop = (props) => {
                     Prozentbereich - die Index-Entwicklung des Livex 1000
                     verdeutlicht das Potential der Sachanlage Wein.
                   </div>
-                  <div style={{ width: "800px", height: "500px", border: "1px solid grey", paddingTop: "15px" }}>
+                  <div
+                    style={{
+                      width: "800px",
+                      height: "500px",
+                      border: "1px solid grey",
+                      paddingTop: "15px",
+                    }}
+                  >
                     <DynamicLivexPriceChart height={"500px"} />
                   </div>
                 </center>
@@ -1180,11 +1195,24 @@ const IndexDesktop = (props) => {
                     <span className={"pr-2"}></span>
                     Gespräch vereinbaren
                   </h3>
-                  <p className={"mb-3"} style={{ fontSize: "18px" }}>
-                    Wünschen Sie eine persönliche Beratung? Gerne beantorten wir
-                    Ihnre Fragen im Rahmen eines Beratungstermins.
+                  <p className={"mb-3"} style={{ fontSize: "15px" }}>
+                    Wünschen Sie eine persönliche Beratung? <br/> Gerne beantworten wir
+                    Ihre Fragen im Rahmen eines kostenfreien Beratungstermins.
                   </p>
-
+                  <img className={"img img-responsive my-2"} src={"https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png"} style={{maxWidth: "450px"}} />
+                  <a
+                    href={
+                      "https://calendly.com/berghausundcie/beratungsgesprach"
+                    }
+                    target={"_blank"}
+                  ><br/>
+                    <button
+                      className={"btn btn-lg text-white"}
+                      style={{ background: cta }}
+                    >
+                      Gespräch vereinbaren
+                    </button>
+                  </a>
                   {/* <SelectCalendlyDate width={"60%"} /> */}
                 </div>
               </div>
