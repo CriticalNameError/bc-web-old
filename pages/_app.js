@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
         <HttpsRedirect>
         
        
-          {width > 1100 ? (
+          {width > 800 ? (
             <>
               <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
               <SelectCalendylDateModal
@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps }) {
               {...pageProps}
               toggleShowCalendlyModal={toggleShowCalendlyModal}
             />
-             {width > 1100 && (
+             {width > 800 && (
             <div className={"d-none d-md-block"}>
             <LandingFooter />
            

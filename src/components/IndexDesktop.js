@@ -118,8 +118,8 @@ const IndexDesktop = (props) => {
       toggleFinishedLoadingDocument(true);
       let vn = document.getElementById("vert-nav");
       let ct = document.getElementById("contact");
-     
-      
+
+      document.getElementById("side-cta").style.display = "none";
 
       vn.style.boxShadow = "none";
       vn.classList.toggle("bg-white");
@@ -234,14 +234,6 @@ const IndexDesktop = (props) => {
     },
     [section]
   );
-
-  useEffect(()=>{
-    if(width > 800){
-      document.getElementById("side-cta").style.display = "none";
-    }else{
-      document.getElementById("side-cta").style.display = "inline";
-    }
-  },[width])
 
   useEffect(() => {
     document.getElementById("video-background").play();
