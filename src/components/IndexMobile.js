@@ -115,9 +115,10 @@ const IndexMobile = (props) => {
           className={"text-center"}
           style={{ background: "transparent", borderTop: 0 }}
         >
+          <a href={"#winetelligence"} className={"mx-auto"}>
           <button
             onClick={() => {
-              fullpageApi.moveTo(3);
+              
               toggleShowVideoModal(false);
               document.getElementById("video-background-mobile").play();
             }}
@@ -126,6 +127,7 @@ const IndexMobile = (props) => {
           >
             wineTelligence ausprobieren
           </button>
+          </a>
         </ModalFooter>
       </Modal>
 
@@ -299,6 +301,7 @@ const IndexMobile = (props) => {
       }}
       id={"winetelligence"}
       className={"row section snapscroll-section text-center m-0"}
+    
     >
       <div className={"col-12 my-auto"}>
         {/* <h1 style={{ fontSize: "35px" }}>wineTelligence</h1> */}
