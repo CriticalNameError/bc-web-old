@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import ReactFullpage from "@fullpage/react-fullpage";
 import PreferencesForm from "components/PreferencesForm";
 import TriangleRight1 from "icons/triangle-right-1";
+import router, { withRouter } from "next/router";
 import {
   primary,
   primary_t80,
@@ -115,19 +116,20 @@ const IndexMobile = (props) => {
           className={"text-center"}
           style={{ background: "transparent", borderTop: 0 }}
         >
-          <a href={"#winetelligence"} className={"mx-auto"}>
+          <div className={"mx-auto"}>
           <button
             onClick={() => {
               
               toggleShowVideoModal(false);
               document.getElementById("video-background-mobile").play();
+              router.push("#winetelligence")
             }}
             className={"mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite"}
             style={{ fontSize: "18px" }}
           >
             wineTelligence ausprobieren
           </button>
-          </a>
+          </div>
         </ModalFooter>
       </Modal>
 
@@ -456,4 +458,4 @@ const IndexMobile = (props) => {
   );
 };
 
-export default IndexMobile;
+export default withRouter(IndexMobile);
