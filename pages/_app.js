@@ -52,11 +52,8 @@ function MyApp({ Component, pageProps }) {
       />
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
-        
-       
           {width > 800 ? (
             <>
-              <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
               <SelectCalendylDateModal
                 showModal={showCalendlyModal}
                 toggleShowCalendlyModal={toggleShowCalendlyModal}
@@ -64,19 +61,24 @@ function MyApp({ Component, pageProps }) {
 
               <LandingNavbar {...pageProps} />
             </>
-          ) : <MobileNavbar {...pageProps}/>}
+          ) : (
+            <MobileNavbar {...pageProps} />
+          )}
           {!showCookieModal && (
             <>
-            <Component
-              {...pageProps}
-              toggleShowCalendlyModal={toggleShowCalendlyModal}
-            />
-             {width > 800 && (
-            <div className={"d-none d-md-block"}>
-            <LandingFooter />
-           
-          </div>)}
-          </>
+              {width > 800 && (
+                <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
+              )}
+              <Component
+                {...pageProps}
+                toggleShowCalendlyModal={toggleShowCalendlyModal}
+              />
+              {width > 800 && (
+                <div className={"d-none d-md-block"}>
+                  <LandingFooter />
+                </div>
+              )}
+            </>
           )}
           {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
         </HttpsRedirect>
