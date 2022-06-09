@@ -32,16 +32,16 @@ const IndexMobile = (props) => {
   const [showVideoModal, toggleShowVideoModal] = useState(false);
   const [section, setSection] = useState("welcome");
   const [isPlaying, setIsPlaying] = useState(false);
-  const [videoReady, toggleVideoReady] = useState(false)
+  const [videoReady, toggleVideoReady] = useState(false);
 
   const playVideoAfterDelay = () =>
     setTimeout(() => {
       document.getElementById("explainer-video").play();
     }, 1000);
 
-    const moveDownAfterDelay = () =>
+  const moveDownAfterDelay = () =>
     setTimeout(() => {
-      router.push("#winetelligence")
+      router.push("#winetelligence");
     }, 700);
 
   useEffect(() => {
@@ -55,16 +55,15 @@ const IndexMobile = (props) => {
         .getElementById("swipe-up-btn")
         .classList.add("bounce", "infinite");
     }, 3500);
-    let videoElement = document.getElementById("video-background-mobile")
-    videoElement.play();
-    videoElement.addEventListener('loadeddata', (e) => {
-      //Video should now be loaded but we can add a second check
-   
-      if(videoElement.readyState >= 3){
-          toggleVideoReady(true)
-      }
-   
-   });
+    // let videoElement = document.getElementById("video-background-mobile");
+    // videoElement.play();
+    // videoElement.addEventListener("loadeddata", (e) => {
+    //   //Video should now be loaded but we can add a second check
+
+    //   if (videoElement.readyState >= 3) {
+    //     toggleVideoReady(true);
+    //   }
+    
   }, []);
 
   // useEffect(() => {
@@ -96,8 +95,8 @@ const IndexMobile = (props) => {
         "section snapscroll-section animated fadeIn row text-center m-0"
       }
     >
-       <LoadingOverlay
-        active={!videoReady}
+      <LoadingOverlay
+        active={false}
         fadeSpeed={1000}
         styles={{
           overlay: (base) => ({
@@ -107,7 +106,7 @@ const IndexMobile = (props) => {
             textAlign: "center",
             position: "fixed",
             width: "100%",
-            height: "100%"
+            height: "100%",
           }),
           spinner: (base) => ({
             ...base,
@@ -122,7 +121,6 @@ const IndexMobile = (props) => {
           }),
         }}
         spinner
-       
       ></LoadingOverlay>
       <Modal
         className={"modal-xl modal-dialog-centered modal-transparent"}
@@ -130,7 +128,7 @@ const IndexMobile = (props) => {
         toggle={() => {
           toggleShowVideoModal(!showVideoModal);
           document.getElementById("explainer-video").pause();
-          document.getElementById("video-background-mobile").play();
+          // document.getElementById("video-background-mobile").play();
         }}
         style={{ border: 0, backgroundColor: "transparent" }}
       >
@@ -147,7 +145,8 @@ const IndexMobile = (props) => {
               objectFit: "cover",
               display: "block",
             }}
-            webkit-playsinline playsinline
+            webkit-playsinline
+            playsinline
             controls
           >
             <source
@@ -161,25 +160,43 @@ const IndexMobile = (props) => {
           style={{ background: "transparent", borderTop: 0 }}
         >
           <div className={"mx-auto"}>
-          <button
-            onClick={() => {
-              
-              toggleShowVideoModal(false);
-              document.getElementById("video-background-mobile").play();
-              moveDownAfterDelay()
-            }}
-            className={"mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite"}
-            style={{ fontSize: "18px" }}
-          >
-            wineTelligence ausprobieren
-          </button>
+            <button
+              onClick={() => {
+                toggleShowVideoModal(false);
+                // document.getElementById("video-background-mobile").play();
+                moveDownAfterDelay();
+              }}
+              className={
+                "mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite"
+              }
+              style={{ fontSize: "18px" }}
+            >
+              wineTelligence ausprobieren
+            </button>
           </div>
         </ModalFooter>
       </Modal>
 
-      <video
+              <img src={"https://backoffice.berghauscie.de/documents/13/background_mobile.gif"}
+               style={{
+                position: "absolute",
+                // filter: "grayscale(1)",
+                top: 0,
+                left: 0,
+                minWidth: "100%",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: "-100",
+              }}
+              />
+
+      {/* <video
         autoplay
         loop
+        muted
+        webkit-playsinline
+        playsinline
         id="video-background-mobile"
         style={{
           position: "absolute",
@@ -192,14 +209,12 @@ const IndexMobile = (props) => {
           objectFit: "cover",
           zIndex: "-100",
         }}
-        muted
-        webkit-playsinline playsinline
       >
         <source
           src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background_lq.mp4#t=14,44"
           type="video/mp4"
         />
-      </video>
+      </video> */}
       <div
         className={" px-0 animated row m-0 p-0"}
         style={{
@@ -230,7 +245,7 @@ const IndexMobile = (props) => {
               onClick={() => {
                 toggleShowVideoModal(true);
                 playVideoAfterDelay();
-                document.getElementById("video-background-mobile").pause();
+                // document.getElementById("video-background-mobile").pause();
               }}
             >
               <span
@@ -303,21 +318,16 @@ const IndexMobile = (props) => {
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h1 className={"px-1"} style={{ fontSize: "35px" }}>Herausragende Rendite</h1>
+        <h1 className={"px-1"} style={{ fontSize: "35px" }}>
+          Herausragende Rendite
+        </h1>
         <div className={"px-1"}>
           Der Livex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
         </div>
 
-        <div
-          className={"mx-auto"}
-          style={{ width: "100vw" }}
-        >
-          <DynamicLivexPriceChart
-            mode={"dark"}
-            height={"60vh"}
-            mobile={true}
-          />
+        <div className={"mx-auto"} style={{ width: "100vw" }}>
+          <DynamicLivexPriceChart mode={"dark"} height={"60vh"} mobile={true} />
         </div>
       </div>
       {/* <div
@@ -347,7 +357,6 @@ const IndexMobile = (props) => {
       }}
       id={"winetelligence"}
       className={"row section snapscroll-section text-center m-0"}
-    
     >
       <div className={"col-12 my-auto"}>
         {/* <h1 style={{ fontSize: "35px" }}>wineTelligence</h1> */}
