@@ -147,7 +147,7 @@ const IndexMobile = (props) => {
               objectFit: "cover",
               display: "block",
             }}
-            playsinline
+            webkit-playsinline playsinline
             controls
           >
             <source
@@ -193,7 +193,7 @@ const IndexMobile = (props) => {
           zIndex: "-100",
         }}
         muted
-        playsinline
+        webkit-playsinline playsinline
       >
         <source
           src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background_lq.mp4#t=14,44"

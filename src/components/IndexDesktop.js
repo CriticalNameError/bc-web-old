@@ -279,171 +279,172 @@ const IndexDesktop = (props) => {
 
   return (
     <>
-       <LoadingOverlay
-              active={!videoReady}
-              fadeSpeed={1000}
-              styles={{
-                overlay: (base) => ({
-                  ...base,
-                  background: "rgba(255, 255, 255, 1)",
-                  zIndex: 3000,
-                  textAlign: "center",
-                  position: "fixed",
-                  width: "100%",
-                  top:0,
-                  left:0,
-                  height: "100%",
-                }),
-                spinner: (base) => ({
-                  ...base,
-                  width: "100px",
-                  "& svg circle": {
-                    stroke: primary,
-                  },
-                }),
-                content: (base) => ({
-                  ...base,
-                  color: "black",
-                }),
-              }}
-              spinner
-            ></LoadingOverlay>
-   
-    <ReactFullpage
-      //fullpage options
-      licenseKey={"YOUR_KEY_HERE"}
-      scrollingSpeed={1000} /* Options here */
-      sectionsColor={["transparent", "transparent", "#bfac82"]}
-      anchors={[
-        "welcome",
-        "facts",
-        "letsgo",
-        "faq",
-        "book-appointment",
-        "fp-footer",
-      ]}
-      // autoScrolling={false}
-      touchSensitivity={5}
-      onLeave={(a, b, c) => {
-        setSection(b["anchor"]);
-        console.log(a, b["anchor"], c);
-      }}
-      render={({ state, fullpageApi }) => {
-        return (
-          <>
-         
-            <Modal
-              className={"modal-xl modal-dialog-centered modal-transparent"}
-              isOpen={showVideoModal}
-              toggle={() => {
-                toggleShowVideoModal(!showVideoModal);
-                document.getElementById("explainer-video").pause();
-                document.getElementById("video-background").play();
-              }}
-              style={{ border: 0, backgroundColor: "transparent" }}
-            >
-              <ModalBody
-                className={"p-0 m-0 animated fadeIn slow bg-white"}
-                style={{ border: 0 }}
+      <LoadingOverlay
+        active={!videoReady}
+        fadeSpeed={1000}
+        styles={{
+          overlay: (base) => ({
+            ...base,
+            background: "rgba(255, 255, 255, 1)",
+            zIndex: 3000,
+            textAlign: "center",
+            position: "fixed",
+            width: "100%",
+            top: 0,
+            left: 0,
+            height: "100%",
+          }),
+          spinner: (base) => ({
+            ...base,
+            width: "100px",
+            "& svg circle": {
+              stroke: primary,
+            },
+          }),
+          content: (base) => ({
+            ...base,
+            color: "black",
+          }),
+        }}
+        spinner
+      ></LoadingOverlay>
+
+      <ReactFullpage
+        //fullpage options
+        licenseKey={"YOUR_KEY_HERE"}
+        scrollingSpeed={1000} /* Options here */
+        sectionsColor={["transparent", "transparent", "#bfac82"]}
+        anchors={[
+          "welcome",
+          "facts",
+          "letsgo",
+          "faq",
+          "book-appointment",
+          "fp-footer",
+        ]}
+        // autoScrolling={false}
+        touchSensitivity={5}
+        onLeave={(a, b, c) => {
+          setSection(b["anchor"]);
+          console.log(a, b["anchor"], c);
+        }}
+        render={({ state, fullpageApi }) => {
+          return (
+            <>
+              <Modal
+                className={"modal-xl modal-dialog-centered modal-transparent"}
+                isOpen={showVideoModal}
+                toggle={() => {
+                  toggleShowVideoModal(!showVideoModal);
+                  document.getElementById("explainer-video").pause();
+                  document.getElementById("video-background").play();
+                }}
+                style={{ border: 0, backgroundColor: "transparent" }}
               >
-                <video
-                  id="explainer-video"
-                  style={{
-                    minWidth: "100%",
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                  playsinline
-                  controls
+                <ModalBody
+                  className={"p-0 m-0 animated fadeIn slow bg-white"}
+                  style={{ border: 0 }}
                 >
-                  <source
-                    src="https://bcassets.s3.eu-west-1.amazonaws.com/Untitled.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </ModalBody>
-              <ModalFooter
-                className={"text-center"}
-                style={{ background: "transparent", borderTop: 0 }}
-              >
-                <button
-                  onClick={() => {
-                    fullpageApi.moveTo(3);
-                    toggleShowVideoModal(false);
-                    document.getElementById("video-background").play();
-                  }}
-                  className={
-                    "mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite "
-                  }
-                  style={{ fontSize: "18px" }}
+                  <video
+                    id="explainer-video"
+                    style={{
+                      minWidth: "100%",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                    webkit-playsinline playsinline
+                    controls
+                  >
+                    <source
+                      src="https://bcassets.s3.eu-west-1.amazonaws.com/Untitled.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </ModalBody>
+                <ModalFooter
+                  className={"text-center"}
+                  style={{ background: "transparent", borderTop: 0 }}
                 >
-                  wineTelligence ausprobieren
-                </button>
-              </ModalFooter>
-            </Modal>
-            <ReactFullpage.Wrapper>
-              <div className="section">
-                <video
-                  autoplay
-                  loop
-                  id="video-background"
-                  style={{
-                    position: "absolute",
-                    // filter: "grayscale(1)",
-                    top: 0,
-                    left: 0,
-                    minWidth: "100%",
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    zIndex: "-100",
-                  }}
-                  muted
-                  playsinline
-                >
-                  <source
-                    src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background_lq.mp4#t=14,44"
-                    type="video/mp4"
-                  />
-                </video>
-                <div
-                  className={" px-0 animated"}
-                  style={{
-                    overflowX: "hidden",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    minWidth: "100%",
-                    width: "100%",
-                    height: "100%",
-                    background: "rgba(255,255,255,0.85)",
-                  }}
-                  id={"welcome-slide"}
-                >
-                  <div className="row h-100">
-                    <div className={"col-12 my-auto text-center  "}>
-                      <div
-                        className={"mx-auto my-auto"}
-                        // style={{ maxWidth: "750px" }}
-                      >
-                        <div className={"pl-md-4 mt-2 animated fadeIn slower"}>
-                          <div className={"row mt-3"}>
-                            <div
-                              className={
-                                "col-12 text-right animated fadeIn slower"
-                              }
-                            >
+                  <button
+                    onClick={() => {
+                      fullpageApi.moveTo(3);
+                      toggleShowVideoModal(false);
+                      document.getElementById("video-background").play();
+                    }}
+                    className={
+                      "mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite "
+                    }
+                    style={{ fontSize: "18px" }}
+                  >
+                    wineTelligence ausprobieren
+                  </button>
+                </ModalFooter>
+              </Modal>
+              <ReactFullpage.Wrapper>
+                <div className="section">
+                  <video
+                    autoplay
+                    loop
+                    id="video-background"
+                    style={{
+                      position: "absolute",
+                      // filter: "grayscale(1)",
+                      top: 0,
+                      left: 0,
+                      minWidth: "100%",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      zIndex: "-100",
+                    }}
+                    muted
+                    webkit-playsinline playsinline
+                  >
+                    <source
+                      src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background_lq.mp4#t=14,44"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <div
+                    className={" px-0 animated"}
+                    style={{
+                      overflowX: "hidden",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      minWidth: "100%",
+                      width: "100%",
+                      height: "100%",
+                      background: "rgba(255,255,255,0.85)",
+                    }}
+                    id={"welcome-slide"}
+                  >
+                    <div className="row h-100">
+                      <div className={"col-12 my-auto text-center  "}>
+                        <div
+                          className={"mx-auto my-auto"}
+                          // style={{ maxWidth: "750px" }}
+                        >
+                          <div
+                            className={"pl-md-4 mt-2 animated fadeIn slower"}
+                          >
+                            <div className={"row mt-3"}>
                               <div
-                                className={"text-center mx-auto"}
-                                style={{
-                                  // width: "50%",
-                                  position: "relative",
-                                }}
+                                className={
+                                  "col-12 text-right animated fadeIn slower"
+                                }
                               >
-                                {/* <span className={"blink_me"} style={{position: "absolute", top: "15px", left: "15px"}}></span> */}
-                                {/* <img
+                                <div
+                                  className={"text-center mx-auto"}
+                                  style={{
+                                    // width: "50%",
+                                    position: "relative",
+                                  }}
+                                >
+                                  {/* <span className={"blink_me"} style={{position: "absolute", top: "15px", left: "15px"}}></span> */}
+                                  {/* <img
                                   src={
                                     "https://bcassets.s3.amazonaws.com/static/images/Mouton_Rothschild_2016.width-450.jpegquality-10.png"
                                   }
@@ -459,131 +460,138 @@ const IndexDesktop = (props) => {
                                 ></img>
 
                                 <DynamicLiveData /> */}
-                                <Row>
-                                  <Col>
-                                    <div className={"animated fadeIn my-auto"}>
-                                      <h1
-                                        className={"p-3 pb-1 pt-0 mb-n3"}
-                                        style={{
-                                          color: "#333",
-                                          filter:
-                                            "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
-                                          fontSize: "65px",
-                                          fontFamily: "'Whisper', cursive",
-                                        }}
-                                      >
-                                        {" "}
-                                        Disruptiv Traditionell
-                                      </h1>
+                                  <Row>
+                                    <Col>
                                       <div
-                                        className={"pb-5 mb-3"}
-                                        style={{ fontSize: "15px" }}
+                                        className={"animated fadeIn my-auto"}
                                       >
-                                        Ihr Weininvestment in den besten Händen
-                                        - professionell, transparent, zeitgemäß.{" "}
-                                      </div>
-                                      <span
-                                        onClick={() => {
-                                          toggleShowVideoModal(true);
-                                          playVideoAfterDelay();
-                                          document
-                                            .getElementById("video-background")
-                                            .pause();
-                                        }}
-                                      >
-                                        <span
-                                          class="play-btn mx-auto"
-                                          href="#"
+                                        <h1
+                                          className={"p-3 pb-1 pt-0 mb-n3"}
                                           style={{
-                                            transform: props.mobile
-                                              ? "scale(0.9)"
-                                              : "scale(1.2)",
-
-                                            background: "transparent",
-                                            cursor: "pointer",
+                                            color: "#333",
+                                            filter:
+                                              "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
+                                            fontSize: "65px",
+                                            fontFamily: "'Whisper', cursive",
                                           }}
                                         >
-                                          <div
-                                            className={
-                                              "animated pulse infinite slower"
-                                            }
+                                          {" "}
+                                          Disruptiv Traditionell
+                                        </h1>
+                                        <div
+                                          className={"pb-5 mb-3"}
+                                          style={{ fontSize: "15px" }}
+                                        >
+                                          Ihr Weininvestment in den besten
+                                          Händen - professionell, transparent,
+                                          zeitgemäß.{" "}
+                                        </div>
+                                        <span
+                                          onClick={() => {
+                                            toggleShowVideoModal(true);
+                                            playVideoAfterDelay();
+                                            document
+                                              .getElementById(
+                                                "video-background"
+                                              )
+                                              .pause();
+                                          }}
+                                        >
+                                          <span
+                                            class="play-btn mx-auto"
+                                            href="#"
                                             style={{
-                                              textAlign: "center",
-                                              color: cta,
-                                              paddingLeft: "10px",
-                                              paddingTop: "25px",
+                                              transform: props.mobile
+                                                ? "scale(0.9)"
+                                                : "scale(1.2)",
+
+                                              background: "transparent",
+                                              cursor: "pointer",
                                             }}
                                           >
-                                            <TriangleRight1
-                                              width={"50px"}
-                                              strokewidth={3}
-                                            />
-                                          </div>
-                                        </span>
-                                        <br />
+                                            <div
+                                              className={
+                                                "animated pulse infinite slower"
+                                              }
+                                              style={{
+                                                textAlign: "center",
+                                                color: cta,
+                                                paddingLeft: "10px",
+                                                paddingTop: "25px",
+                                              }}
+                                            >
+                                              <TriangleRight1
+                                                width={"50px"}
+                                                strokewidth={3}
+                                              />
+                                            </div>
+                                          </span>
+                                          <br />
 
-                                        <b>Video abspielen</b>
-                                      </span>
-                                    </div>
-                                    <div
-                                      className={
-                                        "text-center mt-md-5 pt-2 px-5 mx-auto py-3"
-                                      }
-                                    >
+                                          <b>Video abspielen</b>
+                                        </span>
+                                      </div>
                                       <div
                                         className={
-                                          "text-center pt-3 justify-content-between"
+                                          "text-center mt-md-5 pt-2 px-5 mx-auto py-3"
                                         }
-                                        style={{
-                                          fontSize: "15px",
-
-                                          lineHeight: "1.5em",
-                                        }}
                                       >
-                                        <span className={"mr-3"}>
-                                          <WineList
-                                            width={"25px"}
-                                            height={"30px"}
-                                            strokewidth={3}
-                                          />{" "}
-                                          Zugang zu den weltbesten Weinen
-                                        </span>
-
-                                        <span className={"mr-3"}>
-                                          <Atom
-                                            width={"25px"}
-                                            height={"30px"}
-                                            strokewidth={3}
-                                          />{" "}
-                                          KI-unterstützte Portfolioberatung
-                                        </span>
-
-                                        <span>
-                                          <Security
-                                            width={"25px"}
-                                            height={"30px"}
-                                            strokewidth={3}
-                                          />{" "}
-                                          echte Sachwerte
-                                        </span>
-                                      </div>
-
-                                      {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
-                                      <div>
-                                        <button
-                                          onClick={() => fullpageApi.moveTo(3)}
+                                        <div
                                           className={
-                                            "mr-auto btn bg-cta p-2 mt-4"
+                                            "text-center pt-3 justify-content-between"
                                           }
-                                          style={{ fontSize: "18px" }}
-                                        >
-                                          wineTelligence ausprobieren
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </Col>
+                                          style={{
+                                            fontSize: "15px",
 
-                                  {/* <ReactPlayer
+                                            lineHeight: "1.5em",
+                                          }}
+                                        >
+                                          <span className={"mr-3"}>
+                                            <WineList
+                                              width={"25px"}
+                                              height={"30px"}
+                                              strokewidth={3}
+                                            />{" "}
+                                            Zugang zu den weltbesten Weinen
+                                          </span>
+
+                                          <span className={"mr-3"}>
+                                            <Atom
+                                              width={"25px"}
+                                              height={"30px"}
+                                              strokewidth={3}
+                                            />{" "}
+                                            KI-unterstützte Portfolioberatung
+                                          </span>
+
+                                          <span>
+                                            <Security
+                                              width={"25px"}
+                                              height={"30px"}
+                                              strokewidth={3}
+                                            />{" "}
+                                            echte Sachwerte
+                                          </span>
+                                        </div>
+
+                                        {/* <CtaButton children={<span style={{fontSize: "18px"}}>Jetzt starten</span>}/> */}
+                                        <div>
+                                          <button
+                                            onClick={() =>
+                                              fullpageApi.moveTo(3)
+                                            }
+                                            className={
+                                              "mr-auto btn bg-cta p-2 mt-4"
+                                            }
+                                            style={{ fontSize: "18px" }}
+                                          >
+                                            wineTelligence ausprobieren
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </Col>
+
+                                    {/* <ReactPlayer
                                       url="https://www.youtube.com/watch?v=Yp7ybNX1Dy4"
                                       muted={false}
                                       playing={isPlaying}
@@ -609,9 +617,9 @@ const IndexDesktop = (props) => {
                                     >
                                       
                                     </ReactPlayer> */}
-                                </Row>
+                                  </Row>
 
-                                {/* <Row
+                                  {/* <Row
                                   className={
                                     "text-center card-overlay-from-transp mx-0"
                                   }
@@ -672,7 +680,7 @@ const IndexDesktop = (props) => {
                                   </Col>
                                 </Row> */}
 
-                                {/* <div
+                                  {/* <div
                                   className={""}
                                   style={{
                                     position: "absolute",
@@ -686,21 +694,21 @@ const IndexDesktop = (props) => {
                                   {" "}
                                   <DynamicLiveData />
                                 </div> */}
+                                </div>
                               </div>
+
+                              <br />
                             </div>
-
-                            <br />
+                            <div
+                              // className={
+                              //   "animate__animated animate__delay-1s animate__fadeInRight animate__slow"
+                              // }
+                              className={"animated fadeIn slower"}
+                            ></div>
                           </div>
-                          <div
-                            // className={
-                            //   "animate__animated animate__delay-1s animate__fadeInRight animate__slow"
-                            // }
-                            className={"animated fadeIn slower"}
-                          ></div>
                         </div>
-                      </div>
 
-                      {/* <div class=" text-center w-100 animated fadeIn slower">
+                        {/* <div class=" text-center w-100 animated fadeIn slower">
                       <div
                         data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
@@ -762,516 +770,519 @@ const IndexDesktop = (props) => {
                         </div>
                       </div>
                     </div> */}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  className={"p-4 text-center w-100"}
-                  style={{ position: "absolute", bottom: "15px" }}
-                >
-                  <a
-                    className={"move-down"}
-                    href={"#services"}
-                    style={{ cursor: "pointer" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
-                  >
-                    <span
-                      className={"animated infinite pulse"}
-                      style={{ cursor: "pointer", color: primary }}
-                    >
-                      <DownArrow
-                        width={"40px"}
-                        height={"40px"}
-                        strokewidth={4}
-                        style={{ display: "inline-block" }}
-                      />
-                    </span>
-                  </a>
-                </div>
-              </div>
-
-              <div className="section dotted-background">
-                <center id="facts-slide" className={"animated d-none"}>
-                  <h2>
-                    Exquisiter Wein - stabiler Sachwert mit attraktiver Rendite
-                  </h2>
                   <div
-                    className={"mt-n2 pb-3"}
-                    style={{ fontSize: "15px", maxWidth: "800px" }}
+                    className={"p-4 text-center w-100"}
+                    style={{ position: "absolute", bottom: "15px" }}
                   >
-                    Stabiles Wachstum und jährliche Renditen im zweistelligen
-                    Prozentbereich - die Index-Entwicklung des Livex 1000
-                    verdeutlicht das Potential der Sachanlage Wein.
-                  </div>
-                  <div
-                    style={{
-                      width: "800px",
-                      height: "500px",
-                      border: "1px solid grey",
-                      paddingTop: "15px",
-                    }}
-                  >
-                    <DynamicLivexPriceChart height={"500px"} />
-                  </div>
-                </center>
-                <div
-                  className={"p-4 text-center w-100"}
-                  style={{ position: "absolute", bottom: "15px" }}
-                >
-                  <a
-                    className={"move-down"}
-                    href={"#services"}
-                    style={{ cursor: "pointer" }}
-                    onClick={() => fullpageApi.moveSectionDown()}
-                  >
-                    <span
-                      className={"animated infinite pulse"}
-                      style={{ cursor: "pointer", color: primary }}
+                    <a
+                      className={"move-down"}
+                      href={"#services"}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => fullpageApi.moveSectionDown()}
                     >
-                      <DownArrow
-                        width={"40px"}
-                        height={"40px"}
-                        strokewidth={4}
-                        style={{ display: "inline-block" }}
-                      />
-                    </span>
-                  </a>
+                      <span
+                        className={"animated infinite pulse"}
+                        style={{ cursor: "pointer", color: primary }}
+                      >
+                        <DownArrow
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={4}
+                          style={{ display: "inline-block" }}
+                        />
+                      </span>
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              <div
-                className="section"
-                style={{
-                  background:
-                    "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
-                }}
-                id={"letsgo-slide"}
-              >
-                <button
-                  className={"btn bnt-md text-white"}
-                  style={{
-                    background: "rgba(255,255,255,0.15)",
-
-                    position: "absolute",
-                    top: "20px",
-                    left: "20px",
-                  }}
-                  onClick={() => fullpageApi.moveSectionUp()}
-                >
-                  Nach oben
-                </button>
-                <center>
-                  <h2
-                    className={"text-white"}
-                    // style={{
-                    //   filter: "drop-shadow(3px 5px 2px rgb(255 255 255 / 0.08))",
-                    // }}
-                  >
-                    wineTelligence
-                  </h2>
-                  <h3
-                    className={"text-white pb-5"}
-                    style={{ fontSize: "18px" }}
-                  >
-                    Ihr unverbindlicher Portfoliovorschlag in wenigen Sekunden.
-                  </h3>
-                  <PreferencesForm />
-                </center>
-                <button
-                  className={"btn bnt-md text-white"}
-                  style={{
-                    background: "rgba(255,255,255,0.15)",
-                    position: "absolute",
-                    bottom: "20px",
-                    left: "20px",
-                  }}
-                  onClick={() => fullpageApi.moveSectionDown()}
-                >
-                  Zu den FAQs
-                </button>
-                <Particles
-                  id="tsparticles"
-                  style={{ position: "absolute", left: 0, top: 0 }}
-                  options={{
-                    fullScreen: { enable: false, zIndex: 0 },
-                    background: {
-                      color: {
-                        value: "transparent",
-                      },
-                    },
-                    fpsLimit: 40,
-                    interactivity: {
-                      events: {
-                        onClick: {
-                          enable: true,
-                          mode: "grab",
-                        },
-                        onHover: {
-                          enable: true,
-                          mode: "grab",
-                        },
-                        resize: true,
-                      },
-                      modes: {
-                        bubble: {
-                          distance: 400,
-                          duration: 20,
-                          opacity: 0.8,
-                          size: 40,
-                        },
-                        push: {
-                          quantity: 0,
-                        },
-                        repulse: {
-                          distance: 200,
-                          duration: 0.9,
-                        },
-                        grab: {
-                          distance: 200,
-                          duration: 1,
-                          color: "white",
-                        },
-                      },
-                    },
-                    particles: {
-                      color: {
-                        value: "#b29f74",
-                      },
-                      links: {
-                        color: "#b29f74",
-                        distance: 210,
-                        enable: true,
-                        opacity: 0.6,
-                        width: 1,
-                      },
-                      collisions: {
-                        enable: true,
-                      },
-                      move: {
-                        direction: "none",
-                        enable: true,
-                        outMode: "bounce",
-                        random: false,
-                        speed: 1,
-                        straight: false,
-                      },
-                      number: {
-                        density: {
-                          enable: true,
-                          area: 800,
-                        },
-                        value: 30,
-                        limit: 80,
-                      },
-                      opacity: {
-                        value: 0.6,
-                      },
-                      shape: {
-                        type: "circle",
-                        opacity: 0.6,
-                        stroke: {
-                          width: 1,
-                          color: "red",
-                        },
-                        size: {
-                          value: 10,
-                          random: true,
-                          // anim: {
-                          //   enable: true,
-                          //   speed: 10,
-                          //   size_min: 10,
-                          //   sync: false
-                          // }
-                        },
-                      },
-                      // size: {
-                      //   random: true,
-                      //   value: 5,
-                      // },
-                    },
-                    detectRetina: true,
-                  }}
-                />
-              </div>
-              <div className="section">
-                <center id="faq-slide" className={"animated"}>
-                  <h2>Häufig gestellte Fragen</h2>
-                  <div style={{ width: "800px", height: "500px" }}>
+                <div className="section dotted-background">
+                  <center id="facts-slide" className={"animated d-none"}>
+                    <h2>
+                      Exquisiter Wein - stabiler Sachwert mit attraktiver
+                      Rendite
+                    </h2>
                     <div
-                      className={"container mx-auto"}
-                      style={{ maxWidth: "800px" }}
+                      className={"mt-n2 pb-3"}
+                      style={{ fontSize: "15px", maxWidth: "800px" }}
                     >
-                      <Accordion
-                        allowZeroExpanded={true}
-                        className={"mt-4 card"}
-                        id={"list"}
-                      >
-                        <AccordionItem>
-                          <AccordionItemHeading>
-                            <AccordionItemButton>
-                              {" "}
-                              <span
-                                className={"text-primary mr-2"}
-                                style={{ display: "inline-block" }}
-                              >
-                                <RightArrow
-                                  width={"20px"}
-                                  height={"20px"}
-                                  strokewidth={4}
-                                />
-                              </span>
-                              Für wen empfiehlt sich ein Weininvestment?
-                            </AccordionItemButton>
-                          </AccordionItemHeading>
-                          <AccordionItemPanel>
-                            <p>
-                              Ein Weininvestment empfiehlt sich besonders für
-                              all diejenigen, die ihr Portfolio abrunden wollen
-                              und ein alternatives Investment mit einem mittel-
-                              bis langfristiges Anlagehorizont (ca. 5 bis 10
-                              Jahre) und der Aussicht auf eine gute Rendite
-                              suchen.
-                            </p>
-                          </AccordionItemPanel>
-                        </AccordionItem>
-
-                        <AccordionItem>
-                          <AccordionItemHeading>
-                            <AccordionItemButton>
-                              {" "}
-                              <span
-                                className={"text-primary mr-2"}
-                                style={{ display: "inline-block" }}
-                              >
-                                <RightArrow
-                                  width={"20px"}
-                                  height={"20px"}
-                                  strokewidth={4}
-                                />
-                              </span>
-                              Wem gehört der Wein nach der Kaufabwicklung?
-                            </AccordionItemButton>
-                          </AccordionItemHeading>
-                          <AccordionItemPanel>
-                            <p>
-                              Bei einem Weininvestment über Berghaus & Cie. sind
-                              Sie zu 100 % Eigentümer Ihres Weines. Sie
-                              investieren in ein physisches Gut bzw. in einen
-                              Sachwert. Dies ist bedeutender Vorteil gegenüber
-                              nicht- physischen Gütern wie Aktien, die außer dem
-                              Papier, auf dem sie gedruckt sind, keinen
-                              inhärenten Wert besitzen.
-                            </p>
-                            <p>
-                              Als Besitzer erhalten Sie, sobald die Weine in
-                              unserem Weinlager eingelagert werden, eine
-                              Auflistung Ihrer Weine. Diese Auflistung ist in
-                              Kombination mit der Rechnung Ihr persönlicher
-                              Eigentumsnachweis und dient Ihnen auch als
-                              Nachweis Ihres Herausgabeanspruches gegenüber dem
-                              Weinlager.
-                            </p>
-                          </AccordionItemPanel>
-                        </AccordionItem>
-
-                        <AccordionItem>
-                          <AccordionItemHeading>
-                            <AccordionItemButton>
-                              {" "}
-                              <span
-                                className={"text-primary mr-2"}
-                                style={{ display: "inline-block" }}
-                              >
-                                <RightArrow
-                                  width={"20px"}
-                                  height={"20px"}
-                                  strokewidth={4}
-                                />
-                              </span>
-                              Kann ich den Wein auch selbst trinken?
-                            </AccordionItemButton>
-                          </AccordionItemHeading>
-                          <AccordionItemPanel>
-                            <p>
-                              Selbstverständlich. Wenn Sie Ihren Wein zu einem
-                              besonderen Anlass, z. B. zu einer Hochzeit, einem
-                              Jubiläum, einem runden Geburtstag, einer Taufe
-                              oder Ähnlichem selbst verzehren möchten, dann
-                              senden wir ihnen den Wein aus dem Weinlager gerne
-                              - versichert und fachgerecht transportiert - an
-                              Ihre Wunschadresse zu.
-                            </p>
-                            <p>
-                              Sie sollten jedoch bedenken, dass die
-                              Mehrwertsteuer fällig wird, wenn der Wein das
-                              Umsatzsteuerlager verlässt.
-                            </p>
-                          </AccordionItemPanel>
-                        </AccordionItem>
-
-                        <AccordionItem>
-                          <AccordionItemHeading>
-                            <AccordionItemButton>
-                              {" "}
-                              <span
-                                className={"text-primary mr-2"}
-                                style={{ display: "inline-block" }}
-                              >
-                                <RightArrow
-                                  width={"20px"}
-                                  height={"20px"}
-                                  strokewidth={4}
-                                />
-                              </span>
-                              Gegen welche Risiken sind meine Weine versichert?
-                            </AccordionItemButton>
-                          </AccordionItemHeading>
-                          <AccordionItemPanel>
-                            <p>
-                              Bei Berghaus & Cie. sind Ihre Weine während des
-                              Transports und der Verweildauer in unserem
-                              Weinlager gegen Beschädigungen oder andere
-                              wertmindernde Umstände versichert. Die
-                              Versicherungssumme richtet sich nach dem
-                              Bezugspreis.
-                            </p>
-                            <p>
-                              Sollten Sie nach einiger Zeit wünschen, dass Ihre
-                              Weine höher versichert werden, um der
-                              Marktentwicklung Rechnung zu tragen, ist das
-                              selbstverständlich möglich. Gerne passen wir die
-                              Versicherungssumme für sie an.
-                            </p>
-                          </AccordionItemPanel>
-                        </AccordionItem>
-
-                        <AccordionItem>
-                          <AccordionItemHeading>
-                            <AccordionItemButton>
-                              {" "}
-                              <span
-                                className={"text-primary mr-2"}
-                                style={{ display: "inline-block" }}
-                              >
-                                <RightArrow
-                                  width={"20px"}
-                                  height={"20px"}
-                                  strokewidth={4}
-                                />
-                              </span>
-                              Welche Anlagedauer ist für Weininvestments
-                              empfehlenswert?
-                            </AccordionItemButton>
-                          </AccordionItemHeading>
-                          <AccordionItemPanel>
-                            <p>
-                              Im Allgemeinen entspricht die Anlagedauer eines
-                              Weines seiner jeweiligen Reifedauer. Diese hängt
-                              von verschiedenen Faktoren ab wie, z. B. der
-                              Rebsorte und der Art des Anbaus. Die
-                              Flaschenreifung bei Spitzenweinen kann zwischen
-                              fünf und fünfzehn Jahren, in Einzelfällen aber
-                              auch mehr betragen.
-                            </p>
-                            <p>
-                              Berghaus & Cie. empfiehlt Ihnen nur Weine, die das
-                              Potential haben ihrem persönlichen Anlagehorizont
-                              zu entsprechen. Denn die Reifedauer spielt bei
-                              Weininvestments eine zentrale Rolle. Nur dann,
-                              wenn aus einem besonderen Jahrgang nach der
-                              Reifung ein einzigartiger Wein geworden ist, lässt
-                              sich ein attraktiver Wiederverkaufspreis
-                              realisieren.
-                            </p>
-                          </AccordionItemPanel>
-                        </AccordionItem>
-                      </Accordion>
-
-                      <h3
-                        className={"mt-5 text-center"}
-                        style={{ fontSize: "18px", color: "#555" }}
-                      >
-                        Haftungsausschluss
-                      </h3>
-                      <p
-                        className={"text-justify"}
-                        style={{ fontSize: "12px", color: "#555" }}
-                      >
-                        Die Firma Berghaus & Cie. GmbH ist ein
-                        Weinhandelsunternehmen, das Kunden zu ihren Weinen
-                        Vergleichswerte in der preislichen Entwicklung zur
-                        Verfügung stellt. Berghaus & Cie. ist kein
-                        Finanzdienstleister oder -berater. Berghaus & Cie.
-                        verkauft Weine nur in für Privatpersonen vertretbaren
-                        Mengen. Für individuelle steuerliche Fragen wenden Sie
-                        sich bitte an einen Steuerberater. Es gelten die
-                        Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
-                        GmbH, eine aktuelle Fassung finden Sie unter{" "}
-                        <a
-                          className={"text-dark"}
-                          href={
-                            "https://www.berghauscie.de/legal/allgemeine-geschaeftsbedingungen"
-                          }
-                        >
-                          https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen
-                        </a>
-                        .
-                      </p>
+                      Stabiles Wachstum und jährliche Renditen im zweistelligen
+                      Prozentbereich - die Index-Entwicklung des Livex 1000
+                      verdeutlicht das Potential der Sachanlage Wein.
                     </div>
-                  </div>
-                </center>
-              </div>
-
-              <div className={"section"}>
-                <div
-                  id={"calendly-slide"}
-                  className={"animated text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}
-                >
-                  <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
-                    <span className={"pr-2"}></span>
-                    Gespräch vereinbaren
-                  </h3>
-                  <p className={"mb-3"} style={{ fontSize: "15px" }}>
-                    Wünschen Sie eine persönliche Beratung? <br /> Gerne
-                    beantworten wir Ihre Fragen im Rahmen eines kostenfreien
-                    Beratungstermins.
-                  </p>
-                  <img
-                    className={"img img-responsive my-2"}
-                    src={
-                      "https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png"
-                    }
-                    style={{ maxWidth: "450px" }}
-                  />
-                  <a
-                    href={
-                      "https://calendly.com/berghausundcie/beratungsgesprach"
-                    }
-                    target={"_blank"}
-                  >
-                    <br />
-                    <button
-                      className={"btn btn-lg text-white"}
-                      style={{ background: cta }}
+                    <div
+                      style={{
+                        width: "800px",
+                        height: "500px",
+                        border: "1px solid grey",
+                        paddingTop: "15px",
+                      }}
                     >
-                      Gespräch vereinbaren
-                    </button>
-                  </a>
-                  {/* <SelectCalendlyDate width={"60%"} /> */}
+                      <DynamicLivexPriceChart height={"500px"} />
+                    </div>
+                  </center>
+                  <div
+                    className={"p-4 text-center w-100"}
+                    style={{ position: "absolute", bottom: "15px" }}
+                  >
+                    <a
+                      className={"move-down"}
+                      href={"#services"}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => fullpageApi.moveSectionDown()}
+                    >
+                      <span
+                        className={"animated infinite pulse"}
+                        style={{ cursor: "pointer", color: primary }}
+                      >
+                        <DownArrow
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={4}
+                          style={{ display: "inline-block" }}
+                        />
+                      </span>
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              <div className="section fp-auto-height">
-                <div>
-                  <LandingFooter />
+                <div
+                  className="section"
+                  style={{
+                    background:
+                      "linear-gradient(15deg,hsl(42deg 25% 18%) 0%,hsl(42deg 26% 45%) 30%,hsl(41deg 33% 62%) 58%,hsl(41deg 35% 75%) 83%,hsl(41deg 47% 93%) 100%)",
+                  }}
+                  id={"letsgo-slide"}
+                >
+                  <button
+                    className={"btn bnt-md text-white"}
+                    style={{
+                      background: "rgba(255,255,255,0.15)",
+
+                      position: "absolute",
+                      top: "20px",
+                      left: "20px",
+                    }}
+                    onClick={() => fullpageApi.moveSectionUp()}
+                  >
+                    Nach oben
+                  </button>
+                  <center>
+                    <h2
+                      className={"text-white"}
+                      // style={{
+                      //   filter: "drop-shadow(3px 5px 2px rgb(255 255 255 / 0.08))",
+                      // }}
+                    >
+                      wineTelligence
+                    </h2>
+                    <h3
+                      className={"text-white pb-5"}
+                      style={{ fontSize: "18px" }}
+                    >
+                      Ihr unverbindlicher Portfoliovorschlag in wenigen
+                      Sekunden.
+                    </h3>
+                    <PreferencesForm />
+                  </center>
+                  <button
+                    className={"btn bnt-md text-white"}
+                    style={{
+                      background: "rgba(255,255,255,0.15)",
+                      position: "absolute",
+                      bottom: "20px",
+                      left: "20px",
+                    }}
+                    onClick={() => fullpageApi.moveSectionDown()}
+                  >
+                    Zu den FAQs
+                  </button>
+                  <Particles
+                    id="tsparticles"
+                    style={{ position: "absolute", left: 0, top: 0 }}
+                    options={{
+                      fullScreen: { enable: false, zIndex: 0 },
+                      background: {
+                        color: {
+                          value: "transparent",
+                        },
+                      },
+                      fpsLimit: 40,
+                      interactivity: {
+                        events: {
+                          onClick: {
+                            enable: true,
+                            mode: "grab",
+                          },
+                          onHover: {
+                            enable: true,
+                            mode: "grab",
+                          },
+                          resize: true,
+                        },
+                        modes: {
+                          bubble: {
+                            distance: 400,
+                            duration: 20,
+                            opacity: 0.8,
+                            size: 40,
+                          },
+                          push: {
+                            quantity: 0,
+                          },
+                          repulse: {
+                            distance: 200,
+                            duration: 0.9,
+                          },
+                          grab: {
+                            distance: 200,
+                            duration: 1,
+                            color: "white",
+                          },
+                        },
+                      },
+                      particles: {
+                        color: {
+                          value: "#b29f74",
+                        },
+                        links: {
+                          color: "#b29f74",
+                          distance: 210,
+                          enable: true,
+                          opacity: 0.6,
+                          width: 1,
+                        },
+                        collisions: {
+                          enable: true,
+                        },
+                        move: {
+                          direction: "none",
+                          enable: true,
+                          outMode: "bounce",
+                          random: false,
+                          speed: 1,
+                          straight: false,
+                        },
+                        number: {
+                          density: {
+                            enable: true,
+                            area: 800,
+                          },
+                          value: 30,
+                          limit: 80,
+                        },
+                        opacity: {
+                          value: 0.6,
+                        },
+                        shape: {
+                          type: "circle",
+                          opacity: 0.6,
+                          stroke: {
+                            width: 1,
+                            color: "red",
+                          },
+                          size: {
+                            value: 10,
+                            random: true,
+                            // anim: {
+                            //   enable: true,
+                            //   speed: 10,
+                            //   size_min: 10,
+                            //   sync: false
+                            // }
+                          },
+                        },
+                        // size: {
+                        //   random: true,
+                        //   value: 5,
+                        // },
+                      },
+                      detectRetina: true,
+                    }}
+                  />
                 </div>
-              </div>
-            </ReactFullpage.Wrapper>
-          </>
-        );
-      }}
-    />
-     </>
+                <div className="section">
+                  <center id="faq-slide" className={"animated"}>
+                    <h2>Häufig gestellte Fragen</h2>
+                    <div style={{ width: "800px", height: "500px" }}>
+                      <div
+                        className={"container mx-auto"}
+                        style={{ maxWidth: "800px" }}
+                      >
+                        <Accordion
+                          allowZeroExpanded={true}
+                          className={"mt-4 card"}
+                          id={"list"}
+                        >
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Für wen empfiehlt sich ein Weininvestment?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Ein Weininvestment empfiehlt sich besonders für
+                                all diejenigen, die ihr Portfolio abrunden
+                                wollen und ein alternatives Investment mit einem
+                                mittel- bis langfristiges Anlagehorizont (ca. 5
+                                bis 10 Jahre) und der Aussicht auf eine gute
+                                Rendite suchen.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
+
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Wem gehört der Wein nach der Kaufabwicklung?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Bei einem Weininvestment über Berghaus & Cie.
+                                sind Sie zu 100 % Eigentümer Ihres Weines. Sie
+                                investieren in ein physisches Gut bzw. in einen
+                                Sachwert. Dies ist bedeutender Vorteil gegenüber
+                                nicht- physischen Gütern wie Aktien, die außer
+                                dem Papier, auf dem sie gedruckt sind, keinen
+                                inhärenten Wert besitzen.
+                              </p>
+                              <p>
+                                Als Besitzer erhalten Sie, sobald die Weine in
+                                unserem Weinlager eingelagert werden, eine
+                                Auflistung Ihrer Weine. Diese Auflistung ist in
+                                Kombination mit der Rechnung Ihr persönlicher
+                                Eigentumsnachweis und dient Ihnen auch als
+                                Nachweis Ihres Herausgabeanspruches gegenüber
+                                dem Weinlager.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
+
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Kann ich den Wein auch selbst trinken?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Selbstverständlich. Wenn Sie Ihren Wein zu einem
+                                besonderen Anlass, z. B. zu einer Hochzeit,
+                                einem Jubiläum, einem runden Geburtstag, einer
+                                Taufe oder Ähnlichem selbst verzehren möchten,
+                                dann senden wir ihnen den Wein aus dem Weinlager
+                                gerne - versichert und fachgerecht transportiert
+                                - an Ihre Wunschadresse zu.
+                              </p>
+                              <p>
+                                Sie sollten jedoch bedenken, dass die
+                                Mehrwertsteuer fällig wird, wenn der Wein das
+                                Umsatzsteuerlager verlässt.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
+
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Gegen welche Risiken sind meine Weine
+                                versichert?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Bei Berghaus & Cie. sind Ihre Weine während des
+                                Transports und der Verweildauer in unserem
+                                Weinlager gegen Beschädigungen oder andere
+                                wertmindernde Umstände versichert. Die
+                                Versicherungssumme richtet sich nach dem
+                                Bezugspreis.
+                              </p>
+                              <p>
+                                Sollten Sie nach einiger Zeit wünschen, dass
+                                Ihre Weine höher versichert werden, um der
+                                Marktentwicklung Rechnung zu tragen, ist das
+                                selbstverständlich möglich. Gerne passen wir die
+                                Versicherungssumme für sie an.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
+
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Welche Anlagedauer ist für Weininvestments
+                                empfehlenswert?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Im Allgemeinen entspricht die Anlagedauer eines
+                                Weines seiner jeweiligen Reifedauer. Diese hängt
+                                von verschiedenen Faktoren ab wie, z. B. der
+                                Rebsorte und der Art des Anbaus. Die
+                                Flaschenreifung bei Spitzenweinen kann zwischen
+                                fünf und fünfzehn Jahren, in Einzelfällen aber
+                                auch mehr betragen.
+                              </p>
+                              <p>
+                                Berghaus & Cie. empfiehlt Ihnen nur Weine, die
+                                das Potential haben ihrem persönlichen
+                                Anlagehorizont zu entsprechen. Denn die
+                                Reifedauer spielt bei Weininvestments eine
+                                zentrale Rolle. Nur dann, wenn aus einem
+                                besonderen Jahrgang nach der Reifung ein
+                                einzigartiger Wein geworden ist, lässt sich ein
+                                attraktiver Wiederverkaufspreis realisieren.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
+                        </Accordion>
+
+                        <h3
+                          className={"mt-5 text-center"}
+                          style={{ fontSize: "18px", color: "#555" }}
+                        >
+                          Haftungsausschluss
+                        </h3>
+                        <p
+                          className={"text-justify"}
+                          style={{ fontSize: "12px", color: "#555" }}
+                        >
+                          Die Firma Berghaus & Cie. GmbH ist ein
+                          Weinhandelsunternehmen, das Kunden zu ihren Weinen
+                          Vergleichswerte in der preislichen Entwicklung zur
+                          Verfügung stellt. Berghaus & Cie. ist kein
+                          Finanzdienstleister oder -berater. Berghaus & Cie.
+                          verkauft Weine nur in für Privatpersonen vertretbaren
+                          Mengen. Für individuelle steuerliche Fragen wenden Sie
+                          sich bitte an einen Steuerberater. Es gelten die
+                          Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
+                          GmbH, eine aktuelle Fassung finden Sie unter{" "}
+                          <a
+                            className={"text-dark"}
+                            href={
+                              "https://www.berghauscie.de/legal/allgemeine-geschaeftsbedingungen"
+                            }
+                          >
+                            https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen
+                          </a>
+                          .
+                        </p>
+                      </div>
+                    </div>
+                  </center>
+                </div>
+
+                <div className={"section"}>
+                  <div
+                    id={"calendly-slide"}
+                    className={"animated text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}
+                  >
+                    <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
+                      <span className={"pr-2"}></span>
+                      Gespräch vereinbaren
+                    </h3>
+                    <p className={"mb-3"} style={{ fontSize: "15px" }}>
+                      Wünschen Sie eine persönliche Beratung? <br /> Gerne
+                      beantworten wir Ihre Fragen im Rahmen eines kostenfreien
+                      Beratungstermins.
+                    </p>
+                    <img
+                      className={"img img-responsive my-2"}
+                      src={
+                        "https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png"
+                      }
+                      style={{ maxWidth: "450px" }}
+                    />
+                    <a
+                      href={
+                        "https://calendly.com/berghausundcie/beratungsgesprach"
+                      }
+                      target={"_blank"}
+                    >
+                      <br />
+                      <button
+                        className={"btn btn-lg text-white"}
+                        style={{ background: cta }}
+                      >
+                        Gespräch vereinbaren
+                      </button>
+                    </a>
+                    {/* <SelectCalendlyDate width={"60%"} /> */}
+                  </div>
+                </div>
+
+                <div className="section fp-auto-height">
+                  <div>
+                    <LandingFooter />
+                  </div>
+                </div>
+              </ReactFullpage.Wrapper>
+            </>
+          );
+        }}
+      />
+    </>
     // <>
     //   <CustomModal
     //     markup={markup}
