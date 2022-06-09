@@ -37,6 +37,11 @@ const IndexMobile = (props) => {
       document.getElementById("explainer-video").play();
     }, 1000);
 
+    const moveDownAfterDelay = () =>
+    setTimeout(() => {
+      router.push("#winetelligence")
+    }, 700);
+
   useEffect(() => {
     setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.add("fadeIn");
@@ -122,7 +127,7 @@ const IndexMobile = (props) => {
               
               toggleShowVideoModal(false);
               document.getElementById("video-background-mobile").play();
-              router.push("#winetelligence")
+              moveDownAfterDelay()
             }}
             className={"mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite"}
             style={{ fontSize: "18px" }}
