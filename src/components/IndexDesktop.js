@@ -64,6 +64,7 @@ import {
   AccordionItemButton,
   AccordionItemHeading,
 } from "react-accessible-accordion";
+import LoadingOverlay from "react-loading-overlay";
 
 const songs = [
   {
@@ -101,6 +102,7 @@ const IndexDesktop = (props) => {
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
+  const [videoReady, toggleVideoReady] = useState(false);
   const [cookieConsentVisible, toggleCookieConsentVisible] = useState(
     props.cookieConsentVisible
   );
@@ -236,7 +238,15 @@ const IndexDesktop = (props) => {
   );
 
   useEffect(() => {
-    document.getElementById("video-background").play();
+    let videoElement = document.getElementById("video-background");
+    videoElement.play();
+    videoElement.addEventListener("loadeddata", (e) => {
+      //Video should now be loaded but we can add a second check
+
+      if (videoElement.readyState >= 3) {
+        toggleVideoReady(true);
+      }
+    });
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
@@ -268,6 +278,37 @@ const IndexDesktop = (props) => {
     }, 1000);
 
   return (
+    <>
+       <LoadingOverlay
+              active={!videoReady}
+              fadeSpeed={1000}
+              styles={{
+                overlay: (base) => ({
+                  ...base,
+                  background: "rgba(255, 255, 255, 1)",
+                  zIndex: 3000,
+                  textAlign: "center",
+                  position: "fixed",
+                  width: "100%",
+                  top:0,
+                  left:0,
+                  height: "100%",
+                }),
+                spinner: (base) => ({
+                  ...base,
+                  width: "100px",
+                  "& svg circle": {
+                    stroke: primary,
+                  },
+                }),
+                content: (base) => ({
+                  ...base,
+                  color: "black",
+                }),
+              }}
+              spinner
+            ></LoadingOverlay>
+   
     <ReactFullpage
       //fullpage options
       licenseKey={"YOUR_KEY_HERE"}
@@ -290,6 +331,7 @@ const IndexDesktop = (props) => {
       render={({ state, fullpageApi }) => {
         return (
           <>
+         
             <Modal
               className={"modal-xl modal-dialog-centered modal-transparent"}
               isOpen={showVideoModal}
@@ -332,7 +374,9 @@ const IndexDesktop = (props) => {
                     toggleShowVideoModal(false);
                     document.getElementById("video-background").play();
                   }}
-                  className={"mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite "}
+                  className={
+                    "mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite "
+                  }
                   style={{ fontSize: "18px" }}
                 >
                   wineTelligence ausprobieren
@@ -1188,16 +1232,24 @@ const IndexDesktop = (props) => {
                     Gespräch vereinbaren
                   </h3>
                   <p className={"mb-3"} style={{ fontSize: "15px" }}>
-                    Wünschen Sie eine persönliche Beratung? <br/> Gerne beantworten wir
-                    Ihre Fragen im Rahmen eines kostenfreien Beratungstermins.
+                    Wünschen Sie eine persönliche Beratung? <br /> Gerne
+                    beantworten wir Ihre Fragen im Rahmen eines kostenfreien
+                    Beratungstermins.
                   </p>
-                  <img className={"img img-responsive my-2"} src={"https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png"} style={{maxWidth: "450px"}} />
+                  <img
+                    className={"img img-responsive my-2"}
+                    src={
+                      "https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png"
+                    }
+                    style={{ maxWidth: "450px" }}
+                  />
                   <a
                     href={
                       "https://calendly.com/berghausundcie/beratungsgesprach"
                     }
                     target={"_blank"}
-                  ><br/>
+                  >
+                    <br />
                     <button
                       className={"btn btn-lg text-white"}
                       style={{ background: cta }}
@@ -1219,6 +1271,7 @@ const IndexDesktop = (props) => {
         );
       }}
     />
+     </>
     // <>
     //   <CustomModal
     //     markup={markup}

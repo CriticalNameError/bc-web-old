@@ -10,6 +10,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import PreferencesForm from "components/PreferencesForm";
 import TriangleRight1 from "icons/triangle-right-1";
 import router, { withRouter } from "next/router";
+import LoadingOverlay from "react-loading-overlay";
 import {
   primary,
   primary_t80,
@@ -31,6 +32,7 @@ const IndexMobile = (props) => {
   const [showVideoModal, toggleShowVideoModal] = useState(false);
   const [section, setSection] = useState("welcome");
   const [isPlaying, setIsPlaying] = useState(false);
+  const [videoReady, toggleVideoReady] = useState(false)
 
   const playVideoAfterDelay = () =>
     setTimeout(() => {
@@ -53,7 +55,16 @@ const IndexMobile = (props) => {
         .getElementById("swipe-up-btn")
         .classList.add("bounce", "infinite");
     }, 3500);
-    document.getElementById("video-background-mobile").play();
+    let videoElement = document.getElementById("video-background-mobile")
+    videoElement.play();
+    videoElement.addEventListener('loadeddata', (e) => {
+      //Video should now be loaded but we can add a second check
+   
+      if(videoElement.readyState >= 3){
+          toggleVideoReady(true)
+      }
+   
+   });
   }, []);
 
   // useEffect(() => {
@@ -85,6 +96,34 @@ const IndexMobile = (props) => {
         "section snapscroll-section animated fadeIn row text-center m-0"
       }
     >
+       <LoadingOverlay
+        active={!videoReady}
+        fadeSpeed={1000}
+        styles={{
+          overlay: (base) => ({
+            ...base,
+            background: "rgba(255, 255, 255, 1)",
+            zIndex: 3000,
+            textAlign: "center",
+            position: "fixed",
+            width: "100%",
+            height: "100%"
+          }),
+          spinner: (base) => ({
+            ...base,
+            width: "100px",
+            "& svg circle": {
+              stroke: primary,
+            },
+          }),
+          content: (base) => ({
+            ...base,
+            color: "black",
+          }),
+        }}
+        spinner
+       
+      ></LoadingOverlay>
       <Modal
         className={"modal-xl modal-dialog-centered modal-transparent"}
         isOpen={showVideoModal}
