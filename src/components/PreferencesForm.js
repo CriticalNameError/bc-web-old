@@ -225,9 +225,18 @@ const PreferencesForm = (props) => {
 
   useEffect(() => {
     try {
-      if (step == 5) {
+      if (
+        step == 5 ||
+        step == "quote_preview" ||
+        step == "check_mails" ||
+        step == "used_allready" ||
+        step == "has_account"
+      ) {
         document.getElementById("form-header").classList.remove("fadeIn");
         document.getElementById("form-header").classList.add("fadeOut");
+        setTimeout(()=>{
+          document.getElementById("form-header").classList.add("d-none");
+        }), 500
 
         document.getElementById("form-card").style.background = "transparent";
         document.getElementById("form-card").style.boxShadow = "none";
@@ -304,26 +313,29 @@ const PreferencesForm = (props) => {
 
   useEffect(() => {
     let new_sum =
-      0.1275 *
+      2.5 *
+      (0.14 *
         investmentSumTunerPosition *
         investmentSumTunerPosition *
         investmentSumTunerPosition -
-      4.441 * investmentSumTunerPosition * investmentSumTunerPosition +
-      150.0499 * investmentSumTunerPosition +
-      1730.599 +
-      124;
+        5.5 * investmentSumTunerPosition * investmentSumTunerPosition +
+        102.0499 * investmentSumTunerPosition +
+        2180.599 -
+        200);
     if (new_sum < 5000) {
-      new_sum = Math.round(new_sum / 250) * 250;
-    } else if (new_sum < 10000) {
       new_sum = Math.round(new_sum / 500) * 500;
-    } else if (new_sum < 25000) {
+    } else if (new_sum < 10000) {
       new_sum = Math.round(new_sum / 1000) * 1000;
-    } else if (new_sum < 50000) {
+    } else if (new_sum < 25000) {
       new_sum = Math.round(new_sum / 2500) * 2500;
-    } else if (new_sum < 100000) {
+    } else if (new_sum < 50000) {
       new_sum = Math.round(new_sum / 5000) * 5000;
+    } else if (new_sum < 100000) {
+      new_sum = Math.round(new_sum / 10000) * 10000;
+    } else if (new_sum < 250000) {
+      new_sum = Math.round(new_sum / 25000) * 25000;
     }
-    setInvestmentSum(Math.max(new_sum, 2000));
+    setInvestmentSum(Math.max(new_sum, 5000));
   }, [investmentSumTunerPosition]);
 
   useEffect(() => {
@@ -350,7 +362,7 @@ const PreferencesForm = (props) => {
     {
       onCompleted: (mutData) => {
         setDone(true);
-        setStep(step + 1);
+        setStep("quote_preview");
         while (
           mutData.createPreferencesProfileFromWebsite.rec.recommendedPosition
             .length < 3
@@ -389,14 +401,17 @@ const PreferencesForm = (props) => {
 
     {
       onCompleted: (data) => {
-        if(data.requestRecommendationLinkWithEmail.success == true){
-        console.log(data);
-        setStep(step + 1);
-      } else if(data.requestRecommendationLinkWithEmail.errors[0] == "Email requested already"){
-        setStep(step + 2);
-      }else{
-        setStep(step + 3);
-      }
+        if (data.requestRecommendationLinkWithEmail.success == true) {
+          console.log(data);
+          setStep("check_mails");
+        } else if (
+          data.requestRecommendationLinkWithEmail.errors[0] ==
+          "Email requested already"
+        ) {
+          setStep("used_allready");
+        } else {
+          setStep("has_account");
+        }
       },
       variables: {
         email: email,
@@ -1035,8 +1050,8 @@ const PreferencesForm = (props) => {
           className={"text-center"}
           style={{ fontSize: "28px", fontWeight: "200" }}
         >
-          {investmentSum == 2000 ? "" : ""}
-          {investmentSum == 100000 ? "> " : ""}
+          {investmentSum == 5000 ? "" : ""}
+          {investmentSum == 250000 ? "> " : ""}
           <CountUp
             start={prevInvestmentSum}
             end={investmentSum}
@@ -1067,7 +1082,7 @@ const PreferencesForm = (props) => {
                 opacity: 1 - ((investmentSumTunerPosition - 50) / 50) * 0.5,
               }}
             >
-              {"2000€"}
+              {"5000 €"}
             </span>
           </Col>
           <Col
@@ -1119,7 +1134,8 @@ const PreferencesForm = (props) => {
                 opacity: 1 + ((investmentSumTunerPosition - 50) / 50) * 0.5,
               }}
             >
-              {"100.000 € \noder mehr"}
+              {"250.000 €"}
+              <br /> {"oder mehr"}
             </span>
           </Col>
         </Row>
@@ -1169,7 +1185,7 @@ const PreferencesForm = (props) => {
         </Row>
       </ModalBody>
     ),
-    6: (
+    quote_preview: (
       <ModalBody
         className={"p-4 mt-n5 animated fadeIn slow"}
         style={{ height: "70%" }}
@@ -1177,7 +1193,7 @@ const PreferencesForm = (props) => {
         <Modal
           isOpen={showPortfolioModal}
           toggle={() => toggleShowPortfolioModal(false)}
-          className="modal-xl modal-dialog-centered"
+          className="modal-md modal-dialog-centered"
         >
           <ModalBody className={"p-4 text-center"}>
             <i
@@ -1265,10 +1281,8 @@ const PreferencesForm = (props) => {
                   Ihr individueller Portfolio-Vorschlag ist fertig!{" "}
                 </h3>
                 <center>
-                  Unsere wineTelligence hat Ihren individuellen
-                  Portfolio-Vorschlag nun vollständig zusammengestellt. Gerne
-                  senden wir Ihnen diesen ohne Umwege per Mail vollkommen
-                  kostenlos zu.
+                  Gerne senden wir Ihnen diesen vollkommen
+                  kostenlos per Email zu.
                 </center>
                 <button
                   className={"btn text-white"}
@@ -1283,7 +1297,7 @@ const PreferencesForm = (props) => {
               <Slider
                 {...{
                   arrows: true,
-                  dots: true,
+                  dots: false,
                   infinite: true,
                   autoplay: true,
                   pauseOnHover: true,
@@ -1330,12 +1344,12 @@ const PreferencesForm = (props) => {
                             style={{
                               maxWidth: "250px",
                               width: "250px",
-                              height: "230px",
-                              filter: index == 0 ? "none" : "blur(3px)",
+                              height: "200px",
+                              filter: index == 0 ? "none" : "blur(4px)",
                             }}
                           >
                             <div style={{ lineHeight: "1.2em" }}>
-                              <div style={{ fontSize: "16px" }}>
+                              <div style={{ fontSize: "14px" }}>
                                 {index == 0
                                   ? item.offer.vintage.wine.title
                                   : "Château Berghaus et Fille"}
@@ -1345,7 +1359,7 @@ const PreferencesForm = (props) => {
                                   ? item.offer.vintage.wine.classification.title
                                   : "Premier Grand Cru Superieur"}
                               </div>
-                              <div style={{ fontSize: "17px" }}>
+                              <div style={{ fontSize: "13px" }}>
                                 {index == 0 ? item.offer.vintage.year : "1998"}
                               </div>
                             </div>
@@ -1356,7 +1370,7 @@ const PreferencesForm = (props) => {
                                   <img
                                     className={"mx-auto"}
                                     style={
-                                      props.mobile ? { height: "120px" } : {}
+                                      props.mobile ? { height: "70px" } : {height: "110px"}
                                     }
                                     src={
                                       item.offer.vintage.wine.image.rendition
@@ -1385,7 +1399,7 @@ const PreferencesForm = (props) => {
                                 </span>
 
                                 <div className={"text-center mt-2"}>
-                                  <span style={{ fontSize: "1.4em" }}>
+                                  <span style={{ fontSize: "1em" }}>
                                     {index == 0
                                       ? item.offer.sellPriceCaseStr
                                       : "1.987,65 €"}
@@ -1400,9 +1414,9 @@ const PreferencesForm = (props) => {
                                     /Kiste
                                   </small>
                                   <br />
-                                  <p style={{ lineHeight: "10px" }}>
+                                  <p style={{ lineHeight: "7px" }}>
                                     <span
-                                      style={{ fontSize: "9px", height: "0px" }}
+                                      style={{ fontSize: "6px", height: "0px" }}
                                     >
                                       {index == 0
                                         ? item.offer.sellPriceBtlStr
@@ -1411,7 +1425,7 @@ const PreferencesForm = (props) => {
                                     </span>
                                     <span
                                       style={{
-                                        fontSize: "9px",
+                                        fontSize: "6px",
                                         color: "rgb(119, 119, 119)",
                                         height: "0px",
                                       }}
@@ -1439,7 +1453,7 @@ const PreferencesForm = (props) => {
         </Row>
       </ModalBody>
     ),
-    7: (
+    check_mails: (
       <ModalBody
         className={"px-4 mt-4 animated fadeIn slow"}
         style={{ height: "70%" }}
@@ -1465,7 +1479,7 @@ const PreferencesForm = (props) => {
         </Row>
       </ModalBody>
     ),
-    8: (
+    used_allready: (
       <ModalBody
         className={"px-4 mt-4 animated fadeIn slow"}
         style={{ height: "70%" }}
@@ -1489,7 +1503,7 @@ const PreferencesForm = (props) => {
         </Row>
       </ModalBody>
     ),
-    9: (
+    has_account: (
       <ModalBody
         className={"px-4 mt-4 animated fadeIn slow"}
         style={{ height: "70%" }}
@@ -1617,13 +1631,7 @@ const PreferencesForm = (props) => {
             Zurück
           </button>
         ) : null}
-        {step > 4 ? (
-          // <button
-          //   className={"btn btn-primary"}
-          //   onClick={() => postPreferences()}
-          // >
-          //   Weiter
-          // </button>
+        {step == 5 || typeof step === "string" || step instanceof String ? (
           <></>
         ) : (
           <button

@@ -133,6 +133,18 @@ const IndexDesktop = (props) => {
     }
   }, []);
 
+  useEffect(() => {
+    let videoElement = document.getElementById("video-background");
+
+    videoElement.onloadeddata = function () {
+      //Video should now be loaded but we can add a second check
+
+      toggleVideoReady(true);
+      console.log(videoElement.readyState);
+      videoElement.play();
+    };
+  }, [finishedLoadingDocument]);
+
   useEffect(
     (props) => {
       let vn = document.getElementById("vert-nav");
@@ -238,15 +250,6 @@ const IndexDesktop = (props) => {
   );
 
   useEffect(() => {
-    let videoElement = document.getElementById("video-background");
-    videoElement.play();
-    videoElement.addEventListener("loadeddata", (e) => {
-      //Video should now be loaded but we can add a second check
-
-      if (videoElement.readyState >= 3) {
-        toggleVideoReady(true);
-      }
-    });
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
@@ -281,7 +284,7 @@ const IndexDesktop = (props) => {
     <>
       <LoadingOverlay
         active={!videoReady}
-        fadeSpeed={1000}
+        fadeSpeed={100}
         styles={{
           overlay: (base) => ({
             ...base,
@@ -354,7 +357,8 @@ const IndexDesktop = (props) => {
                       objectFit: "cover",
                       display: "block",
                     }}
-                    webkit-playsinline playsinline
+                    webkit-playsinline
+                    playsinline
                     controls
                   >
                     <source
@@ -374,9 +378,9 @@ const IndexDesktop = (props) => {
                       document.getElementById("video-background").play();
                     }}
                     className={
-                      "mx-auto btn btn-lg bg-cta p-3 mt-4 animated headShake slower infinite "
+                      "mx-auto btn btn-lg bg-cta mt-4 p-3 animated headShake slower infinite "
                     }
-                    style={{ fontSize: "18px" }}
+                    style={{ fontSize: "18px"}}
                   >
                     wineTelligence ausprobieren
                   </button>
@@ -400,7 +404,8 @@ const IndexDesktop = (props) => {
                       zIndex: "-100",
                     }}
                     muted
-                    webkit-playsinline playsinline
+                    webkit-playsinline
+                    playsinline
                   >
                     <source
                       src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_background_lq.mp4#t=14,44"
@@ -408,7 +413,7 @@ const IndexDesktop = (props) => {
                     />
                   </video>
                   <div
-                    className={" px-0 animated"}
+                    className={" px-0 "}
                     style={{
                       overflowX: "hidden",
                       position: "absolute",
@@ -417,7 +422,10 @@ const IndexDesktop = (props) => {
                       minWidth: "100%",
                       width: "100%",
                       height: "100%",
-                      background: "rgba(255,255,255,0.85)",
+                      // background: "rgba(255,255,255,0.85)",
+                      backgroundSize: "2px 2px",
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
                     }}
                     id={"welcome-slide"}
                   >
@@ -427,15 +435,9 @@ const IndexDesktop = (props) => {
                           className={"mx-auto my-auto"}
                           // style={{ maxWidth: "750px" }}
                         >
-                          <div
-                            className={"pl-md-4 mt-2 animated fadeIn slower"}
-                          >
+                          <div className={"pl-md-4 mt-2 slower"}>
                             <div className={"row mt-3"}>
-                              <div
-                                className={
-                                  "col-12 text-right animated fadeIn slower"
-                                }
-                              >
+                              <div className={"col-12 text-right  slower"}>
                                 <div
                                   className={"text-center mx-auto"}
                                   style={{
@@ -462,30 +464,85 @@ const IndexDesktop = (props) => {
                                 <DynamicLiveData /> */}
                                   <Row>
                                     <Col>
-                                      <div
-                                        className={"animated fadeIn my-auto"}
-                                      >
-                                        <h1
-                                          className={"p-3 pb-1 pt-0 mb-n3"}
-                                          style={{
-                                            color: "#333",
-                                            filter:
-                                              "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
-                                            fontSize: "65px",
-                                            fontFamily: "'Whisper', cursive",
-                                          }}
-                                        >
-                                          {" "}
-                                          Disruptiv Traditionell
-                                        </h1>
-                                        <div
-                                          className={"pb-5 mb-3"}
-                                          style={{ fontSize: "15px" }}
-                                        >
-                                          Ihr Weininvestment in den besten
-                                          Händen - professionell, transparent,
-                                          zeitgemäß.{" "}
-                                        </div>
+                                      <div className={" my-auto"}>
+                                        {videoReady && (
+                                          <>
+                                            <h1
+                                              className={
+                                                "p-3 pb-1 pt-0 mb-n3 fade-in-container"
+                                              }
+                                              style={{
+                                                color: "#333",
+                                                filter:
+                                                  "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
+                                                fontSize: "65px",
+                                                fontFamily: "'Whisper, cursive",
+                                              }}
+                                            >
+                                              {" "}
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                                style={{
+                                                  fontFamily:
+                                                    "'Whisper', cursive",
+                                                }}
+                                              >
+                                                Disruptiv{" "}
+                                              </span>
+                                              <span
+                                                className={"fade-in-span"}
+                                                style={{
+                                                  fontFamily:
+                                                    "'Whisper', cursive",
+                                                }}
+                                              >
+                                                Traditionell
+                                              </span>
+                                            </h1>
+                                            <div
+                                              className={
+                                                "pb-5 mb-3 fade-in-container"
+                                              }
+                                              style={{ fontSize: "20px" }}
+                                            >
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                              >
+                                                Ihr
+                                              </span>
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                              >
+                                                Weininvestment
+                                              </span>
+                                              {/* <span className={"fade-in-span pr-1"} >in</span>
+                                         <span className={"fade-in-span pr-1"} >den</span>
+                                         <span className={"fade-in-span pr-1"} >besten</span>
+                                         <span className={"fade-in-span pr-1"} >Händen</span> */}
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                              >
+                                                -
+                                              </span>
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                              >
+                                                professionell,
+                                              </span>
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                              >
+                                                transparent,{" "}
+                                              </span>
+                                              <span
+                                                className={"fade-in-span pr-1"}
+                                              >
+                                                zeitgemäß.
+                                              </span>
+                                            </div>
+                                          </>
+                                        )}
+
                                         <span
                                           onClick={() => {
                                             toggleShowVideoModal(true);
@@ -542,7 +599,7 @@ const IndexDesktop = (props) => {
                                           }
                                           style={{
                                             fontSize: "15px",
-
+                                            fontWeight: "bold",
                                             lineHeight: "1.5em",
                                           }}
                                         >
@@ -581,12 +638,95 @@ const IndexDesktop = (props) => {
                                               fullpageApi.moveTo(3)
                                             }
                                             className={
-                                              "mr-auto btn bg-cta p-2 mt-4"
+                                              "mr-auto btn bg-cta p-3 mt-4"
                                             }
                                             style={{ fontSize: "18px" }}
                                           >
                                             wineTelligence ausprobieren
                                           </button>
+                                        </div>
+
+                                        <div className={"mt-3"}>
+                                          <center>
+                                            <h3
+                                              className={"text-left "}
+                                              style={{
+                                                paddingLeft: "15px",
+                                                maxWidth: "850px",
+                                                fontSize: "13px",
+                                              }}
+                                            >
+                                              Partner und Awards
+                                            </h3>
+                                          </center>
+                                          <div
+                                            style={{ maxWidth: "850px" }}
+                                            className={"row mx-auto"}
+                                          >
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <Partner3 height={"20px"} />
+                                              </span>
+                                            </div>
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <Partner1 height={"25px"} />
+                                              </span>
+                                            </div>
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <Partner2 height={"25px"} />
+                                              </span>
+                                            </div>
+
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <Award1 height={"25px"} />
+                                              </span>
+                                            </div>
+
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <Award2 height={"25px"} />
+                                              </span>
+                                            </div>
+
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <Award3 height={"25px"} />
+                                              </span>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </Col>
@@ -798,7 +938,7 @@ const IndexDesktop = (props) => {
                   </div>
                 </div>
 
-                <div className="section dotted-background">
+                <div className="section " style={{backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)"}}>
                   <center id="facts-slide" className={"animated d-none"}>
                     <h2>
                       Exquisiter Wein - stabiler Sachwert mit attraktiver
@@ -813,14 +953,20 @@ const IndexDesktop = (props) => {
                       verdeutlicht das Potential der Sachanlage Wein.
                     </div>
                     <div
+                    className={"card p-2"}
                       style={{
                         width: "800px",
-                        height: "500px",
-                        border: "1px solid grey",
-                        paddingTop: "15px",
+                        height: "550px",
+                        background: "#232526",
+                        background: "-webkit-linear-gradient(to right, #232526, #414345)",
+                        backgroundImage: "linear-gradient(to right, #232526, #414345)",
+                        fontFamily: "monospace",
+                       
                       }}
                     >
-                      <DynamicLivexPriceChart height={"500px"} />
+                      <div style={{padding: "20px"}}>
+                      <DynamicLivexPriceChart height={"500px"} mode={"light"} />
+                      </div>
                     </div>
                   </center>
                   <div

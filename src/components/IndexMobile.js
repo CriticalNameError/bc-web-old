@@ -45,6 +45,11 @@ const IndexMobile = (props) => {
     }, 700);
 
   useEffect(() => {
+    let img = document.getElementById("background-img");
+    img.onload = function () {
+      toggleVideoReady(true);
+    };
+
     setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.add("fadeIn");
       document.getElementById("swipe-up-btn").classList.remove("invisible");
@@ -63,7 +68,6 @@ const IndexMobile = (props) => {
     //   if (videoElement.readyState >= 3) {
     //     toggleVideoReady(true);
     //   }
-    
   }, []);
 
   // useEffect(() => {
@@ -96,7 +100,7 @@ const IndexMobile = (props) => {
       }
     >
       <LoadingOverlay
-        active={false}
+        active={!videoReady}
         fadeSpeed={1000}
         styles={{
           overlay: (base) => ({
@@ -177,19 +181,23 @@ const IndexMobile = (props) => {
         </ModalFooter>
       </Modal>
 
-              <img src={"https://backoffice.berghauscie.de/documents/13/background_mobile.gif"}
-               style={{
-                position: "absolute",
-                // filter: "grayscale(1)",
-                top: 0,
-                left: 0,
-                minWidth: "100%",
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                zIndex: "-100",
-              }}
-              />
+      <img
+        id={"background-img"}
+        src={
+          "https://backoffice.berghauscie.de/documents/13/background_mobile.gif"
+        }
+        style={{
+          position: "absolute",
+          // filter: "grayscale(1)",
+          top: 0,
+          left: 0,
+          minWidth: "100%",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: "-100",
+        }}
+      />
 
       {/* <video
         autoplay
@@ -225,19 +233,21 @@ const IndexMobile = (props) => {
           minWidth: "100%",
           width: "100%",
           height: "100%",
-          background: "rgba(255,255,255,0.85)",
+          backgroundSize: "2px 2px",
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
         }}
       >
-        <div className={"my-auto col"}>
+        <div className={"my-auto col fade-in-container"}>
           <h1
             style={{
               fontSize: "55px",
               fontFamily: "'Whisper', cursive",
             }}
           >
-            Disruptiv
+            <span className={"fade-in-span"}>Disruptiv</span>
             <br />
-            Traditionell
+            <span className={"fade-in-span"}>Traditionell</span>
           </h1>
           <br />
           <div>
@@ -277,8 +287,8 @@ const IndexMobile = (props) => {
           </div>
           <a href={"#winetelligence"}>
             <button
-              className={"btn text-white mt-5"}
-              style={{ background: cta }}
+              className={"btn text-white mt-5 p-3"}
+              style={{ background: cta, fontSize: "18px" }}
             >
               wineTelligence ausprobieren
             </button>
@@ -311,23 +321,33 @@ const IndexMobile = (props) => {
     <div
       style={{
         color: "#333",
+        backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
       }}
       id={"facts"}
       className={
-        "section snapscroll-section dotted-background row h-100 m-0 p-0  text-dark  text-center"
+        "section snapscroll-section row h-100 m-0 p-0  text-dark  text-center"
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h1 className={"px-1"} style={{ fontSize: "35px" }}>
+        <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
           Herausragende Rendite
         </h1>
-        <div className={"px-1"}>
+        <div className={"px-1 mb-2"}>
           Der Livex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
         </div>
 
-        <div className={"mx-auto"} style={{ width: "100vw" }}>
-          <DynamicLivexPriceChart mode={"dark"} height={"60vh"} mobile={true} />
+        <div
+          className={"mx-auto card m-1"}
+          style={{
+            width: "96vw",
+            fontFamily: "monospace",
+            background: "#232526",
+            background: "-webkit-linear-gradient(to right, #232526, #414345)",
+            backgroundImage: "linear-gradient(to right, #232526, #414345)",
+          }}
+        >
+          <DynamicLivexPriceChart mode={"light"} height={"60vh"} mobile={true} />
         </div>
       </div>
       {/* <div

@@ -269,7 +269,7 @@ const LivexPriceChart = (props) => {
     // let strokeGradient = new am4core.LinearGradient();
     // strokeGradient.addColor("#eee")
     // strokeGradient.addColor("#fff")
-    series.stroke = am4core.color("#714f9b");
+    series.stroke = am4core.color(cta);
     series.tensionX = 0.77;
     series.tooltip.getFillFromObject = false;
     series.tooltipText = "{valueY}";
