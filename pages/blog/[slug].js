@@ -81,7 +81,7 @@ const PostPage = () => {
           overflowWrap: "break-word",
         }}
       >
-        <div className={"mx-auto text-justify mb-5"} style={{ maxWidth: "750px" }}>
+        <div className={"mx-auto text-left mb-5"} style={{ maxWidth: "750px" }}>
           <i>{convertDateString(data.page.firstPublishedAt)}</i>
           <h1>{data.page.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.page.body }}></div>

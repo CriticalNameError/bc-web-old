@@ -67,7 +67,7 @@ const AboutUs = () => {
 
               <h1
                 className={"h3 animated fadeIn slower "}
-                style={{ fontSize: "65px", fontFamily: "'Whisper', cursive", }}
+                style={{ fontSize: "65px", fontFamily: "'Whisper', cursive" }}
               >
                 {" "}
                 Disruptiv Traditionell{" "}
@@ -90,21 +90,26 @@ const AboutUs = () => {
                   />
                 </span>
               </a> */}
-             
-              <div className={"text-center mx-auto px-2 px-md-0"} style={{ fontSize: "15px", maxWidth: "1100px" }}>
-              <p  > 
-                Berghaus & Cie. verbindet die traditionelle Welt der exquisiten
-                Weine mit der modernen Investmentwelt. Dabei setzen wir auf
-                Transparenz, datenbasierte Analysen und Digitalisierung.
-              </p>
-              <br />
-              <p  >
-                Uns verbindet nicht nur die Leidenschaft für exquisite Weine,
-                sondern auch ein gutes Gespür für lukrative Investments. Unser
-                Team besteht aus unterschiedlichen Persönlichkeiten, deren
-                berufliche Expertise und individuelle Sichtweisen sich
-                gegenseitig ergänzen und bereichern.
-              </p>
+
+              <div
+                className={"text-center mx-auto px-2 px-md-0"}
+                style={{ fontSize: "15px", maxWidth: "1100px" }}
+              >
+                <p>
+                  Berghaus & Cie. verbindet die traditionelle Welt der
+                  exquisiten Weine mit der modernen Investmentwelt - daher
+                  bezeichnen wir unsere Dienstleistung als "Disruptiv
+                  Traditionell". Dabei setzen wir auf Transparenz, datenbasierte
+                  Analysen und Digitalisierung.
+                </p>
+                <br />
+                <p>
+                  Uns verbindet nicht nur die Leidenschaft für exquisite Weine,
+                  sondern auch ein gutes Gespür für lukrative Investments. Unser
+                  Team besteht aus unterschiedlichen Persönlichkeiten, deren
+                  berufliche Expertise und individuelle Sichtweisen sich
+                  gegenseitig ergänzen und bereichern.
+                </p>
               </div>
             </div>
           </div>
@@ -166,9 +171,9 @@ const AboutUs = () => {
                       Unser Ziel
                     </h5>
                     <p class="text-justify">
-                      Berghaus & Cie. möchte das Thema Weininvestment für jeden
-                      zugänglich machen. Dabei setzen wir auf Transparenz,
-                      datenbasierte Analysen und Digitalisierung.
+                      Wir von Berghaus & Cie. möchte Ihnen als Kunde einen
+                      einfachen und transparente Möglichkeit der Anlage in den
+                      spezialisierten Markt der exquisiten Weine geben.
                     </p>
                   </div>
                 </div>
@@ -209,7 +214,6 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-               
                 <a href={"https://www.linkedin.com/in/tristan-berghaus/"}>
                   <LogoLinkedin
                     width={"30px"}
@@ -218,19 +222,23 @@ const AboutUs = () => {
                   />
                 </a>
               </span>
-              <h5 style={{ fontSize: "18px" }}>Sales / Account Management</h5>
+              <h5 style={{ fontSize: "18px" }}>Geschäftsführer</h5>
               <p>
-                Diejenigen, die Tristan Berghaus persönlich kennen, verbinden
-                ihn mit dem Thema Wein. Er leitet seit Jahren Weinproben mit dem
-                Schwerpunkt auf gereifte Weine und hat im Laufe der Zeit sein
-                Wissen über Wein kontinuierlich vertieft.
+                Tristan Berghaus ist der namensgebende Gründer von Berghaus &
+                Cie. Aufgrund seiner familiären Prägung beschäftigte er sich
+                schon sehr früh mit Weininvestments nach dem britischen Modell.
+                Zusammen mit seinen Mitgründern entwickelte er die Idee,
+                Weininvestments auf dem deutschen Markt anzubieten. Über einen
+                weiteren Familienzweig bestehen enge Verbindungen zur
+                Weinbranche in Bordeaux, über die Berghaus & Cie. einen
+                privilegierten Zugang zu den exklusivsten Weinen der Welt
+                aufgebaut hat.
               </p>
               <p>
-                Tristan besitzt das Zertifikat WSET® Level 3*, Award in Wine,
-                des
+                Als ausgewiesener Weinfachmann, zertifiziert vom britischen
                 <i data-tip data-for="global">
                   {" "}
-                  Wine and Spirit Education Trust (WSET).
+                  Wine and Spirit Education Trust (WSET),
                 </i>
                 <ReactTooltip
                   id="global"
@@ -246,10 +254,20 @@ const AboutUs = () => {
                     spezielle Qualifikationen für Weinkenner an.
                   </p>
                 </ReactTooltip>{" "}
-                und ist Initiator und Namensgeber von Berghaus & Cie.
+                ist er für die Weinauswahl und die richtige
+                Portfoliozusammenstellung verantwortlich.
               </p>
-          
+
               <br />
+              <p>
+                Seit vielen Jahren ist er als Gastgeber exklusiver Weinproben
+                eine feste Größe in der regionalen Weinbranche. Diese
+                veranstaltet er sowohl als außergewöhnliches Unternehmensevent
+                als auch für passionierte Weinliebhaber. Der studierte
+                Betriebswirt verantwortet bei Berghaus & Cie. die Bereiche Wein
+                und Marketing. Zudem steht er Ihnen als Ansprechpartner mit
+                seiner Weinexpertise gerne zur Seite.
+              </p>
             </div>
           </div>
 
@@ -341,7 +359,6 @@ const AboutUs = () => {
                 className={"pull-right"}
                 style={{ displey: "inline-block" }}
               >
-               
                 <a href={"https://www.linkedin.com/in/peter-irnich-736972115/"}>
                   <LogoLinkedin
                     width={"30px"}
@@ -350,23 +367,33 @@ const AboutUs = () => {
                   />
                 </a>
               </span>
-              <h5 style={{ fontSize: "18px" }}>Finance / Operations</h5>
+              <h5 style={{ fontSize: "18px" }}>Geschäftsführer</h5>
               <p>
-                Aufgrund seiner umfassenden Expertise im Bereich Finance und
-                seines ausgeprägten Organisationstalentes ist Peter Irnich bei
-                Berghaus & Cie. für Finanzen und Controlling sowie für die
-                Logistik und die optimale Lagerung der Weine zuständig.
-              </p>
-              <p>
-                Darüber hinaus besitzt er das Zertifikat WSET® Level 2, Award in
-                Wine, des{" "}
+                Peter Irnich leitet die kaufmännischen und operativen Prozesse
+                bei Berghaus & Cie. Er organisiert die optimale Abwicklung Ihres
+                Investments und sorgt dafür, dass Ihre Weine zu jeder Zeit unter
+                perfekten Bedingungen sicher eingelagert sind. Im Anschluss an
+                seine kaufmännische Ausbildung studierte er in Köln
+                Betriebswirtschaftslehre. Er verfügt über eine breite fachliche
+                Expertise in diversen Branchen. Nach seiner Tätigkeit für eine
+                Unternehmensberatung in den USA beteiligte er sich als
+                geschäftsführender Gesellschafter an der Gründung von Berghaus &
+                Cie. Seine Weinexpertise baut er intensiv und stetig aus.
+            
+                Er ist ebenfalls vom{" "}
                 <i data-tip data-for="global">
                   {" "}
-                  Wine and Spirit Education Trust (WSET).
-                </i>
+                  Wine and Spirit Education Trust (WSET)
+                </i>{" "}
+                zertifiziert.
               </p>
 
               <br />
+              <p>
+                Sie als Kunde profitieren im Beratungsgespräch vor allem von
+                seiner Investmentexpertise. Bei Berghaus & Cie. verantwortet er
+                zudem das Finanzenwesen und das operative Geschäft.
+              </p>
             </div>
           </div>
 
@@ -406,14 +433,11 @@ Kooperationsanfragen.
             </div>
           </div> */}
 
-          <div className="section fp-auto-height-responsive mt-n5 mt-sm-0 ">
+          {/* <div className="section fp-auto-height-responsive mt-n5 mt-sm-0 ">
             <div class="container pt-0 pt-sm-5 animated fadeIn slow ">
               <div className={"row mt-5"}>
                 <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                  {/* <i
-                    class="fas fa-child mb-n3 ml-n3 round-icon-lg"
-                    style={{ color: primary }}
-                  ></i> */}
+                 
                   <span class="round-icon-lg text-white mb-n3">
                     <span style={{ width: "40px", height: "40px" }}>
                       <Multiple11
@@ -449,10 +473,7 @@ Kooperationsanfragen.
             <div class="container mt-sm-n5 animated fadeIn slower">
               <div className={"row mt-5"}>
                 <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                  {/* <i
-                    class="fas fa-rocket mb-n3 ml-n3 round-icon-lg"
-                    style={{ color: primary }}
-                  ></i> */}
+               
                   <span class="round-icon-lg text-white mb-n3">
                     <span style={{ width: "40px", height: "40px" }}>
                       <Logic width={"40px"} height={"40px"} strokewidth={3} />
@@ -480,7 +501,7 @@ Kooperationsanfragen.
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* 
           <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
             <span style={{ fontSize: "18px" }}>
@@ -508,8 +529,6 @@ Kooperationsanfragen.
           </div> */}
         </div>
       </div>
-
-     
     </>
   );
 };

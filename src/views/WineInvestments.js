@@ -222,7 +222,7 @@ const WineInvestments = () => {
                           class="far fa-clock mb-3 round-icon"
                           style={{ color: primary }}
                         ></i>
-                        <h5>Reifung</h5>
+                        <h5>Lagerung</h5>
                       </div>
                       <div class="col-md-4 col-sm-12 text-center mb-5 ms-md-0">
                         <i
@@ -277,10 +277,6 @@ const WineInvestments = () => {
                           <div class="card p-3">
                             <h5 class="">Geringe Mengen</h5>
                             <p class="">
-                              Es kein neues Phänomen, die besten Weine der Welt
-                              besitzen zu wollen, sie zu sammeln und in sie zu
-                              investieren. <br />
-                              <br />
                               Weltweit gibt es in allen hochklassigen
                               Weinbaugebieten strenge Richtlinien und Regeln, um
                               sowohl die Qualität zu kontrollieren als auch die
@@ -299,9 +295,8 @@ const WineInvestments = () => {
                               <br />
                               Das weltweite Netzwerk von Berghaus & Cie. bietet
                               Ihnen einen exklusiven Zugang zu erstklassigen und
-                              seltenen Weine, die für ein Weininvestment oder
-                              den unmittelbaren Trinkgenuss bestens geeignet
-                              sind.
+                              seltenen Weine, die für ein Weininvestment bestens
+                              geeignet sind.
                             </p>
                           </div>
                         </div>
@@ -343,7 +338,7 @@ const WineInvestments = () => {
                       <div class="col-md-8 offset-md-2 col-sm-12">
                         <div class="info info-horizontal">
                           <div class="card p-3">
-                            <h5 class="">Reifung</h5>
+                            <h5 class="">Lagerung</h5>
                             <p class="">
                               Viele hochwertige Weine haben ein
                               Entwicklungspotenzial, welches sie erst nach
@@ -365,12 +360,19 @@ const WineInvestments = () => {
                               Blick, um den besten Verkaufszeitpunkt zu finden.
                               <br />
                               <br />
-                              Berghaus & Cie. bietet Ihnen die Möglichkeit, Ihre
-                              Weine in einem ideal klimatisierten und
-                              gesicherten Lager in Belgien einzulagern. Das sind
-                              beste Voraussetzungen für einen Weiterverkauf oder
-                              den Trinkgenuss nach einer angemessenen
-                              Lagerdauer.{" "}
+                              Berghaus & Cie. bietet Ihnen in Zusammenarbeit mit
+                              dem Genfer Zollfreihafen die Möglichkeit, Ihre
+                              Weine klima- und temperaturgeführt in einem
+                              Hochsicherheitslager in der Schweiz zu verwahren.
+                              <br />
+                              Der Genfer Freihafen ist einer der ältesten und
+                              renommiertesten Freihäfen der Welt und
+                              spezialisiert auf die optimale Lagerung von
+                              exquisiten Weinen, Kunst und weiteren Luxusgütern.
+                              <br /> Die Versicherung der Weine und der
+                              professionelle Umgang sind beste Voraussetzungen
+                              für den erfolgreichen Weiterverkauf nach einer
+                              angemessenen Lagerdauer.{" "}
                             </p>
                           </div>
                         </div>
@@ -414,7 +416,7 @@ const WineInvestments = () => {
                             <h5 class="">Angebot & Nachfrage</h5>
                             <p class="">
                               Angebot und Nachfrage bestimmen, wie überall, auch
-                              bei hochklassigen Weinen den Markt. Je besser ein
+                              bei hochklassigen Weinen den Preis. Je besser ein
                               Wein mit dem Alter wird, desto begehrenswerter -
                               und damit wertvoller - wird er.
                               <br />
@@ -429,8 +431,8 @@ const WineInvestments = () => {
                               <br />
                               <br />
                               Für ein erfolgreiches Weininvestment ist es
-                              wesentlich, den Aspekt Angebot und Nachfrage immer
-                              im Blick zu behalten.
+                              wesentlich, das Angebot und die Nachfrage immer im
+                              Blick zu behalten.
                               <br />
                               <br />
                               Wir von Berghaus & Cie. nehmen uns Zeit für Sie

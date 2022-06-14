@@ -79,7 +79,7 @@ const LegalPage = () => {
           overflowWrap: "break-word",
         }}
       >
-        <div className={"mx-auto text-justify mb-5"} style={{ maxWidth: "750px" }}>
+        <div className={"mx-auto text-left mb-5"} style={{ maxWidth: "750px" }}>
           {/* <i>{convertDateString(data.page.firstPublishedAt)}</i> */}
           <h1>{data.homePage.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.homePage.body }}></div>

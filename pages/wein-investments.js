@@ -211,8 +211,8 @@ const WineInvestments = () => {
                   </span>
                 </h1> */}
                 <p className={"h3"} style={{ fontSize: "24px" }}>
-                  Warum Wein nicht nur Genuss, sondern auch stabile Renditen
-                  bringen kann.
+                  Warum Wein nicht nur Genuss, sondern auch hervorragende
+                  Renditen bringen kann
                 </p>
                 {/* <a
                   className={"move-down"}
@@ -241,14 +241,23 @@ const WineInvestments = () => {
               // data-aos="fade-up"
               // data-aos-anchor-placement="center-bottom"
             >
-              <h2 className={"h3"} style={{ fontSize: "24px" }}>
-                Wie entwickelte sich der Liv-ex Fine Wine 1000 Index?
-              </h2>
-              <p style={{ fontSize: "18px" }}>
-                Stabile Wertentwicklung bei geringer Volatilität
-              </p>
-              <div className={"card p-0 p-md-4 pb-5"}>
-                <DynamicLivexPriceChart mobile={window.innerWidth < 800} height={"450px"}/>
+              <div className={"card p-0 p-md-4 pb-5 py-3"}>
+                <h2 className={"h3 px-2"} style={{ fontSize: "22px" }}>
+                  Entwicklung des Liv-Ex 1000 Fine Wine Index
+                </h2>
+                <p className={"px-2 text-left"} style={{ fontSize: "16px" }}>
+                  Wein zeichnet sich durch eine stabile, positive Wertentwicklung
+                  mit geringer Volatilität aus. <br />
+                  Die Zahlen zeigen, dass Wein nicht nur ein Passion Investment
+                  ist, sondern auch das Potential hat, ein bedeutender
+                  Renditetreiber in Ihrem Portfolio zu werden.
+                </p>
+                <div style={{marginLeft: "18px"}}>
+                <DynamicLivexPriceChart
+                  mobile={window.innerWidth < 800}
+                  height={"450px"}
+                />
+                </div>
                 {/* <WineDaxSap /> */}
               </div>
             </div>
@@ -299,11 +308,21 @@ const WineInvestments = () => {
                       Weltweit gibt es in allen hochklassigen Weinbaugebieten
                       strenge Richtlinien und Regeln, um sowohl die Qualität zu
                       kontrollieren als auch die Produktion zu begrenzen.
+                      Premiumweine, die gleichzeitig auch investmentwürdige
+                      Weine sind, machen weniger als 1 % der Produktion
+                      hochklassiger Weine weltweit aus.
                       <br />
                       <br />
-                      Exquisite Weine, die sich für ein Weininvestment eignen,
-                      stehen nur in einem sehr begrenzten Umfang (circa 1 % der
-                      weltweiten Weinproduktion) zu Verfügung.
+                      Die Tatsache, das exquisite Weine nur in einem begrenzten
+                      Umfang zu Verfügung stehen und diese Menge darüber hinaus
+                      aufgrund des Konsums einem natürlichen Schwund unterliegt,
+                      hat die Preise für die besten Weine schon immer steigen
+                      lassen.
+                      <br />
+                      <br />
+                      Das weltweite Netzwerk von Berghaus & Cie. bietet Ihnen
+                      einen exklusiven Zugang zu erstklassigen und seltenen
+                      Weine, die für ein Weininvestment bestens geeignet sind.
                     </p>
                   </div>
                 </div>
@@ -331,16 +350,25 @@ const WineInvestments = () => {
               <div class="col-md-8 offset-md-2 col-sm-12">
                 <div class="info info-horizontal">
                   <div class="card p-3">
-                    <h5 class="">Reifung</h5>
+                    <h5 class="">Lagerung</h5>
                     <p class="text-left">
                       Viele hochwertige Weine haben ein Entwicklungspotenzial,
-                      welches sie erst nach Jahren und teilweise sogar erst nach
-                      Jahrzehnten angemessener Lagerung voll ausschöpfen können.
+                      welches sie erst nach vielen Jahren und teilweise sogar
+                      erst Jahrzehnten angemessener Lagerung voll ausschöpfen
+                      können. Daher sollte Wein, um seine Qualität nicht negativ
+                      zu beeinflussen, stets unter idealen Bedingungen gelagert
+                      werden.
                       <br />
                       <br />
-                      Je besser ein Wein mit dem Alter wird, umso
-                      begehrenswerter und „wertvoller“ wird er auch im monetären
-                      Sinn.
+                      Für die optimale Reifung von Wein ist die richtige
+                      Lagerung entscheidend. Konstante Temperaturen und eine
+                      Luftfeuchtigkeit von ca. 65 % sind hierbei die
+                      wesentlichen Faktoren.
+                      <br />
+                      <br />
+                      Jeder Wein reift anders. Wir behalten die individuelle
+                      Entwicklung Ihres Wein stets im Blick, um den besten
+                      Verkaufszeitpunkt zu finden.
                     </p>
                   </div>
                 </div>
@@ -367,14 +395,27 @@ const WineInvestments = () => {
                     <h5 class="">Angebot & Nachfrage</h5>
                     <p class="text-left">
                       Angebot und Nachfrage bestimmen, wie überall, auch bei
-                      hochklassigen Weinen den Markt. Mit jeder Flasche, die
-                      konsumiert wird, reduziert sich das verfügbare Angebot der
-                      ohnehin seltenen Weine.
+                      hochklassigen Weinen den Preis. Je besser ein Wein mit dem
+                      Alter wird, desto begehrenswerter - und damit wertvoller -
+                      wird er.
                       <br />
                       <br />
-                      Da im Laufe der Zeit der weltweiten Nachfrage ein immer
-                      geringer werdendes Angebot gegenüber steht, erhöht sich
-                      der Preis der Weine.
+                      Der Konsum von guten Weinen und die Seltenheit bestimmter
+                      Jahrgänge treibt den Preis weiter nach oben. Immer mehr
+                      Investoren suchen nach einer immer geringer werdenden
+                      Anzahl von Flaschen. Diese Situation verschärft sich noch
+                      durch eine ständig wachsende weltweite Nachfrage nach
+                      diesem besonderen Vermögenswert.
+                      <br />
+                      <br />
+                      Für ein erfolgreiches Weininvestment ist es wesentlich,
+                      das Angebot und die Nachfrage immer im Blick zu behalten.
+                      <br />
+                      <br />
+                      Wir von Berghaus & Cie. nehmen uns Zeit für Sie und
+                      beraten Sie so ausführlich wie Sie es sich wünschen. Wir
+                      empfehlen Ihnen die Weine, die für Ihr persönliches
+                      Weinportfolio am besten geeignet sind.
                     </p>
                   </div>
                 </div>
@@ -718,12 +759,13 @@ const WineInvestments = () => {
                     >
                       <h3 class="text-center mt-0 h5">Optimale Lagerung</h3>
                       <div className={"text-left"}>
-                        Ihr Wein wird fachgerecht in Belgien eingelagert.
-                        Optimale klimatische Bedingungen sorgen dafür, dass er
-                        bestmöglich ausreift. Zudem ist das Lager als
-                        Umsatzsteuerlager deklariert. Das bedeutet, solange der
-                        Wein das Lager nicht verlässt, wird keine Mehrwertsteuer
-                        erhoben.
+                        Berghaus & Cie. bietet Ihnen in Zusammenarbeit mit dem
+                        Genfer Zollfreihafen die Möglichkeit, Ihre Weine klima-
+                        und temperaturgeführt in einem Hochsicherheitslager in
+                        der Schweiz zu verwahren. Der Genfer Freihafen ist einer
+                        der ältesten und renommiertesten Freihäfen der Welt und
+                        spezialisiert auf die optimale Lagerung von exquisiten
+                        Weinen, Kunst und weiteren Luxusgütern.
                       </div>
                     </p>
                   </div>
@@ -769,14 +811,19 @@ const WineInvestments = () => {
               Haftungsausschluss
             </h3>
             <p className={"text-justify"}>
-              Die Firma Berghaus & Cie. GmbH ist ein Weinhandelsunternehmen, das
-              Kunden zu ihren Weinen Vergleichswerte in der preislichen
-              Entwicklung zur Verfügung stellt. Berghaus & Cie. ist kein
-              Finanzdienstleister oder -berater. Berghaus & Cie. verkauft Weine
-              nur in für Privatpersonen vertretbaren Mengen. Für individuelle
-              steuerliche Fragen wenden Sie sich bitte an einen Steuerberater.
-              Es gelten die Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
-              GmbH, eine aktuelle Fassung finden Sie unter{" "}
+              Berghaus & Cie. berät seine Kunden unabhängig. Der Wert eines
+              Weines kann steigen oder fallen. Berghaus & Cie. garantiert keine
+              bestimmte Wertentwicklung der Weine. Die Vorschläge von Berghaus &
+              Cie. an den Kunden sind lediglich Vorschläge. Der Kunde
+              entscheidet frei über deren Kauf. In die Vorschläge von Berghaus &
+              Cie. fließen die Erfahrungen der Mitarbeiter, aktuelle
+              Marktentwicklungen, Kritikerbewertungen sowie historische
+              Marktentwicklungen mit ein. Weiterhin kann und darf Berghaus &
+              Cie. nicht steuerlich hinsichtlich möglicher Gewinne aus dem
+              Verkauf von Wein beraten und empfiehlt den Kunden einen
+              Steuerberater diesbezüglich zu kontaktieren. Es gelten die
+              Allgemeinen Geschäftsbedingungen der Berghaus & Cie. GmbH, eine
+              aktuelle Fassung finden Sie unter{" "}
               <a
                 className={"text-dark"}
                 href={
@@ -790,8 +837,6 @@ const WineInvestments = () => {
           </div>
         </div>
       </>
-
-     
     </>
   );
 };

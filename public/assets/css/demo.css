@@ -415,6 +415,11 @@ input[type="range"] {
   }
 }
 
+.richtext-image {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
 .fade-in-span {
   display: inline-block;
   opacity: 0;

@@ -380,7 +380,7 @@ const IndexDesktop = (props) => {
                     className={
                       "mx-auto btn btn-lg bg-cta mt-4 p-3 animated headShake slower infinite "
                     }
-                    style={{ fontSize: "18px"}}
+                    style={{ fontSize: "18px" }}
                   >
                     wineTelligence ausprobieren
                   </button>
@@ -938,7 +938,12 @@ const IndexDesktop = (props) => {
                   </div>
                 </div>
 
-                <div className="section " style={{backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)"}}>
+                <div
+                  className="section "
+                  style={{
+                    backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
+                  }}
+                >
                   <center id="facts-slide" className={"animated d-none"}>
                     <h2>
                       Exquisiter Wein - stabiler Sachwert mit attraktiver
@@ -953,19 +958,23 @@ const IndexDesktop = (props) => {
                       verdeutlicht das Potential der Sachanlage Wein.
                     </div>
                     <div
-                    className={"card p-2"}
+                      className={"card p-2"}
                       style={{
                         width: "800px",
                         height: "550px",
                         background: "#232526",
-                        background: "-webkit-linear-gradient(to right, #232526, #414345)",
-                        backgroundImage: "linear-gradient(to right, #232526, #414345)",
+                        background:
+                          "-webkit-linear-gradient(to right, #232526, #414345)",
+                        backgroundImage:
+                          "linear-gradient(to right, #232526, #414345)",
                         fontFamily: "monospace",
-                       
                       }}
                     >
-                      <div style={{padding: "20px"}}>
-                      <DynamicLivexPriceChart height={"500px"} mode={"light"} />
+                      <div style={{ padding: "20px" }}>
+                        <DynamicLivexPriceChart
+                          height={"500px"}
+                          mode={"light"}
+                        />
                       </div>
                     </div>
                   </center>
@@ -1181,16 +1190,89 @@ const IndexDesktop = (props) => {
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                               <p>
-                                Ein Weininvestment empfiehlt sich besonders für
-                                all diejenigen, die ihr Portfolio abrunden
-                                wollen und ein alternatives Investment mit einem
-                                mittel- bis langfristiges Anlagehorizont (ca. 5
-                                bis 10 Jahre) und der Aussicht auf eine gute
-                                Rendite suchen.
+                                Weininvestments eignen sich hervorragend für die
+                                Diversifizierung des Gesamtportfolios mit einem
+                                exklusiven Sachwert und können über einen
+                                langfristigen Investitionshorizont von 10 bis 15
+                                Jahren eine durchschnittliche Rendite von etwa
+                                8% bis 10% p.a. (kapitalertragssteuerfrei)
+                                erzielen. Dabei korrelieren Weininvestments kaum
+                                mit dem Kapitalmarkt.
                               </p>
                             </AccordionItemPanel>
                           </AccordionItem>
-
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Muss ich ein Weinprofi sein, um in Wein zu
+                                investieren?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Berghaus & Cie. unterstützt Sie dabei, Ihr
+                                persönliches Wein-Portfolio zusammenzustellen.
+                                Sie müssen kein Weinprofi oder ausgewiesener
+                                Weinliebhaber sein, um erfolgreich in Wein zu
+                                investieren.
+                              </p>
+                              <p>
+                                Abgestimmt auf Ihre Wünsche und Bedürfnisse wie
+                                Investitionssumme, Anlagehorizont, persönliche
+                                Vorlieben, etc. entwickeln wir gemeinsam mit
+                                Ihnen die passende Anlagestrategie. Darüber
+                                hinaus kümmern wir uns um den fachgerechten
+                                Transport und die professionelle Einlagerung
+                                Ihrer Weine im Genfer Zollfreihafen.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
+                          <AccordionItem>
+                            <AccordionItemHeading>
+                              <AccordionItemButton>
+                                {" "}
+                                <span
+                                  className={"text-primary mr-2"}
+                                  style={{ display: "inline-block" }}
+                                >
+                                  <RightArrow
+                                    width={"20px"}
+                                    height={"20px"}
+                                    strokewidth={4}
+                                  />
+                                </span>
+                                Welche Investitionssumme ist für den Anfang
+                                sinnvoll?
+                              </AccordionItemButton>
+                            </AccordionItemHeading>
+                            <AccordionItemPanel>
+                              <p>
+                                Im Gegensatz zu anderen alternativen
+                                Anlageklassen wie Kunst, Oldtimer oder Uhren ist
+                                die Einstiegshürde bei Wein vergleichsweise
+                                niedrig. Der Kaufpreis eines exquisiten Weins
+                                (hohes Entwicklungspotential, sehr renommiertes
+                                Weingut) liegt im Schnitt bei ca. 250 € pro
+                                Flasche, d. h. ca. 1.500 Euro pro Kiste.
+                              </p>
+                              <p>
+                                Für die Zusammenstellung eines ausgewogenen
+                                Wein-Portfolios, empfehlen wir den Erwerb von 5
+                                bis 15 verschiedenen Weinen.
+                              </p>
+                            </AccordionItemPanel>
+                          </AccordionItem>
                           <AccordionItem>
                             <AccordionItemHeading>
                               <AccordionItemButton>
@@ -1213,54 +1295,20 @@ const IndexDesktop = (props) => {
                                 Bei einem Weininvestment über Berghaus & Cie.
                                 sind Sie zu 100 % Eigentümer Ihres Weines. Sie
                                 investieren in ein physisches Gut bzw. in einen
-                                Sachwert. Dies ist bedeutender Vorteil gegenüber
-                                nicht- physischen Gütern wie Aktien, die außer
-                                dem Papier, auf dem sie gedruckt sind, keinen
-                                inhärenten Wert besitzen.
+                                Sachwert. Dies ist ein bedeutender Vorteil
+                                gegenüber nicht-physischen Investmentprodukten
+                                wie Rentenpapieren, Bausparverträgen oder
+                                Lebensversicherungen, die außer dem Papier, auf
+                                dem sie gedruckt sind, keinen inhärenten Wert
+                                besitzen.
                               </p>
                               <p>
-                                Als Besitzer erhalten Sie, sobald die Weine in
-                                unserem Weinlager eingelagert werden, eine
-                                Auflistung Ihrer Weine. Diese Auflistung ist in
-                                Kombination mit der Rechnung Ihr persönlicher
-                                Eigentumsnachweis und dient Ihnen auch als
-                                Nachweis Ihres Herausgabeanspruches gegenüber
-                                dem Weinlager.
-                              </p>
-                            </AccordionItemPanel>
-                          </AccordionItem>
-
-                          <AccordionItem>
-                            <AccordionItemHeading>
-                              <AccordionItemButton>
-                                {" "}
-                                <span
-                                  className={"text-primary mr-2"}
-                                  style={{ display: "inline-block" }}
-                                >
-                                  <RightArrow
-                                    width={"20px"}
-                                    height={"20px"}
-                                    strokewidth={4}
-                                  />
-                                </span>
-                                Kann ich den Wein auch selbst trinken?
-                              </AccordionItemButton>
-                            </AccordionItemHeading>
-                            <AccordionItemPanel>
-                              <p>
-                                Selbstverständlich. Wenn Sie Ihren Wein zu einem
-                                besonderen Anlass, z. B. zu einer Hochzeit,
-                                einem Jubiläum, einem runden Geburtstag, einer
-                                Taufe oder Ähnlichem selbst verzehren möchten,
-                                dann senden wir ihnen den Wein aus dem Weinlager
-                                gerne - versichert und fachgerecht transportiert
-                                - an Ihre Wunschadresse zu.
-                              </p>
-                              <p>
-                                Sie sollten jedoch bedenken, dass die
-                                Mehrwertsteuer fällig wird, wenn der Wein das
-                                Umsatzsteuerlager verlässt.
+                                Als Besitzer erhalten Sie eine Auflistung Ihrer
+                                Weine, sobald diese im Genfer Zollfreihafen
+                                eingelagert wurden. Die Rechnung ist Ihr
+                                persönlicher Eigentumsnachweis. Sie dient Ihnen
+                                auch als Nachweis Ihres Herausgabeanspruches
+                                gegenüber dem Weinlager.
                               </p>
                             </AccordionItemPanel>
                           </AccordionItem>
@@ -1285,60 +1333,14 @@ const IndexDesktop = (props) => {
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                               <p>
-                                Bei Berghaus & Cie. sind Ihre Weine während des
-                                Transports und der Verweildauer in unserem
-                                Weinlager gegen Beschädigungen oder andere
-                                wertmindernde Umstände versichert. Die
-                                Versicherungssumme richtet sich nach dem
-                                Bezugspreis.
-                              </p>
-                              <p>
-                                Sollten Sie nach einiger Zeit wünschen, dass
-                                Ihre Weine höher versichert werden, um der
-                                Marktentwicklung Rechnung zu tragen, ist das
-                                selbstverständlich möglich. Gerne passen wir die
-                                Versicherungssumme für sie an.
-                              </p>
-                            </AccordionItemPanel>
-                          </AccordionItem>
-
-                          <AccordionItem>
-                            <AccordionItemHeading>
-                              <AccordionItemButton>
-                                {" "}
-                                <span
-                                  className={"text-primary mr-2"}
-                                  style={{ display: "inline-block" }}
-                                >
-                                  <RightArrow
-                                    width={"20px"}
-                                    height={"20px"}
-                                    strokewidth={4}
-                                  />
-                                </span>
-                                Welche Anlagedauer ist für Weininvestments
-                                empfehlenswert?
-                              </AccordionItemButton>
-                            </AccordionItemHeading>
-                            <AccordionItemPanel>
-                              <p>
-                                Im Allgemeinen entspricht die Anlagedauer eines
-                                Weines seiner jeweiligen Reifedauer. Diese hängt
-                                von verschiedenen Faktoren ab wie, z. B. der
-                                Rebsorte und der Art des Anbaus. Die
-                                Flaschenreifung bei Spitzenweinen kann zwischen
-                                fünf und fünfzehn Jahren, in Einzelfällen aber
-                                auch mehr betragen.
-                              </p>
-                              <p>
-                                Berghaus & Cie. empfiehlt Ihnen nur Weine, die
-                                das Potential haben ihrem persönlichen
-                                Anlagehorizont zu entsprechen. Denn die
-                                Reifedauer spielt bei Weininvestments eine
-                                zentrale Rolle. Nur dann, wenn aus einem
-                                besonderen Jahrgang nach der Reifung ein
-                                einzigartiger Wein geworden ist, lässt sich ein
-                                attraktiver Wiederverkaufspreis realisieren.
+                                Bei Berghaus & Cie. sind Ihre Weine während der
+                                Verweildauer in unserem Weinlager gegen
+                                Beschädigungen oder andere wertmindernde
+                                Umstände versichert. Die Versicherungssumme
+                                richtet sich nach dem aktuellen Wert.
+                                Insbesondere sind die Weine gegen
+                                Einbruchdiebstahl/Raub, Brand- und Wasserschäden
+                                versichert.
                               </p>
                             </AccordionItemPanel>
                           </AccordionItem>
@@ -1354,16 +1356,22 @@ const IndexDesktop = (props) => {
                           className={"text-justify"}
                           style={{ fontSize: "12px", color: "#555" }}
                         >
-                          Die Firma Berghaus & Cie. GmbH ist ein
-                          Weinhandelsunternehmen, das Kunden zu ihren Weinen
-                          Vergleichswerte in der preislichen Entwicklung zur
-                          Verfügung stellt. Berghaus & Cie. ist kein
-                          Finanzdienstleister oder -berater. Berghaus & Cie.
-                          verkauft Weine nur in für Privatpersonen vertretbaren
-                          Mengen. Für individuelle steuerliche Fragen wenden Sie
-                          sich bitte an einen Steuerberater. Es gelten die
-                          Allgemeinen Geschäftsbedingungen der Berghaus & Cie.
-                          GmbH, eine aktuelle Fassung finden Sie unter{" "}
+                          Berghaus & Cie. berät seine Kunden unabhängig. Der
+                          Wert eines Weines kann steigen oder fallen. Berghaus &
+                          Cie. garantiert keine bestimmte Wertentwicklung der
+                          Weine. Die Vorschläge von Berghaus & Cie. an den
+                          Kunden sind lediglich Vorschläge. Der Kunde
+                          entscheidet frei über deren Kauf. In die Vorschläge
+                          von Berghaus & Cie. fließen die Erfahrungen der
+                          Mitarbeiter, aktuelle Marktentwicklungen,
+                          Kritikerbewertungen sowie historische
+                          Marktentwicklungen mit ein. Weiterhin kann und darf
+                          Berghaus & Cie. nicht steuerlich hinsichtlich
+                          möglicher Gewinne aus dem Verkauf von Wein beraten und
+                          empfiehlt den Kunden einen Steuerberater diesbezüglich
+                          zu kontaktieren. Es gelten die Allgemeinen
+                          Geschäftsbedingungen der Berghaus & Cie. GmbH, eine
+                          aktuelle Fassung finden Sie unter{" "}
                           <a
                             className={"text-dark"}
                             href={

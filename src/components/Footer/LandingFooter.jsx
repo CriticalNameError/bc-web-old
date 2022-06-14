@@ -14,47 +14,49 @@ const LandingFooter = () => {
   // useEffect(() => {
   //   toggleFinishedLoadingDocument(true);
   // }, []);
- 
+
   return (
     <>
-     
-       
-          <Modal
-            isOpen={showModal}
-            toggle={() => props.toggleShowModal()}
-            className="modal-lg modal-dialog-centered"
-          >
-            <ModalBody className={"p-4"}>
-              <i
-                className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
-                style={{
-                  color: "black",
-                  fontSize: "18px",
-                  cursor: "pointer",
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  zIndex: "100",
-                }}
-                onClick={(e) => {
-                  toggleShowModal(!showModal);
-                }}
-              ></i>
-              <h4>Haftungsausschluss</h4>
-              <p>
-                Die Firma Berghaus & Cie. GmbH ist ein Weinhandelsunternehmen,
-                das Kunden zu ihren Weinen Vergleichswerte in der preislichen
-                Entwicklung zur Verfügung stellt. Berghaus & Cie. ist kein
-                Finanzdienstleister oder -berater. Berghaus & Cie. verkauft
-                Weine nur in für Privatpersonen vertretbaren Mengen. Für
-                individuelle steuerliche Fragen wenden Sie sich bitte an einen
-                Steuerberater. Es gelten die Allgemeinen Geschäftsbedingungen
-                der Berghaus & Cie. GmbH, eine aktuelle Fassung finden Sie unter
-                https://www.berghauscie.de/legal/allgemeine-geschaeftsbedingungen.
-              </p>{" "}
-            </ModalBody>
-          </Modal>
-          {/* <ContactUs
+      <Modal
+        isOpen={showModal}
+        toggle={() => props.toggleShowModal()}
+        className="modal-lg modal-dialog-centered"
+      >
+        <ModalBody className={"p-4"}>
+          <i
+            className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-primary"
+            style={{
+              color: "black",
+              fontSize: "18px",
+              cursor: "pointer",
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              zIndex: "100",
+            }}
+            onClick={(e) => {
+              toggleShowModal(!showModal);
+            }}
+          ></i>
+          <h4>Haftungsausschluss</h4>
+          <p>
+            Berghaus & Cie. berät seine Kunden unabhängig. Der Wert eines Weines
+            kann steigen oder fallen. Berghaus & Cie. garantiert keine bestimmte
+            Wertentwicklung der Weine. Die Vorschläge von Berghaus & Cie. an den
+            Kunden sind lediglich Vorschläge. Der Kunde entscheidet frei über
+            deren Kauf. In die Vorschläge von Berghaus & Cie. fließen die
+            Erfahrungen der Mitarbeiter, aktuelle Marktentwicklungen,
+            Kritikerbewertungen sowie historische Marktentwicklungen mit ein.
+            Weiterhin kann und darf Berghaus & Cie. nicht steuerlich
+            hinsichtlich möglicher Gewinne aus dem Verkauf von Wein beraten und
+            empfiehlt den Kunden einen Steuerberater diesbezüglich zu
+            kontaktieren. Es gelten die Allgemeinen Geschäftsbedingungen der
+            Berghaus & Cie. GmbH, eine aktuelle Fassung finden Sie unter
+            https://www.berghauscie.de/legal/allgemeine-geschaeftsbedingungen.
+          </p>{" "}
+        </ModalBody>
+      </Modal>
+      {/* <ContactUs
         showButton={false}
         showModal={showModal}
         toggleShowModal={toggleShowModal}
@@ -67,104 +69,99 @@ const LandingFooter = () => {
         }
       /> */}
 
-          <div
-            class="container-fluid pb-2 mt-0 p-3 pt-5 text-center bg-gradient"
-            id={"footer"}
-            style={{ color: "white" }}
-          >
-            <div className={"mx-auto"}>
-              <ContactUs />
-            </div>
+      <div
+        class="container-fluid pb-2 mt-0 p-3 pt-5 text-center bg-gradient"
+        id={"footer"}
+        style={{ color: "white" }}
+      >
+        <div className={"mx-auto"}>
+          <ContactUs />
+        </div>
 
-            <div class="row text- pb-5">
-              <div class="col-md-6 text-center p-2">
-                <a
-                  className={"text-white"}
-                  style={{
-                    cursor: "pointer",
-                    color: "white",
-                    textTransform: "uppercase",
-                    fontSize: "12px",
-                  }}
-                  href={"/legal/datenschutz"}
-                >
-                  Datenschutz
-                </a>
-              </div>
-              <div class="col-md-6 text-center p-2">
-                <a
-                  className={"text-white"}
-                  style={{
-                    cursor: "pointer",
-                    color: "white",
-                    textTransform: "uppercase",
-                    fontSize: "12px",
-                  }}
-                  href={"/legal/impressum"}
-                >
-                  Impressum
-                </a>
-              </div>
-              {/* <div class="col-md-6 text-center p-2"> 
+        <div class="row text- pb-5">
+          <div class="col-md-6 text-center p-2">
+            <a
+              className={"text-white"}
+              style={{
+                cursor: "pointer",
+                color: "white",
+                textTransform: "uppercase",
+                fontSize: "12px",
+              }}
+              href={"/legal/datenschutz"}
+            >
+              Datenschutz
+            </a>
+          </div>
+          <div class="col-md-6 text-center p-2">
+            <a
+              className={"text-white"}
+              style={{
+                cursor: "pointer",
+                color: "white",
+                textTransform: "uppercase",
+                fontSize: "12px",
+              }}
+              href={"/legal/impressum"}
+            >
+              Impressum
+            </a>
+          </div>
+          {/* <div class="col-md-6 text-center p-2"> 
     <a style={{cursor: "pointer"}} onClick={()=>changeMarkup(kontakt_markup, toggleShowModal(true))}>Kontakt</a>
     </div> */}
-              <div class="col-md-6 text-center p-2">
-                <a
-                  className={"text-white"}
-                  style={{
-                    cursor: "pointer",
-                    color: "white",
-                    textTransform: "uppercase",
-                    fontSize: "12px",
-                  }}
-                  href={"/legal/allgemeine-geschaeftsbedingungen"}
-                >
-                  AGB
-                </a>
-              </div>
-              <div class="col-md-6 text-center p-2">
-                <a
-                  className={"text-white"}
-                  style={{
-                    cursor: "pointer",
-                    color: "white",
-                    textTransform: "uppercase",
-                    fontSize: "12px",
-                  }}
-                  onClick={() => toggleShowModal(!showModal)}
-                >
-                  Haftungsausschluss
-                </a>
-              </div>
-            </div>
-            <center>
-              <span
-                className={""}
-                style={{
-                  display: "block",
-                  fontSize: "15px",
-                  verticalAlign: "middle",
-                }}
-              >
-                <a
-                  href={"https://www.linkedin.com/company/berghaus-cie-gmbh/"}
-                  style={{ textDecoration: "none" }}
-                >
-                  <span className={"text-white"}>
-                    <LinkedinLogo
-                      width={"30px"}
-                      height={"30px"}
-                      strokewidth={3}
-                    />{" "}
-                    Linkedin
-                  </span>
-                </a>
-              </span>
-              <br />
-              <small>© Berghaus & Cie. GmbH</small>
-            </center>
+          <div class="col-md-6 text-center p-2">
+            <a
+              className={"text-white"}
+              style={{
+                cursor: "pointer",
+                color: "white",
+                textTransform: "uppercase",
+                fontSize: "12px",
+              }}
+              href={"/legal/allgemeine-geschaeftsbedingungen"}
+            >
+              AGB
+            </a>
           </div>
-       
+          <div class="col-md-6 text-center p-2">
+            <a
+              className={"text-white"}
+              style={{
+                cursor: "pointer",
+                color: "white",
+                textTransform: "uppercase",
+                fontSize: "12px",
+              }}
+              onClick={() => toggleShowModal(!showModal)}
+            >
+              Haftungsausschluss
+            </a>
+          </div>
+        </div>
+        <center>
+          <span
+            className={""}
+            style={{
+              display: "block",
+              fontSize: "15px",
+              verticalAlign: "middle",
+            }}
+          >
+            <a
+              href={"https://www.linkedin.com/company/berghaus-cie-gmbh/"}
+              style={{ textDecoration: "none" }}
+            >
+              <span className={"text-white"}>
+                <LinkedinLogo width={"30px"} height={"30px"} strokewidth={3} />{" "}
+                Linkedin
+              </span>
+            </a>
+          </span>
+          <br />
+          <small>© Berghaus & Cie. GmbH</small>
+        </center>
+      </div>
     </>
   );
 };
