@@ -276,7 +276,7 @@ const LivexPriceChart = (props) => {
     series.tooltip.background.fill = am4core.color("#fff");
     series.tooltip.label.fill = am4core.color("#714f9b");
     series.tooltip.label.fontSize = 17;
-    series.name = "Liv-Ex 1000 Fine Wine";
+    series.name = "Liv-Ex 1000";
 
 
 
@@ -302,6 +302,10 @@ const LivexPriceChart = (props) => {
     // chart.scrollbarX = scrollbarX;
     chart.legend = new am4charts.Legend();
     chart.legend.position = "bottom";
+    if(window.innerWidth < 800){
+      chart.legend.fontSize = 11;
+    }
+
     if (!props.mobile) {
       chart.cursor = new am4charts.XYCursor();
     }

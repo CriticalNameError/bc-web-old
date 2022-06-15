@@ -49,6 +49,8 @@ const IndexMobile = (props) => {
     img.onload = function () {
       toggleVideoReady(true);
     };
+    // Bypass long loding times
+    setTimeout(()=>toggleVideoReady(true), 1500)
 
     setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.add("fadeIn");
@@ -101,7 +103,7 @@ const IndexMobile = (props) => {
     >
       <LoadingOverlay
         active={!videoReady}
-        fadeSpeed={1000}
+        fadeSpeed={100}
         styles={{
           overlay: (base) => ({
             ...base,
@@ -240,6 +242,7 @@ const IndexMobile = (props) => {
       >
         <div className={"my-auto col fade-in-container"}>
           <h1
+          className={"mb-0 pb-0"}
             style={{
               fontSize: "55px",
               fontFamily: "'Whisper', cursive",
@@ -249,7 +252,16 @@ const IndexMobile = (props) => {
             <br />
             <span className={"fade-in-span"}>Traditionell</span>
           </h1>
-          <br />
+          
+          <div className={"fade-in-container mb-5"}>
+          <span className={"fade-in-span pr-1"}>Ihr</span>
+          <span className={"fade-in-span"}>Weininvestment -</span>
+          <br/>
+          <span className={"fade-in-span pr-1"}>professionell, </span>
+          <span className={"fade-in-span pr-1"}>transparent</span>
+          <span className={"fade-in-span"}>zeitgemäß.</span>
+          </div>
+         
           <div>
             <span
               onClick={() => {
@@ -330,10 +342,10 @@ const IndexMobile = (props) => {
     >
       <div className={"col-12 my-auto p-0"}>
         <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
-          Herausragende Rendite
+          Starke Rendite
         </h1>
-        <div className={"px-1 mb-2"}>
-          Der Livex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
+        <div className={"px-1 mb-2"} style={{fontSize: "13px"}}>
+          Der Liv-Ex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
         </div>
 

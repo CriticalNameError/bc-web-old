@@ -207,12 +207,14 @@ const MobileNavbar = (props) => {
         </ModalBody>
       </Modal>
       <div
-        className={"d-flex justify-content-between px-3 pt-2"}
+        className={"d-flex justify-content-between px-3 pt-2 pb-2"}
         style={{
           width: "100%",
           position: "fixed",
           zIndex: 1049,
-          background: onLandingPage? "transparent" : "white",
+          background: onLandingPage? "transparent" : "rgba(255,255,255, 0.7)",
+
+          
 
         }}
       >
