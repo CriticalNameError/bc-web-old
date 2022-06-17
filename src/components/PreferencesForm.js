@@ -1250,7 +1250,7 @@ const PreferencesForm = (props) => {
                 <span class="form-check-sign"></span>
                 Ich akzeptiere die{" "}
                 <a
-                  href={"https://berghauscie.de/legal/datenschutz"}
+                  href={"https://www.berghauscie.de/legal/datenschutz"}
                   target={"_blank"}
                   style={{ color: "black", textDecoration: "underline" }}
                 >
