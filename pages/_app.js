@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
   const [showCookieModal, toggleShowCookieModal] = useState(true);
   const [showCalendlyModal, toggleShowCalendlyModal] = useState(false);
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
       />
       <ApolloProvider client={apolloClient}>
         <HttpsRedirect>
-          {width > 800 ? (
+          {width && width > 800 ? (
             <>
               <SelectCalendylDateModal
                 showModal={showCalendlyModal}
@@ -66,14 +66,14 @@ function MyApp({ Component, pageProps }) {
           )}
           {!showCookieModal && (
             <>
-              {width > 800 && (
+              {width && width > 800 && (
                 <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
               )}
               <Component
                 {...pageProps}
                 toggleShowCalendlyModal={toggleShowCalendlyModal}
               />
-              {width > 800 && (
+              {width && width > 800 && (
                 <div className={"d-none d-md-block"}>
                   <LandingFooter />
                 </div>

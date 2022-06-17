@@ -3,7 +3,7 @@ import IndexDesktop from "../src/components/IndexDesktop";
 import IndexMobile from "../src/components/IndexMobile";
 
 const Index = () => {
-  const [width, setWidth] = useState(1300);
+  const [width, setWidth] = useState(null);
   const [currentComponent, setCurrentComponent] = useState(<IndexDesktop/>)
   useEffect(() => {
     const handleResize = () => {
@@ -13,10 +13,12 @@ const Index = () => {
     handleResize();
   });
 
-  if (width > 800) {
+  if (width && width > 800) {
     return <IndexDesktop/>;
-  } else {
+  } if (width && width <= 800) {
     return <IndexMobile/>;
+  } else{
+    return <></>
   }
 };
 

@@ -11,6 +11,7 @@ import PreferencesForm from "components/PreferencesForm";
 import TriangleRight1 from "icons/triangle-right-1";
 import router, { withRouter } from "next/router";
 import LoadingOverlay from "react-loading-overlay";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
   primary,
   primary_t80,
@@ -50,7 +51,7 @@ const IndexMobile = (props) => {
       toggleVideoReady(true);
     };
     // Bypass long loding times
-    setTimeout(()=>toggleVideoReady(true), 1500)
+    setTimeout(()=>toggleVideoReady(true), 1000)
 
     setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.add("fadeIn");
@@ -183,10 +184,25 @@ const IndexMobile = (props) => {
         </ModalFooter>
       </Modal>
 
-      <img
+      <LazyLoadImage
+    alt={"background"}
+    id={"background-img"}
+    visibleByDefault={true}
+    // src={"https://bcassets.s3.eu-west-1.amazonaws.com/background_bc.gif"} // use normal <img> attributes as props
+   src={"https://bcassets.s3.eu-west-1.amazonaws.com/background_bg_small.gif"}
+    width={"100%"} 
+    height={"100%"}
+    style={{objectFit: "cover"}}
+    // placeholderSrc={placeholderUrl}
+    // wrapperClassName={props.classes}
+    />
+    
+   
+
+      {/* <img
         id={"background-img"}
         src={
-          "https://backoffice.berghauscie.de/documents/13/background_mobile.gif"
+          "https://bcassets.s3.eu-west-1.amazonaws.com/background_bc.gif"
         }
         style={{
           position: "absolute",
@@ -199,7 +215,7 @@ const IndexMobile = (props) => {
           objectFit: "cover",
           zIndex: "-100",
         }}
-      />
+      /> */}
 
       {/* <video
         autoplay
