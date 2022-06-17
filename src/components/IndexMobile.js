@@ -266,7 +266,7 @@ const IndexMobile = (props) => {
           >
             <span className={"fade-in-span"}>Disruptiv</span>
             <br />
-            <span className={"fade-in-span"}>Traditionell</span>
+            <span className={"fade-in-span"}>Traditionell.</span>
           </h1>
           
           <div className={"fade-in-container mb-5"}>

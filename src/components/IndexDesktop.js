@@ -481,7 +481,7 @@ const IndexDesktop = (props) => {
                                             >
                                               {" "}
                                               <span
-                                                className={"fade-in-span pr-1"}
+                                                className={"fade-in-span pr-3"}
                                                 style={{
                                                   fontFamily:
                                                     "'Whisper', cursive",
@@ -496,7 +496,7 @@ const IndexDesktop = (props) => {
                                                     "'Whisper', cursive",
                                                 }}
                                               >
-                                                Traditionell
+                                                Traditionell.
                                               </span>
                                             </h1>
                                             <div

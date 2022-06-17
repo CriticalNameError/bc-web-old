@@ -70,7 +70,7 @@ const AboutUs = () => {
                 style={{ fontSize: "65px", fontFamily: "'Whisper', cursive" }}
               >
                 {" "}
-                Disruptiv Traditionell{" "}
+                Disruptiv Traditionell.{" "}
               </h1>
 
               {/* <a
