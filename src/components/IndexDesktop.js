@@ -362,7 +362,7 @@ const IndexDesktop = (props) => {
                     controls
                   >
                     <source
-                      src="https://bcassets.s3.eu-west-1.amazonaws.com/Untitled.mp4"
+                      src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_explainer_desktop.mp4"
                       type="video/mp4"
                     />
                   </video>

@@ -157,7 +157,7 @@ const IndexMobile = (props) => {
             controls
           >
             <source
-              src="https://bcassets.s3.eu-west-1.amazonaws.com/Untitled.mp4"
+              src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_explainer_mobile.mp4"
               type="video/mp4"
             />
           </video>
@@ -274,7 +274,7 @@ const IndexMobile = (props) => {
           <span className={"fade-in-span"}>Weininvestment -</span>
           <br/>
           <span className={"fade-in-span pr-1"}>professionell, </span>
-          <span className={"fade-in-span pr-1"}>transparent</span>
+          <span className={"fade-in-span pr-1"}>transparent, </span>
           <span className={"fade-in-span"}>zeitgemäß.</span>
           </div>
          
