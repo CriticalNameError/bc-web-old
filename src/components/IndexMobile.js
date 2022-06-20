@@ -12,6 +12,7 @@ import TriangleRight1 from "icons/triangle-right-1";
 import router, { withRouter } from "next/router";
 import LoadingOverlay from "react-loading-overlay";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import ScrollSlider from "../components/ScrollSlider/ScrollSlider";
 import {
   primary,
   primary_t80,
@@ -365,6 +366,8 @@ const IndexMobile = (props) => {
           historischen Renditen.
         </div>
 
+       
+
         <div
           className={"mx-auto card m-1"}
           style={{
@@ -378,25 +381,36 @@ const IndexMobile = (props) => {
           <DynamicLivexPriceChart mode={"light"} height={"60vh"} mobile={true} />
         </div>
       </div>
-      {/* <div
-        className={"text-center mt-auto"}
-        style={{ width: "100%", bottom: "20px" }}
-      >
-        <a href={"#winetelligence"}>
-          <button
-            className={"btn  btn-sm text-white p-2"}
-            style={{
-              fontSize: "10px",
-              borderRadius: "30px",
-              background: "rgba(255,255,255,0.3)",
-            }}
-            href={"#winetelligence"}
-          >
-            <UpArrow width={"25px"} strokewidth={3} />
-          </button>
-        </a>
-      </div> */}
+    
     </div>,
+  //    <div
+  //    style={{
+  //      color: "#333",
+  //      backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
+  //    }}
+  //    id={"facts"}
+  //    className={
+  //      "section snapscroll-section row h-100 m-0 p-0  text-dark  text-center"
+  //    }
+  //  >
+  //    <div className={"col-12 my-auto p-0"}>
+  //      <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
+  //        Der Weg
+  //      </h1>
+  //      <div className={"px-1 mb-2"} style={{fontSize: "13px"}}>
+  //        Mit nur wenigen Schritten werden Sie zum Weininvestor
+  //      </div>
+
+
+  //      <ScrollSlider/>
+  //    </div>
+   
+  //  </div>,
+
+
+
+
+
     <div
       style={{
         background:

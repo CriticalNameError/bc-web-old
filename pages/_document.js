@@ -12,7 +12,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="robots" content="noindex,nofollow" />
+          {/* <meta name="robots" content="noindex,nofollow" /> */}
           <meta charset="utf-8" />
           {/* <link rel="shortcut icon" href="../public/assets/favicon.ico" /> */}
           <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
@@ -66,10 +66,11 @@ class MyDocument extends Document {
             integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
             crossorigin="anonymous"
           />
+
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
           <link rel="manifest" href="/site.webmanifest" />
           <link
             rel="stylesheet"
