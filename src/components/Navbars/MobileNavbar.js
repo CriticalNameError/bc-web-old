@@ -212,7 +212,7 @@ const MobileNavbar = (props) => {
           width: "100%",
           position: "fixed",
           zIndex: 1049,
-          background: onLandingPage? "transparent" : "rgba(255,255,255, 0.7)",
+          background: onLandingPage? "transparent" : "rgba(255,255,255,1)",
 
           
 

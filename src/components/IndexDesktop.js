@@ -467,7 +467,7 @@ const IndexDesktop = (props) => {
                                       <div className={" my-auto"}>
                                         {videoReady && (
                                           <>
-                                            <h1
+                                            <span
                                               className={
                                                 "p-3 pb-1 pt-0 mb-n3 fade-in-container"
                                               }
@@ -498,12 +498,15 @@ const IndexDesktop = (props) => {
                                               >
                                                 Traditionell.
                                               </span>
-                                            </h1>
-                                            <div
+                                            </span>
+                                            <h1
                                               className={
-                                                "pb-5 mb-3 fade-in-container"
+                                                "pb-0 mb-3 fade-in-container"
                                               }
-                                              style={{ fontSize: "20px" }}
+                                              style={{
+                                                fontSize: "20px",
+                                                fontWeight: "bold",
+                                              }}
                                             >
                                               <span
                                                 className={"fade-in-span pr-1"}
@@ -539,9 +542,24 @@ const IndexDesktop = (props) => {
                                               >
                                                 zeitgemäß.
                                               </span>
-                                            </div>
+                                            </h1>
                                           </>
                                         )}
+                                        <center>
+                                          <h2
+                                            className={"mb-5"}
+                                            style={{
+                                              fontSize: "16px",
+                                              maxWidth: "650px",
+                                            }}
+                                          >
+                                            Berghaus & Cie. ermöglicht Ihnen das
+                                            zielgerichtete Investieren in den
+                                            Markt der exquisiten Weine, einen
+                                            der spezialisiertesten Märkte der
+                                            Welt.
+                                          </h2>
+                                        </center>
 
                                         <span
                                           onClick={() => {
@@ -585,7 +603,9 @@ const IndexDesktop = (props) => {
                                           </span>
                                           <br />
 
-                                          <b>Video abspielen</b>
+                                          <b style={{ fontSize: "18px" }}>
+                                            Video abspielen
+                                          </b>
                                         </span>
                                       </div>
                                       <div
@@ -599,7 +619,7 @@ const IndexDesktop = (props) => {
                                           }
                                           style={{
                                             fontSize: "15px",
-                                            fontWeight: "bold",
+                                            // fontWeight: "bold",
                                             lineHeight: "1.5em",
                                           }}
                                         >

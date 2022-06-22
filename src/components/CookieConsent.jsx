@@ -28,7 +28,7 @@ const CookieConsent = (props) => {
   return (
     <>
       {!cookies.cookie_consent && finishedLoadingDocument && (
-        <Modal isOpen={showModal} className={"modal-lg modal-dialog-centered"}>
+        <Modal data-nosnippet={"data-nosnippet"} isOpen={showModal} className={"modal-lg modal-dialog-centered"}>
           <ModalHeader className={"p-3 pt-4 px-md-5"}>
             Cookie-Einstellungen
           </ModalHeader>

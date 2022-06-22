@@ -64,7 +64,7 @@ function MyApp({ Component, pageProps }) {
           ) : (
             <MobileNavbar {...pageProps} />
           )}
-          {!showCookieModal && (
+         
             <>
               {width && width > 800 && (
                 <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
                 </div>
               )}
             </>
-          )}
+         
           {/* <Component {...pageProps} cookieConsentVisible={showCookieModal}/> */}
         </HttpsRedirect>
       </ApolloProvider>

@@ -58,7 +58,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <title>Berghaus & Cie - Ihr Investment ist unsere Passion</title>
+          <title>Berghaus & Cie | Ihr Weininvestment - professionell, transparent, zeitgemäß.</title>
 
           <link
             rel="stylesheet"

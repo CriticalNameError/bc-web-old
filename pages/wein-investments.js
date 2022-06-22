@@ -100,11 +100,12 @@ const WineInvestments = () => {
   const [showModal, toggleShowModal] = useState(false);
   const [showContactModal, toggleShowContactModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
+  const [width, setWidth] = useState(null)
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
-      // setWidth(window.innerWidth);
+      setWidth(window.innerWidth);
     };
     const getMaximumServicesCardHeight = () => {
       let cards = document.getElementsByClassName("services-card");
@@ -254,7 +255,7 @@ const WineInvestments = () => {
                 </p>
                 <div style={{marginLeft: "18px"}}>
                 <DynamicLivexPriceChart
-                  mobile={window.innerWidth < 800}
+                  mobile={width < 800}
                   height={"450px"}
                 />
                 </div>

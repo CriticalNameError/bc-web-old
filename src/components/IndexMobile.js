@@ -258,26 +258,31 @@ const IndexMobile = (props) => {
         }}
       >
         <div className={"my-auto col fade-in-container"}>
-          <h1
+          <div
           className={"mb-0 pb-0"}
             style={{
-              fontSize: "55px",
+              fontSize: "40px",
               fontFamily: "'Whisper', cursive",
+              lineHeight: "35px"
             }}
           >
             <span className={"fade-in-span"}>Disruptiv</span>
             <br />
             <span className={"fade-in-span"}>Traditionell.</span>
-          </h1>
+          </div>
           
-          <div className={"fade-in-container mb-5"}>
+          <h1 className={"fade-in-container mb-2 mt-2 pt-0"} style={{fontSize: "16px", fontWeight: "bold"}}>
           <span className={"fade-in-span pr-1"}>Ihr</span>
           <span className={"fade-in-span"}>Weininvestment -</span>
-          <br/>
+         
           <span className={"fade-in-span pr-1"}>professionell, </span>
+          <br/>
           <span className={"fade-in-span pr-1"}>transparent, </span>
           <span className={"fade-in-span"}>zeitgemäß.</span>
-          </div>
+          </h1>
+          <h2 className={"mb-5"} style={{fontSize: "12px"}}>
+            Berghaus & Cie. ermöglicht Ihnen das zielgerichtete Investieren in den Markt der exquisiten Weine, einen der spezialisiertesten Märkte der Welt.
+          </h2>
          
           <div>
             <span
@@ -291,7 +296,7 @@ const IndexMobile = (props) => {
                 class="play-btn mx-auto"
                 href="#"
                 style={{
-                  transform: props.mobile ? "scale(0.9)" : "scale(1.2)",
+                  transform: props.mobile ? "scale(0.75)" : "scale(1.2)",
 
                   background: "transparent",
                   cursor: "pointer",
@@ -311,12 +316,12 @@ const IndexMobile = (props) => {
               </span>
               <br />
 
-              <b>Video abspielen</b>
+              <b style={{fontSize: "16px"}}>Video abspielen</b>
             </span>
           </div>
           <a href={"#winetelligence"}>
             <button
-              className={"btn text-white mt-5 p-3"}
+              className={"btn text-white mt-4 p-3"}
               style={{ background: cta, fontSize: "18px" }}
             >
               wineTelligence ausprobieren
@@ -358,9 +363,9 @@ const IndexMobile = (props) => {
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
+        <h2 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
           Starke Rendite
-        </h1>
+        </h2>
         <div className={"px-1 mb-2"} style={{fontSize: "13px"}}>
           Der Liv-Ex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
