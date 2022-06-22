@@ -33,6 +33,7 @@
     "react-chrono": "^1.8.4",
     "react-container-dimensions": "^1.4.1",
     "react-cookie": "^4.1.0",
+    "react-countup": "^6.3.0",
     "react-currency-format": "^1.1.0",
     "react-dom": "16.8.6",
     "react-h5-audio-player": "^3.7.2",
