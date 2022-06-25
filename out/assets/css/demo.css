@@ -957,6 +957,100 @@ input[type=range]::-moz-range-thumb {
   }
 }
 
+#pills-card {
+  width: 95vw;
+  margin: 0 auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  -webkit-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.pills {
+  font-size: 12px;
+  background: white;
+  padding: .3rem  1.5rem 0.3rem 1.5rem;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.pills-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  border-radius: 25px;
+  padding: .5rem 1rem;
+  white-space: nowrap;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pills-item .title {
+  display: inline-block;
+  color: transparent;
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.pills-item.active {
+  -webkit-box-flex: 0.000000001;
+      -ms-flex: 0.000000001 0.00000001 100px;
+          flex: 0.000000001 0.00000001 100px;
+  margin-left: 9px;
+}
+
+.pills-item.active .title {
+  color: inherit;
+}
+
+.pills-item[data-color="#5b37b7"].active {
+  color: #5b37b7;
+  fill: #5b37b7 !important;
+  background: rgba(91, 55, 183, 0.3);
+}
+
+.pills-item[data-color="#a40044"].active {
+  color: #a40044;
+  fill: #a40044 !important;
+  background: rgba(164, 0, 68, 0.3);
+}
+
+.pills-item[data-color="#8acbc6"].active {
+  color: #8acbc6;
+  fill: #8acbc6 !important;
+  background: rgba(138, 203, 198, 0.3);
+}
+
+.pills-item[data-color="#97bf0e"].active {
+  color: #97bf0e;
+  fill: #97bf0e !important;
+  background: rgba(151, 191, 14, 0.3);
+}
+
+*[class^="icon-"] {
+  height: 24px;
+  width: 24px;
+}
+
 .transp-card:hover {
   cursor: pointer;
 }

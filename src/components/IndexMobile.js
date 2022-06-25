@@ -11,8 +11,13 @@ import PreferencesForm from "components/PreferencesForm";
 import TriangleRight1 from "icons/triangle-right-1";
 import router, { withRouter } from "next/router";
 import LoadingOverlay from "react-loading-overlay";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollSlider from "../components/ScrollSlider/ScrollSlider";
+import Ai from "../icons/ai";
+import Handout from "../icons/handout";
+import VirtualAssistant2 from "../icons/virtual-assistant-2";
+import StorageUnit from "../icons/storage-unit";
+import { Row, Col } from "reactstrap";
 import {
   primary,
   primary_t80,
@@ -35,7 +40,7 @@ const IndexMobile = (props) => {
   const [section, setSection] = useState("welcome");
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoReady, toggleVideoReady] = useState(false);
-
+  const [activePill, setActivePill] = useState(0);
   const playVideoAfterDelay = () =>
     setTimeout(() => {
       document.getElementById("explainer-video").play();
@@ -52,7 +57,7 @@ const IndexMobile = (props) => {
       toggleVideoReady(true);
     };
     // Bypass long loding times
-    setTimeout(()=>toggleVideoReady(true), 1000)
+    setTimeout(() => toggleVideoReady(true), 1000);
 
     setTimeout(() => {
       document.getElementById("swipe-up-btn").classList.add("fadeIn");
@@ -73,6 +78,74 @@ const IndexMobile = (props) => {
     //     toggleVideoReady(true);
     //   }
   }, []);
+
+  const pillContent = {
+    0: (
+      <Row style={{ height: "300px" }}>
+        <Col className={"my-auto text-light"}>
+          <h3>Start</h3>
+          <p className={"text-left px-3"}>
+            Unsere wineTelligence ist der Kick-Starter für Ihr Weininvestment.
+            Mit ihr erhalten Sie in kürzester Zeit ein individuelles,
+            transparentes Angebot auf der Basis künstlicher Intelligenz.
+          </p>
+        </Col>
+      </Row>
+    ),
+    1: (
+      <Row style={{ height: "300px" }}>
+        <Col className={"my-auto text-light"}>
+          <h3>Beratung</h3>
+          <p className={"text-left px-3"}>
+            Für alle weiteren Fragen zum Ablauf Ihres Investments generell,
+            sowie für Fragen zur Weinauswahl, Lagerung und Verkauf stehen wir
+            Ihnen gerne zur Verfügung. Buchen Sie einfach einen kostenlosen
+            Beratungstermin mit uns.
+          </p>
+        </Col>
+      </Row>
+    ),
+    2: (
+      <Row style={{ height: "300px" }}>
+        <Col className={"my-auto"}>
+          <h3>Lagerung</h3>
+          <p className={"text-left px-3"}>
+            Nach der Bezahlung Ihrer Weine werden diese innerhalb von 3-6 Wochen in den
+            Genfer Zollfreihafen transportiert. Dort lagern Sie ab jetzt zu 100%
+            versichert sowie klima- und temperaturgeführt.{" "}
+          </p>
+        </Col>
+      </Row>
+    ),
+    3: (
+      <Row style={{ height: "300px" }}>
+        <Col className={"my-auto"}>
+          <h3>Verkauf</h3>
+          <p className={"text-left px-3"}>
+            {" "}
+            Sofern Sie dies wünschen, übernehmen wir nach einer empfohlenen
+            Lagerdauer von etwa 5-10 Jahren den Verkauf Ihrer Weine. Wir kennen
+            den Markt und setzen uns dafür ein, den Wein zum Bestpreis für Sie
+            zu veräußern.
+          </p>
+        </Col>
+      </Row>
+    ),
+  };
+
+  const pillsCardColors = ["#5b37b7", "#A40044", "#8ACBC6", "#97BF0E"];
+
+  //   const select = (el) => {
+  //     var tabs = document.getElementsByClassName('pills-item');
+  //     var activeEl = tabs[0];
+  //     activeEl.classList.remove('active');
+  //     activeEl = el;
+  //     var cd = document.getElementById("pills-card")
+  //     cd.style.background = activeEl.dataset.color;
+  //     activeEl.classList.add('active');
+  // }
+
+  // select(activeEl);
 
   // useEffect(() => {
   //   if (isActive == "chart") {
@@ -186,19 +259,19 @@ const IndexMobile = (props) => {
       </Modal>
 
       <LazyLoadImage
-    alt={"background"}
-    id={"background-img"}
-    visibleByDefault={true}
-    // src={"https://bcassets.s3.eu-west-1.amazonaws.com/background_bc.gif"} // use normal <img> attributes as props
-   src={"https://bcassets.s3.eu-west-1.amazonaws.com/background_bg_small.gif"}
-    width={"100%"} 
-    height={"100%"}
-    style={{objectFit: "cover"}}
-    // placeholderSrc={placeholderUrl}
-    // wrapperClassName={props.classes}
-    />
-    
-   
+        alt={"background"}
+        id={"background-img"}
+        visibleByDefault={true}
+        // src={"https://bcassets.s3.eu-west-1.amazonaws.com/background_bc.gif"} // use normal <img> attributes as props
+        src={
+          "https://bcassets.s3.eu-west-1.amazonaws.com/background_bg_small.gif"
+        }
+        width={"100%"}
+        height={"100%"}
+        style={{ objectFit: "cover" }}
+        // placeholderSrc={placeholderUrl}
+        // wrapperClassName={props.classes}
+      />
 
       {/* <img
         id={"background-img"}
@@ -259,31 +332,36 @@ const IndexMobile = (props) => {
       >
         <div className={"my-auto col fade-in-container"}>
           <div
-          className={"mb-0 pb-0"}
+            className={"mb-0 pb-0"}
             style={{
               fontSize: "40px",
               fontFamily: "'Whisper', cursive",
-              lineHeight: "35px"
+              lineHeight: "35px",
             }}
           >
             <span className={"fade-in-span"}>Disruptiv</span>
             <br />
             <span className={"fade-in-span"}>Traditionell.</span>
           </div>
-          
-          <h1 className={"fade-in-container mb-2 mt-2 pt-0"} style={{fontSize: "16px", fontWeight: "bold"}}>
-          <span className={"fade-in-span pr-1"}>Ihr</span>
-          <span className={"fade-in-span"}>Weininvestment -</span>
-         
-          <span className={"fade-in-span pr-1"}>professionell, </span>
-          <br/>
-          <span className={"fade-in-span pr-1"}>transparent, </span>
-          <span className={"fade-in-span"}>zeitgemäß.</span>
+
+          <h1
+            className={"fade-in-container mb-2 mt-2 pt-0"}
+            style={{ fontSize: "16px", fontWeight: "bold" }}
+          >
+            <span className={"fade-in-span pr-1"}>Ihr</span>
+            <span className={"fade-in-span"}>Weininvestment -</span>
+
+            <span className={"fade-in-span pr-1"}>professionell, </span>
+            <br />
+            <span className={"fade-in-span pr-1"}>transparent, </span>
+            <span className={"fade-in-span"}>zeitgemäß.</span>
           </h1>
-          <h2 className={"mb-5"} style={{fontSize: "12px"}}>
-            Berghaus & Cie. ermöglicht Ihnen das zielgerichtete Investieren in den Markt der exquisiten Weine, einen der spezialisiertesten Märkte der Welt.
+          <h2 className={"mb-5"} style={{ fontSize: "12px" }}>
+            Berghaus & Cie. ermöglicht Ihnen das zielgerichtete Investieren in
+            den Markt der exquisiten Weine, einen der spezialisiertesten Märkte
+            der Welt.
           </h2>
-         
+
           <div>
             <span
               onClick={() => {
@@ -316,7 +394,7 @@ const IndexMobile = (props) => {
               </span>
               <br />
 
-              <b style={{fontSize: "16px"}}>Video abspielen</b>
+              <b style={{ fontSize: "16px" }}>Video abspielen</b>
             </span>
           </div>
           <a href={"#winetelligence"}>
@@ -355,7 +433,7 @@ const IndexMobile = (props) => {
     <div
       style={{
         color: "#333",
-        backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
+        backgroundImage: "linear-gradient(#f8f8f8, #d9d1be)",
       }}
       id={"facts"}
       className={
@@ -366,12 +444,10 @@ const IndexMobile = (props) => {
         <h2 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
           Starke Rendite
         </h2>
-        <div className={"px-1 mb-2"} style={{fontSize: "13px"}}>
+        <div className={"px-1 mb-2"} style={{ fontSize: "13px" }}>
           Der Liv-Ex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
         </div>
-
-       
 
         <div
           className={"mx-auto card m-1"}
@@ -383,38 +459,92 @@ const IndexMobile = (props) => {
             backgroundImage: "linear-gradient(to right, #232526, #414345)",
           }}
         >
-          <DynamicLivexPriceChart mode={"light"} height={"60vh"} mobile={true} />
+          <DynamicLivexPriceChart
+            mode={"light"}
+            height={"60vh"}
+            mobile={true}
+          />
         </div>
       </div>
-    
     </div>,
-  //    <div
-  //    style={{
-  //      color: "#333",
-  //      backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
-  //    }}
-  //    id={"facts"}
-  //    className={
-  //      "section snapscroll-section row h-100 m-0 p-0  text-dark  text-center"
-  //    }
-  //  >
-  //    <div className={"col-12 my-auto p-0"}>
-  //      <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
-  //        Der Weg
-  //      </h1>
-  //      <div className={"px-1 mb-2"} style={{fontSize: "13px"}}>
-  //        Mit nur wenigen Schritten werden Sie zum Weininvestor
-  //      </div>
+    <div
+      style={{
+        color: "#333",
+        backgroundImage: "linear-gradient(#d9d1be, #c0ad82)",
+      }}
+      id={"steps"}
+      className={
+        "section snapscroll-section row h-100 m-0 p-0  text-dark  text-center"
+      }
+    >
+      <div className={"col-12 my-auto p-0"}>
+        <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
+          Der Weg
+        </h1>
+        <div className={"px-1 mb-3"} style={{ fontSize: "14px" }}>
+          Mit nur wenigen Schritten werden <br/> Sie zum Weininvestor.
+        </div>
 
+        <div
+          id="pills-card"
+          style={{ backgroundColor: pillsCardColors[activePill] }}
+        >
+          {pillContent[activePill]}
 
-  //      <ScrollSlider/>
-  //    </div>
-   
-  //  </div>,
+          <div class="pills">
+            <div
+              onClick={() => setActivePill(0)}
+              className={"pills-item " + (activePill == 0 && "active")}
+              data-color="#5b37b7"
+              onclick="select(this)"
+            >
+              <span class="icon-home">
+                <Ai width={"24px"} strokewidth={3}></Ai>
+              </span>
+              <div class="title">Start</div>
+            </div>
 
+            <div
+              onClick={() => setActivePill(1)}
+              className={"pills-item " + (activePill == 1 && "active")}
+              data-color="#a40044"
+              onclick="select(this)"
+            >
+              <span class="icon-heart">
+                <VirtualAssistant2 width={"24px"} strokewidth={3} />
+              </span>
+              <div class="title">Beratung</div>
+            </div>
 
+            <div
+              onClick={() => setActivePill(2)}
+              className={"pills-item " + (activePill == 2 && "active")}
+              data-color="#8acbc6"
+              onclick="select(this)"
+            >
+              <span class="icon-search">
+                <StorageUnit width={"24px"} strokewidth={3} />
+              </span>
+              <div class="title">Lagerung</div>
+            </div>
 
+            <div
+              onClick={() => setActivePill(3)}
+              className={"pills-item " + (activePill == 3 && "active")}
+              data-color="#97bf0e"
+              onclick="select(this)"
+            >
+              <span class="icon-profile">
+                <Handout width={"24px"} strokewidth={3} />
+              </span>
+              <div class="title">Verkauf</div>
+            </div>
+          </div>
+        </div>
 
+        {/* <ScrollSlider/> */}
+      </div>
+    </div>,
 
     <div
       style={{

@@ -963,6 +963,76 @@ input[type=range]::-moz-range-thumb {
   }
 }
 
+$colors:  #5b37b7 #a40044 #8acbc6 #97bf0e;
+
+
+
+#pills-card {
+ 
+  width: 95vw;
+  margin: 0 auto;
+  border-radius:  15px;
+  box-shadow:  0 3px 8px rgba(0,0,0,.1);
+  font-size: 13px;
+  transition: background-color 500ms ease-in-out;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.pills{
+  font-size:                  12px; 
+  background: white;
+  padding: .3rem  1.5rem 0.3rem 1.5rem;
+  border-bottom-right-radius:  15px;
+  border-bottom-left-radius:  15px;
+
+  display:                    flex;
+  flex-flow:                  row nowrap;
+ 
+}
+
+.pills-item{
+  flex:          1 1 25%;
+  border-radius: 25px;
+  padding:       .5rem 1rem;
+  white-space:   nowrap;
+  transition:    all 500ms ease-in-out;
+  overflow:      hidden;
+  cursor:        pointer;
+  .title{
+    display:        inline-block;
+    color:          transparent;
+    // vertical-align: super;
+    font-size: 10px;
+    margin-left:    4px;
+  }
+}
+
+.pills-item.active{
+  flex: 0.000000001 0.00000001 100px;
+  margin-left: 9px;
+  
+  .title{
+     color: inherit;
+  }
+}
+
+@each $color in $colors{
+  .pills-item[data-color="#{$color}"].active {
+    color:     $color;
+    fill:      $color !important;
+    background: rgba($color, .3);
+  }
+}
+
+*[class^="icon-"]{
+  height:         24px;
+  width:          24px;
+}
+
+
 .transp-card:hover {
   cursor: pointer;
 }
