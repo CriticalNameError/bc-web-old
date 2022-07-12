@@ -18,6 +18,10 @@ import Handout from "../icons/handout";
 import VirtualAssistant2 from "../icons/virtual-assistant-2";
 import StorageUnit from "../icons/storage-unit";
 import { Row, Col } from "reactstrap";
+import Swiper from 'swiper';
+import {useSwipeable} from "react-swipeable"
+// import Swiper styles
+//import 'swiper/css';
 import {
   primary,
   primary_t80,
@@ -45,6 +49,27 @@ const IndexMobile = (props) => {
     setTimeout(() => {
       document.getElementById("explainer-video").play();
     }, 1000);
+
+  const config = {
+    delta: 10,                             // min distance(px) before a swipe starts. *See Notes*
+    preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
+    trackTouch: true,                      // track touch input
+    trackMouse: false,                     // track mouse input
+    rotationAngle: 0,                      // set a rotation angle
+    swipeDuration: Infinity,               // allowable duration of a swipe (ms). *See Notes*
+    touchEventOptions: { passive: true },  // options for touch listeners (*See Details*)
+  }
+
+  const swipeHandlers = useSwipeable({
+      onSwiped: (eventData) => {console.log("User Swiped!", eventData);
+    if (eventData.dir == "Right" && (activePill > 0)){
+      setActivePill(activePill - 1)
+    }
+    if (eventData.dir == "Left" && (activePill < Object.keys(pillContent).length - 1 )){
+      setActivePill(activePill + 1)
+    }},
+      ...config,
+    });
 
   const moveDownAfterDelay = () =>
     setTimeout(() => {
@@ -77,6 +102,28 @@ const IndexMobile = (props) => {
     //   if (videoElement.readyState >= 3) {
     //     toggleVideoReady(true);
     //   }
+
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      effect: 'fade',
+      loop: true,
+      speed: 300,
+      mousewheel: {
+        invert: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+
   }, []);
 
   const pillContent = {
@@ -488,6 +535,7 @@ const IndexMobile = (props) => {
         <div
           id="pills-card"
           style={{ backgroundColor: pillsCardColors[activePill] }}
+          {...swipeHandlers}
         >
           {pillContent[activePill]}
 
@@ -545,6 +593,8 @@ const IndexMobile = (props) => {
         {/* <ScrollSlider/> */}
       </div>
     </div>,
+
+
 
     <div
       style={{
