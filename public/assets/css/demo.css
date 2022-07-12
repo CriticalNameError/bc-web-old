@@ -980,8 +980,8 @@ input[type=range]::-moz-range-thumb {
   font-size: 12px;
   background: white;
   padding: .3rem  1.5rem 0.3rem 1.5rem;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1022,28 +1022,28 @@ input[type=range]::-moz-range-thumb {
   color: inherit;
 }
 
-.pills-item[data-color="#5b37b7"].active {
-  color: #5b37b7;
-  fill: #5b37b7 !important;
-  background: rgba(91, 55, 183, 0.3);
+.pills-item[data-color="#A38CC2"].active {
+  color: #A38CC2;
+  fill: #A38CC2 !important;
+  background: rgba(163, 140, 194, 0.3);
 }
 
-.pills-item[data-color="#a40044"].active {
-  color: #a40044;
-  fill: #a40044 !important;
-  background: rgba(164, 0, 68, 0.3);
+.pills-item[data-color="#597549"].active {
+  color: #597549;
+  fill: #597549 !important;
+  background: rgba(89, 117, 73, 0.3);
 }
 
-.pills-item[data-color="#8acbc6"].active {
-  color: #8acbc6;
-  fill: #8acbc6 !important;
-  background: rgba(138, 203, 198, 0.3);
+.pills-item[data-color="#91AABF"].active {
+  color: #91AABF;
+  fill: #91AABF !important;
+  background: rgba(145, 170, 191, 0.3);
 }
 
-.pills-item[data-color="#97bf0e"].active {
-  color: #97bf0e;
-  fill: #97bf0e !important;
-  background: rgba(151, 191, 14, 0.3);
+.pills-item[data-color="#80C488"].active {
+  color: #80C488;
+  fill: #80C488 !important;
+  background: rgba(128, 196, 136, 0.3);
 }
 
 *[class^="icon-"] {

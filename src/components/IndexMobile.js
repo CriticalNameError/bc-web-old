@@ -5,10 +5,12 @@ import MockupLanding from "icons/mockup_landing";
 import dynamic from "next/dynamic";
 import UpArrow from "icons/up-arrow";
 import SwipeUp from "icons/swipe-up";
+import Router from "next/router";
 import { useRouter } from "next/router";
 import ReactFullpage from "@fullpage/react-fullpage";
 import PreferencesForm from "components/PreferencesForm";
 import TriangleRight1 from "icons/triangle-right-1";
+import RightArrow from "icons/right-arrow";
 import router, { withRouter } from "next/router";
 import LoadingOverlay from "react-loading-overlay";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -18,8 +20,8 @@ import Handout from "../icons/handout";
 import VirtualAssistant2 from "../icons/virtual-assistant-2";
 import StorageUnit from "../icons/storage-unit";
 import { Row, Col } from "reactstrap";
-import Swiper from 'swiper';
-import {useSwipeable} from "react-swipeable"
+import Swiper from "swiper";
+import { useSwipeable } from "react-swipeable";
 // import Swiper styles
 //import 'swiper/css';
 import {
@@ -51,30 +53,41 @@ const IndexMobile = (props) => {
     }, 1000);
 
   const config = {
-    delta: 10,                             // min distance(px) before a swipe starts. *See Notes*
-    preventScrollOnSwipe: false,           // prevents scroll during swipe (*See Details*)
-    trackTouch: true,                      // track touch input
-    trackMouse: false,                     // track mouse input
-    rotationAngle: 0,                      // set a rotation angle
-    swipeDuration: Infinity,               // allowable duration of a swipe (ms). *See Notes*
-    touchEventOptions: { passive: true },  // options for touch listeners (*See Details*)
-  }
-
-  const swipeHandlers = useSwipeable({
-      onSwiped: (eventData) => {console.log("User Swiped!", eventData);
-    if (eventData.dir == "Right" && (activePill > 0)){
-      setActivePill(activePill - 1)
-    }
-    if (eventData.dir == "Left" && (activePill < Object.keys(pillContent).length - 1 )){
-      setActivePill(activePill + 1)
-    }},
-      ...config,
-    });
+    delta: 10, // min distance(px) before a swipe starts. *See Notes*
+    preventScrollOnSwipe: false, // prevents scroll during swipe (*See Details*)
+    trackTouch: true, // track touch input
+    trackMouse: false, // track mouse input
+    rotationAngle: 0, // set a rotation angle
+    swipeDuration: Infinity, // allowable duration of a swipe (ms). *See Notes*
+    touchEventOptions: { passive: true }, // options for touch listeners (*See Details*)
+  };
 
   const moveDownAfterDelay = () =>
     setTimeout(() => {
       router.push("#winetelligence");
     }, 700);
+
+  const swipeHandlers = useSwipeable({
+    onSwiped: (eventData) => {
+      console.log("User Swiped!", eventData);
+      if (eventData.dir == "Right" && activePill > 0) {
+        setActivePill(activePill - 1);
+      }
+      if (
+        eventData.dir == "Left" &&
+        activePill < Object.keys(pillContent).length - 1
+      ) {
+        setActivePill(activePill + 1);
+      }
+      if (
+        eventData.dir == "Left" &&
+        activePill == Object.keys(pillContent).length - 1
+      ) {
+        moveDownAfterDelay();
+      }
+    },
+    ...config,
+  });
 
   useEffect(() => {
     let img = document.getElementById("background-img");
@@ -103,84 +116,148 @@ const IndexMobile = (props) => {
     //     toggleVideoReady(true);
     //   }
 
-    var swiper = new Swiper('.swiper-container', {
+    var swiper = new Swiper(".swiper-container", {
       slidesPerView: 1,
       spaceBetween: 20,
-      effect: 'fade',
+      effect: "fade",
       loop: true,
       speed: 300,
       mousewheel: {
         invert: false,
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
-        dynamicBullets: true
+        dynamicBullets: true,
       },
       // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
-
   }, []);
 
   const pillContent = {
     0: (
       <Row style={{ height: "300px" }}>
-        <Col className={"my-auto text-light"}>
-          <h3>Start</h3>
-          <p className={"text-left px-3"}>
-            Unsere wineTelligence ist der Kick-Starter für Ihr Weininvestment.
-            Mit ihr erhalten Sie in kürzester Zeit ein individuelles,
-            transparentes Angebot auf der Basis künstlicher Intelligenz.
-          </p>
+        <Col xs={10} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            {" "}
+            <Ai width={"34px"} strokewidth={3}></Ai> Start
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Unsere wineTelligence ist der Kick-Starter für Ihr
+                Weininvestment. Mit ihr erhalten Sie in kürzester Zeit ein
+                individuelles, transparentes Angebot auf der Basis künstlicher
+                Intelligenz.
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => setActivePill(activePill + 1)}
+              >
+                <RightArrow width={"20px"} strokewidth={4} />
+              </span>
+            </Col>
+          </Row>
         </Col>
       </Row>
     ),
     1: (
       <Row style={{ height: "300px" }}>
-        <Col className={"my-auto text-light"}>
-          <h3>Beratung</h3>
-          <p className={"text-left px-3"}>
-            Für alle weiteren Fragen zum Ablauf Ihres Investments generell,
-            sowie für Fragen zur Weinauswahl, Lagerung und Verkauf stehen wir
-            Ihnen gerne zur Verfügung. Buchen Sie einfach einen kostenlosen
-            Beratungstermin mit uns.
-          </p>
+        <Col xs={10} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            <VirtualAssistant2 width={"34px"} strokewidth={3} /> Beratung
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Für alle weiteren Fragen zum Ablauf Ihres Investments generell,
+                sowie für Fragen zur Weinauswahl, Lagerung und Verkauf stehen
+                wir Ihnen gerne zur Verfügung. Buchen Sie einfach einen
+                kostenlosen Beratungstermin mit uns.
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => setActivePill(activePill + 1)}
+              >
+                <RightArrow width={"20px"} strokewidth={4} />
+              </span>
+            </Col>
+          </Row>
         </Col>
       </Row>
     ),
     2: (
       <Row style={{ height: "300px" }}>
-        <Col className={"my-auto"}>
-          <h3>Lagerung</h3>
-          <p className={"text-left px-3"}>
-            Nach der Bezahlung Ihrer Weine werden diese innerhalb von 3-6 Wochen in den
-            Genfer Zollfreihafen transportiert. Dort lagern Sie ab jetzt zu 100%
-            versichert sowie klima- und temperaturgeführt.{" "}
-          </p>
+        <Col xs={10} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            <StorageUnit width={"34px"} strokewidth={3} /> Lagerung
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Nach der Bezahlung Ihrer Weine werden diese innerhalb von 3-6
+                Wochen in den Genfer Zollfreihafen transportiert. Dort lagern
+                Sie ab jetzt zu 100% versichert sowie klima- und
+                temperaturgeführt.{" "}
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  setActivePill(activePill + 1);
+                  console.log("Klicked!");
+                }}
+              >
+                <RightArrow width={"20px"} strokewidth={4} />
+              </span>
+            </Col>
+          </Row>
         </Col>
       </Row>
     ),
     3: (
       <Row style={{ height: "300px" }}>
-        <Col className={"my-auto"}>
-          <h3>Verkauf</h3>
-          <p className={"text-left px-3"}>
+        <Col xs={10} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
             {" "}
-            Sofern Sie dies wünschen, übernehmen wir nach einer empfohlenen
-            Lagerdauer von etwa 5-10 Jahren den Verkauf Ihrer Weine. Wir kennen
-            den Markt und setzen uns dafür ein, den Wein zum Bestpreis für Sie
-            zu veräußern.
-          </p>
+            <Handout width={"34px"} strokewidth={3} /> Verkauf
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Sofern Sie dies wünschen, übernehmen wir nach einer empfohlenen
+                Lagerdauer von etwa 5-10 Jahren den Verkauf Ihrer Weine. Wir
+                kennen den Markt und setzen uns dafür ein, den Wein zum
+                Bestpreis für Sie zu veräußern.
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <a href={"#winetelligence"}>
+                <span style={{ cursor: "pointer", color: "white" }}>
+                  <RightArrow width={"20px"} strokewidth={4} />
+                </span>
+              </a>
+            </Col>
+          </Row>
         </Col>
       </Row>
     ),
   };
 
-  const pillsCardColors = ["#5b37b7", "#A40044", "#8ACBC6", "#97BF0E"];
+  const pillsCardColors = ["#A38CC2", "#597549", "#91AABF", "#80C488"];
 
   //   const select = (el) => {
   //     var tabs = document.getElementsByClassName('pills-item');
@@ -398,7 +475,7 @@ const IndexMobile = (props) => {
             <span className={"fade-in-span pr-1"}>Ihr</span>
             <span className={"fade-in-span"}>Weininvestment -</span>
 
-            <span className={"fade-in-span pr-1"}>professionell, </span>
+            <span className={"fade-in-span px-1"}>professionell, </span>
             <br />
             <span className={"fade-in-span pr-1"}>transparent, </span>
             <span className={"fade-in-span"}>zeitgemäß.</span>
@@ -488,10 +565,10 @@ const IndexMobile = (props) => {
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h2 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
+        <h2 className={"px-1 pb-1 mb-1"} style={{ fontSize: "30px" }}>
           Starke Rendite
         </h2>
-        <div className={"px-1 mb-2"} style={{ fontSize: "13px" }}>
+        <div className={"px-1 mb-2"} style={{ fontSize: "11px" }}>
           Der Liv-Ex 1000 - Index zeigt: Wein ist eine Sachanlage mit starken
           historischen Renditen.
         </div>
@@ -514,6 +591,9 @@ const IndexMobile = (props) => {
         </div>
       </div>
     </div>,
+
+  
+
     <div
       style={{
         color: "#333",
@@ -525,11 +605,12 @@ const IndexMobile = (props) => {
       }
     >
       <div className={"col-12 my-auto p-0"}>
-        <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "35px" }}>
-          Der Weg
+        <h1 className={"px-1 pb-1 mb-1"} style={{ fontSize: "30px" }}>
+          Spannender Prozess
         </h1>
-        <div className={"px-1 mb-3"} style={{ fontSize: "14px" }}>
-          Mit nur wenigen Schritten werden <br/> Sie zum Weininvestor.
+        <div className={"px-1 mb-3"} style={{ fontSize: "11px" }}>
+          Mit nur wenigen Schritten werden Sie zum Weininvestor. Dabei
+          erschließt sich Ihnen die Welt der exquisiten Weine.
         </div>
 
         <div
@@ -537,13 +618,11 @@ const IndexMobile = (props) => {
           style={{ backgroundColor: pillsCardColors[activePill] }}
           {...swipeHandlers}
         >
-          {pillContent[activePill]}
-
           <div class="pills">
             <div
               onClick={() => setActivePill(0)}
               className={"pills-item " + (activePill == 0 && "active")}
-              data-color="#5b37b7"
+              data-color="#A38CC2"
               onclick="select(this)"
             >
               <span class="icon-home">
@@ -555,7 +634,7 @@ const IndexMobile = (props) => {
             <div
               onClick={() => setActivePill(1)}
               className={"pills-item " + (activePill == 1 && "active")}
-              data-color="#a40044"
+              data-color="#597549"
               onclick="select(this)"
             >
               <span class="icon-heart">
@@ -567,7 +646,7 @@ const IndexMobile = (props) => {
             <div
               onClick={() => setActivePill(2)}
               className={"pills-item " + (activePill == 2 && "active")}
-              data-color="#8acbc6"
+              data-color="#91AABF"
               onclick="select(this)"
             >
               <span class="icon-search">
@@ -579,7 +658,7 @@ const IndexMobile = (props) => {
             <div
               onClick={() => setActivePill(3)}
               className={"pills-item " + (activePill == 3 && "active")}
-              data-color="#97bf0e"
+              data-color="#80C488"
               onclick="select(this)"
             >
               <span class="icon-profile">
@@ -588,13 +667,12 @@ const IndexMobile = (props) => {
               <div class="title">Verkauf</div>
             </div>
           </div>
+          {pillContent[activePill]}
         </div>
 
         {/* <ScrollSlider/> */}
       </div>
     </div>,
-
-
 
     <div
       style={{

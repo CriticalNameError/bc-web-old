@@ -5,6 +5,8 @@ import { Chrono } from "react-chrono";
 import { ImageFromCms } from "helpers/utils";
 import LandingFooter from "components/Footer/LandingFooter";
 import CustomModal from "../helpers/CustomModal";
+import Ai from "../icons/ai";
+import VirtualAssistant2 from "../icons/virtual-assistant-2";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -57,6 +59,7 @@ import Anagram100 from "icons/Anagram-100";
 import Atom from "icons/atom";
 import Security from "icons/security";
 import TriangleRight1 from "icons/triangle-right-1";
+import { useSwipeable } from "react-swipeable";
 import {
   Accordion,
   AccordionItem,
@@ -84,6 +87,16 @@ const songs = [
   },
 ];
 
+const config = {
+  delta: 10, // min distance(px) before a swipe starts. *See Notes*
+  preventScrollOnSwipe: false, // prevents scroll during swipe (*See Details*)
+  trackTouch: true, // track touch input
+  trackMouse: false, // track mouse input
+  rotationAngle: 0, // set a rotation angle
+  swipeDuration: Infinity, // allowable duration of a swipe (ms). *See Notes*
+  touchEventOptions: { passive: true }, // options for touch listeners (*See Details*)
+};
+
 const DynamicLivexPriceChart = dynamic(() => import("./LivexPriceChart"), {
   ssr: false,
 });
@@ -99,6 +112,8 @@ const IndexDesktop = (props) => {
   const [width, setWidth] = useState(1300);
   const [showVideoModal, toggleShowVideoModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [activePill, setActivePill] = useState(0);
+
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
@@ -210,6 +225,25 @@ const IndexDesktop = (props) => {
         }
       }
 
+      if (section == "process") {
+        try {
+          document.getElementById("process-slide").classList.remove("fadeOut");
+          document
+            .getElementById("process-slide")
+            .classList.add("d-block", "fadeIn");
+        } catch {
+          console.log("not fadedOut yet");
+        }
+      } else {
+        try {
+          document.getElementById("process-slide").classList.remove("fadeIn");
+
+          document.getElementById("process-slide").classList.add("fadeOut");
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
       if (section == "faq") {
         try {
           document.getElementById("faq-slide").classList.remove("fadeOut");
@@ -275,10 +309,205 @@ const IndexDesktop = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const swipeHandlers = useSwipeable({
+    onSwiped: (eventData) => {
+      console.log("User Swiped!", eventData);
+      if (eventData.dir == "Right" && activePill > 0) {
+        setActivePill(activePill - 1);
+      }
+      if (
+        eventData.dir == "Left" &&
+        activePill < Object.keys(pillContent).length - 1
+      ) {
+        setActivePill(activePill + 1);
+      }
+      if (
+        eventData.dir == "Left" &&
+        activePill == Object.keys(pillContent).length - 1
+      ) {
+        moveDownAfterDelay();
+      }
+    },
+    ...config,
+  });
+
   const playVideoAfterDelay = () =>
     setTimeout(() => {
       document.getElementById("explainer-video").play();
     }, 1000);
+
+  const pillContent = {
+    0: (
+      <Row className={"w-100"} style={{ height: "300px" }}>
+        <Col xs={6} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            {" "}
+            <Ai width={"34px"} strokewidth={3}></Ai> Start
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Unsere wineTelligence ist der Kick-Starter für Ihr
+                Weininvestment. Mit ihr erhalten Sie in kürzester Zeit ein
+                individuelles, transparentes Angebot auf der Basis künstlicher
+                Intelligenz.
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => setActivePill(activePill + 1)}
+              >
+                <RightArrow width={"20px"} strokewidth={4} />
+              </span>
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          xs={5}
+          style={{
+            height: "300px",
+            backgroundImage:
+              "url('https://bcassets.s3.amazonaws.com/static/images/ai_bg.original.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "0px 0px 15px 0px"
+          }}
+        ></Col>
+      </Row>
+    ),
+    1: (
+      <Row className={"w-100"} style={{ height: "300px" }}>
+        <Col xs={6} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            <VirtualAssistant2 width={"34px"} strokewidth={3} /> Beratung
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Für alle weiteren Fragen zum Ablauf Ihres Investments generell,
+                sowie für Fragen zur Weinauswahl, Lagerung und Verkauf stehen
+                wir Ihnen gerne zur Verfügung. Buchen Sie einfach einen
+                kostenlosen Beratungstermin mit uns.
+                <br/>
+                <br/>
+                <a href={"https://calendly.com/berghausundcie/beratungsgesprach"} target={"_blank"}>
+                <button className={"btn btn-sm text-white"} style={{background: cta}}>
+                  Beratungsgespräch vereinbaren
+                </button>
+                </a>
+                
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => setActivePill(activePill + 1)}
+              >
+                <RightArrow width={"20px"} strokewidth={4} />
+              </span>
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          xs={5}
+          style={{
+            height: "300px",
+            backgroundImage:
+              "url('https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "0px 0px 15px 0px"
+          }}
+        ></Col>
+      </Row>
+    ),
+    2: (
+      <Row className={"w-100"} style={{ height: "300px" }}>
+        <Col xs={6} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            <StorageUnit width={"34px"} strokewidth={3} /> Lagerung
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Nach der Bezahlung Ihrer Weine werden diese innerhalb von 3-6
+                Wochen in den Genfer Zollfreihafen transportiert. Dort lagern
+                Sie ab jetzt zu 100% versichert sowie klima- und
+                temperaturgeführt.{" "}
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  setActivePill(activePill + 1);
+                  console.log("Klicked!");
+                }}
+              >
+                <RightArrow width={"20px"} strokewidth={4} />
+              </span>
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          xs={5}
+          style={{
+            height: "300px",
+            backgroundImage:
+              "url('https://bcassets.s3.amazonaws.com/static/images/storage.original.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "0px 0px 15px 0px"
+          }}
+        ></Col>
+      </Row>
+    ),
+    3: (
+      <Row className={"w-100"} style={{ height: "300px" }}>
+        <Col xs={6} className={"my-auto text-light offset-1"}>
+          <h3 className={"text-left"}>
+            {" "}
+            <Handout width={"34px"} strokewidth={3} /> Verkauf
+          </h3>
+          <Row>
+            <Col xs={10}>
+              <p className={"text-justify"}>
+                Sofern Sie dies wünschen, übernehmen wir nach einer empfohlenen
+                Lagerdauer von etwa 5-10 Jahren den Verkauf Ihrer Weine. Wir
+                kennen den Markt und setzen uns dafür ein, den Wein zum
+                Bestpreis für Sie zu veräußern.
+              </p>
+            </Col>
+            <Col xs={1} className={"my-auto text-light"}>
+              {" "}
+              <a href={"#letsgo"}>
+                <span style={{ cursor: "pointer", color: "white" }}>
+                  <RightArrow width={"20px"} strokewidth={4} />
+                </span>
+              </a>
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          xs={5}
+          style={{
+            height: "300px",
+            backgroundImage:
+              "url('https://bcassets.s3.amazonaws.com/static/images/harvest.original.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "0px 0px 15px 0px"
+          }}
+        ></Col>
+      </Row>
+    ),
+  };
+
+  const pillsCardColors = ["#A38CC2", "#597549", "#91AABF", "#80C488"];
 
   return (
     <>
@@ -320,6 +549,7 @@ const IndexDesktop = (props) => {
         anchors={[
           "welcome",
           "facts",
+          "process",
           "letsgo",
           "faq",
           "book-appointment",
@@ -996,6 +1226,118 @@ const IndexDesktop = (props) => {
                           mode={"light"}
                         />
                       </div>
+                    </div>
+                  </center>
+                  <div
+                    className={"p-4 text-center w-100"}
+                    style={{ position: "absolute", bottom: "15px" }}
+                  >
+                    <a
+                      className={"move-down"}
+                      href={"#services"}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => fullpageApi.moveSectionDown()}
+                    >
+                      <span
+                        className={"animated infinite pulse"}
+                        style={{ cursor: "pointer", color: primary }}
+                      >
+                        <DownArrow
+                          width={"40px"}
+                          height={"40px"}
+                          strokewidth={4}
+                          style={{ display: "inline-block" }}
+                        />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  className="section "
+                  style={{
+                    backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
+                  }}
+                >
+                  <center id="process-slide" className={"animated d-none"}>
+                    <h2>
+                      Spannender Prozess - wir erschließen Ihnen den Markt und
+                      Sie profitieren davon.
+                    </h2>
+                    <div
+                      className={"mt-n2 pb-3"}
+                      style={{ fontSize: "15px", maxWidth: "800px" }}
+                    >
+                      Von der KI-gestützen Portfolioberatung über den Bezug, die
+                      Lagerung und den Verkauf Ihrer Weine sind wir stets Ihr
+                      engagierter Partner.
+                    </div>
+                    <div
+                      id="pills-card"
+                      style={{
+                        backgroundColor: pillsCardColors[activePill],
+                        maxWidth: "800px",
+                      }}
+                      {...swipeHandlers}
+                    >
+                      <div class="pills">
+                        <div
+                          onClick={() => setActivePill(0)}
+                          className={
+                            "pills-item " + (activePill == 0 && "active")
+                          }
+                          data-color="#A38CC2"
+                          onclick="select(this)"
+                        >
+                          <span class="icon-home">
+                            <Ai width={"24px"} strokewidth={3}></Ai>
+                          </span>
+                          <div class="title">Start</div>
+                        </div>
+
+                        <div
+                          onClick={() => setActivePill(1)}
+                          className={
+                            "pills-item " + (activePill == 1 && "active")
+                          }
+                          data-color="#597549"
+                          onclick="select(this)"
+                        >
+                          <span class="icon-heart">
+                            <VirtualAssistant2 width={"24px"} strokewidth={3} />
+                          </span>
+                          <div class="title">Beratung</div>
+                        </div>
+
+                        <div
+                          onClick={() => setActivePill(2)}
+                          className={
+                            "pills-item " + (activePill == 2 && "active")
+                          }
+                          data-color="#91AABF"
+                          onclick="select(this)"
+                        >
+                          <span class="icon-search">
+                            <StorageUnit width={"24px"} strokewidth={3} />
+                          </span>
+                          <div class="title">Lagerung</div>
+                        </div>
+
+                        <div
+                          onClick={() => setActivePill(3)}
+                          className={
+                            "pills-item " + (activePill == 3 && "active")
+                          }
+                          data-color="#80C488"
+                          onclick="select(this)"
+                        >
+                          <span class="icon-profile">
+                            <Handout width={"24px"} strokewidth={3} />
+                          </span>
+                          <div class="title">Verkauf</div>
+                        </div>
+                      </div>
+                      {pillContent[activePill]}
                     </div>
                   </center>
                   <div

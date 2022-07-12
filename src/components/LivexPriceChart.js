@@ -234,12 +234,12 @@ const LivexPriceChart = (props) => {
     // strokeGradient.addColor("#eee")
     // strokeGradient.addColor("#fff")
     series1.name = "DAX";
-    series1.stroke = am4core.color("#a0b9de");
+    series1.stroke = am4core.color("#423d85");
     series1.tensionX = 0.77;
     series1.tooltip.getFillFromObject = false;
     series1.tooltipText = "{valueY}";
     series1.tooltip.background.fill = am4core.color("#fff");
-    series1.tooltip.label.fill = am4core.color("#a0b9de");
+    series1.tooltip.label.fill = am4core.color("#423d85");
     series1.tooltip.label.fontSize = 17;
 
     // Create series # S & P 500
@@ -252,12 +252,12 @@ const LivexPriceChart = (props) => {
     // let strokeGradient = new am4core.LinearGradient();
     // strokeGradient.addColor("#eee")
     // strokeGradient.addColor("#fff")
-    series2.stroke = am4core.color("#dea0a0");
+    series2.stroke = am4core.color("#853d3d");
     series2.tensionX = 0.77;
     series2.tooltip.getFillFromObject = false;
     series2.tooltipText = "{valueY}";
     series2.tooltip.background.fill = am4core.color("#fff");
-    series2.tooltip.label.fill = am4core.color("#dea0a0");
+    series2.tooltip.label.fill = am4core.color("#853d3d");
     series2.tooltip.label.fontSize = 17;
 
     // Create series # LIV-EX
