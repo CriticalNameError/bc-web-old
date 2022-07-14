@@ -146,5 +146,10 @@ export const convertDateString = (s) => {
     return date.toLocaleDateString('de-DE', {year: 'numeric', month: 'long', day: 'numeric' })
   }
 
+  export const getTimeFromDateString = (s) => {
+    let date = new Date(s)
+    return date.toLocaleTimeString("de-DE", {hour: '2-digit', minute: '2-digit'} )
+  }
+
 
 
