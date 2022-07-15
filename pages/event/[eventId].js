@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LoadingOverlay from "react-loading-overlay";
 import {
-    cta,
+  cta,
   primary,
   primary_t50,
   primary_t80,
@@ -109,7 +109,9 @@ const PostPage = () => {
     title: "",
     firstName: null,
     lastName: null,
+    phone: null,
     email: null,
+    eventDescriptionMarkup: null,
     company: null,
     vatNr: null,
     newsletter: false,
@@ -140,6 +142,16 @@ const PostPage = () => {
       setFormData({
         ...formData,
         ["stripePriceId"]: data.getEventById.stripePriceId,
+        ["eventDescriptionMarkup"]:
+          "<b>" +
+          data.getEventById.title +
+          "</b><br/>Location: " +
+          data.getEventById.address +
+          "<br/>Zeit: " +
+          convertDateString(data.getEventById.when) +
+          ", " +
+          getTimeFromDateString(data.getEventById.when) +
+          " Uhr",
       });
     }
   }, [data]);
@@ -186,23 +198,26 @@ const PostPage = () => {
           <h1>{data.getEventById.title}</h1>
           <span style={{ fontSize: "23px" }}>
             Time & Location: {convertDateString(data.getEventById.when)},{" "}
-            {getTimeFromDateString(data.getEventById.when)} Uhr, {data.getEventById.address}
+            {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
+            {data.getEventById.address}
           </span>
           <center>
             {" "}
             <img src={data.getEventById.titleImage.rendition.url} />
           </center>
-          <div className={"mt-4"}
+          <div
+            className={"mt-4"}
             dangerouslySetInnerHTML={{ __html: data.getEventById.description }}
           ></div>
-        
 
           <h3 className={"mt-5 text-bold"}>Anmeldung</h3>
           <span style={{ fontSize: "18px" }}>
             Time & Location: {convertDateString(data.getEventById.when)},{" "}
-            {getTimeFromDateString(data.getEventById.when)} Uhr, {data.getEventById.address}
+            {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
+            {data.getEventById.address}
           </span>
-          <br/><br/>
+          <br />
+          <br />
           {!formSent ? (
             <form
               role="form"
@@ -332,6 +347,33 @@ const PostPage = () => {
                             setFormData({
                               ...formData,
                               ["email"]: e.target.value,
+                            });
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12 ">
+                    <div class="form-group">
+                      {/* <label>Mail</label> */}
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="now-ui-icons tech_mobile"></i>
+                          </span>
+                        </div>
+                        <input
+                          type="phone"
+                          class="form-control"
+                          placeholder="Ihre Telefonnummer (optional)"
+                          autocomplete="email"
+                          ref={(node) => {
+                            email = node;
+                          }}
+                          onChange={(e) => {
+                            setFormData({
+                              ...formData,
+                              ["phone"]: e.target.value,
                             });
                           }}
                         />
@@ -488,7 +530,7 @@ const PostPage = () => {
                   <div class="col-md-6 col-sm-12">
                     <button
                       type="submit"
-                      style={{background: cta, color: "white"}}
+                      style={{ background: cta, color: "white" }}
                       className={
                         "btn btn-lg btn-round pull-right " +
                         (notARobot &&
@@ -515,7 +557,12 @@ const PostPage = () => {
                 href={mutData.createStripeCustomerAndInvoiceForEvent.url}
                 target={"_blank"}
               >
-                <button className={"btn btn-lg"} style={{background: cta, color: "white"}}>Jetzt Bezahlen</button>
+                <button
+                  className={"btn btn-lg"}
+                  style={{ background: cta, color: "white" }}
+                >
+                  Jetzt Bezahlen
+                </button>
               </a>
             </center>
           )}
