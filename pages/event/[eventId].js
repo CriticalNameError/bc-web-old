@@ -45,6 +45,7 @@ const CREATE_INVOICE = gql`
     $amount: Decimal!
     $stripePriceId: String!
     $newsletter: Boolean!
+    $eventDescriptionMarkup: String!
   ) {
     createStripeCustomerAndInvoiceForEvent(
       title: $title
@@ -60,6 +61,7 @@ const CREATE_INVOICE = gql`
       amount: $amount
       stripePriceId: $stripePriceId
       newsletter: $newsletter
+      eventDescriptionMarkup: $eventDescriptionMarkup
     ) {
       success
       errors
@@ -153,6 +155,7 @@ const PostPage = () => {
           getTimeFromDateString(data.getEventById.when) +
           " Uhr",
       });
+      console.log(formData)
     }
   }, [data]);
   if (loading)
@@ -218,7 +221,7 @@ const PostPage = () => {
           </span>
           <br />
           <br />
-          {!formSent ? (
+          {!formSent && !mutData ? (
             <form
               role="form"
               id="contact-form1"
