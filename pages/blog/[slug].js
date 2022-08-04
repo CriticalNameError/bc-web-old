@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { gql, useQuery } from "@apollo/client";
 import { convertDateString } from "helpers/utils";
 import "react-toastify/dist/ReactToastify.css";
+import Head from 'next/head'
 import LandingFooter from "components/Footer/LandingFooter";
 
 const GET_POST = gql`
@@ -74,6 +75,11 @@ const PostPage = () => {
   if (error) return <h1>Error</h1>;
   if (data)
     return (
+      <>
+      <Head>
+      <title key={"title"}>{data.page.title}</title>
+      <meta name="description" content={data.page.intro} key="description"/>
+      </Head>
       <div
         className={"container-fluid mx-auto px-3 px-md-0 text-center"}
         style={{
@@ -92,6 +98,7 @@ const PostPage = () => {
 
        
       </div>
+      </>
     );
 };
 

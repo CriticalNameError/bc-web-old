@@ -8,7 +8,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
+import Head from "next/head";
 import "react-accessible-accordion/dist/fancy-example.css";
 import BComment from "icons/b-comment";
 import DownArrow from "icons/down-arrow";
@@ -131,6 +131,10 @@ const WineInvestments = () => {
 
   return (
     <>
+    <Head>
+    <title key={"title"}>Warum sind Wein Investments so gewinnbringend? Und worauf muss man achten?</title>
+    <meta name="description" content="Wie funktioniert der Wein für Fine Wine bzw. die besten Weine der Welt? Worauf muss ich bei teurem Wein achten? Wo kann ich die besten Weine der Welt als Anlage kaufen und mit renditen schnell verkaufen?" key="description"/>
+    </Head>
       <>
         <CustomModal
           markup={markup}

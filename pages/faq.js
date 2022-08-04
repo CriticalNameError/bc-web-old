@@ -6,7 +6,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import BComment from "icons/b-comment";
 import DownArrow from "icons/down-arrow";
 import LandingFooter from "../src/components/Footer/LandingFooter";
-
+import Head from "next/head"
 import RightArrow from "icons/right-arrow";
 import BulbAnimated from "../src/icons/bulb-animated";
 import {
@@ -27,6 +27,10 @@ import {
 const Faq = () => {
   return (
     <>
+      <Head>
+      <title key={"title"}>FAQ - Frequently asked Quesitions bezüglich Wein Investments</title>
+      <meta name="description" content="Hier beantworten Sie alle Fragen, die Sie als Kunde brennend interessieren. Wir klären Sie über die Hintergründe hinter Wein Investmens auf, die Lagerung im Zollfreihafen sowie die Klimatisierung und den Verkauf über die Weinbörse Liv-ex" key="description"/>
+      </Head>
       <div className={"container mx-auto"}>
         <div className="row">
           <div

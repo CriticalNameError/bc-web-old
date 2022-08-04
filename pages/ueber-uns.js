@@ -19,7 +19,7 @@ import Spaceship from "icons/spaceship";
 import Multiple11 from "icons/multiple-11";
 import SportsFan from "icons/sports-fan";
 import LogoLinkedin from "icons/logo-linkedin";
-
+import Head from "next/head";
 import Anagram100 from "icons/Anagram-100";
 import Logic from "icons/logic";
 
@@ -44,6 +44,10 @@ const AboutUs = () => {
 
   return (
     <>
+    <Head>
+    <title key={"title"}>Wer sind die Personen hinter Berghaus & Cie und was treibt Sie an.</title>
+    <meta name="description" content="Hinter Berghaus & Cie Wein Investments stecken unterschiedliche Kenner Ihres Faches. Lernen Sie diese Kennen und erfahren Sie, wie Sie von Ihrer Expertise für Ihr Wein Investment profitieren können" key="description"/>
+    </Head>
       <div>
         <div className={"container-fluid"}>
           <div className="row">

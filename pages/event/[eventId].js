@@ -6,6 +6,7 @@ import {
   primary_t50,
   primary_t80,
 } from "../../src/helpers/colorScheme";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { gql, useQuery, useMutation } from "@apollo/client";
 import { convertDateString, getTimeFromDateString } from "helpers/utils";
@@ -190,6 +191,11 @@ const PostPage = () => {
   if (error) return <h1>Error</h1>;
   if (data)
     return (
+      <>
+       <Head>
+      <title key={"title"}>{data.getEventById.title}</title>
+      <meta name="description" content={data.getEventById.title} key="description"/>
+      </Head>
       <div
         className={"container-fluid mx-auto px-3 px-md-0 text-center"}
         style={{
@@ -548,7 +554,7 @@ const PostPage = () => {
                           : "disabled")
                       }
                     >
-                      Ticket buchen
+                      Ticket verbindlich buchen
                     </button>
                   </div>
                 </div>
@@ -571,6 +577,7 @@ const PostPage = () => {
           )}
         </div>
       </div>
+      </>
     );
 };
 
