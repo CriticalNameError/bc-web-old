@@ -603,7 +603,7 @@ const IndexDesktop = (props) => {
                 >
                   <button
                     onClick={() => {
-                      fullpageApi.moveTo(3);
+                      fullpageApi.moveTo(4);
                       toggleShowVideoModal(false);
                       document.getElementById("video-background").play();
                     }}
@@ -885,7 +885,7 @@ const IndexDesktop = (props) => {
                                         <div>
                                           <button
                                             onClick={() =>
-                                              fullpageApi.moveTo(3)
+                                              fullpageApi.moveTo(4)
                                             }
                                             className={
                                               "mr-auto btn bg-cta p-3 mt-4"

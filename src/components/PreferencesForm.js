@@ -184,8 +184,8 @@ const POST_CLIENT_PREFERENCES = gql`
 `;
 
 const POST_EMAIL_FOR_PORTFOLIO_LINK = gql`
-  mutation requestRecommendationLinkWithEmail($email: String!, $uid: String!) {
-    requestRecommendationLinkWithEmail(email: $email, uid: $uid) {
+  mutation requestRecommendationLinkWithEmail($email: String!, $phone: String! $uid: String!) {
+    requestRecommendationLinkWithEmail(email: $email, phone: $phone uid: $uid) {
       success
       errors
     }
@@ -215,6 +215,7 @@ const PreferencesForm = (props) => {
   const [done, setDone] = useState(false);
   const [dataProtection, toggleDataProtection] = useState(false);
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [uid, setUid] = useState("");
   const [countupFinished, setCountupFinished] = useState(false);
   const [countupFinishedDelayed, setCountupFinishedDelayed] = useState(false);
@@ -428,6 +429,7 @@ const PreferencesForm = (props) => {
       },
       variables: {
         email: email,
+        phone, phone,
         uid: uid,
       },
     }
@@ -1294,7 +1296,7 @@ const PreferencesForm = (props) => {
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Ihre Mail"
+                  placeholder="Mail*"
                   aria-label="Mail..."
                   autocomplete="given-name"
                   value={email}
@@ -1303,10 +1305,37 @@ const PreferencesForm = (props) => {
                     toggleEmailValid(emailRe.test(e.target.value));
                   }}
                 />
+                
+                
               </div>
               <br />
+
+              <div class="input-group mx-auto mb-1" style={{ maxWidth: "310px" }}>
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="now-ui-icons tech_mobile"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Telefon"
+                  aria-label="Phone..."
+                  autocomplete="given-name"
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                />
+                
+                
+              </div>
+             
+
+              
+            
               <div class="form-check mb-3">
-                <label class="form-check-label">
+                <label class="form-check-label mt-3">
                   <input
                     class="form-check-input"
                     type="checkbox"
