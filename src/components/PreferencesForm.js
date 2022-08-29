@@ -196,6 +196,7 @@ const PreferencesForm = (props) => {
   const [showModal, toggleShowModal] = useState(true);
   const [showPortfolioModal, toggleShowPortfolioModal] = useState(false);
   const [emailValid, toggleEmailValid] = useState("");
+  const [phoneValid, togglePhoneValid] = useState("");
   const [secondShowModal, toggleSecondShowModal] = useState(false);
   const [step, setStep] = useState(0);
   const [investVsEnjoy, setInvestVsEnjoy] = useState(50);
@@ -237,6 +238,9 @@ const PreferencesForm = (props) => {
   const emailRe =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+
+  const phoneRe = /^([0-9]|#|\+|\*|-|\(|\)| |\/)+$/;
+
   useEffect(() => {
     try {
       if (
@@ -276,6 +280,12 @@ const PreferencesForm = (props) => {
   useEffect(() => {
     toggleEmailValid(emailRe.test(email));
   }, [email]);
+
+  useEffect(() => {
+    togglePhoneValid(phoneRe.test(phone));
+  }, [phone]);
+
+
 
   //   useEffect(function subscribeToWheelEvent() {
   //     const updateScroll = function (e) {
@@ -466,7 +476,7 @@ const PreferencesForm = (props) => {
           "backdrop:",
           document.getElementsByClassName("modal-backdrop")[0]
         );
-      } catch (error) {}
+      } catch (error) { }
     }
   });
 
@@ -578,7 +588,7 @@ const PreferencesForm = (props) => {
                 className={"text-center mt-2 animated headShake slow infinite "}
                 style={
                   ({ minHeight: "40px" },
-                  showInstruction ? null : { visibility: "hidden" })
+                    showInstruction ? null : { visibility: "hidden" })
                 }
               >
                 {" "}
@@ -634,8 +644,8 @@ const PreferencesForm = (props) => {
             decimal=","
             prefix=""
             suffix=" Jahren"
-            // onEnd={() => console.log("Ended! 👏")}
-            // onStart={() => console.log("Started! 💨")}
+          // onEnd={() => console.log("Ended! 👏")}
+          // onStart={() => console.log("Started! 💨")}
           />
           {investmentHorizon == 25 ? " (oder mehr) " : ""}
         </div>
@@ -1076,8 +1086,8 @@ const PreferencesForm = (props) => {
             decimal=","
             prefix=""
             suffix=" €"
-            // onEnd={() => console.log("Ended! 👏")}
-            // onStart={() => console.log("Started! 💨")}
+          // onEnd={() => console.log("Ended! 👏")}
+          // onStart={() => console.log("Started! 💨")}
           />
         </div>
         <Row style={{ height: "186px" }} className={"mb-5"}>
@@ -1172,7 +1182,7 @@ const PreferencesForm = (props) => {
                 <a
                   class="play-btn play-btn-cta mx-auto text-center"
                   href="#"
-                  onClick={() => {postPreferences(); setStep("quote_preview");}}
+                  onClick={() => { postPreferences(); setStep("quote_preview"); }}
                 >
                   <div
                     style={{
@@ -1203,7 +1213,7 @@ const PreferencesForm = (props) => {
     quote_preview: (
 
 
-<>
+      <>
         {!countupFinishedDelayed ? (
           <div className={"my-auto"} id={"countdown-animation"}>
             <div className={"text-center"}>
@@ -1211,7 +1221,7 @@ const PreferencesForm = (props) => {
                 class="play-btn mx-auto"
                 href="#"
                 style={{ transform: "scale(1.3)" }}
-                // onClick={() => toggleShowRecommendationGeneration(true)}
+              // onClick={() => toggleShowRecommendationGeneration(true)}
               >
                 <div
                   style={{
@@ -1219,7 +1229,7 @@ const PreferencesForm = (props) => {
                   }}
                 >
                   <img
-                  className={"mx-auto"}
+                    className={"mx-auto"}
                     src={"/MyRobot.svg"}
                     style={{
                       paddingTop: "5px",
@@ -1230,7 +1240,7 @@ const PreferencesForm = (props) => {
                 </div>
               </span>
             </div>
-            <br/>
+            <br />
 
             <div
               className={"mt-4 "}
@@ -1241,7 +1251,7 @@ const PreferencesForm = (props) => {
                 <CountUp
                   start={0}
                   end={100}
-                  duration={6}
+                  duration={3.5}
                   separator="."
                   decimals={0}
                   decimal=","
@@ -1254,333 +1264,338 @@ const PreferencesForm = (props) => {
           </div>
         ) : (
           <ModalBody
-          className={"p-4 mt-n5 animated fadeIn slow my-auto"}
-          style={{ height: "70%" }}
-        >
-          <Modal
-            isOpen={showPortfolioModal}
-            toggle={() => toggleShowPortfolioModal(false)}
-            className="modal-md modal-dialog-centered"
-          >
-            <ModalBody className={"p-4 text-center"}>
-              <i
-                className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-white"
-                style={{
-                  color: "black",
-                  fontSize: "18px",
-                  cursor: "pointer",
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  zIndex: "100",
-                }}
-                onClick={(e) => {
-                  toggleShowPortfolioModal(false);
-                }}
-              ></i>
-              <h3 className={"text-center"} style={{ fontSize: "21px" }}>
-                Bitte teilen Sie uns Ihre Email-Adresse mit, damit wir Ihnen Ihr
-                individuelles Portfolio zusenden können.
-              </h3>
-              {emailValid == false && email.length > 7 ? (
-                <small className={"text-danger"}>Email-Adresse ungültig</small>
-              ) : (
-                <></>
-              )}
-              <div class="input-group mx-auto mb-1" style={{ maxWidth: "310px" }}>
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="now-ui-icons ui-1_email-85"></i>
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Mail*"
-                  aria-label="Mail..."
-                  autocomplete="given-name"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    toggleEmailValid(emailRe.test(e.target.value));
-                  }}
-                />
-                
-                
-              </div>
-              <br />
-
-              <div class="input-group mx-auto mb-1" style={{ maxWidth: "310px" }}>
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="now-ui-icons tech_mobile"></i>
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Telefon"
-                  aria-label="Phone..."
-                  autocomplete="given-name"
-                  value={phone}
-                  onChange={(e) => {
-                    setPhone(e.target.value);
-                  }}
-                />
-                
-                
-              </div>
-             
-
-              
-            
-              <div class="form-check mb-3">
-                <label class="form-check-label mt-3">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    onClick={() => toggleDataProtection(!dataProtection)}
-                  />
-                  <span class="form-check-sign"></span>
-                  Ich akzeptiere die{" "}
-                  <a
-                    href={"https://www.berghauscie.de/legal/datenschutz"}
-                    target={"_blank"}
-                    style={{ color: "black", textDecoration: "underline" }}
-                  >
-                    Datenschutzerklärung
-                  </a>
-                  .
-                </label>
-              </div>
-              <button
-                className={"btn text-white"}
-                style={{ background: cta, fontWeight: "bold" }}
-                disabled={!dataProtection || !emailValid}
-                onClick={() => postEmail()}
-              >
-                Portfolio per Mail erhalten
-              </button>
-            </ModalBody>
-          </Modal>
-          <Row style={{ height: "100%" }} className={"mb-5"}>
-            <Col
-              xs={12}
-              md={12}
-              className={"my-auto mx-auto text-center px-0 px-md-4"}
-            >
-              <div className={"my-auto animated fadeIn text-dark"}>
-                <div className={"card p-3 animated fadeIn text-center"}>
-                  <h3 style={{ fontSize: "21px" }} className={"mb-2"}>
-                    Ihr individueller Portfolio-Vorschlag ist fertig!{" "}
-                  </h3>
-                  <center>
-                    Gerne senden wir Ihnen diesen vollkommen kostenlos per Email
-                    zu.
-                  </center>
-                  <button
-                    className={"btn text-white"}
-                    style={{ background: cta, fontWeight: "bold" }}
-                    onClick={(e) => {
-                      toggleShowPortfolioModal(true);
-                    }}
-                  >
-                    Portfolio abrufen
-                  </button>
-                </div>
-                <Slider
-                  {...{
-                    arrows: true,
-                    dots: false,
-                    infinite: true,
-                    autoplay: true,
-                    pauseOnHover: true,
-                    pauseOnDotsHover: true,
-                    centerMode: false,
-                    centerPadding: "30px",
-                    autoplaySpeed: 3000,
-                    speed: 1000,
-                    easing: "sine",
-                    slidesToShow: props.mobile ? 1 : 3,
-                    slidesToScroll: props.mobile ? 1 : 2,
-                  }}
-                >
-                  {recommendation &&
-                  recommendation.createPreferencesProfileFromWebsite ? (
-                    recommendation.createPreferencesProfileFromWebsite.rec.recommendedPosition.map(
-                      (item, index) => {
-                        return (
-                          <div>
-                            {index == 0 ? null : (
-                              <div
-                                className={"mx-auto"}
-                                style={{
-                                  position: "absolute",
-                                  zIndex: 1000,
-                                  top: "120px",
-                                  width: "296px",
-                                  textAlign: "center",
-                                }}
-                              >
-                                <button
-                                  className={"btn align-self-center text-white"}
-                                  style={{ background: cta, fontWeight: "bold" }}
-                                  onClick={(e) => {
-                                    toggleShowPortfolioModal(true);
-                                  }}
-                                >
-                                  Details ansehen
-                                </button>
-                              </div>
-                            )}
-                            <div
-                              className={"card p-2"}
-                              style={{
-                                maxWidth: "250px",
-                                width: "250px",
-                                height: "200px",
-                                filter: index == 0 ? "none" : "blur(4px)",
-                              }}
-                            >
-                              <div style={{ lineHeight: "1.2em" }}>
-                                <div style={{ fontSize: "14px" }}>
-                                  {index == 0
-                                    ? item.offer.vintage.wine.title
-                                    : "Château Berghaus et Fille"}
-                                </div>
-                                <div style={{ fontSize: "12px" }}>
-                                  {index == 0
-                                    ? item.offer.vintage.wine.classification.title
-                                    : "Premier Grand Cru Superieur"}
-                                </div>
-                                <div style={{ fontSize: "13px" }}>
-                                  {index == 0 ? item.offer.vintage.year : "1998"}
-                                </div>
-                              </div>
-  
-                              <div className={"row"}>
-                                <div className={"col p-0"}>
-                                  {item.offer.vintage.wine.image && (
-                                    <img
-                                      className={"mx-auto"}
-                                      style={
-                                        props.mobile
-                                          ? { height: "70px" }
-                                          : { height: "110px" }
-                                      }
-                                      src={
-                                        item.offer.vintage.wine.image.rendition
-                                          .url
-                                      }
-                                    />
-                                  )}
-                                </div>
-                                <div className={"col text-center my-auto"}>
-                                  <span
-                                    className={"badge"}
-                                    style={{
-                                      fontSize: "0.9em",
-                                      border: "1px solid grey",
-                                      borderRadius: "4px",
-                                    }}
-                                  >
-                                    <span style={{ fontWeight: "500" }}>
-                                      Kiste
-                                    </span>
-                                    <br />
-                                    {index == 0 ? item.offer.caskOf : "6"} x{" "}
-                                    {index == 0
-                                      ? item.offer.bottleSize.title
-                                      : "0.75l"}
-                                  </span>
-  
-                                  <div className={"text-center mt-2"}>
-                                    <span style={{ fontSize: "1em" }}>
-                                      {index == 0
-                                        ? item.offer.sellPriceCaseStr
-                                        : "1.987,65 €"}
-                                    </span>
-                                    <small
-                                      style={{
-                                        color: "rgb(119, 119, 119)",
-                                        marginBottom: "-12px",
-                                      }}
-                                    >
-                                      {" "}
-                                      /Kiste
-                                    </small>
-                                    <br />
-                                    <p style={{ lineHeight: "7px" }}>
-                                      <span
-                                        style={{ fontSize: "6px", height: "0px" }}
-                                      >
-                                        {index == 0
-                                          ? item.offer.sellPriceBtlStr
-                                          : "321,98 €"}{" "}
-                                        / Flasche <br />
-                                      </span>
-                                      <span
-                                        style={{
-                                          fontSize: "6px",
-                                          color: "rgb(119, 119, 119)",
-                                          height: "0px",
-                                        }}
-                                      >
-                                        {index == 0
-                                          ? item.offer.sellPricePerLiterStr
-                                          : "345,67 €"}{" "}
-                                        / 1 Liter
-                                      </span>
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      }
-                    )
-                  ) : (
-                    <>Das ist 'was schief gelaufen!</>
-                  )}
-                </Slider>
-              </div>
-            </Col>
-          </Row>
-        </ModalBody>
-        )}
-      </>
-
-    
-    ),
-    check_mails: (
-     
-          <ModalBody
-            className={"px-4 mt-4 animated fadeIn slow"}
+            className={"p-4 mt-n5 animated fadeIn slow my-auto"}
             style={{ height: "70%" }}
           >
+            <Modal
+              isOpen={showPortfolioModal}
+              toggle={() => toggleShowPortfolioModal(false)}
+              className="modal-md modal-dialog-centered"
+            >
+              <ModalBody className={"p-4 text-center"}>
+                <i
+                  className="now-ui-icons ui-1_simple-remove pull-right mt-0 text-white"
+                  style={{
+                    color: "black",
+                    fontSize: "18px",
+                    cursor: "pointer",
+                    position: "absolute",
+                    top: "10px",
+                    right: "10px",
+                    zIndex: "100",
+                  }}
+                  onClick={(e) => {
+                    toggleShowPortfolioModal(false);
+                  }}
+                ></i>
+                <h3 className={"text-center"} style={{ fontSize: "21px" }}>
+                  Bitte teilen Sie uns Ihre Email-Adresse mit, damit wir Ihnen Ihr
+                  individuelles Portfolio zusenden können.
+                </h3>
+                {emailValid == false && email.length > 7 ? (
+                  <small className={"text-danger"}>Email-Adresse ungültig</small>
+                ) : (
+                  <></>
+                )}
+                <div class="input-group mx-auto mb-1" style={{ maxWidth: "310px" }}>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons ui-1_email-85"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Mail*"
+                    aria-label="Mail..."
+                    autocomplete="given-name"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      toggleEmailValid(emailRe.test(e.target.value));
+                    }}
+                  />
+
+
+                </div>
+                <br />
+                {phoneValid == false && phone.length > 4 ? (
+                  <small className={"text-danger"}>Ungültige Telefonnummer</small>
+                ) : (
+                  <></>
+                )}
+                <div class="input-group mx-auto mb-1" style={{ maxWidth: "310px" }}>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons tech_mobile"></i>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Telefon*"
+                    aria-label="Phone..."
+                    autocomplete="given-name"
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                      togglePhoneValid(phoneRe.test(e.target.value));
+                    }}
+                  />
+
+
+                </div>
+
+
+
+
+                <div class="form-check mb-3">
+                  <label class="form-check-label mt-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      onClick={() => toggleDataProtection(!dataProtection)}
+                    />
+                    <span class="form-check-sign"></span>
+                    Ich akzeptiere die{" "}
+                    <a
+                      href={"https://www.berghauscie.de/legal/datenschutz"}
+                      target={"_blank"}
+                      style={{ color: "black", textDecoration: "underline" }}
+                    >
+                      Datenschutzerklärung
+                    </a>
+                    .
+                  </label>
+                </div>
+                <button
+                  className={"btn text-white"}
+                  style={{ background: cta, fontWeight: "bold" }}
+                  disabled={!dataProtection || !emailValid || !phoneValid}
+                  onClick={() => postEmail()}
+                >
+                  Portfolio per Mail erhalten
+                </button>
+              </ModalBody>
+            </Modal>
             <Row style={{ height: "100%" }} className={"mb-5"}>
               <Col
                 xs={12}
                 md={12}
                 className={"my-auto mx-auto text-center px-0 px-md-4"}
               >
-                <span style={{ color: "white" }}>
-                  <Mail width={"45px"} strokewidth={4} />
-                  <br />
-                  <br />
-                </span>
-                <h3 className={"text-white"} style={{ fontSize: "21px" }}>
-                  Wir haben Ihnen Ihren Portfolio-Vorschlag per Mail gesendet
-                  und wünschen Ihnen viel Freude damit. <br />
-                  <br />
-                  Überprüfen Sie nun bitte Ihr Email-Postfach.
-                </h3>
+                <div className={"my-auto animated fadeIn text-dark"}>
+                  <div className={"card p-3 animated fadeIn text-center"}>
+                    <h3 style={{ fontSize: "21px" }} className={"mb-2"}>
+                      Ihr individueller Portfolio-Vorschlag ist fertig!{" "}
+                    </h3>
+                    <center>
+                      Gerne senden wir Ihnen diesen vollkommen kostenlos per Email
+                      zu.
+                    </center>
+                    <button
+                      className={"btn text-white"}
+                      style={{ background: cta, fontWeight: "bold" }}
+                      onClick={(e) => {
+                        toggleShowPortfolioModal(true);
+                      }}
+                    >
+                      Portfolio abrufen
+                    </button>
+                  </div>
+                  <Slider
+                    {...{
+                      arrows: true,
+                      dots: false,
+                      infinite: true,
+                      autoplay: true,
+                      pauseOnHover: true,
+                      pauseOnDotsHover: true,
+                      centerMode: false,
+                      centerPadding: "30px",
+                      autoplaySpeed: 3000,
+                      speed: 1000,
+                      easing: "sine",
+                      slidesToShow: props.mobile ? 1 : 3,
+                      slidesToScroll: props.mobile ? 1 : 2,
+                    }}
+                  >
+                    {recommendation &&
+                      recommendation.createPreferencesProfileFromWebsite ? (
+                      recommendation.createPreferencesProfileFromWebsite.rec.recommendedPosition.map(
+                        (item, index) => {
+                          return (
+                            <div>
+                              {index == 0 ? null : (
+                                <div
+                                  className={"mx-auto"}
+                                  style={{
+                                    position: "absolute",
+                                    zIndex: 1000,
+                                    top: "120px",
+                                    width: "296px",
+                                    textAlign: "center",
+                                  }}
+                                >
+                                  <button
+                                    className={"btn align-self-center text-white"}
+                                    style={{ background: cta, fontWeight: "bold" }}
+                                    onClick={(e) => {
+                                      toggleShowPortfolioModal(true);
+                                    }}
+                                  >
+                                    Details ansehen
+                                  </button>
+                                </div>
+                              )}
+                              <div
+                                className={"card p-2"}
+                                style={{
+                                  maxWidth: "250px",
+                                  width: "250px",
+                                  height: "200px",
+                                  filter: index == 0 ? "none" : "blur(4px)",
+                                }}
+                              >
+                                <div style={{ lineHeight: "1.2em" }}>
+                                  <div style={{ fontSize: "14px" }}>
+                                    {index == 0
+                                      ? item.offer.vintage.wine.title
+                                      : "Château Berghaus et Fille"}
+                                  </div>
+                                  <div style={{ fontSize: "12px" }}>
+                                    {index == 0
+                                      ? item.offer.vintage.wine.classification.title
+                                      : "Premier Grand Cru Superieur"}
+                                  </div>
+                                  <div style={{ fontSize: "13px" }}>
+                                    {index == 0 ? item.offer.vintage.year : "1998"}
+                                  </div>
+                                </div>
+
+                                <div className={"row"}>
+                                  <div className={"col p-0"}>
+                                    {item.offer.vintage.wine.image && (
+                                      <img
+                                        className={"mx-auto"}
+                                        style={
+                                          props.mobile
+                                            ? { height: "70px" }
+                                            : { height: "110px" }
+                                        }
+                                        src={
+                                          item.offer.vintage.wine.image.rendition
+                                            .url
+                                        }
+                                      />
+                                    )}
+                                  </div>
+                                  <div className={"col text-center my-auto"}>
+                                    <span
+                                      className={"badge"}
+                                      style={{
+                                        fontSize: "0.9em",
+                                        border: "1px solid grey",
+                                        borderRadius: "4px",
+                                      }}
+                                    >
+                                      <span style={{ fontWeight: "500" }}>
+                                        Kiste
+                                      </span>
+                                      <br />
+                                      {index == 0 ? item.offer.caskOf : "6"} x{" "}
+                                      {index == 0
+                                        ? item.offer.bottleSize.title
+                                        : "0.75l"}
+                                    </span>
+
+                                    <div className={"text-center mt-2"}>
+                                      <span style={{ fontSize: "1em" }}>
+                                        {index == 0
+                                          ? item.offer.sellPriceCaseStr
+                                          : "1.987,65 €"}
+                                      </span>
+                                      <small
+                                        style={{
+                                          color: "rgb(119, 119, 119)",
+                                          marginBottom: "-12px",
+                                        }}
+                                      >
+                                        {" "}
+                                        /Kiste
+                                      </small>
+                                      <br />
+                                      <p style={{ lineHeight: "7px" }}>
+                                        <span
+                                          style={{ fontSize: "6px", height: "0px" }}
+                                        >
+                                          {index == 0
+                                            ? item.offer.sellPriceBtlStr
+                                            : "321,98 €"}{" "}
+                                          / Flasche <br />
+                                        </span>
+                                        <span
+                                          style={{
+                                            fontSize: "6px",
+                                            color: "rgb(119, 119, 119)",
+                                            height: "0px",
+                                          }}
+                                        >
+                                          {index == 0
+                                            ? item.offer.sellPricePerLiterStr
+                                            : "345,67 €"}{" "}
+                                          / 1 Liter
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        }
+                      )
+                    ) : (
+                      <>Das ist 'was schief gelaufen!</>
+                    )}
+                  </Slider>
+                </div>
               </Col>
             </Row>
           </ModalBody>
-        
-      
+        )}
+      </>
+
+
+    ),
+    check_mails: (
+
+      <ModalBody
+        className={"px-4 mt-4 animated fadeIn slow"}
+        style={{ height: "70%" }}
+      >
+        <Row style={{ height: "100%" }} className={"mb-5"}>
+          <Col
+            xs={12}
+            md={12}
+            className={"my-auto mx-auto text-center px-0 px-md-4"}
+          >
+            <span style={{ color: "white" }}>
+              <Mail width={"45px"} strokewidth={4} />
+              <br />
+              <br />
+            </span>
+            <h3 className={"text-white"} style={{ fontSize: "21px" }}>
+              Wir haben Ihnen Ihren Portfolio-Vorschlag per Mail gesendet
+              und wünschen Ihnen viel Freude damit. <br />
+              <br />
+              Überprüfen Sie nun bitte Ihr Email-Postfach.
+            </h3>
+          </Col>
+        </Row>
+      </ModalBody>
+
+
     ),
     used_allready: (
       <ModalBody
