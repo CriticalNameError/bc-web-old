@@ -35,7 +35,7 @@ const SelectCalendylDate = (props) => {
                     height={"15px"}
                     strokewidth={3}
                   />{" "}
-                  was Sie grundsätzlich über Weininvestments wissen sollten,{" "}
+                  was Sie grundsätzlich über Wein Investments wissen sollten,{" "}
                   <br />
                   <CheckSingle
                     width={"15px"}

@@ -372,7 +372,7 @@ class LandingNavbar extends React.Component {
                     {/* <i className="now-ui-icons media-2_sound-wave" /> */}
                     <p>
                       <span className="d-lg-inline d-md-block">
-                        Weininvestments
+                        Wein Investments
                       </span>
                     </p>
                   </a>

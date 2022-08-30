@@ -173,7 +173,7 @@ const WineInvestments = () => {
                     <p>
                       Ein Blick auf die letzten 30 Jahre zeigt, dass Wein die
                       Performance des S&P 500 Index nachweislich übertroffen
-                      hat. Ein Weininvestment kann kann aufgrund seiner geringen
+                      hat. Ein Wein Investment kann kann aufgrund seiner geringen
                       Korrelation zu den Aktienmärkten eine wichtige Quelle für
                       die Diversifizierung von Anlageklassen bilden.{" "}
                     </p>
@@ -295,7 +295,7 @@ const WineInvestments = () => {
                               <br />
                               Das weltweite Netzwerk von Berghaus & Cie. bietet
                               Ihnen einen exklusiven Zugang zu erstklassigen und
-                              seltenen Weine, die für ein Weininvestment bestens
+                              seltenen Weine, die für ein Wein Investment bestens
                               geeignet sind.
                             </p>
                           </div>
@@ -430,7 +430,7 @@ const WineInvestments = () => {
                               besonderen Vermögenswert.
                               <br />
                               <br />
-                              Für ein erfolgreiches Weininvestment ist es
+                              Für ein erfolgreiches Wein Investment ist es
                               wesentlich, das Angebot und die Nachfrage immer im
                               Blick zu behalten.
                               <br />
@@ -484,7 +484,7 @@ const WineInvestments = () => {
                             Wichtig zu wissen: Wein ist keine kurzfristige
                             Anlage. Anleger, die auf schnelle Gewinne aus sind,
                             sollten sich von Wein fernhalten. Beim
-                            Weininvestment ist Zeit der entscheidende Schlüssel
+                            Wein Investment ist Zeit der entscheidende Schlüssel
                             zum Erfolg.
                           </p>
                         </AccordionItemPanel>

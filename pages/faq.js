@@ -129,18 +129,18 @@ const Faq = () => {
                         strokewidth={4}
                       />
                     </span>
-                    Für wen empfiehlt sich ein Weininvestment?
+                    Für wen empfiehlt sich ein Wein Investment?
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <p>
-                    Weininvestments eignen sich hervorragend für die
+                    Wein Investments eignen sich hervorragend für die
                     Diversifizierung des Gesamtportfolios mit einem exklusiven
                     Sachwert und können über einen langfristigen
                     Investitionshorizont von 10 bis 15 Jahren eine
                     durchschnittliche Rendite von etwa 8% bis 10% p.a.
                     (kapitalertragssteuerfrei) erzielen. Dabei korrelieren
-                    Weininvestments kaum mit dem Kapitalmarkt.
+                    Wein Investments kaum mit dem Kapitalmarkt.
                   </p>
                 </AccordionItemPanel>
               </AccordionItem>
@@ -230,7 +230,7 @@ const Faq = () => {
                 </AccordionItemHeading>
                 <AccordionItemPanel>
                   <p>
-                    Bei einem Weininvestment über Berghaus & Cie. sind Sie zu
+                    Bei einem Wein Investment über Berghaus & Cie. sind Sie zu
                     100 % Eigentümer Ihres Weines. Sie investieren in ein
                     physisches Gut bzw. in einen Sachwert. Dies ist ein
                     bedeutender Vorteil gegenüber nicht-physischen

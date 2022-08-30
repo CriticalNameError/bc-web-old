@@ -109,7 +109,7 @@ const MobileNavbar = (props) => {
                 toggleShowModal(false);
               }}
             >
-              Weininvestments
+              Wein Investments
             </span>
           </div>
           <div className={"mt-4 text-primary"} style={{ fontSize: "26px",  textDecoration: (/wein-investments/.test(props.router.pathname)? "underline": "") }}>

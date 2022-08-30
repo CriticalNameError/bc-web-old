@@ -120,17 +120,17 @@ class LandingPage extends React.Component {
             </div>
         </div>
         <p className={"text-justify animated fadeIn slower"}> Wir bieten Ihnen hochklassige und seltene Weine
-                                für Ihr persönliches Weininvestment. Durch unser
+                                für Ihr persönliches Wein Investment. Durch unser
                                 großes Einkaufsnetzwerk profitieren Sie von
                                 attraktiven Einstiegspreisen. Dies erlaubt ein
                                 größeres Wachstum Ihres Kapitals.
                                 Wir bieten Ihnen hochklassige und seltene Weine
-                                für Ihr persönliches Weininvestment. Durch unser
+                                für Ihr persönliches Wein Investment. Durch unser
                                 großes Einkaufsnetzwerk profitieren Sie von
                                 attraktiven Einstiegspreisen. Dies erlaubt ein
                                 größeres Wachstum Ihres Kapitals.
                                 Wir bieten Ihnen hochklassige und seltene Weine
-                                für Ihr persönliches Weininvestment. Durch unser
+                                für Ihr persönliches Wein Investment. Durch unser
                                 großes Einkaufsnetzwerk profitieren Sie von
                                 attraktiven Einstiegspreisen. Dies erlaubt ein
                                 größeres Wachstum Ihres Kapitals.</p>
@@ -160,7 +160,7 @@ class LandingPage extends React.Component {
                             <p className={"text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2"}>
                             <h4 class="text-center mt-0">Exquisite Weine</h4>
                                 Wir bieten Ihnen hochklassige und seltene Weine
-                                für Ihr persönliches Weininvestment. Durch unser
+                                für Ihr persönliches Wein Investment. Durch unser
                                 großes Einkaufsnetzwerk profitieren Sie von
                                 attraktiven Einstiegspreisen. Dies erlaubt ein
                                 größeres Wachstum Ihres Kapitals.
@@ -218,7 +218,7 @@ class LandingPage extends React.Component {
                           
                             <p className={"text-justify card p-3 ml-lg-n4 ml-xl-n5 mt-md-2 mt-n2"}>
                             <h4 class="text-center mt-0">Fundierte Beratung</h4>
-                                Grundlage für den Erfolg Ihres Weininvestments ist
+                                Grundlage für den Erfolg Ihres Wein Investments ist
                                 eine umfassende Beratung, die Ihre speziellen
                                 Wünsche und Bedürfnisse in den Mittelpunkt stellt.
                                 Ob Einsteiger oder Profi, wir bieten in jeden Fall

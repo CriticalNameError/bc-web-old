@@ -13,43 +13,61 @@ const Index = () => {
     handleResize();
   });
 
-  if (width && width > 800) {
-    return (
-      <>
-        {" "}
-        <Head>
-          <title key={"title"}>
-            Lernen Sie unser Unternehmen kennen und werden Sie zum Wein Investor
-          </title>
-          <meta
-            name="description"
-            content="Werden Sie selbst Weininvestor und profitieren Sie von unserer Rundumdiensleistung - so investieren Sie sorglos und mit starken Renditen in die besten Weine der Welt"
-            key="description"
-          />
-        </Head>
-        <IndexDesktop />
-      </>
-    );
-  }
-  if (width && width <= 800) {
-    return (
-      <>
-        <Head>
-          <title key={"title"}>
-            Lernen Sie unser Unternehmen kennen und werden Sie zum Wein Investor
-          </title>
-          <meta
-            name="description"
-            content="Werden Sie selbst Weininvestor und profitieren Sie von unserer Rundumdiensleistung - so investieren Sie sorglos und mit starken Renditen in die besten Weine der Welt"
-            key="description"
-          />
-        </Head>
-        <IndexMobile />
-      </>
-    );
-  } else {
-    return <></>;
-  }
+  return(
+    <>
+    <Head>
+    <title key={"title"}>
+     Ihr Wein Investment - Lafite Rothschild, Mouton, Petrus und mehr!
+    </title>
+    <meta
+      name="description"
+      content="Geld verdienen mit Wein Investments ist leichter als Sie denken. Berghaus & Cie. ist absolut professionell und bietet dennoch günstige Preise. Auch En Primeur ist möglich und bietet hohe Renditen und Gewinn Potential. Wein ist eine Alternative zu Immobilien Investments oder Rolex, Audemars Piquet und Patek Philippe"
+      key="description"
+    />
+  </Head>
+  {width && width > 800?  <IndexDesktop />
+  : (width && width <= 800?  <IndexMobile /> : <></>)}</>
+
+  )
 };
+
+  // if (width && width > 800) {
+  //   return (
+  //     <>
+  //       {" "}
+  //       <Head>
+  //         <title key={"title"}>
+  //          Ihr Wein Investment - Lafite Rothschild, Mouton, Petrus und mehr!
+  //         </title>
+  //         <meta
+  //           name="description"
+  //           content="Geld verdienen mit Wein Investments ist leichter als Sie denken. Berghaus & Cie. ist absolut professionell und bietet dennoch günstige Preise. Auch En Primeur ist möglich und bietet hohe Renditen und Gewinn Potential. Wein ist eine Alternative zu Immobilien Investments oder Rolex, Audemars Piquet und Patek Philippe"
+  //           key="description"
+  //         />
+  //       </Head>
+  //       <IndexDesktop />
+  //     </>
+  //   );
+  // }
+  // if (width && width <= 800) {
+  //   return (
+  //     <>
+  //       <Head>
+  //         <title key={"title"}>
+  //          Ihr Wein Investment - Lafite Rothschild, Mouton, Petrus und mehr!
+  //         </title>
+  //         <meta
+  //           name="description"
+  //           content="Geld verdienen mit Wein Investments ist leichter als Sie denken. Berghaus & Cie. ist absolut professionell und bietet dennoch günstige Preise. Auch En Primeur ist möglich und bietet hohe Renditen und Gewinn Potential. Wein ist eine Alternative zu Immobilien Investments oder Rolex, Audemars Piquet und Patek Philippe"
+  //           key="description"
+  //         />
+  //       </Head>
+  //       <IndexMobile />
+  //     </>
+  //   );
+  // } else {
+  //   return <></>;
+  // }
+
 
 export default Index;

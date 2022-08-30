@@ -45,7 +45,7 @@ const AboutUs = () => {
   return (
     <>
     <Head>
-    <title key={"title"}>Wer sind die Personen hinter Berghaus & Cie und was treibt Sie an.</title>
+    <title key={"title"}>Das Team von Berghaus & Cie. </title>
     <meta name="description" content="Hinter Berghaus & Cie Wein Investments stecken unterschiedliche Kenner Ihres Faches. Lernen Sie diese Kennen und erfahren Sie, wie Sie von Ihrer Expertise für Ihr Wein Investment profitieren können" key="description"/>
     </Head>
       <div>
@@ -145,7 +145,7 @@ const AboutUs = () => {
                       Wein ist langfristig gesehen nicht nur eine Ergänzung,
                       sondern eine echte Alternative zu den üblichen
                       Anlageformen. Unter fachkundiger Anleitung bringen
-                      Weininvestments nicht nur eine starke Rendite, sondern
+                      Wein Investments nicht nur eine starke Rendite, sondern
                       bieten darüber hinaus auch einen greifbaren Vermögenswert
                       mit einer spannenden Zukunft.{" "}
                     </p>
@@ -230,9 +230,9 @@ const AboutUs = () => {
               <p>
                 Tristan Berghaus ist der namensgebende Gründer von Berghaus &
                 Cie. Aufgrund seiner familiären Prägung beschäftigte er sich
-                schon sehr früh mit Weininvestments nach dem britischen Modell.
+                schon sehr früh mit Wein Investments nach dem britischen Modell.
                 Zusammen mit seinen Mitgründern entwickelte er die Idee,
-                Weininvestments auf dem deutschen Markt anzubieten. Über einen
+                Wein Investments auf dem deutschen Markt anzubieten. Über einen
                 weiteren Familienzweig bestehen enge Verbindungen zur
                 Weinbranche in Bordeaux, über die Berghaus & Cie. einen
                 privilegierten Zugang zu den exklusivsten Weinen der Welt
@@ -401,136 +401,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* 
-          <div className="section fp-auto-height-responsive">
-            <div class="container mt-md-n5 mt-sm-5 my-auto">
-              <div class="row pb-2">
-                <div
-                  class="col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto text-left "
-                  style={{ zIndex: 1000 }}
-                >
-                  <img
-                    src={"/assets/img/bernadette_baur_berghaus_cie.png"}
-                    class={"img-raised"}
-                    width="350px"
-                  ></img>
-                </div>
-
-                <div class="col-md-8 col-sm-12 text-left card mt-sm-4 mx-3 p-3 pt-5 pt-sm-4 ">
-                  <h2 class="text-left d-inline heading mt-sm-3">
-                    Bernadette Baur
-                  </h2>
-                  <h5>Marketing / Communications</h5>
-                  <p>
-                    Bernadette Baur ist eine echte Marketing-Allrounderin und Weinliebhaberin. Mit über
-20 Jahren Berufserfahrung ist sie für die Bereiche Branding, Corporate Design und
-Kommunikation verantwortlich.
-                  </p>
-                  <p>
-                    Sie entwickelt Strategien für den weitere Markenausbau, ist zuständig für alle
-Marketingmaßnahmen (on-/offline) und Ansprechpartnerin für Presse- und
-Kooperationsanfragen.
-                  </p>
-             
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-          {/* <div className="section fp-auto-height-responsive mt-n5 mt-sm-0 ">
-            <div class="container pt-0 pt-sm-5 animated fadeIn slow ">
-              <div className={"row mt-5"}>
-                <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                 
-                  <span class="round-icon-lg text-white mb-n3">
-                    <span style={{ width: "40px", height: "40px" }}>
-                      <Multiple11
-                        width={"40px"}
-                        height={"40px"}
-                        strokewidth={3}
-                      />
-                    </span>
-                  </span>
-                </div>
-                <div class="col-md-8 offset-md-2 col-sm-12">
-                  <div class="info info-horizontal">
-                    <div class="card p-3">
-                      <h5 class="" style={{ fontSize: "18px" }}>
-                        Was uns verbindet
-                      </h5>
-                      <p class="text-justify">
-                        Uns von Berghaus & Cie. verbindet nicht nur die
-                        Leidenschaft für exquisite Weine, sondern auch ein gutes
-                        Gespür für lukrative Investments. Unser Team besteht aus
-                        ganz unterschiedlichen Persönlichkeiten, deren
-                        berufliche Expertise und individuelle Sichtweisen sich
-                        gegenseitig ergänzen und bereichern. Wir teilen
-                        gemeinsame Werte und sind stets auf der Suche nach der
-                        besten Lösung.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container mt-sm-n5 animated fadeIn slower">
-              <div className={"row mt-5"}>
-                <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-               
-                  <span class="round-icon-lg text-white mb-n3">
-                    <span style={{ width: "40px", height: "40px" }}>
-                      <Logic width={"40px"} height={"40px"} strokewidth={3} />
-                    </span>
-                  </span>
-                </div>
-                <div class="col-md-8 offset-md-2 col-sm-12 mb-5">
-                  <div class="info info-horizontal">
-                    <div class="card p-3">
-                      <h5 class="" style={{ fontSize: "18px" }}>
-                        Unsere Expertise
-                      </h5>
-                      <p class="text-justify">
-                        Berghaus & Cie. bietet Ihnen die Möglichkeit, einfach,
-                        transparent und zielgerichtet in den Weinmarkt zu
-                        investieren. Sie profitieren von unserem Fachwissen,
-                        ohne selbst zum Experten werden zu müssen. Wir bieten
-                        Ihnen einen einzigartigen Blick auf einen
-                        spezialisierten Markt. Ob Neueinsteiger oder erfahrener
-                        Sammler, unser Team steht Ihnen für alle Ihre Fragen
-                        rund um das Thema Weininvestment zur Verfügung.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
-          {/* 
-          <div class="container text-center mt-sm-5 pt-5 mb-sm-5 pb-5">
-            <span style={{ fontSize: "18px" }}>
-              Für alle weiteren Fragen stehen wir Ihnen gerne per Mail oder
-              telefonisch zur Verfügung.
-              <br />
-            </span>
-            <a href={"#footer"}>
-              <button
-                className={"btn btn-primary mt-4 p-3 px-5"}
-                style={{ fontSize: "18px" }}
-              >
-                <span className={"p-1 pl-0 pr-3"}>
-                  {" "}
-                  <BComment
-                    width={"30px"}
-                    height={"30px"}
-                    strokewidth={3}
-                    style={{ display: "inline-block" }}
-                  />
-                </span>
-                Jetzt kontaktieren
-              </button>
-            </a>
-          </div> */}
+        
         </div>
       </div>
     </>

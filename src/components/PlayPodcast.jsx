@@ -120,7 +120,7 @@ const PlayAudio = ({ url }) => {
       } */}
       <div className={""} style={{ fontSize: "18px", }}>
         <br />
-        "Weininvestments bei Berghaus & Cie"
+        "Wein Investments bei Berghaus & Cie"
         <br />
         in 180 Sekunden
    

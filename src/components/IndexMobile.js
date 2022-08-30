@@ -150,7 +150,7 @@ const IndexMobile = (props) => {
             <Col xs={10}>
               <p className={"text-justify"}>
                 Unsere wineTelligence ist der Kick-Starter für Ihr
-                Weininvestment. Mit ihr erhalten Sie in kürzester Zeit ein
+                Wein Investment. Mit ihr erhalten Sie in kürzester Zeit ein
                 individuelles, transparentes Angebot auf der Basis künstlicher
                 Intelligenz.
               </p>
@@ -473,7 +473,7 @@ const IndexMobile = (props) => {
             style={{ fontSize: "16px", fontWeight: "bold" }}
           >
             <span className={"fade-in-span pr-1"}>Ihr</span>
-            <span className={"fade-in-span"}>Weininvestment -</span>
+            <span className={"fade-in-span"}>Wein Investment -</span>
 
             <span className={"fade-in-span px-1"}>professionell, </span>
             <br />

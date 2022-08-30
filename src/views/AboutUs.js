@@ -138,7 +138,7 @@ const AboutUs = () => {
                               Wein ist langfristig gesehen nicht nur eine
                               Ergänzung, sondern unter Umständen eine echte
                               Alternative zu den üblichen Anlageformen. Unter
-                              fachkundiger Anleitung bringen Weininvestments
+                              fachkundiger Anleitung bringen Wein Investments
                               nicht nur eine starke Rendite, sondern bietet
                               darüber hinaus auch einen greifbaren Vermögenswert
                               mit einer spannenden Zukunft.{" "}
@@ -560,7 +560,7 @@ const AboutUs = () => {
                               einzigartigen Blick auf einen spezialisierten
                               Markt. Ob Neueinsteiger oder erfahrener Sammler,
                               unser Team steht Ihnen für alle Ihre Fragen rund
-                              um das Thema Weininvestment zur Verfügung.
+                              um das Thema Wein Investment zur Verfügung.
                             </p>
                           </div>
                         </div>

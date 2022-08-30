@@ -64,7 +64,7 @@ let potentialanalyse_markup = (
     <br />
     <br />
     Auf Basis all dieser Informationen lässt sich sehr gut einschätzen, ob sich
-    ein bestimmter Wein für ein Weininvestment lohnt.
+    ein bestimmter Wein für ein Wein Investment lohnt.
   </div>
 );
 let provenienz_markup = (
@@ -327,7 +327,7 @@ const WineInvestments = () => {
                       <br />
                       Das weltweite Netzwerk von Berghaus & Cie. bietet Ihnen
                       einen exklusiven Zugang zu erstklassigen und seltenen
-                      Weine, die für ein Weininvestment bestens geeignet sind.
+                      Weine, die für ein Wein Investment bestens geeignet sind.
                     </p>
                   </div>
                 </div>
@@ -413,7 +413,7 @@ const WineInvestments = () => {
                       diesem besonderen Vermögenswert.
                       <br />
                       <br />
-                      Für ein erfolgreiches Weininvestment ist es wesentlich,
+                      Für ein erfolgreiches Wein Investment ist es wesentlich,
                       das Angebot und die Nachfrage immer im Blick zu behalten.
                       <br />
                       <br />
@@ -447,7 +447,7 @@ const WineInvestments = () => {
                 erfolgreich?
               </h2>
               <p style={{ fontSize: "18px" }}>
-                Drei Aspekte spielen für ein profitables Weininvestment eine
+                Drei Aspekte spielen für ein profitables Wein Investment eine
                 zentrale Rolle.
               </p>
 
@@ -605,7 +605,7 @@ const WineInvestments = () => {
                     >
                       <h3 class="text-center mt-0 h5">Fundierte Beratung</h3>
                       <div className={"text-left"}>
-                        Grundlage für den Erfolg Ihres Weininvestments ist eine
+                        Grundlage für den Erfolg Ihres Wein Investments ist eine
                         umfassende Beratung, die Ihre speziellen Wünsche und
                         Bedürfnisse in den Mittelpunkt stellt. Ob Einsteiger
                         oder Profi, wir bieten in jedem Fall die passende
@@ -639,7 +639,7 @@ const WineInvestments = () => {
                       <h3 class="text-center mt-0 h5">Exquisite Weine</h3>
                       <div className={"text-left"}>
                         Wir bieten Ihnen hochklassige und seltene Weine für Ihr
-                        persönliches Weininvestment. Durch unser großes
+                        persönliches Wein Investment. Durch unser großes
                         Einkaufsnetzwerk profitieren Sie von attraktiven
                         Einstiegspreisen. Dies erlaubt ein größeres Wachstum
                         Ihres Kapitals.
