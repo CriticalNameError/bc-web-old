@@ -100,11 +100,16 @@ const PostPage = () => {
   const router = useRouter();
   const { eventId } = router.query;
   const [notARobot, toggleNotARobot] = useState(false);
+  const [DSGVO, toggleDSGVO] = useState(false);
   const [formSent, toggleFormSent] = useState(false);
+  const [paymentLink, setPaymentLink] = useState(null);
+  const [paymentLoading, setPaymentLoading] = useState(false);
   const [sendMessage, { mutData }] = useMutation(CREATE_INVOICE, {
     onCompleted: (data) => {
       window.open(data.createStripeCustomerAndInvoiceForEvent.url, "_blank");
       toggleFormSent(true);
+      setPaymentLink(data.createStripeCustomerAndInvoiceForEvent.url);
+      setPaymentLoading(false);
     },
   });
   const [formData, setFormData] = useState({
@@ -131,13 +136,14 @@ const PostPage = () => {
     console.log(formData);
     console.log(
       notARobot &&
-        formData["firstName"] &&
-        formData["lastName"] &&
-        formData["streetAndNumber"] &&
-        formData["postalCode"] &&
-        formData["city"] &&
-        formData["amount"] &&
-        formData["salutation"]
+      DSGVO &&
+      formData["firstName"] &&
+      formData["lastName"] &&
+      formData["streetAndNumber"] &&
+      formData["postalCode"] &&
+      formData["city"] &&
+      formData["amount"] &&
+      formData["salutation"]
     );
   }, [formData]);
   useEffect(() => {
@@ -159,7 +165,11 @@ const PostPage = () => {
       console.log(formData)
     }
   }, [data]);
-  if (loading)
+
+  useEffect(() => {
+    console.log(mutData)
+  }, [mutData])
+  if (loading || paymentLoading)
     return (
       <LoadingOverlay
         active={true}
@@ -192,323 +202,330 @@ const PostPage = () => {
   if (data)
     return (
       <>
-       <Head>
-      <title key={"title"}>{data.getEventById.title}</title>
-      <meta name="description" content={data.getEventById.title} key="description"/>
-      </Head>
-      <div
-        className={"container-fluid mx-auto px-3 px-md-0 text-center"}
-        style={{
-          paddingTop: "150px",
-          overflowWrap: "break-word",
-        }}
-      >
-        <div className={"mx-auto text-left mb-5"} style={{ maxWidth: "750px" }}>
-          <h1>{data.getEventById.title}</h1>
-          <span style={{ fontSize: "23px" }}>
-            Time & Location: {convertDateString(data.getEventById.when)},{" "}
-            {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
-            {data.getEventById.address}
-          </span>
-          <center>
-            {" "}
-            <img src={data.getEventById.titleImage.rendition.url} />
-          </center>
-          <div
-            className={"mt-4"}
-            dangerouslySetInnerHTML={{ __html: data.getEventById.description }}
-          ></div>
+        <Head>
+          <title key={"title"}>{data.getEventById.title}</title>
+          <meta name="description" content={data.getEventById.title} key="description" />
+        </Head>
+        <div
+          className={"container-fluid mx-auto px-3 px-md-0 text-center"}
+          style={{
+            paddingTop: "150px",
+            overflowWrap: "break-word",
+          }}
+        >
+          <div className={"mx-auto text-left mb-5"} style={{ maxWidth: "750px" }}>
+          {!paymentLink && <>
+              <h1>{data.getEventById.title}</h1>
+              <span style={{ fontSize: "23px" }}>
+                Zeit & Ort: {convertDateString(data.getEventById.when)},{" "}
+                {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
+                {data.getEventById.address}
+              </span>
+              <br/>
+              <br/>
+              <center>
+                {" "}
+                <img src={data.getEventById.titleImage.rendition.url} />
+              </center>
+              <div
+                className={"mt-4"}
+                dangerouslySetInnerHTML={{ __html: data.getEventById.description }}
+              ></div>
+               </>
+            }
 
-          <h3 className={"mt-5 text-bold"}>Anmeldung</h3>
-          <span style={{ fontSize: "18px" }}>
-            Time & Location: {convertDateString(data.getEventById.when)},{" "}
-            {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
-            {data.getEventById.address}
-          </span>
-          <br />
-          <br />
-          {!formSent && !mutData ? (
-            <form
-              role="form"
-              id="contact-form1"
-              method="post"
-              onSubmit={(e) => {
-                e.preventDefault();
-                sendMessage({
-                  variables: {
-                    ...formData,
-                  },
-                });
-              }}
-            >
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-md-6 col-sm-12 pr-2">
-                    <div class="form-group">
-                      <select
-                        class="form-control"
-                        ref={(node) => {
-                          salutation = node;
-                        }}
-                        onChange={(e) => {
-                          setFormData({
-                            ...formData,
-                            ["salutation"]: e.target.value,
-                          });
-                        }}
-                      >
-                        <option selected>Herr</option>
-                        <option>Frau</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 col-sm-12 pr-2">
-                    <div class="form-group">
-                      <select
-                        class="form-control"
-                        ref={(node) => {
-                          title = node;
-                        }}
-                        onChange={(e) => {
-                          setFormData({
-                            ...formData,
-                            ["title"]: e.target.value,
-                          });
-                        }}
-                      >
-                        <option selected>Titel (optional)</option>
-                        <option>Dr.</option>
-                        <option>Prof. Dr.</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 col-sm-12 pr-2">
-                    {/* <label>Name</label> */}
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="now-ui-icons users_circle-08"></i>
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Vorname"
-                        aria-label="Name..."
-                        autocomplete="given-name"
-                        ref={(node) => {
-                          firstName = node;
-                        }}
-                        onChange={(e) => {
-                          setFormData({
-                            ...formData,
-                            ["firstName"]: e.target.value,
-                          });
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className={"col-md-6 col-sm-12 "}>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="now-ui-icons users_circle-08"></i>
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Nachname"
-                        aria-label="Name..."
-                        autocomplete="given-name"
-                        ref={(node) => {
-                          lastName = node;
-                        }}
-                        onChange={(e) => {
-                          setFormData({
-                            ...formData,
-                            ["lastName"]: e.target.value,
-                          });
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12 ">
-                    <div class="form-group">
-                      {/* <label>Mail</label> */}
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <i class="now-ui-icons ui-1_email-85"></i>
-                          </span>
-                        </div>
-                        <input
-                          type="email"
+              <h3 className={"mt-5 text-bold"}>Anmeldung</h3>
+              <span style={{ fontSize: "18px" }}>
+                Zeit & Ort: {convertDateString(data.getEventById.when)},{" "}
+                {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
+                {data.getEventById.address}
+              </span>
+              <br />
+              <br />
+           
+            {!formSent && !mutData ? (
+              <form
+                role="form"
+                id="contact-form1"
+                method="post"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setPaymentLoading(true);
+                  sendMessage({
+                    variables: {
+                      ...formData,
+                    },
+                  });
+                }}
+              >
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12 pr-2">
+                      <div class="form-group">
+                        <select
                           class="form-control"
-                          placeholder="Ihre Mailadresse"
-                          autocomplete="email"
                           ref={(node) => {
-                            email = node;
+                            salutation = node;
                           }}
                           onChange={(e) => {
                             setFormData({
                               ...formData,
-                              ["email"]: e.target.value,
+                              ["salutation"]: e.target.value,
+                            });
+                          }}
+                        >
+                          <option selected>Herr</option>
+                          <option>Frau</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 pr-2">
+                      <div class="form-group">
+                        <select
+                          class="form-control"
+                          ref={(node) => {
+                            title = node;
+                          }}
+                          onChange={(e) => {
+                            setFormData({
+                              ...formData,
+                              ["title"]: e.target.value,
+                            });
+                          }}
+                        >
+                          <option selected>Titel (optional)</option>
+                          <option>Dr.</option>
+                          <option>Prof. Dr.</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 pr-2">
+                      {/* <label>Name</label> */}
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="now-ui-icons users_circle-08"></i>
+                          </span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Vorname*"
+                          aria-label="Name..."
+                          autocomplete="given-name"
+                          ref={(node) => {
+                            firstName = node;
+                          }}
+                          onChange={(e) => {
+                            setFormData({
+                              ...formData,
+                              ["firstName"]: e.target.value,
                             });
                           }}
                         />
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-6 col-sm-12 ">
-                    <div class="form-group">
-                      {/* <label>Mail</label> */}
+                    <div className={"col-md-6 col-sm-12 "}>
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <span class="input-group-text">
-                            <i class="now-ui-icons tech_mobile"></i>
+                            <i class="now-ui-icons users_circle-08"></i>
                           </span>
                         </div>
                         <input
-                          type="phone"
+                          type="text"
                           class="form-control"
-                          placeholder="Ihre Telefonnummer (optional)"
-                          autocomplete="email"
+                          placeholder="Nachname*"
+                          aria-label="Name..."
+                          autocomplete="given-name"
                           ref={(node) => {
-                            email = node;
+                            lastName = node;
                           }}
                           onChange={(e) => {
                             setFormData({
                               ...formData,
-                              ["phone"]: e.target.value,
+                              ["lastName"]: e.target.value,
                             });
                           }}
                         />
                       </div>
                     </div>
+                    <div class="col-md-6 col-sm-12 ">
+                      <div class="form-group">
+                        {/* <label>Mail</label> */}
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="now-ui-icons ui-1_email-85"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Ihre Mailadresse*"
+                            autocomplete="email"
+                            ref={(node) => {
+                              email = node;
+                            }}
+                            onChange={(e) => {
+                              setFormData({
+                                ...formData,
+                                ["email"]: e.target.value,
+                              });
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 ">
+                      <div class="form-group">
+                        {/* <label>Mail</label> */}
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="now-ui-icons tech_mobile"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="phone"
+                            class="form-control"
+                            placeholder="Ihre Telefonnummer*"
+                            autocomplete="email"
+                            ref={(node) => {
+                              email = node;
+                            }}
+                            onChange={(e) => {
+                              setFormData({
+                                ...formData,
+                                ["phone"]: e.target.value,
+                              });
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <div class="form-group textarea">
-                  {/* <label>Ihre Nachricht</label> */}
-                  <input
-                    name="message"
-                    class="form-control"
-                    placeholder={"Straße und Hausnummer"}
-                    id="message"
-                    //rows="3"
-                    ref={(node) => {
-                      streetAndNumber = node;
-                    }}
-                    onChange={(e) => {
-                      setFormData({
-                        ...formData,
-                        ["streetAndNumber"]: e.target.value,
-                      });
-                    }}
-                  ></input>
-                </div>
+                  <div class="form-group textarea">
+                    {/* <label>Ihre Nachricht</label> */}
+                    <input
+                      name="message"
+                      class="form-control"
+                      placeholder={"Straße und Hausnummer"}
+                      id="message"
+                      //rows="3"
+                      ref={(node) => {
+                        streetAndNumber = node;
+                      }}
+                      onChange={(e) => {
+                        setFormData({
+                          ...formData,
+                          ["streetAndNumber"]: e.target.value,
+                        });
+                      }}
+                    ></input>
+                  </div>
 
-                <div class="form-group textarea">
-                  {/* <label>Ihre Nachricht</label> */}
-                  <input
-                    name="message"
-                    class="form-control"
-                    placeholder={"Postleitzahl"}
-                    id="message"
-                    //rows="3"
-                    ref={(node) => {
-                      postalCode = node;
-                    }}
-                    onChange={(e) => {
-                      setFormData({
-                        ...formData,
-                        ["postalCode"]: e.target.value,
-                      });
-                    }}
-                  ></input>
-                </div>
+                  <div class="form-group textarea">
+                    {/* <label>Ihre Nachricht</label> */}
+                    <input
+                      name="message"
+                      class="form-control"
+                      placeholder={"Postleitzahl"}
+                      id="message"
+                      //rows="3"
+                      ref={(node) => {
+                        postalCode = node;
+                      }}
+                      onChange={(e) => {
+                        setFormData({
+                          ...formData,
+                          ["postalCode"]: e.target.value,
+                        });
+                      }}
+                    ></input>
+                  </div>
 
-                <div class="form-group textarea">
-                  {/* <label>Ihre Nachricht</label> */}
-                  <input
-                    name="message"
-                    class="form-control"
-                    placeholder={"Stadt"}
-                    id="message"
-                    //rows="3"
-                    ref={(node) => {
-                      city = node;
-                    }}
-                    onChange={(e) => {
-                      setFormData({ ...formData, ["city"]: e.target.value });
-                    }}
-                  ></input>
-                </div>
+                  <div class="form-group textarea">
+                    {/* <label>Ihre Nachricht</label> */}
+                    <input
+                      name="message"
+                      class="form-control"
+                      placeholder={"Stadt"}
+                      id="message"
+                      //rows="3"
+                      ref={(node) => {
+                        city = node;
+                      }}
+                      onChange={(e) => {
+                        setFormData({ ...formData, ["city"]: e.target.value });
+                      }}
+                    ></input>
+                  </div>
 
-                <div class="form-group textarea">
-                  {/* <label>Ihre Nachricht</label> */}
-                  <input
-                    name="message"
-                    class="form-control"
-                    placeholder={"Firma (optional)"}
-                    id="message"
-                    //rows="3"
-                    ref={(node) => {
-                      company = node;
-                    }}
-                    onChange={(e) => {
-                      setFormData({ ...formData, ["company"]: e.target.value });
-                    }}
-                  ></input>
-                </div>
+                  <div class="form-group textarea">
+                    {/* <label>Ihre Nachricht</label> */}
+                    <input
+                      name="message"
+                      class="form-control"
+                      placeholder={"Firma (optional)"}
+                      id="message"
+                      //rows="3"
+                      ref={(node) => {
+                        company = node;
+                      }}
+                      onChange={(e) => {
+                        setFormData({ ...formData, ["company"]: e.target.value });
+                      }}
+                    ></input>
+                  </div>
 
-                <div class="form-group textarea">
-                  {/* <label>Ihre Nachricht</label> */}
-                  <input
-                    name="message"
-                    class="form-control"
-                    placeholder={"USt.-Nr. (optional)"}
-                    id="message"
-                    //rows="3"
-                    ref={(node) => {
-                      vatNr = node;
-                    }}
-                    onChange={(e) => {
-                      setFormData({ ...formData, ["vatNr"]: e.target.value });
-                    }}
-                  ></input>
-                </div>
+                  <div class="form-group textarea">
+                    {/* <label>Ihre Nachricht</label> */}
+                    <input
+                      name="message"
+                      class="form-control"
+                      placeholder={"USt.-Nr. (optional)"}
+                      id="message"
+                      //rows="3"
+                      ref={(node) => {
+                        vatNr = node;
+                      }}
+                      onChange={(e) => {
+                        setFormData({ ...formData, ["vatNr"]: e.target.value });
+                      }}
+                    ></input>
+                  </div>
 
-                <div class="form-group">
-                  <select
-                    class="form-control"
-                    ref={(node) => {
-                      amount = node;
-                    }}
-                    onChange={(e) => {
-                      setFormData({ ...formData, ["amount"]: e.target.value });
-                    }}
-                  >
-                    <option disabled selected>
-                      Anzahl an Tickets
-                    </option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                    <select
+                      class="form-control"
+                      ref={(node) => {
+                        amount = node;
+                      }}
+                      onChange={(e) => {
+                        setFormData({ ...formData, ["amount"]: e.target.value });
+                      }}
+                    >
+                      <option disabled selected>
+                        Anzahl an Tickets
+                      </option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </div>
 
-                {/* <div class="form-group textarea">
+                  {/* <div class="form-group textarea">
                 
                   <input
                     name="message"
@@ -522,61 +539,75 @@ const PostPage = () => {
                   ></input>
                 </div> */}
 
-                <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          onClick={() => toggleNotARobot(!notARobot)}
-                        />
-                        <span class="form-check-sign"></span>
-                        Ich bin kein Roboter
-                      </label>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            onClick={() => toggleNotARobot(!notARobot)}
+                          />
+                          <span class="form-check-sign"></span>
+                          Ich akzeptiere die AGBs
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            onClick={() => toggleDSGVO(!DSGVO)}
+                          />
+                          <span class="form-check-sign"></span>
+                          Ich akzeptiere Datenschutzbestimmung
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                      <button
+                        type="submit"
+                        style={{ background: cta, color: "white" }}
+                        className={
+                          "btn btn-lg btn-round pull-right " +
+                          (notARobot && DSGVO &&
+                            formData["email"] &&
+                            formData["phone"] &&
+                            formData["firstName"] &&
+                            formData["lastName"] &&
+                            formData["streetAndNumber"] &&
+                            formData["postalCode"] &&
+                            formData["city"] &&
+                            formData["amount"] &&
+                            formData["salutation"]
+                            ? ""
+                            : "disabled")
+                        }
+                      >
+                        Ticket verbindlich buchen
+                      </button>
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-12">
-                    <button
-                      type="submit"
-                      style={{ background: cta, color: "white" }}
-                      className={
-                        "btn btn-lg btn-round pull-right " +
-                        (notARobot &&
-                        formData["firstName"] &&
-                        formData["lastName"] &&
-                        formData["streetAndNumber"] &&
-                        formData["postalCode"] &&
-                        formData["city"] &&
-                        formData["amount"] &&
-                        formData["salutation"]
-                          ? ""
-                          : "disabled")
-                      }
-                    >
-                      Ticket verbindlich buchen
-                    </button>
-                  </div>
                 </div>
-              </div>
-            </form>
-          ) : (
-            <center>
-              <a
-                href={mutData.createStripeCustomerAndInvoiceForEvent.url}
-                target={"_blank"}
-              >
-                <button
-                  className={"btn btn-lg"}
-                  style={{ background: cta, color: "white" }}
-                >
-                  Jetzt Bezahlen
-                </button>
-              </a>
-            </center>
-          )}
+              </form>
+            ) : (
+              <center>
+                {paymentLink &&
+                  <a
+                    href={paymentLink}
+                    target={"_blank"}
+                  >
+                    <button
+                      className={"btn btn-lg"}
+                      style={{ background: cta, color: "white" }}
+                    >
+                      Jetzt Bezahlen
+                    </button>
+                  </a>}
+              </center>
+            )}
+          </div>
         </div>
-      </div>
       </>
     );
 };
