@@ -72,7 +72,7 @@
     "build": "next build",
     "test": "next test",
     "export": "next export",
-    "heroku-postbuild": "npm run build && npm run export && next-sitemap",
+    "heroku-postbuild": "npm run build",
     "eject": "next eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install -g npm && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/now-ui-dashboard.scss src/assets/css/now-ui-dashboard.css",
