@@ -79,6 +79,7 @@ const PostPage = () => {
       <Head>
       <title key={"title"}>{data.page.title}</title>
       <meta name="description" content={data.page.intro} key="description"/>
+      <link rel="canonical" href={"https://berghauscie.de/" + slug} />
       </Head>
       <div
         className={"container-fluid mx-auto px-3 px-md-0 text-center"}

@@ -8,6 +8,7 @@ import { convertDateString } from "helpers/utils";
 import "react-toastify/dist/ReactToastify.css";
 import LandingFooter from "components/Footer/LandingFooter";
 import { primary, primary_t80, primary_t50 } from "helpers/colorScheme";
+// import { getServerSideSitemap } from "next-sitemap";
 
 const GET_WINES = gql`
   {
@@ -49,7 +50,7 @@ const GET_WINES = gql`
   }
 `;
 
-const GET_POSTS = gql`
+export const GET_POSTS = gql`
   query getPosts($skip: Int!, $first: Int!) {
     allPostPages(skip: $skip, first: $first) {
       id
@@ -186,6 +187,9 @@ const ListBlogPosts = () => {
     );
   if (error) return <h1>Error</h1>;
   if (data){
+
+    
+
     // if(data.allPostPages.length < number_of_posts_to_load){
     //   toggleEndReached(true);
     // }

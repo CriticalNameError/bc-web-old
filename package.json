@@ -69,8 +69,7 @@
   "scripts": {
     "dev": "next start",
     "start": "next start -p $PORT",
-    "build": "next build && npm run export",
-    "postbuild": "next-sitemap",
+    "build": "next build",
     "test": "next test",
     "export": "next export",
     "heroku-postbuild": "npm run build && npm run export && next-sitemap",

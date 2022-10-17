@@ -5,6 +5,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 // core components
 
 import ListBlogPosts from "../src/helpers/ListBlogPosts";
+
 import Head from "next/head"
 
 

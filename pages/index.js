@@ -2,6 +2,26 @@ import React, { useState, useEffect } from "react";
 import IndexDesktop from "../src/components/IndexDesktop";
 import IndexMobile from "../src/components/IndexMobile";
 import Head from "next/head";
+//import { getServerSideSitemap } from "next-sitemap";
+//import { useApollo, client } from "../src/helpers/apolloClient";
+
+// export const getServerSideProps = async (ctx) => {
+//   // let posts = await fetch("https://jsonplaceholder.typicode.com/posts");
+//   // posts = await posts.json();
+//   let posts = []
+//   client.query({GET_POST_PAGES}).then((results, data)=>{
+//     results.map(item=>{return item.slug})
+//   })
+//   const newsSitemaps = posts.map((item) => ({
+//     loc: `https://berghauscie.de/${slug}`,
+//     lastmod: new Date().toISOString(),
+//   }));
+
+//   const fields = [...newsSitemaps];
+
+//   return getServerSideSitemap(ctx, fields);
+// };
+
 const Index = () => {
   const [width, setWidth] = useState(null);
   const [currentComponent, setCurrentComponent] = useState(<IndexDesktop />);
