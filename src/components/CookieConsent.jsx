@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 import GoogleAnalytics from "../helpers/GoogleAnalytics";
 
 const CookieConsent = (props) => {
-  const [showModal, toggleShowModal] = useState(true);
+  const [showModal, toggleShowModal] = useState(false);
   const [showSettings, toggleShowSetting] = useState(false);
   const [cookies, setCookie] = useCookies(["cookie_consent"]);
   const [marketingCookies, setMarketingCookies] = useState(false);
@@ -12,6 +12,7 @@ const CookieConsent = (props) => {
     useState(false);
   useEffect(() => {
     toggleFinishedLoadingDocument(true);
+    setTimeout(()=>{toggleShowModal(true)}, 2000)
   }, []);
   //   useEffect(()=>{
   //     toggleShowModal(props.showModal)
