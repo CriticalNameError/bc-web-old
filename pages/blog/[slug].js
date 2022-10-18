@@ -82,7 +82,7 @@ const PostPage = () => {
       <link rel="canonical" href={"https://berghauscie.de/" + slug} />
       </Head>
       <div
-        className={"container-fluid mx-auto px-3 px-md-0 text-center"}
+        className={"container-fluid mx-auto px-3 px-md-0 text-center animated fadeIn slow"}
         style={{
           paddingTop: "150px",
           overflowWrap: "break-word",

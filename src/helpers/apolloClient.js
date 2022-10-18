@@ -6,7 +6,7 @@ import { useMemo } from "react";
 
  export function createApolloClient() {
    return new ApolloClient({
-     ssrMode: typeof window === "undefined", // set to true for SSR
+     ssrMode: true, // set to true for SSR
      link: new HttpLink({
        uri: "https://bc-cms.herokuapp.com/graphql",
      }),
@@ -33,7 +33,7 @@ export default client;
   }
 
   // For SSG and SSR always create a new Apollo Client
-  if (typeof window === "undefined") return _apolloClient;
+  if (true) return _apolloClient;
 
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient;
