@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://berghauscie.de',
+    siteUrl: process.env.SITE_URL || 'https://www.berghauscie.de',
     generateRobotsTxt: true, // (optional)
     // ...other options
   }

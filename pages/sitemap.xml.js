@@ -17,7 +17,7 @@ import {GET_POSTS} from "../src/helpers/ListBlogPosts"
 //   return getServerSideSitemap(ctx, fields);
 // };
 
-const BASE_URL = 'https://berghauscie.de';
+const BASE_URL = 'https://www.berghauscie.de';
 const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 function generateSiteMap(posts) {
