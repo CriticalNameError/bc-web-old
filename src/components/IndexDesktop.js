@@ -167,8 +167,8 @@ const IndexDesktop = (props) => {
         autoHeight: false,
         centeredSlides: true,
         slidesPerView: 1,
-        slideToClickedSlide:true,
-        
+        slideToClickedSlide: true,
+
         autoplay: {
           delay: 3500,
           disableOnInteraction: true,
@@ -189,7 +189,7 @@ const IndexDesktop = (props) => {
         // If we need pagination
         pagination: {
           el: ".swiper-pagination",
-          clickable: true
+          clickable: true,
         },
 
         // Navigation arrows
@@ -1327,15 +1327,17 @@ const IndexDesktop = (props) => {
                                       width={"100%"}
                                     />
                                   </div>
-                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
                                     "Die Anlage in exquisite Weine ist
                                     einzigartig, denn Sie ermöglicht es Ihnen,
-                                    diversifiziert in einen faszinierenden Sachwert zu
-                                    investieren, der sich stetig mit rund 8 - 10 % p.a. verzinst."
+                                    diversifiziert in einen faszinierenden
+                                    Sachwert zu investieren, der sich stetig mit
+                                    rund 8 - 10 % p.a. verzinst."
                                   </p>
-                                  <p >
-                                    - Tristan A. Berghaus, Geschäftsführer
-                                  </p>
+                                  <p>- Tristan A. Berghaus, Geschäftsführer</p>
                                 </div>
                               </div>
                             </div>
@@ -1348,16 +1350,17 @@ const IndexDesktop = (props) => {
                                       width={"100%"}
                                     />
                                   </div>
-                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
                                     "Wir sind von Beginn an an Ihrer Seite und
                                     stellen Ihnen ein individuelles Portfolio
                                     zusammen. Den professionellen Transport und
                                     die klimageführte Lagerung in der Schweiz
                                     organisieren wir für Sie. "
                                   </p>
-                                  <p >
-                                    - Peter Irnich, Geschäftsführer
-                                  </p>
+                                  <p>- Peter Irnich, Geschäftsführer</p>
                                 </div>
                               </div>
                             </div>
@@ -1370,7 +1373,10 @@ const IndexDesktop = (props) => {
                                       width={"100%"}
                                     />
                                   </div>
-                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
                                     Berghaus & Cie. ist ein Kölner Unternehmen.
                                     Der regionale Bezug und die Wein-Szene im
                                     Rheinland liegen uns am Herzen. Wir sind
@@ -1390,10 +1396,13 @@ const IndexDesktop = (props) => {
                                       width={"100%"}
                                     />
                                   </div>
-                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
-                                    Jeder kennt Wein. Wir glauben, dass
-                                    Sie Ihre Geldanlage durchschauen sollten und
-                                    dass exquisite Weine ein Gegenpol zu
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
+                                    Jeder kennt Wein. Wir glauben, dass Sie Ihre
+                                    Geldanlage durchschauen sollten und dass
+                                    exquisite Weine ein Gegenpol zu
                                     undurchsichtigen Verträgen wie
                                     Versicherungen oder CFDs sind. Transparenz
                                     und Solidität haben für uns einen hohen
@@ -1403,6 +1412,7 @@ const IndexDesktop = (props) => {
                                 </div>
                               </div>
                             </div>
+                           
                           </div>
 
                           <div class="swiper-nav-wrapper">
