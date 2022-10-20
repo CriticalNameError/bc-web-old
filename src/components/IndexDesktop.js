@@ -59,6 +59,7 @@ import Anagram100 from "icons/Anagram-100";
 import Atom from "icons/atom";
 import Security from "icons/security";
 import TriangleRight1 from "icons/triangle-right-1";
+// import Swiper from "swiper";
 import { useSwipeable } from "react-swipeable";
 import {
   Accordion,
@@ -68,6 +69,7 @@ import {
   AccordionItemHeading,
 } from "react-accessible-accordion";
 import LoadingOverlay from "react-loading-overlay";
+import Head from "next/head";
 
 const songs = [
   {
@@ -157,6 +159,50 @@ const IndexDesktop = (props) => {
       toggleVideoReady(true);
       console.log(videoElement.readyState);
       videoElement.play();
+
+      let swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+        autoHeight: false,
+        centeredSlides: true,
+        slidesPerView: 1,
+        slideToClickedSlide:true,
+        
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: true,
+        },
+        // Responsive breakpoints
+
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        },
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        /*scrollbar: {
+          el: '.swiper-scrollbar',
+        },*/
+      });
     };
   }, [finishedLoadingDocument]);
 
@@ -347,8 +393,8 @@ const IndexDesktop = (props) => {
           <Row>
             <Col xs={10}>
               <p className={"text-justify"}>
-                Unsere wineTelligence ist der Kick-Starter für Ihr
-                Wein Investment. Mit ihr erhalten Sie in kürzester Zeit ein
+                Unsere wineTelligence ist der Kick-Starter für Ihr Wein
+                Investment. Mit ihr erhalten Sie in kürzester Zeit ein
                 individuelles, transparentes Angebot auf der Basis künstlicher
                 Intelligenz.
               </p>
@@ -372,7 +418,7 @@ const IndexDesktop = (props) => {
               "url('https://bcassets.s3.amazonaws.com/static/images/ai_bg.original.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            borderRadius: "0px 0px 15px 0px"
+            borderRadius: "0px 0px 15px 0px",
           }}
         ></Col>
       </Row>
@@ -390,14 +436,19 @@ const IndexDesktop = (props) => {
                 sowie für Fragen zur Weinauswahl, Lagerung und Verkauf stehen
                 wir Ihnen gerne zur Verfügung. Buchen Sie einfach einen
                 kostenlosen Beratungstermin mit uns.
-                <br/>
-                <br/>
-                <a href={"https://calendly.com/berghausundcie/beratungsgesprach"} target={"_blank"}>
-                <button className={"btn btn-sm text-white"} style={{background: cta}}>
-                  Beratungsgespräch vereinbaren
-                </button>
+                <br />
+                <br />
+                <a
+                  href={"https://calendly.com/berghausundcie/beratungsgesprach"}
+                  target={"_blank"}
+                >
+                  <button
+                    className={"btn btn-sm text-white"}
+                    style={{ background: cta }}
+                  >
+                    Beratungsgespräch vereinbaren
+                  </button>
                 </a>
-                
               </p>
             </Col>
             <Col xs={1} className={"my-auto text-light"}>
@@ -419,7 +470,7 @@ const IndexDesktop = (props) => {
               "url('https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            borderRadius: "0px 0px 15px 0px"
+            borderRadius: "0px 0px 15px 0px",
           }}
         ></Col>
       </Row>
@@ -461,7 +512,7 @@ const IndexDesktop = (props) => {
               "url('https://bcassets.s3.amazonaws.com/static/images/storage.original.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            borderRadius: "0px 0px 15px 0px"
+            borderRadius: "0px 0px 15px 0px",
           }}
         ></Col>
       </Row>
@@ -500,7 +551,7 @@ const IndexDesktop = (props) => {
               "url('https://bcassets.s3.amazonaws.com/static/images/harvest.original.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            borderRadius: "0px 0px 15px 0px"
+            borderRadius: "0px 0px 15px 0px",
           }}
         ></Col>
       </Row>
@@ -511,6 +562,36 @@ const IndexDesktop = (props) => {
 
   return (
     <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-reboot.min.css"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css"
+          rel="stylesheet"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      </Head>
       <LoadingOverlay
         active={!videoReady}
         fadeSpeed={100}
@@ -1201,30 +1282,135 @@ const IndexDesktop = (props) => {
                     </h2>
                     <div
                       className={"mt-n2 pb-3"}
-                      style={{ fontSize: "15px", maxWidth: "800px" }}
+                      style={{ fontSize: "15px", maxWidth: "100vw" }}
                     >
                       Stabiles Wachstum und jährliche Renditen im zweistelligen
                       Prozentbereich - die Index-Entwicklung des Livex 1000
                       verdeutlicht das Potential der Sachanlage Wein.
                     </div>
                     <div
-                      className={"card p-2"}
+                      className={"p-2"}
                       style={{
-                        width: "800px",
-                        height: "550px",
-                        background: "#232526",
-                        background:
-                          "-webkit-linear-gradient(to right, #232526, #414345)",
-                        backgroundImage:
-                          "linear-gradient(to right, #232526, #414345)",
-                        fontFamily: "monospace",
+                        width: "100%",
+                        height: "600px",
+                        // background: "#232526",
+                        // background:
+                        //   "-webkit-linear-gradient(to right, #232526, #414345)",
+                        // backgroundImage:
+                        //   "linear-gradient(to right, #232526, #414345)",
+                        // fontFamily: "monospace",
                       }}
                     >
-                      <div style={{ padding: "20px" }}>
+                      {/* <div style={{ padding: "20px" }}>
                         <DynamicLivexPriceChart
                           height={"500px"}
                           mode={"light"}
                         />
+                      </div> */}
+
+                      <div
+                        class="wrapper-swiper"
+                        style={{
+                          height: "100%",
+                          background: "none",
+                          backgroundColor: "none",
+                        }}
+                      >
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <div class="swiper-avatar">
+                                    <img
+                                      src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_tb.original.jpg"
+                                      width={"100%"}
+                                    />
+                                  </div>
+                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                    "Die Anlage in exquisite Weine ist
+                                    einzigartig, denn Sie ermöglicht es Ihnen,
+                                    diversifiziert in einen faszinierenden Sachwert zu
+                                    investieren, der sich stetig mit rund 8 - 10 % p.a. verzinst."
+                                  </p>
+                                  <p >
+                                    - Tristan A. Berghaus, Geschäftsführer
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <div class="swiper-avatar">
+                                    <img
+                                      src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_pi.original.jpg"
+                                      width={"100%"}
+                                    />
+                                  </div>
+                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                    "Wir sind von Beginn an an Ihrer Seite und
+                                    stellen Ihnen ein individuelles Portfolio
+                                    zusammen. Den professionellen Transport und
+                                    die klimageführte Lagerung in der Schweiz
+                                    organisieren wir für Sie. "
+                                  </p>
+                                  <p >
+                                    - Peter Irnich, Geschäftsführer
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <div class="swiper-avatar">
+                                    <img
+                                      src="https://www.expatica.com/app/uploads/sites/6/2014/05/cologne.jpg"
+                                      width={"100%"}
+                                    />
+                                  </div>
+                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                    Berghaus & Cie. ist ein Kölner Unternehmen.
+                                    Der regionale Bezug und die Wein-Szene im
+                                    Rheinland liegen uns am Herzen. Wir sind
+                                    unter anderem in der Kölner WineBank
+                                    vertreten.
+                                  </p>
+                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <div class="swiper-avatar">
+                                    <img
+                                      src="https://sothebys-com.brightspotcdn.com/dims4/default/1e8931d/2147483647/strip/true/crop/640x425+0+0/resize/684x454!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot-migration.s3.amazonaws.com%2Fa6%2F3b%2F27%2Fec7a14d135b5003e749844fca760131356ae16ca7033382a7787d3a6be%2Fburgundy-2.jpg"
+                                      width={"100%"}
+                                    />
+                                  </div>
+                                  <p className={"mt-3 p-3 text-left"} style={{color: "#444"}}>
+                                    Jeder kennt Wein. Wir glauben, dass
+                                    Sie Ihre Geldanlage durchschauen sollten und
+                                    dass exquisite Weine ein Gegenpol zu
+                                    undurchsichtigen Verträgen wie
+                                    Versicherungen oder CFDs sind. Transparenz
+                                    und Solidität haben für uns einen hohen
+                                    Stellenwert.
+                                  </p>
+                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="swiper-nav-wrapper">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </center>
@@ -1552,14 +1738,14 @@ const IndexDesktop = (props) => {
                             </AccordionItemHeading>
                             <AccordionItemPanel>
                               <p>
-                                Wein Investments eignen sich hervorragend für die
-                                Diversifizierung des Gesamtportfolios mit einem
-                                exklusiven Sachwert und können über einen
+                                Wein Investments eignen sich hervorragend für
+                                die Diversifizierung des Gesamtportfolios mit
+                                einem exklusiven Sachwert und können über einen
                                 langfristigen Investitionshorizont von 10 bis 15
                                 Jahren eine durchschnittliche Rendite von etwa
                                 8% bis 10% p.a. (kapitalertragssteuerfrei)
-                                erzielen. Dabei korrelieren Wein Investments kaum
-                                mit dem Kapitalmarkt.
+                                erzielen. Dabei korrelieren Wein Investments
+                                kaum mit dem Kapitalmarkt.
                               </p>
                             </AccordionItemPanel>
                           </AccordionItem>
@@ -1799,7 +1985,6 @@ const IndexDesktop = (props) => {
         }}
       />
     </>
-   
   );
 };
 
