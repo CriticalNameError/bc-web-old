@@ -158,32 +158,33 @@ const ListBlogPosts = () => {
 
   if (loading)
     return (
-      <LoadingOverlay
-        active={true}
-        fadeSpeed={100}
-        styles={{
-          overlay: (base) => ({
-            ...base,
-            background: "rgba(255, 255, 255, 0.7)",
-            position: "fixed",
-          }),
-          spinner: (base) => ({
-            ...base,
-            width: "100px",
-            "& svg circle": {
-              stroke: primary,
-            },
-          }),
-          content: (base) => ({
-            ...base,
-            color: "black",
-          }),
-        }}
-        spinner
-        text="Lade aktuelle Posts...."
-      >
-        {/* <p>Some content or children or something.</p> */}
-      </LoadingOverlay>
+      // <LoadingOverlay
+      //   active={true}
+      //   fadeSpeed={100}
+      //   styles={{
+      //     overlay: (base) => ({
+      //       ...base,
+      //       background: "rgba(255, 255, 255, 0.7)",
+      //       position: "fixed",
+      //     }),
+      //     spinner: (base) => ({
+      //       ...base,
+      //       width: "100px",
+      //       "& svg circle": {
+      //         stroke: primary,
+      //       },
+      //     }),
+      //     content: (base) => ({
+      //       ...base,
+      //       color: "black",
+      //     }),
+      //   }}
+      //   spinner
+      //   text="Lade aktuelle Posts...."
+      // >
+      //   {/* <p>Some content or children or something.</p> */}
+      // </LoadingOverlay>
+      <div style={{height: "100vh"}}></div>
     );
   if (error) return <h1>Error</h1>;
   if (data){
