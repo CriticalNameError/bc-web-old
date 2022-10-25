@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 import { useCookies } from "react-cookie";
 import GoogleAnalytics from "../helpers/GoogleAnalytics";
+import { primary } from "helpers/colorScheme";
 
 const CookieConsent = (props) => {
   const [showModal, toggleShowModal] = useState(false);
@@ -28,26 +29,36 @@ const CookieConsent = (props) => {
   }, [finishedLoadingDocument]);
   return (
     <>
-      {!cookies.cookie_consent && finishedLoadingDocument && (
-        <Modal data-nosnippet={"data-nosnippet"} isOpen={showModal} className={"modal-lg modal-dialog-centered"}>
-          <ModalHeader className={"p-3 pt-4 px-md-5"}>
-            Cookie-Einstellungen
-          </ModalHeader>
-          <ModalBody className={"p-3 px-md-5"}>
+      {!cookies.cookie_consent && finishedLoadingDocument && showModal && (
+        <div style={{position: "fixed", bottom: 0, width: "100%", zIndex: 1000, backgroundColor: "rgba(255,255,255, 0.8)", fontSize: "0.65rem"}} className={"p-1 pt-2 p-md-3"}>
             Wir verwenden Cookies, um Ihnen ein optimales Webseiten-Erlebnis zu
             bieten. Dazu zählen Cookies, die für den Betrieb der Seite und für
             die Steuerung unserer kommerziellen Unternehmensziele notwendig
             sind, sowie solche, die lediglich zu anonymen Statistikzwecken, für
             Komforteinstellungen oder zur Anzeige personalisierter Inhalte
-            genutzt werden. Sie können selbst entscheiden, welche Kategorien Sie
+            genutzt werden. 
+            {/* Sie können selbst entscheiden, welche Kategorien Sie
             zulassen möchten. Bitte beachten Sie, dass auf Basis Ihrer
             Einstellungen womöglich nicht mehr alle Funktionalitäten der Seite
-            zur Verfügung stehen. Weitere Informationen finden Sie in unseren{" "}
+            zur Verfügung stehen. Weitere Informationen finden Sie in unseren{" "} */}
             <a href={"legal/datenschutz/"}>Datenschutzhinweisen</a>.<br />
             <div class="row mt-3 mb-4 text-center text-md-left">
-           
+         
               <div class="col-md-12 col-sm-12 text-md-right">
-                {" "}
+              <a
+                  style={{color: primary, textDecoration: "underline", marginRight: "15px"}}
+                  onClick={() => {
+                    // toggleShowModal(false);
+
+                    // setCookie("cookie_consent", "required_only", { path: "/" });
+                    // props.toggleShowModal(false);
+                    document
+                      .getElementById("cookie-settings")
+                      .classList.toggle("d-none");
+                  }}
+                >
+                  Einstellungen
+                </a>
                 <Button
                   className={"btn-primary btn-lg"}
                   onClick={() => {
@@ -62,23 +73,7 @@ const CookieConsent = (props) => {
                   Alle akzeptieren
                 </Button>
               </div>
-              <div class="col-md-12 col-sm-12 text-center text-md-right">
-                {" "}
-                <Button
-                  className={"btn"}
-                  onClick={() => {
-                    // toggleShowModal(false);
-
-                    // setCookie("cookie_consent", "required_only", { path: "/" });
-                    // props.toggleShowModal(false);
-                    document
-                      .getElementById("cookie-settings")
-                      .classList.toggle("d-none");
-                  }}
-                >
-                  Einstellungen
-                </Button>
-              </div>
+             
             </div>
             <div class="row mt-3 mb-4 d-none" id={"cookie-settings"}>
               <div class="col-md-12 col-sm-12">
@@ -162,13 +157,13 @@ const CookieConsent = (props) => {
                     setCookie("cookie_consent", "required_only", { path: "/" });
                     props.toggleShowModal(false);
                    
-                  }} className={"btn mt-3 text-center"}>
+                  }} className={"btn mt-3 ml-1 ml-md-0  text-center"}>
                 Auswahl akzeptieren
               </button>
               </div>
             </div>
-          </ModalBody>
-        </Modal>
+            </div>
+         
       )}
       {finishedLoadingDocument && /with_marketing/.test(document.cookie) && (
         <GoogleAnalytics />
