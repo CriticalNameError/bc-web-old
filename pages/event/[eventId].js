@@ -136,14 +136,14 @@ const PostPage = () => {
     console.log(formData);
     console.log(
       notARobot &&
-      DSGVO &&
-      formData["firstName"] &&
-      formData["lastName"] &&
-      formData["streetAndNumber"] &&
-      formData["postalCode"] &&
-      formData["city"] &&
-      formData["amount"] &&
-      formData["salutation"]
+        DSGVO &&
+        formData["firstName"] &&
+        formData["lastName"] &&
+        formData["streetAndNumber"] &&
+        formData["postalCode"] &&
+        formData["city"] &&
+        formData["amount"] &&
+        formData["salutation"]
     );
   }, [formData]);
   useEffect(() => {
@@ -152,23 +152,22 @@ const PostPage = () => {
         ...formData,
         ["stripePriceId"]: data.getEventById.stripePriceId,
         ["eventDescriptionMarkup"]:
-          "<b>" +
           data.getEventById.title +
-          "</b><br/>Location: " +
-          data.getEventById.address +
-          "<br/>Zeit: " +
+          ((data.getEventById.address && data.getEventById.when) ? ("</b><br/>Location: " +
+          data.getEventById.address ) : "") +
+          ((data.getEventById.when && data.getEventById.address) ? ("<br/>Zeit: " +
           convertDateString(data.getEventById.when) +
           ", " +
           getTimeFromDateString(data.getEventById.when) +
-          " Uhr",
+          " Uhr") : ""),
       });
-      console.log(formData)
+      console.log(formData);
     }
   }, [data]);
 
   useEffect(() => {
-    console.log(mutData)
-  }, [mutData])
+    console.log(mutData);
+  }, [mutData]);
   if (loading || paymentLoading)
     return (
       <LoadingOverlay
@@ -204,7 +203,11 @@ const PostPage = () => {
       <>
         <Head>
           <title key={"title"}>{data.getEventById.title}</title>
-          <meta name="description" content={data.getEventById.title} key="description" />
+          <meta
+            name="description"
+            content={data.getEventById.title}
+            key="description"
+          />
         </Head>
         <div
           className={"container-fluid mx-auto px-3 px-md-0 text-center"}
@@ -213,36 +216,50 @@ const PostPage = () => {
             overflowWrap: "break-word",
           }}
         >
-          <div className={"mx-auto text-left mb-5"} style={{ maxWidth: "750px" }}>
-          {!paymentLink && <>
-              <h1>{data.getEventById.title}</h1>
-              <span style={{ fontSize: "23px" }}>
-                Zeit & Ort: {convertDateString(data.getEventById.when)},{" "}
-                {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
-                {data.getEventById.address}
-              </span>
-              <br/>
-              <br/>
-              <center>
-                {" "}
-                <img src={data.getEventById.titleImage.rendition.url} />
-              </center>
-              <div
-                className={"mt-4"}
-                dangerouslySetInnerHTML={{ __html: data.getEventById.description }}
-              ></div>
-               </>
-            }
+          <div
+            className={"mx-auto text-left mb-5"}
+            style={{ maxWidth: "750px" }}
+          >
+            {!paymentLink && (
+              <>
+                <h1>{data.getEventById.title}</h1>
+                {(data.getEventById.when && data.getEventById.address) && (
+                  <span style={{ fontSize: "23px" }}>
+                    Zeit & Ort: {convertDateString(data.getEventById.when)},{" "}
+                    {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
+                    {data.getEventById.address}
+                  </span>
+                )}
+                <br />
+                <br />
+                <center>
+                  {" "}
+                  <img src={data.getEventById.titleImage.rendition.url} />
+                </center>
+                <div
+                  className={"mt-4"}
+                  dangerouslySetInnerHTML={{
+                    __html: data.getEventById.description,
+                  }}
+                ></div>
+              </>
+            )}
 
-              <h3 className={"mt-5 text-bold"}>Anmeldung</h3>
-              <span style={{ fontSize: "18px" }}>
-                Zeit & Ort: {convertDateString(data.getEventById.when)},{" "}
-                {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
-                {data.getEventById.address}
-              </span>
-              <br />
-              <br />
-           
+            {data.getEventById.when && data.getEventById.address ? (
+              <>
+                <h3 className={"mt-5 text-bold mb-0 pb-0"}>Anmeldung</h3>
+                <span style={{ fontSize: "18px" }}>
+                  Zeit & Ort: {convertDateString(data.getEventById.when)},{" "}
+                  {getTimeFromDateString(data.getEventById.when)} Uhr,{" "}
+                  {data.getEventById.address}
+                </span>
+              </>
+            ) : (
+              <h3 className={"mt-5 mb-0 pb-0 text-bold"}>Bestellung</h3>
+            )}
+            <br />
+            <br />
+
             {!formSent && !mutData ? (
               <form
                 role="form"
@@ -477,7 +494,10 @@ const PostPage = () => {
                         company = node;
                       }}
                       onChange={(e) => {
-                        setFormData({ ...formData, ["company"]: e.target.value });
+                        setFormData({
+                          ...formData,
+                          ["company"]: e.target.value,
+                        });
                       }}
                     ></input>
                   </div>
@@ -506,11 +526,16 @@ const PostPage = () => {
                         amount = node;
                       }}
                       onChange={(e) => {
-                        setFormData({ ...formData, ["amount"]: e.target.value });
+                        setFormData({
+                          ...formData,
+                          ["amount"]: e.target.value,
+                        });
                       }}
                     >
                       <option disabled selected>
-                        Anzahl an Tickets
+                        {data.getEventById.when && data.getEventById.address
+                          ? "Anzahl an Tickets"
+                          : "Anzahl"}
                       </option>
                       <option>1</option>
                       <option>2</option>
@@ -570,21 +595,24 @@ const PostPage = () => {
                         style={{ background: cta, color: "white" }}
                         className={
                           "btn btn-lg btn-round pull-right " +
-                          (notARobot && DSGVO &&
-                            formData["email"] &&
-                            formData["phone"] &&
-                            formData["firstName"] &&
-                            formData["lastName"] &&
-                            formData["streetAndNumber"] &&
-                            formData["postalCode"] &&
-                            formData["city"] &&
-                            formData["amount"] &&
-                            formData["salutation"]
+                          (notARobot &&
+                          DSGVO &&
+                          formData["email"] &&
+                          formData["phone"] &&
+                          formData["firstName"] &&
+                          formData["lastName"] &&
+                          formData["streetAndNumber"] &&
+                          formData["postalCode"] &&
+                          formData["city"] &&
+                          formData["amount"] &&
+                          formData["salutation"]
                             ? ""
                             : "disabled")
                         }
                       >
-                        Ticket verbindlich buchen
+                        {data.getEventById.when && data.getEventById.address
+                          ? "Ticket verbindlich buchen"
+                          : "Verbindlich bestellen"}
                       </button>
                     </div>
                   </div>
@@ -592,18 +620,16 @@ const PostPage = () => {
               </form>
             ) : (
               <center>
-                {paymentLink &&
-                  <a
-                    href={paymentLink}
-                    target={"_blank"}
-                  >
+                {paymentLink && (
+                  <a href={paymentLink} target={"_blank"}>
                     <button
                       className={"btn btn-lg"}
                       style={{ background: cta, color: "white" }}
                     >
                       Jetzt Bezahlen
                     </button>
-                  </a>}
+                  </a>
+                )}
               </center>
             )}
           </div>
