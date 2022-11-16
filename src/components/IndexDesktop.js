@@ -1284,9 +1284,10 @@ const IndexDesktop = (props) => {
                       className={"mt-n2 pb-3"}
                       style={{ fontSize: "15px", maxWidth: "100vw" }}
                     >
-                      Stabiles Wachstum und jährliche Renditen im zweistelligen
-                      Prozentbereich - die Index-Entwicklung des Livex 1000
-                      verdeutlicht das Potential der Sachanlage Wein.
+                      Berghaus & Cie. lebt die Anlage in exquisite Weine. Unsere
+                      Experten unterstützen Sie beim Aufbau Ihrer eigenen
+                      Weinsammlung über den günstigen Bezug der Weine, die
+                      ideale Lagerung und den strategischen Verkauf der Weine.
                     </div>
                     <div
                       className={"p-2"}
@@ -1321,16 +1322,58 @@ const IndexDesktop = (props) => {
                             <div class="swiper-slide">
                               <div class="content-wrapper">
                                 <div class="content">
-                                  <div class="swiper-avatar">
-                                    <img
-                                      src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_tb.original.jpg"
-                                      width={"100%"}
-                                    />
-                                  </div>
+                                  <img
+                                    id={"img-tristan"}
+                                    src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_tb.original.jpg"
+                                    width={"100%"}
+                                  />
+
+                                  <iframe
+                                    id={"vid-tristan"}
+                                    className={"d-none"}
+                                    width="100%"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/4g52CC3uyBw"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                  ></iframe>
+
+                                  <br />
                                   <p
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
+                                    <div
+                                      id={"btn-tristan"}
+                                      className={"btn btn-primary pull-right"}
+                                      style={{
+                                        backgroundColor: "red",
+                                        color: "white",
+                                        height: "40px",
+                                        marginTop: "-120px",
+                                      }}
+                                      onClick={() => {
+                                        document
+                                          .getElementById("img-tristan")
+                                          .classList.add("d-none");
+                                        document
+                                          .getElementById("vid-tristan")
+                                          .classList.remove("d-none");
+                                        document
+                                          .getElementById("btn-tristan")
+                                          .classList.add("d-none");
+                                      }}
+                                    >
+                                      <span
+                                        className={"d-inline-block"}
+                                        style={{ fontSize: "15px" }}
+                                      >
+                                        <TriangleRight1 width={"20px"} />
+                                      </span>
+                                      Video abspielen
+                                    </div>
                                     "Die Anlage in exquisite Weine ist
                                     einzigartig, denn Sie ermöglicht es Ihnen,
                                     diversifiziert in einen faszinierenden
@@ -1346,14 +1389,60 @@ const IndexDesktop = (props) => {
                                 <div class="content">
                                   <div class="swiper-avatar">
                                     <img
+                                      id={"img-peter"}
                                       src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_pi.original.jpg"
                                       width={"100%"}
                                     />
+                                    {/* <iframe
+                                    id={"vid-peter"}
+                                    className={"d-none"}
+                                      width="100%"
+                                      height="315"
+                                      src="https://www.youtube.com/embed/10zi2gIi8Lk"
+                                      title="YouTube video player"
+                                      frameborder="0"
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                      allowfullscreen
+                                    ></iframe> */}
                                   </div>
                                   <p
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
+                                    {/* <div
+                                      id={"btn-peter"}
+                                      className={"btn btn-primary pull-right"}
+                                      style={{
+                                        backgroundColor: "red",
+                                        color: "white",
+                                        height: "40px",
+                                        marginTop: "-120px",
+                                      }}
+                                      onClick={() => {
+                                        console.log("button clicked")
+                                        console.log(document
+                                          .getElementById("img-peter"))
+                                        let a = document
+                                          .getElementById("img-peter");
+                                          a.classList.add("d-none");
+                                        let b = document
+                                          .getElementById("vid-peter");
+                                          b.classList.remove("d-none");
+                                        let c = document
+                                          .getElementById("btn-peter");
+                                          c.classList.add("d-none");
+                                          console.log("did DOM manipulations")
+
+                                      }}
+                                    >
+                                      <span
+                                        className={"d-inline-block"}
+                                        style={{ fontSize: "15px" }}
+                                      >
+                                        <TriangleRight1 width={"20px"} />
+                                      </span>
+                                      Video abspielen
+                                    </div> */}
                                     "Wir sind von Beginn an an Ihrer Seite und
                                     stellen Ihnen ein individuelles Portfolio
                                     zusammen. Den professionellen Transport und
@@ -1369,7 +1458,44 @@ const IndexDesktop = (props) => {
                                 <div class="content">
                                   <div class="swiper-avatar">
                                     <img
-                                      src="https://www.expatica.com/app/uploads/sites/6/2014/05/cologne.jpg"
+                                      src="https://bcassets.s3.amazonaws.com/static/images/performance_example.original.png"
+                                      width={"100%"}
+                                    />
+                                  </div>
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
+                                    Viele Anlager unterschätzen die Renditen,
+                                    die mit exquisiten Weinen möglich sind. Der
+                                    Weinmarkt ist stets in Bewegung - wir helfen
+                                    Ihnen bei der Navigation im Markt und zeigen
+                                    Ihnen Weine mit großem Renditepotential.
+                                  </p>
+                                  <a
+                                    href={
+                                      "https://www.berghauscie.de/blog/Weinauktionen"
+                                    }
+                                    target={"_blank"}
+                                  >
+                                    <span
+                                      className={
+                                        "btn btn-primary pull-right mb-2 mt-n2"
+                                      }
+                                    >
+                                      Lengendäre Weinauktionen
+                                    </span>
+                                  </a>
+                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <div class="swiper-avatar">
+                                    <img
+                                      src="https://bcassets.s3.amazonaws.com/static/images/cologne.original.jpg"
                                       width={"100%"}
                                     />
                                   </div>
@@ -1380,7 +1506,7 @@ const IndexDesktop = (props) => {
                                     Berghaus & Cie. ist ein Kölner Unternehmen.
                                     Der regionale Bezug und die Wein-Szene im
                                     Rheinland liegen uns am Herzen. Wir sind
-                                    unter anderem in der Kölner WineBank
+                                    unter anderem in der Kölner wineBANK
                                     vertreten.
                                   </p>
                                   {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
@@ -1392,7 +1518,7 @@ const IndexDesktop = (props) => {
                                 <div class="content">
                                   <div class="swiper-avatar">
                                     <img
-                                      src="https://sothebys-com.brightspotcdn.com/dims4/default/1e8931d/2147483647/strip/true/crop/640x425+0+0/resize/684x454!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot-migration.s3.amazonaws.com%2Fa6%2F3b%2F27%2Fec7a14d135b5003e749844fca760131356ae16ca7033382a7787d3a6be%2Fburgundy-2.jpg"
+                                      src="https://bcassets.s3.amazonaws.com/static/images/romanee.original.jpg"
                                       width={"100%"}
                                     />
                                   </div>
@@ -1400,19 +1526,19 @@ const IndexDesktop = (props) => {
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                    Jeder kennt Wein. Wir glauben, dass Sie Ihre
-                                    Geldanlage durchschauen sollten und dass
-                                    exquisite Weine ein Gegenpol zu
-                                    undurchsichtigen Verträgen wie
-                                    Versicherungen oder CFDs sind. Transparenz
-                                    und Solidität haben für uns einen hohen
-                                    Stellenwert.
+                                    Jeder weiß, was Wein ist. Aber wissen Sie
+                                    beispielsweise auch, was sich wirklich
+                                    hinter einem Versicherungspapier oder einer
+                                    Kryptowährung verbirgt? Wir glauben, dass
+                                    Sie Ihre Geldanlage durchschauen sollten und
+                                    dass exquisiter Wein die beste Alternative
+                                    zu undurchsichtigen Finanzprodukten und
+                                    Anlageklassen darstellt.
                                   </p>
                                   {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
                                 </div>
                               </div>
                             </div>
-                           
                           </div>
 
                           <div class="swiper-nav-wrapper">
