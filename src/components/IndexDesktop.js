@@ -394,9 +394,8 @@ const IndexDesktop = (props) => {
             <Col xs={10}>
               <p className={"text-justify"}>
                 Unsere wineTelligence ist der Kick-Starter für Ihr Wein
-                Investment. Mit ihr erhalten Sie in kürzester Zeit ein
-                individuelles, transparentes Angebot auf der Basis künstlicher
-                Intelligenz.
+                Investment. Mit ihr erhalten Sie in kürzester Zeit eine
+                erste Portfolio-Indikation auf der Basis von künstlicher Intelligenz.
               </p>
             </Col>
             <Col xs={1} className={"my-auto text-light"}>
@@ -1378,7 +1377,7 @@ const IndexDesktop = (props) => {
                                     einzigartig, denn Sie ermöglicht es Ihnen,
                                     diversifiziert in einen faszinierenden
                                     Sachwert zu investieren, der sich stetig mit
-                                    rund 8 - 10 % p.a. verzinst."
+                                    rund <b>8 - 10 % p.a.</b> verzinst."
                                   </p>
                                   <p>- Tristan A. Berghaus, Geschäftsführer</p>
                                 </div>
@@ -1444,12 +1443,40 @@ const IndexDesktop = (props) => {
                                       Video abspielen
                                     </div> */}
                                     "Wir sind von Beginn an an Ihrer Seite und
-                                    stellen Ihnen ein individuelles Portfolio
+                                    stellen Ihnen ein{" "}
+                                    <b>individuelles Portfolio</b>
                                     zusammen. Den professionellen Transport und
                                     die klimageführte Lagerung in der Schweiz
                                     organisieren wir für Sie. "
                                   </p>
                                   <p>- Peter Irnich, Geschäftsführer</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <div class="swiper-avatar">
+                                    <img
+                                      src="https://bcassets.s3.amazonaws.com/static/images/vortrag_wein_berghaus_cie.original.jpg"
+                                      width={"100%"}
+                                    />
+                                  </div>
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
+                                    <b>
+                                      Weinevents wie Weinprobem oder Vorträge
+                                    </b>{" "}
+                                    sind ein gute Möglickeit, seinen Gaumen
+                                    herauszufordern, oder sich weiterzubilden.
+                                    Natürlich steht auch die Vernetzung von
+                                    Weinbegeisterten im Mittelpunkt. Möchten Sie
+                                    ein Event mit unser gemeinsam auf die beine
+                                    Stellen?
+                                  </p>
+                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
                                 </div>
                               </div>
                             </div>
@@ -1466,11 +1493,11 @@ const IndexDesktop = (props) => {
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                    Viele Anlager unterschätzen die Renditen,
-                                    die mit exquisiten Weinen möglich sind. Der
-                                    Weinmarkt ist stets in Bewegung - wir helfen
-                                    Ihnen bei der Navigation im Markt und zeigen
-                                    Ihnen Weine mit großem Renditepotential.
+                                    <b>Eine gute Weinauswahl ist das A und O</b>{" "}
+                                    für den Anlageerfolg. Der Weinmarkt ist
+                                    stets in Bewegung - wir helfen Ihnen bei der
+                                    Navigation im Markt und zeigen Ihnen Weine
+                                    mit großem Renditepotential.
                                   </p>
                                   <a
                                     href={
@@ -1495,29 +1522,6 @@ const IndexDesktop = (props) => {
                                 <div class="content">
                                   <div class="swiper-avatar">
                                     <img
-                                      src="https://bcassets.s3.amazonaws.com/static/images/cologne.original.jpg"
-                                      width={"100%"}
-                                    />
-                                  </div>
-                                  <p
-                                    className={"mt-3 p-3 text-left"}
-                                    style={{ color: "#444" }}
-                                  >
-                                    Berghaus & Cie. ist ein Kölner Unternehmen.
-                                    Der regionale Bezug und die Wein-Szene im
-                                    Rheinland liegen uns am Herzen. Wir sind
-                                    unter anderem in der Kölner wineBANK
-                                    vertreten.
-                                  </p>
-                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
-                                </div>
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="content-wrapper">
-                                <div class="content">
-                                  <div class="swiper-avatar">
-                                    <img
                                       src="https://bcassets.s3.amazonaws.com/static/images/romanee.original.jpg"
                                       width={"100%"}
                                     />
@@ -1526,7 +1530,7 @@ const IndexDesktop = (props) => {
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                    Jeder weiß, was Wein ist. Aber wissen Sie
+                                    <b>Jeder weiß, was Wein ist.</b> Aber wissen Sie
                                     beispielsweise auch, was sich wirklich
                                     hinter einem Versicherungspapier oder einer
                                     Kryptowährung verbirgt? Wir glauben, dass
@@ -1721,8 +1725,7 @@ const IndexDesktop = (props) => {
                       className={"text-white pb-5"}
                       style={{ fontSize: "18px" }}
                     >
-                      Ihr unverbindlicher Portfoliovorschlag in wenigen
-                      Sekunden.
+                      Erhalten Sie eine erste Portfolio-Indikation auf der Basis von künstlicher Intelligenz.
                     </h3>
                     <PreferencesForm />
                   </center>

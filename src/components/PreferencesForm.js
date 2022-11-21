@@ -45,6 +45,7 @@ import Ecology from "icons/ecology";
 import HandsHeart from "icons/hands-heart";
 import Particles from "react-tsparticles";
 import Slider from "react-slick";
+import router from "next/router";
 
 const GET_RECOMMENDATIONS = gql`
   {
@@ -427,6 +428,7 @@ const PreferencesForm = (props) => {
       onCompleted: (data) => {
         if (data.requestRecommendationLinkWithEmail.success == true) {
           console.log(data);
+          router.push("/wt-submitted")
           setStep("check_mails");
         } else if (
           data.requestRecommendationLinkWithEmail.errors[0] ==
