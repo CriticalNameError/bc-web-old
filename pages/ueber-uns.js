@@ -49,7 +49,16 @@ const AboutUs = () => {
     <meta name="description" content="Hinter Berghaus & Cie Wein Investments stecken unterschiedliche Kenner Ihres Faches. Lernen Sie diese Kennen und erfahren Sie, wie Sie von Ihrer Expertise für Ihr Wein Investment profitieren können" key="description"/>
     </Head>
       <div>
+
+
+
+
+
         <div className={"container-fluid"}>
+
+
+
+          
           <div className="row">
             <div className={"col-12 my-auto text-center mt-md-5"}>
               <span
@@ -118,72 +127,6 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div
-            class="container pt-5 animated fadeIn slow mt-mb-5"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <div className={"row mt-5"}>
-              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                {/* <i
-                  class="fas fa-users mb-n3 ml-n3 round-icon-lg"
-                  style={{ color: primary }}
-                ></i> */}
-                <span class="round-icon-lg text-white mb-n3">
-                  <span style={{ width: "40px", height: "40px" }}>
-                    <SportsFan width={"40px"} height={"40px"} strokewidth={3} />
-                  </span>
-                </span>
-              </div>
-              <div class="col-md-8 offset-md-2 col-sm-12">
-                <div class="info info-horizontal">
-                  <div class="card p-3">
-                    <h5 class="" style={{ fontSize: "18px" }}>
-                      Unsere Überzeugung
-                    </h5>
-                    <p class="rext-justify">
-                      Wein ist langfristig gesehen nicht nur eine Ergänzung,
-                      sondern eine echte Alternative zu den üblichen
-                      Anlageformen. Unter fachkundiger Anleitung bringen
-                      Wein Investments nicht nur eine starke Rendite, sondern
-                      bieten darüber hinaus auch einen greifbaren Vermögenswert
-                      mit einer spannenden Zukunft.{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="container mt-sm-n5 animated fadeIn slower">
-            <div className={"row mt-5"}>
-              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
-                {/* <i
-                  class="fas fa-briefcase mb-n3 ml-n3 round-icon-lg"
-                  style={{ color: primary }}
-                ></i> */}
-                <span class="round-icon-lg text-white mb-n3">
-                  <span style={{ width: "40px", height: "40px" }}>
-                    <Spaceship width={"40px"} height={"40px"} strokewidth={3} />
-                  </span>
-                </span>
-              </div>
-              <div class="col-md-8 offset-md-2 col-sm-12">
-                <div class="info info-horizontal">
-                  <div class="card p-3">
-                    <h5 class="" style={{ fontSize: "18px" }}>
-                      Unser Ziel
-                    </h5>
-                    <p class="text-justify">
-                      Wir von Berghaus & Cie. möchte Ihnen als Kunde einen
-                      einfachen und transparente Möglichkeit der Anlage in den
-                      spezialisierten Markt der exquisiten Weine geben.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="row mx-auto mt-5" style={{ maxWidth: "1200px" }}>
             <div
@@ -191,7 +134,7 @@ const AboutUs = () => {
                 "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto " +
                 (width < 768 ? "text-center" : "text-right")
               }
-              style={{ zIndex: 1000 }}
+              style={{ zIndex: 100 }}
             >
               <ImageFromCms
                 title={"tristan_formal"}
@@ -336,7 +279,7 @@ const AboutUs = () => {
                 "col-md-4 col-sm-12 mx-2 mx-sm-n3 mb-n3 mb-sm-0 my-sm-auto " +
                 (width < 768 ? "text-center" : "text-right")
               }
-              style={{ zIndex: 1000 }}
+              style={{ zIndex: 100 }}
             >
               <ImageFromCms
                 title={"peter_formal"}
@@ -400,6 +343,75 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
+
+          <div
+            class="container pt-5 animated fadeIn slow mt-mb-5"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
+            <div className={"row mt-5"}>
+              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+                {/* <i
+                  class="fas fa-users mb-n3 ml-n3 round-icon-lg"
+                  style={{ color: primary }}
+                ></i> */}
+                <span class="round-icon-lg text-white mb-n3">
+                  <span style={{ width: "40px", height: "40px" }}>
+                    <SportsFan width={"40px"} height={"40px"} strokewidth={3} />
+                  </span>
+                </span>
+              </div>
+              <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="info-horizontal">
+                  <div class="card p-3">
+                    <h5 class="" style={{ fontSize: "18px" }}>
+                      Unsere Überzeugung
+                    </h5>
+                    <p class="rext-justify">
+                      Wein ist langfristig gesehen nicht nur eine Ergänzung,
+                      sondern eine echte Alternative zu den üblichen
+                      Anlageformen. Unter fachkundiger Anleitung bringen
+                      Wein Investments nicht nur eine starke Rendite, sondern
+                      bieten darüber hinaus auch einen greifbaren Vermögenswert
+                      mit einer spannenden Zukunft.{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-sm-n5 animated fadeIn slower">
+            <div className={"row mt-5"}>
+              <div className={"col-12 text-center"} style={{ zIndex: 400 }}>
+                {/* <i
+                  class="fas fa-briefcase mb-n3 ml-n3 round-icon-lg"
+                  style={{ color: primary }}
+                ></i> */}
+                <span class="round-icon-lg text-white mb-n3">
+                  <span style={{ width: "40px", height: "40px" }}>
+                    <Spaceship width={"40px"} height={"40px"} strokewidth={3} />
+                  </span>
+                </span>
+              </div>
+              <div class="col-md-8 offset-md-2 col-sm-12">
+                <div class="info-horizontal">
+                  <div class="card p-3">
+                    <h5 class="" style={{ fontSize: "18px" }}>
+                      Unser Ziel
+                    </h5>
+                    <p class="text-justify">
+                      Wir von Berghaus & Cie. möchte Ihnen als Kunde einen
+                      einfachen und transparente Möglichkeit der Anlage in den
+                      spezialisierten Markt der exquisiten Weine geben.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    
 
         
         </div>

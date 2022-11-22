@@ -30,7 +30,7 @@ const CookieConsent = (props) => {
   return (
     <>
       {!cookies.cookie_consent && finishedLoadingDocument && showModal && (
-        <div style={{position: "fixed", bottom: 0, width: "100%", zIndex: 1000, backgroundColor: "rgba(255,255,255, 1)", fontSize: "0.75rem"}} className={"p-1 pt-2 p-md-3"}>
+        <div style={{position: "fixed", bottom: 0, width: "100%", zIndex: 1000, borderTop: "1px solid grey", backgroundColor: "rgba(255,255,255, 1)", fontSize: "0.75rem"}} className={"p-1 pt-2 p-md-3"}>
             Wir verwenden Cookies, um Ihnen ein optimales Webseiten-Erlebnis zu
             bieten. Dazu zählen Cookies, die für den Betrieb der Seite und für
             die Steuerung unserer kommerziellen Unternehmensziele notwendig

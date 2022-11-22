@@ -137,6 +137,26 @@ class MyDocument extends Document {
             type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
+
+
+<script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-243075706-1"
+          ></script>
+          <script
+            async
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag("js", new Date());
+
+                gtag("config", 'UA-243075706-1');`,
+            }}
+          />
+
+
+
+
         </Head>
         <body>
           <Main />

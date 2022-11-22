@@ -44,6 +44,8 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import { cta } from "helpers/colorScheme";
+import { Col, Row } from "reactstrap";
 
 const DynamicLivexPriceChart = dynamic(
   () => import("../src/components/LivexPriceChart"),
@@ -100,7 +102,7 @@ const WineInvestments = () => {
   const [showModal, toggleShowModal] = useState(false);
   const [showContactModal, toggleShowContactModal] = useState(false);
   const [markup, changeMarkup] = useState(null);
-  const [width, setWidth] = useState(null)
+  const [width, setWidth] = useState(null);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
 
   useEffect(() => {
@@ -131,50 +133,83 @@ const WineInvestments = () => {
 
   return (
     <>
-    <Head>
-    <title key={"title"}>Warum sind Wein Investments so gewinnbringend? Und worauf muss man achten?</title>
-    <meta name="description" content="Wie funktioniert der Wein für Fine Wine bzw. die besten Weine der Welt? Worauf muss ich bei teurem Wein achten? Wo kann ich die besten Weine der Welt als Anlage kaufen und mit renditen schnell verkaufen?" key="description"/>
-    </Head>
+      <Head>
+        <title key={"title"}>
+          Warum sind Wein Investments so gewinnbringend? Und worauf muss man
+          achten?
+        </title>
+        <meta
+          name="description"
+          content="Wie funktioniert der Wein für Fine Wine bzw. die besten Weine der Welt? Worauf muss ich bei teurem Wein achten? Wo kann ich die besten Weine der Welt als Anlage kaufen und mit renditen schnell verkaufen?"
+          key="description"
+        />
+      </Head>
       <>
         <CustomModal
           markup={markup}
           showModal={showModal}
           toggleShowModal={toggleShowModal}
         ></CustomModal>
+
+        <div class="page-header header-filter">
+          <div
+            class="page-header-image"
+            style={{
+              backgroundImage:
+                "url('https://bcassets.s3.amazonaws.com/static/images/javier-balseiro-jDU4yYk5Kgs-unsplash.original.jpg')",
+            }}
+          ></div>
+          <div class="container" style={{ height: "100vh" }}>
+            <div class="row h-100">
+              <div
+                class="col-md-7 ml-auto text-right my-auto"
+                style={{ zIndex: 1000 }}
+              >
+                <h1 class="title">Warum Sie in Wein investieren sollten</h1>
+                <h4 class="description">
+                  Wein Investments haben eine lange Tradition unter vermögenden
+                  Familien und institutionellen Anlegern. Und das ist kein
+                  Zufall, denn die Anlage in Wein hat viele einzigartige
+                  Vorteile.
+                </h4>
+                <br />
+                <div class="buttons">
+                  {/* <a
+                    href="#pablo"
+                    class="btn btn-icon btn-link btn-neutral btn-lg"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#pablo"
+                    class="btn btn-icon btn-link btn-neutral btn-lg"
+                  >
+                    <i class="fab fa-facebook-square"></i>
+                  </a>
+                  <a
+                    href="#pablo"
+                    class="btn btn-icon btn-link btn-neutral btn-lg"
+                  >
+                    <i class="fab fa-get-pocket"></i>
+                  </a> */}
+                  <a href="#livex" class="btn btn-primary btn-lg mr-3">
+                    Mehr erfahren
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className={"container-fluid"}>
-          <div className="row">
+          {/* <div className="row">
             <div
               className={
                 "col-12 my-auto text-center animated fadeIn slower mt-md-4"
               }
             >
               <div className={"mb-3 mb-md-4"} style={{ marginTop: "150px" }}>
-                {/* <span style={{ color: primary_t60, display: "inline-block" }}>
-                  {" "}
-                  <BottleWine
-                    width={"30px"}
-                    height={"30px"}
-                    
-                    strokewidth={3}
-                  />
-                </span>
-
-                <span className={"animated fadeInLeft"} style={{ color: primary_t80, display: "inline-block" }}>
-                  <BottleWine
-                    width={"60px"}
-                    height={"60px"}
-                    
-                    strokewidth={4}
-                  />
-                </span>
-                <span className={"animated fadeInLeft slower"} style={{ color: primary, display: "inline-block" }}>
-                  <BottleWine
-                    width={"90px"}
-                    height={"90px"}
-                    
-                    strokewidth={5}
-                  />
-                </span> */}
+              
                 <i
                   className="fas fa-seedling ml-2"
                   style={{
@@ -205,44 +240,19 @@ const WineInvestments = () => {
                 class="animated fadeIn slower mx-auto"
                 style={{ maxWidth: "750px" }}
               >
-                {/* <h1>
-                  <span
-                    style={{
-                      wordBreak: "break-word",
-                      hyphens: "auto",
-                    }}
-                  >
-                    Wein&shy;investments
-                  </span>
-                </h1> */}
+             
                 <p className={"h3"} style={{ fontSize: "24px" }}>
                   Warum Wein nicht nur Genuss, sondern auch hervorragende
                   Renditen bringen kann
                 </p>
-                {/* <a
-                  className={"move-down"}
-                  href={"#livex"}
-                  style={{ cursor: "pointer" }}
-                >
-                  <span
-                    className={"animated infinite pulse"}
-                    style={{ cursor: "pointer", color: primary }}
-                  >
-                    <DownArrow
-                      width={"30px"}
-                      height={"30px"}
-                      strokewidth={3}
-                      style={{ display: "inline-block" }}
-                    />
-                  </span>
-                </a> */}
+             
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className={"mt-md-5 "}>
+          <div className={"mt-md-5 "} id={"livex"}>
             <div
-              class="container text-center pb-5 animated fadeIn slower"
+              class="container text-center pb-5 pt-5 mt-5 pt-sm-2 mt-sm-2 animated fadeIn slower"
               // data-aos="fade-up"
               // data-aos-anchor-placement="center-bottom"
             >
@@ -251,18 +261,84 @@ const WineInvestments = () => {
                   Entwicklung des Liv-Ex 1000 Fine Wine Index
                 </h2>
                 <p className={"px-2 text-left"} style={{ fontSize: "16px" }}>
-                  Wein zeichnet sich durch eine stabile, positive Wertentwicklung
-                  mit geringer Volatilität aus. <br />
+                  Wein zeichnet sich durch eine stabile, positive
+                  Wertentwicklung mit geringer Volatilität aus. <br />
                   Die Zahlen zeigen, dass Wein nicht nur ein Passion Investment
                   ist, sondern auch das Potential hat, ein bedeutender
                   Renditetreiber in Ihrem Portfolio zu werden.
                 </p>
-                <div style={{marginLeft: "18px"}}>
-                <DynamicLivexPriceChart
-                  mobile={width < 800}
-                  height={"450px"}
-                />
-                </div>
+                <Row>
+                  <Col xs={12} sm={6} className={"my-auto"}>
+                    <div class="row">
+                      <div class="text-center text-sm-right  col-md-6">
+                        <img
+                          src="https://bcassets.s3.amazonaws.com/static/images/3050_2006_c.height-300.jpegquality-10.png"
+                          alt="..."
+                          style={{filter: "drop-shadow(rgba(0, 0, 0, 0.77) 10px 10px 10px);"}}
+                        />
+                      </div>
+                      <div class="text-center text-sm-right my-auto col-md-6">
+                        <br />
+                        <div
+                          class="card"
+                          style={{width: "170px", color: "rgb(51, 51, 51)", maxWidth: "170px"}}
+                        >
+                          <div class="text-center card-body">
+                            <b>Bewertung</b>
+                            <br />
+                            <small>des Jahrgangs 1996</small>
+                            <br />
+                            <span style={{fontSize: "1.2rem", fontWeight: "bold"}}>
+                              99
+                              <br />
+                              <small>Robert Parker</small>
+                            </span>
+                          </div>
+                        </div>
+                        <br />
+                        <div
+                          class="card"
+                          style={{width: "170px", color: "rgb(51, 51, 51)", maxWidth: "170px"}}
+                        >
+                          <div class="text-center card-body">
+                            <b>5-Jahres-Performance</b>
+                            <br />
+                            <small>Wertzuwachs in %</small>
+                            <br />
+                            <span
+                              class="text-success"
+                              style={{fontSize: "1.3rem", fontWeight: "bold"}}
+                            >
+                              <svg
+                                height="100%"
+                                width="15px"
+                                viewBox="0 0 64 64"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <g fill="currentColor">
+                                  <path
+                                    d="M5,51H59a1,1,0,0,0,.829-1.56l-27-40a1.039,1.039,0,0,0-1.658,0l-27,40A1,1,0,0,0,5,51Z"
+                                    fill="currentColor"
+                                  ></path>
+                                </g>
+                              </svg>{" "}
+                              141,62 %
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={12} sm={6}>
+                    <div style={{ marginLeft: "18px" }}>
+                      <DynamicLivexPriceChart
+                        mobile={width < 800}
+                        height={"450px"}
+                      />
+                    </div>
+                  </Col>
+                </Row>
+
                 {/* <WineDaxSap /> */}
               </div>
             </div>
@@ -306,7 +382,7 @@ const WineInvestments = () => {
                 ></i> */}
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
-                <div class="info info-horizontal">
+                <div class=" info-horizontal">
                   <div class="card p-3">
                     <h5 class="">Geringe Mengen</h5>
                     <p class="text-left">
@@ -353,7 +429,7 @@ const WineInvestments = () => {
                 ></i> */}
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
-                <div class="info info-horizontal">
+                <div class=" info-horizontal">
                   <div class="card p-3">
                     <h5 class="">Lagerung</h5>
                     <p class="text-left">
@@ -395,7 +471,7 @@ const WineInvestments = () => {
                 ></i> */}
               </div>
               <div class="col-md-8 offset-md-2 col-sm-12">
-                <div class="info info-horizontal">
+                <div class=" info-horizontal">
                   <div class="card p-3">
                     <h5 class="">Angebot & Nachfrage</h5>
                     <p class="text-left">
@@ -428,123 +504,130 @@ const WineInvestments = () => {
             </div>
           </div>
 
-          <div>
-            <div
-              class="container text-center pb-5 mt-5"
-              // data-aos="fade-up"
-              // data-aos-anchor-placement="center-bottom"
-            >
-              <h2 className={"h3 mt-5"} style={{ fontSize: "24px" }}>
-                Was macht ein{" "}
-                <span
-                  style={{
-                    wordBreak: "break-word",
-                    hyphens: "auto",
-                  }}
+          <div class="mod mb-5 mb-sm-3">
+            <div class="mod-i">
+              <div>
+                <div
+                  class="container text-center pb-5 mt-5"
+                  // data-aos="fade-up"
+                  // data-aos-anchor-placement="center-bottom"
                 >
-                  Wein&shy;investment
-                </span>{" "}
-                erfolgreich?
-              </h2>
-              <p style={{ fontSize: "18px" }}>
-                Drei Aspekte spielen für ein profitables Wein Investment eine
-                zentrale Rolle.
-              </p>
+                  <h2 className={"h3 mt-5"} style={{ fontSize: "24px" }}>
+                    Was macht ein{" "}
+                    <span
+                      style={{
+                        wordBreak: "break-word",
+                        hyphens: "auto",
+                      }}
+                    >
+                      Wein&shy;investment
+                    </span>{" "}
+                    erfolgreich?
+                  </h2>
+                  <p style={{ fontSize: "18px" }}>
+                    Drei Aspekte spielen für ein profitables Wein Investment
+                    eine zentrale Rolle.
+                  </p>
 
-              <div class="row pt-5 pb-0">
-                <div class="col-md-4 col-sm-12 text-center ">
-                  <div
-                    className={"transp-card"}
-                    onClick={() =>
-                      changeMarkup(
-                        potentialanalyse_markup,
-                        toggleShowModal(true)
-                      )
-                    }
-                  >
-                    {/* <i
+                  <div class="row pt-5 pb-0">
+                    <div class="col-md-4 col-sm-12 text-center ">
+                      <div
+                        className={"transp-card"}
+                        onClick={() =>
+                          changeMarkup(
+                            potentialanalyse_markup,
+                            toggleShowModal(true)
+                          )
+                        }
+                      >
+                        {/* <i
                       class="now-ui-icons sport_user-run mb-3 round-icon-lg"
                       style={{ color: primary }}
                     ></i> */}
 
-                    <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <BarArrowStraight
-                          width={"45px"}
-                          height={"45px"}
-                          strokewidth={3}
-                        />
-                      </span>
-                    </span>
+                        <span class="round-icon-lg text-white">
+                          <span style={{ width: "40px", height: "40px" }}>
+                            <BarArrowStraight
+                              width={"45px"}
+                              height={"45px"}
+                              strokewidth={3}
+                            />
+                          </span>
+                        </span>
 
-                    <p>
-                      <h3
-                        className={"mb-0 h5 mt-2"}
-                        style={{ fontSize: "18px" }}
+                        <p>
+                          <h3
+                            className={"mb-0 h5 mt-2"}
+                            style={{ fontSize: "18px" }}
+                          >
+                            Potentialanalyse
+                          </h3>
+                          <b className={"text-primary"}>mehr erfahren</b>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 text-center mt-5 mt-md-0">
+                      <div
+                        className={"transp-card"}
+                        onClick={() =>
+                          changeMarkup(provenienz_markup, toggleShowModal(true))
+                        }
                       >
-                        Potentialanalyse
-                      </h3>
-                      <b className={"text-primary"}>mehr erfahren</b>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12 text-center mt-5 mt-md-0">
-                  <div
-                    className={"transp-card"}
-                    onClick={() =>
-                      changeMarkup(provenienz_markup, toggleShowModal(true))
-                    }
-                  >
-                    <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <PaperDiploma
-                          width={"40px"}
-                          height={"40px"}
-                          strokewidth={3}
-                        />
-                      </span>
-                    </span>
-                    <p>
-                      <h3
-                        className={"mb-0 h5 mt-2"}
-                        style={{ fontSize: "18px" }}
+                        <span class="round-icon-lg text-white">
+                          <span style={{ width: "40px", height: "40px" }}>
+                            <PaperDiploma
+                              width={"40px"}
+                              height={"40px"}
+                              strokewidth={3}
+                            />
+                          </span>
+                        </span>
+                        <p>
+                          <h3
+                            className={"mb-0 h5 mt-2"}
+                            style={{ fontSize: "18px" }}
+                          >
+                            Lückenlose Provenienz
+                          </h3>
+                          <b className={"text-primary"}>mehr erfahren</b>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 text-center mt-5 mt-md-0 ">
+                      <div
+                        className={"transp-card"}
+                        onClick={() =>
+                          changeMarkup(
+                            zustand_lagerung_markup,
+                            toggleShowModal(true)
+                          )
+                        }
                       >
-                        Lückenlose Provenienz
-                      </h3>
-                      <b className={"text-primary"}>mehr erfahren</b>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-12 text-center mt-5 mt-md-0 ">
-                  <div
-                    className={"transp-card"}
-                    onClick={() =>
-                      changeMarkup(
-                        zustand_lagerung_markup,
-                        toggleShowModal(true)
-                      )
-                    }
-                  >
-                    {" "}
-                    {/* <i
+                        {" "}
+                        {/* <i
                       class="now-ui-icons ui-2_like mb-3 round-icon-lg"
                       style={{ color: primary }}
                     ></i> */}
-                    <span class="round-icon-lg text-white">
-                      <span style={{ width: "40px", height: "40px" }}>
-                        <ThumbUp
-                          width={"40px"}
-                          height={"40px"}
-                          strokewidth={3}
-                        />
-                      </span>
-                    </span>
-                    <p>
-                      <h3 className={"mb-0 mt-2"} style={{ fontSize: "18px" }}>
-                        Zustand & Lagerung
-                      </h3>
-                      <b className={"text-primary"}>mehr erfahren</b>
-                    </p>
+                        <span class="round-icon-lg text-white">
+                          <span style={{ width: "40px", height: "40px" }}>
+                            <ThumbUp
+                              width={"40px"}
+                              height={"40px"}
+                              strokewidth={3}
+                            />
+                          </span>
+                        </span>
+                        <p>
+                          <h3
+                            className={"mb-0 mt-2"}
+                            style={{ fontSize: "18px" }}
+                          >
+                            Zustand & Lagerung
+                          </h3>
+                          <b className={"text-primary"}>mehr erfahren</b>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -591,7 +674,7 @@ const WineInvestments = () => {
                 </span>
               </div>
               <div class="col-md-5 mb-sm-5">
-                <div class="info info-horizontal pr-md-5">
+                <div class=" info-horizontal pr-md-5">
                   <div class="">
                     <p
                       className={
@@ -624,7 +707,7 @@ const WineInvestments = () => {
                 </span>
               </div>
               <div class="col-md-5  mb-sm-5">
-                <div class="info info-horizontal pr-md-5">
+                <div class="info-horizontal pr-md-5">
                   <div class="">
                     <p
                       className={
@@ -668,7 +751,7 @@ const WineInvestments = () => {
                 </span>
               </div>
               <div class="col-md-5  mb-sm-5">
-                <div class="info info-horizontal pr-md-5">
+                <div class="info-horizontal pr-md-5">
                   <div class="">
                     <p
                       className={
@@ -707,7 +790,7 @@ const WineInvestments = () => {
                 </span>
               </div>
               <div class="col-md-5 mb-sm-5">
-                <div class="info info-horizontal pr-md-5">
+                <div class="info-horizontal pr-md-5">
                   <div class="">
                     <p
                       className={
@@ -750,7 +833,7 @@ const WineInvestments = () => {
                 </span>
               </div>
               <div class="col-md-5  mb-sm-5">
-                <div class="info info-horizontal pr-md-5">
+                <div class=" info-horizontal pr-md-5">
                   <div class="">
                     <p
                       className={
@@ -785,7 +868,7 @@ const WineInvestments = () => {
                 </span>
               </div>
               <div class="col-md-5  mb-sm-5">
-                <div class="info info-horizontal pr-md-5">
+                <div class="info-horizontal pr-md-5">
                   <div class="">
                     <p
                       className={
@@ -809,6 +892,43 @@ const WineInvestments = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className={"section"}>
+              <div
+                id={"calendly-slide"}
+                className={"animated text-center mt-sm-5 pt-5 mb-sm-5 pb-5"}
+              >
+                <h3 style={{ fontSize: "24px" }} className={"mt-3 mb-2"}>
+                  <span className={"pr-2"}></span>
+                  Gespräch vereinbaren
+                </h3>
+                <p className={"mb-3"} style={{ fontSize: "15px" }}>
+                  Wünschen Sie eine persönliche Beratung? <br /> Gerne
+                  beantworten wir Ihre Fragen im Rahmen eines kostenfreien
+                  Beratungstermins.
+                </p>
+                <img
+                  className={"img img-responsive my-2"}
+                  src={
+                    "https://bcassets.s3.amazonaws.com/static/images/berghaus_consultation.original.png"
+                  }
+                  // style={{ maxWidth: "450px" }}
+                />
+                <a
+                  href={"https://calendly.com/berghausundcie/beratungsgesprach"}
+                  target={"_blank"}
+                >
+                  <br />
+                  <button
+                    className={"btn btn-lg text-white"}
+                    style={{ background: cta }}
+                  >
+                    Gespräch vereinbaren
+                  </button>
+                </a>
+                {/* <SelectCalendlyDate width={"60%"} /> */}
               </div>
             </div>
 

@@ -2285,4 +2285,32 @@ html {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
 }
+
+.mod {
+  width: 100vw;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: white;
+  position: relative;
+}
+
+.mod::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(https://bcassets.s3.amazonaws.com/static/images/pexels-pixabay-51947.original.jpg);
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: opacity(0.5) brightness(0.6) blur(2px);
+          filter: opacity(0.5) brightness(0.6) blur(2px);
+}
+
+.mod-i {
+  position: relative;
+}
 /*# sourceMappingURL=demo.css.map */
