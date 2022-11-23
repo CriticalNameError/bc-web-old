@@ -2319,3 +2319,35 @@ $g-background-color-dark: #18181b;
 .mod-i {
   position: relative;
 }
+
+#welcome-slide  {
+  color: white!important;
+  background: linear-gradient(86deg, #f5b73a, #b48ac1, #94c5ff, #676767, #507abf, #ff8900, #ffffff);
+  background-size: 1400% 1400%;
+
+  -webkit-animation: AnimationName 21s ease infinite;
+  -moz-animation: AnimationName 21s ease infinite;
+  -o-animation: AnimationName 21s ease infinite;
+  animation: AnimationName 21s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+}

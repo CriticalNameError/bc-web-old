@@ -702,9 +702,9 @@ const IndexDesktop = (props) => {
                     autoplay
                     loop
                     id="video-background"
+                    className={"d-none"}
                     style={{
                       position: "absolute",
-                      // filter: "grayscale(1)",
                       top: 0,
                       left: 0,
                       minWidth: "100%",
@@ -722,6 +722,7 @@ const IndexDesktop = (props) => {
                       type="video/mp4"
                     />
                   </video>
+                
                   <div
                     className={" px-0 "}
                     style={{
@@ -733,14 +734,32 @@ const IndexDesktop = (props) => {
                       width: "100%",
                       height: "100%",
                       // background: "rgba(255,255,255,0.85)",
-                      backgroundSize: "2px 2px",
-                      backgroundImage:
-                        "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
-                    }}
+                      // backgroundSize: "2px 2px",
+                      // zIndex: "-200",
+                      // backgroundImage:
+                      //   "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
+                   
+                      }}
                     id={"welcome-slide"}
                   >
+                      <div style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      minWidth: "100%",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      zIndex: "0",
+                      color: "white",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      backgroundImage: "url('https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png')"
+                    }}>
+
+                  </div>
                     <div className="row h-100">
-                      <div className={"col-12 my-auto text-center  "}>
+                      <div className={"col-12 my-auto text-center  "} style={{zIndex: 500}}>
                         <div
                           className={"mx-auto my-auto"}
                           // style={{ maxWidth: "750px" }}
@@ -782,7 +801,7 @@ const IndexDesktop = (props) => {
                                                 "p-3 pb-1 pt-0 mb-n3 fade-in-container"
                                               }
                                               style={{
-                                                color: "#333",
+                                                color: "white",
                                                 filter:
                                                   "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
                                                 fontSize: "65px",
@@ -802,6 +821,7 @@ const IndexDesktop = (props) => {
                                               <span
                                                 className={"fade-in-span"}
                                                 style={{
+                                                 
                                                   fontFamily:
                                                     "'Whisper', cursive",
                                                 }}
@@ -1444,7 +1464,7 @@ const IndexDesktop = (props) => {
                                     </div> */}
                                     "Wir sind von Beginn an an Ihrer Seite und
                                     stellen Ihnen ein{" "}
-                                    <b>individuelles Portfolio</b>
+                                    <b>individuelles Portfolio</b>{" "}
                                     zusammen. Den professionellen Transport und
                                     die klimageführte Lagerung in der Schweiz
                                     organisieren wir für Sie. "
