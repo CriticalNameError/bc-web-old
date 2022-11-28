@@ -563,9 +563,9 @@ input[type="range"] {
 }
 
 .scroll-item .scroll-item-date {
-  font-size: .8em;
-  letter-spacing: .02em;
-  opacity: .8;
+  font-size: 0.8em;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
   display: block;
   margin-top: auto;
 }
@@ -609,9 +609,9 @@ input[type="range"] {
   background-size: 20px;
   z-index: 9;
   cursor: pointer;
-  opacity: .6;
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
+  opacity: 0.6;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .scroll-btn:hover {
@@ -635,16 +635,16 @@ input[type="range"] {
 }
 
 .info p.sub {
-  font-size: .7em;
+  font-size: 0.7em;
   margin-top: 7px;
-  opacity: .5;
+  opacity: 0.5;
   line-height: 1;
 }
 
 .info p a {
   color: #6c5dff;
   text-decoration: none;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .info p a:hover {
@@ -665,11 +665,11 @@ footer {
 footer a {
   display: block;
   color: #d7d7d7;
-  font-size: .8em;
+  font-size: 0.8em;
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   padding-bottom: 1px;
   line-height: 1.3;
 }
@@ -802,7 +802,7 @@ input[type="range"]:hover::-webkit-slider-runnable-track {
   background: #714f9b;
 }
 
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
   border-radius: 1px;
@@ -810,7 +810,7 @@ input[type=range]::-moz-range-track {
   background: #957bb4;
 }
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   margin-top: -14px;
   -webkit-transition: all 0.3s;
@@ -980,7 +980,7 @@ input[type=range]::-moz-range-thumb {
 .pills {
   font-size: 12px;
   background: white;
-  padding: .3rem  1.5rem 0.3rem 1.5rem;
+  padding: 0.3rem 1.5rem 0.3rem 1.5rem;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   display: -webkit-box;
@@ -997,7 +997,7 @@ input[type=range]::-moz-range-thumb {
       -ms-flex: 1 1 25%;
           flex: 1 1 25%;
   border-radius: 25px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   white-space: nowrap;
   -webkit-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
@@ -1023,9 +1023,9 @@ input[type=range]::-moz-range-thumb {
   color: inherit;
 }
 
-.pills-item[data-color="#A38CC2"].active {
-  color: #A38CC2;
-  fill: #A38CC2 !important;
+.pills-item[data-color="#a38cc2"].active {
+  color: #a38cc2;
+  fill: #a38cc2 !important;
   background: rgba(163, 140, 194, 0.3);
 }
 
@@ -1035,15 +1035,15 @@ input[type=range]::-moz-range-thumb {
   background: rgba(89, 117, 73, 0.3);
 }
 
-.pills-item[data-color="#91AABF"].active {
-  color: #91AABF;
-  fill: #91AABF !important;
+.pills-item[data-color="#91aabf"].active {
+  color: #91aabf;
+  fill: #91aabf !important;
   background: rgba(145, 170, 191, 0.3);
 }
 
-.pills-item[data-color="#80C488"].active {
-  color: #80C488;
-  fill: #80C488 !important;
+.pills-item[data-color="#80c488"].active {
+  color: #80c488;
+  fill: #80c488 !important;
   background: rgba(128, 196, 136, 0.3);
 }
 
@@ -1079,13 +1079,13 @@ input[type=range]::-moz-range-thumb {
 .swiper-p {
   font-size: 16px;
   line-height: 24px;
-  color: #889DB8;
+  color: #889db8;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -1165,8 +1165,8 @@ input[type=range]::-moz-range-thumb {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider-item-content > * {
@@ -1186,8 +1186,8 @@ input[type=range]::-moz-range-thumb {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .slider-buttons {
@@ -1216,15 +1216,15 @@ input[type=range]::-moz-range-thumb {
 
 .swiper-button-next:before,
 .swiper-button-prev:before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: #fff;
   height: 1px;
   width: 0;
   left: 0;
   bottom: -1px;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .swiper-button-next:hover:before,
@@ -1570,7 +1570,7 @@ html {
 }
 
 #video-background:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -2168,11 +2168,11 @@ html {
   height: auto;
   width: 100%;
   padding: 0;
-  opacity: .2;
+  opacity: 0.2;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 6px;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .swiper .swiper-slide.swiper-slide-active {
@@ -2256,8 +2256,8 @@ html {
 
 .swiper-pagination-bullet {
   background: #fff !important;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -2315,11 +2315,9 @@ html {
 }
 
 #welcome-slide {
-  color: white !important;
-  background: linear-gradient(86deg, #d3b579, #957f9c, #94c5ff, #676767, #6e8bb8, #cc985c, #ffffff);
-  background-size: 1400% 1400%;
-  -webkit-animation: AnimationName 80s ease infinite;
-  animation: AnimationName 80s ease infinite;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png");
 }
 
 @-webkit-keyframes AnimationName {

@@ -752,9 +752,7 @@ const IndexDesktop = (props) => {
                       objectFit: "cover",
                       zIndex: "0",
                       color: "white",
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundImage: "url('https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png')"
+                      background: "rgba(255,255,255,0.75)"
                     }}>
 
                   </div>
@@ -801,7 +799,7 @@ const IndexDesktop = (props) => {
                                                 "p-3 pb-1 pt-0 mb-n3 fade-in-container"
                                               }
                                               style={{
-                                                color: "white",
+                                               
                                                 filter:
                                                   "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
                                                 fontSize: "65px",
