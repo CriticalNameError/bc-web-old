@@ -7,7 +7,7 @@ import { gql, useMutation } from "@apollo/client";
 import { primary } from "helpers/colorScheme";
 
 import BComment from "icons/b-comment";
-
+import EventCreate from "icons/event-create";
 import Atom from "../icons/atom";
 import router, { withRouter } from "next/router";
 
@@ -44,7 +44,20 @@ const CtaFixed = (props) => {
           id={"side-cta"}
           
         >
-          <a
+          {props.call?<a
+            // onClick={(e) => {
+            //   props.toggleShowCalendlyModal(true);
+            //}}
+            href={"https://calendly.com/berghausundcie/beratungsgesprach"} target={"_blank"}
+          >
+            <div className={"text-white"} style={{ fontSize: "14px"}}>
+              Kostenlose<br/>
+              Beratung
+            </div>{" "}
+            <div className={"p-2 text-white"}>
+            <EventCreate width={"30px"} height={"30px"} strokewidth={3} />
+            </div>
+          </a> :<a
             // onClick={(e) => {
             //   props.toggleShowCalendlyModal(true);
             //}}
@@ -57,7 +70,8 @@ const CtaFixed = (props) => {
             <div className={"p-2"}>
             <Atom width={"30px"} height={"30px"} strokewidth={3} />
             </div>
-          </a>
+          </a> }
+          
         </div>
    
     </>

@@ -138,7 +138,7 @@ const IndexDesktop = (props) => {
       let vn = document.getElementById("vert-nav");
       let ct = document.getElementById("contact");
 
-      document.getElementById("side-cta").style.display = "none";
+      // document.getElementById("side-cta").style.display = "none";
 
       vn.style.boxShadow = "none";
       vn.classList.toggle("bg-white");

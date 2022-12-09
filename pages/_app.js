@@ -66,9 +66,9 @@ function MyApp({ Component, pageProps }) {
           )}
          
             <>
-              {width && width > 800 && (
-                <CtaFixed toggleShowCalendlyModal={toggleShowCalendlyModal} />
-              )}
+              {/* {width && width > 800 && ( */}
+                <CtaFixed call toggleShowCalendlyModal={toggleShowCalendlyModal} />
+               {/* )} */}
               <Component
                 {...pageProps}
                 toggleShowCalendlyModal={toggleShowCalendlyModal}
