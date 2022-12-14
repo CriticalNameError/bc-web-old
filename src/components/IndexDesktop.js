@@ -113,6 +113,7 @@ const IndexDesktop = (props) => {
   const [section, setSection] = useState("welcome");
   const [width, setWidth] = useState(1300);
   const [showVideoModal, toggleShowVideoModal] = useState(false);
+  const [watchVideoUrl, setWatchVideoUrl] = useState("")
   const [isPlaying, setIsPlaying] = useState(true);
   const [activePill, setActivePill] = useState(0);
 
@@ -149,6 +150,8 @@ const IndexDesktop = (props) => {
       console.log(error);
     }
   }, []);
+
+  
 
   useEffect(() => {
     let videoElement = document.getElementById("video-background");
@@ -394,8 +397,8 @@ const IndexDesktop = (props) => {
             <Col xs={10}>
               <p className={"text-justify"}>
                 Unsere wineTelligence ist der Kick-Starter für Ihr Wein
-                Investment. Mit ihr erhalten Sie in kürzester Zeit eine
-                erste Portfolio-Indikation auf der Basis von künstlicher Intelligenz.
+                Investment. Mit ihr erhalten Sie in kürzester Zeit eine erste
+                Portfolio-Indikation auf der Basis von künstlicher Intelligenz.
               </p>
             </Col>
             <Col xs={1} className={"my-auto text-light"}>
@@ -561,6 +564,7 @@ const IndexDesktop = (props) => {
 
   return (
     <>
+
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -620,6 +624,69 @@ const IndexDesktop = (props) => {
         }}
         spinner
       ></LoadingOverlay>
+
+<Modal
+                className={"modal-xl modal-dialog-centered modal-transparent"}
+                isOpen={watchVideoUrl}
+                toggle={() => {
+                  setWatchVideoUrl("");
+                 
+                }}
+                style={{ border: 0, backgroundColor: "transparent" }}
+              >
+                <ModalBody
+                  className={"p-0 m-0 animated fadeIn slow bg-white"}
+                  style={{ border: 0 }}
+                >
+                   <iframe
+                                   
+                                    width="100%"
+                                    height="700px"
+                                    src={watchVideoUrl}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    autoplay
+                                  ></iframe>
+                  {/* <video
+                    id="explainer-video"
+                    style={{
+                      minWidth: "100%",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                    webkit-playsinline
+                    playsinline
+                    controls
+                  >
+                    <source
+                      src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_explainer_desktop.mp4"
+                      type="video/mp4"
+                    />
+                  </video> */}
+                </ModalBody>
+                {/* <ModalFooter
+                  className={"text-center"}
+                  style={{ background: "transparent", borderTop: 0 }}
+                >
+                  <button
+                    onClick={() => {
+                      fullpageApi.moveTo(4);
+                      toggleShowVideoModal(false);
+                      document.getElementById("video-background").play();
+                    }}
+                    className={
+                      "mx-auto btn btn-lg bg-cta mt-4 p-3 animated headShake slower infinite "
+                    }
+                    style={{ fontSize: "18px" }}
+                  >
+                    wineTelligence ausprobieren
+                  </button>
+                </ModalFooter> */}
+              </Modal>
 
       <ReactFullpage
         //fullpage options
@@ -722,7 +789,7 @@ const IndexDesktop = (props) => {
                       type="video/mp4"
                     />
                   </video>
-                
+
                   <div
                     className={" px-0 "}
                     style={{
@@ -738,26 +805,28 @@ const IndexDesktop = (props) => {
                       // zIndex: "-200",
                       // backgroundImage:
                       //   "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
-                   
-                      }}
+                    }}
                     id={"welcome-slide"}
                   >
-                      <div style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      minWidth: "100%",
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      zIndex: "0",
-                      color: "white",
-                      background: "rgba(255,255,255,0.75)"
-                    }}>
-
-                  </div>
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        minWidth: "100%",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        zIndex: "0",
+                        color: "white",
+                        background: "rgba(255,255,255,0.75)",
+                      }}
+                    ></div>
                     <div className="row h-100">
-                      <div className={"col-12 my-auto text-center  "} style={{zIndex: 500}}>
+                      <div
+                        className={"col-12 my-auto text-center  "}
+                        style={{ zIndex: 500 }}
+                      >
                         <div
                           className={"mx-auto my-auto"}
                           // style={{ maxWidth: "750px" }}
@@ -799,7 +868,6 @@ const IndexDesktop = (props) => {
                                                 "p-3 pb-1 pt-0 mb-n3 fade-in-container"
                                               }
                                               style={{
-                                               
                                                 filter:
                                                   "drop-shadow(rgba(100, 100, 100, 0.6) 1px 1px 2px)",
                                                 fontSize: "65px",
@@ -819,7 +887,6 @@ const IndexDesktop = (props) => {
                                               <span
                                                 className={"fade-in-span"}
                                                 style={{
-                                                 
                                                   fontFamily:
                                                     "'Whisper', cursive",
                                                 }}
@@ -1345,17 +1412,7 @@ const IndexDesktop = (props) => {
                                     width={"100%"}
                                   />
 
-                                  <iframe
-                                    id={"vid-tristan"}
-                                    className={"d-none"}
-                                    width="100%"
-                                    height="315"
-                                    src="https://www.youtube.com/embed/4g52CC3uyBw"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                  ></iframe>
+                                  
 
                                   <br />
                                   <p
@@ -1372,15 +1429,7 @@ const IndexDesktop = (props) => {
                                         marginTop: "-120px",
                                       }}
                                       onClick={() => {
-                                        document
-                                          .getElementById("img-tristan")
-                                          .classList.add("d-none");
-                                        document
-                                          .getElementById("vid-tristan")
-                                          .classList.remove("d-none");
-                                        document
-                                          .getElementById("btn-tristan")
-                                          .classList.add("d-none");
+                                       setWatchVideoUrl("https://www.youtube.com/embed/4V1sIZthsgI")
                                       }}
                                     >
                                       <span
@@ -1404,30 +1453,21 @@ const IndexDesktop = (props) => {
                             <div class="swiper-slide">
                               <div class="content-wrapper">
                                 <div class="content">
-                                  <div class="swiper-avatar">
-                                    <img
+                                <img
                                       id={"img-peter"}
                                       src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_pi.original.jpg"
                                       width={"100%"}
                                     />
-                                    {/* <iframe
-                                    id={"vid-peter"}
-                                    className={"d-none"}
-                                      width="100%"
-                                      height="315"
-                                      src="https://www.youtube.com/embed/10zi2gIi8Lk"
-                                      title="YouTube video player"
-                                      frameborder="0"
-                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                      allowfullscreen
-                                    ></iframe> */}
-                                  </div>
+
+                                  
+
+                                  <br />
                                   <p
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                    {/* <div
-                                      id={"btn-peter"}
+                                    <div
+                                      
                                       className={"btn btn-primary pull-right"}
                                       style={{
                                         backgroundColor: "red",
@@ -1436,20 +1476,7 @@ const IndexDesktop = (props) => {
                                         marginTop: "-120px",
                                       }}
                                       onClick={() => {
-                                        console.log("button clicked")
-                                        console.log(document
-                                          .getElementById("img-peter"))
-                                        let a = document
-                                          .getElementById("img-peter");
-                                          a.classList.add("d-none");
-                                        let b = document
-                                          .getElementById("vid-peter");
-                                          b.classList.remove("d-none");
-                                        let c = document
-                                          .getElementById("btn-peter");
-                                          c.classList.add("d-none");
-                                          console.log("did DOM manipulations")
-
+                                       setWatchVideoUrl("https://www.youtube.com/embed/10zi2gIi8Lk")
                                       }}
                                     >
                                       <span
@@ -1459,45 +1486,167 @@ const IndexDesktop = (props) => {
                                         <TriangleRight1 width={"20px"} />
                                       </span>
                                       Video abspielen
-                                    </div> */}
+                                    </div>
+                                    <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
+                                 
                                     "Wir sind von Beginn an an Ihrer Seite und
                                     stellen Ihnen ein{" "}
-                                    <b>individuelles Portfolio</b>{" "}
-                                    zusammen. Den professionellen Transport und
-                                    die klimageführte Lagerung in der Schweiz
+                                    <b>individuelles Portfolio</b> zusammen. Den
+                                    professionellen Transport und die
+                                    klimageführte Lagerung in der Schweiz
                                     organisieren wir für Sie. "
                                   </p>
                                   <p>- Peter Irnich, Geschäftsführer</p>
+                                  </p>
+                                  
                                 </div>
                               </div>
                             </div>
+                            
                             <div class="swiper-slide">
                               <div class="content-wrapper">
                                 <div class="content">
                                   <div class="swiper-avatar">
-                                    <img
+                                    {/* <img
                                       src="https://bcassets.s3.amazonaws.com/static/images/vortrag_wein_berghaus_cie.original.jpg"
                                       width={"100%"}
-                                    />
+                                    /> */}
+                                    <a
+                                      // href="https://www.berghauscie.de/blog/was-verbirgt-sich-hinter-en-primeur-bei-wein-investments"
+                                      // taget={"_blank"}
+                                      class="badgeOffer"
+                                    >
+                                      <svg viewBox="0 0 210 210">
+                                        <g stroke="none" fill="none">
+                                          <path
+                                            d="M22,104.5 C22,58.9365081 58.9365081,22 104.5,22 C150.063492,22 187,58.9365081 187,104.5"
+                                            id="top"
+                                          ></path>
+                                          <path
+                                            d="M22,104.5 C22,150.063492 58.9365081,187 104.5,187 C150.063492,187 187,150.063492 187,104.5"
+                                            id="bottom"
+                                          ></path>
+                                        </g>
+                                        <circle
+                                          cx="105"
+                                          cy="105"
+                                          r="62"
+                                          stroke="currentColor"
+                                          stroke-width="1"
+                                          fill="none"
+                                        />
+                                        <text
+                                          width="200"
+                                          font-size="18"
+                                          fill="currentColor"
+                                        >
+                                          <textPath
+                                            startOffset="50%"
+                                            text-anchor="middle"
+                                            alignment-baseline="middle"
+                                            xlinkHref="#top"
+                                          >
+                                            Save the Date!
+                                          </textPath>
+                                        </text>
+                                        <text
+                                          width="200"
+                                          font-size="18"
+                                          fill="currentColor"
+                                        >
+                                          <textPath
+                                            startOffset="50%"
+                                            text-anchor="middle"
+                                            alignment-baseline="middle"
+                                            xlinkHref="#bottom"
+                                          >
+                                            ...ab Anfang Mai!
+                                          </textPath>
+                                        </text>
+                                      </svg>
+                                      <span>En Primeur</span>
+                                    </a>
                                   </div>
                                   <p
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                    <b>
-                                      Weinevents wie Weinprobem oder Vorträge
-                                    </b>{" "}
-                                    sind ein gute Möglickeit, seinen Gaumen
-                                    herauszufordern, oder sich weiterzubilden.
-                                    Natürlich steht auch die Vernetzung von
-                                    Weinbegeisterten im Mittelpunkt. Möchten Sie
-                                    ein Event mit unser gemeinsam auf die beine
-                                    Stellen?
+                                    <b>En Primeur ist die Gelegenheit</b> zu
+                                    optimalen Konditionen in Wein zu
+                                    investieren. Dabei handelt es sich um den
+                                    Verkauf des Weins, der sich noch beim
+                                    Château im Fass befindet. Möchten Sie sich
+                                    Ihre Allokation sichern? Sprechen Sie uns
+                                    einfach an!
                                   </p>
-                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
+                                  <div className={"row pb-2"}>
+                                  <div className={"col text-right"}> <a href={"https://www.berghauscie.de/blog/was-verbirgt-sich-hinter-en-primeur-bei-wein-investments"} target={"_blank"} className={"btn btn-sm"}>Mehr erfahren</a>
+                                 </div>
+                                  <div className={"col text-left"}> <a href={"https://calendly.com/berghausundcie/beratungsgesprach"} target={"_blank"} className={"btn btn-sm bg-cta"}>En Primeur reservieren</a>
+                                  </div>
+                                  </div>
+                                 {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
                                 </div>
                               </div>
                             </div>
+
+                            <div class="swiper-slide">
+                              <div class="content-wrapper">
+                                <div class="content">
+                                  <img
+                                    id={"img-tristan1"}
+                                    src="https://bcassets.s3.amazonaws.com/static/images/babos.original.png"
+                                    width={"100%"}
+                                  />
+
+                                  {/* <iframe
+                                    id={"vid-tristan1"}
+                                    className={"d-none"}
+                                    width="100%"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/_Ftgc9UN_wI"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                  ></iframe> */}
+
+                                  <br />
+                                  <p
+                                    className={"mt-3 p-3 text-left"}
+                                    style={{ color: "#444" }}
+                                  >
+                                    <div
+                                      id={"btn-tristan1"}
+                                      className={"btn btn-primary pull-right"}
+                                      style={{
+                                        backgroundColor: "red",
+                                        color: "white",
+                                        height: "40px",
+                                        marginTop: "-120px",
+                                      }}
+                                      onClick={() => {
+                                        setWatchVideoUrl("https://www.youtube.com/embed/_Ftgc9UN_wI")
+                                       }}
+                                    >
+                                      <span
+                                        className={"d-inline-block"}
+                                        style={{ fontSize: "15px" }}
+                                      >
+                                        <TriangleRight1 width={"20px"} />
+                                      </span>
+                                      Video abspielen
+                                    </div>
+                                    Geschäftsfürer Tristan Berghaus stellt sich den kritischen Fragen der "Investment-Babos". Klares Fazit der Investmentprofis: Wein ist noch interessanter als Luxus-Uhren und Oldtimer.
+                                  </p>
+                                  <p>- Tristan A. Berghaus, Geschäftsführer</p>
+                                </div>
+                              </div>
+                            </div>
+
                             <div class="swiper-slide">
                               <div class="content-wrapper">
                                 <div class="content">
@@ -1548,8 +1697,8 @@ const IndexDesktop = (props) => {
                                     className={"mt-3 p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                    <b>Jeder weiß, was Wein ist.</b> Aber wissen Sie
-                                    beispielsweise auch, was sich wirklich
+                                    <b>Jeder weiß, was Wein ist.</b> Aber wissen
+                                    Sie beispielsweise auch, was sich wirklich
                                     hinter einem Versicherungspapier oder einer
                                     Kryptowährung verbirgt? Wir glauben, dass
                                     Sie Ihre Geldanlage durchschauen sollten und
@@ -1743,7 +1892,8 @@ const IndexDesktop = (props) => {
                       className={"text-white pb-5"}
                       style={{ fontSize: "18px" }}
                     >
-                      Erhalten Sie eine erste Portfolio-Indikation auf der Basis von künstlicher Intelligenz.
+                      Erhalten Sie eine erste Portfolio-Indikation auf der Basis
+                      von künstlicher Intelligenz.
                     </h3>
                     <PreferencesForm />
                   </center>

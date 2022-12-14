@@ -2343,4 +2343,122 @@ html {
     background-position: 100% 0%;
   }
 }
+
+@-webkit-keyframes badgeAnim {
+  0% {
+    background-position: 0% 97%;
+  }
+  50% {
+    background-position: 100% 4%;
+  }
+  100% {
+    background-position: 0% 97%;
+  }
+}
+
+@keyframes badgeAnim {
+  0% {
+    background-position: 0% 97%;
+  }
+  50% {
+    background-position: 100% 4%;
+  }
+  100% {
+    background-position: 0% 97%;
+  }
+}
+
+.badgeOffer {
+  height: 350px;
+  position: relative;
+  letter-spacing: 0.08em;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: rotate(-14deg);
+          transform: rotate(-14deg);
+  text-align: center;
+  -webkit-filter: drop-shadow(0.25em 0.7em 0.95em rgba(0, 0, 0, 0.8));
+          filter: drop-shadow(0.25em 0.7em 0.95em rgba(0, 0, 0, 0.8));
+  /* min-size + (max-size - min-size) * ( (100vw - min-width) / ( max-width - min-width) ) */
+  font-size: calc(11px + 14 * ( (100vw - 420px) / ( 860) ));
+}
+
+@media screen and (max-width: 420px) {
+  .badgeOffer {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .badgeOffer {
+    font-size: 25px;
+  }
+}
+
+.badgeOffer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  background: linear-gradient(230deg, #857552, #bfac82, #999999, #714f9b);
+  background-size: 800% 800%;
+  -webkit-animation: badgeAnim 11s ease infinite;
+  animation: badgeAnim 11s ease infinite;
+}
+
+.badgeOffer:hover {
+  color: #fff;
+  text-decoration: none !important;
+  -webkit-transform: rotate(-10deg) scale(1.05);
+          transform: rotate(-10deg) scale(1.05);
+}
+
+.badgeOffer:hover::before {
+  opacity: 0.9;
+}
+
+.badgeOffer svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  z-index: 0;
+  width: 10em;
+  height: 10em;
+}
+
+.badgeOffer span {
+  display: block;
+  background: linear-gradient(230deg, #857552, #bfac82, #999999, #714f9b);
+  background-size: 800% 800%;
+  -webkit-animation: badgeAnim 11s ease infinite;
+  animation: badgeAnim 11s ease infinite;
+  border-radius: 0.4em;
+  padding: 0.4em 1em;
+  z-index: 1;
+  min-width: 11em;
+  border: 1px solid;
+  text-transform: uppercase;
+}
 /*# sourceMappingURL=demo.css.map */
