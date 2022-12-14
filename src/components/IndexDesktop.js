@@ -1488,10 +1488,9 @@ const IndexDesktop = (props) => {
                                       Video abspielen
                                     </div>
                                     <p
-                                    className={"mt-3 p-3 text-left"}
+                                    className={"p-3 text-left"}
                                     style={{ color: "#444" }}
                                   >
-                                 
                                     "Wir sind von Beginn an an Ihrer Seite und
                                     stellen Ihnen ein{" "}
                                     <b>individuelles Portfolio</b> zusammen. Den
@@ -1499,7 +1498,7 @@ const IndexDesktop = (props) => {
                                     klimageführte Lagerung in der Schweiz
                                     organisieren wir für Sie. "
                                   </p>
-                                  <p>- Peter Irnich, Geschäftsführer</p>
+                                  <p className={"text-center"}>- Peter Irnich, Geschäftsführer</p>
                                   </p>
                                   
                                 </div>
@@ -1518,6 +1517,7 @@ const IndexDesktop = (props) => {
                                       // href="https://www.berghauscie.de/blog/was-verbirgt-sich-hinter-en-primeur-bei-wein-investments"
                                       // taget={"_blank"}
                                       class="badgeOffer"
+                                      style={{color: "white"}}
                                     >
                                       <svg viewBox="0 0 210 210">
                                         <g stroke="none" fill="none">
@@ -1640,7 +1640,7 @@ const IndexDesktop = (props) => {
                                       </span>
                                       Video abspielen
                                     </div>
-                                    Geschäftsfürer Tristan Berghaus stellt sich den kritischen Fragen der "Investment-Babos". Klares Fazit der Investmentprofis: Wein ist noch interessanter als Luxus-Uhren und Oldtimer.
+                                    Geschäftsführer Tristan A. Berghaus stellt sich den kritischen Fragen der "Investment-Babos". Klares Fazit der Investmentprofis: Wein ist noch interessanter als Luxus-Uhren und Oldtimer.
                                   </p>
                                   <p>- Tristan A. Berghaus, Geschäftsführer</p>
                                 </div>
