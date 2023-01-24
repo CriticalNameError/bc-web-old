@@ -113,10 +113,10 @@ const IndexDesktop = (props) => {
   const [section, setSection] = useState("welcome");
   const [width, setWidth] = useState(1300);
   const [showVideoModal, toggleShowVideoModal] = useState(false);
-  const [watchVideoUrl, setWatchVideoUrl] = useState("")
+  const [watchVideoUrl, setWatchVideoUrl] = useState("");
   const [isPlaying, setIsPlaying] = useState(true);
   const [activePill, setActivePill] = useState(0);
-
+  const [activeTestimonial, setActiveTestimonial] = useState(false);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
   const [finishedLoadingDocument, toggleFinishedLoadingDocument] =
     useState(false);
@@ -150,8 +150,6 @@ const IndexDesktop = (props) => {
       console.log(error);
     }
   }, []);
-
-  
 
   useEffect(() => {
     let videoElement = document.getElementById("video-background");
@@ -357,6 +355,45 @@ const IndexDesktop = (props) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const testimonials = {
+    stengel: (
+      <div>
+        {" "}
+        <b>Warum investieren Sie in Sachwerte?</b>
+        <br />
+        <br />
+        Ich investiere in Sachwerte, da diese einen natürlichen Inflationsschutz
+        bieten. Sachwerte sind unabhängig von Nominalwerten und haben einen
+        inhärenten Wert. Dies gilt insbesondere für bekannte Marken, da diese
+        einen Sammlerwert besitzen und zudem ein breiteres Publikum
+        interessieren. Hier bleibt die Nachfrage kontinuierlich hoch.
+        <br />
+        <br />
+        <b>Warum haben Sie sich für ein Weininvestment entschieden?</b> <br />
+        <br />
+        Als Finanzfachmann beschäftigte ich mich seit vielen Jahrzehnten mit den
+        unterschiedlichsten Anlagemöglichkeiten. In der Assetklasse “Sachwerte”
+        habe ich mich insbesondere für Wein entschieden, da die Weine meines
+        Portfolios teilweise schon seit Jahrhunderten zu Spitzenpreisen
+        gehandelt werden. Zudem ist Wein der einzige Sachwert, bei dem sich die
+        Qualität durch die Lagerung verbessert. Durch den Konsum sinkt
+        kontinuierlich das Angebot, während die Nachfrage mit Eintritt der
+        Trinkreife steigt und sich infolgedessen der Wert der Weine erhöht.
+        <br />
+        <br />
+        <b>Warum haben Sie sich für Berghaus & Cie. entschieden? </b>
+        <br />
+        <br />
+        Die kompetente und freundliche Beratung des Teams hat mich von Beginn an
+        angesprochen. Neben dem stets angenehmen persönlichen Austausch
+        ermöglicht mir gleichzeitig das digitale Weindepot von Berghaus & Cie.
+        einen detaillierten Überblick meines Portfolios. Zudem vertraue ich auf
+        die professionelle Lagerung in der Schweiz mit der auch steuerliche
+        Vorteile einhergehen.{" "}
+      </div>
+    ),
+  };
 
   const swipeHandlers = useSwipeable({
     onSwiped: (eventData) => {
@@ -564,7 +601,6 @@ const IndexDesktop = (props) => {
 
   return (
     <>
-
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -596,7 +632,7 @@ const IndexDesktop = (props) => {
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
       </Head>
       <LoadingOverlay
-        active={!videoReady}
+        active={false}
         fadeSpeed={100}
         styles={{
           overlay: (base) => ({
@@ -625,50 +661,31 @@ const IndexDesktop = (props) => {
         spinner
       ></LoadingOverlay>
 
-<Modal
-                className={"modal-xl modal-dialog-centered modal-transparent"}
-                isOpen={watchVideoUrl}
-                toggle={() => {
-                  setWatchVideoUrl("");
-                 
-                }}
-                style={{ border: 0, backgroundColor: "transparent" }}
-              >
-                <ModalBody
-                  className={"p-0 m-0 animated fadeIn slow bg-white"}
-                  style={{ border: 0 }}
-                >
-                   <iframe
-                                   
-                                    width="100%"
-                                    height="700px"
-                                    src={watchVideoUrl}
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    autoplay
-                                  ></iframe>
-                  {/* <video
-                    id="explainer-video"
-                    style={{
-                      minWidth: "100%",
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                    }}
-                    webkit-playsinline
-                    playsinline
-                    controls
-                  >
-                    <source
-                      src="https://bcassets.s3.eu-west-1.amazonaws.com/bc_explainer_desktop.mp4"
-                      type="video/mp4"
-                    />
-                  </video> */}
-                </ModalBody>
-                {/* <ModalFooter
+      <Modal
+        className={"modal-xl modal-dialog-centered modal-transparent"}
+        isOpen={watchVideoUrl}
+        toggle={() => {
+          setWatchVideoUrl("");
+        }}
+        style={{ border: 0, backgroundColor: "transparent" }}
+      >
+        <ModalBody
+          className={"p-0 m-0 animated fadeIn slow bg-white"}
+          style={{ border: 0 }}
+        >
+          <iframe
+            width="100%"
+            height="700px"
+            src={watchVideoUrl}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            autoplay
+          ></iframe>
+         
+        </ModalBody>
+        {/* <ModalFooter
                   className={"text-center"}
                   style={{ background: "transparent", borderTop: 0 }}
                 >
@@ -686,7 +703,7 @@ const IndexDesktop = (props) => {
                     wineTelligence ausprobieren
                   </button>
                 </ModalFooter> */}
-              </Modal>
+      </Modal>
 
       <ReactFullpage
         //fullpage options
@@ -711,6 +728,21 @@ const IndexDesktop = (props) => {
         render={({ state, fullpageApi }) => {
           return (
             <>
+              <Modal
+                className={"modal-xl modal-dialog-centered modal-transparent"}
+                isOpen={activeTestimonial}
+                toggle={() => {
+                  setActiveTestimonial(false);
+                }}
+                style={{ border: 0, backgroundColor: "transparent" }}
+              >
+                <ModalBody
+                  className={"p-1 p-md-4 m-0 animated fadeIn slow bg-white"}
+                  style={{ border: 0 }}
+                >
+                  {testimonials[activeTestimonial]}
+                </ModalBody>
+              </Modal>
               <Modal
                 className={"modal-xl modal-dialog-centered modal-transparent"}
                 isOpen={showVideoModal}
@@ -1412,8 +1444,6 @@ const IndexDesktop = (props) => {
                                     width={"100%"}
                                   />
 
-                                  
-
                                   <br />
                                   <p
                                     className={"mt-3 p-3 text-left"}
@@ -1429,7 +1459,9 @@ const IndexDesktop = (props) => {
                                         marginTop: "-120px",
                                       }}
                                       onClick={() => {
-                                       setWatchVideoUrl("https://www.youtube.com/embed/4V1sIZthsgI")
+                                        setWatchVideoUrl(
+                                          "https://www.youtube.com/embed/4V1sIZthsgI"
+                                        );
                                       }}
                                     >
                                       <span
@@ -1453,13 +1485,11 @@ const IndexDesktop = (props) => {
                             <div class="swiper-slide">
                               <div class="content-wrapper">
                                 <div class="content">
-                                <img
-                                      id={"img-peter"}
-                                      src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_pi.original.jpg"
-                                      width={"100%"}
-                                    />
-
-                                  
+                                  <img
+                                    id={"img-peter"}
+                                    src="https://bcassets.s3.amazonaws.com/static/images/berghaus_cie_pi.original.jpg"
+                                    width={"100%"}
+                                  />
 
                                   <br />
                                   <p
@@ -1467,7 +1497,6 @@ const IndexDesktop = (props) => {
                                     style={{ color: "#444" }}
                                   >
                                     <div
-                                      
                                       className={"btn btn-primary pull-right"}
                                       style={{
                                         backgroundColor: "red",
@@ -1476,7 +1505,9 @@ const IndexDesktop = (props) => {
                                         marginTop: "-120px",
                                       }}
                                       onClick={() => {
-                                       setWatchVideoUrl("https://www.youtube.com/embed/10zi2gIi8Lk")
+                                        setWatchVideoUrl(
+                                          "https://www.youtube.com/embed/10zi2gIi8Lk"
+                                        );
                                       }}
                                     >
                                       <span
@@ -1488,23 +1519,24 @@ const IndexDesktop = (props) => {
                                       Video abspielen
                                     </div>
                                     <p
-                                    className={"p-3 text-left"}
-                                    style={{ color: "#444" }}
-                                  >
-                                    "Wir sind von Beginn an an Ihrer Seite und
-                                    stellen Ihnen ein{" "}
-                                    <b>individuelles Portfolio</b> zusammen. Den
-                                    professionellen Transport und die
-                                    klimageführte Lagerung in der Schweiz
-                                    organisieren wir für Sie. "
+                                      className={"p-3 text-left"}
+                                      style={{ color: "#444" }}
+                                    >
+                                      "Wir sind von Beginn an an Ihrer Seite und
+                                      stellen Ihnen ein{" "}
+                                      <b>individuelles Portfolio</b> zusammen.
+                                      Den professionellen Transport und die
+                                      klimageführte Lagerung in der Schweiz
+                                      organisieren wir für Sie. "
+                                    </p>
+                                    <p className={"text-center"}>
+                                      - Peter Irnich, Geschäftsführer
+                                    </p>
                                   </p>
-                                  <p className={"text-center"}>- Peter Irnich, Geschäftsführer</p>
-                                  </p>
-                                  
                                 </div>
                               </div>
                             </div>
-                            
+
                             <div class="swiper-slide">
                               <div class="content-wrapper">
                                 <div class="content">
@@ -1517,7 +1549,7 @@ const IndexDesktop = (props) => {
                                       // href="https://www.berghauscie.de/blog/was-verbirgt-sich-hinter-en-primeur-bei-wein-investments"
                                       // taget={"_blank"}
                                       class="badgeOffer"
-                                      style={{color: "white"}}
+                                      style={{ color: "white" }}
                                     >
                                       <svg viewBox="0 0 210 210">
                                         <g stroke="none" fill="none">
@@ -1583,12 +1615,32 @@ const IndexDesktop = (props) => {
                                     einfach an!
                                   </p>
                                   <div className={"row pb-2"}>
-                                  <div className={"col text-right"}> <a href={"https://www.berghauscie.de/blog/was-verbirgt-sich-hinter-en-primeur-bei-wein-investments"} target={"_blank"} className={"btn btn-sm"}>Mehr erfahren</a>
-                                 </div>
-                                  <div className={"col text-left"}> <a href={"https://calendly.com/berghausundcie/beratungsgesprach"} target={"_blank"} className={"btn btn-sm bg-cta"}>En Primeur reservieren</a>
+                                    <div className={"col text-right"}>
+                                      {" "}
+                                      <a
+                                        href={
+                                          "https://www.berghauscie.de/blog/was-verbirgt-sich-hinter-en-primeur-bei-wein-investments"
+                                        }
+                                        target={"_blank"}
+                                        className={"btn btn-sm"}
+                                      >
+                                        Mehr erfahren
+                                      </a>
+                                    </div>
+                                    <div className={"col text-left"}>
+                                      {" "}
+                                      <a
+                                        href={
+                                          "https://calendly.com/berghausundcie/beratungsgesprach"
+                                        }
+                                        target={"_blank"}
+                                        className={"btn btn-sm bg-cta"}
+                                      >
+                                        En Primeur reservieren
+                                      </a>
+                                    </div>
                                   </div>
-                                  </div>
-                                 {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
+                                  {/* <p class="cite">- Alison Tetrick, Cyclist</p> */}
                                 </div>
                               </div>
                             </div>
@@ -1629,8 +1681,10 @@ const IndexDesktop = (props) => {
                                         marginTop: "-120px",
                                       }}
                                       onClick={() => {
-                                        setWatchVideoUrl("https://www.youtube.com/embed/_Ftgc9UN_wI")
-                                       }}
+                                        setWatchVideoUrl(
+                                          "https://www.youtube.com/embed/_Ftgc9UN_wI"
+                                        );
+                                      }}
                                     >
                                       <span
                                         className={"d-inline-block"}
@@ -1640,7 +1694,11 @@ const IndexDesktop = (props) => {
                                       </span>
                                       Video abspielen
                                     </div>
-                                    Geschäftsführer Tristan A. Berghaus stellt sich den kritischen Fragen der "Investment-Babos". Klares Fazit der Investmentprofis: Wein ist noch interessanter als Luxus-Uhren und Oldtimer.
+                                    Geschäftsführer Tristan A. Berghaus stellt
+                                    sich den kritischen Fragen der
+                                    "Investment-Babos". Klares Fazit der
+                                    Investmentprofis: Wein ist noch
+                                    interessanter als Luxus-Uhren und Oldtimer.
                                   </p>
                                   <p>- Tristan A. Berghaus, Geschäftsführer</p>
                                 </div>
@@ -1752,7 +1810,188 @@ const IndexDesktop = (props) => {
                     backgroundImage: "linear-gradient(#f8f8f8, #c0ad82)",
                   }}
                 >
-                  <center id="process-slide" className={"animated d-none"}>
+                  <section class="py-4 position-relative">
+                    <div
+                      id="carousel-testimonials"
+                      class="carousel slide carousel-team"
+                    >
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="container">
+                            <div class="row my-auto">
+                              <div class="col-md-5 p-2 pb-md-5 ms-lg-auto">
+                                <div class="my-auto">
+                                  <img
+                                    class="w-100 border-radius-md my-auto"
+                                    src="https://bcassets.s3.amazonaws.com/static/images/Dr.-Ruediger-von-Stengel.jpg_186589999-square.original.png"
+                                    alt="First slide"
+                                    style={{ filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2))", transform: "scaleX(-1)", borderRadius: "50%" }}
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-lg-5 col-md-7 me-lg-auto position-relative">
+                                <p class="text-sm font-weight-bold mb-1">
+                                  - Customer Story
+                                </p>
+                                <div class="rating p">
+                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+                <i class="fas fa-star text-warning" aria-hidden="true"></i>
+              </div>
+                                <h3 class="text-dark">
+                                  Die kompetente und freundliche Beratung des
+                                  Teams hat mich von Beginn an angesprochen.
+                                </h3>
+                                <p class="my-4">
+                                  <i>
+                                    "Neben dem stets angenehmen persönlichen
+                                    Austausch ermöglicht mir gleichzeitig das
+                                    digitale Weindepot von Berghaus & Cie. einen
+                                    detaillierten Überblick meines Portfolios..."
+                                    <a className={"text-primary"} style={{cursor: "pointer"}} onClick={()=>setActiveTestimonial("stengel")}> weiterlesen</a>
+                                    <br/>
+                                   
+                                  </i>
+                                </p>
+                                <div class="author">
+                                  <div>
+                                    <div class="name ps-2">
+                                      <b>Dr. Rüdiger von Stengel</b>
+                                      <div>
+                                        <small>
+                                          Gesellschafter - Art-Invest Real
+                                          Estate Management GmbH & Co. KG
+                                        </small>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="w-25 ms-auto opacity-2 mt-n8">
+                                  <svg
+                                    width="110px"
+                                    height="110px"
+                                    viewBox="0 0 270 270"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  >
+                                    <title>quote-down</title>
+                                    <g
+                                      stroke="none"
+                                      stroke-width="1"
+                                      fill="none"
+                                      fill-rule="evenodd"
+                                    >
+                                      <path
+                                        d="M107.000381,49.033238 C111.792099,48.01429 115.761022,48.6892564 116.625294,50.9407629 C117.72393,53.8028077 113.174473,58.3219079 107.017635,60.982801 C107.011653,60.9853863 107.00567,60.9879683 106.999688,60.990547 C106.939902,61.0219589 106.879913,61.0439426 106.820031,61.0659514 C106.355389,61.2618887 105.888177,61.4371549 105.421944,61.5929594 C88.3985192,68.1467602 80.3242628,76.9161885 70.3525495,90.6906738 C60.0774843,104.884196 54.9399518,119.643717 54.9399518,134.969238 C54.9399518,138.278158 55.4624127,140.716309 56.5073346,142.283691 C57.2039492,143.328613 57.9876406,143.851074 58.8584088,143.851074 C59.7291771,143.851074 61.0353294,143.241536 62.7768659,142.022461 C68.3497825,138.016927 75.4030052,136.01416 83.9365338,136.01416 C93.8632916,136.01416 102.658051,140.063232 110.320811,148.161377 C117.983572,156.259521 121.814952,165.88151 121.814952,177.027344 C121.814952,188.695638 117.417572,198.970703 108.622813,207.852539 C99.828054,216.734375 89.1611432,221.175293 76.6220807,221.175293 C61.9931745,221.175293 49.3670351,215.166992 38.7436627,203.150391 C28.1202903,191.133789 22.8086041,175.024577 22.8086041,154.822754 C22.8086041,131.312012 30.0359804,110.239421 44.490733,91.6049805 C58.2196377,73.906272 74.3541002,59.8074126 102.443135,50.4450748 C102.615406,50.3748509 102.790055,50.3058192 102.966282,50.2381719 C104.199241,49.7648833 105.420135,49.3936487 106.596148,49.1227802 L107,49 Z M233.000381,49.033238 C237.792099,48.01429 241.761022,48.6892564 242.625294,50.9407629 C243.72393,53.8028077 239.174473,58.3219079 233.017635,60.982801 C233.011653,60.9853863 233.00567,60.9879683 232.999688,60.990547 C232.939902,61.0219589 232.879913,61.0439426 232.820031,61.0659514 C232.355389,61.2618887 231.888177,61.4371549 231.421944,61.5929594 C214.398519,68.1467602 206.324263,76.9161885 196.352549,90.6906738 C186.077484,104.884196 180.939952,119.643717 180.939952,134.969238 C180.939952,138.278158 181.462413,140.716309 182.507335,142.283691 C183.203949,143.328613 183.987641,143.851074 184.858409,143.851074 C185.729177,143.851074 187.035329,143.241536 188.776866,142.022461 C194.349783,138.016927 201.403005,136.01416 209.936534,136.01416 C219.863292,136.01416 228.658051,140.063232 236.320811,148.161377 C243.983572,156.259521 247.814952,165.88151 247.814952,177.027344 C247.814952,188.695638 243.417572,198.970703 234.622813,207.852539 C225.828054,216.734375 215.161143,221.175293 202.622081,221.175293 C187.993174,221.175293 175.367035,215.166992 164.743663,203.150391 C154.12029,191.133789 148.808604,175.024577 148.808604,154.822754 C148.808604,131.312012 156.03598,110.239421 170.490733,91.6049805 C184.219638,73.906272 200.3541,59.8074126 228.443135,50.4450748 C228.615406,50.3748509 228.790055,50.3058192 228.966282,50.2381719 C230.199241,49.7648833 231.420135,49.3936487 232.596148,49.1227802 L233,49 Z"
+                                        fill="#48484A"
+                                        fill-rule="nonzero"
+                                        transform="translate(135.311778, 134.872794) scale(-1, -1) translate(-135.311778, -134.872794) "
+                                      ></path>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="container">
+                            <div class="row align-items-center">
+                              <div class="col-md-5 p-lg-5 ms-lg-auto">
+                                <div class="p-3">
+                                  <img
+                                    class="w-100 border-radius-md shadow"
+                                    src="../../assets/img/ivana.jpg"
+                                    alt="First slide"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-lg-5 col-md-7 me-lg-auto">
+                                <p class="text-sm font-weight-bold mb-1">
+                                  - Customer Story
+                                </p>
+                                <h3 class="text-dark">
+                                  Awesome services! Fast and secure.
+                                </h3>
+                                <p class="my-4">
+                                  <i>
+                                    "Wealth creation is an evolutionarily recent
+                                    positive-sum game. Status is an old zero-sum
+                                    game. Those attacking wealth creation are
+                                    often just seeking status."
+                                  </i>
+                                </p>
+                                <div class="author align-items-center">
+                                  <div class="avatar rounded-circle shadow bg-gradient-dark">
+                                    <img
+                                      src={
+                                        "../../assets/img//logos/white-logos/logo-google-white.svg"
+                                      }
+                                      alt="logo"
+                                    />
+                                  </div>
+                                  <div class="name ps-2">
+                                    <span>Ivana Goerge</span>
+                                    <div>
+                                      <small>CFO - Google</small>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="w-25 ms-auto opacity-2 mt-n8">
+                                  <svg
+                                    width="110px"
+                                    height="110px"
+                                    viewBox="0 0 270 270"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  >
+                                    <title>quote-down</title>
+                                    <g
+                                      stroke="none"
+                                      stroke-width="1"
+                                      fill="none"
+                                      fill-rule="evenodd"
+                                    >
+                                      <path
+                                        d="M107.000381,49.033238 C111.792099,48.01429 115.761022,48.6892564 116.625294,50.9407629 C117.72393,53.8028077 113.174473,58.3219079 107.017635,60.982801 C107.011653,60.9853863 107.00567,60.9879683 106.999688,60.990547 C106.939902,61.0219589 106.879913,61.0439426 106.820031,61.0659514 C106.355389,61.2618887 105.888177,61.4371549 105.421944,61.5929594 C88.3985192,68.1467602 80.3242628,76.9161885 70.3525495,90.6906738 C60.0774843,104.884196 54.9399518,119.643717 54.9399518,134.969238 C54.9399518,138.278158 55.4624127,140.716309 56.5073346,142.283691 C57.2039492,143.328613 57.9876406,143.851074 58.8584088,143.851074 C59.7291771,143.851074 61.0353294,143.241536 62.7768659,142.022461 C68.3497825,138.016927 75.4030052,136.01416 83.9365338,136.01416 C93.8632916,136.01416 102.658051,140.063232 110.320811,148.161377 C117.983572,156.259521 121.814952,165.88151 121.814952,177.027344 C121.814952,188.695638 117.417572,198.970703 108.622813,207.852539 C99.828054,216.734375 89.1611432,221.175293 76.6220807,221.175293 C61.9931745,221.175293 49.3670351,215.166992 38.7436627,203.150391 C28.1202903,191.133789 22.8086041,175.024577 22.8086041,154.822754 C22.8086041,131.312012 30.0359804,110.239421 44.490733,91.6049805 C58.2196377,73.906272 74.3541002,59.8074126 102.443135,50.4450748 C102.615406,50.3748509 102.790055,50.3058192 102.966282,50.2381719 C104.199241,49.7648833 105.420135,49.3936487 106.596148,49.1227802 L107,49 Z M233.000381,49.033238 C237.792099,48.01429 241.761022,48.6892564 242.625294,50.9407629 C243.72393,53.8028077 239.174473,58.3219079 233.017635,60.982801 C233.011653,60.9853863 233.00567,60.9879683 232.999688,60.990547 C232.939902,61.0219589 232.879913,61.0439426 232.820031,61.0659514 C232.355389,61.2618887 231.888177,61.4371549 231.421944,61.5929594 C214.398519,68.1467602 206.324263,76.9161885 196.352549,90.6906738 C186.077484,104.884196 180.939952,119.643717 180.939952,134.969238 C180.939952,138.278158 181.462413,140.716309 182.507335,142.283691 C183.203949,143.328613 183.987641,143.851074 184.858409,143.851074 C185.729177,143.851074 187.035329,143.241536 188.776866,142.022461 C194.349783,138.016927 201.403005,136.01416 209.936534,136.01416 C219.863292,136.01416 228.658051,140.063232 236.320811,148.161377 C243.983572,156.259521 247.814952,165.88151 247.814952,177.027344 C247.814952,188.695638 243.417572,198.970703 234.622813,207.852539 C225.828054,216.734375 215.161143,221.175293 202.622081,221.175293 C187.993174,221.175293 175.367035,215.166992 164.743663,203.150391 C154.12029,191.133789 148.808604,175.024577 148.808604,154.822754 C148.808604,131.312012 156.03598,110.239421 170.490733,91.6049805 C184.219638,73.906272 200.3541,59.8074126 228.443135,50.4450748 C228.615406,50.3748509 228.790055,50.3058192 228.966282,50.2381719 C230.199241,49.7648833 231.420135,49.3936487 232.596148,49.1227802 L233,49 Z"
+                                        fill="#48484A"
+                                        fill-rule="nonzero"
+                                        transform="translate(135.311778, 134.872794) scale(-1, -1) translate(-135.311778, -134.872794) "
+                                      ></path>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                        class="carousel-control-prev text-darker"
+                        href="#carousel-testimonials"
+                        role="button"
+                        data-slide="prev"
+                      >
+                        <i class="fas fa-chevron-left"></i>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a
+                        class="carousel-control-next text-darker"
+                        href="#carousel-testimonials"
+                        role="button"
+                        data-slide="next"
+                      >
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                  </section>
+
+                  {/* <center id="process-slide" className={"animated d-none"}>
                     <h2>
                       Spannender Prozess - wir erschließen Ihnen den Markt und
                       Sie profitieren davon.
@@ -1832,7 +2071,7 @@ const IndexDesktop = (props) => {
                       </div>
                       {pillContent[activePill]}
                     </div>
-                  </center>
+                  </center> */}
                   <div
                     className={"p-4 text-center w-100"}
                     style={{ position: "absolute", bottom: "15px" }}

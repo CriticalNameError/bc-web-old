@@ -1290,8 +1290,27 @@ const PreferencesForm = (props) => {
                     toggleShowPortfolioModal(false);
                   }}
                 ></i>
+                 <video
+                    
+                    style={{
+                      minWidth: "100%",
+                      width: "100%",
+                      
+                      display: "block",
+                    }}
+                    webkit-playsinline
+                    playsinline
+                    controls
+                  >
+                    <source
+                      src="https://bcassets.s3.eu-west-1.amazonaws.com/wintelligence.m4v"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <br/>
+                  <br/>
                 <h3 className={"text-center"} style={{ fontSize: "21px" }}>
-                  Bitte teilen Sie uns Ihre Email-Adresse mit, damit wir Ihnen Ihr
+                  Bitte teilen Sie uns Ihre Kontaktdaten mit, damit wir Ihnen Ihr
                   individuelles Portfolio zusenden können.
                 </h3>
                 {emailValid == false && email.length > 7 ? (
