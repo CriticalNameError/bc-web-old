@@ -2368,6 +2368,20 @@ $badge-max-size: 25px;
     50%{background-position:100% 4%}
     100%{background-position:0% 97%}
 }
+
+#cru-club-background-video:first-child{
+   filter: brightness(40%) blur(2px);
+   transform: scaleX(-1)
+ }
+
+ .section-story-overview .image-container {
+  height: 335px;
+  position: relative;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 0.25rem;
+}
+
 .badgeOffer {
     height: 350px;
    

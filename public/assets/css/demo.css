@@ -2368,6 +2368,21 @@ html {
   }
 }
 
+#cru-club-background-video:first-child {
+  -webkit-filter: brightness(40%) blur(2px);
+          filter: brightness(40%) blur(2px);
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.section-story-overview .image-container {
+  height: 335px;
+  position: relative;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 0.25rem;
+}
+
 .badgeOffer {
   height: 350px;
   position: relative;
