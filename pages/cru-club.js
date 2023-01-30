@@ -217,7 +217,7 @@ const CruClub = () => {
           </div>
         </div>
 
-        <section class="py-4 px-5 mt-5 position-relative" id={"intro"}>
+        <section class="py-1 px-5 mt-5 position-relative" id={"intro"}>
           <div id="carousel-testimonials" class="carousel slide carousel-team">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -377,11 +377,11 @@ const CruClub = () => {
 
 
         <div>
-      <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 d-none d-sm-none d-md-block border-radius-xl border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0" src="https://bcassets.s3.amazonaws.com/static/images/Weinkiste.original.png"/>
+      
     </div>
 
 
-    <div class="pricing-3 row section-image" style={{backgroundSize: "cover", height: "70vh",backgroundImage: "url('https://bcassets.s3.amazonaws.com/static/images/pexels-cottonbro-studio-3171815.original.jpg')"}} id="pricing-3">
+    <div class="pricing-3 mt-5 row section-image" style={{backgroundSize: "cover", height: "70vh",backgroundImage: "url('https://bcassets.s3.amazonaws.com/static/images/pexels-cottonbro-studio-3171815.original.jpg')"}} id="pricing-3">
 <div class="container my-auto">
 <div class="row">
 <div class="col-md-6 ml-auto mr-auto text-center">
