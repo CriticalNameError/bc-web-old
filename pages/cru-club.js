@@ -313,7 +313,7 @@ const CruClub = () => {
                 <div class="container" style={{ maxWidth: "100%" }}>
                   <div class="row my-auto">
                     <div class="col-md-5 col-lg-6 p-2 pb-md-5 ms-lg-auto">
-                      <div class="my-auto texe-center">
+                      <div class="my-auto text-center">
                         <img
                           class=" border-radius-md my-auto"
                           src="https://bcassets.s3.amazonaws.com/static/images/berghaus_sqaure.original.png"
