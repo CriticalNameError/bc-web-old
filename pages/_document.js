@@ -139,7 +139,14 @@ class MyDocument extends Document {
           />
 
 
-<script
+
+
+
+
+
+        </Head>
+
+        <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-243075706-1"
           ></script>
@@ -153,11 +160,6 @@ class MyDocument extends Document {
                 gtag("config", 'UA-243075706-1');`,
             }}
           />
-
-
-
-
-        </Head>
         <script type="text/javascript" dangerouslySetInnerHTML={{
         __html: `var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
