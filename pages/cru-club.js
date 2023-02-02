@@ -126,6 +126,8 @@ const CruClub = () => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
+    let sidecta = document.getElementById("side-cta")
+    sidecta.classList.add("d-none")
     // const getMaximumServicesCardHeight = () => {
     //   let cards = document.getElementsByClassName("services-card");
     //   //let cardsHeights = cards.map(c => c.style.height);
@@ -722,8 +724,7 @@ const CruClub = () => {
                           alt="First slide"
                           style={{
                             objectFit: "cover",
-                            width: "500px",
-                            height: "500px",
+                            width: "100%",
                             // borderRadius: "50%",
                             // animation: "float 3s infinite ease-in-out",
                           }}
@@ -843,6 +844,7 @@ const CruClub = () => {
               position: "relative",
               display: "flex",
               background: "rgba(150,150,150,0.5)",
+              overflowX: "hidden",
             }}
           >
             <div class="mx-auto my-auto" style={{ position: "relative" }}>
