@@ -2350,7 +2350,13 @@ $badge-color: #fff;
 $badge-min-size: 11px;
 $badge-max-size: 25px;
 
+#wineBox {
+  animation: mymove 1.5s infinite ease-in-out;
+}
 
+@keyframes mymove {
+  50% {filter: drop-shadow(10px 10px 10px #714f9b);}
+}
 
 
 @-webkit-keyframes badgeAnim {
@@ -2413,7 +2419,7 @@ $badge-max-size: 25px;
      }
      
  }
- 
+
 .badgeOffer {
     height: 350px;
    

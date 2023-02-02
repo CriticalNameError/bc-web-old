@@ -2344,6 +2344,25 @@ html {
   }
 }
 
+#wineBox {
+  -webkit-animation: mymove 1.5s infinite ease-in-out;
+          animation: mymove 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes mymove {
+  50% {
+    -webkit-filter: drop-shadow(10px 10px 10px #714f9b);
+            filter: drop-shadow(10px 10px 10px #714f9b);
+  }
+}
+
+@keyframes mymove {
+  50% {
+    -webkit-filter: drop-shadow(10px 10px 10px #714f9b);
+            filter: drop-shadow(10px 10px 10px #714f9b);
+  }
+}
+
 @-webkit-keyframes badgeAnim {
   0% {
     background-position: 0% 97%;
