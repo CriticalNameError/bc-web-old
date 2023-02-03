@@ -962,7 +962,7 @@ const CruClub = () => {
                         class="category"
                         style={{ fontWeight: "bold", fontSize: "15px" }}
                       >
-                        Junior
+                        Starter
                       </h5>
                       <h1 class="card-title">
                         <span style={{ fontSize: "35px" }}>119 €</span>
