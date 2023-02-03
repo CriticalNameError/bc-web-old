@@ -1091,13 +1091,15 @@ const CruClub = () => {
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Die Pakete kommen jeweils zum Mitte des Monats März, Juni,
+                        Die Pakete kommen jeweils zur Mitte des Monats im März, Juni,
                         September und Dezember bei Ihnen an. Wir versenden alle
                         Pakete mit DHL. Sobald Ihr Paket unser Lager verlässt,
                         bekommen Sie von uns eine E-Mail mit den
                         Versandinformationen und Ihrem Versand-Tracking-Link. So
                         können Sie jederzeit einsehen, wo sich Ihr Paket gerade
-                        befindet und wann es ankommt. Bei DHL können Sie einen
+                        befindet und wann es ankommt. 
+                        </p>
+                        <p>Bei DHL können Sie einen
                         Wunschtag, einen Wunschort, einen Wunschnachbarn und
                         eine Wunschzeit bestimmen.Sie können auch eine
                         Packstation oder eine Filiale für die Lieferung
