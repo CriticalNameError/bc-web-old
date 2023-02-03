@@ -45,7 +45,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import { cta } from "helpers/colorScheme";
-import { Col, Row } from "reactstrap";
+import { Col, Modal, ModalBody, ModalFooter, Row } from "reactstrap";
 
 let potentialanalyse_markup = (
   <div className={"p-4"}>
@@ -97,6 +97,10 @@ const CruClub = () => {
   const [markup, changeMarkup] = useState(null);
   const [width, setWidth] = useState(null);
   const [maxServicesCardHeight, setMaxServicesCardHeight] = useState(null);
+  const [age, toggleAge] = useState(false);
+  const [agbs, toggleAgbs] = useState(false);
+  const [dsgvo, toggleDsgvo] = useState(false);
+
   function setTextAnimation(
     delay,
     duration,
@@ -161,6 +165,88 @@ const CruClub = () => {
           key="description"
         />
       </Head>
+      <Modal
+        className={"modal-xl modal-dialog-centered"}
+        isOpen={showModal}
+        style={{borderRadius: "8px"}}
+        toggle={() => {
+          toggleShowModal(false);
+         
+        }}
+        
+      >
+        <ModalBody
+          className={"p-3 m-0 animated fadeIn slow"}
+          style={{ border: 0, }}
+        >
+          <div class="form-check">
+            <label class="form-check-label">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                onClick={() => toggleAge(!age)}
+              />
+              <span class="form-check-sign"></span>
+              Ich bin mindestens 18 Jahre alt
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                onClick={() => toggleAgbs(!agbs)}
+              />
+              <span class="form-check-sign"></span>
+              Ich akzeptiere die{" "}
+              <a
+                className={"text-dark"}
+                href={"https://www.berghaus-cie.com/legal/datenschutz"}
+              >
+                Datenschutzrichtlinien
+              </a>
+              .
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                onClick={() => toggleDsgvo(!dsgvo)}
+              />
+              <span class="form-check-sign"></span>
+              Ich akzeptiere die{" "}
+              <a
+                className={"text-dark"}
+                href={
+                  "https://www.berghaus-cie.com/legal/allgemeine-geschaeftsbedingungen"
+                }
+              >
+                Allgemeinen Geschäftsbedingungen
+              </a>
+              .
+            </label>
+          </div>
+        </ModalBody>
+        <ModalFooter
+          className={"text-center bg-white"}
+          style={{  borderTop: 0 }}
+        >
+          <div className={"mx-auto"}>
+            <button
+              disabled={!age || !agbs || !dsgvo}
+              href={showModal}
+              className={
+                "mx-auto btn btn-lg bg-cta p-3 mt-4 "
+              }
+              style={{ fontSize: "18px" }}
+            >
+              Zur Zahlung<br/><div style={{fontSize: "12px", marginTop: "-4px"}}>Sie werden zu Stripe weitergeletet</div>
+            </button>
+          </div>
+        </ModalFooter>
+      </Modal>
       <>
         {/* <CustomModal
           markup={markup}
@@ -884,9 +970,10 @@ const CruClub = () => {
                         <li>kostenloser Versand</li>
                       </ul>
                       <a
-                        href="https://buy.stripe.com/dR63es5iQ0VL70AcMT"
+                        onClick={()=>toggleShowModal("https://buy.stripe.com/dR63es5iQ0VL70AcMT")}
                         target={"_blank"}
-                        class="w-100 btn btn-lg btn-primary"
+                        class="w-100 btn btn-lg btn-primary text-white"
+                        style={{background: primary_t50}}
                       >
                         Starten
                       </a>
@@ -917,9 +1004,10 @@ const CruClub = () => {
                         <li>kostenloser Versand</li>
                       </ul>
                       <a
-                        href="https://buy.stripe.com/cN26qEdPm6g5doY3ci"
+                        onClick={()=>toggleShowModal("https://buy.stripe.com/cN26qEdPm6g5doY3ci")}
                         target={"_blank"}
-                        class="w-100 btn btn-lg btn-neutral"
+                        style={{fontWeight: "bold"}}
+                        class="w-100 btn btn-lg btn-neutral text-dark"
                       >
                         Starten
                       </a>
@@ -1143,7 +1231,8 @@ const CruClub = () => {
                     <AccordionItemPanel>
                       <p>
                         Natürlich, auf Anfrage können Weine als 6er-Karton
-                        nachbestellt werden. Schreiben Sie uns einfach an info@berghauscie.de.
+                        nachbestellt werden. Schreiben Sie uns einfach an
+                        info@berghauscie.de.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
