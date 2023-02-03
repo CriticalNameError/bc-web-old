@@ -185,6 +185,7 @@ const CruClub = () => {
                 class="form-check-input"
                 type="checkbox"
                 onClick={() => toggleAge(!age)}
+                checked={age}
               />
               <span class="form-check-sign"></span>
               Ich bin mindestens 18 Jahre alt
@@ -195,7 +196,8 @@ const CruClub = () => {
               <input
                 class="form-check-input"
                 type="checkbox"
-                onClick={() => toggleAgbs(!agbs)}
+                checked={dsgvo}
+                onClick={() => toggleDsgvo(!dsgvo)}
               />
               <span class="form-check-sign"></span>
               Ich akzeptiere die{" "}
@@ -213,7 +215,8 @@ const CruClub = () => {
               <input
                 class="form-check-input"
                 type="checkbox"
-                onClick={() => toggleDsgvo(!dsgvo)}
+                onClick={() => toggleAgbs(!agbs)}
+                checked={agbs}
               />
               <span class="form-check-sign"></span>
               Ich akzeptiere die{" "}
@@ -234,6 +237,7 @@ const CruClub = () => {
           style={{  borderTop: 0 }}
         >
           <div className={"mx-auto"}>
+            <a href={showModal} target={"_blank"}>
             <button
               disabled={!age || !agbs || !dsgvo}
               href={showModal}
@@ -241,9 +245,11 @@ const CruClub = () => {
                 "mx-auto btn btn-lg bg-cta p-3 mt-4 "
               }
               style={{ fontSize: "18px" }}
+              
             >
               Zur Zahlung<br/><div style={{fontSize: "12px", marginTop: "-4px"}}>Sie werden zu Stripe weitergeletet</div>
             </button>
+            </a>
           </div>
         </ModalFooter>
       </Modal>
@@ -594,7 +600,7 @@ const CruClub = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundImage:
-              "url('https://bcassets.s3.amazonaws.com/static/images/pexels-ari-roberts-9393230.original.jpg')",
+              "url('https://bcassets.s3.amazonaws.com/static/images/pexels-engin-akyurt-8485685.original.jpg')",
           }}
         >
           <div
@@ -964,7 +970,7 @@ const CruClub = () => {
                       </h1>
                       <ul>
                         <li>3 Flaschen pro Quartal</li>
-                        <li>rot, weiß, rosé gemischt</li>
+                        <li>rot, weiß, rosé und sparkling gemischt</li>
                         <li>Geschenk in jeder Kiste</li>
                         <li>jederzeit kündbar</li>
                         <li>kostenloser Versand</li>
@@ -998,14 +1004,13 @@ const CruClub = () => {
                       </h1>
                       <ul>
                         <li>6 Flaschen pro Quartal</li>
-                        <li>rot, weiß, rosé gemischt</li>
+                        <li>rot, weiß, rosé und sparkling gemischt</li>
                         <li>Geschenk in jeder Kiste</li>
                         <li>jederzeit kündbar</li>
                         <li>kostenloser Versand</li>
                       </ul>
                       <a
-                        onClick={()=>toggleShowModal("https://buy.stripe.com/cN26qEdPm6g5doY3ci")}
-                        target={"_blank"}
+                        onClick={()=>toggleShowModal("https://buy.stripe.com/cN26qEdPm6g5doY3ci")} 
                         style={{fontWeight: "bold"}}
                         class="w-100 btn btn-lg btn-neutral text-dark"
                       >
@@ -1060,7 +1065,7 @@ const CruClub = () => {
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        m Drei-Monats-Takt gibt es ein für Sie kuratiertes
+                        Im Drei-Monats-Takt gibt es ein für Sie kuratiertes
                         Weinpaket mit wahlweise 6 oder 3 Flaschen hochklassiger
                         Weine. Zudem werden Sie zu exklusive
                         Club-Veranstaltungen eingeladen.
@@ -1086,8 +1091,8 @@ const CruClub = () => {
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Die Pakete kommen zum Mitte des Monats Februar, Mai,
-                        August und November bei Ihnen an. Wir versenden alle
+                        Die Pakete kommen jeweils zum Mitte des Monats März, Juni,
+                        September und Dezember bei Ihnen an. Wir versenden alle
                         Pakete mit DHL. Sobald Ihr Paket unser Lager verlässt,
                         bekommen Sie von uns eine E-Mail mit den
                         Versandinformationen und Ihrem Versand-Tracking-Link. So
@@ -1147,14 +1152,6 @@ const CruClub = () => {
                       <p>
                         Ja, das ist möglich. Bitte nenne die beschenkte Person
                         in der Lieferadresse.
-                      </p>
-                      <p>
-                        Abgestimmt auf Ihre Wünsche und Bedürfnisse wie
-                        Investitionssumme, Anlagehorizont, persönliche
-                        Vorlieben, etc. entwickeln wir gemeinsam mit Ihnen die
-                        passende Anlagestrategie. Darüber hinaus kümmern wir uns
-                        um den fachgerechten Transport und die professionelle
-                        Einlagerung Ihrer Weine im Genfer Zollfreihafen.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
