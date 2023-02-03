@@ -126,8 +126,8 @@ const CruClub = () => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
-    let sidecta = document.getElementById("side-cta")
-    sidecta.classList.add("d-none")
+    let sidecta = document.getElementById("side-cta");
+    sidecta.classList.add("d-none");
     // const getMaximumServicesCardHeight = () => {
     //   let cards = document.getElementsByClassName("services-card");
     //   //let cardsHeights = cards.map(c => c.style.height);
@@ -826,11 +826,11 @@ const CruClub = () => {
          
         </section> */}
 
-<div
-          class="pricing-3 mt-5 row section-image"
+        <div
+          class="pricing-3 mt-5 row mx-0 section-image"
           style={{
             backgroundSize: "cover",
-            height: "100vh",
+            height: "100%",
             backgroundPosition: "center",
             backgroundImage:
               "url('https://bcassets.s3.amazonaws.com/static/images/pexels-andrea-piacquadio-3938891.original.jpg')",
@@ -845,10 +845,11 @@ const CruClub = () => {
               display: "flex",
               background: "rgba(150,150,150,0.5)",
               overflowX: "hidden",
+              padding: "30% 0 30% 0",
             }}
           >
             <div class="mx-auto my-auto" style={{ position: "relative" }}>
-              <div class="row">
+              <div class="row mx-0">
                 <div class="col-md-6 ml-auto mr-auto text-center">
                   <h2 class="title text-white">Wie viel darf's sein?</h2>
                   <h4
@@ -861,7 +862,7 @@ const CruClub = () => {
                   <div class="section-space"></div>
                 </div>
               </div>
-              <div class="row p-4">
+              <div class="row mx-0">
                 <div class="col-md-4 ml-auto">
                   <div class="card card-pricing">
                     <div class="card-body">
@@ -876,12 +877,17 @@ const CruClub = () => {
                         <span style={{ fontSize: "25px" }}> /Quartal</span>
                       </h1>
                       <ul>
-                        <li>3 Flaschen</li>
-                        <li>Rot, weiß, rosé gemischt</li>
+                        <li>3 Flaschen pro Quartal</li>
+                        <li>rot, weiß, rosé gemischt</li>
                         <li>Geschenk in jeder Kiste</li>
                         <li>jederzeit kündbar</li>
+                        <li>kostenloser Versand</li>
                       </ul>
-                      <a  href="https://buy.stripe.com/dR63es5iQ0VL70AcMT" target={"_blank"} class="w-100 btn btn-lg btn-primary">
+                      <a
+                        href="https://buy.stripe.com/dR63es5iQ0VL70AcMT"
+                        target={"_blank"}
+                        class="w-100 btn btn-lg btn-primary"
+                      >
                         Starten
                       </a>
                     </div>
@@ -904,15 +910,19 @@ const CruClub = () => {
                         <span style={{ fontSize: "25px" }}> /Quartal</span>
                       </h1>
                       <ul>
-                        <li>6 Flaschen</li>
-                        <li>Rot, weiß, rosé gemischt</li>
+                        <li>6 Flaschen pro Quartal</li>
+                        <li>rot, weiß, rosé gemischt</li>
                         <li>Geschenk in jeder Kiste</li>
                         <li>jederzeit kündbar</li>
+                        <li>kostenloser Versand</li>
                       </ul>
-                      <a href="https://buy.stripe.com/cN26qEdPm6g5doY3ci" target={"_blank"} class="w-100 btn btn-lg btn-neutral">
+                      <a
+                        href="https://buy.stripe.com/cN26qEdPm6g5doY3ci"
+                        target={"_blank"}
+                        class="w-100 btn btn-lg btn-neutral"
+                      >
                         Starten
                       </a>
-                      
                     </div>
                   </div>
                 </div>
@@ -920,7 +930,9 @@ const CruClub = () => {
             </div>
           </div>
         </div>
-<br/><br/><br/>
+        <br />
+        <br />
+        <br />
         <script
           src="https://static.elfsight.com/platform/platform.js"
           data-use-service-core
@@ -928,12 +940,10 @@ const CruClub = () => {
         ></script>
         <div class="elfsight-app-f1da221f-f38a-4674-bc52-8e8b8e8abdc4"></div>
 
-        
-
         <div className="section pb-5 pt-5">
           <center id="faq-slide" className={"animated"}>
             <h2>Sind noch Fragen offen...?</h2>
-            <div style={{ maxWidth: "800px", height: "500px" }}>
+            <div style={{ maxWidth: "800px", height: "100%" }}>
               <div
                 className={"container mx-auto"}
                 style={{ maxWidth: "800px" }}
@@ -957,18 +967,15 @@ const CruClub = () => {
                             strokewidth={4}
                           />
                         </span>
-                        Für wen empfiehlt sich ein Wein Investment?
+                        Was ist der Cru Club?
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Wein Investments eignen sich hervorragend für die
-                        Diversifizierung des Gesamtportfolios mit einem
-                        exklusiven Sachwert und können über einen langfristigen
-                        Investitionshorizont von 10 bis 15 Jahren eine
-                        durchschnittliche Rendite von etwa 8% bis 10% p.a.
-                        (kapitalertragssteuerfrei) erzielen. Dabei korrelieren
-                        Wein Investments kaum mit dem Kapitalmarkt.
+                        m Drei-Monats-Takt gibt es ein für Sie kuratiertes
+                        Weinpaket mit wahlweise 6 oder 3 Flaschen hochklassiger
+                        Weine. Zudem werden Sie zu exklusive
+                        Club-Veranstaltungen eingeladen.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -986,15 +993,72 @@ const CruClub = () => {
                             strokewidth={4}
                           />
                         </span>
-                        Muss ich ein Weinprofi sein, um in Wein zu investieren?
+                        Wann und wie wird der Wein ausgeliefert?
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Berghaus & Cie. unterstützt Sie dabei, Ihr persönliches
-                        Wein-Portfolio zusammenzustellen. Sie müssen kein
-                        Weinprofi oder ausgewiesener Weinliebhaber sein, um
-                        erfolgreich in Wein zu investieren.
+                        Die Pakete kommen zum Mitte des Monats Februar, Mai,
+                        August und November bei Ihnen an. Wir versenden alle
+                        Pakete mit DHL. Sobald Ihr Paket unser Lager verlässt,
+                        bekommen Sie von uns eine E-Mail mit den
+                        Versandinformationen und Ihrem Versand-Tracking-Link. So
+                        können Sie jederzeit einsehen, wo sich Ihr Paket gerade
+                        befindet und wann es ankommt. Bei DHL können Sie einen
+                        Wunschtag, einen Wunschort, einen Wunschnachbarn und
+                        eine Wunschzeit bestimmen.Sie können auch eine
+                        Packstation oder eine Filiale für die Lieferung
+                        festlegen.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Wer entscheidet, welche Weine im Paket aufgenommen
+                        werden?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Unsere Weine werden von Tristan Berghaus persönlich für
+                        Sie kuratiert. Im Sommer gibt es weniger Rotwein und im
+                        Winter mehr.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Kann ich eine Cru Club Mitgliedschaft verschenken?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Ja, das ist möglich. Bitte nenne die beschenkte Person
+                        in der Lieferadresse.
                       </p>
                       <p>
                         Abgestimmt auf Ihre Wünsche und Bedürfnisse wie
@@ -1003,75 +1067,6 @@ const CruClub = () => {
                         passende Anlagestrategie. Darüber hinaus kümmern wir uns
                         um den fachgerechten Transport und die professionelle
                         Einlagerung Ihrer Weine im Genfer Zollfreihafen.
-                      </p>
-                    </AccordionItemPanel>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionItemHeading>
-                      <AccordionItemButton>
-                        {" "}
-                        <span
-                          className={"text-primary mr-2"}
-                          style={{ display: "inline-block" }}
-                        >
-                          <RightArrow
-                            width={"20px"}
-                            height={"20px"}
-                            strokewidth={4}
-                          />
-                        </span>
-                        Welche Investitionssumme ist für den Anfang sinnvoll?
-                      </AccordionItemButton>
-                    </AccordionItemHeading>
-                    <AccordionItemPanel>
-                      <p>
-                        Im Gegensatz zu anderen alternativen Anlageklassen wie
-                        Kunst, Oldtimer oder Uhren ist die Einstiegshürde bei
-                        Wein vergleichsweise niedrig. Der Kaufpreis eines
-                        exquisiten Weins (hohes Entwicklungspotential, sehr
-                        renommiertes Weingut) liegt im Schnitt bei ca. 250 € pro
-                        Flasche, d. h. ca. 1.500 Euro pro Kiste.
-                      </p>
-                      <p>
-                        Für die Zusammenstellung eines ausgewogenen
-                        Wein-Portfolios, empfehlen wir den Erwerb von 5 bis 15
-                        verschiedenen Weinen.
-                      </p>
-                    </AccordionItemPanel>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionItemHeading>
-                      <AccordionItemButton>
-                        {" "}
-                        <span
-                          className={"text-primary mr-2"}
-                          style={{ display: "inline-block" }}
-                        >
-                          <RightArrow
-                            width={"20px"}
-                            height={"20px"}
-                            strokewidth={4}
-                          />
-                        </span>
-                        Wem gehört der Wein nach der Kaufabwicklung?
-                      </AccordionItemButton>
-                    </AccordionItemHeading>
-                    <AccordionItemPanel>
-                      <p>
-                        Bei einem Wein Investment über Berghaus & Cie. sind Sie
-                        zu 100 % Eigentümer Ihres Weines. Sie investieren in ein
-                        physisches Gut bzw. in einen Sachwert. Dies ist ein
-                        bedeutender Vorteil gegenüber nicht-physischen
-                        Investmentprodukten wie Rentenpapieren, Bausparverträgen
-                        oder Lebensversicherungen, die außer dem Papier, auf dem
-                        sie gedruckt sind, keinen inhärenten Wert besitzen.
-                      </p>
-                      <p>
-                        Als Besitzer erhalten Sie eine Auflistung Ihrer Weine,
-                        sobald diese im Genfer Zollfreihafen eingelagert wurden.
-                        Die Rechnung ist Ihr persönlicher Eigentumsnachweis. Sie
-                        dient Ihnen auch als Nachweis Ihres Herausgabeanspruches
-                        gegenüber dem Weinlager.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -1090,18 +1085,202 @@ const CruClub = () => {
                             strokewidth={4}
                           />
                         </span>
-                        Gegen welche Risiken sind meine Weine versichert?
+                        In welche Länder wird das Paket geliefert?
                       </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                       <p>
-                        Bei Berghaus & Cie. sind Ihre Weine während der
-                        Verweildauer in unserem Weinlager gegen Beschädigungen
-                        oder andere wertmindernde Umstände versichert. Die
-                        Versicherungssumme richtet sich nach dem aktuellen Wert.
-                        Insbesondere sind die Weine gegen
-                        Einbruchdiebstahl/Raub, Brand- und Wasserschäden
-                        versichert.
+                        Der Versand innerhalb Deutschlands ist kostenfrei. Für
+                        den Versand nach Österreich und in die Schweiz werden
+                        3,49€ inkl. MwSt berechnet. Individuelle Versandziele
+                        können wir auf Anfrage anbieten.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Wie kann ich meine Mitgliedschaft bezahlen?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Die Mitgliedschaft kann per Kreditkarte oder SEPA
+                        Lastschrift bezahlt werden. Die Mitgliedschaft wird
+                        quartalsweise abgerechnet.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Kann ich Weine nachbestellen?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Natürlich, auf Anfrage können Weine als 6er-Karton
+                        nachbestellt werden. Schreiben Sie uns einfach an info@berghauscie.de.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Kann ich meine Mitgliedschaft pausieren?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Ihre Mitgliedschaft kann problemlos pausiert werden.
+                        Senden Sie hierfür eine E-Mail an info@berghauscie.de
+                        und teilen Sie uns mit, wie lange Sie Ihre
+                        Mitgliedschaft pausieren möchten.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Was ist wenn ein Wein mir nicht schmeckt?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Das kann vorkommen. Jeder unserer Weine erfüllt die
+                        hohen Qualitätsstandards von Tristan Berghaus und ist
+                        auf seine eigene Art und Weise eine Erfahrung wert. Denn
+                        wir möchten Ihnen die großartige Vielfalt der Weinwelt
+                        präsentieren. Das muss aber nicht heißen, dass er jeden
+                        Geschmack trifft. Dennoch wird Ihnen jeder Wein mehr und
+                        mehr über Ihr Wein-Profil verraten. Letztlich ist es
+                        genauso wertvoll herauszufinden, welcher Wein Ihnen
+                        nicht schmeckt, wie welcher Wein genau Ihr Ding ist.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Mein Paket ist nicht angekommen.
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Es kann, wenn auch nur selten, vorkommen, dass ein Paket
+                        beim Versand zu Bruch gegangen ist. Sie sehen diese
+                        Meldung auch über Ihren DHL Tracking Link. In der Regel
+                        wird das Paket dann von DHL an uns zurückgeschickt. Wir
+                        informieren Sie sofort und senden Ihnen ein neues Paket
+                        zu. Sollte Ihr Paket mit einer zerbrochenen Flasche
+                        zugestellt werden, sagen Sie bitte Bescheid ud wir
+                        senden Ihnen sofort kostenfrei einen Ersatz zu.
+                      </p>
+                      <p>
+                        Sollte das Paket nicht zugestellt werden können, weil
+                        sich die Adresse geändert hat oder Sie nicht anwesend
+                        waren bzw. nicht im DHL Shop abholen konnten, wird das
+                        Paket an uns zurückgesendet. In diesem Fall können Sie
+                        ein neue Zustellung beauftragen. Schreiben Sie uns
+                        hierzu einfach kurz eine E-Mail an
+                        cru.club@berghauscie.de. Sollte das Paket unverschuldet
+                        nicht zugestellt werden können, ist eine zweite
+                        Zustellung für Sie immer kostenfrei.
+                      </p>
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        {" "}
+                        <span
+                          className={"text-primary mr-2"}
+                          style={{ display: "inline-block" }}
+                        >
+                          <RightArrow
+                            width={"20px"}
+                            height={"20px"}
+                            strokewidth={4}
+                          />
+                        </span>
+                        Wie kann ich meine Mitgliedschaft kündigen?
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p>
+                        Wir hoffen, dass wir Sie als wertvollen Kunden möglichst
+                        lange auf Ihrer Wein-Reise begleiten dürfen. Falls Sie
+                        mit etwas nicht zufrieden sind, sagen Sie uns unbedingt
+                        Bescheid.
+                      </p>
+                      <p>
+                        Sie können jederzeit Ihre Mitgliedschaft kündigen.
+                        Schreiben Sie uns einfach eine E-Mail mit Ihren
+                        Kundenangaben an info@berghauscie.de. Wir kümmern uns um
+                        den Rest.
+                      </p>
+                      <p>
+                        Beachten Sie bei Ihrer Kündigung, dass Sie vor dem 20.
+                        des Versand-Monats kündigen, um kein Paket mehr zu
+                        erhalten. Falls Sie nach dem 20. kündigen, bekommen Sie
+                        noch ein Paket im Folgemonat. Danach ist Ihre
+                        Mitgliedschaft aufgelöst.
                       </p>
                     </AccordionItemPanel>
                   </AccordionItem>
