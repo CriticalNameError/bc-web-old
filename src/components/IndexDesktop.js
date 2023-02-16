@@ -219,8 +219,8 @@ const IndexDesktop = (props) => {
           console.log(error);
         }
 
-        window.fullpage_api.setAllowScrolling(false, "down");
-        window.fullpage_api.setAllowScrolling(false, "up");
+        // window.fullpage_api.setAllowScrolling(false, "down");
+        // window.fullpage_api.setAllowScrolling(false, "up");
       } else {
         try {
           vn.classList.remove("fadeOut");
@@ -1107,9 +1107,19 @@ const IndexDesktop = (props) => {
                                             </h3>
                                           </center>
                                           <div
-                                            style={{ maxWidth: "850px" }}
+                                            style={{ maxWidth: "950px" }}
                                             className={"row mx-auto"}
                                           >
+                                            <div className={"col text-center"}>
+                                              <span
+                                                style={{
+                                                  padding: "10px",
+                                                  borderRadius: "7px",
+                                                }}
+                                              >
+                                                <img src={"https://bcassets.s3.amazonaws.com/static/images/RBC-Logo-2017_web-removebg-preview_1.original.png"} style={{minWidth: "100px"}} />
+                                              </span>
+                                            </div>
                                             <div className={"col text-center"}>
                                               <span
                                                 style={{
@@ -1631,7 +1641,7 @@ const IndexDesktop = (props) => {
                                       {" "}
                                       <a
                                         href={
-                                          "https://calendly.com/berghausundcie/beratungsgesprach"
+                                          "https://nethunt.com/service/automation/forms/63b6992bbbdbb30008fdd07f"
                                         }
                                         target={"_blank"}
                                         className={"btn btn-sm bg-cta"}
@@ -2125,14 +2135,14 @@ const IndexDesktop = (props) => {
                       //   filter: "drop-shadow(3px 5px 2px rgb(255 255 255 / 0.08))",
                       // }}
                     >
-                      wineTelligence
+                      Portfolio-Indikation in 2 Minuten!
                     </h2>
                     <h3
                       className={"text-white pb-5"}
                       style={{ fontSize: "18px" }}
                     >
-                      Erhalten Sie eine erste Portfolio-Indikation auf der Basis
-                      von künstlicher Intelligenz.
+                      Erhalten Sie innerhalb von 2 Minuten eine erste Portfolio-Indikation auf der Basis
+                      Ihrer Präferenzen dank unserer wineTelligence.
                     </h3>
                     <PreferencesForm />
                   </center>

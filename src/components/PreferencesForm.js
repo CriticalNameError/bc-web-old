@@ -219,6 +219,7 @@ const PreferencesForm = (props) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [uid, setUid] = useState("");
+  const [emailSubmitted, toggleEmailSubmitted] = useState(false);
   const [countupFinished, setCountupFinished] = useState(false);
   const [countupFinishedDelayed, setCountupFinishedDelayed] = useState(false);
   useEffect(() => {
@@ -364,23 +365,23 @@ const PreferencesForm = (props) => {
     setInvestmentSum(Math.max(new_sum, 5000));
   }, [investmentSumTunerPosition]);
 
-  useEffect(() => {
-    try {
-      function watchWheel() {
-        document
-          .getElementById("letsgo-slide")
-          .addEventListener("wheel", logit);
-      }
-      watchWheel();
-      return () => {
-        document
-          .getElementById("letsgo-slide")
-          .removeEventListener("wheel", logit);
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  });
+  // useEffect(() => {
+  //   try {
+  //     function watchWheel() {
+  //       document
+  //         .getElementById("letsgo-slide")
+  //         .addEventListener("wheel", logit);
+  //     }
+  //     watchWheel();
+  //     return () => {
+  //       document
+  //         .getElementById("letsgo-slide")
+  //         .removeEventListener("wheel", logit);
+  //     };
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // });
 
   const [postPreferences, { mutData, mutLoading, mutError }] = useMutation(
     POST_CLIENT_PREFERENCES,
@@ -1213,8 +1214,6 @@ const PreferencesForm = (props) => {
       </ModalBody>
     ),
     quote_preview: (
-
-
       <>
         {!countupFinishedDelayed ? (
           <div className={"my-auto"} id={"countdown-animation"}>
