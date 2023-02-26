@@ -2320,6 +2320,12 @@ html {
   background-image: url("https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png");
 }
 
+#start {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png");
+}
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 100% 0%;

@@ -91,9 +91,7 @@ const IndexMobile = (props) => {
 
   useEffect(() => {
     let img = document.getElementById("background-img");
-    img.onload = function () {
-      toggleVideoReady(true);
-    };
+   
     // Bypass long loding times
     setTimeout(() => toggleVideoReady(true), 1000);
 
@@ -292,15 +290,15 @@ const IndexMobile = (props) => {
   let components = [
     <div
       id={"start"}
-      style={{
-        background: "white",
-      }}
+      // style={{
+      //   background: "white",
+      // }}
       className={
         "section snapscroll-section animated fadeIn row text-center m-0"
       }
     >
       <LoadingOverlay
-        active={!videoReady}
+        active={false}
         fadeSpeed={100}
         styles={{
           overlay: (base) => ({
@@ -381,7 +379,7 @@ const IndexMobile = (props) => {
         </ModalFooter>
       </Modal>
 
-      <LazyLoadImage
+      {/* <LazyLoadImage
         alt={"background"}
         id={"background-img"}
         visibleByDefault={true}
@@ -394,7 +392,7 @@ const IndexMobile = (props) => {
         style={{ objectFit: "cover" }}
         // placeholderSrc={placeholderUrl}
         // wrapperClassName={props.classes}
-      />
+      /> */}
 
       {/* <img
         id={"background-img"}
@@ -440,6 +438,7 @@ const IndexMobile = (props) => {
       </video> */}
       <div
         className={" px-0 animated row m-0 p-0"}
+        
         style={{
           overflowX: "hidden",
           position: "absolute",
@@ -448,9 +447,10 @@ const IndexMobile = (props) => {
           minWidth: "100%",
           width: "100%",
           height: "100%",
-          backgroundSize: "2px 2px",
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
+          background: "rgba(255,255,255,0.5)"
+          // backgroundSize: "2px 2px",
+          // backgroundImage:
+          //   "linear-gradient(to right, rgba(255,255,255, 0.7) 1.5px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.7) 3px, transparent 1px)",
         }}
       >
         <div className={"my-auto col fade-in-container"}>

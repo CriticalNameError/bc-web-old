@@ -2300,6 +2300,19 @@ $g-background-color-dark: #18181b;
   background-image: url("https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png");
 }
 
+#start {
+  // background: linear-gradient(86deg, #d3b579, #957f9c, #94c5ff, #676767, #6e8bb8, #cc985c, #ffffff);
+  // background-size: 1400% 1400%;
+
+  // -webkit-animation: AnimationName 80s ease infinite;
+  // -moz-animation: AnimationName 80s ease infinite;
+  // -o-animation: AnimationName 80s ease infinite;
+  // animation: AnimationName 80s ease infinite;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://bcassets.s3.amazonaws.com/static/images/header_bg5.original.png");
+}
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 100% 0%;
