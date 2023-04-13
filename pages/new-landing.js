@@ -46,7 +46,7 @@ const Index = () => {
       key="description"
     />
   </Head>
-  {width && width > 800?  <IndexDesktop />
+  {width && width > 800?  <IndexDesktopNew />
   : (width && width <= 800?  <IndexMobile /> : <></>)}</>
 
   )

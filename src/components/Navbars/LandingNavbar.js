@@ -63,14 +63,18 @@ const ContactBar = (props) => {
             .getElementById("vert-nav")
             .classList.add("animated", "slideOutUp", "faster");
         }
-        lastScrollY = window.scrollY;
+        lastScrollY = (window.scrollY? window.scrollY : 0);
       }
       setScrollY(window.scrollY);
       if (window.scrollY > 0) {
         document.getElementById("vert-nav").classList.remove("pt-5");
+        
+        
+        document.getElementById("vert-nav").classList.toggle("bg-transparent");
         document.getElementById("nav-tgl").classList.remove("pt-2");
         document.getElementById("nav-tgl").classList.remove("mt-4");
       } else {
+        
         document.getElementById("vert-nav").classList.add("pt-5");
         document.getElementById("nav-tgl").classList.add("pt-2");
         document.getElementById("nav-tgl").classList.add("mt-4");
