@@ -14,8 +14,8 @@ import Diamond from "../icons/diamond";
 import Measurement from "../icons/measurement";
 import Safe from "../icons/safe";
 import CountUp from "react-countup";
-import TriangelUp1 from "../icons/triangle-up-1"
-import VisibilitySensor from 'react-visibility-sensor';
+import TriangelUp1 from "../icons/triangle-up-1";
+import VisibilitySensor from "react-visibility-sensor";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -994,134 +994,173 @@ const IndexDesktopNew = (props) => {
       ></LoadingOverlay>
 
       <div class="">
-        <div class="page-header page-header-large">
-          <div
-            class="page-header-image"
-            data-parallax="true"
-            style={{
-              backgroundImage:
-                "url('https://www.rarewineinvest.com/media/2675/investering-i-vin-800x600.jpg?anchor=center&mode=crop&width=800&height=600&rnd=132488933570000000&quality=80')",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              filter: "blur(4px)",
-            }}
-          ></div>
-          <div class="content-center" style={{ maxWidth: "1020px" }}>
-            <div class="about-description text-center">
-              <div class="features-3">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-10 mr-auto ml-auto">
-                      <h1 class="title">
-                        Einzigartiger Wein. Einzigartiges Investment.
-                      </h1>
-                      <h4 class="">
-                        Grade in turbulenten Zeiten überzeugen Weininvestments
-                        durch kontinulierlich hohe Renditen und sind somit mehr
-                        als nur ein Instrument zur Vermögenssicherung.
-                      </h4>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 pl-0">
-                      <div
-                        class="info info-hover p-3 card glass-bg"
-                        style={{ minHeight: "300px" }}
-                      >
-                        <div
-                          class="icon icon-circle"
-                          style={{ color: "#bfac82" }}
-                        >
-                          <span
-                            style={{ paddingTop: "12px", display: "block" }}
+        {/* <div class="" style={{ display: "flex", minHeight: "100vh" }}>
+       
+          <div className="row" style={{ margin: "auto 0 auto 0" }}>
+            <div className="col mx-5" style={{ margin: "auto" }}>
+              <div class="content-center" style={{ maxWidth: "1020px" }}>
+                <div class="about-description text-center">
+                  <div class="features-3">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-12 mr-auto ml-auto">
+                          <h1 class="title text-dark">
+                            Einzigartiger Wein. Einzigartiges Investment.
+                          </h1>
+                          <h4 class="text-dark">
+                            Grade in turbulenten Zeiten überzeugen
+                            Weininvestments durch kontinulierlich hohe Renditen
+                            und sind somit mehr als nur ein Instrument zur
+                            Vermögenssicherung.
+                          </h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div
+                            class="info p-3 mr-0 info-horizontal mt-0"
+                            style={{ maxWidth: "100%" }}
                           >
-                            <BarArrowStraight
-                              width={"45px"}
-                              height={"45px"}
-                              strokewidth={2}
-                            />
+                            <div class="icon ">
+                              <span
+                                style={{ paddingTop: "15px", display: "block" }}
+                              >
+                                <Security
+                                  width={"45px"}
+                                  height={"45px"}
+                                  strokewidth={2}
+                                />
+                              </span>
+                            </div>
+                            <div class="description">
+                              <h4 class="info-title">Felsenfeste Anlage</h4>
+                              <p class="description">
+                                Wertstabil und keine Korrelation mit dem
+                                Kapitalmarkt
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div
+                            class="info p-3 mr-0 info-horizontal mt-0"
+                            style={{ maxWidth: "100%" }}
+                          >
+                            <div class="icon ">
+                              <span
+                                style={{ paddingTop: "15px", display: "block" }}
+                              >
+                                <StorageUnit
+                                  width={"45px"}
+                                  height={"45px"}
+                                  strokewidth={2}
+                                />
+                              </span>
+                            </div>
+                            <div class="description">
+                              <h4 class="info-title">Echter Sachwert</h4>
+                              <p class="description">
+                                Kein Fonds, keine Verbriefung, sondern zu 100%
+                                Ihr Eigentum
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div
+                            class="info p-3 mr-0 info-horizontal mt-0"
+                            style={{ maxWidth: "100%" }}
+                          >
+                            <div class="icon ">
+                              <span
+                                style={{ paddingTop: "15px", display: "block" }}
+                              >
+                                <BarArrowStraight
+                                  width={"45px"}
+                                  height={"45px"}
+                                  strokewidth={2}
+                                />
+                              </span>
+                            </div>
+                            <div class="description">
+                              <h4 class="info-title">Rendite 8 - 12 % p.a.</h4>
+                              <p class="description">
+                                Profitieren Sie von der attratktiven Rendite
+                                eines Weininvestments
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-12 p-3 card text-center cta-animated-gradient">
+                          <span style={{ fontSize: "2em" }}>
+                            Interaktive Investment-Simulation starten
                           </span>
                         </div>
-                        <h4 class="info-title text-dark">
-                          Rendite 8 - 12 % p.a.
-                        </h4>
-                        <p
-                          class=" "
-                          style={{ fontSize: "1.14em", color: "black" }}
-                        >
-                          Profitieren Sie von der attratktiven Rendite eines
-                          Weininvestments.
-                        </p>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div
-                        class="info info-hover p-3 card glass-bg"
-                        style={{ minHeight: "300px" }}
-                      >
-                        <div
-                          class="icon icon-circle"
-                          style={{ color: "#bfac82" }}
-                        >
-                          <span
-                            style={{ paddingTop: "18px", display: "block" }}
-                          >
-                            <Security
-                              width={"45px"}
-                              height={"45px"}
-                              strokewidth={2}
-                            />
-                          </span>
-                        </div>
-                        <h4 class="info-title text-dark">Felsenfeste Anlage</h4>
-                        <p
-                          class=""
-                          style={{ fontSize: "1.14em", color: "black" }}
-                        >
-                          Exquisiter Wein ist wertstabil und weist keine
-                          Korrelation mit dem Kapitalmarkt auf.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-md-4 pr-0">
-                      <div
-                        class="info info-hover p-3 card glass-bg"
-                        style={{ minHeight: "300px" }}
-                      >
-                        <div
-                          class="icon icon-circle"
-                          style={{ color: "#bfac82" }}
-                        >
-                          <span
-                            style={{ paddingTop: "15px", display: "block" }}
-                          >
-                            <StorageUnit
-                              width={"45px"}
-                              height={"45px"}
-                              strokewidth={2}
-                            />
-                          </span>
-                        </div>
-                        <h4 class="info-title text-dark">100 % Ihr Eigentum</h4>
-                        <p
-                          class=""
-                          style={{ fontSize: "1.14em", color: "black" }}
-                        >
-                          Kein Fonds, keine Verbriefung: Ihre Kisten sind zu 100
-                          % Ihr Eigentum.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="col-md-12 p-3 card text-center cta-animated-gradient">
-                      <span style={{ fontSize: "2em" }}>
-                        Interaktive Investment-Simulation starten
-                      </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="col-md-5" style={{ margin: "auto" }}>
+              <center>
+                <div
+                  className={"card  p-4"}
+                  style={{
+                    width: "300px",
+                    display: "block",
+                    marginBottom: "-150px",
+                    marginLeft: "330px",
+                  }}
+                >
+                  <span className={"d-block text-dark"}>
+                    Portfolio-Entwicklung
+                  </span>
+                  <span style={{ fontSize: "3em", color: "green" }}>
+                    <span
+                      style={{ display: "inline-block", marginTop: "-5px" }}
+                    >
+                      <TriangelUp1 width={"30px"} height={"30px"} />
+                    </span>
+                    <CountUp
+                      start={0}
+                      end={178}
+                      redraw={true}
+                      duration={4}
+                      separator="."
+                      decimals={0}
+                      decimal=","
+                      prefix=""
+                      suffix=" %"
+                      // onEnd={() => console.log("Ended! 👏")}
+                      // onStart={() => console.log("Started! 💨")}
+                    >
+                      {({ countUpRef, start }) => (
+                        <VisibilitySensor onChange={start} delayedCall>
+                          <span ref={countUpRef} />
+                        </VisibilitySensor>
+                      )}
+                    </CountUp>
+                  </span>
+                  <span className={"description d-block text-dark"}>
+                    bei 7.6 % p.a. <br /> 2008-2022
+                  </span>
+                </div>
+                <img
+                  id={""}
+                  src={"/finewineselection.png"}
+                  width={"100%"}
+                  style={{ filter: "drop-shadow(2px 2px 4px black)" }}
+                />
+              </center>
+            </div>
           </div>
+
+         
+
           <div
             class="marquee p-4"
             style={{ background: "rgba(255,255,255,0.41)", zIndex: 1000 }}
@@ -1267,12 +1306,300 @@ const IndexDesktopNew = (props) => {
               </p>
             </div>
           </div>
+        </div> */}
+
+        <div class="features-6" style={{ height: "100vh", display: "flex" }}>
+          <div class="mx-1 my-auto mx-md-5" style={{ maxWidth: "100%" }}>
+            <div class="row">
+              <div class="col-md-8 ml-auto mr-auto text-center">
+                <h1 class="title text-dark">
+                  Einzigartiger Wein. Einzigartiges Investment.
+                </h1>
+                <h4 class="text-dark">
+                  Grade in turbulenten Zeiten überzeugen Weininvestments durch
+                  kontinulierlich hohe Renditen und sind somit mehr als nur ein
+                  Instrument zur Vermögenssicherung.
+                </h4>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                  <div class="icon ">
+                    <Diamond width={"32px"} height={"32px"} strokewidth={3} />
+                  </div>
+                  <div class="description">
+                    <h5 class="info-title">For Developers</h5>
+                    <p className={"p-0"}>
+                      The moment you use Now UI Kit, you know you’ve never felt
+                      anything like it. With a single use, this powerfull UI Kit
+                      lets you do more than ever before.{" "}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                  <div class="icon">
+                    <Security width={"32px"} height={"32px"} strokewidth={3} />
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">For Designers</h4>
+                    <p className={"p-0"}>
+                      Divide details about your product or agency work into
+                      parts. Write a few lines about each one. A paragraph
+                      describing a feature will be enough.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="">
+                  <center>
+                    <div
+                      className={"card  p-4"}
+                      style={{
+                        width: "300px",
+                        display: "block",
+                        marginBottom: "-150px",
+                        marginLeft: "330px",
+                      }}
+                    >
+                      <span className={"d-block text-dark"}>
+                        Portfolio-Entwicklung
+                      </span>
+                      <span style={{ fontSize: "3em", color: "green" }}>
+                        <span
+                          style={{ display: "inline-block", marginTop: "-5px" }}
+                        >
+                          <TriangelUp1 width={"30px"} height={"30px"} />
+                        </span>
+                        <CountUp
+                          start={0}
+                          end={178}
+                          redraw={true}
+                          duration={4}
+                          separator="."
+                          decimals={0}
+                          decimal=","
+                          prefix=""
+                          suffix=" %"
+                          // onEnd={() => console.log("Ended! 👏")}
+                          // onStart={() => console.log("Started! 💨")}
+                        >
+                          {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                              <span ref={countUpRef} />
+                            </VisibilitySensor>
+                          )}
+                        </CountUp>
+                      </span>
+                      <span className={"description d-block text-dark"}>
+                        bei 7.6 % p.a. <br /> 2008-2022
+                      </span>
+                    </div>
+                    <img
+                      id={""}
+                      src={"/finewineselection.png"}
+                      width={"100%"}
+                      style={{ filter: "drop-shadow(2px 2px 4px black)" }}
+                    />
+                  </center>
+                </div>
+                <div class="mx-auto card text-center cta-animated-gradient">
+                  <span style={{ fontSize: "2em", width: "200px" }}>
+                    Interaktive Investment-Simulation starten
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                  <div class="icon">
+                    <StorageUnit
+                      width={"32px"}
+                      height={"32px"}
+                      strokewidth={3}
+                    />
+                  </div>
+                  <div class="description">
+                    <h5 class="info-title">Bootstrap Grid</h5>
+                    <p className={"p-0"}>
+                      Divide details about your product or agency work into
+                      parts. Write a few lines about each one. A paragraph
+                      describing a feature will be enough.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                  <div class="icon">
+                    <BarArrowStraight
+                      width={"32px"}
+                      height={"32px"}
+                      strokewidth={3}
+                    />
+                  </div>
+                  <div class="description">
+                    <h4 class="info-title">Example Pages Included</h4>
+                    <p className={"p-0"}>
+                      Divide details about your product or agency work into
+                      parts. Write a few lines about each one. A paragraph
+                      describing a feature will be enough.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* <div class="custom-shape-divider-top-1681387913">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
-    </svg>
-</div> */}
+
+        <div
+          class="marquee p-4"
+          style={{ background: "rgba(255,255,255,0.41)", zIndex: 1000 }}
+        >
+          <div class="inner pt-3">
+            <p class="text">
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Partner1 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Partner2 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Award1 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Award2 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Award3 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <img
+                  src={
+                    "https://bcassets.s3.amazonaws.com/static/images/RBC-Logo-2017_web-removebg-preview_1.original.png"
+                  }
+                  style={{ width: "190px", marginRight: "80px" }}
+                />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Partner3 height={"40px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Partner1 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Partner2 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Award1 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Award2 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Award3 height={"50px"} />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <img
+                  src={
+                    "https://bcassets.s3.amazonaws.com/static/images/RBC-Logo-2017_web-removebg-preview_1.original.png"
+                  }
+                  style={{ width: "190px", marginRight: "80px" }}
+                />
+              </span>
+              <span
+                style={{
+                  padding: "10px",
+                  borderRadius: "7px",
+                  marginRight: "120px",
+                }}
+              >
+                <Partner3 height={"40px"} />
+              </span>
+            </p>
+          </div>
+        </div>
 
         <div class="section">
           <div class="projects-5 pt-0">
@@ -1286,15 +1613,38 @@ const IndexDesktopNew = (props) => {
                     Weininvestmens 101
                   </h6>
                   <h2 class="title">Das Wichtigste zum Thema Weininvestment</h2>
-                  <h4 class="description">
-                    This is the paragraph where you can write more details about
-                    your projects. Keep you user engaged by providing meaningful
-                    information.
-                  </h4>
+                  
+
+                  {/* <VisibilitySensor>
+                    {({ isVisible }) => {
+                      if(isVisible){
+                        return <DynamicLivexPriceChart
+                        mobile={false}
+                        height={"450px"}
+                      />
+                      }else{
+                        return <></>
+                      }
+                      
+                    }}
+                  </VisibilitySensor> */}
+
+<VisibilitySensor>
+      {({isVisible}) =>
+        <div style={{minHeight: "500px"}}><h4 class="description">
+        This is the paragraph where you can write more details about
+        your projects. Keep you user engaged by providing meaningful
+        information.
+      </h4>{isVisible ? <DynamicLivexPriceChart
+          mobile={false}
+          height={"450px"}
+        /> : <></>}</div>
+      }
+    </VisibilitySensor>
 
                   <div class="section-space"></div>
                 </div>
-                <center>
+                {/* <center>
                   <div className={"card  p-4"} style={{
                     width: "300px",
                     display: "block",
@@ -1334,7 +1684,7 @@ const IndexDesktopNew = (props) => {
                     width={"100%"}
                     style={{ filter: "drop-shadow(2px 2px 4px black)" }}
                   />
-                </center>
+                </center> */}
               </div>
             </div>
             <div class="row px-5">
@@ -1347,6 +1697,8 @@ const IndexDesktopNew = (props) => {
                     muted
                     constrols
                   >
+
+                    
                     <source
                       src={
                         "https://bcassets.s3.eu-west-1.amazonaws.com/bc_explainer_desktop.mp4"
@@ -2251,7 +2603,9 @@ const IndexDesktopNew = (props) => {
                             <div class="col-sm-4">
                               <button
                                 type="button"
-                                onClick={() => getServerSideProps("test@test1111.de")}
+                                onClick={() =>
+                                  getServerSideProps("test@test1111.de")
+                                }
                                 class="btn btn-primary  btn-round btn-block cta-animated-gradient"
                                 style={{ fontSize: "1.6em" }}
                               >
