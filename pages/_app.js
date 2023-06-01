@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   useEffect(()=>{
     //fetch("https://backoffice.berghauscie.de/gotcha/"+encodeURIComponent(document.referrer))//+"/"+encodeURIComponent(router.pathname));
-    fetch("http://localhost:8000/gotcha/"+encodeURIComponent(document.referrer?document.referrer:"direct")+"/3/"+encodeURIComponent(router.asPath? router.asPath:""))
+    fetch("https://backoffice.berghauscie.de/gotcha/"+encodeURIComponent(document.referrer?document.referrer:"direct")+"/3/"+encodeURIComponent(router.asPath? router.asPath:""))
   },[router])
   useEffect(() => {
     AOS.init({
