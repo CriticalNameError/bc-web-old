@@ -18,12 +18,13 @@ import SelectCalendylDateModal from "../src/components/SelectCalendlyDateModal";
 import CtaFixed from "../src/components/CtaFixed";
 import LandingFooter from "components/Footer/LandingFooter";
 import MobileNavbar from "../src/components/Navbars/MobileNavbar";
+import { useRouter } from "next/router";
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState);
   const [showCookieModal, toggleShowCookieModal] = useState(true);
   const [showCalendlyModal, toggleShowCalendlyModal] = useState(false);
   const [width, setWidth] = useState(null);
-
+  const router = useRouter();
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -37,6 +38,10 @@ function MyApp({ Component, pageProps }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  useEffect(()=>{
+    //fetch("https://backoffice.berghauscie.de/gotcha/"+encodeURIComponent(document.referrer))//+"/"+encodeURIComponent(router.pathname));
+    fetch("http://localhost:8000/gotcha/"+encodeURIComponent(document.referrer?document.referrer:"direct")+"/3/"+encodeURIComponent(router.asPath? router.asPath:""))
+  },[router])
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",

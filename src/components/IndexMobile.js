@@ -134,6 +134,7 @@ const IndexMobile = (props) => {
         prevEl: ".swiper-button-prev",
       },
     });
+   
   }, []);
 
   const pillContent = {

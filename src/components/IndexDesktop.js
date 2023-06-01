@@ -154,6 +154,7 @@ const IndexDesktop = (props) => {
     } catch (error) {
       console.log(error);
     }
+   
   }, []);
 
   useEffect(() => {

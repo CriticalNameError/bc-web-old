@@ -79,6 +79,7 @@ import {
 } from "react-accessible-accordion";
 import LoadingOverlay from "react-loading-overlay";
 import Head from "next/head";
+import Image from 'next/image'
 
 export const getServerSideProps = async (mail) => {
   let res = await fetch(
@@ -1324,8 +1325,8 @@ const IndexDesktopNew = (props) => {
             </div>
 
             <div class="row">
-              <div class="col-md-3">
-                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+              <div class="col-md-3 ">
+                <div class="info info-horizontal animated fadeInLeft" style={{ boxShadow: "none" }}>
                   <div class="icon ">
                     <Diamond width={"32px"} height={"32px"} strokewidth={3} />
                   </div>
@@ -1339,7 +1340,7 @@ const IndexDesktopNew = (props) => {
                   </div>
                 </div>
 
-                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                <div class="info info-horizontal animated fadeInLeft slow" style={{ boxShadow: "none" }}>
                   <div class="icon">
                     <Security width={"32px"} height={"32px"} strokewidth={3} />
                   </div>
@@ -1399,23 +1400,30 @@ const IndexDesktopNew = (props) => {
                         bei 7.6 % p.a. <br /> 2008-2022
                       </span>
                     </div>
-                    <img
+                    <Image
+                    src={"/finewineselection.png"}
+                    width={"800px"}
+                    style={{ filter: "drop-shadow(2px 2px 4px black)" }}
+                    quality={80}
+                    />
+                    {/* <img
                       id={""}
                       src={"/finewineselection.png"}
                       width={"100%"}
                       style={{ filter: "drop-shadow(2px 2px 4px black)" }}
-                    />
+                    /> */}
                   </center>
-                </div>
-                <div class="mx-auto card text-center cta-animated-gradient">
+                  <div class="mx-auto card text-center cta-animated-gradient">
                   <span style={{ fontSize: "2em", width: "200px" }}>
                     Interaktive Investment-Simulation starten
                   </span>
                 </div>
+                </div>
+                
               </div>
 
               <div class="col-md-3">
-                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                <div class="info info-horizontal animated fadeInRight" style={{ boxShadow: "none" }}>
                   <div class="icon">
                     <StorageUnit
                       width={"32px"}
@@ -1433,7 +1441,7 @@ const IndexDesktopNew = (props) => {
                   </div>
                 </div>
 
-                <div class="info info-horizontal" style={{ boxShadow: "none" }}>
+                <div class="info info-horizontal animated fadeInRight slow" style={{ boxShadow: "none" }}>
                   <div class="icon">
                     <BarArrowStraight
                       width={"32px"}
@@ -1631,7 +1639,7 @@ const IndexDesktopNew = (props) => {
 
 <VisibilitySensor>
       {({isVisible}) =>
-        <div style={{minHeight: "500px"}}><h4 class="description">
+        <div style={{height: "550px"}}><h4 class="description">
         This is the paragraph where you can write more details about
         your projects. Keep you user engaged by providing meaningful
         information.
@@ -1690,7 +1698,53 @@ const IndexDesktopNew = (props) => {
             <div class="row px-5">
               <div class="col-md-8">
                 <div className={"video-wrapper-explainer"}>
-                  <video
+                  
+                  <VisibilitySensor>
+      {({isVisible}) =>
+        <><div className={"header-explainer"}
+        data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+        >
+        <span
+        style={{visibility: "hidden"}}
+          onClick={() => {
+            // toggleShowVideoModal(true);
+            // playVideoAfterDelay();
+            // document
+            //   .getElementById(
+            //     "video-background"
+            //   )
+            //   .pause();
+          }}
+        >
+          <span
+            class="play-btn mx-auto"
+            href="#"
+            style={{
+              transform: props.mobile ? "scale(0.9)" : "scale(1.2)",
+
+              background: "transparent",
+              cursor: "pointer",
+              visibility: "hidden"
+            }}
+          >
+            <div
+              className={"animated pulse infinite slower"}
+              style={{
+                textAlign: "center",
+                color: cta,
+                paddingLeft: "10px",
+                paddingTop: "25px",
+              }}
+            >
+              <TriangleRight1 width={"50px"} strokewidth={3} />
+            </div>
+          </span>
+          <br />
+
+          <b style={{ fontSize: "18px" }}>Video abspielen</b>
+        </span>
+      </div>{isVisible ? <video
                     className={"video-explainer"}
                     autoPlay
                     loop
@@ -1706,8 +1760,9 @@ const IndexDesktopNew = (props) => {
                       type="video/mp4"
                     />
                     Your browser does not support the video tag.
-                  </video>
-
+                  </video> : <></>}</>
+      }
+    </VisibilitySensor>
                   <div className={"header-explainer"}>
                     <span
                       onClick={() => {
@@ -1753,6 +1808,8 @@ const IndexDesktopNew = (props) => {
                 <div
                   class="info p-3 mr-0 info-horizontal mt-0"
                   style={{ maxWidth: "100%" }}
+                  data-aos="fade-left"
+                 
                 >
                   <div class="icon ">
                     <span style={{ paddingTop: "15px", display: "block" }}>
@@ -1772,6 +1829,8 @@ const IndexDesktopNew = (props) => {
                 <div
                   class="info p-3 mt-3 info-horizontal mr-0"
                   style={{ maxWidth: "100%" }}
+                  data-aos="fade-left"
+                 
                 >
                   <div class="icon ">
                     <span style={{ paddingTop: "15px", display: "block" }}>
@@ -1794,6 +1853,8 @@ const IndexDesktopNew = (props) => {
                 <div
                   class="info p-3 mt-3 mr-0 info-horizontal"
                   style={{ maxWidth: "100%" }}
+                  data-aos="fade-left"
+                  
                 >
                   <div class="icon ">
                     <span style={{ paddingTop: "15px", display: "block" }}>
