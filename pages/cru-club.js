@@ -1026,11 +1026,11 @@ const CruClub = () => {
         <br />
         <br />
         <br />
-        <script
+        {/* <script
           src="https://static.elfsight.com/platform/platform.js"
           data-use-service-core
           defer
-        ></script>
+        ></script> */}
         <div class="elfsight-app-f1da221f-f38a-4674-bc52-8e8b8e8abdc4"></div>
 
         <div className="section pb-5 pt-5">
